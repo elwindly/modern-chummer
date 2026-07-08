@@ -1,0 +1,1005 @@
+{
+  "version": -901,
+  "powers": [
+    {
+      "name": "Analytics",
+      "points": ".25",
+      "levels": "yes",
+      "limit": "1",
+      "source": "SM",
+      "page": "174"
+    },
+    {
+      "name": "Animal Empathy",
+      "points": ".25",
+      "levels": "yes",
+      "limit": "1",
+      "bonus": {
+        "skillgroup": {
+          "name": "Animal Husbandry",
+          "bonus": "Rating"
+        }
+      },
+      "source": "SM",
+      "page": "175"
+    },
+    {
+      "name": "Astral Perception",
+      "points": "1",
+      "levels": "no",
+      "limit": "1",
+      "source": "SR4",
+      "page": "195"
+    },
+    {
+      "name": "Attribute Boost",
+      "points": ".25",
+      "levels": "yes",
+      "limit": "4",
+      "bonus": {
+        "selectattribute": {
+          "attribute": [
+            "AGI",
+            "BOD",
+            "REA",
+            "STR"
+          ]
+        }
+      },
+      "source": "SR4",
+      "page": "195"
+    },
+    {
+      "name": "Berserk",
+      "points": "1",
+      "levels": "no",
+      "limit": "1",
+      "source": "SM",
+      "page": "175"
+    },
+    {
+      "name": "Blind Fighting",
+      "points": ".5",
+      "levels": "no",
+      "limit": "1",
+      "source": "SM",
+      "page": "175"
+    },
+    {
+      "name": "Cloak",
+      "points": ".25",
+      "levels": "yes",
+      "limit": "1",
+      "source": "SM",
+      "page": "175"
+    },
+    {
+      "name": "Combat Sense",
+      "points": ".5",
+      "levels": "yes",
+      "limit": "1",
+      "source": "SR4",
+      "page": "195"
+    },
+    {
+      "name": "Commanding Voice",
+      "points": ".25",
+      "levels": "no",
+      "limit": "1",
+      "source": "SM",
+      "page": "176"
+    },
+    {
+      "name": "Confidence Man",
+      "points": "1",
+      "levels": "no",
+      "limit": "1",
+      "required": {
+        "oneof": {
+          "quality": [
+            "The Speaker's Way"
+          ]
+        }
+      },
+      "source": "WA",
+      "page": "14"
+    },
+    {
+      "name": "Cool Resolve",
+      "points": ".25",
+      "levels": "yes",
+      "limit": "1",
+      "source": "SM",
+      "page": "176"
+    },
+    {
+      "name": "Counterstrike",
+      "points": ".5",
+      "levels": "yes",
+      "limit": "1",
+      "source": "SM",
+      "page": "176"
+    },
+    {
+      "name": "Creative Eye",
+      "points": ".75",
+      "levels": "yes",
+      "limit": "1",
+      "bonus": {
+        "specificattribute": {
+          "name": "INT",
+          "val": "Rating",
+          "affectbase": "yes"
+        }
+      },
+      "required": {
+        "oneof": {
+          "quality": [
+            "The Artist's Way"
+          ]
+        }
+      },
+      "source": "WA",
+      "page": "15"
+    },
+    {
+      "name": "Critical Strike",
+      "points": ".25",
+      "levels": "yes",
+      "limit": "1",
+      "bonus": {
+        "unarmeddv": "Rating"
+      },
+      "source": "SR4",
+      "page": "195"
+    },
+    {
+      "name": "Demara",
+      "points": ".5",
+      "levels": "no",
+      "limit": "1",
+      "source": "SG",
+      "page": "164"
+    },
+    {
+      "name": "Distance Strike",
+      "points": "2",
+      "levels": "no",
+      "limit": "1",
+      "source": "SM",
+      "page": "176"
+    },
+    {
+      "name": "Eidetic Sense Memory",
+      "points": ".5",
+      "levels": "no",
+      "limit": "1",
+      "source": "SM",
+      "page": "176"
+    },
+    {
+      "name": "Elemental Resistance",
+      "points": ".5",
+      "levels": "no",
+      "limit": "1",
+      "source": "DG",
+      "page": "17"
+    },
+    {
+      "name": "Elemental Strike",
+      "points": ".5",
+      "levels": "no",
+      "limit": "1",
+      "source": "SM",
+      "page": "176"
+    },
+    {
+      "name": "Empathic Healing",
+      "points": ".5",
+      "levels": "no",
+      "limit": "1",
+      "source": "SM",
+      "page": "176"
+    },
+    {
+      "name": "Enhanced Perception",
+      "points": ".25",
+      "levels": "yes",
+      "limit": "1",
+      "cap": "INT",
+      "bonus": {
+        "specificskill": [
+          {
+            "name": "Perception",
+            "bonus": "Rating"
+          },
+          {
+            "name": "Assensing",
+            "bonus": "Rating"
+          }
+        ]
+      },
+      "source": "SR4",
+      "page": "195"
+    },
+    {
+      "name": "Enthralling Performance",
+      "points": ".5",
+      "levels": "no",
+      "limit": "1",
+      "source": "SM",
+      "page": "176"
+    },
+    {
+      "name": "Facial Sculpt",
+      "points": ".25",
+      "levels": "yes",
+      "limit": "1",
+      "bonus": {
+        "specificskill": {
+          "name": "Disguise",
+          "bonus": "Rating"
+        }
+      },
+      "source": "SM",
+      "page": "177"
+    },
+    {
+      "name": "Flexibility",
+      "points": ".25",
+      "levels": "yes",
+      "limit": "1",
+      "bonus": {
+        "specificskill": {
+          "name": "Escape Artist",
+          "bonus": "Rating"
+        }
+      },
+      "source": "SM",
+      "page": "177"
+    },
+    {
+      "name": "Freefall",
+      "points": ".25",
+      "levels": "yes",
+      "limit": "1",
+      "source": "SM",
+      "page": "177"
+    },
+    {
+      "name": "Gliding",
+      "points": "1",
+      "levels": "no",
+      "limit": "1",
+      "source": "SM",
+      "page": "177"
+    },
+    {
+      "name": "Great Leap",
+      "points": ".25",
+      "levels": "yes",
+      "limit": "1",
+      "source": "SR4",
+      "page": "195"
+    },
+    {
+      "name": "Heightened Concentration",
+      "points": "1",
+      "levels": "no",
+      "limit": "1",
+      "source": "DG",
+      "page": "18"
+    },
+    {
+      "name": "Improved Ability (Combat)",
+      "points": ".5",
+      "levels": "yes",
+      "limit": "100",
+      "bonus": {
+        "selectskill": {
+          "val": "Rating",
+          "applytorating": "yes",
+          "skillcategory": "Combat Active"
+        }
+      },
+      "source": "SR4",
+      "page": "196"
+    },
+    {
+      "name": "Improved Ability (Non-Combat)",
+      "points": ".25",
+      "levels": "yes",
+      "limit": "100",
+      "bonus": {
+        "selectskill": {
+          "val": "Rating",
+          "applytorating": "yes",
+          "excludecategory": "Combat Active,Magical Active,Resonance Active"
+        }
+      },
+      "source": "SR4",
+      "page": "196"
+    },
+    {
+      "name": "Improved Physical Attribute",
+      "points": ".75",
+      "levels": "yes",
+      "limit": "12",
+      "bonus": {
+        "selectattribute": {
+          "attribute": [
+            "BOD",
+            "AGI",
+            "REA",
+            "STR"
+          ],
+          "val": "Rating",
+          "affectbase": "yes"
+        }
+      },
+      "source": "SR4",
+      "page": "196"
+    },
+    {
+      "name": "Improved Reflexes 1",
+      "points": "1.5",
+      "levels": "no",
+      "limit": "1",
+      "doublecost": "no",
+      "bonus": {
+        "initiativepass": "1",
+        "specificattribute": {
+          "name": {
+            "value": "REA",
+            "precedence": "0"
+          },
+          "val": "1"
+        }
+      },
+      "source": "SR4",
+      "page": "196"
+    },
+    {
+      "name": "Improved Reflexes 2",
+      "points": "2.5",
+      "levels": "no",
+      "limit": "1",
+      "doublecost": "no",
+      "bonus": {
+        "initiativepass": "2",
+        "specificattribute": {
+          "name": {
+            "value": "REA",
+            "precedence": "0"
+          },
+          "val": "2"
+        }
+      },
+      "source": "SR4",
+      "page": "196"
+    },
+    {
+      "name": "Improved Reflexes 3",
+      "points": "4",
+      "levels": "no",
+      "limit": "1",
+      "doublecost": "no",
+      "bonus": {
+        "initiativepass": "3",
+        "specificattribute": {
+          "name": {
+            "value": "REA",
+            "precedence": "0"
+          },
+          "val": "3"
+        }
+      },
+      "source": "SR4",
+      "page": "196"
+    },
+    {
+      "name": "Improved Sense",
+      "points": ".25",
+      "levels": "no",
+      "limit": "100",
+      "source": "SR4",
+      "page": "196"
+    },
+    {
+      "name": "Indomitable Will",
+      "points": ".25",
+      "levels": "yes",
+      "limit": "1",
+      "source": "DG",
+      "page": "18"
+    },
+    {
+      "name": "Inertia Strike",
+      "points": ".5",
+      "levels": "no",
+      "limit": "1",
+      "source": "SM",
+      "page": "177"
+    },
+    {
+      "name": "Iron Gut",
+      "points": ".25",
+      "levels": "yes",
+      "limit": "1",
+      "source": "SM",
+      "page": "177"
+    },
+    {
+      "name": "Iron Lungs",
+      "points": ".25",
+      "levels": "yes",
+      "limit": "1",
+      "source": "SM",
+      "page": "177"
+    },
+    {
+      "name": "Iron Will",
+      "points": ".25",
+      "levels": "yes",
+      "limit": "1",
+      "source": "SM",
+      "page": "177"
+    },
+    {
+      "name": "Keen Wits",
+      "points": ".75",
+      "levels": "yes",
+      "limit": "1",
+      "bonus": {
+        "specificattribute": {
+          "name": "LOG",
+          "val": "Rating",
+          "affectbase": "yes"
+        }
+      },
+      "required": {
+        "oneof": {
+          "quality": [
+            "The Artisan's Way"
+          ]
+        }
+      },
+      "source": "WA",
+      "page": "15"
+    },
+    {
+      "name": "Keratin Control",
+      "points": ".5",
+      "levels": "no",
+      "limit": "1",
+      "source": "SG",
+      "page": "164"
+    },
+    {
+      "name": "Killing Hands",
+      "points": ".5",
+      "levels": "no",
+      "limit": "1",
+      "source": "SR4",
+      "page": "196"
+    },
+    {
+      "name": "Kinesics",
+      "points": ".5",
+      "levels": "3",
+      "limit": "1",
+      "bonus": {
+        "judgeintentions": "Rating",
+        "skillcategory": {
+          "name": "Social Active",
+          "bonus": "Rating"
+        }
+      },
+      "source": "SR4",
+      "page": "196"
+    },
+    {
+      "name": "Kinesics Mastery",
+      "points": ".5",
+      "levels": "no",
+      "limit": "1",
+      "source": "SG",
+      "page": "164"
+    },
+    {
+      "name": "Light Touch",
+      "points": ".25",
+      "levels": "yes",
+      "limit": "1",
+      "source": "SG",
+      "page": "164"
+    },
+    {
+      "name": "Linguistics",
+      "points": ".25",
+      "levels": "no",
+      "limit": "1",
+      "source": "SM",
+      "page": "177"
+    },
+    {
+      "name": "Living Focus",
+      "points": "1",
+      "levels": "no",
+      "limit": "1",
+      "source": "SM",
+      "page": "178"
+    },
+    {
+      "name": "Magic Sense",
+      "points": ".5",
+      "levels": "no",
+      "limit": "1",
+      "source": "SM",
+      "page": "178"
+    },
+    {
+      "name": "Master of 1000 Faces",
+      "points": ".5",
+      "levels": "no",
+      "limit": "1",
+      "bonus": {
+        "specificskill": {
+          "name": "Disguise",
+          "bonus": "2"
+        }
+      },
+      "source": "SG",
+      "page": "164"
+    },
+    {
+      "name": "Melanin Control",
+      "points": ".5",
+      "levels": "no",
+      "limit": "1",
+      "source": "SM",
+      "page": "178"
+    },
+    {
+      "name": "Memory Displacement",
+      "points": ".25",
+      "levels": "no",
+      "limit": "1",
+      "source": "DG",
+      "page": "18"
+    },
+    {
+      "name": "Metabolic Control",
+      "points": ".5",
+      "levels": "no",
+      "limit": "1",
+      "source": "SM",
+      "page": "178"
+    },
+    {
+      "name": "Mind Over Matter",
+      "points": "1.5",
+      "levels": "no",
+      "limit": "1",
+      "source": "WAR",
+      "page": "178"
+    },
+    {
+      "name": "Missile Mastery",
+      "points": "1",
+      "levels": "no",
+      "limit": "1",
+      "bonus": {
+        "weaponcategorydv": {
+          "name": "Throwing Weapons",
+          "bonus": "1"
+        }
+      },
+      "source": "SM",
+      "page": "178"
+    },
+    {
+      "name": "Missile Parry",
+      "points": ".25",
+      "levels": "yes",
+      "limit": "1",
+      "source": "SR4",
+      "page": "196"
+    },
+    {
+      "name": "Motion Sense",
+      "points": ".5",
+      "levels": "no",
+      "limit": "1",
+      "source": "SM",
+      "page": "178"
+    },
+    {
+      "name": "Multi-Tasking",
+      "points": ".5",
+      "levels": "no",
+      "limit": "1",
+      "source": "SM",
+      "page": "178"
+    },
+    {
+      "name": "Mystic Armor",
+      "points": ".5",
+      "levels": "yes",
+      "limit": "1",
+      "bonus": {
+        "armor": [
+          {
+            "b": "Rating",
+            "i": "Rating"
+          }
+        ]
+      },
+      "source": "SR4",
+      "page": "197"
+    },
+    {
+      "name": "Natural Immunity",
+      "points": ".25",
+      "levels": "yes",
+      "limit": "1",
+      "source": "SR4",
+      "page": "197"
+    },
+    {
+      "name": "Natural Survivors (Active Skills)",
+      "points": ".5",
+      "levels": "yes",
+      "limit": "1",
+      "bonus": {
+        "specificskill": [
+          {
+            "name": "Navigation",
+            "bonus": "Rating"
+          },
+          {
+            "name": "Survival",
+            "bonus": "Rating"
+          },
+          {
+            "name": "Tracking",
+            "bonus": "Rating"
+          }
+        ]
+      },
+      "required": {
+        "allof": {
+          "quality": [
+            "The Totem's Way"
+          ]
+        }
+      },
+      "source": "WA",
+      "page": "15"
+    },
+    {
+      "name": "Natural Survivors (Street Skills)",
+      "points": ".5",
+      "levels": "yes",
+      "limit": "1",
+      "bonus": {
+        "skillcategory": {
+          "name": "Street",
+          "bonus": "Rating"
+        },
+        "specificskill": [
+          {
+            "name": "Shadowing",
+            "bonus": "Rating"
+          },
+          {
+            "name": "Survival",
+            "bonus": "Rating"
+          }
+        ]
+      },
+      "required": {
+        "allof": {
+          "quality": [
+            "The Totem's Way"
+          ]
+        }
+      },
+      "source": "WA",
+      "page": "15"
+    },
+    {
+      "name": "Nerve Strike",
+      "points": "1",
+      "levels": "no",
+      "limit": "1",
+      "source": "SM",
+      "page": "178"
+    },
+    {
+      "name": "Nimble Fingers",
+      "points": ".25",
+      "levels": "no",
+      "limit": "1",
+      "bonus": {
+        "specificskill": {
+          "name": "Palming",
+          "bonus": "1"
+        }
+      },
+      "source": "SM",
+      "page": "179"
+    },
+    {
+      "name": "Pain Relief",
+      "points": "1",
+      "levels": "no",
+      "limit": "1",
+      "source": "SM",
+      "page": "179"
+    },
+    {
+      "name": "Pain Resistance",
+      "points": ".5",
+      "levels": "yes",
+      "limit": "1",
+      "bonus": {
+        "conditionmonitor": {
+          "thresholdoffset": "Rating"
+        }
+      },
+      "source": "SR4",
+      "page": "197"
+    },
+    {
+      "name": "Penetrating Strike",
+      "points": ".25",
+      "levels": "3",
+      "limit": "1",
+      "bonus": {
+        "unarmedap": "-Rating"
+      },
+      "source": "SM",
+      "page": "179"
+    },
+    {
+      "name": "Piercing Senses",
+      "points": ".25",
+      "levels": "yes",
+      "limit": "1",
+      "source": "SM",
+      "page": "179"
+    },
+    {
+      "name": "Power Swimming",
+      "points": "1",
+      "levels": "no",
+      "limit": "1",
+      "bonus": {
+        "swimpercent": "100"
+      },
+      "source": "DG",
+      "page": "18"
+    },
+    {
+      "name": "Power Throw",
+      "points": ".25",
+      "levels": "3",
+      "limit": "1",
+      "bonus": {
+        "throwrange": "Rating * 2",
+        "throwstr": "Rating * 2"
+      },
+      "source": "SM",
+      "page": "179"
+    },
+    {
+      "name": "Prodigious Physicality",
+      "points": ".5",
+      "levels": "3",
+      "limit": "1",
+      "bonus": {
+        "skillgroup": {
+          "name": "Athletics",
+          "bonus": "Rating"
+        }
+      },
+      "required": {
+        "oneof": {
+          "quality": [
+            "The Athlete's Way"
+          ]
+        }
+      },
+      "source": "WA",
+      "page": "15"
+    },
+    {
+      "name": "Quick Draw",
+      "points": ".5",
+      "levels": "no",
+      "limit": "1",
+      "source": "SM",
+      "page": "179"
+    },
+    {
+      "name": "Rapid Healing",
+      "points": ".25",
+      "levels": "yes",
+      "limit": "1",
+      "source": "SR4",
+      "page": "197"
+    },
+    {
+      "name": "Rooting",
+      "points": ".25",
+      "levels": "yes",
+      "limit": "1",
+      "source": "SM",
+      "page": "179"
+    },
+    {
+      "name": "Rush",
+      "points": "0.5",
+      "levels": "no",
+      "limit": "1",
+      "source": "WAR",
+      "page": "179"
+    },
+    {
+      "name": "Smashing Blow",
+      "points": "1",
+      "levels": "no",
+      "limit": "1",
+      "source": "SM",
+      "page": "179"
+    },
+    {
+      "name": "Sorcerous Parry",
+      "points": ".5",
+      "levels": "yes",
+      "limit": "1",
+      "bonus": {
+        "specificskill": {
+          "name": "Counterspelling",
+          "bonus": "Rating"
+        }
+      },
+      "required": {
+        "oneof": {
+          "quality": [
+            "The Magician's Way"
+          ]
+        }
+      },
+      "source": "WA",
+      "page": "15"
+    },
+    {
+      "name": "Spell Resistance",
+      "points": ".5",
+      "levels": "yes",
+      "limit": "1",
+      "source": "SR4",
+      "page": "197"
+    },
+    {
+      "name": "Supernatural Toughness (Physical)",
+      "points": ".5",
+      "levels": "yes",
+      "limit": "1",
+      "bonus": {
+        "conditionmonitor": {
+          "physical": "Rating"
+        }
+      },
+      "source": "DG",
+      "page": "18"
+    },
+    {
+      "name": "Supernatural Toughness (Stun)",
+      "points": ".5",
+      "levels": "yes",
+      "limit": "1",
+      "bonus": {
+        "conditionmonitor": {
+          "stun": "Rating"
+        }
+      },
+      "source": "DG",
+      "page": "18"
+    },
+    {
+      "name": "Sustenance",
+      "points": ".25",
+      "levels": "no",
+      "limit": "1",
+      "source": "SM",
+      "page": "179"
+    },
+    {
+      "name": "Swift and Terrible",
+      "points": ".5",
+      "levels": "yes",
+      "limit": "1",
+      "required": {
+        "oneof": {
+          "quality": [
+            "The Warrior's Way"
+          ]
+        }
+      },
+      "source": "WA",
+      "page": "15"
+    },
+    {
+      "name": "Temperature Tolerance",
+      "points": ".25",
+      "levels": "yes",
+      "limit": "1",
+      "source": "SM",
+      "page": "179"
+    },
+    {
+      "name": "Three-Dimensional Memory",
+      "points": ".5",
+      "levels": "no",
+      "limit": "1",
+      "source": "SM",
+      "page": "180"
+    },
+    {
+      "name": "Traceless Walk",
+      "points": "1",
+      "levels": "no",
+      "limit": "1",
+      "source": "SM",
+      "page": "180"
+    },
+    {
+      "name": "Unseen Hands",
+      "points": ".5",
+      "levels": "3",
+      "limit": "1",
+      "bonus": {
+        "skillgroup": {
+          "name": "Stealth",
+          "bonus": "Rating"
+        }
+      },
+      "required": {
+        "oneof": {
+          "quality": [
+            "The Invisible Way"
+          ]
+        }
+      },
+      "source": "WA",
+      "page": "15"
+    },
+    {
+      "name": "Voice Control",
+      "points": ".5",
+      "levels": "no",
+      "limit": "1",
+      "source": "SR4",
+      "page": "197"
+    },
+    {
+      "name": "Wall Running",
+      "points": "1",
+      "levels": "no",
+      "limit": "1",
+      "source": "SM",
+      "page": "180"
+    },
+    {
+      "name": "Maintain Warmth",
+      "points": ".25",
+      "levels": "no",
+      "limit": "1",
+      "source": "HP",
+      "page": "163"
+    }
+  ]
+}

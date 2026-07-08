@@ -1,0 +1,2475 @@
+{
+  "version": -916,
+  "categories": [
+    "Allowed Optional Powers",
+    "Echoes",
+    "Emergent",
+    "Free Spirit",
+    "Mundane",
+    "Paranormal",
+    "Shapeshifter",
+    "Toxic Critter Powers",
+    "Weakness"
+  ],
+  "powers": [
+    {
+      "name": "Sense Link",
+      "category": [
+        "Mundane"
+      ],
+      "type": "M",
+      "action": "Simple",
+      "range": [
+        "MAG x 10"
+      ],
+      "duration": "Always",
+      "source": "SM",
+      "page": "54"
+    },
+    {
+      "name": "Accident",
+      "category": [
+        "Paranormal"
+      ],
+      "type": "P",
+      "action": "Complex",
+      "range": [
+        "LOS"
+      ],
+      "duration": "Instant",
+      "source": "RW",
+      "page": "208"
+    },
+    {
+      "name": "Animal Control",
+      "category": [
+        "Paranormal"
+      ],
+      "toxic": "yes",
+      "type": "M",
+      "action": "Complex",
+      "range": [
+        "LOS"
+      ],
+      "duration": "Sustained",
+      "source": "RW",
+      "page": "208"
+    },
+    {
+      "name": "Armor (Ballistic)",
+      "category": [
+        "Mundane"
+      ],
+      "rating": "yes",
+      "type": "P",
+      "action": "Auto",
+      "range": [
+        "Self"
+      ],
+      "duration": "Always",
+      "bonus": {
+        "armor": [
+          {
+            "b": "Rating"
+          }
+        ]
+      },
+      "source": "RW",
+      "page": "204"
+    },
+    {
+      "name": "Armor (Impact)",
+      "category": [
+        "Mundane"
+      ],
+      "rating": "yes",
+      "type": "P",
+      "action": "Auto",
+      "range": [
+        "Self"
+      ],
+      "duration": "Always",
+      "bonus": {
+        "armor": [
+          {
+            "i": "Rating"
+          }
+        ]
+      },
+      "source": "RW",
+      "page": "204"
+    },
+    {
+      "name": "Astral Form",
+      "category": [
+        "Paranormal"
+      ],
+      "type": "M",
+      "action": "Auto",
+      "range": [
+        "Self"
+      ],
+      "duration": "Always",
+      "source": "RW",
+      "page": "208"
+    },
+    {
+      "name": "Binding",
+      "category": [
+        "Mundane"
+      ],
+      "type": "P",
+      "action": "Complex",
+      "range": [
+        "LOS"
+      ],
+      "duration": "Instant",
+      "source": "SR4",
+      "page": "293"
+    },
+    {
+      "name": "Compulsion",
+      "category": [
+        "Paranormal"
+      ],
+      "type": "P",
+      "action": "Complex",
+      "range": [
+        "LOS"
+      ],
+      "duration": "Sustained",
+      "source": "RW",
+      "page": "209"
+    },
+    {
+      "name": "Concealment",
+      "category": [
+        "Paranormal"
+      ],
+      "type": "P",
+      "action": "Simple",
+      "range": [
+        "LOS"
+      ],
+      "duration": "Sustained",
+      "source": "RW",
+      "page": "209"
+    },
+    {
+      "name": "Confusion",
+      "category": [
+        "Paranormal"
+      ],
+      "toxic": "yes",
+      "type": "P",
+      "action": "Complex",
+      "range": [
+        "LOS"
+      ],
+      "duration": "Sustained",
+      "source": "RW",
+      "page": "209"
+    },
+    {
+      "name": "Corrosive Spit",
+      "category": [
+        "Paranormal"
+      ],
+      "toxic": "yes",
+      "type": "P",
+      "action": "Complex",
+      "range": [
+        "LOS"
+      ],
+      "duration": "Special",
+      "source": "RW",
+      "page": "209"
+    },
+    {
+      "name": "Dual Natured",
+      "category": [
+        "Paranormal"
+      ],
+      "type": "P",
+      "action": "Auto",
+      "range": [
+        "Self"
+      ],
+      "duration": "Always",
+      "source": "RW",
+      "page": "210"
+    },
+    {
+      "name": "Elemental Attack",
+      "category": [
+        "Paranormal"
+      ],
+      "toxic": "yes",
+      "type": "P",
+      "action": "Complex",
+      "range": [
+        "LOS"
+      ],
+      "duration": "Instant",
+      "source": "RW",
+      "page": "210"
+    },
+    {
+      "name": "Energy Aura",
+      "category": [
+        "Paranormal"
+      ],
+      "toxic": "yes",
+      "type": "P",
+      "action": "Auto",
+      "range": [
+        "Self"
+      ],
+      "duration": "Always",
+      "source": "RW",
+      "page": "210"
+    },
+    {
+      "name": "Engulf",
+      "category": [
+        "Mundane"
+      ],
+      "toxic": "yes",
+      "type": "P",
+      "action": "Complex",
+      "range": [
+        "Touch"
+      ],
+      "duration": "Sustained",
+      "source": "SR4",
+      "page": "294"
+    },
+    {
+      "name": "Enhanced Senses",
+      "category": [
+        "Mundane"
+      ],
+      "toxic": "yes",
+      "type": "P",
+      "action": "Auto",
+      "range": [
+        "Self"
+      ],
+      "duration": "Always",
+      "source": "RW",
+      "page": "204"
+    },
+    {
+      "name": "Essence Drain",
+      "category": [
+        "Paranormal"
+      ],
+      "type": "P",
+      "action": "Complex",
+      "range": [
+        "Touch"
+      ],
+      "duration": "Permanent",
+      "source": "RW",
+      "page": "211"
+    },
+    {
+      "name": "Fear",
+      "category": [
+        "Paranormal"
+      ],
+      "toxic": "yes",
+      "type": "M",
+      "action": "Complex",
+      "range": [
+        "LOS"
+      ],
+      "duration": "Special",
+      "source": "RW",
+      "page": "212"
+    },
+    {
+      "name": "Guard",
+      "category": [
+        "Paranormal"
+      ],
+      "type": "P",
+      "action": "Complex",
+      "range": [
+        "LOS"
+      ],
+      "duration": "Sustained",
+      "source": "RW",
+      "page": "212"
+    },
+    {
+      "name": "Hardened Armor",
+      "category": [
+        "Paranormal"
+      ],
+      "rating": "yes",
+      "type": "P",
+      "action": "Auto",
+      "range": [
+        "Self"
+      ],
+      "duration": "Always",
+      "source": "RW",
+      "page": "212"
+    },
+    {
+      "name": "Immunity",
+      "category": [
+        "Paranormal"
+      ],
+      "toxic": "yes",
+      "type": "P",
+      "action": "Auto",
+      "range": [
+        "Self"
+      ],
+      "duration": "Always",
+      "source": "RW",
+      "page": "212"
+    },
+    {
+      "name": "Infection",
+      "category": [
+        "Paranormal"
+      ],
+      "type": "P",
+      "action": "Auto",
+      "range": [
+        "Touch"
+      ],
+      "duration": "Permanent",
+      "source": "RW",
+      "page": "212"
+    },
+    {
+      "name": "Influence",
+      "category": [
+        "Paranormal"
+      ],
+      "type": "M",
+      "action": "Complex",
+      "range": [
+        "LOS"
+      ],
+      "duration": "Instant",
+      "source": "RW",
+      "page": "213"
+    },
+    {
+      "name": "Innate Spell",
+      "category": [
+        "Paranormal"
+      ],
+      "type": "As Spell",
+      "action": "Complex",
+      "range": [
+        "Per Spell"
+      ],
+      "duration": "Per Spell",
+      "source": "RW",
+      "page": "213"
+    },
+    {
+      "name": "Materialization",
+      "category": [
+        "Paranormal"
+      ],
+      "type": "P",
+      "action": "Complex",
+      "range": [
+        "Self"
+      ],
+      "duration": "Sustained",
+      "source": "RW",
+      "page": "213"
+    },
+    {
+      "name": "Mimicry",
+      "category": [
+        "Paranormal"
+      ],
+      "type": "P",
+      "action": "Simple",
+      "range": [
+        "LOS"
+      ],
+      "duration": "Sustained",
+      "source": "RW",
+      "page": "213"
+    },
+    {
+      "name": "Mist Form",
+      "category": [
+        "Paranormal"
+      ],
+      "type": "P",
+      "action": "Complex",
+      "range": [
+        "Self"
+      ],
+      "duration": "Sustained",
+      "source": "RW",
+      "page": "213"
+    },
+    {
+      "name": "Movement",
+      "category": [
+        "Paranormal"
+      ],
+      "type": "P",
+      "action": "Complex",
+      "range": [
+        "LOS"
+      ],
+      "duration": "Sustained",
+      "source": "RW",
+      "page": "213"
+    },
+    {
+      "name": "Mystic Armor",
+      "category": [
+        "Paranormal"
+      ],
+      "rating": "yes",
+      "type": "M",
+      "action": "Auto",
+      "range": [
+        "Self"
+      ],
+      "duration": "Always",
+      "source": "RW",
+      "page": "213"
+    },
+    {
+      "name": "Natural Weapon",
+      "category": [
+        "Mundane"
+      ],
+      "type": "P",
+      "action": "Complex",
+      "range": [
+        "Touch"
+      ],
+      "duration": "Instant",
+      "source": "RW",
+      "page": "206"
+    },
+    {
+      "name": "Noxious Breath",
+      "category": [
+        "Paranormal"
+      ],
+      "toxic": "yes",
+      "type": "P",
+      "action": "Complex",
+      "range": [
+        "Special"
+      ],
+      "duration": "Instant",
+      "source": "RW",
+      "page": "213"
+    },
+    {
+      "name": "Paralyzing Howl",
+      "category": [
+        "Paranormal"
+      ],
+      "type": "P",
+      "action": "Complex",
+      "range": [
+        "Special"
+      ],
+      "duration": "Special",
+      "source": "RW",
+      "page": "213"
+    },
+    {
+      "name": "Psychokinesis",
+      "category": [
+        "Paranormal"
+      ],
+      "type": "P",
+      "action": "Complex",
+      "range": [
+        "LOS"
+      ],
+      "duration": "Sustained",
+      "source": "RW",
+      "page": "214"
+    },
+    {
+      "name": "Regeneration",
+      "category": [
+        "Paranormal"
+      ],
+      "type": "P",
+      "action": "Auto",
+      "range": [
+        "Self"
+      ],
+      "duration": "Always",
+      "source": "RW",
+      "page": "215"
+    },
+    {
+      "name": "Search",
+      "category": [
+        "Paranormal"
+      ],
+      "type": "P",
+      "action": "Complex",
+      "range": [
+        "Special"
+      ],
+      "duration": "Special",
+      "source": "RW",
+      "page": "215"
+    },
+    {
+      "name": "Sapience",
+      "category": [
+        "Mundane"
+      ],
+      "type": "P",
+      "action": "Auto",
+      "range": [
+        "Self"
+      ],
+      "duration": "Always",
+      "source": "RW",
+      "page": "206"
+    },
+    {
+      "name": "Venom",
+      "category": [
+        "Mundane"
+      ],
+      "toxic": "yes",
+      "type": "P",
+      "action": "Auto",
+      "range": [
+        "Touch"
+      ],
+      "duration": "Instant",
+      "source": "RW",
+      "page": "208"
+    },
+    {
+      "name": "Weather Control",
+      "category": [
+        "Paranormal"
+      ],
+      "type": "P",
+      "action": "Complex",
+      "range": [
+        "LOS"
+      ],
+      "duration": "Sustained",
+      "source": "RW",
+      "page": "215"
+    },
+    {
+      "name": "Astral Gateway",
+      "category": [
+        "Paranormal"
+      ],
+      "type": "M",
+      "action": "Complex",
+      "range": [
+        "LOS (A)"
+      ],
+      "duration": "Sustained",
+      "source": "SM",
+      "page": "98"
+    },
+    {
+      "name": "Aura Masking",
+      "category": [
+        "Paranormal"
+      ],
+      "type": "M",
+      "action": "Free",
+      "range": [
+        "Self"
+      ],
+      "duration": "Sustained",
+      "source": "RW",
+      "page": "208"
+    },
+    {
+      "name": "Banishing Resistance",
+      "category": [
+        "Paranormal"
+      ],
+      "type": "M",
+      "action": "Auto",
+      "range": [
+        "Self"
+      ],
+      "duration": "Special",
+      "source": "RW",
+      "page": "208"
+    },
+    {
+      "name": "Desire Reflection",
+      "category": [
+        "Paranormal"
+      ],
+      "type": "M",
+      "action": "Complex",
+      "range": [
+        "LOS"
+      ],
+      "duration": "Sustained",
+      "source": "RW",
+      "page": "209"
+    },
+    {
+      "name": "Divining",
+      "category": [
+        "Paranormal"
+      ],
+      "type": "M",
+      "action": "Special",
+      "range": [
+        "Special"
+      ],
+      "duration": "Special",
+      "source": "RW",
+      "page": "210"
+    },
+    {
+      "name": "Endowment",
+      "category": [
+        "Paranormal"
+      ],
+      "type": "M",
+      "action": "Complex",
+      "range": [
+        "Touch"
+      ],
+      "duration": "Sustained",
+      "source": "SM",
+      "page": "99"
+    },
+    {
+      "name": "Energy Drain",
+      "category": [
+        "Paranormal"
+      ],
+      "type": "M",
+      "action": "Complex",
+      "range": [
+        "Touch or LOS"
+      ],
+      "duration": "Permanent",
+      "source": "RW",
+      "page": "210"
+    },
+    {
+      "name": "Engulf",
+      "category": [
+        "Paranormal"
+      ],
+      "type": "P",
+      "action": "Complex",
+      "range": [
+        "Touch"
+      ],
+      "duration": "Sustained",
+      "source": "RW",
+      "page": "210"
+    },
+    {
+      "name": "Inhabitation",
+      "category": [
+        "Paranormal"
+      ],
+      "type": "P",
+      "action": "Auto",
+      "range": [
+        "Self"
+      ],
+      "duration": "Special",
+      "source": "SM",
+      "page": "100"
+    },
+    {
+      "name": "Magical Guard",
+      "category": [
+        "Paranormal"
+      ],
+      "type": "M",
+      "action": "Free",
+      "range": [
+        "LOS"
+      ],
+      "duration": "Instant",
+      "source": "RW",
+      "page": "213"
+    },
+    {
+      "name": "Mind Link",
+      "category": [
+        "Paranormal"
+      ],
+      "type": "M",
+      "action": "Simple",
+      "range": [
+        "LOS"
+      ],
+      "duration": "Sustained",
+      "source": "RW",
+      "page": "213"
+    },
+    {
+      "name": "Possession",
+      "category": [
+        "Paranormal"
+      ],
+      "type": "P",
+      "action": "Complex",
+      "range": [
+        "Self"
+      ],
+      "duration": "Sustained",
+      "source": "RW",
+      "page": "214"
+    },
+    {
+      "name": "Quake",
+      "category": [
+        "Paranormal"
+      ],
+      "type": "P",
+      "action": "Complex",
+      "range": [
+        "Special"
+      ],
+      "duration": "Instant",
+      "source": "RW",
+      "page": "214"
+    },
+    {
+      "name": "Realistic Form",
+      "category": [
+        "Paranormal"
+      ],
+      "type": "P",
+      "action": "Auto",
+      "range": [
+        "Self"
+      ],
+      "duration": "Special",
+      "source": "RW",
+      "page": "215"
+    },
+    {
+      "name": "Shadow Cloak",
+      "category": [
+        "Paranormal"
+      ],
+      "type": "P",
+      "action": "Free",
+      "range": [
+        "Self"
+      ],
+      "duration": "Sustained",
+      "source": "RW",
+      "page": "215"
+    },
+    {
+      "name": "Silence",
+      "category": [
+        "Paranormal"
+      ],
+      "type": "P",
+      "action": "Complex",
+      "range": [
+        "Special"
+      ],
+      "duration": "Sustained",
+      "source": "RW",
+      "page": "215"
+    },
+    {
+      "name": "Storm",
+      "category": [
+        "Paranormal"
+      ],
+      "type": "P",
+      "action": "Complex",
+      "range": [
+        "Special"
+      ],
+      "duration": "Special",
+      "source": "RW",
+      "page": "215"
+    },
+    {
+      "name": "Astral Projection",
+      "category": [
+        "Free Spirit"
+      ],
+      "type": "M",
+      "action": "Complex",
+      "range": [
+        "Self"
+      ],
+      "duration": "Special",
+      "source": "SM",
+      "page": "109"
+    },
+    {
+      "name": "Mutable Form",
+      "category": [
+        "Paranormal"
+      ],
+      "type": "P",
+      "action": "Auto",
+      "range": [
+        "Self"
+      ],
+      "duration": "Special",
+      "source": "RW",
+      "page": "213"
+    },
+    {
+      "name": "Personal Domain",
+      "category": [
+        "Paranormal"
+      ],
+      "type": "M",
+      "action": "Auto",
+      "range": [
+        "LOS"
+      ],
+      "duration": "Sustained",
+      "source": "RW",
+      "page": "214"
+    },
+    {
+      "name": "Spirit Pact",
+      "category": [
+        "Free Spirit"
+      ],
+      "type": "M",
+      "action": "Special",
+      "range": [
+        "Special"
+      ],
+      "duration": "Special",
+      "source": "SM",
+      "page": "110"
+    },
+    {
+      "name": "Hidden Life",
+      "category": [
+        "Paranormal"
+      ],
+      "type": "P",
+      "action": "Complex",
+      "range": [
+        "Touch"
+      ],
+      "duration": "Permanent",
+      "source": "RW",
+      "page": "212"
+    },
+    {
+      "name": "Vessel Trading",
+      "category": [
+        "Free Spirit"
+      ],
+      "type": "P",
+      "action": "Complex",
+      "range": [
+        "Touch"
+      ],
+      "duration": "Instant",
+      "source": "SM",
+      "page": "110"
+    },
+    {
+      "name": "Wealth",
+      "category": [
+        "Paranormal"
+      ],
+      "type": "P",
+      "action": "Complex",
+      "range": [
+        "LOS"
+      ],
+      "duration": "Special",
+      "source": "RW",
+      "page": "216"
+    },
+    {
+      "name": "Anaphylaxis",
+      "category": [
+        "Paranormal"
+      ],
+      "toxic": "yes",
+      "type": "P",
+      "action": "Complex",
+      "range": [
+        "Touch"
+      ],
+      "duration": "Instant",
+      "source": "RW",
+      "page": "208"
+    },
+    {
+      "name": "Mutagen",
+      "category": [
+        "Paranormal"
+      ],
+      "toxic": "yes",
+      "type": "P",
+      "action": "Complex",
+      "range": [
+        "Self"
+      ],
+      "duration": "Sustained",
+      "source": "RW",
+      "page": "213"
+    },
+    {
+      "name": "Devouring",
+      "category": [
+        "Paranormal"
+      ],
+      "toxic": "yes",
+      "type": "P",
+      "action": "Complex",
+      "range": [
+        "Touch"
+      ],
+      "duration": "Sustained",
+      "source": "RW",
+      "page": "209"
+    },
+    {
+      "name": "Hive Mind",
+      "category": [
+        "Paranormal"
+      ],
+      "type": "M",
+      "action": "Auto",
+      "range": [
+        "Special"
+      ],
+      "duration": "Always",
+      "source": "SM",
+      "page": "154"
+    },
+    {
+      "name": "Pestilence",
+      "category": [
+        "Mundane"
+      ],
+      "toxic": "yes",
+      "type": "P",
+      "action": "Auto",
+      "range": [
+        "Touch"
+      ],
+      "duration": "Instant",
+      "source": "RW",
+      "page": "206"
+    },
+    {
+      "name": "Reinforcement",
+      "category": [
+        "Paranormal"
+      ],
+      "type": "P",
+      "action": "Complex",
+      "range": [
+        "Touch"
+      ],
+      "duration": "Special",
+      "source": "SM",
+      "page": "154"
+    },
+    {
+      "name": "Sonic Projection",
+      "category": [
+        "Paranroaml"
+      ],
+      "type": "P",
+      "action": "Complex",
+      "range": [
+        "Special"
+      ],
+      "duration": "Sustained",
+      "source": "RW",
+      "page": "215"
+    },
+    {
+      "name": "Adaptive Camouflage",
+      "category": [
+        "Mundane"
+      ],
+      "type": "P",
+      "action": "Auto",
+      "range": [
+        "Self"
+      ],
+      "duration": "Always",
+      "source": "RW",
+      "page": "204"
+    },
+    {
+      "name": "Gestalt Consciousness",
+      "category": [
+        "Mundane"
+      ],
+      "type": "P",
+      "action": "Auto",
+      "range": [
+        "Self"
+      ],
+      "duration": "Always",
+      "source": "RW",
+      "page": "205"
+    },
+    {
+      "name": "Gills",
+      "category": [
+        "Mundane"
+      ],
+      "type": "P",
+      "action": "Auto",
+      "range": [
+        "Self"
+      ],
+      "duration": "Always",
+      "source": "RW",
+      "page": "205"
+    },
+    {
+      "name": "Substance Extrusion",
+      "category": [
+        "Mundane"
+      ],
+      "type": "P",
+      "action": "Auto",
+      "range": [
+        "Self"
+      ],
+      "duration": "Always",
+      "source": "RW",
+      "page": "207"
+    },
+    {
+      "name": "Wall Walking",
+      "category": [
+        "Mundane"
+      ],
+      "type": "P",
+      "action": "Auto",
+      "range": [
+        "Self"
+      ],
+      "duration": "Always",
+      "source": "RW",
+      "page": "208"
+    },
+    {
+      "name": "Adaptive Coloration",
+      "category": [
+        "Paranormal"
+      ],
+      "type": "P",
+      "action": "Auto",
+      "range": [
+        "Self"
+      ],
+      "duration": "Always",
+      "source": "RW",
+      "page": "208"
+    },
+    {
+      "name": "Binding",
+      "category": [
+        "Paranormal"
+      ],
+      "toxic": "yes",
+      "type": "P",
+      "action": "Complex",
+      "range": [
+        "LOS"
+      ],
+      "duration": "Instant",
+      "source": "RW",
+      "page": "209"
+    },
+    {
+      "name": "Control Focus",
+      "category": [
+        "Paranormal"
+      ],
+      "type": "M",
+      "action": "Auto",
+      "range": [
+        "Special"
+      ],
+      "duration": "Special",
+      "source": "RW",
+      "page": "209"
+    },
+    {
+      "name": "Corrosive Secretions",
+      "category": [
+        "Paranormal"
+      ],
+      "toxic": "yes",
+      "type": "P",
+      "action": "Auto",
+      "range": [
+        "Self"
+      ],
+      "duration": "Always",
+      "source": "RW",
+      "page": "209"
+    },
+    {
+      "name": "Deathly Aura",
+      "category": [
+        "Paranormal"
+      ],
+      "type": "P",
+      "action": "Simple",
+      "range": [
+        "Special"
+      ],
+      "duration": "Sustained",
+      "source": "RW",
+      "page": "209"
+    },
+    {
+      "name": "Dragonspeech",
+      "category": [
+        "Paranormal"
+      ],
+      "type": "M",
+      "action": "Auto",
+      "range": [
+        "LOS"
+      ],
+      "duration": "Instant",
+      "source": "RW",
+      "page": "210"
+    },
+    {
+      "name": "Empathy",
+      "category": [
+        "Paranormal"
+      ],
+      "type": "M",
+      "action": "Complex",
+      "range": [
+        "LOS"
+      ],
+      "duration": "Sustained",
+      "source": "RW",
+      "page": "210"
+    },
+    {
+      "name": "Fey Glamour",
+      "category": [
+        "Paranormal"
+      ],
+      "type": "M",
+      "action": "Complex",
+      "range": [
+        "Special"
+      ],
+      "duration": "Sustained",
+      "source": "RW",
+      "page": "212"
+    },
+    {
+      "name": "Magic Sense",
+      "category": [
+        "Paranormal"
+      ],
+      "toxic": "yes",
+      "type": "M",
+      "action": "Auto",
+      "range": [
+        "LOS"
+      ],
+      "duration": "Sustained",
+      "source": "RW",
+      "page": "213"
+    },
+    {
+      "name": "Metahuman Form",
+      "category": [
+        "Paranormal"
+      ],
+      "type": "P",
+      "action": "Complex",
+      "range": [
+        "Self"
+      ],
+      "duration": "Sustained",
+      "source": "RW",
+      "page": "213"
+    },
+    {
+      "name": "Paralyzing Touch",
+      "category": [
+        "Paranormal"
+      ],
+      "type": "P",
+      "action": "Complex",
+      "range": [
+        "Touch"
+      ],
+      "duration": "Special",
+      "source": "RW",
+      "page": "214"
+    },
+    {
+      "name": "Petrification",
+      "category": [
+        "Paranormal"
+      ],
+      "type": "P",
+      "action": "Complex",
+      "range": [
+        "LOS"
+      ],
+      "duration": "Sustained",
+      "source": "RW",
+      "page": "214"
+    },
+    {
+      "name": "Phasing",
+      "category": [
+        "Paranormal"
+      ],
+      "type": "P",
+      "action": "Complex",
+      "range": [
+        "Self"
+      ],
+      "duration": "Sustained",
+      "source": "RW",
+      "page": "214"
+    },
+    {
+      "name": "Spirit Pact",
+      "category": [
+        "Paranormal"
+      ],
+      "type": "M",
+      "action": "Special",
+      "range": [
+        "Special"
+      ],
+      "duration": "Special",
+      "source": "RW",
+      "page": "215"
+    },
+    {
+      "name": "Taint",
+      "category": [
+        "Paranormal"
+      ],
+      "toxic": "yes",
+      "type": "M",
+      "action": "Complex",
+      "range": [
+        "Special"
+      ],
+      "duration": "Special",
+      "source": "RW",
+      "page": "215"
+    },
+    {
+      "name": "Vanishing",
+      "category": [
+        "Paranormal"
+      ],
+      "type": "M",
+      "action": "Free",
+      "range": [
+        "Self"
+      ],
+      "duration": "Special",
+      "source": "RW",
+      "page": "215"
+    },
+    {
+      "name": "Anthropomorphism",
+      "category": [
+        "Emergent"
+      ],
+      "source": "RW",
+      "page": "216"
+    },
+    {
+      "name": "AR-Parallelism",
+      "category": [
+        "Emergent"
+      ],
+      "source": "RW",
+      "page": "216"
+    },
+    {
+      "name": "Blend",
+      "category": [
+        "Emergent"
+      ],
+      "source": "RW",
+      "page": "216"
+    },
+    {
+      "name": "Cozenage",
+      "category": [
+        "Emergent"
+      ],
+      "source": "RW",
+      "page": "216"
+    },
+    {
+      "name": "Diagnostics",
+      "category": [
+        "Emergent"
+      ],
+      "source": "RW",
+      "page": "216"
+    },
+    {
+      "name": "E-Hive",
+      "category": [
+        "Emergent"
+      ],
+      "source": "RW",
+      "page": "216"
+    },
+    {
+      "name": "Gremlins",
+      "category": [
+        "Emergent"
+      ],
+      "source": "RW",
+      "page": "217"
+    },
+    {
+      "name": "Hardening",
+      "category": [
+        "Emergent"
+      ],
+      "source": "RW",
+      "page": "217"
+    },
+    {
+      "name": "Holographic Concealment",
+      "category": [
+        "Emergent"
+      ],
+      "source": "RW",
+      "page": "217"
+    },
+    {
+      "name": "Resonance Bond",
+      "category": [
+        "Emergent"
+      ],
+      "source": "RW",
+      "page": "217"
+    },
+    {
+      "name": "Resonant Conditioning",
+      "category": [
+        "Emergent"
+      ],
+      "source": "RW",
+      "page": "217"
+    },
+    {
+      "name": "Spraying",
+      "category": [
+        "Emergent"
+      ],
+      "source": "RW",
+      "page": "218"
+    },
+    {
+      "name": "Suppression",
+      "category": [
+        "Emergent"
+      ],
+      "source": "RW",
+      "page": "218"
+    },
+    {
+      "name": "Technovantage [Echo]",
+      "category": [
+        "Emergent"
+      ],
+      "source": "RW",
+      "page": "218"
+    },
+    {
+      "name": "Traceroute",
+      "category": [
+        "Emergent"
+      ],
+      "source": "RW",
+      "page": "218"
+    },
+    {
+      "name": "Tunnel",
+      "category": [
+        "Emergent"
+      ],
+      "source": "RW",
+      "page": "218"
+    },
+    {
+      "name": "Venomous Code",
+      "category": [
+        "Emergent"
+      ],
+      "source": "RW",
+      "page": "218"
+    },
+    {
+      "name": "Virtual Mimicry",
+      "category": [
+        "Emergent"
+      ],
+      "source": "RW",
+      "page": "218"
+    },
+    {
+      "name": "Assault",
+      "category": [
+        "Emergent"
+      ],
+      "source": "UN",
+      "page": "156"
+    },
+    {
+      "name": "Castling",
+      "category": [
+        "Emergent"
+      ],
+      "source": "UN",
+      "page": "156"
+    },
+    {
+      "name": "Info Sortilege",
+      "category": [
+        "Emergent"
+      ],
+      "source": "UN",
+      "page": "156"
+    },
+    {
+      "name": "Probability Distribution",
+      "category": [
+        "Emergent"
+      ],
+      "source": "UN",
+      "page": "156"
+    },
+    {
+      "name": "Proficiency",
+      "category": [
+        "Emergent"
+      ],
+      "source": "UN",
+      "page": "156"
+    },
+    {
+      "name": "Transfer",
+      "category": [
+        "Emergent"
+      ],
+      "source": "UN",
+      "page": "157"
+    },
+    {
+      "name": "Credit",
+      "category": [
+        "Emergent"
+      ],
+      "source": "UN",
+      "page": "160"
+    },
+    {
+      "name": "Denial",
+      "category": [
+        "Emergent"
+      ],
+      "source": "UN",
+      "page": "160"
+    },
+    {
+      "name": "Doorstop",
+      "category": [
+        "Emergent"
+      ],
+      "source": "UN",
+      "page": "160"
+    },
+    {
+      "name": "Resonance Rift",
+      "category": [
+        "Emergent"
+      ],
+      "source": "UN",
+      "page": "160"
+    },
+    {
+      "name": "Datavore",
+      "category": [
+        "Emergent"
+      ],
+      "source": "UN",
+      "page": "181"
+    },
+    {
+      "name": "Distortion",
+      "category": [
+        "Emergent"
+      ],
+      "source": "UN",
+      "page": "181"
+    },
+    {
+      "name": "Peak",
+      "category": [
+        "Emergent"
+      ],
+      "source": "UN",
+      "page": "181"
+    },
+    {
+      "name": "Resonance Drain",
+      "category": [
+        "Emergent"
+      ],
+      "source": "UN",
+      "page": "181"
+    },
+    {
+      "name": "Siphon",
+      "category": [
+        "Emergent"
+      ],
+      "source": "UN",
+      "page": "181"
+    },
+    {
+      "name": "Sparky",
+      "category": [
+        "Emergent"
+      ],
+      "source": "UN",
+      "page": "181"
+    },
+    {
+      "name": "Surge",
+      "category": [
+        "Emergent"
+      ],
+      "source": "UN",
+      "page": "181"
+    },
+    {
+      "name": "Virulence",
+      "category": [
+        "Emergent"
+      ],
+      "source": "UN",
+      "page": "181"
+    },
+    {
+      "name": "Allergy",
+      "category": [
+        "Weakness"
+      ],
+      "source": "RW",
+      "page": "219"
+    },
+    {
+      "name": "Dietary Requirement",
+      "category": [
+        "Weakness"
+      ],
+      "source": "RW",
+      "page": "219"
+    },
+    {
+      "name": "Essence Loss",
+      "category": [
+        "Weakness"
+      ],
+      "source": "RW",
+      "page": "219"
+    },
+    {
+      "name": "Evanescence",
+      "category": [
+        "Weakness"
+      ],
+      "source": "RW",
+      "page": "219"
+    },
+    {
+      "name": "Fragile",
+      "category": [
+        "Weakness"
+      ],
+      "bonus": {
+        "conditionmonitor": {
+          "physical": "Rating * -2",
+          "stun": "Rating * -2"
+        }
+      },
+      "source": "RW",
+      "page": "219"
+    },
+    {
+      "name": "Reduced Senses",
+      "category": [
+        "Weakness"
+      ],
+      "source": "RW",
+      "page": "219"
+    },
+    {
+      "name": "Uneducated",
+      "category": [
+        "Weakness"
+      ],
+      "source": "RW",
+      "page": "219"
+    },
+    {
+      "name": "Vulnerability",
+      "category": [
+        "Weakness"
+      ],
+      "source": "RW",
+      "page": "219"
+    },
+    {
+      "name": "Twist Fate",
+      "category": [
+        "Dracoforms"
+      ],
+      "source": "SR4",
+      "page": "304"
+    },
+    {
+      "name": "Cookie",
+      "category": [
+        "Emergent"
+      ],
+      "action": "OT",
+      "range": [
+        "Node"
+      ],
+      "duration": "Predetermined by Sprite",
+      "source": "SR4",
+      "page": "242"
+    },
+    {
+      "name": "Electron Storm",
+      "category": [
+        "Emergent"
+      ],
+      "type": "S",
+      "action": "C",
+      "range": [
+        "Node"
+      ],
+      "duration": "Instant",
+      "source": "SR4",
+      "page": "242"
+    },
+    {
+      "name": "Hash",
+      "category": [
+        "Emergent"
+      ],
+      "action": "Complex",
+      "range": [
+        "Node"
+      ],
+      "duration": "Sustained",
+      "source": "SR4",
+      "page": "243"
+    },
+    {
+      "name": "Steganography",
+      "category": [
+        "Emergent"
+      ],
+      "action": "Complex",
+      "range": [
+        "Node"
+      ],
+      "duration": "Indefinate",
+      "source": "SR4",
+      "page": "243"
+    },
+    {
+      "name": "Stability",
+      "category": [
+        "Emergent"
+      ],
+      "action": "Complex",
+      "range": [
+        "Node"
+      ],
+      "duration": "Sustained",
+      "source": "SR4",
+      "page": "243"
+    },
+    {
+      "name": "Watermark",
+      "category": [
+        "Emergent"
+      ],
+      "action": "Complex",
+      "range": [
+        "Node"
+      ],
+      "duration": "Indefinate",
+      "source": "SR4",
+      "page": "243"
+    },
+    {
+      "name": "Shift (Human)",
+      "category": [
+        "Shapeshifter"
+      ],
+      "type": "M",
+      "action": "Complex",
+      "range": [
+        "Self"
+      ],
+      "duration": "Special",
+      "source": "RC",
+      "page": "85"
+    },
+    {
+      "name": "Shift (Elf)",
+      "category": [
+        "Shapeshifter"
+      ],
+      "type": "M",
+      "action": "Complex",
+      "range": [
+        "Self"
+      ],
+      "duration": "Special",
+      "source": "RC",
+      "page": "85"
+    },
+    {
+      "name": "Shift (Dwarf)",
+      "category": [
+        "Shapeshifter"
+      ],
+      "type": "M",
+      "action": "Complex",
+      "range": [
+        "Self"
+      ],
+      "duration": "Special",
+      "source": "RC",
+      "page": "85"
+    },
+    {
+      "name": "Shift (Ork)",
+      "category": [
+        "Shapeshifter"
+      ],
+      "type": "M",
+      "action": "Complex",
+      "range": [
+        "Self"
+      ],
+      "duration": "Special",
+      "source": "RC",
+      "page": "85"
+    },
+    {
+      "name": "Shift (Troll)",
+      "category": [
+        "Shapeshifter"
+      ],
+      "type": "M",
+      "action": "Complex",
+      "range": [
+        "Self"
+      ],
+      "duration": "Special",
+      "source": "RC",
+      "page": "85"
+    },
+    {
+      "name": "Shift (Drake)",
+      "category": [
+        "Shapeshifter"
+      ],
+      "type": "M",
+      "action": "Complex",
+      "range": [
+        "Self"
+      ],
+      "duration": "Special",
+      "source": "RC",
+      "page": "76"
+    },
+    {
+      "name": "Induced Dormancy",
+      "category": [
+        "Weakness"
+      ],
+      "source": "RC",
+      "page": "83"
+    },
+    {
+      "name": "Vanish",
+      "category": [
+        "Weakness"
+      ],
+      "source": "RC",
+      "page": "85"
+    },
+    {
+      "name": "Attribute Enhancement",
+      "category": [
+        "Mundane"
+      ],
+      "type": "P",
+      "action": "Special",
+      "range": [
+        "Special"
+      ],
+      "duration": "Special",
+      "source": "RW",
+      "page": "28"
+    },
+    {
+      "name": "Skill Enhancement",
+      "category": [
+        "Mundane"
+      ],
+      "type": "P",
+      "action": "Special",
+      "range": [
+        "Special"
+      ],
+      "duration": "Special",
+      "bonus": {
+        "selectskill": {
+          "val": "2"
+        }
+      },
+      "source": "RW",
+      "page": "28"
+    },
+    {
+      "name": "Thicker Hide",
+      "category": [
+        "Mundane"
+      ],
+      "type": "P",
+      "action": "Special",
+      "range": [
+        "Special"
+      ],
+      "duration": "Special",
+      "source": "RW",
+      "page": "28"
+    },
+    {
+      "name": "Pheromone Coding",
+      "category": [
+        "Mundane"
+      ],
+      "type": "P",
+      "action": "Special",
+      "range": [
+        "Special"
+      ],
+      "duration": "Special",
+      "source": "RW",
+      "page": "28"
+    },
+    {
+      "name": "Potent Venom",
+      "category": [
+        "Mundane"
+      ],
+      "type": "P",
+      "action": "Special",
+      "range": [
+        "Special"
+      ],
+      "duration": "Special",
+      "source": "RW",
+      "page": "28"
+    },
+    {
+      "name": "Chimeric Ability",
+      "category": [
+        "Mundane"
+      ],
+      "type": "P",
+      "action": "Special",
+      "range": [
+        "Special"
+      ],
+      "duration": "Special",
+      "source": "RW",
+      "page": "28"
+    },
+    {
+      "name": "Firewall Upgrade",
+      "category": [
+        "Echoes"
+      ],
+      "type": "P",
+      "action": "Special",
+      "range": [
+        "Special"
+      ],
+      "duration": "Special",
+      "bonus": {
+        "livingpersona": {
+          "firewall": "1"
+        }
+      },
+      "source": "SR4",
+      "page": "243"
+    },
+    {
+      "name": "NeuroFilter",
+      "category": [
+        "Echoes"
+      ],
+      "type": "P",
+      "action": "Special",
+      "range": [
+        "Special"
+      ],
+      "duration": "Special",
+      "bonus": {
+        "livingpersona": {
+          "biofeedback": "1"
+        }
+      },
+      "source": "SR4",
+      "page": "243"
+    },
+    {
+      "name": "Overclocking",
+      "category": [
+        "Echoes"
+      ],
+      "type": "P",
+      "action": "Special",
+      "range": [
+        "Special"
+      ],
+      "duration": "Special",
+      "bonus": {
+        "livingpersona": {
+          "response": "1"
+        },
+        "matrixinitiativepassadd": "1"
+      },
+      "source": "SR4",
+      "page": "244"
+    },
+    {
+      "name": "Resonance Link",
+      "category": [
+        "Echoes"
+      ],
+      "type": "P",
+      "action": "Special",
+      "range": [
+        "Special"
+      ],
+      "duration": "Special",
+      "source": "SR4",
+      "page": "244"
+    },
+    {
+      "name": "System Upgrade",
+      "category": [
+        "Echoes"
+      ],
+      "type": "P",
+      "action": "Special",
+      "range": [
+        "Special"
+      ],
+      "duration": "Special",
+      "bonus": {
+        "livingpersona": {
+          "system": "1"
+        }
+      },
+      "source": "SR4",
+      "page": "244"
+    },
+    {
+      "name": "Amplification",
+      "category": [
+        "Echoes"
+      ],
+      "type": "P",
+      "action": "Special",
+      "range": [
+        "Special"
+      ],
+      "duration": "Special",
+      "bonus": {
+        "livingpersona": {
+          "signal": "1"
+        }
+      },
+      "source": "UN",
+      "page": "145"
+    },
+    {
+      "name": "Biowire",
+      "category": [
+        "Echoes"
+      ],
+      "type": "P",
+      "action": "Special",
+      "range": [
+        "Special"
+      ],
+      "duration": "Special",
+      "bonus": {
+        "skillwire": "Rating"
+      },
+      "source": "UN",
+      "page": "145"
+    },
+    {
+      "name": "Blur",
+      "category": [
+        "Echoes"
+      ],
+      "type": "P",
+      "action": "Special",
+      "range": [
+        "Special"
+      ],
+      "duration": "Special",
+      "source": "UN",
+      "page": "145"
+    },
+    {
+      "name": "Coenesthesia",
+      "category": [
+        "Echoes"
+      ],
+      "type": "P",
+      "action": "Special",
+      "range": [
+        "Special"
+      ],
+      "duration": "Special",
+      "source": "UN",
+      "page": "145"
+    },
+    {
+      "name": "Defragmentation",
+      "category": [
+        "Echoes"
+      ],
+      "type": "P",
+      "action": "Special",
+      "range": [
+        "Special"
+      ],
+      "duration": "Special",
+      "source": "UN",
+      "page": "145"
+    },
+    {
+      "name": "E-sensing",
+      "category": [
+        "Echoes"
+      ],
+      "type": "P",
+      "action": "Special",
+      "range": [
+        "Special"
+      ],
+      "duration": "Special",
+      "source": "UN",
+      "page": "146"
+    },
+    {
+      "name": "Flexible Touch",
+      "category": [
+        "Echoes"
+      ],
+      "type": "P",
+      "action": "Special",
+      "range": [
+        "Special"
+      ],
+      "duration": "Special",
+      "source": "UN",
+      "page": "146"
+    },
+    {
+      "name": "Immersion",
+      "category": [
+        "Echoes"
+      ],
+      "type": "P",
+      "action": "Special",
+      "range": [
+        "Special"
+      ],
+      "duration": "Special",
+      "source": "UN",
+      "page": "146"
+    },
+    {
+      "name": "Living ECM",
+      "category": [
+        "Echoes"
+      ],
+      "type": "P",
+      "action": "Special",
+      "range": [
+        "Special"
+      ],
+      "duration": "Special",
+      "source": "UN",
+      "page": "146"
+    },
+    {
+      "name": "Macro",
+      "category": [
+        "Echoes"
+      ],
+      "type": "P",
+      "action": "Special",
+      "range": [
+        "Special"
+      ],
+      "duration": "Special",
+      "source": "UN",
+      "page": "146"
+    },
+    {
+      "name": "Multiprocessing",
+      "category": [
+        "Echoes"
+      ],
+      "type": "P",
+      "action": "Special",
+      "range": [
+        "Special"
+      ],
+      "duration": "Special",
+      "source": "UN",
+      "page": "146"
+    },
+    {
+      "name": "Sift",
+      "category": [
+        "Echoes"
+      ],
+      "type": "P",
+      "action": "Special",
+      "range": [
+        "Special"
+      ],
+      "duration": "Special",
+      "source": "UN",
+      "page": "147"
+    },
+    {
+      "name": "Skinlink",
+      "category": [
+        "Echoes"
+      ],
+      "type": "P",
+      "action": "Special",
+      "range": [
+        "Special"
+      ],
+      "duration": "Special",
+      "source": "UN",
+      "page": "147"
+    },
+    {
+      "name": "Sprite Link",
+      "category": [
+        "Echoes"
+      ],
+      "type": "P",
+      "action": "Special",
+      "range": [
+        "Special"
+      ],
+      "duration": "Special",
+      "source": "UN",
+      "page": "147"
+    },
+    {
+      "name": "Swap",
+      "category": [
+        "Echoes"
+      ],
+      "type": "P",
+      "action": "Special",
+      "range": [
+        "Special"
+      ],
+      "duration": "Special",
+      "source": "UN",
+      "page": "147"
+    },
+    {
+      "name": "Widget Crafting",
+      "category": [
+        "Echoes"
+      ],
+      "type": "P",
+      "action": "Special",
+      "range": [
+        "Special"
+      ],
+      "duration": "Special",
+      "source": "UN",
+      "page": "147"
+    },
+    {
+      "name": "Acceleration",
+      "category": [
+        "Echoes"
+      ],
+      "type": "P",
+      "action": "Special",
+      "range": [
+        "Special"
+      ],
+      "duration": "Special",
+      "bonus": {
+        "initiativepassadd": "1"
+      },
+      "source": "UN",
+      "page": "147"
+    },
+    {
+      "name": "Advanced Overclocking",
+      "category": [
+        "Echoes"
+      ],
+      "type": "P",
+      "action": "Special",
+      "range": [
+        "Special"
+      ],
+      "duration": "Special",
+      "bonus": {
+        "livingpersona": {
+          "response": "1"
+        },
+        "matrixinitiativepassadd": "1"
+      },
+      "source": "UN",
+      "page": "147"
+    },
+    {
+      "name": "Enhanced Resonance Link",
+      "category": [
+        "Echoes"
+      ],
+      "type": "P",
+      "action": "Special",
+      "range": [
+        "Special"
+      ],
+      "duration": "Special",
+      "source": "UN",
+      "page": "147"
+    },
+    {
+      "name": "Mesh Reality",
+      "category": [
+        "Echoes"
+      ],
+      "type": "P",
+      "action": "Special",
+      "range": [
+        "Special"
+      ],
+      "duration": "Special",
+      "source": "UN",
+      "page": "147"
+    },
+    {
+      "name": "Mind Over Machine",
+      "category": [
+        "Echoes"
+      ],
+      "type": "P",
+      "action": "Special",
+      "range": [
+        "Special"
+      ],
+      "duration": "Special",
+      "source": "UN",
+      "page": "148"
+    },
+    {
+      "name": "Resonance Exchange",
+      "category": [
+        "Echoes"
+      ],
+      "type": "P",
+      "action": "Special",
+      "range": [
+        "Special"
+      ],
+      "duration": "Special",
+      "source": "UN",
+      "page": "148"
+    },
+    {
+      "name": "Resonance Trodes",
+      "category": [
+        "Echoes"
+      ],
+      "type": "P",
+      "action": "Special",
+      "range": [
+        "Special"
+      ],
+      "duration": "Special",
+      "source": "UN",
+      "page": "148"
+    },
+    {
+      "name": "Connectivity",
+      "category": [
+        "Echoes"
+      ],
+      "type": "P",
+      "action": "Special",
+      "range": [
+        "Special"
+      ],
+      "duration": "Special",
+      "source": "WAR",
+      "page": "179"
+    },
+    {
+      "name": "Feral Resonance",
+      "category": [
+        "Echoes"
+      ],
+      "type": "P",
+      "action": "Special",
+      "range": [
+        "Special"
+      ],
+      "duration": "Special",
+      "source": "WAR",
+      "page": "179"
+    },
+    {
+      "name": "Bio-Radar",
+      "category": [
+        "Echoes"
+      ],
+      "type": "P",
+      "action": "Special",
+      "range": [
+        "Special"
+      ],
+      "duration": "Special",
+      "source": "WAR",
+      "page": "179"
+    },
+    {
+      "name": "Contaminate",
+      "category": [
+        "Echoes"
+      ],
+      "type": "P",
+      "action": "Special",
+      "range": [
+        "Special"
+      ],
+      "duration": "Special",
+      "source": "UN",
+      "page": "178"
+    },
+    {
+      "name": "Malfunction",
+      "category": [
+        "Echoes"
+      ],
+      "type": "P",
+      "action": "Special",
+      "range": [
+        "Special"
+      ],
+      "duration": "Special",
+      "source": "UN",
+      "page": "179"
+    },
+    {
+      "name": "Pryon",
+      "category": [
+        "Echoes"
+      ],
+      "type": "P",
+      "action": "Special",
+      "range": [
+        "Special"
+      ],
+      "duration": "Special",
+      "source": "UN",
+      "page": "179"
+    },
+    {
+      "name": "Rigger's Curse",
+      "category": [
+        "Mundane"
+      ],
+      "type": "P",
+      "action": "Auto",
+      "range": [
+        "LOS"
+      ],
+      "duration": "Always",
+      "source": "R4",
+      "page": "18"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "strict": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "types": ["vitest/globals"]
+  },
+  "include": ["src/app/core/rules/**/*.ts", "src/app/core/rules/**/*.spec.ts"]
+}

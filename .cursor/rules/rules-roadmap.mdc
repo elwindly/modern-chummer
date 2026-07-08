@@ -1,0 +1,43 @@
+---
+description: Rules engine implementation roadmap and milestones
+alwaysApply: false
+---
+
+# Rules Engine Roadmap
+
+Use this when continuing Phase 3 implementation.
+
+## Milestone 1 — Done
+
+- Formula evaluator, character/improvement models
+- `ImprovementManager` + `ValueOf` + transactions
+- Handlers: `addattribute`, `enabletab`, `specificattribute`, `conditionmonitor`, `damageresistance`, `armor`, `initiative`
+- `deriveStats` (physical/stun CM, threshold, overflow)
+- 15 Vitest tests passing
+
+## Milestone 2 — Next
+
+1. Attribute total calculation (base + improvement min/max/aug)
+2. More static handlers: `specificskill`, `skillcategory`, `drainresist`, `fadingresist`, `nuyenamt`, `livingpersona`, `initiativepass`
+3. `requirement-validator.ts` — `forbidden`/`required`/`oneof`/`allof`
+4. Golden tests from `qualities.json` / `metatypes.json` fixtures
+
+## Milestone 3 — Economy
+
+- `bp-calculator.ts`, `nuyen-calculator.ts`, `availability-validator.ts`
+- `metatype-initializer.ts`, `character-validator.ts`
+- `CharacterOptions` from settings JSON
+
+## Milestone 4 — Integration
+
+- `CharacterStoreService` (signals + computed derived stats)
+- Selection request protocol for interactive handlers
+
+## Milestone 5+ — UI & persistence
+
+- Creation tab shell, per-tab components
+- IndexedDB save, legacy `.chum` import
+
+## Vertical slice test (reference)
+
+Human BOD 4 → Physical CM 10; Tough as Nails (Rating 1) → CM 11; Adept → `magEnabled` + adept tab.

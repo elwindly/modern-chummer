@@ -1,0 +1,45 @@
+---
+description: Angular 21 conventions for Modern Chummer UI
+globs: src/app/**/*.ts
+alwaysApply: false
+---
+
+# Angular App Conventions
+
+## Stack
+
+- Angular 21, standalone components (do not set `standalone: true` — it's default)
+- Signals for state, `computed()` for derived values, `OnPush` change detection
+- `inject()` instead of constructor injection
+- `input()` / `output()` instead of decorators
+- Native control flow: `@if`, `@for`, `@switch` — no `*ngIf` / `*ngFor`
+- No `ngClass` / `ngStyle` — use `class` / `style` bindings
+
+## Structure
+
+```
+src/app/
+  core/           # models, services, rules engine, utils
+  features/       # routed feature areas (home, reference, characters, creation)
+```
+
+## Data loading
+
+- Game data via `ChummerDataService` — HTTP from `/data/*.json`, cached
+- Use `collection-utils.extractCollection()` for nested JSON wrappers
+- Book codes resolved via `BookRegistryService`
+
+## Rules integration
+
+- UI calls `RulesEngineService` — never put bonus/BP logic in components
+- Rules core lives in `src/app/core/rules/` and must stay framework-agnostic
+
+## Accessibility
+
+- WCAG AA: skip links, table captions, `aria-live` on search counts, focus styles
+- Prefer semantic HTML (`nav`, `main`, `th scope="row"`)
+
+## Scope discipline
+
+- Match existing patterns in neighboring files
+- Do not expand scope to unrelated features or refactors

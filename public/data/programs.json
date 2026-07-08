@@ -1,0 +1,1510 @@
+{
+  "version": -918,
+  "categories": [
+    "Advanced",
+    "ARE Programs",
+    "Autosoft",
+    "Common Use",
+    "Hacking",
+    "Malware",
+    "Sensor Software",
+    "Skillsofts",
+    "Tactical AR Software"
+  ],
+  "programs": [
+    {
+      "name": "Analyze",
+      "skill": [
+        "Computer"
+      ],
+      "category": [
+        "Common Use"
+      ],
+      "capacity": "Rating/2",
+      "complexform": "yes",
+      "source": "SR4",
+      "page": "232"
+    },
+    {
+      "name": "Browse",
+      "skill": [
+        "Data Search"
+      ],
+      "category": [
+        "Common Use"
+      ],
+      "capacity": "Rating/2",
+      "complexform": "yes",
+      "source": "SR4",
+      "page": "232"
+    },
+    {
+      "name": "Command",
+      "skill": [
+        "Varies"
+      ],
+      "category": [
+        "Common Use"
+      ],
+      "capacity": "Rating/2",
+      "complexform": "yes",
+      "source": "SR4",
+      "page": "232"
+    },
+    {
+      "name": "Edit",
+      "skill": [
+        "Computer"
+      ],
+      "category": [
+        "Common Use"
+      ],
+      "capacity": "Rating/2",
+      "complexform": "yes",
+      "source": "SR4",
+      "page": "233"
+    },
+    {
+      "name": "Encrypt",
+      "skill": [
+        "Electronic Warfare"
+      ],
+      "category": [
+        "Common Use"
+      ],
+      "capacity": "Rating/2",
+      "complexform": "yes",
+      "source": "SR4",
+      "page": "233"
+    },
+    {
+      "name": "Purge",
+      "skill": [
+        "Computer"
+      ],
+      "category": [
+        "Common Use"
+      ],
+      "capacity": "Rating/2",
+      "complexform": "yes",
+      "source": "UN",
+      "page": "111"
+    },
+    {
+      "name": "Reality Filter",
+      "skill": [
+        "Response"
+      ],
+      "category": [
+        "Common Use"
+      ],
+      "capacity": "Rating/2",
+      "complexform": "yes",
+      "source": "SR4",
+      "page": "233"
+    },
+    {
+      "name": "Scan",
+      "skill": [
+        "Electronic Warfare"
+      ],
+      "category": [
+        "Common Use"
+      ],
+      "capacity": "Rating/2",
+      "complexform": "yes",
+      "source": "SR4",
+      "page": "233"
+    },
+    {
+      "name": "CarnivoreGold",
+      "skill": [
+        "Computer"
+      ],
+      "category": [
+        "Common Use"
+      ],
+      "capacity": "Rating/2",
+      "complexform": "yes",
+      "source": "SG",
+      "page": "149"
+    },
+    {
+      "name": "Lip Reader",
+      "skill": [
+        "Computer"
+      ],
+      "category": [
+        "Common Use"
+      ],
+      "capacity": "Rating/2",
+      "complexform": "yes",
+      "source": "SG",
+      "page": "149"
+    },
+    {
+      "name": "MonaLisa",
+      "skill": [
+        "Computer"
+      ],
+      "category": [
+        "Common Use"
+      ],
+      "capacity": "Rating/2",
+      "complexform": "yes",
+      "source": "SG",
+      "page": "149"
+    },
+    {
+      "name": "Data Translation",
+      "skill": [
+        "Hardware"
+      ],
+      "category": [
+        "Common Use"
+      ],
+      "capacity": "Rating/2",
+      "complexform": "yes",
+      "source": "GH",
+      "page": "14"
+    },
+    {
+      "name": "Armor",
+      "skill": [
+        "None"
+      ],
+      "category": [
+        "Hacking"
+      ],
+      "capacity": "Rating/2",
+      "complexform": "yes",
+      "source": "SR4",
+      "page": "233"
+    },
+    {
+      "name": "Attack",
+      "skill": [
+        "Cybercombat"
+      ],
+      "category": [
+        "Hacking"
+      ],
+      "capacity": "Rating/2",
+      "tags": {
+        "tag": [
+          "Combat",
+          "Attack"
+        ]
+      },
+      "complexform": "yes",
+      "source": "SR4",
+      "page": "233"
+    },
+    {
+      "name": "Black Hammer",
+      "skill": [
+        "Cybercombat"
+      ],
+      "category": [
+        "Hacking"
+      ],
+      "capacity": "Rating/2",
+      "tags": {
+        "tag": [
+          "Combat",
+          "Black"
+        ]
+      },
+      "complexform": "yes",
+      "source": "SR4",
+      "page": "233"
+    },
+    {
+      "name": "Blackout",
+      "skill": [
+        "Cybercombat"
+      ],
+      "category": [
+        "Hacking"
+      ],
+      "capacity": "Rating/2",
+      "tags": {
+        "tag": [
+          "Combat",
+          "Black"
+        ]
+      },
+      "complexform": "yes",
+      "source": "SR4",
+      "page": "233"
+    },
+    {
+      "name": "Corrupt",
+      "skill": [
+        "Hacking"
+      ],
+      "category": [
+        "Hacking"
+      ],
+      "capacity": "Rating/2",
+      "complexform": "yes",
+      "source": "UN",
+      "page": "111"
+    },
+    {
+      "name": "Data Bomb",
+      "skill": [
+        "None"
+      ],
+      "category": [
+        "Hacking"
+      ],
+      "capacity": "Rating/2",
+      "tags": {
+        "tag": [
+          "Combat",
+          "Bomb"
+        ]
+      },
+      "complexform": "yes",
+      "source": "SR4",
+      "page": "233"
+    },
+    {
+      "name": "Decrypt",
+      "skill": [
+        "Electronic Warfare"
+      ],
+      "category": [
+        "Hacking"
+      ],
+      "capacity": "Rating/2",
+      "complexform": "yes",
+      "source": "SR4",
+      "page": "233"
+    },
+    {
+      "name": "Defuse",
+      "skill": [
+        "Hacking"
+      ],
+      "category": [
+        "Hacking"
+      ],
+      "capacity": "Rating/2",
+      "complexform": "yes",
+      "source": "SR4",
+      "page": "233"
+    },
+    {
+      "name": "Disarm",
+      "skill": [
+        "Hacking"
+      ],
+      "category": [
+        "Hacking"
+      ],
+      "capacity": "Rating/2",
+      "complexform": "yes",
+      "source": "UN",
+      "page": "111"
+    },
+    {
+      "name": "ECCM",
+      "skill": [
+        "None"
+      ],
+      "category": [
+        "Hacking"
+      ],
+      "capacity": "Rating/2",
+      "complexform": "yes",
+      "source": "SR4",
+      "page": "233"
+    },
+    {
+      "name": "Exploit",
+      "skill": [
+        "Hacking"
+      ],
+      "category": [
+        "Hacking"
+      ],
+      "capacity": "Rating/2",
+      "complexform": "yes",
+      "source": "SR4",
+      "page": "233"
+    },
+    {
+      "name": "Medic",
+      "skill": [
+        "Computer"
+      ],
+      "category": [
+        "Hacking"
+      ],
+      "capacity": "Rating/2",
+      "complexform": "yes",
+      "source": "SR4",
+      "page": "233"
+    },
+    {
+      "name": "Nuke",
+      "skill": [
+        "Hacking"
+      ],
+      "category": [
+        "Hacking"
+      ],
+      "capacity": "Rating/2",
+      "tags": {
+        "tag": "Combat"
+      },
+      "complexform": "yes",
+      "source": "UN",
+      "page": "111"
+    },
+    {
+      "name": "Sniffer",
+      "skill": [
+        "Electronic Warfare"
+      ],
+      "category": [
+        "Hacking"
+      ],
+      "capacity": "Rating/2",
+      "complexform": "yes",
+      "source": "SR4",
+      "page": "234"
+    },
+    {
+      "name": "Spoof",
+      "skill": [
+        "Hacking"
+      ],
+      "category": [
+        "Hacking"
+      ],
+      "capacity": "Rating/2",
+      "complexform": "yes",
+      "source": "SR4",
+      "page": "234"
+    },
+    {
+      "name": "Stealth",
+      "skill": [
+        "Hacking"
+      ],
+      "category": [
+        "Hacking"
+      ],
+      "capacity": "Rating/2",
+      "complexform": "yes",
+      "source": "SR4",
+      "page": "234"
+    },
+    {
+      "name": "Track",
+      "skill": [
+        "Computer"
+      ],
+      "category": [
+        "Hacking"
+      ],
+      "capacity": "Rating/2",
+      "complexform": "yes",
+      "source": "SR4",
+      "page": "234"
+    },
+    {
+      "name": "Simrig",
+      "skill": [
+        "Varies"
+      ],
+      "category": [
+        "Advanced"
+      ],
+      "maxrating": "1",
+      "capacity": "0",
+      "complexform": "yes",
+      "source": "UN",
+      "page": "136"
+    },
+    {
+      "name": "Smartlink",
+      "skill": [
+        "Varies"
+      ],
+      "category": [
+        "Advanced"
+      ],
+      "maxrating": "1",
+      "capacity": "0",
+      "complexform": "yes",
+      "source": "UN",
+      "page": "136"
+    },
+    {
+      "name": "Shield",
+      "skill": [
+        "Varies"
+      ],
+      "category": [
+        "Advanced"
+      ],
+      "capacity": "0",
+      "complexform": "yes",
+      "source": "UN",
+      "page": "136"
+    },
+    {
+      "name": "Activesoft",
+      "skill": [
+        "Varies"
+      ],
+      "category": [
+        "Skillsofts"
+      ],
+      "maxrating": "4",
+      "capacity": "Rating/2",
+      "tags": {
+        "tag": [
+          "Skillsoft",
+          "Activesoft"
+        ]
+      },
+      "complexform": "yes",
+      "source": "SR4",
+      "page": "330"
+    },
+    {
+      "name": "Knowsoft",
+      "skill": [
+        "Varies"
+      ],
+      "category": [
+        "Skillsofts"
+      ],
+      "maxrating": "5",
+      "capacity": "Rating/2",
+      "tags": {
+        "tag": [
+          "Skillsoft",
+          "Knowsoft"
+        ]
+      },
+      "complexform": "yes",
+      "source": "SR4",
+      "page": "330"
+    },
+    {
+      "name": "Linguasoft",
+      "skill": [
+        "Varies"
+      ],
+      "category": [
+        "Skillsofts"
+      ],
+      "maxrating": "5",
+      "capacity": "Rating/2",
+      "tags": {
+        "tag": [
+          "Skillsoft",
+          "Linguasoft"
+        ]
+      },
+      "complexform": "yes",
+      "source": "SR4",
+      "page": "330"
+    },
+    {
+      "name": "Virtual Surround Music",
+      "skill": [
+        "Varies"
+      ],
+      "category": [
+        "ARE Programs"
+      ],
+      "maxrating": "1",
+      "capacity": "0",
+      "complexform": "yes",
+      "source": "SR4",
+      "page": "331"
+    },
+    {
+      "name": "Wall Space",
+      "skill": [
+        "Varies"
+      ],
+      "category": [
+        "ARE Programs"
+      ],
+      "maxrating": "1",
+      "capacity": "0",
+      "complexform": "yes",
+      "source": "SR4",
+      "page": "331"
+    },
+    {
+      "name": "Virtual Pet",
+      "skill": [
+        "Varies"
+      ],
+      "category": [
+        "ARE Programs"
+      ],
+      "maxrating": "1",
+      "capacity": "0",
+      "complexform": "yes",
+      "source": "SR4",
+      "page": "331"
+    },
+    {
+      "name": "Virtual Person",
+      "skill": [
+        "Varies"
+      ],
+      "category": [
+        "ARE Programs"
+      ],
+      "maxrating": "1",
+      "capacity": "0",
+      "complexform": "yes",
+      "source": "SR4",
+      "page": "331"
+    },
+    {
+      "name": "Virtual Weather",
+      "skill": [
+        "Varies"
+      ],
+      "category": [
+        "ARE Programs"
+      ],
+      "maxrating": "1",
+      "capacity": "0",
+      "complexform": "yes",
+      "source": "SR4",
+      "page": "331"
+    },
+    {
+      "name": "Miracle Shooter",
+      "skill": [
+        "Varies"
+      ],
+      "category": [
+        "ARE Programs"
+      ],
+      "maxrating": "1",
+      "capacity": "0",
+      "complexform": "yes",
+      "source": "SR4",
+      "page": "331"
+    },
+    {
+      "name": "Empathy Software",
+      "skill": [
+        "Varies"
+      ],
+      "category": [
+        "Sensor Software"
+      ],
+      "maxrating": "6",
+      "capacity": "0",
+      "complexform": "yes",
+      "bonus": {
+        "skillcategory": {
+          "name": "Social Active",
+          "bonus": "Rating"
+        }
+      },
+      "source": "AR",
+      "page": "60"
+    },
+    {
+      "name": "Facial Recognition Software",
+      "skill": [
+        "Varies"
+      ],
+      "category": [
+        "Sensor Software"
+      ],
+      "maxrating": "6",
+      "capacity": "0",
+      "complexform": "yes",
+      "source": "AR",
+      "page": "61"
+    },
+    {
+      "name": "Gait Analysis Software",
+      "skill": [
+        "Varies"
+      ],
+      "category": [
+        "Sensor Software"
+      ],
+      "maxrating": "6",
+      "capacity": "0",
+      "complexform": "yes",
+      "source": "AR",
+      "page": "61"
+    },
+    {
+      "name": "Lie Detection Software",
+      "skill": [
+        "Varies"
+      ],
+      "category": [
+        "Sensor Software"
+      ],
+      "maxrating": "6",
+      "capacity": "0",
+      "complexform": "yes",
+      "source": "AR",
+      "page": "61"
+    },
+    {
+      "name": "Noise Analysis Software",
+      "skill": [
+        "Varies"
+      ],
+      "category": [
+        "Sensor Software"
+      ],
+      "maxrating": "6",
+      "capacity": "0",
+      "complexform": "yes",
+      "source": "AR",
+      "page": "61"
+    },
+    {
+      "name": "Visual Spotter Software",
+      "skill": [
+        "Varies"
+      ],
+      "category": [
+        "Sensor Software"
+      ],
+      "maxrating": "6",
+      "capacity": "0",
+      "complexform": "yes",
+      "source": "AR",
+      "page": "61"
+    },
+    {
+      "name": "Vehicle Identification Software",
+      "skill": [
+        "Varies"
+      ],
+      "category": [
+        "Sensor Software"
+      ],
+      "maxrating": "6",
+      "capacity": "0",
+      "complexform": "yes",
+      "source": "AR",
+      "page": "61"
+    },
+    {
+      "name": "Voice Recognition Software",
+      "skill": [
+        "Varies"
+      ],
+      "category": [
+        "Sensor Software"
+      ],
+      "maxrating": "6",
+      "capacity": "0",
+      "complexform": "yes",
+      "source": "AR",
+      "page": "61"
+    },
+    {
+      "name": "Weapon Watcher Software",
+      "skill": [
+        "Varies"
+      ],
+      "category": [
+        "Sensor Software"
+      ],
+      "maxrating": "6",
+      "capacity": "0",
+      "complexform": "yes",
+      "source": "AR",
+      "page": "61"
+    },
+    {
+      "name": "Wildlife Spotter Software",
+      "skill": [
+        "Varies"
+      ],
+      "category": [
+        "Sensor Software"
+      ],
+      "maxrating": "6",
+      "capacity": "0",
+      "complexform": "yes",
+      "source": "AR",
+      "page": "61"
+    },
+    {
+      "name": "Tacsoft",
+      "skill": [
+        "Varies"
+      ],
+      "category": [
+        "Tactical AR Software"
+      ],
+      "maxrating": "4",
+      "capacity": "0",
+      "complexform": "yes",
+      "source": "UN",
+      "page": "125"
+    },
+    {
+      "name": "Body Shop",
+      "skill": [
+        "Varies"
+      ],
+      "category": [
+        "ARE Programs"
+      ],
+      "maxrating": "1",
+      "capacity": "0",
+      "complexform": "yes",
+      "source": "UN",
+      "page": "108"
+    },
+    {
+      "name": "Glyphs",
+      "skill": [
+        "Varies"
+      ],
+      "category": [
+        "ARE Programs"
+      ],
+      "maxrating": "1",
+      "capacity": "0",
+      "complexform": "yes",
+      "source": "UN",
+      "page": "108"
+    },
+    {
+      "name": "Negator",
+      "skill": [
+        "Varies"
+      ],
+      "category": [
+        "ARE Programs"
+      ],
+      "maxrating": "1",
+      "capacity": "0",
+      "complexform": "yes",
+      "source": "UN",
+      "page": "108"
+    },
+    {
+      "name": "Ractives",
+      "skill": [
+        "Varies"
+      ],
+      "category": [
+        "ARE Programs"
+      ],
+      "maxrating": "1",
+      "capacity": "0",
+      "complexform": "yes",
+      "source": "UN",
+      "page": "108"
+    },
+    {
+      "name": "Scentsation",
+      "skill": [
+        "Varies"
+      ],
+      "category": [
+        "ARE Programs"
+      ],
+      "maxrating": "1",
+      "capacity": "0",
+      "complexform": "yes",
+      "source": "UN",
+      "page": "108"
+    },
+    {
+      "name": "Node Mine",
+      "skill": [
+        "None"
+      ],
+      "category": [
+        "Hacking"
+      ],
+      "capacity": "Rating/2",
+      "tags": {
+        "tag": [
+          "Combat",
+          "Bomb"
+        ]
+      },
+      "complexform": "yes",
+      "source": "UN",
+      "page": "178"
+    },
+    {
+      "name": "Adaptability",
+      "skill": [
+        "None"
+      ],
+      "category": [
+        "Autosoft"
+      ],
+      "maxrating": "3",
+      "capacity": "Rating/2",
+      "tags": {
+        "tag": [
+          "Agent",
+          "Drone"
+        ]
+      },
+      "complexform": "yes",
+      "source": "UN",
+      "page": "112"
+    },
+    {
+      "name": "Cascading",
+      "skill": [
+        "None"
+      ],
+      "category": [
+        "Autosoft"
+      ],
+      "maxrating": "3",
+      "capacity": "Rating/2",
+      "tags": {
+        "tag": "Agent"
+      },
+      "complexform": "yes",
+      "source": "UN",
+      "page": "113"
+    },
+    {
+      "name": "Chaser",
+      "skill": [
+        "None"
+      ],
+      "category": [
+        "Autosoft"
+      ],
+      "capacity": "Rating/2",
+      "tags": {
+        "tag": "Drone"
+      },
+      "complexform": "yes",
+      "source": "UN",
+      "page": "114"
+    },
+    {
+      "name": "Covert Ops",
+      "skill": [
+        "None"
+      ],
+      "category": [
+        "Autosoft"
+      ],
+      "capacity": "Rating/2",
+      "tags": {
+        "tag": "Drone"
+      },
+      "complexform": "yes",
+      "source": "UN",
+      "page": "114"
+    },
+    {
+      "name": "Profession",
+      "skill": [
+        "None"
+      ],
+      "category": [
+        "Autosoft"
+      ],
+      "capacity": "Rating/2",
+      "tags": {
+        "tag": "Drone"
+      },
+      "complexform": "yes",
+      "source": "UN",
+      "page": "114"
+    },
+    {
+      "name": "Trailblazer",
+      "skill": [
+        "None"
+      ],
+      "category": [
+        "Autosoft"
+      ],
+      "capacity": "Rating/2",
+      "tags": {
+        "tag": "Drone"
+      },
+      "complexform": "yes",
+      "source": "UN",
+      "page": "114"
+    },
+    {
+      "name": "Expert Defense",
+      "skill": [
+        "None"
+      ],
+      "category": [
+        "Autosoft"
+      ],
+      "maxrating": "3",
+      "capacity": "Rating/2",
+      "tags": {
+        "tag": "Agent"
+      },
+      "complexform": "yes",
+      "source": "UN",
+      "page": "113"
+    },
+    {
+      "name": "Expert Offense",
+      "skill": [
+        "None"
+      ],
+      "category": [
+        "Autosoft"
+      ],
+      "maxrating": "3",
+      "capacity": "Rating/2",
+      "tags": {
+        "tag": "Agent"
+      },
+      "complexform": "yes",
+      "source": "UN",
+      "page": "113"
+    },
+    {
+      "name": "Homeground",
+      "skill": [
+        "None"
+      ],
+      "category": [
+        "Autosoft"
+      ],
+      "capacity": "Rating/2",
+      "tags": {
+        "tag": "Agent"
+      },
+      "complexform": "yes",
+      "source": "UN",
+      "page": "113"
+    },
+    {
+      "name": "Replicate",
+      "skill": [
+        "None"
+      ],
+      "category": [
+        "Autosoft"
+      ],
+      "capacity": "Rating/2",
+      "tags": {
+        "tag": "Agent"
+      },
+      "complexform": "yes",
+      "source": "UN",
+      "page": "113"
+    },
+    {
+      "name": "Trojan",
+      "skill": [
+        "Varies"
+      ],
+      "category": [
+        "Malware"
+      ],
+      "capacity": "Rating/2",
+      "complexform": "yes",
+      "source": "UN",
+      "page": "123"
+    },
+    {
+      "name": "Virus",
+      "skill": [
+        "Varies"
+      ],
+      "category": [
+        "Malware"
+      ],
+      "capacity": "Rating/2",
+      "complexform": "yes",
+      "source": "UN",
+      "page": "120"
+    },
+    {
+      "name": "Worm",
+      "skill": [
+        "Varies"
+      ],
+      "category": [
+        "Malware"
+      ],
+      "capacity": "Rating/2",
+      "complexform": "yes",
+      "source": "UN",
+      "page": "122"
+    }
+  ],
+  "options": {
+    "option": [
+      {
+        "name": "Biofeedback",
+        "category": [
+          "General"
+        ],
+        "maxrating": "0",
+        "programtypes": {
+          "programtype": [
+            {
+              "value": "Hacking",
+              "tags": "Bomb"
+            },
+            "Simsense",
+            "Skillsofts"
+          ]
+        },
+        "tags": {
+          "tag": "Black"
+        },
+        "complexform": "yes",
+        "source": "UN",
+        "page": "114"
+      },
+      {
+        "name": "Copy Protection",
+        "category": [
+          "General"
+        ],
+        "programtypes": {
+          "programtype": [
+            "Common Use",
+            "Hacking",
+            "Autosoft",
+            "Simsense",
+            "Skillsofts"
+          ]
+        },
+        "complexform": "yes",
+        "source": "UN",
+        "page": "114"
+      },
+      {
+        "name": "Crashguard",
+        "category": [
+          "General"
+        ],
+        "maxrating": "0",
+        "programtypes": {
+          "programtype": [
+            "Common Use",
+            "Hacking",
+            "Autosoft",
+            "Simsense",
+            "Skillsofts"
+          ]
+        },
+        "complexform": "yes",
+        "source": "UN",
+        "page": "114"
+      },
+      {
+        "name": "Ergonomic",
+        "category": [
+          "General"
+        ],
+        "maxrating": "0",
+        "programtypes": {
+          "programtype": [
+            "Common Use",
+            "Hacking"
+          ]
+        },
+        "complexform": "yes",
+        "source": "UN",
+        "page": "114"
+      },
+      {
+        "name": "Limitation",
+        "category": [
+          "General"
+        ],
+        "maxrating": "0",
+        "programtypes": {
+          "programtype": [
+            "Common Use",
+            "Hacking",
+            "Autosoft",
+            "Simsense",
+            "Skillsofts"
+          ]
+        },
+        "complexform": "yes",
+        "source": "UN",
+        "page": "114"
+      },
+      {
+        "name": "Mute",
+        "category": [
+          "General"
+        ],
+        "maxrating": "0",
+        "programtypes": {
+          "programtype": [
+            "Common Use",
+            "Hacking"
+          ]
+        },
+        "complexform": "yes",
+        "source": "UN",
+        "page": "115"
+      },
+      {
+        "name": "Optimization",
+        "category": [
+          "General"
+        ],
+        "programtypes": {
+          "programtype": [
+            "Common Use",
+            "Hacking",
+            "Autosoft",
+            "Simsense",
+            "Skillsofts"
+          ]
+        },
+        "complexform": "yes",
+        "source": "UN",
+        "page": "115"
+      },
+      {
+        "name": "Psychotropic",
+        "category": [
+          "General"
+        ],
+        "programtypes": {
+          "programtype": [
+            {
+              "value": "Hacking",
+              "tags": "Black"
+            },
+            "Simsense",
+            "Skillsofts"
+          ]
+        },
+        "complexform": "yes",
+        "source": "UN",
+        "page": "115"
+      },
+      {
+        "name": "Registration",
+        "category": [
+          "General"
+        ],
+        "maxrating": "0",
+        "programtypes": {
+          "programtype": [
+            "Common Use",
+            "Hacking",
+            "Autosoft",
+            "Simsense",
+            "Skillsofts"
+          ]
+        },
+        "complexform": "yes",
+        "source": "UN",
+        "page": "115"
+      },
+      {
+        "name": "Timer",
+        "category": [
+          "General"
+        ],
+        "maxrating": "0",
+        "programtypes": {
+          "programtype": [
+            "Common Use",
+            "Hacking",
+            "Autosoft",
+            "Simsense",
+            "Skillsofts"
+          ]
+        },
+        "complexform": "yes",
+        "source": "UN",
+        "page": "115"
+      },
+      {
+        "name": "Viral Resistance",
+        "category": [
+          "General"
+        ],
+        "programtypes": {
+          "programtype": [
+            "Common Use",
+            "Hacking",
+            "Autosoft",
+            "Simsense",
+            "Skillsofts"
+          ]
+        },
+        "complexform": "yes",
+        "source": "UN",
+        "page": "116"
+      },
+      {
+        "name": "Dissonant Virus",
+        "category": [
+          "General"
+        ],
+        "programtypes": {
+          "programtype": [
+            "Common Use",
+            "Hacking",
+            "Autosoft",
+            "Simsense",
+            "Skillsofts"
+          ]
+        },
+        "complexform": "yes",
+        "source": "UN",
+        "page": "178"
+      },
+      {
+        "name": "Area",
+        "category": [
+          "Hacking"
+        ],
+        "programtypes": {
+          "programtype": {
+            "value": "Hacking",
+            "tags": "Combat"
+          }
+        },
+        "complexform": "yes",
+        "source": "UN",
+        "page": "116"
+      },
+      {
+        "name": "Armor Piercing",
+        "category": [
+          "Hacking"
+        ],
+        "maxrating": "3",
+        "programtypes": {
+          "programtype": {
+            "value": "Hacking",
+            "tags": "Combat"
+          }
+        },
+        "complexform": "yes",
+        "source": "UN",
+        "page": "116"
+      },
+      {
+        "name": "Pavlov",
+        "category": [
+          "Hacking"
+        ],
+        "maxrating": "0",
+        "programtypes": {
+          "programtype": {
+            "value": "Hacking",
+            "tags": "Bomb"
+          }
+        },
+        "complexform": "yes",
+        "source": "UN",
+        "page": "116"
+      },
+      {
+        "name": "Rust",
+        "category": [
+          "Hacking"
+        ],
+        "maxrating": "0",
+        "programtypes": {
+          "programtype": {
+            "value": "Hacking",
+            "tags": "Combat"
+          }
+        },
+        "complexform": "yes",
+        "source": "UN",
+        "page": "116"
+      },
+      {
+        "name": "Shredder",
+        "category": [
+          "Hacking"
+        ],
+        "maxrating": "0",
+        "programtypes": {
+          "programtype": {
+            "value": "Hacking",
+            "tags": "Attack"
+          }
+        },
+        "complexform": "yes",
+        "source": "UN",
+        "page": "117"
+      },
+      {
+        "name": "Targeting",
+        "category": [
+          "Hacking"
+        ],
+        "maxrating": "0",
+        "programtypes": {
+          "programtype": {
+            "value": "Hacking",
+            "tags": "Combat"
+          }
+        },
+        "complexform": "yes",
+        "source": "UN",
+        "page": "117"
+      },
+      {
+        "name": "Adaptive Scale",
+        "category": [
+          "Simsense"
+        ],
+        "maxrating": "0",
+        "programtypes": {
+          "programtype": [
+            {
+              "value": "Simsense",
+              "tags": "Skillsoft"
+            },
+            "Skillsofts"
+          ]
+        },
+        "complexform": "yes",
+        "source": "UN",
+        "page": "117"
+      },
+      {
+        "name": "Addictive",
+        "category": [
+          "Simsense"
+        ],
+        "maxrating": "2",
+        "programtypes": {
+          "programtype": [
+            {
+              "value": "Simsense",
+              "tags": "BTL"
+            },
+            "Skillsofts"
+          ]
+        },
+        "complexform": "yes",
+        "source": "UN",
+        "page": "117"
+      },
+      {
+        "name": "DIMAP",
+        "category": [
+          "Simsense"
+        ],
+        "maxrating": "0",
+        "programtypes": {
+          "programtype": [
+            {
+              "value": "Simsense",
+              "tags": "Skillsoft"
+            },
+            "Skillsofts"
+          ]
+        },
+        "complexform": "yes",
+        "source": "UN",
+        "page": "117"
+      },
+      {
+        "name": "Lifeline",
+        "category": [
+          "Simsense"
+        ],
+        "maxrating": "0",
+        "programtypes": {
+          "programtype": [
+            {
+              "value": "Simsense",
+              "tags": "Knowsoft,Linguasoft"
+            },
+            "Skillsofts"
+          ]
+        },
+        "complexform": "yes",
+        "source": "UN",
+        "page": "117"
+      },
+      {
+        "name": "Overdrive",
+        "category": [
+          "Simsense"
+        ],
+        "maxrating": "3",
+        "programtypes": {
+          "programtype": [
+            {
+              "value": "Simsense",
+              "tags": "Activesoft"
+            },
+            "Skillsofts"
+          ]
+        },
+        "complexform": "yes",
+        "source": "UN",
+        "page": "117"
+      },
+      {
+        "name": "Personalized",
+        "category": [
+          "Simsense"
+        ],
+        "maxrating": "0",
+        "programtypes": {
+          "programtype": [
+            "Simsense",
+            "Skillsofts"
+          ]
+        },
+        "complexform": "yes",
+        "source": "UN",
+        "page": "118"
+      },
+      {
+        "name": "Pluscode",
+        "category": [
+          "Simsense"
+        ],
+        "programtypes": {
+          "programtype": [
+            {
+              "value": "Simsense",
+              "tags": "Activesoft"
+            },
+            "Skillsofts"
+          ]
+        },
+        "complexform": "yes",
+        "source": "UN",
+        "page": "118"
+      }
+    ]
+  }
+}

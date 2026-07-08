@@ -1,0 +1,44 @@
+---
+description: XML to JSON data pipeline and catalog conventions
+globs: tools/xml-to-json/**,public/data/**,src/app/core/models/data-catalog.ts
+alwaysApply: false
+---
+
+# Game Data Pipeline
+
+## Source
+
+XML files in `../ChummerGenSR4/bin/data/` (30 core files per `manifestdata.xml`).
+
+## Convert
+
+```bash
+npm run convert        # data + custom/override merge + translations
+npm run convert:data   # data only
+```
+
+Output: `public/data/*.json`, `public/lang/*.json`, `public/manifest.json`
+
+## JSON shape
+
+- Collections unwrap to arrays: `weapons[]` not `{ weapon: [] }`
+- Some files have multiple top-level collections (e.g. `weapons.json` also has `accessories`, `mods`)
+- Formula strings stay as strings: `"Rating * 3000"`, `"(STR/2+1)P"`, `"8R"`
+- Item primary key: `name` (ranges use `category` as display name)
+
+## Reference catalog
+
+`src/app/core/models/data-catalog.ts` — maps browse IDs to `file` + `collectionKey`.
+
+When adding a browse list:
+1. Verify collection key in generated JSON
+2. Add entry with `group` for index grouping
+3. Use `extractCollection()` in `ChummerDataService.loadItems()`
+
+## Custom content
+
+Converter merges `override_*` (replace by name) and `custom_*` (append, skip duplicates), scanning `custom content/` subfolders with `--recursive-custom`.
+
+## Re-convert after changes
+
+If ChummerGenSR4 data updates, re-run `npm run convert` — do not hand-edit `public/data/*.json`.

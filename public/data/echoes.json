@@ -1,0 +1,299 @@
+{
+  "version": -920,
+  "echoes": [
+    {
+      "name": "Firewall Upgrade",
+      "limit": "no",
+      "bonus": {
+        "livingpersona": {
+          "firewall": "1"
+        }
+      },
+      "source": "SR4",
+      "page": "243"
+    },
+    {
+      "name": "NeuroFilter",
+      "limit": "no",
+      "bonus": {
+        "livingpersona": {
+          "biofeedback": "1"
+        }
+      },
+      "source": "SR4",
+      "page": "243"
+    },
+    {
+      "name": "Overclocking",
+      "bonus": {
+        "livingpersona": {
+          "response": "1"
+        },
+        "matrixinitiativepassadd": "1"
+      },
+      "source": "SR4",
+      "page": "244"
+    },
+    {
+      "name": "Resonance Link",
+      "source": "SR4",
+      "page": "244"
+    },
+    {
+      "name": "System Upgrade",
+      "limit": "no",
+      "bonus": {
+        "livingpersona": {
+          "system": "1"
+        }
+      },
+      "source": "SR4",
+      "page": "244"
+    },
+    {
+      "name": "Amplification",
+      "limit": "no",
+      "bonus": {
+        "livingpersona": {
+          "signal": "1"
+        }
+      },
+      "source": "UN",
+      "page": "145"
+    },
+    {
+      "name": "Biowire",
+      "bonus": {
+        "skillwire": "Rating"
+      },
+      "source": "UN",
+      "page": "145"
+    },
+    {
+      "name": "Blur",
+      "source": "UN",
+      "page": "145"
+    },
+    {
+      "name": "Coenesthesia",
+      "source": "UN",
+      "page": "145"
+    },
+    {
+      "name": "Defragmentation",
+      "source": "UN",
+      "page": "145"
+    },
+    {
+      "name": "E-sensing",
+      "source": "UN",
+      "page": "146"
+    },
+    {
+      "name": "Flexible Touch",
+      "source": "UN",
+      "page": "146"
+    },
+    {
+      "name": "Immersion",
+      "limit": "no",
+      "source": "UN",
+      "page": "146"
+    },
+    {
+      "name": "Info Sortilege",
+      "source": "UN",
+      "page": "146"
+    },
+    {
+      "name": "Living ECM",
+      "limit": "no",
+      "source": "UN",
+      "page": "146"
+    },
+    {
+      "name": "Macro",
+      "source": "UN",
+      "page": "146"
+    },
+    {
+      "name": "Multiprocessing",
+      "source": "UN",
+      "page": "146"
+    },
+    {
+      "name": "Sift",
+      "source": "UN",
+      "page": "147"
+    },
+    {
+      "name": "Skinlink",
+      "source": "UN",
+      "page": "147"
+    },
+    {
+      "name": "Sparky",
+      "source": "UN",
+      "page": "147"
+    },
+    {
+      "name": "Sprite Link",
+      "limit": "no",
+      "source": "UN",
+      "page": "147"
+    },
+    {
+      "name": "Swap",
+      "limit": "no",
+      "source": "UN",
+      "page": "147"
+    },
+    {
+      "name": "Widget Crafting",
+      "source": "UN",
+      "page": "147"
+    },
+    {
+      "name": "Acceleration",
+      "bonus": {
+        "initiativepassadd": "1",
+        "specificattribute": {
+          "name": "REA",
+          "val": "1"
+        }
+      },
+      "required": {
+        "allof": {
+          "echo": [
+            "Biowire"
+          ]
+        }
+      },
+      "source": "UN",
+      "page": "147"
+    },
+    {
+      "name": "Advanced Overclocking",
+      "bonus": {
+        "livingpersona": {
+          "response": "1"
+        },
+        "matrixinitiativepassadd": "1"
+      },
+      "required": {
+        "allof": {
+          "echo": [
+            "Overclocking"
+          ]
+        }
+      },
+      "source": "UN",
+      "page": "147"
+    },
+    {
+      "name": "Enhanced Resonance Link",
+      "required": {
+        "allof": {
+          "echo": [
+            "Resonance Link"
+          ]
+        }
+      },
+      "source": "UN",
+      "page": "147"
+    },
+    {
+      "name": "Mesh Reality",
+      "required": {
+        "allof": {
+          "echo": [
+            "Multiprocessing"
+          ]
+        }
+      },
+      "source": "UN",
+      "page": "147"
+    },
+    {
+      "name": "Mind Over Machine",
+      "required": {
+        "allof": {
+          "echo": [
+            "Immersion"
+          ]
+        }
+      },
+      "source": "UN",
+      "page": "148"
+    },
+    {
+      "name": "Resonance Exchange",
+      "required": {
+        "allof": {
+          "echo": [
+            "Resonance Link",
+            "Widget Crafting"
+          ]
+        }
+      },
+      "source": "UN",
+      "page": "148"
+    },
+    {
+      "name": "Resonance Trodes",
+      "required": {
+        "allof": {
+          "echo": [
+            "Skinlink"
+          ]
+        }
+      },
+      "source": "UN",
+      "page": "148"
+    },
+    {
+      "name": "Connectivity",
+      "limit": "no",
+      "source": "WAR",
+      "page": "179"
+    },
+    {
+      "name": "Feral Resonance",
+      "limit": "no",
+      "source": "WAR",
+      "page": "179"
+    },
+    {
+      "name": "Bio-Radar",
+      "required": {
+        "allof": {
+          "echo": [
+            "Living ECM"
+          ]
+        }
+      },
+      "source": "WAR",
+      "page": "179"
+    },
+    {
+      "name": "Contaminate",
+      "source": "UN",
+      "page": "178"
+    },
+    {
+      "name": "Malfunction",
+      "source": "UN",
+      "page": "179"
+    },
+    {
+      "name": "Pryon",
+      "source": "UN",
+      "page": "179"
+    },
+    {
+      "name": "Siphon",
+      "source": "UN",
+      "page": "179"
+    }
+  ]
+}

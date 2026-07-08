@@ -1,0 +1,57 @@
+---
+description: Chummer SR4 rules engine architecture and patterns
+globs: src/app/core/rules/**
+alwaysApply: false
+---
+
+# Rules Engine
+
+## Architecture
+
+Bonuses are **declarative improvements**, not direct field mutation:
+
+```
+JSON bonus → applyBonusHandlers() → Improvement[] → valueOf() → derived stats
+```
+
+## Module layout
+
+| File | Responsibility |
+|------|----------------|
+| `engine/formula-evaluator.ts` | `Rating * 3000`, `(STR/2+1)P`, `FixedValues`, integer `div` |
+| `engine/improvement-manager.ts` | `ValueOf`, transactions, `rollback()` |
+| `engine/improvement-handlers/` | One handler per XML bonus element |
+| `engine/derived-stats.ts` | Physical/Stun CM, thresholds, initiative |
+| `models/character.ts` | Character state + flags (`magEnabled`, `adeptEnabled`, …) |
+
+## Adding a bonus handler
+
+1. Create handler in `improvement-handlers/` (or add to `index.ts`)
+2. Register in `BONUS_HANDLERS` array (order matches legacy `CreateImprovements`)
+3. Use `nodeText()` / `asBonusArray()` for JSON bonus nodes
+4. Add golden test in `*.spec.ts` with real quality JSON snippet
+
+## ValueOf aggregation rules
+
+- Default: **sum** matching improvements
+- `uniqueName` set: **highest per unique key**, then sum those highs
+- `precedence0`: replace total with single highest `precedence0` value
+- `precedence1`: sum only `precedence1` items
+
+## Interactive bonuses (deferred pattern)
+
+Handlers like `selectskill` return a `SelectionRequest`; Angular UI resolves the picker, then completes the grant. Use `beginTransaction()` / `commit()` / `rollback()`.
+
+## Tests
+
+```bash
+npm run test:rules
+```
+
+Always add tests when adding handlers or changing `ValueOf` / formula evaluation.
+
+## Do not
+
+- Import `@angular/*` in `core/rules/`
+- Port `frmCreate.cs` wholesale — extract rules into testable functions
+- Parse availability/cost at JSON conversion time

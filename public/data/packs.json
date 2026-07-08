@@ -1,0 +1,5564 @@
+{
+  "version": -919,
+  "categories": [
+    "Attribute Kits",
+    "Skill Kits",
+    "Adept Kits",
+    "Complex Form Kits",
+    "Spell Kits",
+    "Gear Kits",
+    "Custom"
+  ],
+  "packs": [
+    {
+      "name": "Brawler",
+      "category": [
+        "Attribute Kits"
+      ],
+      "attributes": {
+        "bod": "5",
+        "agi": "4",
+        "rea": "3",
+        "str": "5",
+        "cha": "3",
+        "int": "3",
+        "log": "2",
+        "wil": "3"
+      }
+    },
+    {
+      "name": "Tank",
+      "category": [
+        "Attribute Kits"
+      ],
+      "attributes": {
+        "bod": "6",
+        "agi": "4",
+        "rea": "3",
+        "str": "4",
+        "cha": "3",
+        "int": "2",
+        "log": "2",
+        "wil": "2"
+      }
+    },
+    {
+      "name": "Heavy Weapons Expert",
+      "category": [
+        "Attribute Kits"
+      ],
+      "attributes": {
+        "bod": "3",
+        "agi": "6",
+        "rea": "4",
+        "str": "4",
+        "cha": "3",
+        "int": "2",
+        "log": "2",
+        "wil": "2"
+      }
+    },
+    {
+      "name": "Bladesman",
+      "category": [
+        "Attribute Kits"
+      ],
+      "attributes": {
+        "bod": "2",
+        "agi": "5",
+        "rea": "4",
+        "str": "6",
+        "cha": "3",
+        "int": "2",
+        "log": "2",
+        "wil": "2"
+      }
+    },
+    {
+      "name": "Unit Commander",
+      "category": [
+        "Attribute Kits"
+      ],
+      "attributes": {
+        "bod": "3",
+        "agi": "4",
+        "rea": "3",
+        "str": "3",
+        "cha": "5",
+        "int": "3",
+        "log": "4",
+        "wil": "3"
+      }
+    },
+    {
+      "name": "Combat Mage",
+      "category": [
+        "Attribute Kits"
+      ],
+      "qualities": {
+        "positive": {
+          "quality": [
+            "Magician"
+          ]
+        }
+      },
+      "attributes": {
+        "bod": "3",
+        "agi": "2",
+        "rea": "4",
+        "str": "2",
+        "cha": "3",
+        "int": "3",
+        "log": "3",
+        "wil": "4",
+        "mag": "5"
+      }
+    },
+    {
+      "name": "High Mage",
+      "category": [
+        "Attribute Kits"
+      ],
+      "qualities": {
+        "positive": {
+          "quality": [
+            "Magician"
+          ]
+        }
+      },
+      "attributes": {
+        "bod": "2",
+        "agi": "3",
+        "rea": "2",
+        "str": "2",
+        "cha": "3",
+        "int": "4",
+        "log": "4",
+        "wil": "4",
+        "mag": "5"
+      }
+    },
+    {
+      "name": "Newly Awakened",
+      "category": [
+        "Attribute Kits"
+      ],
+      "qualities": {
+        "positive": {
+          "quality": [
+            "Magician"
+          ]
+        }
+      },
+      "attributes": {
+        "bod": "3",
+        "agi": "3",
+        "rea": "3",
+        "str": "3",
+        "cha": "3",
+        "int": "3",
+        "log": "3",
+        "wil": "4",
+        "mag": "2"
+      }
+    },
+    {
+      "name": "Wise Shaman",
+      "category": [
+        "Attribute Kits"
+      ],
+      "qualities": {
+        "positive": {
+          "quality": [
+            "Magician",
+            "Mentor Spirit"
+          ]
+        }
+      },
+      "attributes": {
+        "bod": "2",
+        "agi": "2",
+        "rea": "3",
+        "str": "3",
+        "cha": "5",
+        "int": "3",
+        "log": "3",
+        "wil": "4",
+        "mag": "4"
+      }
+    },
+    {
+      "name": "Faceman",
+      "category": [
+        "Attribute Kits"
+      ],
+      "attributes": {
+        "bod": "3",
+        "agi": "2",
+        "rea": "3",
+        "str": "2",
+        "cha": "5",
+        "int": "4",
+        "log": "4",
+        "wil": "5"
+      }
+    },
+    {
+      "name": "Wheelman",
+      "category": [
+        "Attribute Kits"
+      ],
+      "attributes": {
+        "bod": "3",
+        "agi": "4",
+        "rea": "5",
+        "str": "2",
+        "cha": "3",
+        "int": "5",
+        "log": "3",
+        "wil": "3"
+      }
+    },
+    {
+      "name": "Budding Technomancer",
+      "category": [
+        "Attribute Kits"
+      ],
+      "qualities": {
+        "positive": {
+          "quality": [
+            "Technomancer"
+          ]
+        }
+      },
+      "attributes": {
+        "bod": "3",
+        "agi": "3",
+        "rea": "4",
+        "str": "2",
+        "cha": "3",
+        "int": "4",
+        "log": "3",
+        "wil": "3",
+        "res": "2"
+      }
+    },
+    {
+      "name": "Resonance Prophet",
+      "category": [
+        "Attribute Kits"
+      ],
+      "qualities": {
+        "positive": {
+          "quality": [
+            "Technomancer"
+          ]
+        }
+      },
+      "attributes": {
+        "bod": "2",
+        "agi": "2",
+        "rea": "2",
+        "str": "1",
+        "cha": "4",
+        "int": "4",
+        "log": "5",
+        "wil": "4",
+        "res": "5"
+      }
+    },
+    {
+      "name": "Investigator",
+      "category": [
+        "Attribute Kits"
+      ],
+      "attributes": {
+        "bod": "2",
+        "agi": "3",
+        "rea": "4",
+        "str": "2",
+        "cha": "3",
+        "int": "4",
+        "log": "5",
+        "wil": "5"
+      }
+    },
+    {
+      "name": "Jack of All Trades",
+      "category": [
+        "Attribute Kits"
+      ],
+      "attributes": {
+        "bod": "3",
+        "agi": "3",
+        "rea": "4",
+        "str": "4",
+        "cha": "4",
+        "int": "3",
+        "log": "3",
+        "wil": "4"
+      }
+    },
+    {
+      "name": "Arcane Investigator",
+      "category": [
+        "Attribute Kits"
+      ],
+      "qualities": {
+        "positive": {
+          "quality": [
+            "Magician"
+          ]
+        }
+      },
+      "attributes": {
+        "bod": "2",
+        "agi": "3",
+        "rea": "2",
+        "str": "2",
+        "cha": "4",
+        "int": "5",
+        "log": "4",
+        "wil": "3",
+        "mag": "4"
+      }
+    },
+    {
+      "name": "Ranged Adept",
+      "category": [
+        "Attribute Kits"
+      ],
+      "qualities": {
+        "positive": {
+          "quality": [
+            "Adept"
+          ]
+        }
+      },
+      "attributes": {
+        "bod": "2",
+        "agi": "4",
+        "rea": "4",
+        "str": "5",
+        "cha": "3",
+        "int": "2",
+        "log": "2",
+        "wil": "2",
+        "mag": "5"
+      }
+    },
+    {
+      "name": "Melee Adept",
+      "category": [
+        "Attribute Kits"
+      ],
+      "qualities": {
+        "positive": {
+          "quality": [
+            "Adept"
+          ]
+        }
+      },
+      "attributes": {
+        "bod": "2",
+        "agi": "4",
+        "rea": "3",
+        "str": "5",
+        "cha": "3",
+        "int": "3",
+        "log": "2",
+        "wil": "2",
+        "mag": "5"
+      }
+    },
+    {
+      "name": "Social Adept",
+      "category": [
+        "Attribute Kits"
+      ],
+      "qualities": {
+        "positive": {
+          "quality": [
+            "Adept"
+          ]
+        }
+      },
+      "attributes": {
+        "bod": "2",
+        "agi": "2",
+        "rea": "3",
+        "str": "2",
+        "cha": "5",
+        "int": "5",
+        "log": "3",
+        "wil": "4",
+        "mag": "3"
+      }
+    },
+    {
+      "name": "Mystic Adept",
+      "category": [
+        "Attribute Kits"
+      ],
+      "qualities": {
+        "positive": {
+          "quality": [
+            "Mystic Adept"
+          ]
+        }
+      },
+      "attributes": {
+        "bod": "2",
+        "agi": "3",
+        "rea": "3",
+        "str": "3",
+        "cha": "4",
+        "int": "4",
+        "log": "2",
+        "wil": "4",
+        "mag": "4"
+      }
+    },
+    {
+      "name": "Covert Operative",
+      "category": [
+        "Attribute Kits"
+      ],
+      "attributes": {
+        "bod": "3",
+        "agi": "5",
+        "rea": "3",
+        "str": "3",
+        "cha": "3",
+        "int": "4",
+        "log": "4",
+        "wil": "3"
+      }
+    },
+    {
+      "name": "Handgun Trainee",
+      "category": [
+        "Skill Kits"
+      ],
+      "skills": [
+        {
+          "name": "Clubs",
+          "rating": "1"
+        },
+        {
+          "name": "Pistols",
+          "rating": "2"
+        }
+      ]
+    },
+    {
+      "name": "Handgun Veteran",
+      "category": [
+        "Skill Kits"
+      ],
+      "skills": [
+        {
+          "name": "Armorer",
+          "rating": "2"
+        },
+        {
+          "name": "Automatics",
+          "rating": "2"
+        },
+        {
+          "name": "Medicine",
+          "rating": "1"
+        },
+        {
+          "name": "Pistols",
+          "rating": "4",
+          "spec": [
+            "Semi-Automatics"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Handgun Expert",
+      "category": [
+        "Skill Kits"
+      ],
+      "skills": [
+        {
+          "name": "Armorer",
+          "rating": "3",
+          "spec": [
+            "Firearms"
+          ]
+        },
+        {
+          "name": "Automatics",
+          "rating": "3"
+        },
+        {
+          "name": "Medicine",
+          "rating": "3"
+        },
+        {
+          "name": "Pistols",
+          "rating": "5",
+          "spec": [
+            "Semi-Automatics"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Automatics Veteran",
+      "category": [
+        "Skill Kits"
+      ],
+      "skills": [
+        {
+          "name": "Automatics",
+          "rating": "4",
+          "spec": [
+            "Submachine guns"
+          ]
+        },
+        {
+          "name": "Dodge",
+          "rating": "2",
+          "spec": [
+            "Ranged Combat"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Automatics Expert",
+      "category": [
+        "Skill Kits"
+      ],
+      "skills": [
+        {
+          "name": "Automatics",
+          "rating": "5",
+          "spec": [
+            "Assault Rifles"
+          ]
+        },
+        {
+          "name": "Dodge",
+          "rating": "3",
+          "spec": [
+            "Ranged Combat"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Longarms Veteran",
+      "category": [
+        "Skill Kits"
+      ],
+      "qualities": {
+        "positive": {
+          "quality": [
+            "Hawk Eye"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "name": "Longarms",
+          "rating": "4",
+          "spec": [
+            "Shotguns"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Longarms Expert",
+      "category": [
+        "Skill Kits"
+      ],
+      "qualities": {
+        "positive": {
+          "quality": [
+            "Hawk Eye"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "name": "Longarms",
+          "rating": "5",
+          "spec": [
+            "Sniper Rifles"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Heavy Weapons Certified",
+      "category": [
+        "Skill Kits"
+      ],
+      "skills": [
+        {
+          "name": "Heavy Weapons",
+          "rating": "3"
+        },
+        {
+          "name": "Armorer",
+          "rating": "1"
+        }
+      ]
+    },
+    {
+      "name": "Heavy Weapons Expert",
+      "category": [
+        "Skill Kits"
+      ],
+      "skills": [
+        {
+          "name": "Heavy Weapons",
+          "rating": "5"
+        },
+        {
+          "name": "Armorer",
+          "rating": "3",
+          "spec": [
+            "Heavy Weapons"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Blade Trainee",
+      "category": [
+        "Skill Kits"
+      ],
+      "skills": [
+        {
+          "name": "Blades",
+          "rating": "2"
+        },
+        {
+          "name": "First Aid",
+          "rating": "1"
+        },
+        {
+          "name": "Unarmed Combat",
+          "rating": "1"
+        }
+      ]
+    },
+    {
+      "name": "Blade Veteran",
+      "category": [
+        "Skill Kits"
+      ],
+      "skills": [
+        {
+          "name": "Blades",
+          "rating": "4",
+          "spec": [
+            "Cyber-Implant Blades"
+          ]
+        },
+        {
+          "name": "Cybertechnology",
+          "rating": "2"
+        },
+        {
+          "name": "First Aid",
+          "rating": "2"
+        }
+      ]
+    },
+    {
+      "name": "Blade Expert",
+      "category": [
+        "Skill Kits"
+      ],
+      "qualities": {
+        "positive": {
+          "quality": [
+            "Ambidextrous"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "name": "Blades",
+          "rating": "5",
+          "spec": [
+            "Swords"
+          ]
+        },
+        {
+          "name": "Cybertechnology",
+          "rating": "3"
+        },
+        {
+          "name": "First Aid",
+          "rating": "3"
+        },
+        {
+          "name": "Unarmed Combat",
+          "rating": "3"
+        }
+      ]
+    },
+    {
+      "name": "Exotic Weapons Trainee",
+      "category": [
+        "Skill Kits"
+      ],
+      "skills": [
+        {
+          "name": "Dodge",
+          "rating": "2"
+        },
+        {
+          "name": "Exotic Melee Weapon",
+          "rating": "3",
+          "spec": [
+            "Cat o' Nine Tails Whip"
+          ]
+        },
+        {
+          "name": "Exotic Ranged Weapon",
+          "rating": "2",
+          "spec": [
+            "Flame Thrower"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Exotic Weapons Veteran",
+      "category": [
+        "Skill Kits"
+      ],
+      "skills": [
+        {
+          "name": "Dodge",
+          "rating": "3"
+        },
+        {
+          "name": "Exotic Melee Weapon",
+          "rating": "4",
+          "spec": [
+            "Kusarigama"
+          ]
+        },
+        {
+          "name": "Exotic Melee Weapon",
+          "rating": "2",
+          "spec": [
+            "Garrote"
+          ]
+        },
+        {
+          "name": "Exotic Ranged Weapon",
+          "rating": "4",
+          "spec": [
+            "Crossbow"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Exotic Weapons Expert",
+      "category": [
+        "Skill Kits"
+      ],
+      "skills": [
+        {
+          "name": "Dodge",
+          "rating": "3"
+        },
+        {
+          "name": "Exotic Melee Weapon",
+          "rating": "5",
+          "spec": [
+            "Sais"
+          ]
+        },
+        {
+          "name": "Exotic Melee Weapon",
+          "rating": "3",
+          "spec": [
+            "Foot Blades"
+          ]
+        },
+        {
+          "name": "Exotic Ranged Weapon",
+          "rating": "5",
+          "spec": [
+            "Net Gun"
+          ]
+        },
+        {
+          "name": "Exotic Ranged Weapon",
+          "rating": "5",
+          "spec": [
+            "Bolos"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Brown Belt",
+      "category": [
+        "Skill Kits"
+      ],
+      "skills": [
+        {
+          "name": "Unarmed Combat",
+          "rating": "3",
+          "spec": [
+            "Martial Arts"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Black Belt",
+      "category": [
+        "Skill Kits"
+      ],
+      "skills": [
+        {
+          "name": "Unarmed Combat",
+          "rating": "5"
+        }
+      ]
+    },
+    {
+      "name": "Explosives Hobbyist",
+      "category": [
+        "Skill Kits"
+      ],
+      "skills": [
+        {
+          "name": "Demolitions",
+          "rating": "3"
+        },
+        {
+          "name": "Throwing Weapons",
+          "rating": "2",
+          "spec": [
+            "Lobbed"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Explosives Expert",
+      "category": [
+        "Skill Kits"
+      ],
+      "skills": [
+        {
+          "name": "Demolitions",
+          "rating": "5",
+          "spec": [
+            "Improvised Explosives"
+          ]
+        },
+        {
+          "name": "Artisan",
+          "rating": "4",
+          "spec": [
+            "Bombs"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Countermage",
+      "category": [
+        "Skill Kits"
+      ],
+      "qualities": {
+        "positive": {
+          "quality": [
+            {
+              "value": "Aptitude",
+              "select": "Counterspelling"
+            }
+          ]
+        }
+      },
+      "skills": [
+        {
+          "name": "Banishing",
+          "rating": "3"
+        },
+        {
+          "name": "Counterspelling",
+          "rating": "6",
+          "spec": [
+            "Combat Spells"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Enchanter",
+      "category": [
+        "Skill Kits"
+      ],
+      "skills": [
+        {
+          "name": "Arcana",
+          "rating": "5",
+          "spec": [
+            "Focus Design"
+          ]
+        },
+        {
+          "name": "Enchanting",
+          "rating": "5",
+          "spec": [
+            "Artificing"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Novice Summoner",
+      "category": [
+        "Skill Kits"
+      ],
+      "skills": [
+        {
+          "name": "Astral Combat",
+          "rating": "1"
+        }
+      ]
+    },
+    {
+      "name": "Veteran Summoner",
+      "category": [
+        "Skill Kits"
+      ],
+      "qualities": {
+        "positive": {
+          "quality": [
+            "Focused Concentration (Rating 1)"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "name": "Astral Combat",
+          "rating": "2"
+        },
+        {
+          "name": "Banishing",
+          "rating": "3"
+        },
+        {
+          "name": "Binding",
+          "rating": "4"
+        },
+        {
+          "name": "Summoning",
+          "rating": "4",
+          "spec": [
+            "Spirits of Air"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Master Summoner",
+      "category": [
+        "Skill Kits"
+      ],
+      "qualities": {
+        "positive": {
+          "quality": [
+            {
+              "value": "Aptitude",
+              "select": "Summoning"
+            }
+          ]
+        }
+      },
+      "skills": [
+        {
+          "name": "Arcana",
+          "rating": "3"
+        },
+        {
+          "name": "Assensing",
+          "rating": "4"
+        },
+        {
+          "name": "Astral Combat",
+          "rating": "4",
+          "spec": [
+            "Spirits"
+          ]
+        },
+        {
+          "name": "Banishing",
+          "rating": "4"
+        },
+        {
+          "name": "Binding",
+          "rating": "4",
+          "spec": [
+            "Spirits of Man"
+          ]
+        },
+        {
+          "name": "Summoning",
+          "rating": "6",
+          "spec": [
+            "Spirits of Man"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Spell Dabbler",
+      "category": [
+        "Skill Kits"
+      ],
+      "skills": [
+        {
+          "name": "Assensing",
+          "rating": "3"
+        },
+        {
+          "name": "Spellcasting",
+          "rating": "4"
+        }
+      ]
+    },
+    {
+      "name": "Spell Slinger",
+      "category": [
+        "Skill Kits"
+      ],
+      "qualities": {
+        "positive": {
+          "quality": [
+            {
+              "value": "Aptitude",
+              "select": "Spellcasting"
+            },
+            "Focused Concentration (Rating 1)"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "name": "Assensing",
+          "rating": "2"
+        },
+        {
+          "name": "Counterspelling",
+          "rating": "4",
+          "spec": [
+            "Combat Spells"
+          ]
+        },
+        {
+          "name": "Ritual Spellcasting",
+          "rating": "3"
+        },
+        {
+          "name": "Spellcasting",
+          "rating": "6",
+          "spec": [
+            "Combat Spells"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Mage Extraordinaire",
+      "category": [
+        "Skill Kits"
+      ],
+      "qualities": {
+        "positive": {
+          "quality": [
+            "Focused Concentration (Rating 2)"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "name": "Arcana",
+          "rating": "3"
+        },
+        {
+          "name": "Assensing",
+          "rating": "4"
+        },
+        {
+          "name": "Astral Combat",
+          "rating": "3"
+        },
+        {
+          "name": "Counterspelling",
+          "rating": "5",
+          "spec": [
+            "Combat Spells"
+          ]
+        },
+        {
+          "name": "Ritual Spellcasting",
+          "rating": "3"
+        },
+        {
+          "name": "Spellcasting",
+          "rating": "5",
+          "spec": [
+            "Manipulation"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Knack for Repairs",
+      "category": [
+        "Skill Kits"
+      ],
+      "qualities": {
+        "positive": {
+          "quality": [
+            "Juryrigger"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "name": "Computer",
+          "rating": "2"
+        },
+        {
+          "name": "Hardware",
+          "rating": "3"
+        },
+        {
+          "name": "Perception",
+          "rating": "2"
+        }
+      ]
+    },
+    {
+      "name": "Ace Mechanic",
+      "category": [
+        "Skill Kits"
+      ],
+      "qualities": {
+        "positive": {
+          "quality": [
+            "Juryrigger"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "name": "Artisan",
+          "rating": "3",
+          "spec": [
+            "Metal Fabrication"
+          ]
+        },
+        {
+          "name": "Computer",
+          "rating": "3"
+        },
+        {
+          "name": "Cybertechnology",
+          "rating": "2"
+        },
+        {
+          "name": "Hardware",
+          "rating": "2"
+        },
+        {
+          "name": "Perception",
+          "rating": "3"
+        }
+      ]
+    },
+    {
+      "name": "Outdoorsman",
+      "category": [
+        "Skill Kits"
+      ],
+      "qualities": {
+        "positive": {
+          "quality": [
+            "Sense of Direction"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "name": "Climbing",
+          "rating": "2",
+          "spec": [
+            "Rock Climbing"
+          ]
+        },
+        {
+          "name": "First Aid",
+          "rating": "1"
+        },
+        {
+          "name": "Perception",
+          "rating": "3",
+          "spec": [
+            "Scent"
+          ]
+        },
+        {
+          "name": "Running",
+          "rating": "2",
+          "spec": [
+            "Wilderness"
+          ]
+        },
+        {
+          "name": "Survival",
+          "rating": "3"
+        },
+        {
+          "name": "Swimming",
+          "rating": "2"
+        }
+      ]
+    },
+    {
+      "name": "Matrix Savvy",
+      "category": [
+        "Skill Kits"
+      ],
+      "skills": [
+        {
+          "name": "Computer",
+          "rating": "3"
+        },
+        {
+          "name": "Data Search",
+          "rating": "2"
+        }
+      ]
+    },
+    {
+      "name": "Rookie Technomancer",
+      "category": [
+        "Skill Kits"
+      ],
+      "skills": [
+        {
+          "name": "Compiling",
+          "rating": "2"
+        },
+        {
+          "name": "Decompiling",
+          "rating": "1"
+        }
+      ]
+    },
+    {
+      "name": "Veteran Technomancer",
+      "category": [
+        "Skill Kits"
+      ],
+      "skills": {
+        "skillgroup": {
+          "name": "Tasking",
+          "rating": "4"
+        }
+      }
+    },
+    {
+      "name": "Ace Technomancer",
+      "category": [
+        "Skill Kits"
+      ],
+      "skills": [
+        {
+          "name": "Compiling",
+          "rating": "5"
+        },
+        {
+          "name": "Decompiling",
+          "rating": "4"
+        },
+        {
+          "name": "Registering",
+          "rating": "5"
+        }
+      ]
+    },
+    {
+      "name": "Hacking Dabbler",
+      "category": [
+        "Skill Kits"
+      ],
+      "skills": [
+        {
+          "name": "Hacking",
+          "rating": "2"
+        },
+        {
+          "name": "Cybercombat",
+          "rating": "2"
+        },
+        {
+          "name": "Electronic Warfare",
+          "rating": "1"
+        }
+      ]
+    },
+    {
+      "name": "Hacking Ace",
+      "category": [
+        "Skill Kits"
+      ],
+      "skills": [
+        {
+          "name": "Hacking",
+          "rating": "5",
+          "spec": [
+            "Exploit"
+          ]
+        },
+        {
+          "name": "Electronic Warfare",
+          "rating": "4"
+        },
+        {
+          "name": "Cybercombat",
+          "rating": "5"
+        }
+      ]
+    },
+    {
+      "name": "Matrix Power User",
+      "category": [
+        "Skill Kits"
+      ],
+      "qualities": {
+        "positive": {
+          "quality": [
+            "Analytical Mind",
+            "Codeslinger"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "name": "Perception",
+          "rating": "2"
+        }
+      ]
+    },
+    {
+      "name": "Medic",
+      "category": [
+        "Skill Kits"
+      ],
+      "skills": [
+        {
+          "name": "First Aid",
+          "rating": "4",
+          "spec": [
+            "Combat Wounds"
+          ]
+        },
+        {
+          "name": "Medicine",
+          "rating": "4"
+        }
+      ]
+    },
+    {
+      "name": "Athlete",
+      "category": [
+        "Skill Kits"
+      ],
+      "skills": [
+        {
+          "name": "Running",
+          "rating": "4",
+          "spec": [
+            "Urban"
+          ]
+        },
+        {
+          "name": "Gymnastics",
+          "rating": "3",
+          "spec": [
+            "Balance"
+          ]
+        },
+        {
+          "name": "Swimming",
+          "rating": "2"
+        },
+        {
+          "name": "Climbing",
+          "rating": "2"
+        }
+      ]
+    },
+    {
+      "name": "Superior Athlete",
+      "category": [
+        "Skill Kits"
+      ],
+      "qualities": {
+        "positive": {
+          "quality": [
+            "Natural Athlete"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "name": "Climbing",
+          "rating": "3",
+          "spec": [
+            "Freehand"
+          ]
+        },
+        {
+          "name": "Diving",
+          "rating": "3"
+        },
+        {
+          "name": "Gymnastics",
+          "rating": "5",
+          "spec": [
+            "Balance"
+          ]
+        },
+        {
+          "name": "Running",
+          "rating": "4",
+          "spec": [
+            "Urban"
+          ]
+        },
+        {
+          "name": "Swimming",
+          "rating": "3",
+          "spec": [
+            "Long Distance"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Skilled Driver",
+      "category": [
+        "Skill Kits"
+      ],
+      "skills": [
+        {
+          "name": "Pilot Ground Craft",
+          "rating": "3"
+        },
+        {
+          "name": "Pilot Watercraft",
+          "rating": "1"
+        }
+      ]
+    },
+    {
+      "name": "Driving Ace",
+      "category": [
+        "Skill Kits"
+      ],
+      "skills": [
+        {
+          "name": "Pilot Aircraft",
+          "rating": "1"
+        },
+        {
+          "name": "Pilot Ground Craft",
+          "rating": "5",
+          "spec": [
+            "Wheeled"
+          ]
+        },
+        {
+          "name": "Pilot Watercraft",
+          "rating": "3"
+        }
+      ]
+    },
+    {
+      "name": "Master of Vehicles",
+      "category": [
+        "Skill Kits"
+      ],
+      "skills": [
+        {
+          "name": "Aeronautics Mechanic",
+          "rating": "3"
+        },
+        {
+          "name": "Automotive Mechanic",
+          "rating": "4",
+          "spec": [
+            "Wheeled"
+          ]
+        },
+        {
+          "name": "Pilot Aircraft",
+          "rating": "3",
+          "spec": [
+            "Rotary Wing"
+          ]
+        },
+        {
+          "name": "Pilot Anthroform",
+          "rating": "2"
+        },
+        {
+          "name": "Pilot Ground Craft",
+          "rating": "4",
+          "spec": [
+            "Remote Operation"
+          ]
+        },
+        {
+          "name": "Pilot Watercraft",
+          "rating": "2"
+        }
+      ]
+    },
+    {
+      "name": "Persuasive",
+      "category": [
+        "Skill Kits"
+      ],
+      "qualities": {
+        "positive": {
+          "quality": [
+            "First Impression"
+          ]
+        }
+      },
+      "skills": {
+        "skillgroup": {
+          "name": "Influence",
+          "rating": "4"
+        }
+      }
+    },
+    {
+      "name": "Intimidator",
+      "category": [
+        "Skill Kits"
+      ],
+      "qualities": {
+        "positive": {
+          "quality": [
+            "Guts"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "name": "Intimidation",
+          "rating": "4",
+          "spec": [
+            "Mental"
+          ]
+        },
+        {
+          "name": "Leadership",
+          "rating": "2"
+        }
+      ]
+    },
+    {
+      "name": "Master of Disguise",
+      "category": [
+        "Skill Kits"
+      ],
+      "qualities": {
+        "positive": {
+          "quality": [
+            "Blandness"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "name": "Con",
+          "rating": "2"
+        },
+        {
+          "name": "Disguise",
+          "rating": "4",
+          "spec": [
+            "Cosmetic"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Shadower",
+      "category": [
+        "Skill Kits"
+      ],
+      "qualities": {
+        "positive": {
+          "quality": [
+            "Blandness"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "name": "Pilot Ground Craft",
+          "rating": "3",
+          "spec": [
+            "Bike"
+          ]
+        },
+        {
+          "name": "Perception",
+          "rating": "4"
+        },
+        {
+          "name": "Gymnastics",
+          "rating": "1"
+        }
+      ]
+    },
+    {
+      "name": "Shifty",
+      "category": [
+        "Skill Kits"
+      ],
+      "skills": [
+        {
+          "name": "Con",
+          "rating": "3"
+        },
+        {
+          "name": "Etiquette",
+          "rating": "3",
+          "spec": [
+            "Shadowrunners"
+          ]
+        },
+        {
+          "name": "Intimidation",
+          "rating": "2"
+        },
+        {
+          "name": "Negotiation",
+          "rating": "2"
+        }
+      ]
+    },
+    {
+      "name": "Sneaky",
+      "category": [
+        "Skill Kits"
+      ],
+      "skills": [
+        {
+          "name": "Hardware",
+          "rating": "3",
+          "spec": [
+            "Maglocks"
+          ]
+        },
+        {
+          "name": "Infiltration",
+          "rating": "4"
+        },
+        {
+          "name": "Locksmith",
+          "rating": "3"
+        },
+        {
+          "name": "Palming",
+          "rating": "3"
+        }
+      ]
+    },
+    {
+      "name": "Ace Infiltrator",
+      "category": [
+        "Skill Kits"
+      ],
+      "qualities": {
+        "positive": {
+          "quality": [
+            "Catlike"
+          ]
+        }
+      },
+      "skills": [
+        {
+          "name": "Chemistry",
+          "rating": "2"
+        },
+        {
+          "name": "Computer",
+          "rating": "3",
+          "spec": [
+            "Surveillance Devices"
+          ]
+        },
+        {
+          "name": "Forgery",
+          "rating": "3"
+        },
+        {
+          "name": "Gymnastics",
+          "rating": "2"
+        },
+        {
+          "name": "Hardware",
+          "rating": "4",
+          "spec": [
+            "Maglocks"
+          ]
+        },
+        {
+          "name": "Infiltration",
+          "rating": "5",
+          "spec": [
+            "Urban"
+          ]
+        },
+        {
+          "name": "Locksmith",
+          "rating": "3"
+        },
+        {
+          "name": "Palming",
+          "rating": "2"
+        },
+        {
+          "name": "Shadowing",
+          "rating": "2"
+        }
+      ]
+    },
+    {
+      "name": "Pistoleer",
+      "category": [
+        "Adept Kits"
+      ],
+      "powers": [
+        {
+          "name": {
+            "value": "Improved Ability (Combat)",
+            "select": "Pistols"
+          },
+          "rating": "2"
+        },
+        {
+          "name": {
+            "value": "Attribute Boost",
+            "select": "AGI"
+          },
+          "rating": "2"
+        },
+        {
+          "name": "Improved Reflexes 1"
+        }
+      ]
+    },
+    {
+      "name": "Adnisador",
+      "category": [
+        "Adept Kits"
+      ],
+      "powers": [
+        {
+          "name": {
+            "value": "Improved Ability (Combat)",
+            "select": "Blades"
+          },
+          "rating": "2"
+        },
+        {
+          "name": "Improved Reflexes 1"
+        },
+        {
+          "name": "Quick Draw"
+        }
+      ]
+    },
+    {
+      "name": "Punisher",
+      "category": [
+        "Adept Kits"
+      ],
+      "powers": [
+        {
+          "name": "Critical Strike",
+          "rating": "2"
+        },
+        {
+          "name": "Improved Reflexes 1"
+        },
+        {
+          "name": "Killing Hands"
+        },
+        {
+          "name": "Penetrating Strike",
+          "rating": "2"
+        }
+      ]
+    },
+    {
+      "name": "Assassin",
+      "category": [
+        "Adept Kits"
+      ],
+      "powers": [
+        {
+          "name": {
+            "value": "Attribute Boost",
+            "select": "REA"
+          },
+          "rating": "1"
+        },
+        {
+          "name": "Critical Strike",
+          "rating": "2"
+        },
+        {
+          "name": {
+            "value": "Improved Ability (Non-Combat)",
+            "select": "Infiltration"
+          },
+          "rating": "1"
+        },
+        {
+          "name": "Improved Reflexes 2"
+        },
+        {
+          "name": "Killing Hands"
+        }
+      ]
+    },
+    {
+      "name": "Stealth",
+      "category": [
+        "Adept Kits"
+      ],
+      "powers": [
+        {
+          "name": {
+            "value": "Improved Ability (Non-Combat)",
+            "select": "Infiltration"
+          },
+          "rating": "2"
+        },
+        {
+          "name": "Traceless Walk"
+        }
+      ]
+    },
+    {
+      "name": "Tracker",
+      "category": [
+        "Adept Kits"
+      ],
+      "powers": [
+        {
+          "name": "Enhanced Perception",
+          "rating": "3"
+        },
+        {
+          "name": "Improved Sense",
+          "rating": "2"
+        },
+        {
+          "name": "Multi-Tasking"
+        },
+        {
+          "name": "Piercing Senses",
+          "rating": "3"
+        },
+        {
+          "name": "Traceless Walk",
+          "rating": "2"
+        }
+      ]
+    },
+    {
+      "name": "Core Defense",
+      "category": [
+        "Adept Kits"
+      ],
+      "powers": [
+        {
+          "name": "Combat Sense",
+          "rating": "2"
+        },
+        {
+          "name": "Mystic Armor",
+          "rating": "2"
+        }
+      ]
+    },
+    {
+      "name": "Peak Defense",
+      "category": [
+        "Adept Kits"
+      ],
+      "powers": [
+        {
+          "name": {
+            "value": "Improved Ability (Combat)",
+            "select": "Dodge"
+          },
+          "rating": "2"
+        },
+        {
+          "name": {
+            "value": "Improved Physical Attribute",
+            "select": "REA"
+          },
+          "rating": "1"
+        },
+        {
+          "name": "Mystic Armor",
+          "rating": "2"
+        },
+        {
+          "name": "Natural Immunity",
+          "rating": "1"
+        },
+        {
+          "name": "Pain Resistance",
+          "rating": "2"
+        }
+      ]
+    },
+    {
+      "name": "First Blood",
+      "category": [
+        "Adept Kits"
+      ],
+      "powers": [
+        {
+          "name": "Combat Sense",
+          "rating": "1"
+        },
+        {
+          "name": "Critical Strike",
+          "rating": "2"
+        },
+        {
+          "name": "Improved Reflexes 2"
+        },
+        {
+          "name": "Killing Hands"
+        }
+      ]
+    },
+    {
+      "name": "Adept of All Trades",
+      "category": [
+        "Adept Kits"
+      ],
+      "powers": [
+        {
+          "name": "Astral Perception"
+        },
+        {
+          "name": "Improved Ability (Non-Combat)",
+          "rating": "4"
+        },
+        {
+          "name": "Improved Sense",
+          "rating": "2"
+        },
+        {
+          "name": "Killing Hands",
+          "rating": "2"
+        }
+      ]
+    },
+    {
+      "name": "Convincer",
+      "category": [
+        "Adept Kits"
+      ],
+      "powers": [
+        {
+          "name": {
+            "value": "Improved Ability (Non-Combat)",
+            "select": "Con"
+          },
+          "rating": "4"
+        },
+        {
+          "name": "Kinesics",
+          "rating": "3"
+        },
+        {
+          "name": "Voice Control"
+        }
+      ]
+    },
+    {
+      "name": "Aggression",
+      "category": [
+        "Complex Form Kits"
+      ],
+      "programs": [
+        {
+          "name": "Armor",
+          "rating": "4"
+        },
+        {
+          "name": "Attack",
+          "rating": "5"
+        },
+        {
+          "name": "Black Hammer",
+          "rating": "3"
+        }
+      ]
+    },
+    {
+      "name": "Self Defense",
+      "category": [
+        "Complex Form Kits"
+      ],
+      "programs": [
+        {
+          "name": "Armor",
+          "rating": "3"
+        },
+        {
+          "name": "Attack",
+          "rating": "2"
+        }
+      ]
+    },
+    {
+      "name": "Bare Essentials",
+      "category": [
+        "Complex Form Kits"
+      ],
+      "programs": [
+        {
+          "name": "Analyze",
+          "rating": "2"
+        },
+        {
+          "name": "Browse",
+          "rating": "2"
+        },
+        {
+          "name": "Command",
+          "rating": "1"
+        },
+        {
+          "name": "Edit",
+          "rating": "2"
+        }
+      ]
+    },
+    {
+      "name": "Solid Essentials",
+      "category": [
+        "Complex Form Kits"
+      ],
+      "programs": [
+        {
+          "name": "Analyze",
+          "rating": "4"
+        },
+        {
+          "name": "Browse",
+          "rating": "4"
+        },
+        {
+          "name": "Command",
+          "rating": "3"
+        },
+        {
+          "name": "Edit",
+          "rating": "4"
+        }
+      ]
+    },
+    {
+      "name": "Basic Hacking",
+      "category": [
+        "Complex Form Kits"
+      ],
+      "programs": [
+        {
+          "name": "Exploit",
+          "rating": "2"
+        },
+        {
+          "name": "Stealth",
+          "rating": "3"
+        }
+      ]
+    },
+    {
+      "name": "Hacking Focus",
+      "category": [
+        "Complex Form Kits"
+      ],
+      "programs": [
+        {
+          "name": "Exploit",
+          "rating": "5"
+        },
+        {
+          "name": "Stealth",
+          "rating": "5"
+        }
+      ]
+    },
+    {
+      "name": "Data Defender",
+      "category": [
+        "Complex Form Kits"
+      ],
+      "programs": [
+        {
+          "name": "Data Bomb",
+          "rating": "4"
+        },
+        {
+          "name": "Encrypt",
+          "rating": "5"
+        },
+        {
+          "name": "Purge",
+          "rating": "3"
+        }
+      ]
+    },
+    {
+      "name": "Data Theft",
+      "category": [
+        "Complex Form Kits"
+      ],
+      "programs": [
+        {
+          "name": "Decrypt",
+          "rating": "3"
+        },
+        {
+          "name": "Defuse",
+          "rating": "3"
+        }
+      ]
+    },
+    {
+      "name": "Wireless Warrior",
+      "category": [
+        "Complex Form Kits"
+      ],
+      "programs": [
+        {
+          "name": "Scan",
+          "rating": "4"
+        },
+        {
+          "name": "Sniffer",
+          "rating": "4"
+        },
+        {
+          "name": "Track",
+          "rating": "4"
+        }
+      ]
+    },
+    {
+      "name": "Total Package",
+      "category": [
+        "Complex Form Kits"
+      ],
+      "programs": [
+        {
+          "name": "Analyze",
+          "rating": "3"
+        },
+        {
+          "name": "Armor",
+          "rating": "3"
+        },
+        {
+          "name": "Attack",
+          "rating": "3"
+        },
+        {
+          "name": "Browse",
+          "rating": "3"
+        },
+        {
+          "name": "Command",
+          "rating": "2"
+        },
+        {
+          "name": "Decrypt",
+          "rating": "3"
+        },
+        {
+          "name": "Defuse",
+          "rating": "2"
+        },
+        {
+          "name": "Exploit",
+          "rating": "4"
+        },
+        {
+          "name": "Stealth",
+          "rating": "4"
+        },
+        {
+          "name": "Track",
+          "rating": "3"
+        }
+      ]
+    },
+    {
+      "name": "Light Mana Combat",
+      "category": [
+        "Spell Kits"
+      ],
+      "spells": [
+        "Death Touch",
+        "Manabolt",
+        "Stunbolt"
+      ]
+    },
+    {
+      "name": "Heavy Mana Combat",
+      "category": [
+        "Spell Kits"
+      ],
+      "spells": [
+        "Manaball",
+        "Slaughter [Metatype/Species]",
+        "Stunball"
+      ]
+    },
+    {
+      "name": "Light Physical Combat",
+      "category": [
+        "Spell Kits"
+      ],
+      "spells": [
+        "Acid Stream",
+        "Clout",
+        "Lightning Bolt"
+      ]
+    },
+    {
+      "name": "Heavy Physical Combat",
+      "category": [
+        "Spell Kits"
+      ],
+      "spells": [
+        "Blast",
+        "Ball Lightning",
+        "Powerball",
+        "Toxic Wave"
+      ]
+    },
+    {
+      "name": "Pyromaniac",
+      "category": [
+        "Spell Kits"
+      ],
+      "spells": [
+        "Fireball",
+        "Flamethrower",
+        "Ignite"
+      ]
+    },
+    {
+      "name": "Master of the Air",
+      "category": [
+        "Spell Kits"
+      ],
+      "spells": [
+        "Blast",
+        "Clairaudience",
+        "Hush",
+        "Levitate",
+        "Silence"
+      ]
+    },
+    {
+      "name": "Light Defense",
+      "category": [
+        "Spell Kits"
+      ],
+      "spells": [
+        "Armor",
+        "Deflection",
+        "Mana Barrier"
+      ]
+    },
+    {
+      "name": "Moderate Defense",
+      "category": [
+        "Spell Kits"
+      ],
+      "spells": [
+        "Armor",
+        "Camouflage",
+        "Deflection",
+        "Detect Enemies",
+        "Mana Barrier"
+      ]
+    },
+    {
+      "name": "Heavy Defense",
+      "category": [
+        "Spell Kits"
+      ],
+      "spells": [
+        "Armor",
+        "Deflection",
+        "Detect Enemies",
+        "Detect Magic",
+        "Invisibility",
+        "Mana Barrier",
+        "Physical Barrier"
+      ]
+    },
+    {
+      "name": "Light Healer",
+      "category": [
+        "Spell Kits"
+      ],
+      "spells": [
+        "Detox",
+        "Heal"
+      ]
+    },
+    {
+      "name": "Master Healer",
+      "category": [
+        "Spell Kits"
+      ],
+      "spells": [
+        "Antidote",
+        "Cure Disease",
+        "Detox",
+        "Heal",
+        "Stabilize"
+      ]
+    },
+    {
+      "name": "Deceiver",
+      "category": [
+        "Spell Kits"
+      ],
+      "spells": [
+        "Analyze Truth",
+        "Detect Magic, Extended Area",
+        {
+          "value": "Increase [Attribute]",
+          "select": "CHA"
+        },
+        "Influence"
+      ]
+    },
+    {
+      "name": "Awakened Spy",
+      "category": [
+        "Spell Kits"
+      ],
+      "spells": [
+        "Clairvoyance",
+        "Clairaudience",
+        "Hush",
+        "Improved Invisibility",
+        "Levitate",
+        "Mind Probe",
+        "Silence",
+        "Stealth"
+      ]
+    },
+    {
+      "name": "Spellbinder",
+      "category": [
+        "Spell Kits"
+      ],
+      "spells": [
+        "Control Emotions",
+        "Control Thoughts",
+        "Petrify",
+        "Turn to Goo"
+      ]
+    },
+    {
+      "name": "Mass Spellbinder",
+      "category": [
+        "Spell Kits"
+      ],
+      "spells": [
+        "Control Pack",
+        "Mob Control",
+        "Mob Mind",
+        "Mob Mood"
+      ]
+    },
+    {
+      "name": "Environment Shaper",
+      "category": [
+        "Spell Kits"
+      ],
+      "spells": [
+        "Alter Temperature",
+        "Animate",
+        "Ice Sheet",
+        "Interference",
+        "Mana Static",
+        {
+          "value": "Shape [Material]",
+          "select": "Earth"
+        },
+        {
+          "value": "Shape [Material]",
+          "select": "Fire"
+        }
+      ]
+    },
+    {
+      "name": "Master Manipulator",
+      "category": [
+        "Spell Kits"
+      ],
+      "spells": [
+        "Calm Pack",
+        "Control Pack",
+        "Influence",
+        "Mana Net",
+        "Mob Control",
+        "Mob Mind",
+        "Mob Mood"
+      ]
+    },
+    {
+      "name": "Master Illusionist",
+      "category": [
+        "Spell Kits"
+      ],
+      "spells": [
+        "Chaos",
+        "Improved Invisibility",
+        "Mask",
+        "Physical Mask",
+        "Trid Phantasm"
+      ]
+    },
+    {
+      "name": "The Basics",
+      "category": [
+        "Gear Kits"
+      ],
+      "nuyenbp": "1",
+      "armors": [
+        {
+          "name": "Armor Jacket"
+        }
+      ],
+      "gears": [
+        {
+          "name": "Grenade: Thermal Smoke",
+          "qty": "4"
+        },
+        {
+          "name": "Datachip",
+          "qty": "4"
+        },
+        {
+          "name": "Standard RFID Tags",
+          "qty": "20"
+        },
+        {
+          "name": "Radio Signal Scanner",
+          "rating": "4"
+        },
+        {
+          "name": "White Noise Generator",
+          "rating": "4"
+        },
+        {
+          "name": "Respirator",
+          "rating": "4"
+        },
+        {
+          "name": "Medkit",
+          "rating": "4"
+        },
+        {
+          "name": "Fake SIN",
+          "qty": "3"
+        }
+      ]
+    },
+    {
+      "name": "Emergency Identity",
+      "category": [
+        "Gear Kits"
+      ],
+      "nuyenbp": "1",
+      "gears": [
+        {
+          "name": "Sony Emperor",
+          "gears": [
+            {
+              "name": "Vector Xim"
+            }
+          ]
+        },
+        {
+          "name": "Nanopaste Disguise (Small Container)"
+        },
+        {
+          "name": "Fake SIN",
+          "rating": "3"
+        },
+        {
+          "name": "Certified Credstick, Standard",
+          "rating": "600"
+        }
+      ]
+    },
+    {
+      "name": "Light Augmented Speed Boost Option 1 (Standard)",
+      "category": [
+        "Gear Kits"
+      ],
+      "nuyenbp": "6",
+      "cyberwares": [
+        {
+          "name": "Reaction Enhancers",
+          "rating": "2",
+          "grade": [
+            "Standard"
+          ]
+        }
+      ],
+      "biowares": [
+        {
+          "name": "Muscle Toner",
+          "rating": "1",
+          "grade": [
+            "Standard"
+          ]
+        }
+      ],
+      "gears": [
+        {
+          "name": {
+            "value": "Fake License",
+            "select": "Muscle Toner"
+          },
+          "rating": "5"
+        },
+        {
+          "name": "Certified Credstick, Standard",
+          "rating": "1500"
+        }
+      ]
+    },
+    {
+      "name": "Light Augmented Speed Boost Option 1 (Alphaware)",
+      "category": [
+        "Gear Kits"
+      ],
+      "nuyenbp": "12",
+      "cyberwares": [
+        {
+          "name": "Reaction Enhancers",
+          "rating": "2",
+          "grade": [
+            "Alphaware"
+          ]
+        }
+      ],
+      "biowares": [
+        {
+          "name": "Muscle Toner",
+          "rating": "1",
+          "grade": [
+            "Alphaware"
+          ]
+        }
+      ],
+      "gears": [
+        {
+          "name": {
+            "value": "Fake License",
+            "select": "Muscle Toner"
+          },
+          "rating": "5"
+        },
+        {
+          "name": "Certified Credstick, Standard",
+          "rating": "1500"
+        }
+      ]
+    },
+    {
+      "name": "Light Augmented Speed Boost Option 2 (Standard)",
+      "category": [
+        "Gear Kits"
+      ],
+      "nuyenbp": "6",
+      "cyberwares": [
+        {
+          "name": "Wired Reflexes",
+          "rating": "1",
+          "grade": [
+            "Standard"
+          ]
+        }
+      ],
+      "biowares": [
+        {
+          "name": "Muscle Toner",
+          "rating": "2",
+          "grade": [
+            "Standard"
+          ]
+        }
+      ],
+      "gears": [
+        {
+          "name": {
+            "value": "Fake License",
+            "select": "Wired Reflexes"
+          },
+          "rating": "5"
+        },
+        {
+          "name": {
+            "value": "Fake License",
+            "select": "Muscle Toner"
+          },
+          "rating": "5"
+        },
+        {
+          "name": "Certified Credstick, Standard",
+          "rating": "2000"
+        }
+      ]
+    },
+    {
+      "name": "Light Augmented Speed Boost Option 2 (Alphaware)",
+      "category": [
+        "Gear Kits"
+      ],
+      "nuyenbp": "11",
+      "cyberwares": [
+        {
+          "name": "Wired Reflexes",
+          "rating": "1",
+          "grade": [
+            "Alphaware"
+          ]
+        }
+      ],
+      "biowares": [
+        {
+          "name": "Muscle Toner",
+          "rating": "2",
+          "grade": [
+            "Alphaware"
+          ]
+        }
+      ],
+      "gears": [
+        {
+          "name": {
+            "value": "Fake License",
+            "select": "Wired Reflexes"
+          },
+          "rating": "5"
+        },
+        {
+          "name": {
+            "value": "Fake License",
+            "select": "Muscle Toner"
+          },
+          "rating": "5"
+        },
+        {
+          "name": "Certified Credstick, Standard",
+          "rating": "2000"
+        }
+      ]
+    },
+    {
+      "name": "Light Augmented Speed Boost Option 3 (Standard)",
+      "category": [
+        "Gear Kits"
+      ],
+      "nuyenbp": "20",
+      "cyberwares": [
+        {
+          "name": "Reaction Enhancers",
+          "rating": "2",
+          "grade": [
+            "Standard"
+          ]
+        }
+      ],
+      "biowares": [
+        {
+          "name": "Synaptic Booster",
+          "rating": "1",
+          "grade": [
+            "Standard"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Light Augmented Speed Boost Option 3 (Alphaware)",
+      "category": [
+        "Gear Kits"
+      ],
+      "nuyenbp": "40",
+      "cyberwares": [
+        {
+          "name": "Reaction Enhancers",
+          "rating": "2",
+          "grade": [
+            "Alphaware"
+          ]
+        }
+      ],
+      "biowares": [
+        {
+          "name": "Synaptic Booster",
+          "rating": "1",
+          "grade": [
+            "Alphaware"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Light Augmented Speed Boost Option 4 (Standard)",
+      "category": [
+        "Gear Kits"
+      ],
+      "nuyenbp": "14",
+      "cyberwares": [
+        {
+          "name": "Move-by-Wire System",
+          "rating": "1",
+          "grade": [
+            "Standard"
+          ]
+        }
+      ],
+      "biowares": [
+        {
+          "name": "Muscle Toner",
+          "rating": "2",
+          "grade": [
+            "Standard"
+          ]
+        }
+      ],
+      "gears": [
+        {
+          "name": {
+            "value": "Fake License",
+            "select": "Move-by-Wire System"
+          },
+          "rating": "5"
+        },
+        {
+          "name": {
+            "value": "Fake License",
+            "select": "Muscle Toner"
+          },
+          "rating": "5"
+        },
+        {
+          "name": "Certified Credstick, Standard",
+          "rating": "3000"
+        }
+      ]
+    },
+    {
+      "name": "Light Augmented Speed Boost Option 4 (Alphaware)",
+      "category": [
+        "Gear Kits"
+      ],
+      "nuyenbp": "27",
+      "cyberwares": [
+        {
+          "name": "Move-by-Wire System",
+          "rating": "1",
+          "grade": [
+            "Alphaware"
+          ]
+        }
+      ],
+      "biowares": [
+        {
+          "name": "Muscle Toner",
+          "rating": "2",
+          "grade": [
+            "Alphaware"
+          ]
+        }
+      ],
+      "gears": [
+        {
+          "name": {
+            "value": "Fake License",
+            "select": "Move-by-Wire System"
+          },
+          "rating": "5"
+        },
+        {
+          "name": {
+            "value": "Fake License",
+            "select": "Muscle Toner"
+          },
+          "rating": "5"
+        },
+        {
+          "name": "Certified Credstick, Standard",
+          "rating": "3000"
+        }
+      ]
+    },
+    {
+      "name": "Pistol Fighter",
+      "category": [
+        "Gear Kits"
+      ],
+      "nuyenbp": "2",
+      "armors": [
+        {
+          "name": "Armor Vest"
+        },
+        {
+          "name": "Armor Vest"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "Fichetti Security 600"
+        },
+        {
+          "name": "Ares Predator IV"
+        },
+        {
+          "name": "Ares Predator IV"
+        },
+        {
+          "name": "Yamaha Sakura Fubuki"
+        },
+        {
+          "name": "Ruger Super Warhawk"
+        }
+      ],
+      "gears": [
+        {
+          "name": {
+            "value": "Ammo: Explosive Rounds",
+            "select": "Light Pistols"
+          },
+          "qty": "40"
+        },
+        {
+          "name": {
+            "value": "Ammo: Explosive Rounds",
+            "select": "Heavy Pistols"
+          },
+          "qty": "40"
+        },
+        {
+          "name": {
+            "value": "Ammo: EX-Explosive Rounds",
+            "select": "Light Pistols"
+          },
+          "qty": "40"
+        },
+        {
+          "name": {
+            "value": "Ammo: EX-Explosive Rounds",
+            "select": "Heavy Pistols"
+          },
+          "qty": "40"
+        },
+        {
+          "name": {
+            "value": "Ammo: Gel Rounds",
+            "select": "Light Pistols"
+          },
+          "qty": "50"
+        },
+        {
+          "name": {
+            "value": "Ammo: Gel Rounds",
+            "select": "Heavy Pistols"
+          },
+          "qty": "50"
+        },
+        {
+          "name": {
+            "value": "Ammo: Regular Ammo",
+            "select": "Light Pistols"
+          },
+          "qty": "100"
+        },
+        {
+          "name": {
+            "value": "Ammo: Regular Ammo",
+            "select": "Heavy Pistols"
+          },
+          "qty": "100"
+        },
+        {
+          "name": {
+            "value": "Ammo: Stick-n-Shock",
+            "select": "Light Pistols"
+          },
+          "qty": "50"
+        },
+        {
+          "name": {
+            "value": "Ammo: Stick-n-Shock",
+            "select": "Heavy Pistols"
+          },
+          "qty": "50"
+        },
+        {
+          "name": "Spare Clip",
+          "qty": "10"
+        },
+        {
+          "name": {
+            "value": "Fake License",
+            "select": "Gun"
+          },
+          "rating": "3"
+        },
+        {
+          "name": "Certified Credstick, Standard",
+          "rating": "3000"
+        }
+      ]
+    },
+    {
+      "name": "Machine Gun Fighter",
+      "category": [
+        "Gear Kits"
+      ],
+      "nuyenbp": "4",
+      "armors": [
+        {
+          "name": "Armor Jacket"
+        },
+        {
+          "name": "Armor Jacket"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "Ingram White Knight"
+        },
+        {
+          "name": "Ingram White Knight"
+        },
+        {
+          "name": "Stoner-Ares M202",
+          "accessories": {
+            "accessory": [
+              {
+                "name": "Gas-Vent 3 System",
+                "mount": "Barrel"
+              },
+              {
+                "name": "Gyro Stabilization",
+                "mount": "Under"
+              }
+            ]
+          }
+        }
+      ],
+      "gears": [
+        {
+          "name": {
+            "value": "Ammo: Explosive Rounds",
+            "select": "Light Machine Guns"
+          },
+          "qty": "270"
+        },
+        {
+          "name": {
+            "value": "Ammo: Explosive Rounds",
+            "select": "Medium Machine Guns"
+          },
+          "qty": "270"
+        },
+        {
+          "name": {
+            "value": "Ammo: Regular Ammo",
+            "select": "Light Machine Guns"
+          },
+          "qty": "825"
+        },
+        {
+          "name": {
+            "value": "Ammo: Regular Ammo",
+            "select": "Medium Machine Guns"
+          },
+          "qty": "825"
+        }
+      ]
+    },
+    {
+      "name": "Rifle Shooter",
+      "category": [
+        "Gear Kits"
+      ],
+      "nuyenbp": "4",
+      "armors": [
+        {
+          "name": "Armor Jacket"
+        },
+        {
+          "name": "Armor Jacket"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "Ares Alpha"
+        },
+        {
+          "name": "Ares Alpha"
+        },
+        {
+          "name": "FN HAR"
+        },
+        {
+          "name": "AK-97"
+        },
+        {
+          "name": "AK-97"
+        },
+        {
+          "name": "Walther MA-2100"
+        }
+      ],
+      "gears": [
+        {
+          "name": {
+            "value": "Ammo: Explosive Rounds",
+            "select": "Assault Rifles"
+          },
+          "qty": "30"
+        },
+        {
+          "name": {
+            "value": "Ammo: Explosive Rounds",
+            "select": "Sniper Rifles"
+          },
+          "qty": "30"
+        },
+        {
+          "name": {
+            "value": "Ammo: EX-Explosive Rounds",
+            "select": "Assault Rifles"
+          },
+          "qty": "25"
+        },
+        {
+          "name": {
+            "value": "Ammo: EX-Explosive Rounds",
+            "select": "Sniper Rifles"
+          },
+          "qty": "25"
+        },
+        {
+          "name": {
+            "value": "Ammo: Gel Rounds",
+            "select": "Assault Rifles"
+          },
+          "qty": "50"
+        },
+        {
+          "name": {
+            "value": "Ammo: Gel Rounds",
+            "select": "Sniper Rifles"
+          },
+          "qty": "50"
+        },
+        {
+          "name": {
+            "value": "Ammo: Regular Ammo",
+            "select": "Assault Rifles"
+          },
+          "qty": "260"
+        },
+        {
+          "name": {
+            "value": "Ammo: Regular Ammo",
+            "select": "Sniper Rifles"
+          },
+          "qty": "260"
+        },
+        {
+          "name": {
+            "value": "Ammo: Stick-n-Shock",
+            "select": "Assault Rifles"
+          },
+          "qty": "50"
+        },
+        {
+          "name": {
+            "value": "Ammo: Stick-n-Shock",
+            "select": "Sniper Rifles"
+          },
+          "qty": "50"
+        },
+        {
+          "name": "Minigrenade: Flash-Bang",
+          "qty": "12"
+        },
+        {
+          "name": "Minigrenade: Gas",
+          "qty": "12",
+          "gears": [
+            {
+              "name": "Pepper Punch"
+            }
+          ]
+        },
+        {
+          "name": "Gas Mask"
+        },
+        {
+          "name": {
+            "value": "Tool Kit",
+            "select": "Armorer"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Brawler",
+      "category": [
+        "Gear Kits"
+      ],
+      "nuyenbp": "2",
+      "armors": [
+        {
+          "name": "Chain Shirt"
+        },
+        {
+          "name": "Chain Shirt"
+        },
+        {
+          "name": "Padded Leather Armor"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "Shock Glove"
+        },
+        {
+          "name": "Shock Glove"
+        },
+        {
+          "name": "Hardliner Gloves"
+        },
+        {
+          "name": "Hardliner Gloves"
+        },
+        {
+          "name": "Club"
+        },
+        {
+          "name": "Club"
+        },
+        {
+          "name": "Extendable Baton"
+        },
+        {
+          "name": "Sap"
+        },
+        {
+          "name": "Stun Baton"
+        },
+        {
+          "name": "Stun Baton"
+        },
+        {
+          "name": "Tonfa"
+        },
+        {
+          "name": "Tonfa"
+        }
+      ],
+      "gears": [
+        {
+          "name": "Fake SIN",
+          "rating": "3"
+        },
+        {
+          "name": "Medkit",
+          "qty": "4",
+          "rating": "4"
+        },
+        {
+          "name": "Medkit Supplies",
+          "qty": "2"
+        },
+        {
+          "name": "Stimulant Patch",
+          "qty": "8",
+          "rating": "6"
+        },
+        {
+          "name": "Disposable Syringe",
+          "qty": "6"
+        }
+      ]
+    },
+    {
+      "name": "Blade Fighter",
+      "category": [
+        "Gear Kits"
+      ],
+      "nuyenbp": "2",
+      "armors": [
+        {
+          "name": "Lined Coat"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "Combat Axe"
+        },
+        {
+          "name": "Combat Axe"
+        },
+        {
+          "name": "Forearm Snap-Blades"
+        },
+        {
+          "name": "Forearm Snap-Blades"
+        },
+        {
+          "name": "Katana"
+        },
+        {
+          "name": "Katana"
+        },
+        {
+          "name": "Knife"
+        },
+        {
+          "name": "Knife"
+        },
+        {
+          "name": "Knife"
+        },
+        {
+          "name": "Knife"
+        },
+        {
+          "name": "Knife"
+        },
+        {
+          "name": "Monofilament Sword"
+        },
+        {
+          "name": "Monofilament Sword"
+        }
+      ],
+      "cyberwares": [
+        {
+          "name": "Hand Blade",
+          "grade": [
+            "Standard"
+          ]
+        },
+        {
+          "name": "Hand Blade",
+          "grade": [
+            "Standard"
+          ]
+        }
+      ],
+      "gears": [
+        {
+          "name": "Biomonitor"
+        },
+        {
+          "name": "Medkit",
+          "qty": "2",
+          "rating": "4"
+        },
+        {
+          "name": "Medkit Supplies",
+          "qty": "2"
+        }
+      ]
+    },
+    {
+      "name": "Multi-Shooter",
+      "category": [
+        "Gear Kits"
+      ],
+      "nuyenbp": "4",
+      "armors": [
+        {
+          "name": "Armor Jacket"
+        },
+        {
+          "name": "Form-Fitting Full-Body Suit"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "Colt Manhunter"
+        },
+        {
+          "name": "Colt Manhunter"
+        },
+        {
+          "name": "Colt Government 2066"
+        },
+        {
+          "name": "Colt Government 2066"
+        },
+        {
+          "name": "Savalette Guardian"
+        },
+        {
+          "name": "Ingram Smartgun X"
+        },
+        {
+          "name": "Ingram Smartgun X"
+        },
+        {
+          "name": "HK MP-5 TX"
+        },
+        {
+          "name": "AK-98"
+        },
+        {
+          "name": "AK-98"
+        },
+        {
+          "name": "Remington 990"
+        },
+        {
+          "name": "Remington 990"
+        },
+        {
+          "name": "Defiance EX Shocker"
+        }
+      ],
+      "gears": [
+        {
+          "name": {
+            "value": "Ammo: Explosive Rounds",
+            "select": "Heavy Pistols"
+          },
+          "qty": "25"
+        },
+        {
+          "name": {
+            "value": "Ammo: Explosive Rounds",
+            "select": "Submachine Guns"
+          },
+          "qty": "25"
+        },
+        {
+          "name": {
+            "value": "Ammo: Explosive Rounds",
+            "select": "Assault Rifles"
+          },
+          "qty": "25"
+        },
+        {
+          "name": {
+            "value": "Ammo: Explosive Rounds",
+            "select": "Shotguns"
+          },
+          "qty": "25"
+        },
+        {
+          "name": {
+            "value": "Ammo: EX-Explosive Rounds",
+            "select": "Heavy Pistols"
+          },
+          "qty": "25"
+        },
+        {
+          "name": {
+            "value": "Ammo: EX-Explosive Rounds",
+            "select": "Submachine Guns"
+          },
+          "qty": "25"
+        },
+        {
+          "name": {
+            "value": "Ammo: EX-Explosive Rounds",
+            "select": "Assault Rifles"
+          },
+          "qty": "25"
+        },
+        {
+          "name": {
+            "value": "Ammo: EX-Explosive Rounds",
+            "select": "Shotguns"
+          },
+          "qty": "15"
+        },
+        {
+          "name": {
+            "value": "Ammo: Regular Ammo",
+            "select": "Heavy Pistols"
+          },
+          "qty": "175"
+        },
+        {
+          "name": {
+            "value": "Ammo: Regular Ammo",
+            "select": "Submachine Guns"
+          },
+          "qty": "175"
+        },
+        {
+          "name": {
+            "value": "Ammo: Regular Ammo",
+            "select": "Assault Rifles"
+          },
+          "qty": "150"
+        },
+        {
+          "name": {
+            "value": "Ammo: Regular Ammo",
+            "select": "Shotguns"
+          },
+          "qty": "150"
+        },
+        {
+          "name": {
+            "value": "Ammo: Taser Dart",
+            "select": "Tasers"
+          },
+          "qty": "150"
+        },
+        {
+          "name": "Minigrenade: Fragmentation",
+          "qty": "12"
+        },
+        {
+          "name": "Minigrenade: Flash-Bang",
+          "qty": "12"
+        }
+      ]
+    },
+    {
+      "name": "Exotic Warrior",
+      "category": [
+        "Gear Kits"
+      ],
+      "nuyenbp": "4",
+      "armors": [
+        {
+          "name": "Lined Coat",
+          "mods": {
+            "mod": [
+              {
+                "name": "Chemical Protection",
+                "rating": "3"
+              }
+            ]
+          }
+        },
+        {
+          "name": "Lined Coat",
+          "mods": {
+            "mod": [
+              {
+                "name": "Chemical Protection",
+                "rating": "3"
+              }
+            ]
+          }
+        }
+      ],
+      "weapons": [
+        {
+          "name": "Monofilament Whip"
+        },
+        {
+          "name": "Pole Arm"
+        },
+        {
+          "name": "Fichetti Pain Inducer"
+        },
+        {
+          "name": "Parashield Dart Pistol"
+        },
+        {
+          "name": "Parashield Dart Pistol"
+        },
+        {
+          "name": "Parashield Dart Rifle"
+        },
+        {
+          "name": "Parashield Dart Rifle"
+        }
+      ],
+      "gears": [
+        {
+          "name": {
+            "value": "Ammo: Injection Darts",
+            "select": "Special Weapons"
+          },
+          "qty": "100"
+        },
+        {
+          "name": "Narcoject",
+          "qty": "100"
+        },
+        {
+          "name": "Antidote Patch",
+          "qty": "3",
+          "rating": "5"
+        }
+      ]
+    },
+    {
+      "name": "Weapon Augmentation",
+      "category": [
+        "Gear Kits"
+      ],
+      "nuyenbp": "15",
+      "armors": [
+        {
+          "name": "Armor Jacket"
+        },
+        {
+          "name": "Armor Vest"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "Ares Predator IV"
+        },
+        {
+          "name": "Ares Predator IV"
+        }
+      ],
+      "cyberwares": [
+        {
+          "name": "Obvious Full Arm",
+          "grade": [
+            "Standard"
+          ],
+          "cyberwares": [
+            {
+              "name": "Customized Agility",
+              "rating": "5"
+            },
+            {
+              "name": "Customized Strength",
+              "rating": "5"
+            },
+            {
+              "name": "Holdout Pistol"
+            },
+            {
+              "name": "Shock Hand"
+            },
+            {
+              "name": "Hand Razors"
+            },
+            {
+              "name": "External Clip Port"
+            }
+          ]
+        },
+        {
+          "name": "Obvious Full Arm",
+          "grade": [
+            "Standard"
+          ],
+          "cyberwares": [
+            {
+              "name": "Customized Agility",
+              "rating": "5"
+            },
+            {
+              "name": "Customized Strength",
+              "rating": "5"
+            },
+            {
+              "name": "Cyberarm Gyromount"
+            },
+            {
+              "name": "Cyber Holster"
+            }
+          ]
+        },
+        {
+          "name": "Obvious Full Leg",
+          "grade": [
+            "Standard"
+          ],
+          "cyberwares": [
+            {
+              "name": "Cyber Holster"
+            },
+            {
+              "name": "Large Smuggling Compartment"
+            }
+          ]
+        }
+      ],
+      "gears": [
+        {
+          "name": {
+            "value": "Ammo: Explosive Rounds",
+            "select": "Heavy Pistols"
+          },
+          "qty": "60"
+        },
+        {
+          "name": {
+            "value": "Ammo: Regular Ammo",
+            "select": "Heavy Pistols"
+          },
+          "qty": "230"
+        },
+        {
+          "name": {
+            "value": "Ammo: Stick-n-Shock",
+            "select": "Heavy Pistols"
+          },
+          "qty": "30"
+        }
+      ]
+    },
+    {
+      "name": "Martial Artist",
+      "category": [
+        "Gear Kits"
+      ],
+      "nuyenbp": "5",
+      "armors": [
+        {
+          "name": "Chameleon Suit"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "Katana"
+        },
+        {
+          "name": "Katana"
+        },
+        {
+          "name": "Sword"
+        },
+        {
+          "name": "Sword"
+        },
+        {
+          "name": "Staff"
+        },
+        {
+          "name": "Staff"
+        },
+        {
+          "name": "Knife"
+        },
+        {
+          "name": "Knife"
+        },
+        {
+          "name": "Knife"
+        },
+        {
+          "name": "Knife"
+        },
+        {
+          "name": "Knife"
+        },
+        {
+          "name": "Knife"
+        },
+        {
+          "name": "Knife"
+        },
+        {
+          "name": "Knife"
+        },
+        {
+          "name": "Knife"
+        },
+        {
+          "name": "Knife"
+        },
+        {
+          "name": "Bow (Rating 4)"
+        },
+        {
+          "name": "Bow (Rating 4)"
+        },
+        {
+          "name": "Bow (Rating 5)"
+        },
+        {
+          "name": "Bow (Rating 6)"
+        }
+      ],
+      "gears": [
+        {
+          "name": "Throwing: Shuriken",
+          "qty": "20"
+        },
+        {
+          "name": "Throwing: Throwing Knife",
+          "qty": "40"
+        },
+        {
+          "name": {
+            "value": "Ammo: Arrow",
+            "select": "Bows"
+          },
+          "qty": "238"
+        },
+        {
+          "name": {
+            "value": "Ammo: Injection Arrow",
+            "select": "Bows"
+          },
+          "qty": "50"
+        },
+        {
+          "name": "Narcoject",
+          "qty": "50"
+        }
+      ]
+    },
+    {
+      "name": "Smartlinked Augmentation",
+      "category": [
+        "Gear Kits"
+      ],
+      "nuyenbp": "1",
+      "cyberwares": [
+        {
+          "name": "Cybereyes Basic System",
+          "rating": "4",
+          "grade": [
+            "Alphaware"
+          ],
+          "cyberwares": [
+            {
+              "name": "Smartlink"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Light Augmented Defense I",
+      "category": [
+        "Gear Kits"
+      ],
+      "nuyenbp": "12",
+      "biowares": [
+        {
+          "name": "Orthoskin",
+          "rating": "2",
+          "grade": [
+            "Standard"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Light Augmented Defense II",
+      "category": [
+        "Gear Kits"
+      ],
+      "nuyenbp": "4",
+      "cyberwares": [
+        {
+          "name": "Dermal Plating",
+          "rating": "2",
+          "grade": [
+            "Alphaware"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Heavy Augmented Defense",
+      "category": [
+        "Gear Kits"
+      ],
+      "nuyenbp": "21",
+      "cyberwares": [
+        {
+          "name": "Bone Lacing (Aluminum)",
+          "grade": [
+            "Standard"
+          ]
+        },
+        {
+          "name": "Dermal Sheath",
+          "rating": "2",
+          "grade": [
+            "Standard"
+          ]
+        }
+      ],
+      "biowares": [
+        {
+          "name": "Damage Compensators",
+          "rating": "3",
+          "grade": [
+            "Standard"
+          ]
+        },
+        {
+          "name": "Platelet Factories",
+          "grade": [
+            "Standard"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Heavy Augmented Defense II",
+      "category": [
+        "Gear Kits"
+      ],
+      "nuyenbp": "41",
+      "biowares": [
+        {
+          "name": "Orthoskin",
+          "rating": "2",
+          "grade": [
+            "Standard"
+          ]
+        },
+        {
+          "name": "Orthoskin Upgrade: Electroshock",
+          "grade": [
+            "Standard"
+          ]
+        },
+        {
+          "name": "Pathogenic Defense",
+          "rating": "3",
+          "grade": [
+            "Standard"
+          ]
+        },
+        {
+          "name": "Toxin Extractor",
+          "rating": "3",
+          "grade": [
+            "Standard"
+          ]
+        },
+        {
+          "name": "Tracheal Filter",
+          "rating": "2",
+          "grade": [
+            "Standard"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Augmented Surveillance",
+      "category": [
+        "Gear Kits"
+      ],
+      "nuyenbp": "5",
+      "cyberwares": [
+        {
+          "name": "Cybereyes Basic System",
+          "rating": "4",
+          "grade": [
+            "Standard"
+          ],
+          "cyberwares": [
+            {
+              "name": "Low-Light Vision"
+            },
+            {
+              "name": "Thermographic Vision"
+            },
+            {
+              "name": "Vision Enhancement",
+              "rating": "3"
+            },
+            {
+              "name": "Vision Magnification"
+            },
+            {
+              "name": "Ocular Drone"
+            }
+          ]
+        },
+        {
+          "name": "Cyberears",
+          "rating": "4",
+          "grade": [
+            "Standard"
+          ],
+          "cyberwares": [
+            {
+              "name": "Audio Enhancement",
+              "rating": "3"
+            },
+            {
+              "name": "Select Sound Filter",
+              "rating": "4"
+            },
+            {
+              "name": "Spatial Recognizer"
+            }
+          ]
+        }
+      ],
+      "gears": [
+        {
+          "name": "Certified Credstick, Standard",
+          "rating": "225"
+        }
+      ]
+    },
+    {
+      "name": "Augmented Brawler",
+      "category": [
+        "Gear Kits"
+      ],
+      "nuyenbp": "18",
+      "biowares": [
+        {
+          "name": "Bone Density Augmentation",
+          "rating": "3",
+          "grade": [
+            "Standard"
+          ]
+        },
+        {
+          "name": "Muscle Augmentation",
+          "rating": "2",
+          "grade": [
+            "Standard"
+          ]
+        },
+        {
+          "name": "Muscle Toner",
+          "rating": "2",
+          "grade": [
+            "Standard"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Brain Booster",
+      "category": [
+        "Gear Kits"
+      ],
+      "nuyenbp": "9",
+      "cyberwares": [
+        {
+          "name": "Attention Coprocessor",
+          "rating": "2",
+          "grade": [
+            "Standard"
+          ]
+        },
+        {
+          "name": "Datajack",
+          "grade": [
+            "Standard"
+          ]
+        }
+      ],
+      "biowares": [
+        {
+          "name": "Cerebral Booster",
+          "rating": "2",
+          "grade": [
+            "Standard"
+          ]
+        },
+        {
+          "name": "Mnemonic Enhancer",
+          "rating": "2",
+          "grade": [
+            "Standard"
+          ]
+        }
+      ],
+      "gears": [
+        {
+          "name": "Certified Credstick, Standard",
+          "rating": "3475"
+        }
+      ]
+    },
+    {
+      "name": "Basic Covert Ops",
+      "category": [
+        "Gear Kits"
+      ],
+      "nuyenbp": "4",
+      "armors": [
+        {
+          "name": "Camouflage Suit",
+          "mods": {
+            "mod": [
+              {
+                "name": "Thermal Damping",
+                "rating": "6"
+              }
+            ]
+          }
+        }
+      ],
+      "gears": [
+        {
+          "name": "Jammer, Area",
+          "qty": "2",
+          "rating": "4"
+        },
+        {
+          "name": "Jammer, Directional",
+          "rating": "4"
+        },
+        {
+          "name": "Micro-Transceiver",
+          "qty": "2",
+          "rating": "6"
+        },
+        {
+          "name": "Tag Eraser",
+          "qty": "2"
+        },
+        {
+          "name": "White Noise Generator",
+          "rating": "6"
+        },
+        {
+          "name": "Datachip",
+          "qty": "50"
+        },
+        {
+          "name": "Lockpick Set"
+        },
+        {
+          "name": "Endoscope",
+          "qty": "2",
+          "rating": "1"
+        },
+        {
+          "name": "Periscope",
+          "qty": "2"
+        },
+        {
+          "name": "Laser Microphone",
+          "rating": "6"
+        },
+        {
+          "name": "Microphone",
+          "rating": "6"
+        },
+        {
+          "name": "Radio Signal Scanner",
+          "qty": "2",
+          "rating": "6"
+        },
+        {
+          "name": "Tool Kit"
+        },
+        {
+          "name": "Nanopaste Disguise (Small Container)",
+          "qty": "5"
+        },
+        {
+          "name": "Wire Clippers",
+          "qty": "2"
+        },
+        {
+          "name": "Climbing Gear"
+        },
+        {
+          "name": "Rappelling Gloves"
+        },
+        {
+          "name": "Grapple Gun",
+          "qty": "2"
+        },
+        {
+          "name": "Stealth Rope (100 m)",
+          "qty": "4"
+        },
+        {
+          "name": "Catalyst Stick"
+        },
+        {
+          "name": "Certified Credstick, Standard",
+          "rating": "345"
+        }
+      ]
+    },
+    {
+      "name": "Deluxe Covert Ops",
+      "category": [
+        "Gear Kits"
+      ],
+      "nuyenbp": "16",
+      "armors": [
+        {
+          "name": "Chameleon Suit",
+          "mods": {
+            "mod": [
+              {
+                "name": "Thermal Damping",
+                "rating": "6"
+              }
+            ]
+          }
+        }
+      ],
+      "weapons": [
+        {
+          "name": "Ceramic Knife"
+        },
+        {
+          "name": "Ceramic Knife"
+        },
+        {
+          "name": "Ceramic Knife"
+        }
+      ],
+      "cyberwares": [
+        {
+          "name": "Cybereyes Basic System",
+          "rating": "4",
+          "grade": [
+            "Standard"
+          ],
+          "cyberwares": [
+            {
+              "name": "Eye Laser System"
+            },
+            {
+              "name": "Eye Laser Microphone",
+              "rating": "3"
+            }
+          ]
+        },
+        {
+          "name": "Cyberears",
+          "rating": "4",
+          "grade": [
+            "Standard"
+          ]
+        },
+        {
+          "name": "Dynamic Handprints",
+          "rating": "4",
+          "grade": [
+            "Standard"
+          ]
+        }
+      ],
+      "biowares": [
+        {
+          "name": "False Front with Mimic Option",
+          "rating": "2",
+          "grade": [
+            "Standard"
+          ]
+        }
+      ],
+      "gears": [
+        {
+          "name": "False Front Mimic Signal Drug",
+          "qty": "10"
+        },
+        {
+          "name": "NanoSpy",
+          "qty": "2"
+        },
+        {
+          "name": "Autopicker",
+          "qty": "2",
+          "rating": "4"
+        },
+        {
+          "name": "Keycard Copier",
+          "qty": "2",
+          "rating": "4"
+        },
+        {
+          "name": "Certified Credstick, Standard",
+          "rating": "1250"
+        }
+      ]
+    },
+    {
+      "name": "B&E Goods",
+      "category": [
+        "Gear Kits"
+      ],
+      "nuyenbp": "4",
+      "gears": [
+        {
+          "name": "Autopicker",
+          "qty": "2",
+          "rating": "6"
+        },
+        {
+          "name": "Cellular Glove Molder",
+          "rating": "3"
+        },
+        {
+          "name": "Chisel"
+        },
+        {
+          "name": "Keycard Copier",
+          "qty": "2",
+          "rating": "6"
+        },
+        {
+          "name": "Lockpick Set",
+          "qty": "2"
+        },
+        {
+          "name": "Maglock Passkey",
+          "rating": "4"
+        },
+        {
+          "name": "Maglock Sequencer",
+          "qty": "2",
+          "rating": "4"
+        },
+        {
+          "name": "Miniwelder",
+          "qty": "2"
+        },
+        {
+          "name": "Wire Clippers",
+          "qty": "4"
+        },
+        {
+          "name": "Flashlight",
+          "qty": "2"
+        },
+        {
+          "name": "Certified Credstick, Standard",
+          "rating": "2505"
+        }
+      ]
+    },
+    {
+      "name": "Light Mage Gear",
+      "category": [
+        "Gear Kits"
+      ],
+      "spirits": [
+        {
+          "name": "Air Spirit",
+          "force": "3",
+          "services": "2"
+        },
+        {
+          "name": "Earth Spirit",
+          "force": "3",
+          "services": "3"
+        },
+        {
+          "name": "Water Spirit",
+          "force": "3",
+          "services": "2"
+        }
+      ]
+    },
+    {
+      "name": "Deluxe Mage Gear",
+      "category": [
+        "Gear Kits"
+      ],
+      "nuyenbp": "2",
+      "gears": [
+        {
+          "name": "Combat Fetish",
+          "qty": "4"
+        },
+        {
+          "name": "Detection Fetish",
+          "qty": "6"
+        },
+        {
+          "name": "Healing Fetish",
+          "qty": "3"
+        },
+        {
+          "name": "Illusion Fetish",
+          "qty": "2"
+        },
+        {
+          "name": "Manipulation Fetish",
+          "qty": "4"
+        },
+        {
+          "name": "Spirit Binding Materials",
+          "rating": "6"
+        },
+        {
+          "name": "Magical Lodge Materials",
+          "rating": "6"
+        }
+      ]
+    },
+    {
+      "name": "Focus User (Combat)",
+      "category": [
+        "Gear Kits"
+      ],
+      "nuyenbp": "18",
+      "gears": [
+        {
+          "name": "Spellcasting Focus (Combat)",
+          "rating": "3",
+          "bonded": "true"
+        },
+        {
+          "name": "Summoning Focus",
+          "rating": "3",
+          "bonded": "true"
+        }
+      ]
+    },
+    {
+      "name": "Focus User (Detection)",
+      "category": [
+        "Gear Kits"
+      ],
+      "nuyenbp": "18",
+      "gears": [
+        {
+          "name": "Spellcasting Focus (Detection)",
+          "rating": "3",
+          "bonded": "true"
+        },
+        {
+          "name": "Summoning Focus",
+          "rating": "3",
+          "bonded": "true"
+        }
+      ]
+    },
+    {
+      "name": "Focus User (Health)",
+      "category": [
+        "Gear Kits"
+      ],
+      "nuyenbp": "18",
+      "gears": [
+        {
+          "name": "Spellcasting Focus (Health)",
+          "rating": "3",
+          "bonded": "true"
+        },
+        {
+          "name": "Summoning Focus",
+          "rating": "3",
+          "bonded": "true"
+        }
+      ]
+    },
+    {
+      "name": "Focus User (Illusion)",
+      "category": [
+        "Gear Kits"
+      ],
+      "nuyenbp": "18",
+      "gears": [
+        {
+          "name": "Spellcasting Focus (Illusion)",
+          "rating": "3",
+          "bonded": "true"
+        },
+        {
+          "name": "Summoning Focus",
+          "rating": "3",
+          "bonded": "true"
+        }
+      ]
+    },
+    {
+      "name": "Focus User (Manipulation)",
+      "category": [
+        "Gear Kits"
+      ],
+      "nuyenbp": "18",
+      "gears": [
+        {
+          "name": "Spellcasting Focus (Manipulation)",
+          "rating": "3",
+          "bonded": "true"
+        },
+        {
+          "name": "Summoning Focus",
+          "rating": "3",
+          "bonded": "true"
+        }
+      ]
+    },
+    {
+      "name": "Focus Addict (Combat)",
+      "category": [
+        "Gear Kits"
+      ],
+      "nuyenbp": "22",
+      "gears": [
+        {
+          "name": "Counterspelling Focus (Combat)",
+          "rating": "3",
+          "bonded": "true"
+        },
+        {
+          "name": "Sustaining Focus (Combat)",
+          "rating": "3",
+          "bonded": "true"
+        },
+        {
+          "name": "Binding Focus",
+          "rating": "3",
+          "bonded": "true"
+        },
+        {
+          "name": "Power Focus",
+          "rating": "2",
+          "bonded": "true"
+        }
+      ]
+    },
+    {
+      "name": "Focus Addict (Detection)",
+      "category": [
+        "Gear Kits"
+      ],
+      "nuyenbp": "22",
+      "gears": [
+        {
+          "name": "Counterspelling Focus (Detection)",
+          "rating": "3",
+          "bonded": "true"
+        },
+        {
+          "name": "Sustaining Focus (Detection)",
+          "rating": "3",
+          "bonded": "true"
+        },
+        {
+          "name": "Binding Focus",
+          "rating": "3",
+          "bonded": "true"
+        },
+        {
+          "name": "Power Focus",
+          "rating": "2",
+          "bonded": "true"
+        }
+      ]
+    },
+    {
+      "name": "Focus Addict (Health)",
+      "category": [
+        "Gear Kits"
+      ],
+      "nuyenbp": "22",
+      "gears": [
+        {
+          "name": "Counterspelling Focus (Health)",
+          "rating": "3",
+          "bonded": "true"
+        },
+        {
+          "name": "Sustaining Focus (Health)",
+          "rating": "3",
+          "bonded": "true"
+        },
+        {
+          "name": "Binding Focus",
+          "rating": "3",
+          "bonded": "true"
+        },
+        {
+          "name": "Power Focus",
+          "rating": "2",
+          "bonded": "true"
+        }
+      ]
+    },
+    {
+      "name": "Focus Addict (Illusion)",
+      "category": [
+        "Gear Kits"
+      ],
+      "nuyenbp": "22",
+      "gears": [
+        {
+          "name": "Counterspelling Focus (Illusion)",
+          "rating": "3",
+          "bonded": "true"
+        },
+        {
+          "name": "Sustaining Focus (Illusion)",
+          "rating": "3",
+          "bonded": "true"
+        },
+        {
+          "name": "Binding Focus",
+          "rating": "3",
+          "bonded": "true"
+        },
+        {
+          "name": "Power Focus",
+          "rating": "2",
+          "bonded": "true"
+        }
+      ]
+    },
+    {
+      "name": "Focus Addict (Manipulation)",
+      "category": [
+        "Gear Kits"
+      ],
+      "nuyenbp": "22",
+      "gears": [
+        {
+          "name": "Counterspelling Focus (Manipulation)",
+          "rating": "3",
+          "bonded": "true"
+        },
+        {
+          "name": "Sustaining Focus (Manipulation)",
+          "rating": "3",
+          "bonded": "true"
+        },
+        {
+          "name": "Binding Focus",
+          "rating": "3",
+          "bonded": "true"
+        },
+        {
+          "name": "Power Focus",
+          "rating": "2",
+          "bonded": "true"
+        }
+      ]
+    },
+    {
+      "name": "Forging Kit",
+      "category": [
+        "Gear Kits"
+      ],
+      "nuyenbp": "3",
+      "gears": [
+        {
+          "name": "Tool Kit",
+          "qty": "2"
+        },
+        {
+          "name": "Appraisal Tool Shop"
+        },
+        {
+          "name": "Datasoft",
+          "qty": "50",
+          "rating": "6"
+        },
+        {
+          "name": "Knowsoft",
+          "qty": "3",
+          "rating": "3"
+        }
+      ]
+    },
+    {
+      "name": "Survivalist",
+      "category": [
+        "Gear Kits"
+      ],
+      "nuyenbp": "2",
+      "armors": [
+        {
+          "name": "Urban Explorer Jumpsuit",
+          "mods": {
+            "mod": [
+              {
+                "name": "Insulation",
+                "rating": "6"
+              }
+            ]
+          }
+        },
+        {
+          "name": "Urban Explorer Jumpsuit",
+          "mods": {
+            "mod": [
+              {
+                "name": "Insulation",
+                "rating": "6"
+              }
+            ]
+          }
+        }
+      ],
+      "weapons": [
+        {
+          "name": "Survival Knife"
+        },
+        {
+          "name": "Survival Knife"
+        }
+      ],
+      "gears": [
+        {
+          "name": "Climbing Gear",
+          "qty": "2"
+        },
+        {
+          "name": "Diving Gear"
+        },
+        {
+          "name": "Gas Mask",
+          "qty": "2"
+        },
+        {
+          "name": "GPS",
+          "qty": "2"
+        },
+        {
+          "name": "Flashlight",
+          "qty": "3"
+        },
+        {
+          "name": "Light Stick",
+          "qty": "10"
+        },
+        {
+          "name": "Magnesium Torch",
+          "qty": "5"
+        },
+        {
+          "name": "Micro Flare Launcher",
+          "qty": "5"
+        },
+        {
+          "name": "Micro Flares",
+          "qty": "15"
+        },
+        {
+          "name": "Rappelling Gloves"
+        },
+        {
+          "name": "Survival Kit",
+          "qty": "5"
+        },
+        {
+          "name": "Standard Rope (100 m)",
+          "qty": "4"
+        },
+        {
+          "name": "Biomonitor"
+        },
+        {
+          "name": "Medkit",
+          "qty": "3",
+          "rating": "6"
+        },
+        {
+          "name": "Disposable Syringe",
+          "qty": "18"
+        }
+      ]
+    },
+    {
+      "name": "Mundane Surveillance",
+      "category": [
+        "Gear Kits"
+      ],
+      "nuyenbp": "1",
+      "gears": [
+        {
+          "name": "Camera, Micro",
+          "rating": "1",
+          "gears": [
+            {
+              "name": "Low Light"
+            }
+          ]
+        },
+        {
+          "name": "Binoculars",
+          "rating": "2",
+          "gears": [
+            {
+              "name": "Low Light"
+            },
+            {
+              "name": "Vision Enhancement",
+              "rating": "2"
+            }
+          ]
+        },
+        {
+          "name": "Glasses",
+          "rating": "4",
+          "gears": [
+            {
+              "name": "Low Light"
+            },
+            {
+              "name": "Thermographic"
+            },
+            {
+              "name": "Vision Magnification"
+            }
+          ]
+        },
+        {
+          "name": "Microphone, Micro",
+          "rating": "1",
+          "gears": [
+            {
+              "name": "Select Sound Filter",
+              "rating": "3"
+            }
+          ]
+        },
+        {
+          "name": "Microphone",
+          "rating": "6",
+          "gears": [
+            {
+              "name": "Audio Enhancement",
+              "rating": "3"
+            },
+            {
+              "name": "Select Sound Filter",
+              "rating": "3"
+            }
+          ]
+        },
+        {
+          "name": "Handheld Sensor",
+          "gears": [
+            {
+              "name": "Directional Microphone"
+            },
+            {
+              "name": "Laser Microphone",
+              "rating": "6"
+            }
+          ]
+        },
+        {
+          "name": "Earbuds",
+          "rating": "3",
+          "gears": [
+            {
+              "name": "Audio Enhancement",
+              "rating": "3"
+            },
+            {
+              "name": "Select Sound Filter",
+              "rating": "3"
+            }
+          ]
+        },
+        {
+          "name": "Handheld Sensor",
+          "gears": [
+            {
+              "name": "Cyberware Scanner",
+              "rating": "5"
+            },
+            {
+              "name": "MAD Scanner",
+              "rating": "3"
+            }
+          ]
+        },
+        {
+          "name": "Stealth Tags",
+          "qty": "100"
+        }
+      ]
+    },
+    {
+      "name": "Ground Combat Drones",
+      "category": [
+        "Gear Kits"
+      ],
+      "nuyenbp": "4",
+      "gears": [
+        {
+          "name": {
+            "value": "Ammo: Regular Ammo",
+            "select": "Assault Rifles"
+          },
+          "qty": "100"
+        },
+        {
+          "name": {
+            "value": "Ammo: EX-Explosive Rounds",
+            "select": "Light Machine Guns"
+          },
+          "qty": "500"
+        }
+      ],
+      "vehicles": [
+        {
+          "name": "GM-Nissan Doberman (Medium)",
+          "weapons": [
+            {
+              "name": "AK-97",
+              "accessories": {
+                "accessory": [
+                  {
+                    "name": "Sound Suppressor",
+                    "mount": "Barrel"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Steel Lynx (Large)",
+          "weapons": [
+            {
+              "name": "Ingram White Knight"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Air Combat Drones I",
+      "category": [
+        "Gear Kits"
+      ],
+      "nuyenbp": "3",
+      "vehicles": [
+        {
+          "name": "MCT-Nissan Roto-drone (Medium)",
+          "mods": {
+            "mod": [
+              {
+                "name": "Weapon Mount (Normal, External, Flexible, Remote)"
+              }
+            ]
+          },
+          "gears": [
+            {
+              "name": {
+                "value": "Ammo: Regular Ammo",
+                "select": "Assault Rifles"
+              },
+              "qty": "100"
+            }
+          ],
+          "weapons": [
+            {
+              "name": "FN HAR"
+            }
+          ]
+        },
+        {
+          "name": "MCT-Nissan Roto-drone (Medium)",
+          "mods": {
+            "mod": [
+              {
+                "name": "Weapon Mount (Normal, External, Flexible, Remote)"
+              }
+            ]
+          },
+          "gears": [
+            {
+              "name": {
+                "value": "Ammo: Regular Ammo",
+                "select": "Assault Rifles"
+              },
+              "qty": "100"
+            }
+          ],
+          "weapons": [
+            {
+              "name": "FN HAR"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Air Combat Drones II",
+      "category": [
+        "Gear Kits"
+      ],
+      "nuyenbp": "9",
+      "vehicles": [
+        {
+          "name": "GTS Tower (Large)",
+          "weapons": [
+            {
+              "name": "Walther MA-2100"
+            }
+          ]
+        },
+        {
+          "name": "Cyberspace Designs Dragonfly (Minidrone)"
+        },
+        {
+          "name": "Cyberspace Designs Dragonfly (Minidrone)"
+        },
+        {
+          "name": "C-D Dalmatian (Large)",
+          "mods": {
+            "mod": [
+              {
+                "name": "Ammo Bins"
+              },
+              {
+                "name": "Weapon Mount (Normal, External, Flexible, Remote)"
+              }
+            ]
+          },
+          "gears": [
+            {
+              "name": {
+                "value": "Ammo: Regular Ammo",
+                "select": "Sniper Rifles"
+              },
+              "qty": "50"
+            },
+            {
+              "name": {
+                "value": "Ammo: Regular Ammo",
+                "select": "Light Machine Guns"
+              },
+              "qty": "750"
+            }
+          ],
+          "weapons": [
+            {
+              "name": "Ingram White Knight"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Surveillance Drones",
+      "category": [
+        "Gear Kits"
+      ],
+      "nuyenbp": "3",
+      "vehicles": [
+        {
+          "name": "Shiawase Kanmushi (Microdrone)"
+        },
+        {
+          "name": "Shiawase Kanmushi (Microdrone)"
+        },
+        {
+          "name": "Shiawase Kanmushi (Microdrone)"
+        },
+        {
+          "name": "S-B Microskimmer (Microdrone)"
+        },
+        {
+          "name": "S-B Microskimmer (Microdrone)"
+        },
+        {
+          "name": "MCT Fly-Spy (Minidrone)"
+        },
+        {
+          "name": "MCT Fly-Spy (Minidrone)"
+        },
+        {
+          "name": "Renraku Stormcloud (Medium)"
+        }
+      ]
+    },
+    {
+      "name": "Spy Car",
+      "category": [
+        "Gear Kits"
+      ],
+      "nuyenbp": "24",
+      "vehicles": [
+        {
+          "name": "Eurocar Westwind 3K (Sports Car)",
+          "mods": {
+            "mod": [
+              {
+                "name": "Ejection Seats"
+              },
+              {
+                "name": "Nitrous Injection"
+              },
+              {
+                "name": "Oil Slick Sprayer"
+              },
+              {
+                "name": "Road Strip Ejector"
+              },
+              {
+                "name": "Spike Strip"
+              },
+              {
+                "name": "Spike Strip"
+              },
+              {
+                "name": "Spike Strip"
+              },
+              {
+                "name": "Spike Strip"
+              },
+              {
+                "name": "Spike Strip"
+              },
+              {
+                "name": "Spike Strip"
+              },
+              {
+                "name": "Weapon Mount (Normal, Concealed, Fixed, Remote)"
+              },
+              {
+                "name": "Armor, Concealed",
+                "rating": "10"
+              }
+            ]
+          },
+          "gears": [
+            {
+              "name": {
+                "value": "Ammo: EX-Explosive Rounds",
+                "select": "Light Machine Guns"
+              },
+              "qty": "150"
+            }
+          ],
+          "weapons": [
+            {
+              "name": "Ingram White Knight"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Classic Rigger Van",
+      "category": [
+        "Gear Kits"
+      ],
+      "nuyenbp": "20",
+      "vehicles": [
+        {
+          "name": "GMC Bulldog Step-Van (Van)",
+          "mods": {
+            "mod": [
+              {
+                "name": "Amenities, High"
+              },
+              {
+                "name": "Anti-Theft"
+              },
+              {
+                "name": "Armor, Concealed",
+                "rating": "10"
+              },
+              {
+                "name": "Chameleon Coating"
+              },
+              {
+                "name": "Drone Rack, Large"
+              },
+              {
+                "name": "Interior Cameras"
+              },
+              {
+                "name": "Rigger Adaptation"
+              },
+              {
+                "name": "Rigger Cocoon, Enhanced"
+              },
+              {
+                "name": "Valkyrie Module"
+              },
+              {
+                "name": "Spoof Chip"
+              },
+              {
+                "name": "Weapon Mount (Normal, Internal, Turret, Remote)"
+              }
+            ]
+          },
+          "gears": [
+            {
+              "name": {
+                "value": "Ammo: EX-Explosive Rounds",
+                "select": "Light Machine Guns"
+              },
+              "qty": "220"
+            }
+          ],
+          "weapons": [
+            {
+              "name": "Ingram White Knight"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Getaway Car",
+      "category": [
+        "Gear Kits"
+      ],
+      "nuyenbp": "20",
+      "gears": [
+        {
+          "name": {
+            "value": "Ammo: EX-Explosive Rounds",
+            "select": "Light Machine Guns"
+          },
+          "qty": "220"
+        }
+      ],
+      "vehicles": [
+        {
+          "name": "Hyundai Shin-Hyung (Sedan)",
+          "mods": {
+            "mod": [
+              {
+                "name": "Engine Customization, Speed"
+              },
+              {
+                "name": "Improved Suspension"
+              },
+              {
+                "name": "Nitrous Injection"
+              },
+              {
+                "name": "Passenger Protection",
+                "rating": "6"
+              },
+              {
+                "name": "Racing Tires",
+                "rating": "4"
+              },
+              {
+                "name": "Spoof Chip"
+              },
+              {
+                "name": "Turbocharger",
+                "rating": "1"
+              }
+            ]
+          },
+          "weapons": [
+            {
+              "name": "Ingram White Knight"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Matrix Basics",
+      "category": [
+        "Gear Kits"
+      ],
+      "nuyenbp": "1",
+      "gears": [
+        {
+          "name": "Erika Elite",
+          "gears": [
+            {
+              "name": "Iris Orb"
+            },
+            {
+              "name": "Suite: Basic User"
+            }
+          ]
+        },
+        {
+          "name": "Glasses",
+          "rating": "1",
+          "gears": [
+            {
+              "name": "Image Link"
+            }
+          ]
+        },
+        {
+          "name": "Linguasoft",
+          "rating": "2"
+        },
+        {
+          "name": "Virtual Weather"
+        },
+        {
+          "name": "Wall Space"
+        }
+      ]
+    },
+    {
+      "name": "Matrix Power User",
+      "category": [
+        "Gear Kits"
+      ],
+      "nuyenbp": "2",
+      "gears": [
+        {
+          "name": "Transys Avalon",
+          "gears": [
+            {
+              "name": "Novatech Navi"
+            },
+            {
+              "name": "Sim Module (Cold)"
+            }
+          ]
+        },
+        {
+          "name": "Suite: Pro User"
+        },
+        {
+          "name": "Encrypt",
+          "rating": "4"
+        },
+        {
+          "name": "Scan",
+          "rating": "4"
+        },
+        {
+          "name": "Purge",
+          "rating": "3"
+        },
+        {
+          "name": "Linguasoft",
+          "rating": "3"
+        },
+        {
+          "name": "Nanopaste Trodes",
+          "rating": "1"
+        },
+        {
+          "name": "AR Gloves",
+          "rating": "1"
+        }
+      ]
+    },
+    {
+      "name": "Hacker Pack",
+      "category": [
+        "Gear Kits"
+      ],
+      "nuyenbp": "5",
+      "gears": [
+        {
+          "name": "Fairlight Caliban",
+          "gears": [
+            {
+              "name": "Novatech Navi"
+            },
+            {
+              "name": "Response 5"
+            },
+            {
+              "name": "Firewall 5"
+            },
+            {
+              "name": "System 5"
+            },
+            {
+              "name": "Customized Interface"
+            },
+            {
+              "name": {
+                "value": "Optimization",
+                "select": "Exploit"
+              }
+            },
+            {
+              "name": "Biometric Lock"
+            },
+            {
+              "name": "Armor Case",
+              "rating": "10"
+            },
+            {
+              "name": "Sim Module (Hot)"
+            }
+          ]
+        },
+        {
+          "name": "Nanopaste Trodes",
+          "rating": "1"
+        },
+        {
+          "name": "Skinlink",
+          "rating": "1"
+        },
+        {
+          "name": "Tag Eraser"
+        },
+        {
+          "name": "Satellite Link",
+          "rating": "1"
+        },
+        {
+          "name": "Simrig",
+          "rating": "1"
+        },
+        {
+          "name": "Holo Projector",
+          "rating": "1"
+        },
+        {
+          "name": "AR Gloves",
+          "rating": "1"
+        },
+        {
+          "name": "Analyze",
+          "rating": "5"
+        },
+        {
+          "name": "Browse",
+          "rating": "5"
+        },
+        {
+          "name": "Command",
+          "rating": "5"
+        },
+        {
+          "name": "Edit",
+          "rating": "5"
+        },
+        {
+          "name": "Encrypt",
+          "rating": "5"
+        },
+        {
+          "name": "Purge",
+          "rating": "5"
+        },
+        {
+          "name": "Scan",
+          "rating": "5"
+        },
+        {
+          "name": "Reality Filter",
+          "rating": "5"
+        }
+      ]
+    },
+    {
+      "name": "Cyber Warrior Programs",
+      "category": [
+        "Gear Kits"
+      ],
+      "nuyenbp": "3",
+      "gears": [
+        {
+          "name": "Armor",
+          "rating": "5"
+        },
+        {
+          "name": "Attack",
+          "rating": "5"
+        },
+        {
+          "name": "Medic",
+          "rating": "5"
+        }
+      ]
+    },
+    {
+      "name": "Self-Defense Programs",
+      "category": [
+        "Gear Kits"
+      ],
+      "nuyenbp": "1",
+      "gears": [
+        {
+          "name": "Attack",
+          "rating": "4"
+        },
+        {
+          "name": "Armor",
+          "rating": "2"
+        }
+      ]
+    },
+    {
+      "name": "Brain Melter Programs",
+      "category": [
+        "Gear Kits"
+      ],
+      "nuyenbp": "3",
+      "gears": [
+        {
+          "name": "Biofeedback Filter",
+          "rating": "5"
+        },
+        {
+          "name": "Black Hammer",
+          "rating": "5"
+        },
+        {
+          "name": "Blackout",
+          "rating": "5"
+        }
+      ]
+    },
+    {
+      "name": "Drone Puppeteer Programs",
+      "category": [
+        "Gear Kits"
+      ],
+      "nuyenbp": "3",
+      "gears": [
+        {
+          "name": "Decrypt",
+          "rating": "4"
+        },
+        {
+          "name": "ECCM",
+          "rating": "3"
+        },
+        {
+          "name": "Sniffer",
+          "rating": "3"
+        },
+        {
+          "name": "Spoof",
+          "rating": "4"
+        },
+        {
+          "name": "Track",
+          "rating": "4"
+        }
+      ]
+    },
+    {
+      "name": "Hacker Essential Programs",
+      "category": [
+        "Gear Kits"
+      ],
+      "nuyenbp": "2",
+      "gears": [
+        {
+          "name": "Exploit",
+          "rating": "5"
+        },
+        {
+          "name": "Stealth",
+          "rating": "5"
+        }
+      ]
+    },
+    {
+      "name": "Hacker Backup Programs",
+      "category": [
+        "Gear Kits"
+      ],
+      "nuyenbp": "2",
+      "gears": [
+        {
+          "name": "Exploit",
+          "rating": "4"
+        },
+        {
+          "name": "Stealth",
+          "rating": "4"
+        },
+        {
+          "name": "Decrypt",
+          "rating": "2"
+        },
+        {
+          "name": "Defuse",
+          "rating": "2"
+        }
+      ]
+    },
+    {
+      "name": "Data Thief Programs",
+      "category": [
+        "Gear Kits"
+      ],
+      "nuyenbp": "4",
+      "gears": [
+        {
+          "name": "Decrypt",
+          "rating": "5"
+        },
+        {
+          "name": "Defuse",
+          "rating": "5"
+        },
+        {
+          "name": "Corrupt",
+          "rating": "5"
+        },
+        {
+          "name": "Track",
+          "rating": "5"
+        }
+      ]
+    }
+  ]
+}

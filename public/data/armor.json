@@ -1,0 +1,4552 @@
+{
+  "version": -881,
+  "categories": [
+    "Armor",
+    "Clothing",
+    "Environmental Armor",
+    "Fashion",
+    "Helmets and Shields",
+    "Military Grade Armor",
+    "SecureTech PPP System"
+  ],
+  "armors": [
+    {
+      "name": "Clothing",
+      "category": [
+        "Clothing"
+      ],
+      "b": "0",
+      "i": "0",
+      "armorcapacity": "0",
+      "avail": "0",
+      "cost": [
+        "Variable(20-100000)"
+      ],
+      "source": "SR4",
+      "page": "326"
+    },
+    {
+      "name": "Feedback Clothing",
+      "category": [
+        "Clothing"
+      ],
+      "b": "0",
+      "i": "0",
+      "armorcapacity": "0",
+      "avail": "8",
+      "cost": [
+        "500"
+      ],
+      "source": "SR4",
+      "page": "326"
+    },
+    {
+      "name": "Leather Jacket",
+      "category": [
+        "Clothing"
+      ],
+      "b": "2",
+      "i": "2",
+      "armorcapacity": "0",
+      "avail": "0",
+      "cost": [
+        "200"
+      ],
+      "source": "SR4",
+      "page": "326"
+    },
+    {
+      "name": "Mortimer of London: Berwick Suit Jacket",
+      "category": [
+        "Clothing"
+      ],
+      "b": "+3",
+      "i": "+2",
+      "armorcapacity": "0",
+      "avail": "12",
+      "cost": [
+        "1500"
+      ],
+      "source": "AR",
+      "page": "45"
+    },
+    {
+      "name": "Mortimer of London: Berwick Dinner Jacket",
+      "category": [
+        "Clothing"
+      ],
+      "b": "+2",
+      "i": "+2",
+      "armorcapacity": "0",
+      "avail": "12",
+      "cost": [
+        "1750"
+      ],
+      "source": "AR",
+      "page": "45"
+    },
+    {
+      "name": "Mortimer of London: Berwick Skirt/Trousers",
+      "category": [
+        "Clothing"
+      ],
+      "b": "+1",
+      "i": "+1",
+      "armorcapacity": "0",
+      "avail": "12",
+      "cost": [
+        "800"
+      ],
+      "source": "AR",
+      "page": "45"
+    },
+    {
+      "name": "Mortimer of London: Berwick Blouse/Shirt",
+      "category": [
+        "Clothing"
+      ],
+      "b": "+1",
+      "i": "+0",
+      "armorcapacity": "0",
+      "avail": "12",
+      "cost": [
+        "550"
+      ],
+      "source": "AR",
+      "page": "45"
+    },
+    {
+      "name": "Mortimer of London: Greatcoat Line",
+      "category": [
+        "Clothing"
+      ],
+      "b": "6",
+      "i": "5",
+      "armorcapacity": "0",
+      "avail": "8",
+      "cost": [
+        "3000"
+      ],
+      "bonus": {
+        "concealability": "-2"
+      },
+      "mods": {
+        "name": [
+          {
+            "value": "Chemical Protection",
+            "rating": "2"
+          },
+          {
+            "value": "Insulation",
+            "rating": "2"
+          }
+        ]
+      },
+      "source": "AR",
+      "page": "45"
+    },
+    {
+      "name": "Mortimer of London: Ulysses Line",
+      "category": [
+        "Clothing"
+      ],
+      "b": "6",
+      "i": "4",
+      "armorcapacity": "0",
+      "avail": "8",
+      "cost": [
+        "2800"
+      ],
+      "bonus": {
+        "concealability": "-2"
+      },
+      "mods": {
+        "name": {
+          "value": "Chemical Protection",
+          "rating": "4"
+        }
+      },
+      "source": "AR",
+      "page": "45"
+    },
+    {
+      "name": "Vashon Island: Aces High Jacket Line",
+      "category": [
+        "Clothing"
+      ],
+      "b": "3",
+      "i": "3",
+      "armorcapacity": "0",
+      "avail": "7",
+      "cost": [
+        "1250"
+      ],
+      "mods": {
+        "name": [
+          {
+            "value": "Chemical Protection",
+            "rating": "1"
+          },
+          {
+            "value": "Insulation",
+            "rating": "1"
+          }
+        ]
+      },
+      "source": "AR",
+      "page": "46"
+    },
+    {
+      "name": "Vashon Island: Steampunk Overcoat",
+      "category": [
+        "Clothing"
+      ],
+      "b": "+3",
+      "i": "+3",
+      "armorcapacity": "0",
+      "avail": "7",
+      "cost": [
+        "1000"
+      ],
+      "source": "AR",
+      "page": "46"
+    },
+    {
+      "name": "Vashon Island: Steampunk Corset/Vest",
+      "category": [
+        "Clothing"
+      ],
+      "b": "+2",
+      "i": "+2",
+      "armorcapacity": "0",
+      "avail": "7",
+      "cost": [
+        "600"
+      ],
+      "source": "AR",
+      "page": "46"
+    },
+    {
+      "name": "Vashon Island: Steampunk Slacks or Knickers/Petticoat and Skirt",
+      "category": [
+        "Clothing"
+      ],
+      "b": "+1",
+      "i": "+1",
+      "armorcapacity": "0",
+      "avail": "7",
+      "cost": [
+        "400"
+      ],
+      "source": "AR",
+      "page": "46"
+    },
+    {
+      "name": "Vashon Island: Steampunk Blouse/Shirt",
+      "category": [
+        "Clothing"
+      ],
+      "b": "+1",
+      "i": "+1",
+      "armorcapacity": "0",
+      "avail": "7",
+      "cost": [
+        "250"
+      ],
+      "source": "AR",
+      "page": "46"
+    },
+    {
+      "name": "Vashon Island: Steampunk Dressing Gown",
+      "category": [
+        "Clothing"
+      ],
+      "b": "+1",
+      "i": "+0",
+      "armorcapacity": "0",
+      "avail": "7",
+      "cost": [
+        "750"
+      ],
+      "source": "AR",
+      "page": "46"
+    },
+    {
+      "name": "Vashon Island: Synergist Suit Jacket",
+      "category": [
+        "Clothing"
+      ],
+      "b": "+3",
+      "i": "+2",
+      "armorcapacity": "0",
+      "avail": "8",
+      "cost": [
+        "800"
+      ],
+      "bonus": {
+        "concealability": "-2"
+      },
+      "source": "AR",
+      "page": "46"
+    },
+    {
+      "name": "Vashon Island: Synergist Short Jacket",
+      "category": [
+        "Clothing"
+      ],
+      "b": "+2",
+      "i": "+2",
+      "armorcapacity": "0",
+      "avail": "8",
+      "cost": [
+        "500"
+      ],
+      "source": "AR",
+      "page": "46"
+    },
+    {
+      "name": "Vashon Island: Synergist Skirt/Slacks",
+      "category": [
+        "Clothing"
+      ],
+      "b": "+1",
+      "i": "+1",
+      "armorcapacity": "0",
+      "avail": "8",
+      "cost": [
+        "400"
+      ],
+      "source": "AR",
+      "page": "46"
+    },
+    {
+      "name": "Vashon Island: Synergist High-collar Shirt",
+      "category": [
+        "Clothing"
+      ],
+      "b": "+1",
+      "i": "+0",
+      "armorcapacity": "0",
+      "avail": "8",
+      "cost": [
+        "300"
+      ],
+      "source": "AR",
+      "page": "46"
+    },
+    {
+      "name": "Vashon Island: Synergist Longcoat",
+      "category": [
+        "Clothing"
+      ],
+      "b": "+4",
+      "i": "+2",
+      "armorcapacity": "0",
+      "avail": "8",
+      "cost": [
+        "1300"
+      ],
+      "bonus": {
+        "concealability": "-4"
+      },
+      "gears": {
+        "usegear": [
+          "Concealable Holster"
+        ]
+      },
+      "source": "AR",
+      "page": "46"
+    },
+    {
+      "name": "Victory: Globetrotter Camouflage Jacket",
+      "category": [
+        "Clothing"
+      ],
+      "b": "6",
+      "i": "4",
+      "armorcapacity": "0",
+      "avail": "5",
+      "cost": [
+        "1000"
+      ],
+      "addmodcategory": "Victory Liners",
+      "source": "AR",
+      "page": "46"
+    },
+    {
+      "name": "Victory: Globetrotter Camouflage Jumpsuit",
+      "category": [
+        "Clothing"
+      ],
+      "b": "5",
+      "i": "3",
+      "armorcapacity": "0",
+      "avail": "5",
+      "cost": [
+        "750"
+      ],
+      "addmodcategory": "Victory Liners",
+      "source": "AR",
+      "page": "46"
+    },
+    {
+      "name": "Victory: Globetrotter Camouflage Vest",
+      "category": [
+        "Clothing"
+      ],
+      "b": "3",
+      "i": "3",
+      "armorcapacity": "0",
+      "avail": "5",
+      "cost": [
+        "400"
+      ],
+      "addmodcategory": "Victory Liners",
+      "source": "AR",
+      "page": "46"
+    },
+    {
+      "name": "Victory: Globetrotter Light Armor Clothing",
+      "category": [
+        "Clothing"
+      ],
+      "b": "3",
+      "i": "0",
+      "armorcapacity": "0",
+      "avail": "5",
+      "cost": [
+        "400"
+      ],
+      "addmodcategory": "Victory Liners",
+      "source": "AR",
+      "page": "46"
+    },
+    {
+      "name": "Victory: Globetrotter Heavy Armor Clothing",
+      "category": [
+        "Clothing"
+      ],
+      "b": "4",
+      "i": "2",
+      "armorcapacity": "0",
+      "avail": "5",
+      "cost": [
+        "600"
+      ],
+      "addmodcategory": "Victory Liners",
+      "source": "AR",
+      "page": "46"
+    },
+    {
+      "name": "Victory: Globetrotter Fatigues",
+      "category": [
+        "Clothing"
+      ],
+      "b": "3",
+      "i": "0",
+      "armorcapacity": "0",
+      "avail": "5",
+      "cost": [
+        "500"
+      ],
+      "addmodcategory": "Victory Liners",
+      "source": "AR",
+      "page": "46"
+    },
+    {
+      "name": "Victory: Industrious Jumpsuit",
+      "category": [
+        "Clothing"
+      ],
+      "b": "4",
+      "i": "2",
+      "armorcapacity": "0",
+      "avail": "4",
+      "cost": [
+        "700"
+      ],
+      "mods": {
+        "name": [
+          {
+            "value": "Chemical Protection",
+            "rating": "2"
+          },
+          {
+            "value": "Fire Resistance",
+            "rating": "2"
+          }
+        ]
+      },
+      "source": "AR",
+      "page": "47"
+    },
+    {
+      "name": "Victory: Industrious Coverall",
+      "category": [
+        "Clothing"
+      ],
+      "b": "5",
+      "i": "4",
+      "armorcapacity": "0",
+      "avail": "4",
+      "cost": [
+        "900"
+      ],
+      "mods": {
+        "name": [
+          {
+            "value": "Chemical Protection",
+            "rating": "2"
+          },
+          {
+            "value": "Fire Resistance",
+            "rating": "2"
+          }
+        ]
+      },
+      "source": "AR",
+      "page": "47"
+    },
+    {
+      "name": "Victory: Industrious Winterized Coverall",
+      "category": [
+        "Clothing"
+      ],
+      "b": "6",
+      "i": "5",
+      "armorcapacity": "0",
+      "avail": "4",
+      "cost": [
+        "1000"
+      ],
+      "mods": {
+        "name": [
+          {
+            "value": "Chemical Protection",
+            "rating": "2"
+          },
+          {
+            "value": "Fire Resistance",
+            "rating": "2"
+          },
+          {
+            "value": "Insulation",
+            "rating": "2"
+          }
+        ]
+      },
+      "source": "AR",
+      "page": "47"
+    },
+    {
+      "name": "Victory: Industrious Hard Hat",
+      "category": [
+        "Helmets and Shields"
+      ],
+      "b": "+0",
+      "i": "+2",
+      "armorcapacity": "0",
+      "avail": "4",
+      "cost": [
+        "50"
+      ],
+      "mods": {
+        "name": [
+          {
+            "value": "Chemical Protection",
+            "rating": "2"
+          },
+          {
+            "value": "Fire Resistance",
+            "rating": "2"
+          }
+        ]
+      },
+      "source": "AR",
+      "page": "47"
+    },
+    {
+      "name": "Zoé: Executive Suite Long Jacket",
+      "category": [
+        "Clothing"
+      ],
+      "b": "+4",
+      "i": "+1",
+      "armorcapacity": "0",
+      "avail": "9",
+      "cost": [
+        "1000"
+      ],
+      "source": "AR",
+      "page": "47"
+    },
+    {
+      "name": "Zoé: Executive Suite Short Jacket",
+      "category": [
+        "Clothing"
+      ],
+      "b": "+3",
+      "i": "+1",
+      "armorcapacity": "0",
+      "avail": "9",
+      "cost": [
+        "750"
+      ],
+      "source": "AR",
+      "page": "47"
+    },
+    {
+      "name": "Zoé: Executive Suite Plain Blouse/Shirt",
+      "category": [
+        "Clothing"
+      ],
+      "b": "+1",
+      "i": "+0",
+      "armorcapacity": "0",
+      "avail": "9",
+      "cost": [
+        "400"
+      ],
+      "source": "AR",
+      "page": "47"
+    },
+    {
+      "name": "Zoé: Executive Suite Skirt/Trousers",
+      "category": [
+        "Clothing"
+      ],
+      "b": "+1",
+      "i": "+1",
+      "armorcapacity": "0",
+      "avail": "9",
+      "cost": [
+        "550"
+      ],
+      "source": "AR",
+      "page": "47"
+    },
+    {
+      "name": "Zoé: Moonsilver Evening Gown",
+      "category": [
+        "Clothing"
+      ],
+      "b": "4",
+      "i": "1",
+      "armorcapacity": "0",
+      "avail": "10",
+      "cost": [
+        "7500"
+      ],
+      "source": "AR",
+      "page": "47"
+    },
+    {
+      "name": "Zoé: Moonsilver Cocktail Dress",
+      "category": [
+        "Clothing"
+      ],
+      "b": "3",
+      "i": "1",
+      "armorcapacity": "0",
+      "avail": "10",
+      "cost": [
+        "5000"
+      ],
+      "source": "AR",
+      "page": "47"
+    },
+    {
+      "name": "Zoé: Moonsilver Scarf",
+      "category": [
+        "Clothing"
+      ],
+      "b": "+1",
+      "i": "+0",
+      "armorcapacity": "0",
+      "avail": "10",
+      "cost": [
+        "Variable(500-1000)"
+      ],
+      "source": "AR",
+      "page": "47"
+    },
+    {
+      "name": "Zoé: Second Skin",
+      "category": [
+        "Clothing"
+      ],
+      "b": "4",
+      "i": "1",
+      "armorcapacity": "0",
+      "avail": "12",
+      "cost": [
+        "5000"
+      ],
+      "addmodcategory": "Second Skin Polymer",
+      "source": "AR",
+      "page": "48"
+    },
+    {
+      "name": "Clockwork Vest",
+      "category": [
+        "Clothing"
+      ],
+      "b": "1",
+      "i": "1",
+      "armorcapacity": "0",
+      "avail": "6",
+      "cost": [
+        "200"
+      ],
+      "source": "AT",
+      "page": "154"
+    },
+    {
+      "name": "Tiffany Dress",
+      "category": [
+        "Clothing"
+      ],
+      "b": "4",
+      "i": "3",
+      "armorcapacity": "0",
+      "avail": "10",
+      "cost": [
+        "8500"
+      ],
+      "source": "AT",
+      "page": "154"
+    },
+    {
+      "name": "Strict-9 Jacket",
+      "category": [
+        "Clothing"
+      ],
+      "b": "4",
+      "i": "1",
+      "armorcapacity": "0",
+      "avail": "8",
+      "cost": [
+        "2200"
+      ],
+      "source": "AT",
+      "page": "157"
+    },
+    {
+      "name": "Teg-mentum",
+      "category": [
+        "Clothing"
+      ],
+      "b": "4",
+      "i": "1",
+      "armorcapacity": "0",
+      "avail": "10",
+      "cost": [
+        "3000"
+      ],
+      "source": "AT",
+      "page": "157"
+    },
+    {
+      "name": "H-jumpsuit",
+      "category": [
+        "Clothing"
+      ],
+      "b": "3",
+      "i": "2",
+      "armorcapacity": "0",
+      "avail": "10",
+      "cost": [
+        "2500"
+      ],
+      "source": "AT",
+      "page": "157"
+    },
+    {
+      "name": "Holo Gloves",
+      "category": [
+        "Clothing"
+      ],
+      "b": "0",
+      "i": "0",
+      "armorcapacity": "0",
+      "avail": "10",
+      "cost": [
+        "500"
+      ],
+      "source": "AT",
+      "page": "157"
+    },
+    {
+      "name": "Holo Hood",
+      "category": [
+        "Clothing"
+      ],
+      "b": "0",
+      "i": "0",
+      "armorcapacity": "0",
+      "avail": "10",
+      "cost": [
+        "475"
+      ],
+      "source": "AT",
+      "page": "157"
+    },
+    {
+      "name": "Livingware Coat",
+      "category": [
+        "Clothing"
+      ],
+      "b": "1",
+      "i": "3",
+      "armorcapacity": "0",
+      "avail": "15",
+      "cost": [
+        "8000"
+      ],
+      "source": "AT",
+      "page": "159"
+    },
+    {
+      "name": "Symbiote Earrings",
+      "category": [
+        "Clothing"
+      ],
+      "b": "0",
+      "i": "0",
+      "armorcapacity": "0",
+      "avail": "12",
+      "cost": [
+        "2000"
+      ],
+      "source": "AT",
+      "page": "159"
+    },
+    {
+      "name": "Symbiote Anemone Ring",
+      "category": [
+        "Clothing"
+      ],
+      "b": "0",
+      "i": "0",
+      "armorcapacity": "0",
+      "avail": "10",
+      "cost": [
+        "2300"
+      ],
+      "source": "AT",
+      "page": "159"
+    },
+    {
+      "name": "Symbiote Pendant",
+      "category": [
+        "Clothing"
+      ],
+      "b": "0",
+      "i": "0",
+      "armorcapacity": "0",
+      "avail": "10",
+      "cost": [
+        "1800"
+      ],
+      "source": "AT",
+      "page": "159"
+    },
+    {
+      "name": "Anielski-Joop Reconquista Overcoat",
+      "category": [
+        "Clothing"
+      ],
+      "b": "+3",
+      "i": "+2",
+      "armorcapacity": "0",
+      "avail": "10",
+      "cost": [
+        "2000"
+      ],
+      "mods": {
+        "name": {
+          "value": "Chemical Protection",
+          "rating": "3"
+        }
+      },
+      "source": "ARG",
+      "page": "0"
+    },
+    {
+      "name": "Anielski-Joop Reconquista Waistcoat",
+      "category": [
+        "Clothing"
+      ],
+      "b": "+1",
+      "i": "+1",
+      "armorcapacity": "0",
+      "avail": "10",
+      "cost": [
+        "1250"
+      ],
+      "source": "ARG",
+      "page": "0"
+    },
+    {
+      "name": "Anielski-Joop Reconquista Frock-Coat/Trousers",
+      "category": [
+        "Clothing"
+      ],
+      "b": "+1",
+      "i": "+0",
+      "armorcapacity": "0",
+      "avail": "10",
+      "cost": [
+        "850"
+      ],
+      "source": "ARG",
+      "page": "0"
+    },
+    {
+      "name": "Anielski-Joop Reconquista Boots",
+      "category": [
+        "Clothing"
+      ],
+      "b": "+0",
+      "i": "+1",
+      "armorcapacity": "0",
+      "avail": "10",
+      "cost": [
+        "500"
+      ],
+      "source": "ARG",
+      "page": "0"
+    },
+    {
+      "name": "dressCODE CYBERPIRATE Jacket",
+      "category": [
+        "Clothing"
+      ],
+      "b": "+3",
+      "i": "+2",
+      "armorcapacity": "0",
+      "avail": "7",
+      "cost": [
+        "500"
+      ],
+      "mods": {
+        "name": {
+          "value": "Chemical Protection",
+          "rating": "2"
+        }
+      },
+      "source": "ARG",
+      "page": "0"
+    },
+    {
+      "name": "dressCODE CYBERPIRATE T-Shirt/Tube Top",
+      "category": [
+        "Clothing"
+      ],
+      "b": "+1",
+      "i": "+0",
+      "armorcapacity": "0",
+      "avail": "7",
+      "cost": [
+        "200"
+      ],
+      "source": "ARG",
+      "page": "0"
+    },
+    {
+      "name": "dressCODE CYBERPIRATE Trousers/Skirt",
+      "category": [
+        "Clothing"
+      ],
+      "b": "+1",
+      "i": "+1",
+      "armorcapacity": "0",
+      "avail": "7",
+      "cost": [
+        "300"
+      ],
+      "source": "ARG",
+      "page": "0"
+    },
+    {
+      "name": "dressCODE CYBERPIRATE Hotpants",
+      "category": [
+        "Clothing"
+      ],
+      "b": "+1",
+      "i": "+0",
+      "armorcapacity": "0",
+      "avail": "7",
+      "cost": [
+        "200"
+      ],
+      "source": "ARG",
+      "page": "0"
+    },
+    {
+      "name": "dressCODE CYBERPIRATE Hotpants with Chaps",
+      "category": [
+        "Clothing"
+      ],
+      "b": "+1",
+      "i": "+1",
+      "armorcapacity": "0",
+      "avail": "7",
+      "cost": [
+        "350"
+      ],
+      "source": "ARG",
+      "page": "0"
+    },
+    {
+      "name": "Rheingold zeitloS Aurora Overcoat",
+      "category": [
+        "Clothing"
+      ],
+      "b": "3",
+      "i": "2",
+      "armorcapacity": "0",
+      "avail": "10",
+      "cost": [
+        "2000"
+      ],
+      "source": "ARG",
+      "page": "0"
+    },
+    {
+      "name": "Rheingold zeitloS Aurora Blazer",
+      "category": [
+        "Clothing"
+      ],
+      "b": "1",
+      "i": "1",
+      "armorcapacity": "0",
+      "avail": "10",
+      "cost": [
+        "1250"
+      ],
+      "source": "ARG",
+      "page": "0"
+    },
+    {
+      "name": "Rheingold zeitloS Aurora Blouse/Shirt",
+      "category": [
+        "Clothing"
+      ],
+      "b": "+1",
+      "i": "+0",
+      "armorcapacity": "0",
+      "avail": "10",
+      "cost": [
+        "850"
+      ],
+      "source": "ARG",
+      "page": "0"
+    },
+    {
+      "name": "Rheingold zeitloS Aurora Trousers/Skirt",
+      "category": [
+        "Clothing"
+      ],
+      "b": "+0",
+      "i": "+1",
+      "armorcapacity": "0",
+      "avail": "10",
+      "cost": [
+        "500"
+      ],
+      "source": "ARG",
+      "page": "0"
+    },
+    {
+      "name": "Actioneer Business Clothes",
+      "category": [
+        "Armor"
+      ],
+      "b": "5",
+      "i": "3",
+      "armorcapacity": "0",
+      "avail": "8",
+      "cost": [
+        "1500"
+      ],
+      "bonus": {
+        "concealability": "-2"
+      },
+      "source": "SR4",
+      "page": "326"
+    },
+    {
+      "name": "Armor Clothing",
+      "category": [
+        "Armor"
+      ],
+      "b": "4",
+      "i": "0",
+      "armorcapacity": "0",
+      "avail": "2",
+      "cost": [
+        "500"
+      ],
+      "addmodcategory": "Clothing",
+      "source": "SR4",
+      "page": "326"
+    },
+    {
+      "name": "Armor Jacket",
+      "category": [
+        "Armor"
+      ],
+      "b": "8",
+      "i": "6",
+      "armorcapacity": "0",
+      "avail": "2",
+      "cost": [
+        "900"
+      ],
+      "source": "SR4",
+      "page": "326"
+    },
+    {
+      "name": "Armor Vest",
+      "category": [
+        "Armor"
+      ],
+      "b": "6",
+      "i": "4",
+      "armorcapacity": "0",
+      "avail": "4",
+      "cost": [
+        "600"
+      ],
+      "source": "SR4",
+      "page": "326"
+    },
+    {
+      "name": "Bike Racing Armor",
+      "category": [
+        "Armor"
+      ],
+      "b": "4",
+      "i": "7",
+      "armorcapacity": "6",
+      "avail": "6",
+      "cost": [
+        "500"
+      ],
+      "source": "AR",
+      "page": "48"
+    },
+    {
+      "name": "Body Armor Bag",
+      "category": [
+        "Armor"
+      ],
+      "b": "6",
+      "i": "2",
+      "armorcapacity": "0",
+      "avail": "8",
+      "cost": [
+        "750"
+      ],
+      "source": "AR",
+      "page": "48"
+    },
+    {
+      "name": "Bunker Gear",
+      "category": [
+        "Armor"
+      ],
+      "b": "3",
+      "i": "6",
+      "armorcapacity": "4",
+      "avail": "6",
+      "cost": [
+        "2500"
+      ],
+      "mods": {
+        "name": [
+          {
+            "value": "Chemical Protection",
+            "rating": "4"
+          },
+          {
+            "value": "Fire Resistance",
+            "rating": "6"
+          }
+        ]
+      },
+      "source": "AR",
+      "page": "49"
+    },
+    {
+      "name": "Camouflage Suit",
+      "category": [
+        "Armor"
+      ],
+      "b": "8",
+      "i": "6",
+      "armorcapacity": "0",
+      "avail": "4",
+      "cost": [
+        "1200"
+      ],
+      "addmodcategory": "Chemical Seal",
+      "source": "SR4",
+      "page": "326"
+    },
+    {
+      "name": "Chain Shirt",
+      "category": [
+        "Armor"
+      ],
+      "b": "2",
+      "i": "7",
+      "armorcapacity": "0",
+      "avail": "8",
+      "cost": [
+        "900"
+      ],
+      "source": "AR",
+      "page": "48"
+    },
+    {
+      "name": "Chameleon Suit",
+      "category": [
+        "Armor"
+      ],
+      "b": "6",
+      "i": "4",
+      "armorcapacity": "0",
+      "avail": "10R",
+      "cost": [
+        "8000"
+      ],
+      "addmodcategory": "Chemical Seal",
+      "source": "SR4",
+      "page": "326"
+    },
+    {
+      "name": "Form-Fitting Shirt",
+      "category": [
+        "Armor"
+      ],
+      "b": "+3",
+      "i": "+0",
+      "armorcapacity": "0",
+      "avail": "6",
+      "cost": [
+        "500"
+      ],
+      "source": "AR",
+      "page": "48"
+    },
+    {
+      "name": "Form-Fitting Half-Body Suit",
+      "category": [
+        "Armor"
+      ],
+      "b": "+4",
+      "i": "+1",
+      "armorcapacity": "0",
+      "avail": "7",
+      "cost": [
+        "900"
+      ],
+      "source": "AR",
+      "page": "48"
+    },
+    {
+      "name": "Form-Fitting Full-Body Suit",
+      "category": [
+        "Armor"
+      ],
+      "b": "+6",
+      "i": "+2",
+      "armorcapacity": "0",
+      "avail": "8",
+      "cost": [
+        "1600"
+      ],
+      "addmodcategory": "Chemical Seal",
+      "source": "AR",
+      "page": "48"
+    },
+    {
+      "name": "Full Body Armor",
+      "category": [
+        "Armor"
+      ],
+      "b": "10",
+      "i": "8",
+      "armorcapacity": "8",
+      "avail": "14R",
+      "cost": [
+        "6000"
+      ],
+      "addmodcategory": "Chemical Seal",
+      "source": "SR4",
+      "page": "326"
+    },
+    {
+      "name": "Lined Coat",
+      "category": [
+        "Armor"
+      ],
+      "b": "6",
+      "i": "4",
+      "armorcapacity": "0",
+      "avail": "2",
+      "cost": [
+        "700"
+      ],
+      "bonus": {
+        "concealability": "-2"
+      },
+      "source": "SR4",
+      "page": "326"
+    },
+    {
+      "name": "Padded Leather Armor",
+      "category": [
+        "Armor"
+      ],
+      "b": "2",
+      "i": "5",
+      "armorcapacity": "0",
+      "avail": "8",
+      "cost": [
+        "600"
+      ],
+      "source": "AR",
+      "page": "48"
+    },
+    {
+      "name": "Paper Armor",
+      "category": [
+        "Armor"
+      ],
+      "b": "1",
+      "i": "4",
+      "armorcapacity": "0",
+      "avail": "4",
+      "cost": [
+        "100"
+      ],
+      "source": "AT",
+      "page": "155"
+    },
+    {
+      "name": "Riot Control Armor",
+      "category": [
+        "Armor"
+      ],
+      "b": "6",
+      "i": "9",
+      "armorcapacity": "6",
+      "avail": "10R",
+      "cost": [
+        "3000"
+      ],
+      "addmodcategory": "Chemical Seal",
+      "mods": {
+        "name": [
+          "Shock Frills",
+          {
+            "value": "Fire Resistance",
+            "rating": "2"
+          }
+        ]
+      },
+      "source": "AR",
+      "page": "49"
+    },
+    {
+      "name": "SWAT Armor",
+      "category": [
+        "Armor"
+      ],
+      "b": "12",
+      "i": "10",
+      "armorcapacity": "8",
+      "avail": "16R",
+      "cost": [
+        "8000"
+      ],
+      "mods": {
+        "name": [
+          {
+            "value": "Fire Resistance",
+            "rating": "4"
+          },
+          "Biomonitor"
+        ]
+      },
+      "source": "AR",
+      "page": "49"
+    },
+    {
+      "name": "Urban Explorer Jumpsuit",
+      "category": [
+        "Armor"
+      ],
+      "b": "6",
+      "i": "6",
+      "armorcapacity": "6",
+      "avail": "8",
+      "cost": [
+        "500"
+      ],
+      "addmodcategory": "Chemical Seal",
+      "mods": {
+        "name": "Biomonitor"
+      },
+      "source": "SR4",
+      "page": "326"
+    },
+    {
+      "name": "Diving Armor",
+      "category": [
+        "Environmental Armor"
+      ],
+      "b": "5",
+      "i": "4",
+      "armorcapacity": "3",
+      "avail": "6",
+      "cost": [
+        "1750"
+      ],
+      "mods": {
+        "name": [
+          {
+            "value": "Chemical Protection",
+            "rating": "4"
+          },
+          {
+            "value": "Insulation",
+            "rating": "1"
+          }
+        ]
+      },
+      "source": "AR",
+      "page": "55"
+    },
+    {
+      "name": "Evo HEL Suit",
+      "category": [
+        "Environmental Armor"
+      ],
+      "b": "4",
+      "i": "6",
+      "armorcapacity": "5",
+      "avail": "10",
+      "cost": [
+        "3000"
+      ],
+      "mods": {
+        "name": [
+          {
+            "value": "Insulation",
+            "rating": "4"
+          },
+          {
+            "value": "Fire Resistance",
+            "rating": "2"
+          },
+          {
+            "value": "Radiation Shielding",
+            "rating": "3"
+          },
+          {
+            "value": "Chemical Protection",
+            "rating": "2"
+          }
+        ]
+      },
+      "source": "AR",
+      "page": "54"
+    },
+    {
+      "name": "Mitsuhama EE Suit",
+      "category": [
+        "Environmental Armor"
+      ],
+      "b": "3",
+      "i": "3",
+      "armorcapacity": "5",
+      "avail": "4",
+      "cost": [
+        "1500"
+      ],
+      "mods": {
+        "name": [
+          "Chemical Seal",
+          {
+            "value": "Fire Resistance",
+            "rating": "3"
+          },
+          {
+            "value": "Radiation Shielding",
+            "rating": "6"
+          }
+        ]
+      },
+      "source": "AR",
+      "page": "55"
+    },
+    {
+      "name": "Polar Survival Suit",
+      "category": [
+        "Environmental Armor"
+      ],
+      "b": "1",
+      "i": "3",
+      "armorcapacity": "6",
+      "avail": "8",
+      "cost": [
+        "1000"
+      ],
+      "bonus": {
+        "specificskill": {
+          "name": "Climbing",
+          "bonus": "1"
+        }
+      },
+      "mods": {
+        "name": [
+          {
+            "value": "Insulation",
+            "rating": "6"
+          },
+          {
+            "value": "Thermal Damping",
+            "rating": "4"
+          }
+        ]
+      },
+      "source": "AR",
+      "page": "52"
+    },
+    {
+      "name": "Security Spacesuit",
+      "category": [
+        "Environmental Armor"
+      ],
+      "b": "12",
+      "i": "12",
+      "armorcapacity": "8",
+      "avail": "24",
+      "cost": [
+        "25000"
+      ],
+      "mods": {
+        "name": [
+          "Biomonitor",
+          {
+            "value": "Chemical Protection",
+            "rating": "6"
+          },
+          {
+            "value": "Insulation",
+            "rating": "6"
+          },
+          {
+            "value": "Thermal Damping",
+            "rating": "4"
+          }
+        ]
+      },
+      "source": "AR",
+      "page": "54"
+    },
+    {
+      "name": "Spacesuit",
+      "category": [
+        "Environmental Armor"
+      ],
+      "b": "6",
+      "i": "8",
+      "armorcapacity": "4",
+      "avail": "16",
+      "cost": [
+        "12000"
+      ],
+      "mods": {
+        "name": [
+          "Biomonitor",
+          {
+            "value": "Chemical Protection",
+            "rating": "6"
+          },
+          {
+            "value": "Insulation",
+            "rating": "6"
+          },
+          {
+            "value": "Thermal Damping",
+            "rating": "4"
+          }
+        ]
+      },
+      "source": "AR",
+      "page": "55"
+    },
+    {
+      "name": "SK Myrmidon Armor",
+      "category": [
+        "Military Grade Armor"
+      ],
+      "b": "16",
+      "i": "14",
+      "armorcapacity": "0",
+      "avail": "18F",
+      "cost": [
+        "32500"
+      ],
+      "addmodcategory": "Military Grade Armor",
+      "mods": {
+        "name": [
+          "Chemical Seal",
+          {
+            "value": "Thermal Damping",
+            "rating": "3"
+          },
+          "Articulated Weapon Arm"
+        ]
+      },
+      "source": "ARG",
+      "page": "0"
+    },
+    {
+      "name": "Light Military Armor",
+      "category": [
+        "Military Grade Armor"
+      ],
+      "b": "12",
+      "i": "10",
+      "armorcapacity": "10",
+      "avail": "16F",
+      "cost": [
+        "12000"
+      ],
+      "addmodcategory": [
+        "Chemical Seal",
+        "Military Grade Armor"
+      ],
+      "mods": {
+        "name": "Biomonitor"
+      },
+      "source": "AR",
+      "page": "51"
+    },
+    {
+      "name": "Medium Military Armor",
+      "category": [
+        "Military Grade Armor"
+      ],
+      "b": "14",
+      "i": "12",
+      "armorcapacity": "15",
+      "avail": "18F",
+      "cost": [
+        "16000"
+      ],
+      "addmodcategory": [
+        "Chemical Seal",
+        "Military Grade Armor"
+      ],
+      "mods": {
+        "name": "Biomonitor"
+      },
+      "source": "AR",
+      "page": "51"
+    },
+    {
+      "name": "Heavy Military Armor",
+      "category": [
+        "Military Grade Armor"
+      ],
+      "b": "16",
+      "i": "14",
+      "armorcapacity": "20",
+      "avail": "20F",
+      "cost": [
+        "20000"
+      ],
+      "addmodcategory": [
+        "Chemical Seal",
+        "Military Grade Armor"
+      ],
+      "mods": {
+        "name": "Biomonitor"
+      },
+      "source": "AR",
+      "page": "51"
+    },
+    {
+      "name": "Oyoroi Armor",
+      "category": [
+        "Military Grade Armor"
+      ],
+      "b": "11",
+      "i": "11",
+      "armorcapacity": "11",
+      "avail": "18F",
+      "cost": [
+        "11000"
+      ],
+      "addmodcategory": [
+        "Chemical Seal",
+        "Military Grade Armor"
+      ],
+      "mods": {
+        "name": "Biomonitor"
+      },
+      "source": "AR",
+      "page": "51"
+    },
+    {
+      "name": "Red Samurai Armor",
+      "category": [
+        "Military Grade Armor"
+      ],
+      "b": "13",
+      "i": "13",
+      "armorcapacity": "12",
+      "avail": "20F",
+      "cost": [
+        "15000"
+      ],
+      "addmodcategory": [
+        "Chemical Seal",
+        "Military Grade Armor"
+      ],
+      "mods": {
+        "name": [
+          "Biomonitor",
+          {
+            "value": "Mobility Upgrade",
+            "rating": "2"
+          }
+        ]
+      },
+      "source": "AR",
+      "page": "51"
+    },
+    {
+      "name": "Helmet",
+      "category": [
+        "Helmets and Shields"
+      ],
+      "addoncategory": [
+        "Vision Enhancements",
+        "Audio Enhancements"
+      ],
+      "b": "+1",
+      "i": "+2",
+      "armorcapacity": "0",
+      "avail": "2",
+      "cost": [
+        "100"
+      ],
+      "source": "SR4",
+      "page": "327"
+    },
+    {
+      "name": "Ballistic Shield",
+      "category": [
+        "Helmets and Shields"
+      ],
+      "b": "+6",
+      "i": "+4",
+      "armorcapacity": "0",
+      "avail": "12R",
+      "cost": [
+        "1500"
+      ],
+      "source": "SR4",
+      "page": "327"
+    },
+    {
+      "name": "Riot Shield",
+      "category": [
+        "Helmets and Shields"
+      ],
+      "b": "+2",
+      "i": "+6",
+      "armorcapacity": "0",
+      "avail": "6R",
+      "cost": [
+        "200"
+      ],
+      "source": "SR4",
+      "page": "327"
+    },
+    {
+      "name": "Taser Shield",
+      "category": [
+        "Helmets and Shields"
+      ],
+      "b": "+2",
+      "i": "+6",
+      "armorcapacity": "0",
+      "avail": "10R",
+      "cost": [
+        "750"
+      ],
+      "source": "SR4",
+      "page": "327"
+    },
+    {
+      "name": "Riot Control Helmet",
+      "category": [
+        "Helmets and Shields"
+      ],
+      "addoncategory": [
+        "Vision Enhancements",
+        "Audio Enhancements"
+      ],
+      "b": "+1",
+      "i": "+2",
+      "armorcapacity": "6",
+      "avail": "10R",
+      "cost": [
+        "1000"
+      ],
+      "gears": {
+        "usegear": [
+          "Image Link"
+        ]
+      },
+      "source": "AR",
+      "page": "49"
+    },
+    {
+      "name": "SWAT Helmet",
+      "category": [
+        "Helmets and Shields"
+      ],
+      "addoncategory": [
+        "Vision Enhancements",
+        "Audio Enhancements"
+      ],
+      "b": "+2",
+      "i": "+2",
+      "armorcapacity": "4",
+      "avail": "16R",
+      "cost": [
+        "1200"
+      ],
+      "gears": {
+        "usegear": [
+          "Gas Mask",
+          "Image Link",
+          "Low Light",
+          "Smartlink",
+          "Flare Compensation"
+        ]
+      },
+      "source": "AR",
+      "page": "51"
+    },
+    {
+      "name": "Urban Explorer Helmet",
+      "category": [
+        "Helmets and Shields"
+      ],
+      "addoncategory": [
+        "Vision Enhancements",
+        "Audio Enhancements"
+      ],
+      "b": "+0",
+      "i": "+2",
+      "armorcapacity": "5",
+      "avail": "8",
+      "cost": [
+        "50"
+      ],
+      "source": "SR4",
+      "page": "326"
+    },
+    {
+      "name": "Military Helmet (Rating 4)",
+      "category": [
+        "Helmets and Shields"
+      ],
+      "addoncategory": [
+        "Vision Enhancements",
+        "Audio Enhancements"
+      ],
+      "b": "+2",
+      "i": "+2",
+      "armorcapacity": "5",
+      "avail": "16F",
+      "cost": [
+        "10000"
+      ],
+      "gears": {
+        "usegear": [
+          {
+            "value": "Camera",
+            "rating": "1"
+          },
+          "Flare Compensation",
+          "Image Link",
+          "Smartlink",
+          "Custom Commlink",
+          "Firewall 4",
+          "Response 4",
+          "Signal 4",
+          "System 4",
+          {
+            "value": "Encrypt",
+            "rating": "4"
+          }
+        ]
+      },
+      "source": "AR",
+      "page": "51"
+    },
+    {
+      "name": "Military Helmet (Rating 5)",
+      "category": [
+        "Helmets and Shields"
+      ],
+      "addoncategory": [
+        "Vision Enhancements",
+        "Audio Enhancements"
+      ],
+      "b": "+2",
+      "i": "+2",
+      "armorcapacity": "5",
+      "avail": "16F",
+      "cost": [
+        "12500"
+      ],
+      "gears": {
+        "usegear": [
+          {
+            "value": "Camera",
+            "rating": "1"
+          },
+          "Flare Compensation",
+          "Image Link",
+          "Smartlink",
+          "Custom Commlink",
+          "Firewall 5",
+          "Response 5",
+          "Signal 5",
+          "System 5",
+          {
+            "value": "Encrypt",
+            "rating": "5"
+          }
+        ]
+      },
+      "source": "AR",
+      "page": "51"
+    },
+    {
+      "name": "Military Helmet (Rating 6)",
+      "category": [
+        "Helmets and Shields"
+      ],
+      "addoncategory": [
+        "Vision Enhancements",
+        "Audio Enhancements"
+      ],
+      "b": "+2",
+      "i": "+2",
+      "armorcapacity": "5",
+      "avail": "16F",
+      "cost": [
+        "18500"
+      ],
+      "gears": {
+        "usegear": [
+          {
+            "value": "Camera",
+            "rating": "1"
+          },
+          "Flare Compensation",
+          "Image Link",
+          "Smartlink",
+          "Custom Commlink",
+          "Firewall 6",
+          "Response 6",
+          "Signal 6",
+          "System 6",
+          {
+            "value": "Encrypt",
+            "rating": "6"
+          }
+        ]
+      },
+      "source": "AR",
+      "page": "51"
+    },
+    {
+      "name": "Kabuto Helmet",
+      "category": [
+        "Helmets and Shields"
+      ],
+      "addoncategory": [
+        "Vision Enhancements",
+        "Audio Enhancements"
+      ],
+      "b": "+2",
+      "i": "+2",
+      "armorcapacity": "4",
+      "avail": "18F",
+      "cost": [
+        "10000"
+      ],
+      "source": "AR",
+      "page": "51"
+    },
+    {
+      "name": "SK Myrmidon Helmet",
+      "category": [
+        "Helmets and Shields"
+      ],
+      "addoncategory": [
+        "Vision Enhancements",
+        "Audio Enhancements"
+      ],
+      "b": "+2",
+      "i": "+2",
+      "armorcapacity": "0",
+      "avail": "24F",
+      "cost": [
+        "15000"
+      ],
+      "gears": {
+        "usegear": [
+          "Ultrasound",
+          "Olfactory Sensor"
+        ]
+      },
+      "source": "ARG",
+      "page": "0"
+    },
+    {
+      "name": "Bike Racing Helmet",
+      "category": [
+        "Helmets and Shields"
+      ],
+      "addoncategory": [
+        "Vision Enhancements",
+        "Audio Enhancements"
+      ],
+      "b": "+1",
+      "i": "+2",
+      "armorcapacity": "6",
+      "avail": "6",
+      "cost": [
+        "200"
+      ],
+      "gears": {
+        "usegear": [
+          "Image Link",
+          "Flare Compensation"
+        ]
+      },
+      "source": "AR",
+      "page": "48"
+    },
+    {
+      "name": "Bunker Gear Helmet",
+      "category": [
+        "Helmets and Shields"
+      ],
+      "addoncategory": [
+        "Vision Enhancements",
+        "Audio Enhancements"
+      ],
+      "b": "+1",
+      "i": "+2",
+      "armorcapacity": "3",
+      "avail": "6",
+      "cost": [
+        "750"
+      ],
+      "mods": {
+        "name": [
+          {
+            "value": "Chemical Protection",
+            "rating": "4"
+          },
+          {
+            "value": "Fire Resistance",
+            "rating": "6"
+          }
+        ]
+      },
+      "gears": {
+        "usegear": [
+          "Thermographic",
+          "Low Light",
+          "Flare Compensation",
+          "Gas Mask"
+        ]
+      },
+      "source": "AR",
+      "page": "49"
+    },
+    {
+      "name": "Full Body Armor Helmet",
+      "category": [
+        "Helmets and Shields"
+      ],
+      "addoncategory": [
+        "Vision Enhancements",
+        "Audio Enhancements"
+      ],
+      "b": "+2",
+      "i": "+2",
+      "armorcapacity": "7",
+      "avail": "14R",
+      "cost": [
+        "1000"
+      ],
+      "source": "SR4",
+      "page": "326"
+    },
+    {
+      "name": "Ballistic Mask",
+      "category": [
+        "Helmets and Shields"
+      ],
+      "addoncategory": [
+        "Vision Enhancements",
+        "Audio Enhancements"
+      ],
+      "b": "+2",
+      "i": "+1",
+      "armorcapacity": "0",
+      "avail": "7",
+      "cost": [
+        "130"
+      ],
+      "source": "WAR",
+      "page": "160"
+    },
+    {
+      "name": "Death Mask",
+      "category": [
+        "Helmets and Shields"
+      ],
+      "addoncategory": [
+        "Vision Enhancements",
+        "Audio Enhancements"
+      ],
+      "b": "+0",
+      "i": "+1",
+      "armorcapacity": "0",
+      "avail": "2",
+      "cost": [
+        "275"
+      ],
+      "bonus": {
+        "specificskill": {
+          "name": "Intimidation",
+          "bonus": "1"
+        }
+      },
+      "source": "AT",
+      "page": "155"
+    },
+    {
+      "name": "6 Tees casualwear (Horizon)",
+      "category": [
+        "Fashion"
+      ],
+      "b": "0",
+      "i": "0",
+      "armorcapacity": "6",
+      "avail": "0",
+      "cost": [
+        "20"
+      ],
+      "addmodcategory": "Clothing",
+      "source": "AT",
+      "page": "161"
+    },
+    {
+      "name": "6 Tees urban fashion (Horizon)",
+      "category": [
+        "Fashion"
+      ],
+      "b": "0",
+      "i": "0",
+      "armorcapacity": "6",
+      "avail": "0",
+      "cost": [
+        "150"
+      ],
+      "addmodcategory": "Clothing",
+      "source": "AT",
+      "page": "161"
+    },
+    {
+      "name": "Ami Feather designer fashion",
+      "category": [
+        "Fashion"
+      ],
+      "b": "0",
+      "i": "0",
+      "armorcapacity": "6",
+      "avail": "0",
+      "cost": [
+        "7000"
+      ],
+      "addmodcategory": "Clothing",
+      "source": "AT",
+      "page": "161"
+    },
+    {
+      "name": "Armanté designer fashion",
+      "category": [
+        "Fashion"
+      ],
+      "b": "0",
+      "i": "0",
+      "armorcapacity": "6",
+      "avail": "0",
+      "cost": [
+        "5000"
+      ],
+      "addmodcategory": "Clothing",
+      "source": "AT",
+      "page": "161"
+    },
+    {
+      "name": "Aston designer fashion",
+      "category": [
+        "Fashion"
+      ],
+      "b": "0",
+      "i": "0",
+      "armorcapacity": "6",
+      "avail": "0",
+      "cost": [
+        "5000"
+      ],
+      "addmodcategory": "Clothing",
+      "source": "AT",
+      "page": "161"
+    },
+    {
+      "name": "Beaux Retail casualwear (Mitsuhama)",
+      "category": [
+        "Fashion"
+      ],
+      "b": "0",
+      "i": "0",
+      "armorcapacity": "6",
+      "avail": "0",
+      "cost": [
+        "20"
+      ],
+      "addmodcategory": "Clothing",
+      "source": "AT",
+      "page": "161"
+    },
+    {
+      "name": "Beaux Retail businesswear (Mitsuhama)",
+      "category": [
+        "Fashion"
+      ],
+      "b": "0",
+      "i": "0",
+      "armorcapacity": "6",
+      "avail": "0",
+      "cost": [
+        "100"
+      ],
+      "addmodcategory": "Clothing",
+      "source": "AT",
+      "page": "161"
+    },
+    {
+      "name": "Berwick businesswear (Mortimer of London)",
+      "category": [
+        "Fashion"
+      ],
+      "b": "0",
+      "i": "0",
+      "armorcapacity": "6",
+      "avail": "0",
+      "cost": [
+        "1000"
+      ],
+      "addmodcategory": "Clothing",
+      "source": "AT",
+      "page": "161"
+    },
+    {
+      "name": "Berwick designer fashion (Mortimer of London)",
+      "category": [
+        "Fashion"
+      ],
+      "b": "0",
+      "i": "0",
+      "armorcapacity": "6",
+      "avail": "0",
+      "cost": [
+        "5000"
+      ],
+      "addmodcategory": "Clothing",
+      "source": "AT",
+      "page": "161"
+    },
+    {
+      "name": "Bodyline casualwear(Spinrad Industries)",
+      "category": [
+        "Fashion"
+      ],
+      "b": "0",
+      "i": "0",
+      "armorcapacity": "6",
+      "avail": "0",
+      "cost": [
+        "30"
+      ],
+      "addmodcategory": "Clothing",
+      "source": "AT",
+      "page": "161"
+    },
+    {
+      "name": "Bodyline urban fashion (Spinrad Industries)",
+      "category": [
+        "Fashion"
+      ],
+      "b": "0",
+      "i": "0",
+      "armorcapacity": "6",
+      "avail": "0",
+      "cost": [
+        "50"
+      ],
+      "addmodcategory": "Clothing",
+      "source": "AT",
+      "page": "161"
+    },
+    {
+      "name": "Brilliance businesswear (Horizon)",
+      "category": [
+        "Fashion"
+      ],
+      "b": "0",
+      "i": "0",
+      "armorcapacity": "6",
+      "avail": "0",
+      "cost": [
+        "100"
+      ],
+      "addmodcategory": "Clothing",
+      "source": "AT",
+      "page": "161"
+    },
+    {
+      "name": "Brilliance formalwear (Horizon)",
+      "category": [
+        "Fashion"
+      ],
+      "b": "0",
+      "i": "0",
+      "armorcapacity": "6",
+      "avail": "0",
+      "cost": [
+        "285"
+      ],
+      "addmodcategory": "Clothing",
+      "source": "AT",
+      "page": "161"
+    },
+    {
+      "name": "CD/Common Denominator (Evo)",
+      "category": [
+        "Fashion"
+      ],
+      "b": "0",
+      "i": "0",
+      "armorcapacity": "6",
+      "avail": "0",
+      "cost": [
+        "20"
+      ],
+      "addmodcategory": "Clothing",
+      "source": "AT",
+      "page": "161"
+    },
+    {
+      "name": "De Button (Aztechnology)",
+      "category": [
+        "Fashion"
+      ],
+      "b": "0",
+      "i": "0",
+      "armorcapacity": "6",
+      "avail": "0",
+      "cost": [
+        "85"
+      ],
+      "addmodcategory": "Clothing",
+      "source": "AT",
+      "page": "161"
+    },
+    {
+      "name": "DressCode (Amalgamated Studios)",
+      "category": [
+        "Fashion"
+      ],
+      "b": "0",
+      "i": "0",
+      "armorcapacity": "6",
+      "avail": "0",
+      "cost": [
+        "60"
+      ],
+      "addmodcategory": "Clothing",
+      "source": "AT",
+      "page": "161"
+    },
+    {
+      "name": "Europa (Renraku)",
+      "category": [
+        "Fashion"
+      ],
+      "b": "0",
+      "i": "0",
+      "armorcapacity": "6",
+      "avail": "0",
+      "cost": [
+        "90"
+      ],
+      "addmodcategory": "Clothing",
+      "source": "AT",
+      "page": "161"
+    },
+    {
+      "name": "Furba (NeoNET)",
+      "category": [
+        "Fashion"
+      ],
+      "b": "0",
+      "i": "0",
+      "armorcapacity": "6",
+      "avail": "0",
+      "cost": [
+        "55"
+      ],
+      "addmodcategory": "Clothing",
+      "source": "AT",
+      "page": "161"
+    },
+    {
+      "name": "Jean-Paul designer fashion",
+      "category": [
+        "Fashion"
+      ],
+      "b": "0",
+      "i": "0",
+      "armorcapacity": "6",
+      "avail": "0",
+      "cost": [
+        "7000"
+      ],
+      "addmodcategory": "Clothing",
+      "source": "AT",
+      "page": "161"
+    },
+    {
+      "name": "KoGo (Wuxing)",
+      "category": [
+        "Fashion"
+      ],
+      "b": "0",
+      "i": "0",
+      "armorcapacity": "6",
+      "avail": "0",
+      "cost": [
+        "205"
+      ],
+      "addmodcategory": "Clothing",
+      "source": "AT",
+      "page": "161"
+    },
+    {
+      "name": "Laurentine de Lion (Proteus)",
+      "category": [
+        "Fashion"
+      ],
+      "b": "0",
+      "i": "0",
+      "armorcapacity": "6",
+      "avail": "0",
+      "cost": [
+        "250"
+      ],
+      "addmodcategory": "Clothing",
+      "source": "AT",
+      "page": "161"
+    },
+    {
+      "name": "Lyric of Portland (Telestrian)",
+      "category": [
+        "Fashion"
+      ],
+      "b": "0",
+      "i": "0",
+      "armorcapacity": "6",
+      "avail": "0",
+      "cost": [
+        "50"
+      ],
+      "addmodcategory": "Clothing",
+      "source": "AT",
+      "page": "161"
+    },
+    {
+      "name": "ME MetaL casualwear (Evo)",
+      "category": [
+        "Fashion"
+      ],
+      "b": "0",
+      "i": "0",
+      "armorcapacity": "6",
+      "avail": "0",
+      "cost": [
+        "45"
+      ],
+      "addmodcategory": "Clothing",
+      "source": "AT",
+      "page": "161"
+    },
+    {
+      "name": "ME MetaL urban fashion(Evo)",
+      "category": [
+        "Fashion"
+      ],
+      "b": "0",
+      "i": "0",
+      "armorcapacity": "6",
+      "avail": "0",
+      "cost": [
+        "60"
+      ],
+      "addmodcategory": "Clothing",
+      "source": "AT",
+      "page": "161"
+    },
+    {
+      "name": "MetaTribe (Evo)",
+      "category": [
+        "Fashion"
+      ],
+      "b": "0",
+      "i": "0",
+      "armorcapacity": "6",
+      "avail": "0",
+      "cost": [
+        "85"
+      ],
+      "addmodcategory": "Clothing",
+      "source": "AT",
+      "page": "161"
+    },
+    {
+      "name": "NuZoot casualwear (Monobe)",
+      "category": [
+        "Fashion"
+      ],
+      "b": "0",
+      "i": "0",
+      "armorcapacity": "6",
+      "avail": "0",
+      "cost": [
+        "150"
+      ],
+      "addmodcategory": "Clothing",
+      "source": "AT",
+      "page": "161"
+    },
+    {
+      "name": "NuZoot urban fashion (Monobe)",
+      "category": [
+        "Fashion"
+      ],
+      "b": "0",
+      "i": "0",
+      "armorcapacity": "6",
+      "avail": "0",
+      "cost": [
+        "110"
+      ],
+      "addmodcategory": "Clothing",
+      "source": "AT",
+      "page": "161"
+    },
+    {
+      "name": "RhineGold (Saeder-Krupp)",
+      "category": [
+        "Fashion"
+      ],
+      "b": "0",
+      "i": "0",
+      "armorcapacity": "6",
+      "avail": "0",
+      "cost": [
+        "300"
+      ],
+      "addmodcategory": "Clothing",
+      "source": "AT",
+      "page": "161"
+    },
+    {
+      "name": "Ripon of Mumbai designer fashion",
+      "category": [
+        "Fashion"
+      ],
+      "b": "0",
+      "i": "0",
+      "armorcapacity": "6",
+      "avail": "0",
+      "cost": [
+        "5000"
+      ],
+      "addmodcategory": "Clothing",
+      "source": "AT",
+      "page": "161"
+    },
+    {
+      "name": "Soul of Seoul (Proteus)",
+      "category": [
+        "Fashion"
+      ],
+      "b": "0",
+      "i": "0",
+      "armorcapacity": "6",
+      "avail": "0",
+      "cost": [
+        "300"
+      ],
+      "addmodcategory": "Clothing",
+      "source": "AT",
+      "page": "161"
+    },
+    {
+      "name": "Très Chic Clothing casualwear (Aztechnology)",
+      "category": [
+        "Fashion"
+      ],
+      "b": "0",
+      "i": "0",
+      "armorcapacity": "6",
+      "avail": "0",
+      "cost": [
+        "175"
+      ],
+      "addmodcategory": "Clothing",
+      "source": "AT",
+      "page": "161"
+    },
+    {
+      "name": "Très Chic Clothing formalwear (Aztechnology)",
+      "category": [
+        "Fashion"
+      ],
+      "b": "0",
+      "i": "0",
+      "armorcapacity": "6",
+      "avail": "0",
+      "cost": [
+        "300"
+      ],
+      "addmodcategory": "Clothing",
+      "source": "AT",
+      "page": "161"
+    },
+    {
+      "name": "Tribale (Aztechnology)",
+      "category": [
+        "Fashion"
+      ],
+      "b": "0",
+      "i": "0",
+      "armorcapacity": "6",
+      "avail": "0",
+      "cost": [
+        "75"
+      ],
+      "addmodcategory": "Clothing",
+      "source": "AT",
+      "page": "161"
+    },
+    {
+      "name": "Tropicaliente (UO)",
+      "category": [
+        "Fashion"
+      ],
+      "b": "0",
+      "i": "0",
+      "armorcapacity": "6",
+      "avail": "0",
+      "cost": [
+        "50"
+      ],
+      "addmodcategory": "Clothing",
+      "source": "AT",
+      "page": "161"
+    },
+    {
+      "name": "Vashon Island casualwear (Shiawase Fashion)",
+      "category": [
+        "Fashion"
+      ],
+      "b": "0",
+      "i": "0",
+      "armorcapacity": "6",
+      "avail": "0",
+      "cost": [
+        "100"
+      ],
+      "addmodcategory": "Clothing",
+      "source": "AT",
+      "page": "161"
+    },
+    {
+      "name": "Vashon Island businesswear (Shiawase Fashion)",
+      "category": [
+        "Fashion"
+      ],
+      "b": "0",
+      "i": "0",
+      "armorcapacity": "6",
+      "avail": "0",
+      "cost": [
+        "500"
+      ],
+      "addmodcategory": "Clothing",
+      "source": "AT",
+      "page": "161"
+    },
+    {
+      "name": "Victory (Ares)",
+      "category": [
+        "Fashion"
+      ],
+      "b": "0",
+      "i": "0",
+      "armorcapacity": "6",
+      "avail": "0",
+      "cost": [
+        "25"
+      ],
+      "addmodcategory": "Clothing",
+      "source": "AT",
+      "page": "161"
+    },
+    {
+      "name": "Wellington Bros (Shiawase Fashion)",
+      "category": [
+        "Fashion"
+      ],
+      "b": "0",
+      "i": "0",
+      "armorcapacity": "6",
+      "avail": "0",
+      "cost": [
+        "250"
+      ],
+      "addmodcategory": "Clothing",
+      "source": "AT",
+      "page": "161"
+    },
+    {
+      "name": "Zoë businesswear (Zoë)",
+      "category": [
+        "Fashion"
+      ],
+      "b": "0",
+      "i": "0",
+      "armorcapacity": "6",
+      "avail": "0",
+      "cost": [
+        "500"
+      ],
+      "addmodcategory": "Clothing",
+      "source": "AT",
+      "page": "161"
+    },
+    {
+      "name": "Zoë de Paris",
+      "category": [
+        "Fashion"
+      ],
+      "b": "0",
+      "i": "0",
+      "armorcapacity": "6",
+      "avail": "0",
+      "cost": [
+        "10000"
+      ],
+      "addmodcategory": "Clothing",
+      "source": "AT",
+      "page": "161"
+    },
+    {
+      "name": "SecureTech Forearm Guards",
+      "category": [
+        "SecureTech PPP System"
+      ],
+      "b": "+0",
+      "i": "+1",
+      "armorcapacity": "0",
+      "avail": "6",
+      "cost": [
+        "200"
+      ],
+      "source": "AR",
+      "page": "49"
+    },
+    {
+      "name": "SecureTech Helmet",
+      "category": [
+        "SecureTech PPP System"
+      ],
+      "b": "+0",
+      "i": "+2",
+      "armorcapacity": "0",
+      "avail": "4",
+      "cost": [
+        "100"
+      ],
+      "source": "AR",
+      "page": "49"
+    },
+    {
+      "name": "SecureTech Arm Casings",
+      "category": [
+        "SecureTech PPP System"
+      ],
+      "b": "+0",
+      "i": "+1",
+      "armorcapacity": "0",
+      "avail": "6",
+      "cost": [
+        "175"
+      ],
+      "source": "AR",
+      "page": "49"
+    },
+    {
+      "name": "SecureTech Leg Casings",
+      "category": [
+        "SecureTech PPP System"
+      ],
+      "b": "+0",
+      "i": "+1",
+      "armorcapacity": "0",
+      "avail": "6",
+      "cost": [
+        "175"
+      ],
+      "source": "AR",
+      "page": "49"
+    },
+    {
+      "name": "SecureTech Leg and Arm Casings",
+      "category": [
+        "SecureTech PPP System"
+      ],
+      "b": "+1",
+      "i": "+1",
+      "armorcapacity": "0",
+      "avail": "6",
+      "cost": [
+        "350"
+      ],
+      "source": "AR",
+      "page": "49"
+    },
+    {
+      "name": "SecureTech Shin Guards",
+      "category": [
+        "SecureTech PPP System"
+      ],
+      "b": "+0",
+      "i": "+1",
+      "armorcapacity": "0",
+      "avail": "5",
+      "cost": [
+        "150"
+      ],
+      "source": "AR",
+      "page": "49"
+    },
+    {
+      "name": "SecureTech Vitals Protector",
+      "category": [
+        "SecureTech PPP System"
+      ],
+      "b": "+1",
+      "i": "+1",
+      "armorcapacity": "0",
+      "avail": "4",
+      "cost": [
+        "200"
+      ],
+      "source": "AR",
+      "page": "49"
+    },
+    {
+      "name": "Mortimer of London: Berwick Suit Jacket (Ensemble)",
+      "category": [
+        "Clothing"
+      ],
+      "b": "+5",
+      "i": "+3",
+      "armorcapacity": "18",
+      "avail": "12",
+      "cost": [
+        "2850"
+      ],
+      "source": "AR",
+      "page": "45"
+    },
+    {
+      "name": "Mortimer of London: Berwick Dinner Jacket (Ensemble)",
+      "category": [
+        "Clothing"
+      ],
+      "b": "+4",
+      "i": "+3",
+      "armorcapacity": "18",
+      "avail": "12",
+      "cost": [
+        "3100"
+      ],
+      "source": "AR",
+      "page": "45"
+    },
+    {
+      "name": "Vashon Island: Steampunk Corset/Vest (Ensemble)",
+      "category": [
+        "Clothing"
+      ],
+      "b": "+7",
+      "i": "+7",
+      "armorcapacity": "24",
+      "avail": "7",
+      "cost": [
+        "2250"
+      ],
+      "source": "AR",
+      "page": "46"
+    },
+    {
+      "name": "Vashon Island: Steampunk Dressing Gown (Ensemble)",
+      "category": [
+        "Clothing"
+      ],
+      "b": "+6",
+      "i": "+5",
+      "armorcapacity": "24",
+      "avail": "7",
+      "cost": [
+        "2400"
+      ],
+      "source": "AR",
+      "page": "46"
+    },
+    {
+      "name": "Vashon Island: Synergist Suit Jacket (Ensemble)",
+      "category": [
+        "Clothing"
+      ],
+      "b": "+5",
+      "i": "+3",
+      "armorcapacity": "18",
+      "avail": "8",
+      "cost": [
+        "1500"
+      ],
+      "gears": {
+        "usegear": [
+          "Concealable Holster"
+        ]
+      },
+      "source": "AR",
+      "page": "46"
+    },
+    {
+      "name": "Vashon Island: Synergist Short Jacket (Ensemble)",
+      "category": [
+        "Clothing"
+      ],
+      "b": "+4",
+      "i": "+3",
+      "armorcapacity": "18",
+      "avail": "8",
+      "cost": [
+        "1200"
+      ],
+      "source": "AR",
+      "page": "46"
+    },
+    {
+      "name": "Vashon Island: Synergist Longcoat (Ensemble)",
+      "category": [
+        "Clothing"
+      ],
+      "b": "+6",
+      "i": "+3",
+      "armorcapacity": "18",
+      "avail": "8",
+      "cost": [
+        "2000"
+      ],
+      "gears": {
+        "usegear": [
+          "Concealable Holster"
+        ]
+      },
+      "source": "AR",
+      "page": "46"
+    },
+    {
+      "name": "Zoé: Executive Suite Long Jacket (Ensemble)",
+      "category": [
+        "Clothing"
+      ],
+      "b": "+6",
+      "i": "+2",
+      "armorcapacity": "18",
+      "avail": "9",
+      "cost": [
+        "1950"
+      ],
+      "source": "AR",
+      "page": "47"
+    },
+    {
+      "name": "Zoé: Executive Suite Short Jacket (Ensemble)",
+      "category": [
+        "Clothing"
+      ],
+      "b": "+5",
+      "i": "+2",
+      "armorcapacity": "18",
+      "avail": "9",
+      "cost": [
+        "1700"
+      ],
+      "source": "AR",
+      "page": "47"
+    },
+    {
+      "name": "Anielski-Joop Reconquista (Ensemble)",
+      "category": [
+        "Clothing"
+      ],
+      "b": "+5",
+      "i": "+4",
+      "armorcapacity": "24",
+      "avail": "10",
+      "cost": [
+        "4600"
+      ],
+      "source": "ARG",
+      "page": "0"
+    },
+    {
+      "name": "dressCODE CYBERPIRATE Trousers/Skirt (Ensemble)",
+      "category": [
+        "Clothing"
+      ],
+      "b": "5",
+      "i": "3",
+      "armorcapacity": "18",
+      "avail": "7",
+      "cost": [
+        "1000"
+      ],
+      "source": "ARG",
+      "page": "0"
+    },
+    {
+      "name": "dressCODE CYBERPIRATE Hotpants (Ensemble)",
+      "category": [
+        "Clothing"
+      ],
+      "b": "5",
+      "i": "2",
+      "armorcapacity": "18",
+      "avail": "7",
+      "cost": [
+        "900"
+      ],
+      "source": "ARG",
+      "page": "0"
+    },
+    {
+      "name": "dressCODE CYBERPIRATE Hotpants w/ Chaps (Ensemble)",
+      "category": [
+        "Clothing"
+      ],
+      "b": "5",
+      "i": "3",
+      "armorcapacity": "18",
+      "avail": "7",
+      "cost": [
+        "1050"
+      ],
+      "source": "ARG",
+      "page": "0"
+    },
+    {
+      "name": "Rheingold zeitloS Aurora Overcoat (Ensemble)",
+      "category": [
+        "Clothing"
+      ],
+      "b": "4",
+      "i": "3",
+      "armorcapacity": "18",
+      "avail": "10",
+      "cost": [
+        "3350"
+      ],
+      "source": "ARG",
+      "page": "0"
+    },
+    {
+      "name": "Rheingold zeitloS Aurora Blazer (Ensemble)",
+      "category": [
+        "Clothing"
+      ],
+      "b": "2",
+      "i": "2",
+      "armorcapacity": "18",
+      "avail": "10",
+      "cost": [
+        "2600"
+      ],
+      "source": "ARG",
+      "page": "0"
+    },
+    {
+      "name": "Runflat Sandals",
+      "category": [
+        "Clothing"
+      ],
+      "b": "0",
+      "i": "0",
+      "armorcapacity": "0",
+      "avail": "2",
+      "cost": [
+        "20"
+      ],
+      "source": "AT",
+      "page": "155"
+    },
+    {
+      "name": "SecureTech PPP Armor (Ensemble with Helmet)",
+      "category": [
+        "SecureTech PPP System"
+      ],
+      "b": "+2",
+      "i": "+6",
+      "armorcapacity": "30",
+      "avail": "6",
+      "cost": [
+        "1000"
+      ],
+      "source": "AR",
+      "page": "49"
+    },
+    {
+      "name": "SecureTech PPP Armor (Ensemble)",
+      "category": [
+        "SecureTech PPP System"
+      ],
+      "b": "+2",
+      "i": "+4",
+      "armorcapacity": "24",
+      "avail": "6",
+      "cost": [
+        "900"
+      ],
+      "source": "AR",
+      "page": "49"
+    },
+    {
+      "name": "Arctic Diver Suit",
+      "category": [
+        "Environmental Armor"
+      ],
+      "b": "0",
+      "i": "1",
+      "armorcapacity": "6",
+      "avail": "8",
+      "cost": [
+        "3000"
+      ],
+      "mods": {
+        "name": {
+          "value": "Insulation",
+          "rating": "5"
+        }
+      },
+      "source": "HP",
+      "page": "167"
+    },
+    {
+      "name": "Ares Arctic Forces Suit",
+      "category": [
+        "Environmental Armor"
+      ],
+      "b": "12",
+      "i": "10",
+      "armorcapacity": "6",
+      "avail": "18R",
+      "cost": [
+        "10000"
+      ],
+      "bonus": {
+        "specificskill": {
+          "name": "Climbing",
+          "bonus": "1"
+        }
+      },
+      "mods": {
+        "name": [
+          {
+            "value": "Insulation",
+            "rating": "5"
+          },
+          {
+            "value": "Thermal Damping",
+            "rating": "3"
+          }
+        ]
+      },
+      "source": "HP",
+      "page": "167"
+    },
+    {
+      "name": "Ares Armored Coldsuit",
+      "category": [
+        "Environmental Armor"
+      ],
+      "b": "6",
+      "i": "4",
+      "armorcapacity": "9",
+      "avail": "6",
+      "cost": [
+        "1000"
+      ],
+      "mods": {
+        "name": {
+          "value": "Insulation",
+          "rating": "4"
+        }
+      },
+      "source": "HP",
+      "page": "167"
+    },
+    {
+      "name": "Ares Armored Survivalist",
+      "category": [
+        "Environmental Armor"
+      ],
+      "b": "4",
+      "i": "4",
+      "armorcapacity": "6",
+      "avail": "10",
+      "cost": [
+        "1500"
+      ],
+      "gears": {
+        "usegear": [
+          "Flare Compensation"
+        ]
+      },
+      "source": "HP",
+      "page": "167"
+    },
+    {
+      "name": "Ares Polar Sneak Suit",
+      "category": [
+        "Environmental Armor"
+      ],
+      "b": "1",
+      "i": "3",
+      "armorcapacity": "6",
+      "avail": "10R",
+      "cost": [
+        "9000"
+      ],
+      "mods": {
+        "name": [
+          {
+            "value": "Insulation",
+            "rating": "5"
+          },
+          {
+            "value": "Thermal Damping",
+            "rating": "3"
+          }
+        ]
+      },
+      "source": "HP",
+      "page": "168"
+    },
+    {
+      "name": "Evo Armadillo Armored Space Suit",
+      "category": [
+        "Environmental Armor"
+      ],
+      "b": "12",
+      "i": "12",
+      "armorcapacity": "8",
+      "avail": "26F",
+      "cost": [
+        "35000"
+      ],
+      "source": "HP",
+      "page": "168"
+    },
+    {
+      "name": "Armor Jacket (2050)",
+      "category": [
+        "Armor"
+      ],
+      "b": "8",
+      "i": "6",
+      "armorcapacity": "0",
+      "avail": "3",
+      "cost": [
+        "900"
+      ],
+      "source": "2050",
+      "page": "176"
+    },
+    {
+      "name": "Armor Vest (2050)",
+      "category": [
+        "Armor"
+      ],
+      "b": "6",
+      "i": "4",
+      "armorcapacity": "0",
+      "avail": "2",
+      "cost": [
+        "200"
+      ],
+      "source": "2050",
+      "page": "176"
+    },
+    {
+      "name": "Form-Fitting Full Suit (2050)",
+      "category": [
+        "Armor"
+      ],
+      "b": "+2",
+      "i": "+2",
+      "armorcapacity": "0",
+      "avail": "5",
+      "cost": [
+        "500"
+      ],
+      "source": "2050",
+      "page": "177"
+    },
+    {
+      "name": "Form-Fitting Half Suit (2050)",
+      "category": [
+        "Armor"
+      ],
+      "b": "+2",
+      "i": "+1",
+      "armorcapacity": "0",
+      "avail": "4",
+      "cost": [
+        "250"
+      ],
+      "source": "2050",
+      "page": "177"
+    },
+    {
+      "name": "Form-Fitting Shirt (2050)",
+      "category": [
+        "Armor"
+      ],
+      "b": "+1",
+      "i": "+0",
+      "armorcapacity": "0",
+      "avail": "3",
+      "cost": [
+        "150"
+      ],
+      "source": "2050",
+      "page": "177"
+    },
+    {
+      "name": "Heavy Armor, Full (2050)",
+      "category": [
+        "Armor"
+      ],
+      "b": "12",
+      "i": "10",
+      "armorcapacity": "0",
+      "avail": "16R",
+      "cost": [
+        "20000"
+      ],
+      "source": "2050",
+      "page": "177"
+    },
+    {
+      "name": "Heavy Armor, Partial (2050)",
+      "category": [
+        "Armor"
+      ],
+      "b": "11",
+      "i": "9",
+      "armorcapacity": "0",
+      "avail": "8R",
+      "cost": [
+        "10000"
+      ],
+      "source": "2050",
+      "page": "177"
+    },
+    {
+      "name": "Helmet (2050)",
+      "category": [
+        "Helmets and Shields"
+      ],
+      "addoncategory": [
+        "Vision Enhancements",
+        "Audio Enhancements"
+      ],
+      "b": "+2",
+      "i": "+2",
+      "armorcapacity": "0",
+      "avail": "12",
+      "cost": [
+        "200"
+      ],
+      "source": "2050",
+      "page": "177"
+    },
+    {
+      "name": "Leather, Real (2050)",
+      "category": [
+        "Armor"
+      ],
+      "b": "2",
+      "i": "2",
+      "armorcapacity": "0",
+      "avail": "0",
+      "cost": [
+        "750"
+      ],
+      "source": "2050",
+      "page": "177"
+    },
+    {
+      "name": "Leather, Synthetic (2050)",
+      "category": [
+        "Armor"
+      ],
+      "b": "1",
+      "i": "1",
+      "armorcapacity": "0",
+      "avail": "0",
+      "cost": [
+        "250"
+      ],
+      "source": "2050",
+      "page": "177"
+    },
+    {
+      "name": "FAB2G Full Body Armor",
+      "category": [
+        "Armor"
+      ],
+      "b": "8",
+      "i": "7",
+      "armorcapacity": "0",
+      "avail": "22R",
+      "cost": [
+        "14000"
+      ],
+      "source": "DH1",
+      "page": "11"
+    }
+  ],
+  "mods": [
+    {
+      "mod": [
+        {
+          "name": "Auto-Injector",
+          "category": [
+            "General"
+          ],
+          "b": "0",
+          "i": "0",
+          "maxrating": "1",
+          "armorcapacity": "[2]",
+          "avail": "4",
+          "cost": [
+            "1500"
+          ],
+          "source": "AR",
+          "page": "50"
+        },
+        {
+          "name": "Chemical Protection",
+          "category": [
+            "General"
+          ],
+          "b": "0",
+          "i": "0",
+          "maxrating": "6",
+          "armorcapacity": "[2]",
+          "avail": "9",
+          "cost": [
+            "Rating * 250"
+          ],
+          "source": "SR4",
+          "page": "327"
+        },
+        {
+          "name": "Fire Resistance",
+          "category": [
+            "General"
+          ],
+          "b": "0",
+          "i": "0",
+          "maxrating": "6",
+          "armorcapacity": "FixedValues([1],[1],[1],[2],[2],[2])",
+          "avail": "4",
+          "cost": [
+            "Rating * 100"
+          ],
+          "source": "SR4",
+          "page": "327"
+        },
+        {
+          "name": "Gel Packs",
+          "category": [
+            "General"
+          ],
+          "b": "1",
+          "i": "1",
+          "maxrating": "1",
+          "armorcapacity": "[1]",
+          "avail": "8R",
+          "cost": [
+            "1500"
+          ],
+          "source": "AR",
+          "page": "50"
+        },
+        {
+          "name": "Insulation",
+          "category": [
+            "General"
+          ],
+          "b": "0",
+          "i": "0",
+          "maxrating": "6",
+          "armorcapacity": "FixedValues([1],[1],[1],[2],[2],[2])",
+          "avail": "4",
+          "cost": [
+            "Rating * 150"
+          ],
+          "source": "SR4",
+          "page": "327"
+        },
+        {
+          "name": "Nonconductivity",
+          "category": [
+            "General"
+          ],
+          "b": "0",
+          "i": "0",
+          "maxrating": "6",
+          "armorcapacity": "FixedValues([2],[2],[2],[3],[3],[3])",
+          "avail": "6",
+          "cost": [
+            "Rating * 200"
+          ],
+          "source": "SR4",
+          "page": "327"
+        },
+        {
+          "name": "Radiation Shielding",
+          "category": [
+            "General"
+          ],
+          "b": "0",
+          "i": "0",
+          "maxrating": "6",
+          "armorcapacity": "[4]",
+          "avail": "8",
+          "cost": [
+            "Rating * 200"
+          ],
+          "source": "AR",
+          "page": "50"
+        },
+        {
+          "name": "Ruthenium Polymer Coating",
+          "category": [
+            "General"
+          ],
+          "b": "0",
+          "i": "0",
+          "maxrating": "1",
+          "armorcapacity": "[1]",
+          "avail": "12R",
+          "cost": [
+            "7500"
+          ],
+          "source": "AR",
+          "page": "50"
+        },
+        {
+          "name": "Shock Frills",
+          "category": [
+            "General"
+          ],
+          "b": "0",
+          "i": "0",
+          "maxrating": "1",
+          "armorcapacity": "[1]",
+          "avail": "6R",
+          "cost": [
+            "200"
+          ],
+          "source": "SR4",
+          "page": "327"
+        },
+        {
+          "name": "Thermal Damping",
+          "category": [
+            "General"
+          ],
+          "b": "0",
+          "i": "0",
+          "maxrating": "6",
+          "armorcapacity": "FixedValues([3],[3],[3],[5],[5],[5])",
+          "avail": "10F",
+          "cost": [
+            "Rating * 500"
+          ],
+          "source": "SR4",
+          "page": "327"
+        },
+        {
+          "name": "Responsive Interface Gear (Helmet, Cold Sim)",
+          "category": [
+            "General"
+          ],
+          "b": "0",
+          "i": "0",
+          "maxrating": "1",
+          "armorcapacity": "[1]",
+          "avail": "8",
+          "cost": [
+            "2400"
+          ],
+          "bonus": {
+            "matrixinitiativepass": "1"
+          },
+          "source": "WAR",
+          "page": "161"
+        },
+        {
+          "name": "Responsive Interface Gear (Helmet, Hot Sim)",
+          "category": [
+            "General"
+          ],
+          "b": "0",
+          "i": "0",
+          "maxrating": "1",
+          "armorcapacity": "[1]",
+          "avail": "8",
+          "cost": [
+            "2400"
+          ],
+          "bonus": {
+            "matrixinitiative": "1",
+            "matrixinitiativepass": "2"
+          },
+          "source": "WAR",
+          "page": "161"
+        },
+        {
+          "name": "Responsive Interface Gear (Armor)",
+          "category": [
+            "General"
+          ],
+          "b": "0",
+          "i": "0",
+          "maxrating": "1",
+          "armorcapacity": "[2]",
+          "avail": "8",
+          "cost": [
+            "2400"
+          ],
+          "source": "WAR",
+          "page": "161"
+        },
+        {
+          "name": "Quizzel Dragon Wings",
+          "category": [
+            "General"
+          ],
+          "b": "1",
+          "i": "1",
+          "maxrating": "1",
+          "armorcapacity": "[1]",
+          "avail": "0",
+          "cost": [
+            "2000"
+          ],
+          "source": "AT",
+          "page": "154"
+        },
+        {
+          "name": "Quizzel Fairy Wings",
+          "category": [
+            "General"
+          ],
+          "b": "1",
+          "i": "1",
+          "maxrating": "1",
+          "armorcapacity": "[1]",
+          "avail": "0",
+          "cost": [
+            "2000"
+          ],
+          "source": "AT",
+          "page": "154"
+        },
+        {
+          "name": "Carbon-Boron",
+          "category": [
+            "Clothing"
+          ],
+          "b": "1",
+          "i": "2",
+          "maxrating": "1",
+          "armorcapacity": "[1]",
+          "avail": "0",
+          "cost": [
+            "200"
+          ],
+          "source": "AT",
+          "page": "160"
+        },
+        {
+          "name": "Kevlar-Threading",
+          "category": [
+            "Clothing"
+          ],
+          "b": "2",
+          "i": "0",
+          "maxrating": "1",
+          "armorcapacity": "[1]",
+          "avail": "0",
+          "cost": [
+            "100"
+          ],
+          "source": "AT",
+          "page": "160"
+        },
+        {
+          "name": "Delta-Amyloid",
+          "category": [
+            "Clothing"
+          ],
+          "b": "3",
+          "i": "1",
+          "maxrating": "1",
+          "armorcapacity": "[1]",
+          "avail": "0",
+          "cost": [
+            "400"
+          ],
+          "source": "AT",
+          "page": "160"
+        },
+        {
+          "name": "AR Enhanced",
+          "category": [
+            "General"
+          ],
+          "b": "0",
+          "i": "0",
+          "maxrating": "1",
+          "armorcapacity": "[1]",
+          "avail": "0",
+          "cost": [
+            "25"
+          ],
+          "source": "AT",
+          "page": "160"
+        },
+        {
+          "name": "Color Changing",
+          "category": [
+            "General"
+          ],
+          "b": "0",
+          "i": "0",
+          "maxrating": "1",
+          "armorcapacity": "[1]",
+          "avail": "0",
+          "cost": [
+            "175"
+          ],
+          "source": "AT",
+          "page": "160"
+        },
+        {
+          "name": "Natural Fiber",
+          "category": [
+            "General"
+          ],
+          "b": "0",
+          "i": "0",
+          "maxrating": "1",
+          "armorcapacity": "[1]",
+          "avail": "0",
+          "cost": [
+            "Armor Cost * 0.1"
+          ],
+          "source": "AT",
+          "page": "160"
+        },
+        {
+          "name": "Massaging Liners",
+          "category": [
+            "Victory Liners"
+          ],
+          "b": "0",
+          "i": "0",
+          "maxrating": "1",
+          "armorcapacity": "[1]",
+          "avail": "+2",
+          "cost": [
+            "800"
+          ],
+          "source": "AR",
+          "page": "47"
+        },
+        {
+          "name": "Chemical Seal",
+          "category": [
+            "Chemical Seal"
+          ],
+          "b": "0",
+          "i": "0",
+          "maxrating": "1",
+          "armorcapacity": "[4]",
+          "avail": "+6",
+          "cost": [
+            "5000"
+          ],
+          "source": "SR4",
+          "page": "327"
+        },
+        {
+          "name": "Environment Adaptation",
+          "category": [
+            "Full Body Armor"
+          ],
+          "b": "0",
+          "i": "0",
+          "maxrating": "1",
+          "armorcapacity": "[3]",
+          "avail": "+3",
+          "cost": [
+            "2000"
+          ],
+          "source": "SR4",
+          "page": "326"
+        },
+        {
+          "name": "YNT SoftWeave",
+          "category": [
+            "General"
+          ],
+          "b": "0",
+          "i": "0",
+          "maxrating": "1",
+          "armorcapacity": "[1]",
+          "avail": "+3",
+          "cost": [
+            "Armor Cost * 0.1"
+          ],
+          "source": "WAR",
+          "page": "160"
+        },
+        {
+          "name": "Pulse Weave",
+          "category": [
+            "General"
+          ],
+          "b": "0",
+          "i": "0",
+          "maxrating": "1",
+          "armorcapacity": "[1]",
+          "avail": "+8",
+          "cost": [
+            "3000"
+          ],
+          "source": "SG",
+          "page": "151"
+        },
+        {
+          "name": "Biomonitor",
+          "category": [
+            "General"
+          ],
+          "b": "0",
+          "i": "0",
+          "maxrating": "1",
+          "armorcapacity": "[1]",
+          "avail": "0",
+          "cost": [
+            "300"
+          ],
+          "source": "SR4",
+          "page": "337"
+        },
+        {
+          "name": "Articulated Weapon Arm",
+          "category": [
+            "Military Grade Armor"
+          ],
+          "b": "0",
+          "i": "0",
+          "maxrating": "1",
+          "armorcapacity": "[8]",
+          "avail": "16F",
+          "cost": [
+            "3000"
+          ],
+          "source": "AR",
+          "page": "51"
+        },
+        {
+          "name": "Flotation System",
+          "category": [
+            "Military Grade Armor"
+          ],
+          "b": "0",
+          "i": "0",
+          "maxrating": "1",
+          "armorcapacity": "[8]",
+          "avail": "8",
+          "cost": [
+            "2000"
+          ],
+          "source": "AR",
+          "page": "51"
+        },
+        {
+          "name": "Foot Anchor",
+          "category": [
+            "Military Grade Armor"
+          ],
+          "b": "0",
+          "i": "0",
+          "maxrating": "1",
+          "armorcapacity": "[3]",
+          "avail": "10",
+          "cost": [
+            "3000"
+          ],
+          "source": "AR",
+          "page": "51"
+        },
+        {
+          "name": "Gyromount",
+          "category": [
+            "Military Grade Armor"
+          ],
+          "b": "0",
+          "i": "0",
+          "maxrating": "1",
+          "armorcapacity": "[4]",
+          "avail": "8F",
+          "cost": [
+            "4000"
+          ],
+          "source": "AR",
+          "page": "51"
+        },
+        {
+          "name": "Hydraulic Jacks",
+          "category": [
+            "Military Grade Armor"
+          ],
+          "b": "0",
+          "i": "0",
+          "maxrating": "6",
+          "armorcapacity": "[Rating+1]",
+          "avail": "9",
+          "cost": [
+            "Rating * 1500"
+          ],
+          "source": "AR",
+          "page": "51"
+        },
+        {
+          "name": "Integrated Weapon: Dartgun",
+          "category": [
+            "Military Grade Armor"
+          ],
+          "b": "0",
+          "i": "0",
+          "maxrating": "1",
+          "armorcapacity": "[3]",
+          "avail": "12R",
+          "addweapon": "Dartgun",
+          "cost": [
+            "1400"
+          ],
+          "source": "AU",
+          "page": "42"
+        },
+        {
+          "name": "Integrated Weapon: Grenade Launcher",
+          "category": [
+            "Military Grade Armor"
+          ],
+          "b": "0",
+          "i": "0",
+          "maxrating": "1",
+          "armorcapacity": "[15]",
+          "avail": "20F",
+          "addweapon": "Grenade Launcher",
+          "cost": [
+            "4000"
+          ],
+          "source": "SR4",
+          "page": "344"
+        },
+        {
+          "name": "Integrated Weapon: Hand Blade",
+          "category": [
+            "Military Grade Armor"
+          ],
+          "b": "0",
+          "i": "0",
+          "maxrating": "1",
+          "armorcapacity": "[3]",
+          "avail": "10F",
+          "addweapon": "Hand Blade",
+          "cost": [
+            "1500"
+          ],
+          "source": "SR4",
+          "page": "345"
+        },
+        {
+          "name": "Integrated Weapon: Hand Razors",
+          "category": [
+            "Military Grade Armor"
+          ],
+          "b": "0",
+          "i": "0",
+          "maxrating": "1",
+          "armorcapacity": "[2]",
+          "avail": "10F",
+          "addweapon": "Hand Razors",
+          "cost": [
+            "900"
+          ],
+          "source": "SR4",
+          "page": "345"
+        },
+        {
+          "name": "Integrated Weapon: Heavy Pistol",
+          "category": [
+            "Military Grade Armor"
+          ],
+          "b": "0",
+          "i": "0",
+          "maxrating": "1",
+          "armorcapacity": "[6]",
+          "avail": "16R",
+          "addweapon": "Heavy Pistol",
+          "cost": [
+            "3200"
+          ],
+          "source": "SR4",
+          "page": "344"
+        },
+        {
+          "name": "Integrated Weapon: Holdout Pistol",
+          "category": [
+            "Military Grade Armor"
+          ],
+          "b": "0",
+          "i": "0",
+          "maxrating": "1",
+          "armorcapacity": "[2]",
+          "avail": "12R",
+          "addweapon": "Holdout Pistol",
+          "cost": [
+            "800"
+          ],
+          "source": "SR4",
+          "page": "344"
+        },
+        {
+          "name": "Integrated Weapon: Light Pistol",
+          "category": [
+            "Military Grade Armor"
+          ],
+          "b": "0",
+          "i": "0",
+          "maxrating": "1",
+          "armorcapacity": "[4]",
+          "avail": "14R",
+          "addweapon": "Light Pistol",
+          "cost": [
+            "1500"
+          ],
+          "source": "SR4",
+          "page": "344"
+        },
+        {
+          "name": "Integrated Weapon: Machine Pistol",
+          "category": [
+            "Military Grade Armor"
+          ],
+          "b": "0",
+          "i": "0",
+          "maxrating": "1",
+          "armorcapacity": "[4]",
+          "avail": "16R",
+          "addweapon": "Machine Pistol",
+          "cost": [
+            "2000"
+          ],
+          "source": "SR4",
+          "page": "344"
+        },
+        {
+          "name": "Integrated Weapon: Projectile Spur",
+          "category": [
+            "Military Grade Armor"
+          ],
+          "b": "0",
+          "i": "0",
+          "maxrating": "1",
+          "armorcapacity": "[4]",
+          "avail": "12F",
+          "addweapon": "Projectile Spur",
+          "cost": [
+            "2200"
+          ],
+          "source": "AU",
+          "page": "43"
+        },
+        {
+          "name": "Integrated Weapon: Shock Hand",
+          "category": [
+            "Military Grade Armor"
+          ],
+          "b": "0",
+          "i": "0",
+          "maxrating": "1",
+          "armorcapacity": "[3]",
+          "avail": "8R",
+          "addweapon": "Shock Hand",
+          "cost": [
+            "1000"
+          ],
+          "source": "SR4",
+          "page": "345"
+        },
+        {
+          "name": "Integrated Weapon: Shotgun",
+          "category": [
+            "Military Grade Armor"
+          ],
+          "b": "0",
+          "i": "0",
+          "maxrating": "1",
+          "armorcapacity": "[11]",
+          "avail": "20R",
+          "addweapon": "Shotgun",
+          "cost": [
+            "2100"
+          ],
+          "source": "SR4",
+          "page": "344"
+        },
+        {
+          "name": "Integrated Weapon: Spur",
+          "category": [
+            "Military Grade Armor"
+          ],
+          "b": "0",
+          "i": "0",
+          "maxrating": "1",
+          "armorcapacity": "[3]",
+          "avail": "12F",
+          "addweapon": "Spur",
+          "cost": [
+            "1800"
+          ],
+          "source": "SR4",
+          "page": "345"
+        },
+        {
+          "name": "Integrated Weapon: Squirtgun",
+          "category": [
+            "Military Grade Armor"
+          ],
+          "b": "0",
+          "i": "0",
+          "maxrating": "1",
+          "armorcapacity": "[4]",
+          "avail": "10R",
+          "addweapon": "Squirtgun",
+          "cost": [
+            "1250"
+          ],
+          "source": "AU",
+          "page": "43"
+        },
+        {
+          "name": "Integrated Weapon: Submachine Gun",
+          "category": [
+            "Military Grade Armor"
+          ],
+          "b": "0",
+          "i": "0",
+          "maxrating": "1",
+          "armorcapacity": "[10]",
+          "avail": "20R",
+          "addweapon": "Submachine Gun",
+          "cost": [
+            "2500"
+          ],
+          "source": "SR4",
+          "page": "344"
+        },
+        {
+          "name": "Integrated Weapon: Taser",
+          "category": [
+            "Military Grade Armor"
+          ],
+          "b": "0",
+          "i": "0",
+          "maxrating": "1",
+          "armorcapacity": "[3]",
+          "avail": "8R",
+          "addweapon": "Taser",
+          "cost": [
+            "1000"
+          ],
+          "source": "AU",
+          "page": "43"
+        },
+        {
+          "name": "Magnetic System",
+          "category": [
+            "Military Grade Armor"
+          ],
+          "b": "0",
+          "i": "0",
+          "maxrating": "1",
+          "armorcapacity": "[2]",
+          "avail": "8",
+          "cost": [
+            "1000"
+          ],
+          "source": "AR",
+          "page": "51"
+        },
+        {
+          "name": "Mobility Upgrade",
+          "category": [
+            "Military Grade Armor"
+          ],
+          "b": "0",
+          "i": "0",
+          "maxrating": "3",
+          "armorcapacity": "[Rating * 2]",
+          "avail": "(Rating * 6)R",
+          "cost": [
+            "Rating * 2500"
+          ],
+          "bonus": {
+            "armorencumbrancepenalty": "-Rating",
+            "specificskill": {
+              "name": "Running",
+              "bonus": "Rating"
+            }
+          },
+          "source": "AR",
+          "page": "51"
+        },
+        {
+          "name": "Quick Release",
+          "category": [
+            "Military Grade Armor"
+          ],
+          "b": "0",
+          "i": "0",
+          "maxrating": "1",
+          "armorcapacity": "[2]",
+          "avail": "8",
+          "cost": [
+            "500"
+          ],
+          "source": "AR",
+          "page": "51"
+        },
+        {
+          "name": "Strength Upgrade",
+          "category": [
+            "Military Grade Armor"
+          ],
+          "b": "0",
+          "i": "0",
+          "maxrating": "3",
+          "armorcapacity": "[Rating]",
+          "avail": "(Rating * 4)R",
+          "cost": [
+            "Rating * 1500"
+          ],
+          "bonus": {
+            "specificattribute": {
+              "name": "STR",
+              "val": "Rating"
+            }
+          },
+          "source": "AR",
+          "page": "51"
+        },
+        {
+          "name": "Feywear (Glamour)",
+          "category": [
+            "General"
+          ],
+          "b": "0",
+          "i": "0",
+          "maxrating": "1",
+          "armorcapacity": "[1]",
+          "avail": "0",
+          "cost": [
+            "150000"
+          ],
+          "bonus": {
+            "skillcategory": {
+              "name": "Social Active",
+              "bonus": "3",
+              "exclude": "Intimidation"
+            }
+          },
+          "source": "AT",
+          "page": "157"
+        },
+        {
+          "name": "Feywear (Inspired)",
+          "category": [
+            "General"
+          ],
+          "b": "0",
+          "i": "0",
+          "maxrating": "1",
+          "armorcapacity": "[1]",
+          "avail": "0",
+          "cost": [
+            "50000"
+          ],
+          "bonus": {
+            "specificskill": {
+              "name": "Artisan",
+              "bonus": "2",
+              "applytorating": "yes"
+            }
+          },
+          "source": "AT",
+          "page": "157"
+        },
+        {
+          "name": "Feywear (Trustworthy, 1 Skill)",
+          "category": [
+            "General"
+          ],
+          "b": "0",
+          "i": "0",
+          "maxrating": "1",
+          "armorcapacity": "[1]",
+          "avail": "0",
+          "cost": [
+            "50000"
+          ],
+          "bonus": {
+            "selectskill": {
+              "val": "1",
+              "applytorating": "yes",
+              "skillgroup": "Influence"
+            }
+          },
+          "source": "AT",
+          "page": "157"
+        },
+        {
+          "name": "Feywear (Trustworthy, Skill Group)",
+          "category": [
+            "General"
+          ],
+          "b": "0",
+          "i": "0",
+          "maxrating": "1",
+          "armorcapacity": "[1]",
+          "avail": "0",
+          "cost": [
+            "200000"
+          ],
+          "bonus": {
+            "skillgroup": {
+              "name": "Influence",
+              "bonus": "1",
+              "applytorating": "yes"
+            }
+          },
+          "source": "AT",
+          "page": "157"
+        },
+        {
+          "name": "Feywear (Magic Resistance, Rating 1)",
+          "category": [
+            "General"
+          ],
+          "b": "0",
+          "i": "0",
+          "maxrating": "1",
+          "armorcapacity": "[1]",
+          "avail": "0",
+          "cost": [
+            "50000"
+          ],
+          "source": "AT",
+          "page": "157"
+        },
+        {
+          "name": "Feywear (Magic Resistance, Rating 2)",
+          "category": [
+            "General"
+          ],
+          "b": "0",
+          "i": "0",
+          "maxrating": "1",
+          "armorcapacity": "[1]",
+          "avail": "0",
+          "cost": [
+            "100000"
+          ],
+          "source": "AT",
+          "page": "157"
+        },
+        {
+          "name": "Feywear (Magic Resistance, Rating 3)",
+          "category": [
+            "General"
+          ],
+          "b": "0",
+          "i": "0",
+          "maxrating": "1",
+          "armorcapacity": "[1]",
+          "avail": "0",
+          "cost": [
+            "150000"
+          ],
+          "source": "AT",
+          "page": "157"
+        },
+        {
+          "name": "Feywear (Magic Resistance, Rating 4)",
+          "category": [
+            "General"
+          ],
+          "b": "0",
+          "i": "0",
+          "maxrating": "1",
+          "armorcapacity": "[1]",
+          "avail": "0",
+          "cost": [
+            "200000"
+          ],
+          "source": "AT",
+          "page": "157"
+        },
+        {
+          "name": "Transparent Ruthenium Polymer Coating",
+          "category": [
+            "Second Skin Polymer"
+          ],
+          "b": "0",
+          "i": "0",
+          "maxrating": "1",
+          "armorcapacity": "[1]",
+          "avail": "0",
+          "cost": [
+            "1000"
+          ],
+          "source": "AR",
+          "page": "48"
+        },
+        {
+          "name": "Transparent Ruthenium Polymer Coating",
+          "category": [
+            "Environmental Armor"
+          ],
+          "b": "0",
+          "i": "0",
+          "maxrating": "1",
+          "armorcapacity": "[1]",
+          "avail": "4",
+          "cost": [
+            "200"
+          ],
+          "source": "HP",
+          "page": "168"
+        },
+        {
+          "name": "Internal Air Tank",
+          "category": [
+            "General"
+          ],
+          "b": "0",
+          "i": "0",
+          "maxrating": "1",
+          "armorcapacity": "[1]",
+          "avail": "4",
+          "cost": [
+            "650"
+          ],
+          "source": "SR4",
+          "page": "342"
+        }
+      ]
+    }
+  ]
+}

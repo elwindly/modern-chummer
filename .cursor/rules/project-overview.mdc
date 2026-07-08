@@ -1,0 +1,49 @@
+---
+description: Modern Chummer 4 project context, layout, and commands
+alwaysApply: true
+---
+
+# Modern Chummer 4 — Project Overview
+
+Shadowrun 4th Anniversary Edition web app. Game data comes from legacy ChummerGenSR4 XML converted to JSON.
+
+## Repositories
+
+| Path | Role |
+|------|------|
+| `C:\Users\elwin\projects\modern-chummer-4` | Angular 21 app (this project) |
+| `C:\Users\elwin\projects\ChummerGenSR4` | Legacy C# Chummer — XML source of truth |
+
+## Key paths
+
+- `public/data/*.json` — converted game data (run `npm run convert`)
+- `src/app/core/rules/` — pure TypeScript rules engine (no Angular imports)
+- `src/app/core/services/` — Angular data + rules facades
+- `tools/xml-to-json/` — XML → JSON converter
+
+## Commands
+
+```bash
+npm run convert      # regenerate JSON from ChummerGenSR4
+npm run test:rules   # rules engine unit tests (Vitest)
+npm start            # dev server at localhost:4200
+npm run build        # production build
+```
+
+## Implementation phases
+
+1. **Done** — Data pipeline, reference browser (44 lists), rules Milestone 1
+2. **Next** — Rules Milestone 2: more bonus handlers, attribute totals, requirement validator
+3. **Later** — BP/nuyen calculators, creation UI, save/import
+
+## Legacy reference (when porting rules)
+
+- `ChummerGenSR4/Chummer/clsImprovement.cs` — bonus handlers, `ValueOf`
+- `ChummerGenSR4/Chummer/clsCharacter.cs` — derived stats
+- `ChummerGenSR4/Chummer/frmCreate.cs` — BP accounting (extract logic, do not port UI)
+
+## Principles
+
+- Reuse Chummer data and rules semantics; do not invent new game mechanics
+- Keep formula strings as strings at data layer; evaluate in rules engine
+- Item primary key is always `name`
