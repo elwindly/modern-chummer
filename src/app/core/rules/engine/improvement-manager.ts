@@ -121,6 +121,10 @@ export class ImprovementManager {
 
   constructor(private readonly character: Character) {}
 
+  getCharacter(): Character {
+    return this.character;
+  }
+
   beginTransaction(): void {
     this.transaction = [];
   }

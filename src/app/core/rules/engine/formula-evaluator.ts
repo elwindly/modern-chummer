@@ -124,7 +124,7 @@ function toRpn(tokens: string[]): string[] {
       while (
         operators.length > 0 &&
         operators[operators.length - 1] !== '(' &&
-        precedence[operators[operators.length - 1]] >= precedence.div
+        precedence[operators[operators.length - 1]] >= precedence['div']
       ) {
         output.push(operators.pop()!);
       }

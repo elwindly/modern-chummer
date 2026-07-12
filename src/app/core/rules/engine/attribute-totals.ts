@@ -1,12 +1,6 @@
-import { AttributeCode } from '../models/attribute';
+import { AttributeCode, AttributeLimits } from '../models/attribute';
 import { Character } from '../models/character';
 import { Improvement, ImprovementType } from '../models/improvement';
-
-export interface AttributeLimits {
-  min: number;
-  max: number;
-  augMax: number;
-}
 
 function aggregateAugmentedModifiers(
   improvements: Improvement[],

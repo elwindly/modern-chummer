@@ -13,4 +13,7 @@ export * from './engine/nuyen-calculator';
 export * from './engine/availability-validator';
 export * from './engine/metatype-initializer';
 export * from './engine/character-validator';
+export * from './models/selection-request';
+export * from './engine/selection-handlers';
+export * from './engine/bonus-grant';
 export * from './engine/improvement-handlers';

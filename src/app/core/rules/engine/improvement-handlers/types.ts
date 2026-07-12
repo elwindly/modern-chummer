@@ -1,7 +1,7 @@
-import { BonusNode } from '../models/character';
-import { Character } from '../models/character';
-import { Improvement, ImprovementSource } from '../models/improvement';
-import { ImprovementManager } from './improvement-manager';
+import { BonusNode } from '../../models/character';
+import { Character } from '../../models/character';
+import { Improvement, ImprovementSource } from '../../models/improvement';
+import { ImprovementManager } from '../improvement-manager';
 
 export interface BonusHandlerContext {
   character: Character;

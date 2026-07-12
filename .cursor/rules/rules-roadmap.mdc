@@ -28,12 +28,12 @@ Use this when continuing Phase 3 implementation.
 - `metatype-initializer.ts`, `character-validator.ts`
 - `CharacterOptions` from `public/data/settings/default.json`
 
-## Milestone 4 — Next
+## Milestone 4 — Done
 
-- `CharacterStoreService` (signals + computed derived stats)
-- Selection request protocol for interactive handlers
+- `CharacterStoreService` (signals + computed derived stats, BP, nuyen, validation)
+- Selection request protocol for interactive handlers (`selectattribute`, `selectskill`, `selecttext`, `selectskillgroup`)
 
-## Milestone 5+ — UI & persistence
+## Milestone 5+ — Next
 
 - Creation tab shell, per-tab components
 - IndexedDB save, legacy `.chum` import
