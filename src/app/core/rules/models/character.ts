@@ -1,4 +1,5 @@
-import { AttributeCode, createDefaultAttributes } from './attribute';
+import { createDefaultAttributes } from './attribute';
+import { CharacterContact, PurchasedItem } from './economy';
 import { Improvement } from './improvement';
 
 export type BonusNode = Record<string, unknown>;
@@ -17,8 +18,18 @@ export interface Character {
   id: string;
   name: string;
   metatype: string;
+  metatypeCategory?: string;
   metavariant?: string;
+  metatypeBp: number;
   buildPoints: number;
+  maximumAvailability: number;
+  nuyenBpSpent: number;
+  ignoreRules?: boolean;
+  magicTradition?: string;
+  technomancerStream?: string;
+  qualities: string[];
+  contacts: CharacterContact[];
+  purchases: PurchasedItem[];
   attributes: ReturnType<typeof createDefaultAttributes>;
   improvements: Improvement[];
   flags: CharacterFlags;
@@ -29,7 +40,14 @@ export function createEmptyCharacter(overrides: Partial<Character> = {}): Charac
     id: overrides.id ?? 'character-1',
     name: '',
     metatype: 'Human',
+    metatypeCategory: 'Metahuman',
+    metatypeBp: 0,
     buildPoints: 400,
+    maximumAvailability: 12,
+    nuyenBpSpent: 0,
+    qualities: [],
+    contacts: [],
+    purchases: [],
     attributes: createDefaultAttributes({
       BOD: { min: 1, max: 6, augMax: 9, base: 4 },
       AGI: { min: 1, max: 6, augMax: 9, base: 4 },
@@ -58,6 +76,4 @@ export function createEmptyCharacter(overrides: Partial<Character> = {}): Charac
   };
 }
 
-export function getAttributeTotal(character: Character, code: AttributeCode): number {
-  return character.attributes[code].value;
-}
+export { getAttributeTotal, getEffectiveLimits } from '../engine/attribute-totals';

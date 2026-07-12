@@ -15,20 +15,20 @@ Use this when continuing Phase 3 implementation.
 - `deriveStats` (physical/stun CM, threshold, overflow)
 - 15 Vitest tests passing
 
-## Milestone 2 — Next
+## Milestone 2 — Done
 
-1. Attribute total calculation (base + improvement min/max/aug)
-2. More static handlers: `specificskill`, `skillcategory`, `drainresist`, `fadingresist`, `nuyenamt`, `livingpersona`, `initiativepass`
-3. `requirement-validator.ts` — `forbidden`/`required`/`oneof`/`allof`
-4. Golden tests from `qualities.json` / `metatypes.json` fixtures
+- Attribute total calculation (base + improvement min/max/aug)
+- Handlers: `specificskill`, `skillcategory`, `drainresist`, `fadingresist`, `nuyenamt`, `livingpersona`, `initiativepass`
+- `requirement-validator.ts` — `forbidden`/`required`/`oneof`/`allof`
+- Golden tests from `qualities.json` / `metatypes.json` fixtures
 
-## Milestone 3 — Economy
+## Milestone 3 — Done
 
 - `bp-calculator.ts`, `nuyen-calculator.ts`, `availability-validator.ts`
 - `metatype-initializer.ts`, `character-validator.ts`
-- `CharacterOptions` from settings JSON
+- `CharacterOptions` from `public/data/settings/default.json`
 
-## Milestone 4 — Integration
+## Milestone 4 — Next
 
 - `CharacterStoreService` (signals + computed derived stats)
 - Selection request protocol for interactive handlers

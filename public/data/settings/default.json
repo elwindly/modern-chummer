@@ -1,0 +1,21 @@
+{
+  "name": "SR4 Default",
+  "buildPoints": 400,
+  "maximumAvailability": 12,
+  "nuyenPerBp": 5000,
+  "bpAttribute": 10,
+  "bpAttributeMax": 15,
+  "bpContact": 1,
+  "bpMartialArt": 5,
+  "bpSkillGroup": 10,
+  "bpActiveSkill": 4,
+  "bpKnowledgeSkill": 1,
+  "freeContacts": false,
+  "freeContactsMultiplier": 2,
+  "freeContactsFlat": false,
+  "freeContactsFlatNumber": 0,
+  "exceedNegativeQualities": false,
+  "exceedNegativeQualitiesLimit": false,
+  "allowExceedAttributeBp": false,
+  "moreLethalGameplay": false
+}

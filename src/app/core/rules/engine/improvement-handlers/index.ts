@@ -1,5 +1,7 @@
+import { Character } from '../../models/character';
 import { ImprovementSource, ImprovementType, createImprovement } from '../../models/improvement';
-import { asBonusArray, BonusHandler, nodeHasKey, nodeText } from './types';
+import { ImprovementManager } from '../improvement-manager';
+import { asBonusArray, BonusHandler, BonusHandlerContext, nodeHasKey, nodeText } from './types';
 
 export const handleAddAttribute: BonusHandler = (bonus, ctx) => {
   if (!nodeHasKey(bonus, 'addattribute')) return;
@@ -240,29 +242,33 @@ export const handleDamageResistance: BonusHandler = (bonus, ctx) => {
 export const handleArmor: BonusHandler = (bonus, ctx) => {
   if (!nodeHasKey(bonus, 'armor')) return;
 
-  const armor = bonus['armor'] as Record<string, unknown>;
-  if (armor['ballistic'] !== undefined) {
-    ctx.manager.addImprovement(
-      createImprovement({
-        source: ctx.source,
-        sourceName: ctx.sourceName,
-        type: ImprovementType.BallisticArmor,
-        uniqueName: ctx.uniqueName,
-        value: ctx.manager.valueToInt(nodeText(armor['ballistic']), ctx.rating),
-      }),
-    );
-  }
+  for (const armor of asBonusArray(bonus['armor'])) {
+    const ballistic = armor['ballistic'] ?? armor['b'];
+    const impact = armor['impact'] ?? armor['i'];
 
-  if (armor['impact'] !== undefined) {
-    ctx.manager.addImprovement(
-      createImprovement({
-        source: ctx.source,
-        sourceName: ctx.sourceName,
-        type: ImprovementType.ImpactArmor,
-        uniqueName: ctx.uniqueName,
-        value: ctx.manager.valueToInt(nodeText(armor['impact']), ctx.rating),
-      }),
-    );
+    if (ballistic !== undefined) {
+      ctx.manager.addImprovement(
+        createImprovement({
+          source: ctx.source,
+          sourceName: ctx.sourceName,
+          type: ImprovementType.BallisticArmor,
+          uniqueName: ctx.uniqueName,
+          value: ctx.manager.valueToInt(nodeText(ballistic), ctx.rating),
+        }),
+      );
+    }
+
+    if (impact !== undefined) {
+      ctx.manager.addImprovement(
+        createImprovement({
+          source: ctx.source,
+          sourceName: ctx.sourceName,
+          type: ImprovementType.ImpactArmor,
+          uniqueName: ctx.uniqueName,
+          value: ctx.manager.valueToInt(nodeText(impact), ctx.rating),
+        }),
+      );
+    }
   }
 };
 
@@ -280,6 +286,151 @@ export const handleInitiative: BonusHandler = (bonus, ctx) => {
   );
 };
 
+export const handleSpecificSkill: BonusHandler = (bonus, ctx) => {
+  if (!nodeHasKey(bonus, 'specificskill')) return;
+
+  for (const entry of asBonusArray(bonus['specificskill'])) {
+    const addToRating = nodeText(entry['applytorating']).toLowerCase() === 'yes';
+    let uniqueName = ctx.uniqueName;
+
+    if (entry['precedence'] !== undefined) {
+      uniqueName = `precedence${nodeText(entry['precedence'])}`;
+    }
+
+    if (entry['bonus'] !== undefined) {
+      ctx.manager.addImprovement(
+        createImprovement({
+          improvedName: nodeText(entry['name']),
+          source: ctx.source,
+          sourceName: ctx.sourceName,
+          type: ImprovementType.Skill,
+          uniqueName,
+          value: ctx.manager.valueToInt(nodeText(entry['bonus']), ctx.rating),
+          addToRating,
+        }),
+      );
+    }
+
+    if (entry['max'] !== undefined) {
+      ctx.manager.addImprovement(
+        createImprovement({
+          improvedName: nodeText(entry['name']),
+          source: ctx.source,
+          sourceName: ctx.sourceName,
+          type: ImprovementType.Skill,
+          uniqueName,
+          maximum: ctx.manager.valueToInt(nodeText(entry['max']), ctx.rating),
+          rating: 1,
+          addToRating,
+        }),
+      );
+    }
+  }
+};
+
+export const handleSkillCategory: BonusHandler = (bonus, ctx) => {
+  if (!nodeHasKey(bonus, 'skillcategory')) return;
+
+  for (const entry of asBonusArray(bonus['skillcategory'])) {
+    const addToRating = nodeText(entry['applytorating']).toLowerCase() === 'yes';
+    const exclude = entry['exclude'] !== undefined ? nodeText(entry['exclude']) : '';
+
+    ctx.manager.addImprovement(
+      createImprovement({
+        improvedName: nodeText(entry['name']),
+        source: ctx.source,
+        sourceName: ctx.sourceName,
+        type: ImprovementType.SkillCategory,
+        uniqueName: ctx.uniqueName,
+        value: ctx.manager.valueToInt(nodeText(entry['bonus']), ctx.rating),
+        exclude,
+        addToRating,
+      }),
+    );
+  }
+};
+
+export const handleDrainResist: BonusHandler = (bonus, ctx) => {
+  if (!nodeHasKey(bonus, 'drainresist')) return;
+
+  ctx.manager.addImprovement(
+    createImprovement({
+      source: ctx.source,
+      sourceName: ctx.sourceName,
+      type: ImprovementType.DrainResistance,
+      value: ctx.manager.valueToInt(nodeText(bonus['drainresist']), ctx.rating),
+    }),
+  );
+};
+
+export const handleFadingResist: BonusHandler = (bonus, ctx) => {
+  if (!nodeHasKey(bonus, 'fadingresist')) return;
+
+  ctx.manager.addImprovement(
+    createImprovement({
+      source: ctx.source,
+      sourceName: ctx.sourceName,
+      type: ImprovementType.FadingResistance,
+      value: ctx.manager.valueToInt(nodeText(bonus['fadingresist']), ctx.rating),
+    }),
+  );
+};
+
+export const handleNuyenAmt: BonusHandler = (bonus, ctx) => {
+  if (!nodeHasKey(bonus, 'nuyenamt')) return;
+
+  ctx.manager.addImprovement(
+    createImprovement({
+      source: ctx.source,
+      sourceName: ctx.sourceName,
+      type: ImprovementType.Nuyen,
+      uniqueName: ctx.uniqueName,
+      value: ctx.manager.valueToInt(nodeText(bonus['nuyenamt']), ctx.rating),
+    }),
+  );
+};
+
+export const handleLivingPersona: BonusHandler = (bonus, ctx) => {
+  if (!nodeHasKey(bonus, 'livingpersona')) return;
+
+  const persona = bonus['livingpersona'] as Record<string, unknown>;
+  const fields: Array<[string, ImprovementType]> = [
+    ['response', ImprovementType.LivingPersonaResponse],
+    ['signal', ImprovementType.LivingPersonaSignal],
+    ['firewall', ImprovementType.LivingPersonaFirewall],
+    ['system', ImprovementType.LivingPersonaSystem],
+    ['biofeedback', ImprovementType.LivingPersonaBiofeedback],
+  ];
+
+  for (const [key, type] of fields) {
+    if (persona[key] === undefined) continue;
+
+    ctx.manager.addImprovement(
+      createImprovement({
+        source: ctx.source,
+        sourceName: ctx.sourceName,
+        type,
+        uniqueName: ctx.uniqueName,
+        value: ctx.manager.valueToInt(nodeText(persona[key]), ctx.rating),
+      }),
+    );
+  }
+};
+
+export const handleInitiativePass: BonusHandler = (bonus, ctx) => {
+  if (!nodeHasKey(bonus, 'initiativepass')) return;
+
+  ctx.manager.addImprovement(
+    createImprovement({
+      source: ctx.source,
+      sourceName: ctx.sourceName,
+      type: ImprovementType.InitiativePass,
+      uniqueName: 'initiativepass',
+      value: ctx.manager.valueToInt(nodeText(bonus['initiativepass']), ctx.rating),
+    }),
+  );
+};
+
 export const BONUS_HANDLERS: BonusHandler[] = [
   handleAddAttribute,
   handleEnableTab,
@@ -288,6 +439,13 @@ export const BONUS_HANDLERS: BonusHandler[] = [
   handleDamageResistance,
   handleArmor,
   handleInitiative,
+  handleSpecificSkill,
+  handleSkillCategory,
+  handleDrainResist,
+  handleFadingResist,
+  handleNuyenAmt,
+  handleLivingPersona,
+  handleInitiativePass,
 ];
 
 export function applyBonusHandlers(

@@ -1,5 +1,6 @@
 import { AttributeCode } from '../models/attribute';
-import { Character, getAttributeTotal } from '../models/character';
+import { Character } from '../models/character';
+import { getAttributeTotal } from './attribute-totals';
 import { Improvement, ImprovementSource, ImprovementType } from '../models/improvement';
 import { evaluateFormula } from './formula-evaluator';
 
