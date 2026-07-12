@@ -32,9 +32,8 @@ npm run build        # production build
 
 ## Implementation phases
 
-1. **Done** — Data pipeline, reference browser (44 lists), rules Milestone 1
-2. **Next** — Rules Milestone 2: more bonus handlers, attribute totals, requirement validator
-3. **Later** — BP/nuyen calculators, creation UI, save/import
+1. **Done** — Data pipeline, reference browser, rules engine (Milestones 1–5)
+2. **Next** — Per-tab editing (skills, gear, cyberware), career mode
 
 ## Legacy reference (when porting rules)
 

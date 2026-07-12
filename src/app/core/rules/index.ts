@@ -17,3 +17,5 @@ export * from './models/selection-request';
 export * from './engine/selection-handlers';
 export * from './engine/bonus-grant';
 export * from './engine/improvement-handlers';
+export * from './persistence/character-serializer';
+export * from './persistence/chum-importer';

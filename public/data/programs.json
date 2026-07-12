@@ -1057,454 +1057,452 @@
       "page": "122"
     }
   ],
-  "options": {
-    "option": [
-      {
-        "name": "Biofeedback",
-        "category": [
-          "General"
-        ],
-        "maxrating": "0",
-        "programtypes": {
-          "programtype": [
-            {
-              "value": "Hacking",
-              "tags": "Bomb"
-            },
-            "Simsense",
-            "Skillsofts"
-          ]
-        },
-        "tags": {
-          "tag": "Black"
-        },
-        "complexform": "yes",
-        "source": "UN",
-        "page": "114"
-      },
-      {
-        "name": "Copy Protection",
-        "category": [
-          "General"
-        ],
-        "programtypes": {
-          "programtype": [
-            "Common Use",
-            "Hacking",
-            "Autosoft",
-            "Simsense",
-            "Skillsofts"
-          ]
-        },
-        "complexform": "yes",
-        "source": "UN",
-        "page": "114"
-      },
-      {
-        "name": "Crashguard",
-        "category": [
-          "General"
-        ],
-        "maxrating": "0",
-        "programtypes": {
-          "programtype": [
-            "Common Use",
-            "Hacking",
-            "Autosoft",
-            "Simsense",
-            "Skillsofts"
-          ]
-        },
-        "complexform": "yes",
-        "source": "UN",
-        "page": "114"
-      },
-      {
-        "name": "Ergonomic",
-        "category": [
-          "General"
-        ],
-        "maxrating": "0",
-        "programtypes": {
-          "programtype": [
-            "Common Use",
-            "Hacking"
-          ]
-        },
-        "complexform": "yes",
-        "source": "UN",
-        "page": "114"
-      },
-      {
-        "name": "Limitation",
-        "category": [
-          "General"
-        ],
-        "maxrating": "0",
-        "programtypes": {
-          "programtype": [
-            "Common Use",
-            "Hacking",
-            "Autosoft",
-            "Simsense",
-            "Skillsofts"
-          ]
-        },
-        "complexform": "yes",
-        "source": "UN",
-        "page": "114"
-      },
-      {
-        "name": "Mute",
-        "category": [
-          "General"
-        ],
-        "maxrating": "0",
-        "programtypes": {
-          "programtype": [
-            "Common Use",
-            "Hacking"
-          ]
-        },
-        "complexform": "yes",
-        "source": "UN",
-        "page": "115"
-      },
-      {
-        "name": "Optimization",
-        "category": [
-          "General"
-        ],
-        "programtypes": {
-          "programtype": [
-            "Common Use",
-            "Hacking",
-            "Autosoft",
-            "Simsense",
-            "Skillsofts"
-          ]
-        },
-        "complexform": "yes",
-        "source": "UN",
-        "page": "115"
-      },
-      {
-        "name": "Psychotropic",
-        "category": [
-          "General"
-        ],
-        "programtypes": {
-          "programtype": [
-            {
-              "value": "Hacking",
-              "tags": "Black"
-            },
-            "Simsense",
-            "Skillsofts"
-          ]
-        },
-        "complexform": "yes",
-        "source": "UN",
-        "page": "115"
-      },
-      {
-        "name": "Registration",
-        "category": [
-          "General"
-        ],
-        "maxrating": "0",
-        "programtypes": {
-          "programtype": [
-            "Common Use",
-            "Hacking",
-            "Autosoft",
-            "Simsense",
-            "Skillsofts"
-          ]
-        },
-        "complexform": "yes",
-        "source": "UN",
-        "page": "115"
-      },
-      {
-        "name": "Timer",
-        "category": [
-          "General"
-        ],
-        "maxrating": "0",
-        "programtypes": {
-          "programtype": [
-            "Common Use",
-            "Hacking",
-            "Autosoft",
-            "Simsense",
-            "Skillsofts"
-          ]
-        },
-        "complexform": "yes",
-        "source": "UN",
-        "page": "115"
-      },
-      {
-        "name": "Viral Resistance",
-        "category": [
-          "General"
-        ],
-        "programtypes": {
-          "programtype": [
-            "Common Use",
-            "Hacking",
-            "Autosoft",
-            "Simsense",
-            "Skillsofts"
-          ]
-        },
-        "complexform": "yes",
-        "source": "UN",
-        "page": "116"
-      },
-      {
-        "name": "Dissonant Virus",
-        "category": [
-          "General"
-        ],
-        "programtypes": {
-          "programtype": [
-            "Common Use",
-            "Hacking",
-            "Autosoft",
-            "Simsense",
-            "Skillsofts"
-          ]
-        },
-        "complexform": "yes",
-        "source": "UN",
-        "page": "178"
-      },
-      {
-        "name": "Area",
-        "category": [
-          "Hacking"
-        ],
-        "programtypes": {
-          "programtype": {
-            "value": "Hacking",
-            "tags": "Combat"
-          }
-        },
-        "complexform": "yes",
-        "source": "UN",
-        "page": "116"
-      },
-      {
-        "name": "Armor Piercing",
-        "category": [
-          "Hacking"
-        ],
-        "maxrating": "3",
-        "programtypes": {
-          "programtype": {
-            "value": "Hacking",
-            "tags": "Combat"
-          }
-        },
-        "complexform": "yes",
-        "source": "UN",
-        "page": "116"
-      },
-      {
-        "name": "Pavlov",
-        "category": [
-          "Hacking"
-        ],
-        "maxrating": "0",
-        "programtypes": {
-          "programtype": {
+  "options": [
+    {
+      "name": "Biofeedback",
+      "category": [
+        "General"
+      ],
+      "maxrating": "0",
+      "programtypes": {
+        "programtype": [
+          {
             "value": "Hacking",
             "tags": "Bomb"
-          }
-        },
-        "complexform": "yes",
-        "source": "UN",
-        "page": "116"
+          },
+          "Simsense",
+          "Skillsofts"
+        ]
       },
-      {
-        "name": "Rust",
-        "category": [
+      "tags": {
+        "tag": "Black"
+      },
+      "complexform": "yes",
+      "source": "UN",
+      "page": "114"
+    },
+    {
+      "name": "Copy Protection",
+      "category": [
+        "General"
+      ],
+      "programtypes": {
+        "programtype": [
+          "Common Use",
+          "Hacking",
+          "Autosoft",
+          "Simsense",
+          "Skillsofts"
+        ]
+      },
+      "complexform": "yes",
+      "source": "UN",
+      "page": "114"
+    },
+    {
+      "name": "Crashguard",
+      "category": [
+        "General"
+      ],
+      "maxrating": "0",
+      "programtypes": {
+        "programtype": [
+          "Common Use",
+          "Hacking",
+          "Autosoft",
+          "Simsense",
+          "Skillsofts"
+        ]
+      },
+      "complexform": "yes",
+      "source": "UN",
+      "page": "114"
+    },
+    {
+      "name": "Ergonomic",
+      "category": [
+        "General"
+      ],
+      "maxrating": "0",
+      "programtypes": {
+        "programtype": [
+          "Common Use",
           "Hacking"
-        ],
-        "maxrating": "0",
-        "programtypes": {
-          "programtype": {
-            "value": "Hacking",
-            "tags": "Combat"
-          }
-        },
-        "complexform": "yes",
-        "source": "UN",
-        "page": "116"
+        ]
       },
-      {
-        "name": "Shredder",
-        "category": [
+      "complexform": "yes",
+      "source": "UN",
+      "page": "114"
+    },
+    {
+      "name": "Limitation",
+      "category": [
+        "General"
+      ],
+      "maxrating": "0",
+      "programtypes": {
+        "programtype": [
+          "Common Use",
+          "Hacking",
+          "Autosoft",
+          "Simsense",
+          "Skillsofts"
+        ]
+      },
+      "complexform": "yes",
+      "source": "UN",
+      "page": "114"
+    },
+    {
+      "name": "Mute",
+      "category": [
+        "General"
+      ],
+      "maxrating": "0",
+      "programtypes": {
+        "programtype": [
+          "Common Use",
           "Hacking"
-        ],
-        "maxrating": "0",
-        "programtypes": {
-          "programtype": {
+        ]
+      },
+      "complexform": "yes",
+      "source": "UN",
+      "page": "115"
+    },
+    {
+      "name": "Optimization",
+      "category": [
+        "General"
+      ],
+      "programtypes": {
+        "programtype": [
+          "Common Use",
+          "Hacking",
+          "Autosoft",
+          "Simsense",
+          "Skillsofts"
+        ]
+      },
+      "complexform": "yes",
+      "source": "UN",
+      "page": "115"
+    },
+    {
+      "name": "Psychotropic",
+      "category": [
+        "General"
+      ],
+      "programtypes": {
+        "programtype": [
+          {
             "value": "Hacking",
-            "tags": "Attack"
-          }
-        },
-        "complexform": "yes",
-        "source": "UN",
-        "page": "117"
+            "tags": "Black"
+          },
+          "Simsense",
+          "Skillsofts"
+        ]
       },
-      {
-        "name": "Targeting",
-        "category": [
-          "Hacking"
-        ],
-        "maxrating": "0",
-        "programtypes": {
-          "programtype": {
-            "value": "Hacking",
-            "tags": "Combat"
-          }
-        },
-        "complexform": "yes",
-        "source": "UN",
-        "page": "117"
+      "complexform": "yes",
+      "source": "UN",
+      "page": "115"
+    },
+    {
+      "name": "Registration",
+      "category": [
+        "General"
+      ],
+      "maxrating": "0",
+      "programtypes": {
+        "programtype": [
+          "Common Use",
+          "Hacking",
+          "Autosoft",
+          "Simsense",
+          "Skillsofts"
+        ]
       },
-      {
-        "name": "Adaptive Scale",
-        "category": [
-          "Simsense"
-        ],
-        "maxrating": "0",
-        "programtypes": {
-          "programtype": [
-            {
-              "value": "Simsense",
-              "tags": "Skillsoft"
-            },
-            "Skillsofts"
-          ]
-        },
-        "complexform": "yes",
-        "source": "UN",
-        "page": "117"
+      "complexform": "yes",
+      "source": "UN",
+      "page": "115"
+    },
+    {
+      "name": "Timer",
+      "category": [
+        "General"
+      ],
+      "maxrating": "0",
+      "programtypes": {
+        "programtype": [
+          "Common Use",
+          "Hacking",
+          "Autosoft",
+          "Simsense",
+          "Skillsofts"
+        ]
       },
-      {
-        "name": "Addictive",
-        "category": [
-          "Simsense"
-        ],
-        "maxrating": "2",
-        "programtypes": {
-          "programtype": [
-            {
-              "value": "Simsense",
-              "tags": "BTL"
-            },
-            "Skillsofts"
-          ]
-        },
-        "complexform": "yes",
-        "source": "UN",
-        "page": "117"
+      "complexform": "yes",
+      "source": "UN",
+      "page": "115"
+    },
+    {
+      "name": "Viral Resistance",
+      "category": [
+        "General"
+      ],
+      "programtypes": {
+        "programtype": [
+          "Common Use",
+          "Hacking",
+          "Autosoft",
+          "Simsense",
+          "Skillsofts"
+        ]
       },
-      {
-        "name": "DIMAP",
-        "category": [
-          "Simsense"
-        ],
-        "maxrating": "0",
-        "programtypes": {
-          "programtype": [
-            {
-              "value": "Simsense",
-              "tags": "Skillsoft"
-            },
-            "Skillsofts"
-          ]
-        },
-        "complexform": "yes",
-        "source": "UN",
-        "page": "117"
+      "complexform": "yes",
+      "source": "UN",
+      "page": "116"
+    },
+    {
+      "name": "Dissonant Virus",
+      "category": [
+        "General"
+      ],
+      "programtypes": {
+        "programtype": [
+          "Common Use",
+          "Hacking",
+          "Autosoft",
+          "Simsense",
+          "Skillsofts"
+        ]
       },
-      {
-        "name": "Lifeline",
-        "category": [
-          "Simsense"
-        ],
-        "maxrating": "0",
-        "programtypes": {
-          "programtype": [
-            {
-              "value": "Simsense",
-              "tags": "Knowsoft,Linguasoft"
-            },
-            "Skillsofts"
-          ]
-        },
-        "complexform": "yes",
-        "source": "UN",
-        "page": "117"
+      "complexform": "yes",
+      "source": "UN",
+      "page": "178"
+    },
+    {
+      "name": "Area",
+      "category": [
+        "Hacking"
+      ],
+      "programtypes": {
+        "programtype": {
+          "value": "Hacking",
+          "tags": "Combat"
+        }
       },
-      {
-        "name": "Overdrive",
-        "category": [
-          "Simsense"
-        ],
-        "maxrating": "3",
-        "programtypes": {
-          "programtype": [
-            {
-              "value": "Simsense",
-              "tags": "Activesoft"
-            },
-            "Skillsofts"
-          ]
-        },
-        "complexform": "yes",
-        "source": "UN",
-        "page": "117"
+      "complexform": "yes",
+      "source": "UN",
+      "page": "116"
+    },
+    {
+      "name": "Armor Piercing",
+      "category": [
+        "Hacking"
+      ],
+      "maxrating": "3",
+      "programtypes": {
+        "programtype": {
+          "value": "Hacking",
+          "tags": "Combat"
+        }
       },
-      {
-        "name": "Personalized",
-        "category": [
-          "Simsense"
-        ],
-        "maxrating": "0",
-        "programtypes": {
-          "programtype": [
-            "Simsense",
-            "Skillsofts"
-          ]
-        },
-        "complexform": "yes",
-        "source": "UN",
-        "page": "118"
+      "complexform": "yes",
+      "source": "UN",
+      "page": "116"
+    },
+    {
+      "name": "Pavlov",
+      "category": [
+        "Hacking"
+      ],
+      "maxrating": "0",
+      "programtypes": {
+        "programtype": {
+          "value": "Hacking",
+          "tags": "Bomb"
+        }
       },
-      {
-        "name": "Pluscode",
-        "category": [
-          "Simsense"
-        ],
-        "programtypes": {
-          "programtype": [
-            {
-              "value": "Simsense",
-              "tags": "Activesoft"
-            },
-            "Skillsofts"
-          ]
-        },
-        "complexform": "yes",
-        "source": "UN",
-        "page": "118"
-      }
-    ]
-  }
+      "complexform": "yes",
+      "source": "UN",
+      "page": "116"
+    },
+    {
+      "name": "Rust",
+      "category": [
+        "Hacking"
+      ],
+      "maxrating": "0",
+      "programtypes": {
+        "programtype": {
+          "value": "Hacking",
+          "tags": "Combat"
+        }
+      },
+      "complexform": "yes",
+      "source": "UN",
+      "page": "116"
+    },
+    {
+      "name": "Shredder",
+      "category": [
+        "Hacking"
+      ],
+      "maxrating": "0",
+      "programtypes": {
+        "programtype": {
+          "value": "Hacking",
+          "tags": "Attack"
+        }
+      },
+      "complexform": "yes",
+      "source": "UN",
+      "page": "117"
+    },
+    {
+      "name": "Targeting",
+      "category": [
+        "Hacking"
+      ],
+      "maxrating": "0",
+      "programtypes": {
+        "programtype": {
+          "value": "Hacking",
+          "tags": "Combat"
+        }
+      },
+      "complexform": "yes",
+      "source": "UN",
+      "page": "117"
+    },
+    {
+      "name": "Adaptive Scale",
+      "category": [
+        "Simsense"
+      ],
+      "maxrating": "0",
+      "programtypes": {
+        "programtype": [
+          {
+            "value": "Simsense",
+            "tags": "Skillsoft"
+          },
+          "Skillsofts"
+        ]
+      },
+      "complexform": "yes",
+      "source": "UN",
+      "page": "117"
+    },
+    {
+      "name": "Addictive",
+      "category": [
+        "Simsense"
+      ],
+      "maxrating": "2",
+      "programtypes": {
+        "programtype": [
+          {
+            "value": "Simsense",
+            "tags": "BTL"
+          },
+          "Skillsofts"
+        ]
+      },
+      "complexform": "yes",
+      "source": "UN",
+      "page": "117"
+    },
+    {
+      "name": "DIMAP",
+      "category": [
+        "Simsense"
+      ],
+      "maxrating": "0",
+      "programtypes": {
+        "programtype": [
+          {
+            "value": "Simsense",
+            "tags": "Skillsoft"
+          },
+          "Skillsofts"
+        ]
+      },
+      "complexform": "yes",
+      "source": "UN",
+      "page": "117"
+    },
+    {
+      "name": "Lifeline",
+      "category": [
+        "Simsense"
+      ],
+      "maxrating": "0",
+      "programtypes": {
+        "programtype": [
+          {
+            "value": "Simsense",
+            "tags": "Knowsoft,Linguasoft"
+          },
+          "Skillsofts"
+        ]
+      },
+      "complexform": "yes",
+      "source": "UN",
+      "page": "117"
+    },
+    {
+      "name": "Overdrive",
+      "category": [
+        "Simsense"
+      ],
+      "maxrating": "3",
+      "programtypes": {
+        "programtype": [
+          {
+            "value": "Simsense",
+            "tags": "Activesoft"
+          },
+          "Skillsofts"
+        ]
+      },
+      "complexform": "yes",
+      "source": "UN",
+      "page": "117"
+    },
+    {
+      "name": "Personalized",
+      "category": [
+        "Simsense"
+      ],
+      "maxrating": "0",
+      "programtypes": {
+        "programtype": [
+          "Simsense",
+          "Skillsofts"
+        ]
+      },
+      "complexform": "yes",
+      "source": "UN",
+      "page": "118"
+    },
+    {
+      "name": "Pluscode",
+      "category": [
+        "Simsense"
+      ],
+      "programtypes": {
+        "programtype": [
+          {
+            "value": "Simsense",
+            "tags": "Activesoft"
+          },
+          "Skillsofts"
+        ]
+      },
+      "complexform": "yes",
+      "source": "UN",
+      "page": "118"
+    }
+  ]
 }

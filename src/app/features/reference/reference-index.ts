@@ -73,7 +73,7 @@ import { CATALOG_GROUPS, DATA_CATALOG, getCatalogGroupEntries } from '../../core
       background: var(--color-surface);
       border: 1px solid var(--color-border);
       border-radius: var(--radius);
-      color: inherit;
+      color: var(--color-text);
       text-decoration: none;
 
       &:hover {

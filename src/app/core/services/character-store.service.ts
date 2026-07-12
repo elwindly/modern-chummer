@@ -5,6 +5,7 @@ import {
   AttributeCode,
   BpBreakdown,
   Character,
+  CharacterListEntry,
   CharacterOptions,
   DEFAULT_CHARACTER_OPTIONS,
   DerivedStats,
@@ -18,41 +19,52 @@ import {
   calculateNuyen,
   cancelBonusGrant,
   continueBonusGrant,
+  createCharacterId,
   createEmptyCharacter,
   deriveStats,
+  deserializeCharacter,
   getAttributeTotal,
   getEffectiveLimits,
   grantBonus,
   initializeMetatype,
+  listSelectableAttributes,
   loadCharacterOptions,
   MetatypeRecord,
   NuyenBreakdown,
+  parseAttributeSelectionConfig,
+  parseChumXml,
   QualityCatalogEntry,
   touchCharacter,
   validateCharacter,
   type BonusGrantSession,
   type BonusNode,
+  type ChumImportResult,
 } from '../rules';
+import { CharacterStorageService } from './character-storage.service';
 import { ChummerDataService } from './chummer-data.service';
 
 @Injectable({ providedIn: 'root' })
 export class CharacterStoreService {
   private readonly http = inject(HttpClient);
   private readonly data = inject(ChummerDataService);
+  private readonly storage = inject(CharacterStorageService);
 
   private readonly revision = signal(0);
   private manager: ImprovementManager | null = null;
   private grantSession: BonusGrantSession | null = null;
   private pendingQualityName: string | null = null;
+  private saveTimer: ReturnType<typeof setTimeout> | null = null;
 
   readonly options = signal<CharacterOptions>(DEFAULT_CHARACTER_OPTIONS);
   readonly qualityCatalog = signal<Map<string, QualityCatalogEntry>>(new Map());
   readonly qualityRecords = signal<Map<string, { name: string; bonus?: BonusNode }>>(new Map());
   readonly metatypes = signal<MetatypeRecord[]>([]);
   readonly character = signal<Character | null>(null);
+  readonly characterList = signal<CharacterListEntry[]>([]);
   readonly pendingSelection = signal<SelectionRequest | null>(null);
   readonly grantInProgress = signal(false);
   readonly initialized = signal(false);
+  readonly lastImportWarnings = signal<string[]>([]);
 
   readonly derivedStats = computed((): DerivedStats | null => {
     this.revision();
@@ -112,11 +124,17 @@ export class CharacterStoreService {
       (metatypesDoc as { metatypes: MetatypeRecord[] }).metatypes ?? [],
     );
     this.initialized.set(true);
+    await this.refreshCharacterList();
+  }
+
+  async refreshCharacterList(): Promise<void> {
+    this.characterList.set(await this.storage.listCharacters());
   }
 
   createNewCharacter(overrides: Partial<Character> = {}): void {
     const options = this.options();
     const character = createEmptyCharacter({
+      id: overrides.id ?? createCharacterId(),
       buildPoints: options.buildPoints,
       maximumAvailability: options.maximumAvailability,
       ...overrides,
@@ -125,10 +143,52 @@ export class CharacterStoreService {
     this.character.set(character);
     this.clearGrantState();
     this.bump();
+    this.scheduleAutoSave();
+  }
+
+  async openCharacter(id: string): Promise<boolean> {
+    const stored = await this.storage.loadCharacter(id);
+    if (!stored) return false;
+
+    const character = deserializeCharacter(stored);
+    this.manager = new ImprovementManager(character);
+    this.character.set(character);
+    this.clearGrantState();
+    this.bump();
+    return true;
+  }
+
+  async saveCurrentCharacter(): Promise<void> {
+    const character = this.character();
+    if (!character) return;
+
+    const existing = await this.storage.loadCharacter(character.id);
+    const document = this.storage.buildDocument(character, existing);
+    await this.storage.saveCharacter(document);
+    await this.refreshCharacterList();
+  }
+
+  async deleteCharacter(id: string): Promise<void> {
+    await this.storage.deleteCharacter(id);
+    if (this.character()?.id === id) {
+      this.character.set(null);
+      this.manager = null;
+    }
+    await this.refreshCharacterList();
+  }
+
+  async importChumFile(file: File): Promise<ChumImportResult> {
+    const xml = await file.text();
+    const result = parseChumXml(xml);
+    this.loadImportedCharacter(result);
+    await this.saveCurrentCharacter();
+    return result;
   }
 
   initializeMetatype(metatypeName: string, metavariantName?: string): void {
     const character = createEmptyCharacter({
+      id: this.character()?.id ?? createCharacterId(),
+      name: this.character()?.name ?? '',
       buildPoints: this.options().buildPoints,
       maximumAvailability: this.options().maximumAvailability,
     });
@@ -148,6 +208,16 @@ export class CharacterStoreService {
     this.character.set(touchCharacter(character));
     this.clearGrantState();
     this.bump();
+    this.scheduleAutoSave();
+  }
+
+  setCharacterName(name: string): void {
+    const character = this.character();
+    if (!character) return;
+    character.name = name;
+    this.character.set(touchCharacter(character));
+    this.bump();
+    this.scheduleAutoSave();
   }
 
   setAttributeBase(code: AttributeCode, value: number): void {
@@ -160,6 +230,7 @@ export class CharacterStoreService {
     character.attributes[code].base = clamped;
     this.character.set(touchCharacter(character));
     this.bump();
+    this.scheduleAutoSave();
   }
 
   applyQuality(qualityName: string, bonus: BonusNode | null | undefined, rating = 1): void {
@@ -171,6 +242,7 @@ export class CharacterStoreService {
       this.addQualityName(qualityName);
       this.character.set(touchCharacter(manager.getCharacter()));
       this.bump();
+      this.scheduleAutoSave();
       return;
     }
 
@@ -191,6 +263,21 @@ export class CharacterStoreService {
     } else if (result.status === 'complete') {
       this.completeQualityGrant(qualityName);
     }
+  }
+
+  removeQuality(qualityName: string): void {
+    const character = this.character();
+    const manager = this.manager;
+    if (!character || !manager) return;
+
+    character.qualities = character.qualities.filter((name) => name !== qualityName);
+    character.improvements = character.improvements.filter(
+      (improvement) => improvement.sourceName !== qualityName,
+    );
+
+    this.character.set(touchCharacter(character));
+    this.bump();
+    this.scheduleAutoSave();
   }
 
   resolveSelection(value: string): void {
@@ -234,6 +321,14 @@ export class CharacterStoreService {
     return getAttributeTotal(character, code);
   }
 
+  private loadImportedCharacter(result: ChumImportResult): void {
+    this.lastImportWarnings.set(result.warnings);
+    this.manager = new ImprovementManager(result.character);
+    this.character.set(touchCharacter(result.character));
+    this.clearGrantState();
+    this.bump();
+  }
+
   private completeQualityGrant(qualityName: string): void {
     const manager = this.manager;
     if (!manager) return;
@@ -242,6 +337,7 @@ export class CharacterStoreService {
     this.character.set(touchCharacter(manager.getCharacter()));
     this.clearGrantState();
     this.bump();
+    this.scheduleAutoSave();
   }
 
   private addQualityName(qualityName: string): void {
@@ -266,6 +362,15 @@ export class CharacterStoreService {
     this.pendingQualityName = null;
     this.pendingSelection.set(null);
     this.grantInProgress.set(false);
+  }
+
+  private scheduleAutoSave(): void {
+    if (this.saveTimer) {
+      clearTimeout(this.saveTimer);
+    }
+    this.saveTimer = setTimeout(() => {
+      void this.saveCurrentCharacter();
+    }, 800);
   }
 
   private bump(): void {

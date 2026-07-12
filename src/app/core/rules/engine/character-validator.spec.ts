@@ -56,6 +56,7 @@ describe('character-validator', () => {
     const character = createEmptyCharacter({
       buildPoints: 50,
     });
+    character.attributes.BOD.base = 6;
     const manager = new ImprovementManager(character);
 
     const result = validateCharacter({

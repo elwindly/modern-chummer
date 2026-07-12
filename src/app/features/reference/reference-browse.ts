@@ -196,16 +196,6 @@ import {
       input {
         width: 100%;
         padding: 0.625rem 0.875rem;
-        background: var(--color-surface);
-        border: 1px solid var(--color-border);
-        border-radius: var(--radius);
-        color: var(--color-text);
-
-        &:focus {
-          outline: 2px solid var(--color-focus);
-          outline-offset: 0;
-          border-color: var(--color-focus);
-        }
       }
     }
 
@@ -223,6 +213,7 @@ import {
     .alert {
       padding: 1rem 1.25rem;
       border-radius: var(--radius);
+      color: var(--color-text);
     }
 
     .alert-danger {

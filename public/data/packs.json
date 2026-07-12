@@ -2995,18 +2995,16 @@
         },
         {
           "name": "Stoner-Ares M202",
-          "accessories": {
-            "accessory": [
-              {
-                "name": "Gas-Vent 3 System",
-                "mount": "Barrel"
-              },
-              {
-                "name": "Gyro Stabilization",
-                "mount": "Under"
-              }
-            ]
-          }
+          "accessories": [
+            {
+              "name": "Gas-Vent 3 System",
+              "mount": "Barrel"
+            },
+            {
+              "name": "Gyro Stabilization",
+              "mount": "Under"
+            }
+          ]
         }
       ],
       "gears": [
@@ -4862,14 +4860,12 @@
           "weapons": [
             {
               "name": "AK-97",
-              "accessories": {
-                "accessory": [
-                  {
-                    "name": "Sound Suppressor",
-                    "mount": "Barrel"
-                  }
-                ]
-              }
+              "accessories": [
+                {
+                  "name": "Sound Suppressor",
+                  "mount": "Barrel"
+                }
+              ]
             }
           ]
         },

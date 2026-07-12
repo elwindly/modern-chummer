@@ -8,6 +8,7 @@ import { createEmptyCharacter } from '../models/character';
 describe('quality bonus integration', () => {
   it('increases physical CM from Tough as Nails (Rating 1)', () => {
     const character = createEmptyCharacter();
+    character.attributes.BOD.base = 4;
     const manager = new ImprovementManager(character);
 
     manager.beginTransaction();

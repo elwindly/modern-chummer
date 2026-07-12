@@ -11,8 +11,8 @@ import { ImprovementSource, ImprovementType, createImprovement } from '../models
 describe('attribute totals', () => {
   it('returns base value when no improvements exist', () => {
     const character = createEmptyCharacter();
-    expect(getAttributeTotal(character, 'BOD')).toBe(4);
-    expect(getAttributeTotal(character, 'WIL')).toBe(4);
+    expect(getAttributeTotal(character, 'BOD')).toBe(1);
+    expect(getAttributeTotal(character, 'WIL')).toBe(1);
   });
 
   it('adds augmented attribute improvements to base', () => {
@@ -28,7 +28,7 @@ describe('attribute totals', () => {
     );
 
     expect(getAttributeAugmentedModifiers(character.improvements, 'BOD')).toBe(2);
-    expect(getAttributeTotal(character, 'BOD')).toBe(6);
+    expect(getAttributeTotal(character, 'BOD')).toBe(3);
   });
 
   it('caps total at augmented maximum', () => {
@@ -68,7 +68,7 @@ describe('attribute totals', () => {
     );
 
     expect(getAttributeAugmentedModifiers(character.improvements, 'STR')).toBe(3);
-    expect(getAttributeTotal(character, 'STR')).toBe(7);
+    expect(getAttributeTotal(character, 'STR')).toBe(4);
   });
 
   it('applies maximum modifiers to effective limits', () => {

@@ -131,6 +131,7 @@ import { CATALOG_GROUPS, DATA_CATALOG, getCatalogGroupEntries } from '../../core
     }
 
     .alert-warning {
+      color: var(--color-text);
       background: color-mix(in srgb, var(--color-warning) 15%, var(--color-surface));
       border: 1px solid color-mix(in srgb, var(--color-warning) 40%, transparent);
     }
@@ -181,7 +182,7 @@ import { CATALOG_GROUPS, DATA_CATALOG, getCatalogGroupEntries } from '../../core
       background: var(--color-surface);
       border: 1px solid var(--color-border);
       border-radius: var(--radius);
-      color: inherit;
+      color: var(--color-text);
       text-decoration: none;
       height: 100%;
 

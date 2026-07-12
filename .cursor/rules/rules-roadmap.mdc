@@ -33,10 +33,11 @@ Use this when continuing Phase 3 implementation.
 - `CharacterStoreService` (signals + computed derived stats, BP, nuyen, validation)
 - Selection request protocol for interactive handlers (`selectattribute`, `selectskill`, `selecttext`, `selectskillgroup`)
 
-## Milestone 5+ — Next
+## Milestone 5 — Done
 
-- Creation tab shell, per-tab components
-- IndexedDB save, legacy `.chum` import
+- Creation tab shell with conditional tabs (Common, Skills, Magician, Adept, etc.)
+- IndexedDB persistence via `CharacterStorageService`
+- Legacy `.chum` import via `chum-importer.ts`
 
 ## Vertical slice test (reference)
 

@@ -13,7 +13,7 @@ export const routes: Routes = [
   },
   {
     path: 'characters',
-    loadComponent: () => import('./features/characters/characters').then((m) => m.Characters),
+    loadChildren: () => import('./features/characters/characters.routes').then((m) => m.CHARACTER_ROUTES),
     title: 'Characters',
   },
   {

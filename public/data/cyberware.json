@@ -4843,1920 +4843,1918 @@
       "page": "7"
     }
   ],
-  "suites": {
-    "suite": [
-      {
-        "name": "Aztechnology Topo",
-        "grade": [
-          "Standard"
-        ],
-        "cyberwares": [
-          {
-            "name": "Thermographic Vision"
-          },
-          {
-            "name": "Damper"
-          },
-          {
-            "name": "Bone Lacing (Plastic)"
-          },
-          {
-            "name": "Internal Air Tank"
-          },
-          {
-            "name": "Muscle Replacement",
-            "rating": "2"
-          }
-        ]
-      },
-      {
-        "name": "Clockwerk Bright Cloud Basic",
-        "grade": [
-          "Standard"
-        ],
-        "cyberwares": [
-          {
-            "name": "Balance Augmenter"
-          },
-          {
-            "name": "Gastric Neurostimulator"
-          },
-          {
-            "name": "Retractable Climbing Claws"
-          },
-          {
-            "name": "Grip Feet"
-          },
-          {
-            "name": "Balance Tail"
-          }
-        ]
-      },
-      {
-        "name": "Clockwerk Bright Cloud Alpha",
-        "grade": [
-          "Alphaware"
-        ],
-        "cyberwares": [
-          {
-            "name": "Balance Augmenter"
-          },
-          {
-            "name": "Gastric Neurostimulator"
-          },
-          {
-            "name": "Retractable Climbing Claws"
-          },
-          {
-            "name": "Grip Feet"
-          },
-          {
-            "name": "Balance Tail"
-          }
-        ]
-      },
-      {
-        "name": "Clockwerk Bright Cloud Beta",
-        "grade": [
-          "Betaware"
-        ],
-        "cyberwares": [
-          {
-            "name": "Balance Augmenter"
-          },
-          {
-            "name": "Gastric Neurostimulator"
-          },
-          {
-            "name": "Retractable Climbing Claws"
-          },
-          {
-            "name": "Grip Feet"
-          },
-          {
-            "name": "Balance Tail"
-          }
-        ]
-      },
-      {
-        "name": "Evo Aquanaut Basic",
-        "grade": [
-          "Standard"
-        ],
-        "cyberwares": [
-          {
-            "name": "Orientation System"
-          },
-          {
-            "name": "Image Link"
-          },
-          {
-            "name": "Cyberfins"
-          },
-          {
-            "name": "OXSYS Cybergill"
-          },
-          {
-            "name": "Internal Air Tank"
-          }
-        ]
-      },
-      {
-        "name": "Evo Aquanaut Professional",
-        "grade": [
-          "Alphaware"
-        ],
-        "cyberwares": [
-          {
-            "name": "Orientation System"
-          },
-          {
-            "name": "Image Link"
-          },
-          {
-            "name": "Cyberfins"
-          },
-          {
-            "name": "OXSYS Cybergill"
-          },
-          {
-            "name": "Internal Air Tank"
-          }
-        ]
-      },
-      {
-        "name": "Evo Aquanaut Luxury",
-        "grade": [
-          "Betaware"
-        ],
-        "cyberwares": [
-          {
-            "name": "Orientation System"
-          },
-          {
-            "name": "Image Link"
-          },
-          {
-            "name": "Cyberfins"
-          },
-          {
-            "name": "OXSYS Cybergill"
-          },
-          {
-            "name": "Internal Air Tank"
-          }
-        ]
-      },
-      {
-        "name": "NeoNET/Spin-X Sternschutz Standard ZK",
-        "grade": [
-          "Standard"
-        ],
-        "cyberwares": [
-          {
-            "name": "Commlink"
-          },
-          {
-            "name": "Smartlink"
-          },
-          {
-            "name": "Datajack"
-          },
-          {
-            "name": "Bone Lacing (Kevlar)"
-          },
-          {
-            "name": "Reaction Enhancers",
-            "rating": "1"
-          }
-        ]
-      },
-      {
-        "name": "NeoNET/Spin-X Sternschutz Alpha ZK",
-        "grade": [
-          "Alphaware"
-        ],
-        "cyberwares": [
-          {
-            "name": "Commlink"
-          },
-          {
-            "name": "Smartlink"
-          },
-          {
-            "name": "Datajack"
-          },
-          {
-            "name": "Bone Lacing (Kevlar)"
-          },
-          {
-            "name": "Reaction Enhancers",
-            "rating": "1"
-          }
-        ]
-      },
-      {
-        "name": "Saeder-Krupp Signifier Prime Basic",
-        "grade": [
-          "Standard"
-        ],
-        "cyberwares": [
-          {
-            "name": "Nano-Biomonitor"
-          },
-          {
-            "name": "Nanohive",
-            "rating": "3"
-          },
-          {
-            "name": "Dermal Sheath",
-            "rating": "2"
-          },
-          {
-            "name": "Bone Lacing (Aluminum)"
-          }
-        ]
-      },
-      {
-        "name": "Saeder-Krupp Signifier Prime Alpha",
-        "grade": [
-          "Alphaware"
-        ],
-        "cyberwares": [
-          {
-            "name": "Nano-Biomonitor"
-          },
-          {
-            "name": "Nanohive",
-            "rating": "3"
-          },
-          {
-            "name": "Dermal Sheath",
-            "rating": "2"
-          },
-          {
-            "name": "Bone Lacing (Aluminum)"
-          }
-        ]
-      },
-      {
-        "name": "Saeder-Krupp Signifier Prime Beta",
-        "grade": [
-          "Betaware"
-        ],
-        "cyberwares": [
-          {
-            "name": "Nano-Biomonitor"
-          },
-          {
-            "name": "Nanohive",
-            "rating": "3"
-          },
-          {
-            "name": "Dermal Sheath",
-            "rating": "2"
-          },
-          {
-            "name": "Bone Lacing (Aluminum)"
-          }
-        ]
-      },
-      {
-        "name": "Lone Star SWAT",
-        "grade": [
-          "Standard"
-        ],
-        "cyberwares": [
-          {
-            "name": "Flare Compensation"
-          },
-          {
-            "name": "Thermographic Vision"
-          },
-          {
-            "name": "Smartlink"
-          },
-          {
-            "name": "Bone Lacing (Plastic)"
-          },
-          {
-            "name": "Wired Reflexes",
-            "rating": "1"
-          }
-        ]
-      },
-      {
-        "name": "Lone Star SWAT Watchman",
-        "grade": [
-          "Alphaware"
-        ],
-        "cyberwares": [
-          {
-            "name": "Flare Compensation"
-          },
-          {
-            "name": "Thermographic Vision"
-          },
-          {
-            "name": "Smartlink"
-          },
-          {
-            "name": "Bone Lacing (Plastic)"
-          },
-          {
-            "name": "Wired Reflexes",
-            "rating": "1"
-          }
-        ]
-      },
-      {
-        "name": "Shiawase Executive Suite Silverline",
-        "grade": [
-          "Alphaware"
-        ],
-        "cyberwares": [
-          {
-            "name": "Commlink"
-          },
-          {
-            "name": "Image Link"
-          },
-          {
-            "name": "Datajack"
-          },
-          {
-            "name": "Attention Coprocessor",
-            "rating": "3"
-          },
-          {
-            "name": "Math SPU"
-          }
-        ]
-      },
-      {
-        "name": "Shiawase Executive Suite Goldline",
-        "grade": [
-          "Betaware"
-        ],
-        "cyberwares": [
-          {
-            "name": "Commlink"
-          },
-          {
-            "name": "Image Link"
-          },
-          {
-            "name": "Datajack"
-          },
-          {
-            "name": "Attention Coprocessor",
-            "rating": "3"
-          },
-          {
-            "name": "Math SPU"
-          }
-        ]
-      },
-      {
-        "name": "Saeder-Krupp Cyberlogician Standard Civilian",
-        "grade": [
-          "Alphaware"
-        ],
-        "cyberwares": [
-          {
-            "name": "Commlink"
-          },
-          {
-            "name": "Datajack"
-          },
-          {
-            "name": "Datajack"
-          },
-          {
-            "name": "Datajack"
-          },
-          {
-            "name": "Sim Module"
-          },
-          {
-            "name": "Encephalon Rating 2"
-          },
-          {
-            "name": "Math SPU"
-          },
-          {
-            "name": "Attention Coprocessor",
-            "rating": "3"
-          },
-          {
-            "name": "Data Lock"
-          }
-        ]
-      },
-      {
-        "name": "Saeder-Krupp Cyberlogician Deluxe Civilian",
-        "grade": [
-          "Betaware"
-        ],
-        "cyberwares": [
-          {
-            "name": "Commlink"
-          },
-          {
-            "name": "Datajack"
-          },
-          {
-            "name": "Datajack"
-          },
-          {
-            "name": "Datajack"
-          },
-          {
-            "name": "Sim Module"
-          },
-          {
-            "name": "Encephalon Rating 2"
-          },
-          {
-            "name": "Math SPU"
-          },
-          {
-            "name": "Attention Coprocessor",
-            "rating": "3"
-          },
-          {
-            "name": "Data Lock"
-          }
-        ]
-      },
-      {
-        "name": "Saeder-Krupp Cyberlogician Standard Military",
-        "grade": [
-          "Alphaware"
-        ],
-        "cyberwares": [
-          {
-            "name": "Commlink"
-          },
-          {
-            "name": "Datajack"
-          },
-          {
-            "name": "Datajack"
-          },
-          {
-            "name": "Datajack"
-          },
-          {
-            "name": "Sim Module (Hot-Sim Modified)"
-          },
-          {
-            "name": "Encephalon Rating 2"
-          },
-          {
-            "name": "Math SPU"
-          },
-          {
-            "name": "Attention Coprocessor",
-            "rating": "3"
-          },
-          {
-            "name": "Data Lock"
-          },
-          {
-            "name": "Orientation System"
-          },
-          {
-            "name": "Simsense Booster"
-          }
-        ]
-      },
-      {
-        "name": "Saeder-Krupp Cyberlogician Deluxe Military",
-        "grade": [
-          "Betaware"
-        ],
-        "cyberwares": [
-          {
-            "name": "Commlink"
-          },
-          {
-            "name": "Datajack"
-          },
-          {
-            "name": "Datajack"
-          },
-          {
-            "name": "Datajack"
-          },
-          {
-            "name": "Sim Module (Hot-Sim Modified)"
-          },
-          {
-            "name": "Encephalon Rating 2"
-          },
-          {
-            "name": "Math SPU"
-          },
-          {
-            "name": "Attention Coprocessor",
-            "rating": "3"
-          },
-          {
-            "name": "Data Lock"
-          },
-          {
-            "name": "Orientation System"
-          },
-          {
-            "name": "Simsense Booster"
-          }
-        ]
-      },
-      {
-        "name": "Urban Kshatriya Alpha",
-        "grade": [
-          "Alphaware"
-        ],
-        "cyberwares": [
-          {
-            "name": "Cybereyes Basic System",
-            "rating": "3",
-            "cyberwares": [
-              {
-                "name": "Flare Compensation"
-              },
-              {
-                "name": "Low-Light Vision"
-              },
-              {
-                "name": "Smartlink"
-              },
-              {
-                "name": "Thermographic Vision"
-              },
-              {
-                "name": "Vision Enhancement",
-                "rating": "2"
-              },
-              {
-                "name": "Vision Magnification"
-              }
-            ]
-          },
-          {
-            "name": "Reaction Enhancers",
-            "rating": "1"
-          },
-          {
-            "name": "Muscle Replacement",
-            "rating": "1"
-          },
-          {
-            "name": "Biomonitor"
-          },
-          {
-            "name": "Auto-Injector (Reusable)",
-            "rating": "6"
-          },
-          {
-            "name": "Spur"
-          },
-          {
-            "name": "Spur"
-          }
-        ]
-      },
-      {
-        "name": "Urban Kshatriya Beta",
-        "grade": [
-          "Betaware"
-        ],
-        "cyberwares": [
-          {
-            "name": "Cybereyes Basic System",
-            "rating": "3",
-            "cyberwares": [
-              {
-                "name": "Flare Compensation"
-              },
-              {
-                "name": "Low-Light Vision"
-              },
-              {
-                "name": "Smartlink"
-              },
-              {
-                "name": "Thermographic Vision"
-              },
-              {
-                "name": "Vision Enhancement",
-                "rating": "2"
-              },
-              {
-                "name": "Vision Magnification"
-              }
-            ]
-          },
-          {
-            "name": "Reaction Enhancers",
-            "rating": "1"
-          },
-          {
-            "name": "Muscle Replacement",
-            "rating": "1"
-          },
-          {
-            "name": "Biomonitor"
-          },
-          {
-            "name": "Auto-Injector (Reusable)",
-            "rating": "6"
-          },
-          {
-            "name": "Spur"
-          },
-          {
-            "name": "Spur"
-          }
-        ]
-      },
-      {
-        "name": "Zeiss SenseSation Basic",
-        "grade": [
-          "Standard"
-        ],
-        "cyberwares": [
-          {
-            "name": "Cybereyes Basic System",
-            "rating": "3",
-            "cyberwares": [
-              {
-                "name": "Eye Light System"
-              },
-              {
-                "name": "Low-Light Vision"
-              },
-              {
-                "name": "Vision Enhancement",
-                "rating": "3"
-              },
-              {
-                "name": "Vision Magnification"
-              }
-            ]
-          },
-          {
-            "name": "Cyberears",
-            "rating": "2",
-            "cyberwares": [
-              {
-                "name": "Audio Enhancement"
-              },
-              {
-                "name": "Damper"
-              },
-              {
-                "name": "Select Sound Filter",
-                "rating": "3"
-              },
-              {
-                "name": "Spatial Recognizer"
-              }
-            ]
-          },
-          {
-            "name": "Simrig"
-          },
-          {
-            "name": "Radar Sensor",
-            "rating": "3"
-          }
-        ]
-      },
-      {
-        "name": "Zeiss SenseSation Livecaster",
-        "grade": [
-          "Alphaware"
-        ],
-        "cyberwares": [
-          {
-            "name": "Cybereyes Basic System",
-            "rating": "3",
-            "cyberwares": [
-              {
-                "name": "Eye Light System"
-              },
-              {
-                "name": "Low-Light Vision"
-              },
-              {
-                "name": "Vision Enhancement",
-                "rating": "3"
-              },
-              {
-                "name": "Vision Magnification"
-              }
-            ]
-          },
-          {
-            "name": "Cyberears",
-            "rating": "2",
-            "cyberwares": [
-              {
-                "name": "Audio Enhancement"
-              },
-              {
-                "name": "Damper"
-              },
-              {
-                "name": "Select Sound Filter",
-                "rating": "3"
-              },
-              {
-                "name": "Spatial Recognizer"
-              }
-            ]
-          },
-          {
-            "name": "Simrig"
-          },
-          {
-            "name": "Radar Sensor",
-            "rating": "3"
-          }
-        ]
-      },
-      {
-        "name": "Zeiss SenseSation Executive",
-        "grade": [
-          "Betaware"
-        ],
-        "cyberwares": [
-          {
-            "name": "Cybereyes Basic System",
-            "rating": "3",
-            "cyberwares": [
-              {
-                "name": "Eye Light System"
-              },
-              {
-                "name": "Low-Light Vision"
-              },
-              {
-                "name": "Vision Enhancement",
-                "rating": "3"
-              },
-              {
-                "name": "Vision Magnification"
-              }
-            ]
-          },
-          {
-            "name": "Cyberears",
-            "rating": "2",
-            "cyberwares": [
-              {
-                "name": "Audio Enhancement"
-              },
-              {
-                "name": "Damper"
-              },
-              {
-                "name": "Select Sound Filter",
-                "rating": "3"
-              },
-              {
-                "name": "Spatial Recognizer"
-              }
-            ]
-          },
-          {
-            "name": "Simrig"
-          },
-          {
-            "name": "Radar Sensor",
-            "rating": "3"
-          }
-        ]
-      },
-      {
-        "name": "Cerebrotech Crystal Optics Clearseer",
-        "grade": [
-          "Standard"
-        ],
-        "cyberwares": [
-          {
-            "name": "Cybereyes Basic System",
-            "rating": "2",
-            "cyberwares": [
-              {
-                "name": "Flare Compensation"
-              },
-              {
-                "name": "Low-Light Vision"
-              },
-              {
-                "name": "Vision Enhancement",
-                "rating": "2"
-              },
-              {
-                "name": "Vision Magnification"
-              }
-            ]
-          },
-          {
-            "name": "Ultrasound Sensor"
-          },
-          {
-            "name": "Attention Coprocessor",
-            "rating": "2"
-          }
-        ]
-      },
-      {
-        "name": "Cerebrotech Crystal Optics Clearseer Firewatch",
-        "grade": [
-          "Alphaware"
-        ],
-        "cyberwares": [
-          {
-            "name": "Cybereyes Basic System",
-            "rating": "2",
-            "cyberwares": [
-              {
-                "name": "Flare Compensation"
-              },
-              {
-                "name": "Low-Light Vision"
-              },
-              {
-                "name": "Vision Enhancement",
-                "rating": "2"
-              },
-              {
-                "name": "Vision Magnification"
-              }
-            ]
-          },
-          {
-            "name": "Ultrasound Sensor"
-          },
-          {
-            "name": "Attention Coprocessor",
-            "rating": "2"
-          }
-        ]
-      },
-      {
-        "name": "Mitsuhama NeoBushido",
-        "grade": [
-          "Standard"
-        ],
-        "cyberwares": [
-          {
-            "name": "Cybereyes Basic System",
-            "rating": "1",
-            "cyberwares": [
-              {
-                "name": "Flare Compensation"
-              },
-              {
-                "name": "Smartlink"
-              },
-              {
-                "name": "Protective Covers"
-              }
-            ]
-          },
-          {
-            "name": "Muscle Replacement",
-            "rating": "2"
-          },
-          {
-            "name": "Wired Reflexes",
-            "rating": "1"
-          },
-          {
-            "name": "Hand Blade"
-          }
-        ]
-      },
-      {
-        "name": "Mitsuhama NeoBushido Elite Samurai",
-        "grade": [
-          "Alphaware"
-        ],
-        "cyberwares": [
-          {
-            "name": "Cybereyes Basic System",
-            "rating": "1",
-            "cyberwares": [
-              {
-                "name": "Flare Compensation"
-              },
-              {
-                "name": "Smartlink"
-              },
-              {
-                "name": "Protective Covers"
-              }
-            ]
-          },
-          {
-            "name": "Muscle Replacement",
-            "rating": "2"
-          },
-          {
-            "name": "Wired Reflexes",
-            "rating": "1"
-          },
-          {
-            "name": "Hand Blade"
-          }
-        ]
-      },
-      {
-        "name": "Spin-X Olympian",
-        "grade": [
-          "Alphaware"
-        ],
-        "cyberwares": [
-          {
-            "name": "Muscle Replacement",
-            "rating": "3"
-          },
-          {
-            "name": "Reaction Enhancers",
-            "rating": "2"
-          },
-          {
-            "name": "Internal Air Tank"
-          }
-        ]
-      },
-      {
-        "name": "Mitsuhama Spidersuite",
-        "grade": [
-          "Standard"
-        ],
-        "cyberwares": [
-          {
-            "name": "Orientation System"
-          },
-          {
-            "name": "Cybereyes Basic System",
-            "rating": "2",
-            "cyberwares": [
-              {
-                "name": "Eye Laser System",
-                "cyberwares": [
-                  {
-                    "name": "Eye Laser Range Finder"
-                  },
-                  {
-                    "name": "Eye Laser Microphone",
-                    "rating": "1"
-                  }
-                ]
-              },
-              {
-                "name": "Flare Compensation"
-              },
-              {
-                "name": "Low-Light Vision"
-              },
-              {
-                "name": "Vision Magnification"
-              }
-            ]
-          },
-          {
-            "name": "Grapple Gun"
-          },
-          {
-            "name": "Grip Feet"
-          },
-          {
-            "name": "Balance Augmenter"
-          },
-          {
-            "name": "Retractable Climbing Claws"
-          }
-        ]
-      },
-      {
-        "name": "Saeder-Krupp Höllensturm Artillery Suite",
-        "grade": [
-          "Standard"
-        ],
-        "cyberwares": [
-          {
-            "name": {
-              "value": "Obvious Full Arm",
-              "select": "Left"
+  "suites": [
+    {
+      "name": "Aztechnology Topo",
+      "grade": [
+        "Standard"
+      ],
+      "cyberwares": [
+        {
+          "name": "Thermographic Vision"
+        },
+        {
+          "name": "Damper"
+        },
+        {
+          "name": "Bone Lacing (Plastic)"
+        },
+        {
+          "name": "Internal Air Tank"
+        },
+        {
+          "name": "Muscle Replacement",
+          "rating": "2"
+        }
+      ]
+    },
+    {
+      "name": "Clockwerk Bright Cloud Basic",
+      "grade": [
+        "Standard"
+      ],
+      "cyberwares": [
+        {
+          "name": "Balance Augmenter"
+        },
+        {
+          "name": "Gastric Neurostimulator"
+        },
+        {
+          "name": "Retractable Climbing Claws"
+        },
+        {
+          "name": "Grip Feet"
+        },
+        {
+          "name": "Balance Tail"
+        }
+      ]
+    },
+    {
+      "name": "Clockwerk Bright Cloud Alpha",
+      "grade": [
+        "Alphaware"
+      ],
+      "cyberwares": [
+        {
+          "name": "Balance Augmenter"
+        },
+        {
+          "name": "Gastric Neurostimulator"
+        },
+        {
+          "name": "Retractable Climbing Claws"
+        },
+        {
+          "name": "Grip Feet"
+        },
+        {
+          "name": "Balance Tail"
+        }
+      ]
+    },
+    {
+      "name": "Clockwerk Bright Cloud Beta",
+      "grade": [
+        "Betaware"
+      ],
+      "cyberwares": [
+        {
+          "name": "Balance Augmenter"
+        },
+        {
+          "name": "Gastric Neurostimulator"
+        },
+        {
+          "name": "Retractable Climbing Claws"
+        },
+        {
+          "name": "Grip Feet"
+        },
+        {
+          "name": "Balance Tail"
+        }
+      ]
+    },
+    {
+      "name": "Evo Aquanaut Basic",
+      "grade": [
+        "Standard"
+      ],
+      "cyberwares": [
+        {
+          "name": "Orientation System"
+        },
+        {
+          "name": "Image Link"
+        },
+        {
+          "name": "Cyberfins"
+        },
+        {
+          "name": "OXSYS Cybergill"
+        },
+        {
+          "name": "Internal Air Tank"
+        }
+      ]
+    },
+    {
+      "name": "Evo Aquanaut Professional",
+      "grade": [
+        "Alphaware"
+      ],
+      "cyberwares": [
+        {
+          "name": "Orientation System"
+        },
+        {
+          "name": "Image Link"
+        },
+        {
+          "name": "Cyberfins"
+        },
+        {
+          "name": "OXSYS Cybergill"
+        },
+        {
+          "name": "Internal Air Tank"
+        }
+      ]
+    },
+    {
+      "name": "Evo Aquanaut Luxury",
+      "grade": [
+        "Betaware"
+      ],
+      "cyberwares": [
+        {
+          "name": "Orientation System"
+        },
+        {
+          "name": "Image Link"
+        },
+        {
+          "name": "Cyberfins"
+        },
+        {
+          "name": "OXSYS Cybergill"
+        },
+        {
+          "name": "Internal Air Tank"
+        }
+      ]
+    },
+    {
+      "name": "NeoNET/Spin-X Sternschutz Standard ZK",
+      "grade": [
+        "Standard"
+      ],
+      "cyberwares": [
+        {
+          "name": "Commlink"
+        },
+        {
+          "name": "Smartlink"
+        },
+        {
+          "name": "Datajack"
+        },
+        {
+          "name": "Bone Lacing (Kevlar)"
+        },
+        {
+          "name": "Reaction Enhancers",
+          "rating": "1"
+        }
+      ]
+    },
+    {
+      "name": "NeoNET/Spin-X Sternschutz Alpha ZK",
+      "grade": [
+        "Alphaware"
+      ],
+      "cyberwares": [
+        {
+          "name": "Commlink"
+        },
+        {
+          "name": "Smartlink"
+        },
+        {
+          "name": "Datajack"
+        },
+        {
+          "name": "Bone Lacing (Kevlar)"
+        },
+        {
+          "name": "Reaction Enhancers",
+          "rating": "1"
+        }
+      ]
+    },
+    {
+      "name": "Saeder-Krupp Signifier Prime Basic",
+      "grade": [
+        "Standard"
+      ],
+      "cyberwares": [
+        {
+          "name": "Nano-Biomonitor"
+        },
+        {
+          "name": "Nanohive",
+          "rating": "3"
+        },
+        {
+          "name": "Dermal Sheath",
+          "rating": "2"
+        },
+        {
+          "name": "Bone Lacing (Aluminum)"
+        }
+      ]
+    },
+    {
+      "name": "Saeder-Krupp Signifier Prime Alpha",
+      "grade": [
+        "Alphaware"
+      ],
+      "cyberwares": [
+        {
+          "name": "Nano-Biomonitor"
+        },
+        {
+          "name": "Nanohive",
+          "rating": "3"
+        },
+        {
+          "name": "Dermal Sheath",
+          "rating": "2"
+        },
+        {
+          "name": "Bone Lacing (Aluminum)"
+        }
+      ]
+    },
+    {
+      "name": "Saeder-Krupp Signifier Prime Beta",
+      "grade": [
+        "Betaware"
+      ],
+      "cyberwares": [
+        {
+          "name": "Nano-Biomonitor"
+        },
+        {
+          "name": "Nanohive",
+          "rating": "3"
+        },
+        {
+          "name": "Dermal Sheath",
+          "rating": "2"
+        },
+        {
+          "name": "Bone Lacing (Aluminum)"
+        }
+      ]
+    },
+    {
+      "name": "Lone Star SWAT",
+      "grade": [
+        "Standard"
+      ],
+      "cyberwares": [
+        {
+          "name": "Flare Compensation"
+        },
+        {
+          "name": "Thermographic Vision"
+        },
+        {
+          "name": "Smartlink"
+        },
+        {
+          "name": "Bone Lacing (Plastic)"
+        },
+        {
+          "name": "Wired Reflexes",
+          "rating": "1"
+        }
+      ]
+    },
+    {
+      "name": "Lone Star SWAT Watchman",
+      "grade": [
+        "Alphaware"
+      ],
+      "cyberwares": [
+        {
+          "name": "Flare Compensation"
+        },
+        {
+          "name": "Thermographic Vision"
+        },
+        {
+          "name": "Smartlink"
+        },
+        {
+          "name": "Bone Lacing (Plastic)"
+        },
+        {
+          "name": "Wired Reflexes",
+          "rating": "1"
+        }
+      ]
+    },
+    {
+      "name": "Shiawase Executive Suite Silverline",
+      "grade": [
+        "Alphaware"
+      ],
+      "cyberwares": [
+        {
+          "name": "Commlink"
+        },
+        {
+          "name": "Image Link"
+        },
+        {
+          "name": "Datajack"
+        },
+        {
+          "name": "Attention Coprocessor",
+          "rating": "3"
+        },
+        {
+          "name": "Math SPU"
+        }
+      ]
+    },
+    {
+      "name": "Shiawase Executive Suite Goldline",
+      "grade": [
+        "Betaware"
+      ],
+      "cyberwares": [
+        {
+          "name": "Commlink"
+        },
+        {
+          "name": "Image Link"
+        },
+        {
+          "name": "Datajack"
+        },
+        {
+          "name": "Attention Coprocessor",
+          "rating": "3"
+        },
+        {
+          "name": "Math SPU"
+        }
+      ]
+    },
+    {
+      "name": "Saeder-Krupp Cyberlogician Standard Civilian",
+      "grade": [
+        "Alphaware"
+      ],
+      "cyberwares": [
+        {
+          "name": "Commlink"
+        },
+        {
+          "name": "Datajack"
+        },
+        {
+          "name": "Datajack"
+        },
+        {
+          "name": "Datajack"
+        },
+        {
+          "name": "Sim Module"
+        },
+        {
+          "name": "Encephalon Rating 2"
+        },
+        {
+          "name": "Math SPU"
+        },
+        {
+          "name": "Attention Coprocessor",
+          "rating": "3"
+        },
+        {
+          "name": "Data Lock"
+        }
+      ]
+    },
+    {
+      "name": "Saeder-Krupp Cyberlogician Deluxe Civilian",
+      "grade": [
+        "Betaware"
+      ],
+      "cyberwares": [
+        {
+          "name": "Commlink"
+        },
+        {
+          "name": "Datajack"
+        },
+        {
+          "name": "Datajack"
+        },
+        {
+          "name": "Datajack"
+        },
+        {
+          "name": "Sim Module"
+        },
+        {
+          "name": "Encephalon Rating 2"
+        },
+        {
+          "name": "Math SPU"
+        },
+        {
+          "name": "Attention Coprocessor",
+          "rating": "3"
+        },
+        {
+          "name": "Data Lock"
+        }
+      ]
+    },
+    {
+      "name": "Saeder-Krupp Cyberlogician Standard Military",
+      "grade": [
+        "Alphaware"
+      ],
+      "cyberwares": [
+        {
+          "name": "Commlink"
+        },
+        {
+          "name": "Datajack"
+        },
+        {
+          "name": "Datajack"
+        },
+        {
+          "name": "Datajack"
+        },
+        {
+          "name": "Sim Module (Hot-Sim Modified)"
+        },
+        {
+          "name": "Encephalon Rating 2"
+        },
+        {
+          "name": "Math SPU"
+        },
+        {
+          "name": "Attention Coprocessor",
+          "rating": "3"
+        },
+        {
+          "name": "Data Lock"
+        },
+        {
+          "name": "Orientation System"
+        },
+        {
+          "name": "Simsense Booster"
+        }
+      ]
+    },
+    {
+      "name": "Saeder-Krupp Cyberlogician Deluxe Military",
+      "grade": [
+        "Betaware"
+      ],
+      "cyberwares": [
+        {
+          "name": "Commlink"
+        },
+        {
+          "name": "Datajack"
+        },
+        {
+          "name": "Datajack"
+        },
+        {
+          "name": "Datajack"
+        },
+        {
+          "name": "Sim Module (Hot-Sim Modified)"
+        },
+        {
+          "name": "Encephalon Rating 2"
+        },
+        {
+          "name": "Math SPU"
+        },
+        {
+          "name": "Attention Coprocessor",
+          "rating": "3"
+        },
+        {
+          "name": "Data Lock"
+        },
+        {
+          "name": "Orientation System"
+        },
+        {
+          "name": "Simsense Booster"
+        }
+      ]
+    },
+    {
+      "name": "Urban Kshatriya Alpha",
+      "grade": [
+        "Alphaware"
+      ],
+      "cyberwares": [
+        {
+          "name": "Cybereyes Basic System",
+          "rating": "3",
+          "cyberwares": [
+            {
+              "name": "Flare Compensation"
             },
-            "cyberwares": [
-              {
-                "name": "Customized Body",
-                "rating": "6"
-              },
-              {
-                "name": "Customized Strength",
-                "rating": "6"
-              },
-              {
-                "name": "Customized Agility",
-                "rating": "4"
-              },
-              {
-                "name": "Armor",
-                "rating": "2"
-              },
-              {
-                "name": "Cyberarm Gyromount"
-              },
-              {
-                "name": "Enhanced Strength",
-                "rating": "3"
-              }
-            ]
-          },
-          {
-            "name": {
-              "value": "Obvious Full Arm",
-              "select": "Right"
+            {
+              "name": "Low-Light Vision"
             },
-            "cyberwares": [
-              {
-                "name": "Customized Body",
-                "rating": "6"
-              },
-              {
-                "name": "Customized Strength",
-                "rating": "6"
-              },
-              {
-                "name": "Customized Agility",
-                "rating": "4"
-              },
-              {
-                "name": "Grenade Launcher"
-              }
-            ]
-          },
-          {
-            "name": "Single Cybereye",
-            "rating": "4",
-            "cyberwares": [
-              {
-                "name": "Eye Laser System",
-                "cyberwares": [
-                  {
-                    "name": "Eye Laser Designator"
-                  }
-                ]
-              },
-              {
-                "name": "Flare Compensation"
-              },
-              {
-                "name": "Smartlink"
-              }
-            ]
-          },
-          {
-            "name": "Bone Lacing (Titanium)"
-          },
-          {
-            "name": {
-              "value": "Obvious Foot",
-              "select": "Left"
+            {
+              "name": "Smartlink"
             },
-            "cyberwares": [
-              {
-                "name": "Foot Anchor"
-              }
-            ]
-          },
-          {
-            "name": {
-              "value": "Obvious Foot",
-              "select": "Right"
+            {
+              "name": "Thermographic Vision"
             },
-            "cyberwares": [
-              {
-                "name": "Foot Anchor"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Saeder-Krupp Höllensturm Artillery Suite Overwatch",
-        "grade": [
-          "Standard"
-        ],
-        "cyberwares": [
-          {
-            "name": {
-              "value": "Obvious Full Arm",
-              "select": "Left"
+            {
+              "name": "Vision Enhancement",
+              "rating": "2"
             },
-            "cyberwares": [
-              {
-                "name": "Customized Body",
-                "rating": "6"
-              },
-              {
-                "name": "Customized Strength",
-                "rating": "6"
-              },
-              {
-                "name": "Customized Agility",
-                "rating": "4"
-              },
-              {
-                "name": "Armor",
-                "rating": "2"
-              },
-              {
-                "name": "Cyberarm Gyromount"
-              },
-              {
-                "name": "Enhanced Strength",
-                "rating": "3"
-              }
-            ]
-          },
-          {
-            "name": {
-              "value": "Obvious Full Arm",
-              "select": "Right"
+            {
+              "name": "Vision Magnification"
+            }
+          ]
+        },
+        {
+          "name": "Reaction Enhancers",
+          "rating": "1"
+        },
+        {
+          "name": "Muscle Replacement",
+          "rating": "1"
+        },
+        {
+          "name": "Biomonitor"
+        },
+        {
+          "name": "Auto-Injector (Reusable)",
+          "rating": "6"
+        },
+        {
+          "name": "Spur"
+        },
+        {
+          "name": "Spur"
+        }
+      ]
+    },
+    {
+      "name": "Urban Kshatriya Beta",
+      "grade": [
+        "Betaware"
+      ],
+      "cyberwares": [
+        {
+          "name": "Cybereyes Basic System",
+          "rating": "3",
+          "cyberwares": [
+            {
+              "name": "Flare Compensation"
             },
-            "cyberwares": [
-              {
-                "name": "Customized Body",
-                "rating": "6"
-              },
-              {
-                "name": "Customized Strength",
-                "rating": "6"
-              },
-              {
-                "name": "Customized Agility",
-                "rating": "4"
-              },
-              {
-                "name": "Grenade Launcher"
-              }
-            ]
-          },
-          {
-            "name": "Single Cybereye",
-            "rating": "4",
-            "cyberwares": [
-              {
-                "name": "Eye Laser System",
-                "cyberwares": [
-                  {
-                    "name": "Eye Laser Designator"
-                  }
-                ]
-              },
-              {
-                "name": "Flare Compensation"
-              },
-              {
-                "name": "Smartlink"
-              }
-            ]
-          },
-          {
-            "name": "Bone Lacing (Titanium)"
-          },
-          {
-            "name": {
-              "value": "Obvious Foot",
-              "select": "Left"
+            {
+              "name": "Low-Light Vision"
             },
-            "cyberwares": [
-              {
-                "name": "Foot Anchor"
-              }
-            ]
-          },
-          {
-            "name": {
-              "value": "Obvious Foot",
-              "select": "Right"
+            {
+              "name": "Smartlink"
             },
-            "cyberwares": [
-              {
-                "name": "Foot Anchor"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "NeoNET Streetwise Courier Suite",
-        "grade": [
-          "Standard"
-        ],
-        "cyberwares": [
-          {
-            "name": "Balance Augmenter"
-          },
-          {
-            "name": "Bone Lacing (Plastic)"
-          },
-          {
-            "name": "Smuggling Compartment"
-          },
-          {
-            "name": "Reaction Enhancers",
-            "rating": "2"
-          },
-          {
-            "name": "Orientation System"
-          },
-          {
-            "name": {
-              "value": "Obvious Foot",
-              "select": "Left"
+            {
+              "name": "Thermographic Vision"
             },
-            "cyberwares": [
-              {
-                "name": "Modular Cyberlimb"
-              },
-              {
-                "name": "Enhanced Agility",
-                "rating": "1"
-              },
-              {
-                "name": "Cyberskates"
-              },
-              {
-                "name": "Skimmer Discs"
-              }
-            ]
-          },
-          {
-            "name": {
-              "value": "Obvious Foot",
-              "select": "Right"
+            {
+              "name": "Vision Enhancement",
+              "rating": "2"
             },
-            "cyberwares": [
-              {
-                "name": "Modular Cyberlimb"
-              },
-              {
-                "name": "Enhanced Agility",
-                "rating": "1"
-              },
-              {
-                "name": "Cyberskates"
-              },
-              {
-                "name": "Skimmer Discs"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Shiawase Reccear Recon Suite",
-        "grade": [
-          "Standard"
-        ],
-        "cyberwares": [
-          {
-            "name": "Ultrasound Sensor"
-          },
-          {
-            "name": "Cybereyes Basic System",
-            "rating": "2",
-            "cyberwares": [
-              {
-                "name": "Ocular Drone"
-              },
-              {
-                "name": "Vision Magnification"
-              }
-            ]
-          },
-          {
-            "name": "Cyberears",
-            "rating": "2",
-            "cyberwares": [
-              {
-                "name": "Audio Enhancement",
-                "rating": "3"
-              },
-              {
-                "name": "Select Sound Filter",
-                "rating": "3"
-              },
-              {
-                "name": "Spatial Recognizer"
-              }
-            ]
-          },
-          {
-            "name": "Attention Coprocessor",
-            "rating": "1"
-          },
-          {
-            "name": "Radar Sensor",
-            "rating": "3"
-          },
-          {
-            "name": "Synthetic Full Arm",
-            "cyberwares": [
-              {
-                "name": "Modular Cyberlimb"
-              },
-              {
-                "name": "Drone Hand"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Shiawase Reccear Elite Suite",
-        "grade": [
-          "Alphaware"
-        ],
-        "cyberwares": [
-          {
-            "name": "Ultrasound Sensor"
-          },
-          {
-            "name": "Cybereyes Basic System",
-            "rating": "2",
-            "cyberwares": [
-              {
-                "name": "Ocular Drone"
-              },
-              {
-                "name": "Vision Magnification"
-              }
-            ]
-          },
-          {
-            "name": "Cyberears",
-            "rating": "2",
-            "cyberwares": [
-              {
-                "name": "Audio Enhancement",
-                "rating": "3"
-              },
-              {
-                "name": "Select Sound Filter",
-                "rating": "3"
-              },
-              {
-                "name": "Spatial Recognizer"
-              }
-            ]
-          },
-          {
-            "name": "Attention Coprocessor",
-            "rating": "1"
-          },
-          {
-            "name": "Radar Sensor",
-            "rating": "3"
-          },
-          {
-            "name": "Synthetic Full Arm",
-            "cyberwares": [
-              {
-                "name": "Modular Cyberlimb"
-              },
-              {
-                "name": "Drone Hand"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Universal Omnitech Infiltr8R",
-        "grade": [
-          "Standard"
-        ],
-        "cyberwares": [
-          {
-            "name": "Dermal Sheath",
-            "rating": "3",
-            "cyberwares": [
-              {
-                "name": "Dermal Sheath, Ruthenium Polymer Coating"
-              },
-              {
-                "name": "Dermal Sheath, Chameleon Modification"
-              }
-            ]
-          },
-          {
-            "name": "Retinal Duplication",
-            "rating": "5"
-          },
-          {
-            "name": "Voice Modulator"
-          },
-          {
-            "name": "Voice Modulator (Secondary Pattern)",
-            "rating": "5"
-          },
-          {
-            "name": "Dynamic Handprints",
-            "rating": "5"
-          }
-        ]
-      },
-      {
-        "name": "Universal Omnitech Glenn Space Survivorsuite",
-        "grade": [
-          "Standard"
-        ],
-        "cyberwares": [
-          {
-            "name": "Flare Compensation"
-          },
-          {
-            "name": "Damper"
-          },
-          {
-            "name": "Obvious Torso",
-            "cyberwares": [
-              {
-                "name": "Armor",
-                "rating": "1"
-              },
-              {
-                "name": "Grapple Gun"
-              },
-              {
-                "name": "Internal Air Tank"
-              }
-            ]
-          },
-          {
-            "name": "Auto-Injector (Reusable)",
-            "rating": "1"
-          },
-          {
-            "name": "Blood Circuit Control System"
-          },
-          {
-            "name": "Gastric Neurostimulator"
-          },
-          {
-            "name": "Magnetic System"
-          },
-          {
-            "name": "Magnetic System"
-          }
-        ]
-      },
-      {
-        "name": "Urban Gunfighter",
-        "grade": [
-          "Standard"
-        ],
-        "cyberwares": [
-          {
-            "name": "Cybereyes Basic System",
-            "rating": "3",
-            "cyberwares": [
-              {
-                "name": "Flare Compensation"
-              },
-              {
-                "name": "Low-Light Vision"
-              },
-              {
-                "name": "Smartlink"
-              },
-              {
-                "name": "Thermographic Vision"
-              },
-              {
-                "name": "Vision Enhancement",
-                "rating": "2"
-              },
-              {
-                "name": "Vision Magnification"
-              }
-            ]
-          },
-          {
-            "name": "Wired Reflexes",
-            "rating": "1"
-          },
-          {
-            "name": "Heavy Pistol"
-          },
-          {
-            "name": "Heavy Pistol"
-          },
-          {
-            "name": {
-              "value": "Obvious Full Leg",
-              "select": "Left"
+            {
+              "name": "Vision Magnification"
+            }
+          ]
+        },
+        {
+          "name": "Reaction Enhancers",
+          "rating": "1"
+        },
+        {
+          "name": "Muscle Replacement",
+          "rating": "1"
+        },
+        {
+          "name": "Biomonitor"
+        },
+        {
+          "name": "Auto-Injector (Reusable)",
+          "rating": "6"
+        },
+        {
+          "name": "Spur"
+        },
+        {
+          "name": "Spur"
+        }
+      ]
+    },
+    {
+      "name": "Zeiss SenseSation Basic",
+      "grade": [
+        "Standard"
+      ],
+      "cyberwares": [
+        {
+          "name": "Cybereyes Basic System",
+          "rating": "3",
+          "cyberwares": [
+            {
+              "name": "Eye Light System"
             },
-            "cyberwares": [
-              {
-                "name": "Armor",
-                "rating": "2"
-              },
-              {
-                "name": "Cyber Holster"
-              }
-            ]
-          },
-          {
-            "name": {
-              "value": "Obvious Full Leg",
-              "select": "Left"
+            {
+              "name": "Low-Light Vision"
             },
-            "cyberwares": [
-              {
-                "name": "Armor",
-                "rating": "2"
-              },
-              {
-                "name": "Cyber Holster"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Urban Gunfighter Aleph",
-        "grade": [
-          "Alphaware"
-        ],
-        "cyberwares": [
-          {
-            "name": "Cybereyes Basic System",
-            "rating": "3",
-            "cyberwares": [
-              {
-                "name": "Flare Compensation"
-              },
-              {
-                "name": "Low-Light Vision"
-              },
-              {
-                "name": "Smartlink"
-              },
-              {
-                "name": "Thermographic Vision"
-              },
-              {
-                "name": "Vision Enhancement",
-                "rating": "2"
-              },
-              {
-                "name": "Vision Magnification"
-              }
-            ]
-          },
-          {
-            "name": "Wired Reflexes",
-            "rating": "1"
-          },
-          {
-            "name": "Heavy Pistol"
-          },
-          {
-            "name": "Heavy Pistol"
-          },
-          {
-            "name": {
-              "value": "Obvious Full Leg",
-              "select": "Left"
+            {
+              "name": "Vision Enhancement",
+              "rating": "3"
             },
-            "cyberwares": [
-              {
-                "name": "Armor",
-                "rating": "2"
-              },
-              {
-                "name": "Cyber Holster"
-              }
-            ]
-          },
-          {
-            "name": {
-              "value": "Obvious Full Leg",
-              "select": "Left"
+            {
+              "name": "Vision Magnification"
+            }
+          ]
+        },
+        {
+          "name": "Cyberears",
+          "rating": "2",
+          "cyberwares": [
+            {
+              "name": "Audio Enhancement"
             },
-            "cyberwares": [
-              {
-                "name": "Armor",
-                "rating": "2"
-              },
-              {
-                "name": "Cyber Holster"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Spin-X Handyman",
-        "grade": [
-          "Standard"
-        ],
-        "cyberwares": [
-          {
-            "name": "Flare Compensation"
+            {
+              "name": "Damper"
+            },
+            {
+              "name": "Select Sound Filter",
+              "rating": "3"
+            },
+            {
+              "name": "Spatial Recognizer"
+            }
+          ]
+        },
+        {
+          "name": "Simrig"
+        },
+        {
+          "name": "Radar Sensor",
+          "rating": "3"
+        }
+      ]
+    },
+    {
+      "name": "Zeiss SenseSation Livecaster",
+      "grade": [
+        "Alphaware"
+      ],
+      "cyberwares": [
+        {
+          "name": "Cybereyes Basic System",
+          "rating": "3",
+          "cyberwares": [
+            {
+              "name": "Eye Light System"
+            },
+            {
+              "name": "Low-Light Vision"
+            },
+            {
+              "name": "Vision Enhancement",
+              "rating": "3"
+            },
+            {
+              "name": "Vision Magnification"
+            }
+          ]
+        },
+        {
+          "name": "Cyberears",
+          "rating": "2",
+          "cyberwares": [
+            {
+              "name": "Audio Enhancement"
+            },
+            {
+              "name": "Damper"
+            },
+            {
+              "name": "Select Sound Filter",
+              "rating": "3"
+            },
+            {
+              "name": "Spatial Recognizer"
+            }
+          ]
+        },
+        {
+          "name": "Simrig"
+        },
+        {
+          "name": "Radar Sensor",
+          "rating": "3"
+        }
+      ]
+    },
+    {
+      "name": "Zeiss SenseSation Executive",
+      "grade": [
+        "Betaware"
+      ],
+      "cyberwares": [
+        {
+          "name": "Cybereyes Basic System",
+          "rating": "3",
+          "cyberwares": [
+            {
+              "name": "Eye Light System"
+            },
+            {
+              "name": "Low-Light Vision"
+            },
+            {
+              "name": "Vision Enhancement",
+              "rating": "3"
+            },
+            {
+              "name": "Vision Magnification"
+            }
+          ]
+        },
+        {
+          "name": "Cyberears",
+          "rating": "2",
+          "cyberwares": [
+            {
+              "name": "Audio Enhancement"
+            },
+            {
+              "name": "Damper"
+            },
+            {
+              "name": "Select Sound Filter",
+              "rating": "3"
+            },
+            {
+              "name": "Spatial Recognizer"
+            }
+          ]
+        },
+        {
+          "name": "Simrig"
+        },
+        {
+          "name": "Radar Sensor",
+          "rating": "3"
+        }
+      ]
+    },
+    {
+      "name": "Cerebrotech Crystal Optics Clearseer",
+      "grade": [
+        "Standard"
+      ],
+      "cyberwares": [
+        {
+          "name": "Cybereyes Basic System",
+          "rating": "2",
+          "cyberwares": [
+            {
+              "name": "Flare Compensation"
+            },
+            {
+              "name": "Low-Light Vision"
+            },
+            {
+              "name": "Vision Enhancement",
+              "rating": "2"
+            },
+            {
+              "name": "Vision Magnification"
+            }
+          ]
+        },
+        {
+          "name": "Ultrasound Sensor"
+        },
+        {
+          "name": "Attention Coprocessor",
+          "rating": "2"
+        }
+      ]
+    },
+    {
+      "name": "Cerebrotech Crystal Optics Clearseer Firewatch",
+      "grade": [
+        "Alphaware"
+      ],
+      "cyberwares": [
+        {
+          "name": "Cybereyes Basic System",
+          "rating": "2",
+          "cyberwares": [
+            {
+              "name": "Flare Compensation"
+            },
+            {
+              "name": "Low-Light Vision"
+            },
+            {
+              "name": "Vision Enhancement",
+              "rating": "2"
+            },
+            {
+              "name": "Vision Magnification"
+            }
+          ]
+        },
+        {
+          "name": "Ultrasound Sensor"
+        },
+        {
+          "name": "Attention Coprocessor",
+          "rating": "2"
+        }
+      ]
+    },
+    {
+      "name": "Mitsuhama NeoBushido",
+      "grade": [
+        "Standard"
+      ],
+      "cyberwares": [
+        {
+          "name": "Cybereyes Basic System",
+          "rating": "1",
+          "cyberwares": [
+            {
+              "name": "Flare Compensation"
+            },
+            {
+              "name": "Smartlink"
+            },
+            {
+              "name": "Protective Covers"
+            }
+          ]
+        },
+        {
+          "name": "Muscle Replacement",
+          "rating": "2"
+        },
+        {
+          "name": "Wired Reflexes",
+          "rating": "1"
+        },
+        {
+          "name": "Hand Blade"
+        }
+      ]
+    },
+    {
+      "name": "Mitsuhama NeoBushido Elite Samurai",
+      "grade": [
+        "Alphaware"
+      ],
+      "cyberwares": [
+        {
+          "name": "Cybereyes Basic System",
+          "rating": "1",
+          "cyberwares": [
+            {
+              "name": "Flare Compensation"
+            },
+            {
+              "name": "Smartlink"
+            },
+            {
+              "name": "Protective Covers"
+            }
+          ]
+        },
+        {
+          "name": "Muscle Replacement",
+          "rating": "2"
+        },
+        {
+          "name": "Wired Reflexes",
+          "rating": "1"
+        },
+        {
+          "name": "Hand Blade"
+        }
+      ]
+    },
+    {
+      "name": "Spin-X Olympian",
+      "grade": [
+        "Alphaware"
+      ],
+      "cyberwares": [
+        {
+          "name": "Muscle Replacement",
+          "rating": "3"
+        },
+        {
+          "name": "Reaction Enhancers",
+          "rating": "2"
+        },
+        {
+          "name": "Internal Air Tank"
+        }
+      ]
+    },
+    {
+      "name": "Mitsuhama Spidersuite",
+      "grade": [
+        "Standard"
+      ],
+      "cyberwares": [
+        {
+          "name": "Orientation System"
+        },
+        {
+          "name": "Cybereyes Basic System",
+          "rating": "2",
+          "cyberwares": [
+            {
+              "name": "Eye Laser System",
+              "cyberwares": [
+                {
+                  "name": "Eye Laser Range Finder"
+                },
+                {
+                  "name": "Eye Laser Microphone",
+                  "rating": "1"
+                }
+              ]
+            },
+            {
+              "name": "Flare Compensation"
+            },
+            {
+              "name": "Low-Light Vision"
+            },
+            {
+              "name": "Vision Magnification"
+            }
+          ]
+        },
+        {
+          "name": "Grapple Gun"
+        },
+        {
+          "name": "Grip Feet"
+        },
+        {
+          "name": "Balance Augmenter"
+        },
+        {
+          "name": "Retractable Climbing Claws"
+        }
+      ]
+    },
+    {
+      "name": "Saeder-Krupp Höllensturm Artillery Suite",
+      "grade": [
+        "Standard"
+      ],
+      "cyberwares": [
+        {
+          "name": {
+            "value": "Obvious Full Arm",
+            "select": "Left"
           },
-          {
-            "name": "Eye Light System"
+          "cyberwares": [
+            {
+              "name": "Customized Body",
+              "rating": "6"
+            },
+            {
+              "name": "Customized Strength",
+              "rating": "6"
+            },
+            {
+              "name": "Customized Agility",
+              "rating": "4"
+            },
+            {
+              "name": "Armor",
+              "rating": "2"
+            },
+            {
+              "name": "Cyberarm Gyromount"
+            },
+            {
+              "name": "Enhanced Strength",
+              "rating": "3"
+            }
+          ]
+        },
+        {
+          "name": {
+            "value": "Obvious Full Arm",
+            "select": "Right"
           },
-          {
-            "name": "Cyberears",
-            "rating": "1",
-            "cyberwares": [
-              {
-                "name": "Damper"
-              },
-              {
-                "name": "Spatial Recognizer"
-              }
-            ]
+          "cyberwares": [
+            {
+              "name": "Customized Body",
+              "rating": "6"
+            },
+            {
+              "name": "Customized Strength",
+              "rating": "6"
+            },
+            {
+              "name": "Customized Agility",
+              "rating": "4"
+            },
+            {
+              "name": "Grenade Launcher"
+            }
+          ]
+        },
+        {
+          "name": "Single Cybereye",
+          "rating": "4",
+          "cyberwares": [
+            {
+              "name": "Eye Laser System",
+              "cyberwares": [
+                {
+                  "name": "Eye Laser Designator"
+                }
+              ]
+            },
+            {
+              "name": "Flare Compensation"
+            },
+            {
+              "name": "Smartlink"
+            }
+          ]
+        },
+        {
+          "name": "Bone Lacing (Titanium)"
+        },
+        {
+          "name": {
+            "value": "Obvious Foot",
+            "select": "Left"
           },
-          {
-            "name": "Math SPU"
+          "cyberwares": [
+            {
+              "name": "Foot Anchor"
+            }
+          ]
+        },
+        {
+          "name": {
+            "value": "Obvious Foot",
+            "select": "Right"
           },
-          {
-            "name": "Obvious Full Arm",
-            "cyberwares": [
-              {
-                "name": "Customized Body",
-                "rating": "5"
-              },
-              {
-                "name": "Customized Strength",
-                "rating": "5"
-              },
-              {
-                "name": "Customized Agility",
-                "rating": "4"
-              },
-              {
-                "name": "Modular Cyberlimb"
-              },
-              {
-                "name": "Built-in Utility Kit"
-              },
-              {
-                "name": "Built-in Medkit",
-                "rating": "5"
-              },
-              {
-                "name": "Hydraulic Press"
-              },
-              {
-                "name": "Jackhammer"
-              },
-              {
-                "name": "Nail Pistol"
-              },
-              {
-                "name": "Vacuum Pump"
-              },
-              {
-                "name": "Welding Laser"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Ares Bodyguard",
-        "grade": [
-          "Standard"
-        ],
-        "cyberwares": [
-          {
-            "name": "Cybereyes Basic System",
-            "rating": "3",
-            "cyberwares": [
-              {
-                "name": "Flare Compensation"
-              },
-              {
-                "name": "Low-Light Vision"
-              },
-              {
-                "name": "Smartlink"
-              },
-              {
-                "name": "Vision Enhancement",
-                "rating": "3"
-              },
-              {
-                "name": "Vision Magnification"
-              }
-            ]
+          "cyberwares": [
+            {
+              "name": "Foot Anchor"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Saeder-Krupp Höllensturm Artillery Suite Overwatch",
+      "grade": [
+        "Standard"
+      ],
+      "cyberwares": [
+        {
+          "name": {
+            "value": "Obvious Full Arm",
+            "select": "Left"
           },
-          {
-            "name": "Cyberears",
-            "rating": "2",
-            "cyberwares": [
-              {
-                "name": "Audio Enhancement",
-                "rating": "3"
-              },
-              {
-                "name": "Damper"
-              },
-              {
-                "name": "Spatial Recognizer"
-              }
-            ]
+          "cyberwares": [
+            {
+              "name": "Customized Body",
+              "rating": "6"
+            },
+            {
+              "name": "Customized Strength",
+              "rating": "6"
+            },
+            {
+              "name": "Customized Agility",
+              "rating": "4"
+            },
+            {
+              "name": "Armor",
+              "rating": "2"
+            },
+            {
+              "name": "Cyberarm Gyromount"
+            },
+            {
+              "name": "Enhanced Strength",
+              "rating": "3"
+            }
+          ]
+        },
+        {
+          "name": {
+            "value": "Obvious Full Arm",
+            "select": "Right"
           },
-          {
-            "name": "Attention Coprocessor",
-            "rating": "2"
+          "cyberwares": [
+            {
+              "name": "Customized Body",
+              "rating": "6"
+            },
+            {
+              "name": "Customized Strength",
+              "rating": "6"
+            },
+            {
+              "name": "Customized Agility",
+              "rating": "4"
+            },
+            {
+              "name": "Grenade Launcher"
+            }
+          ]
+        },
+        {
+          "name": "Single Cybereye",
+          "rating": "4",
+          "cyberwares": [
+            {
+              "name": "Eye Laser System",
+              "cyberwares": [
+                {
+                  "name": "Eye Laser Designator"
+                }
+              ]
+            },
+            {
+              "name": "Flare Compensation"
+            },
+            {
+              "name": "Smartlink"
+            }
+          ]
+        },
+        {
+          "name": "Bone Lacing (Titanium)"
+        },
+        {
+          "name": {
+            "value": "Obvious Foot",
+            "select": "Left"
           },
-          {
-            "name": "Move-by-Wire System",
-            "rating": "1"
+          "cyberwares": [
+            {
+              "name": "Foot Anchor"
+            }
+          ]
+        },
+        {
+          "name": {
+            "value": "Obvious Foot",
+            "select": "Right"
           },
-          {
-            "name": "Bone Lacing (Kevlar)"
+          "cyberwares": [
+            {
+              "name": "Foot Anchor"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "NeoNET Streetwise Courier Suite",
+      "grade": [
+        "Standard"
+      ],
+      "cyberwares": [
+        {
+          "name": "Balance Augmenter"
+        },
+        {
+          "name": "Bone Lacing (Plastic)"
+        },
+        {
+          "name": "Smuggling Compartment"
+        },
+        {
+          "name": "Reaction Enhancers",
+          "rating": "2"
+        },
+        {
+          "name": "Orientation System"
+        },
+        {
+          "name": {
+            "value": "Obvious Foot",
+            "select": "Left"
           },
-          {
-            "name": "Synthetic Full Arm",
-            "cyberwares": [
-              {
-                "name": "Customized Body",
-                "rating": "6"
-              },
-              {
-                "name": "Customized Strength",
-                "rating": "6"
-              },
-              {
-                "name": "Customized Agility",
-                "rating": "6"
-              },
-              {
-                "name": "Armor",
-                "rating": "1"
-              },
-              {
-                "name": "Scanner System",
-                "rating": "4"
-              },
-              {
-                "name": "Shock Hand"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Ares Bodyguard Pro",
-        "grade": [
-          "Alphaware"
-        ],
-        "cyberwares": [
-          {
-            "name": "Cybereyes Basic System",
-            "rating": "3",
-            "cyberwares": [
-              {
-                "name": "Flare Compensation"
-              },
-              {
-                "name": "Low-Light Vision"
-              },
-              {
-                "name": "Smartlink"
-              },
-              {
-                "name": "Vision Enhancement",
-                "rating": "3"
-              },
-              {
-                "name": "Vision Magnification"
-              }
-            ]
+          "cyberwares": [
+            {
+              "name": "Modular Cyberlimb"
+            },
+            {
+              "name": "Enhanced Agility",
+              "rating": "1"
+            },
+            {
+              "name": "Cyberskates"
+            },
+            {
+              "name": "Skimmer Discs"
+            }
+          ]
+        },
+        {
+          "name": {
+            "value": "Obvious Foot",
+            "select": "Right"
           },
-          {
-            "name": "Cyberears",
-            "rating": "2",
-            "cyberwares": [
-              {
-                "name": "Audio Enhancement",
-                "rating": "3"
-              },
-              {
-                "name": "Damper"
-              },
-              {
-                "name": "Spatial Recognizer"
-              }
-            ]
+          "cyberwares": [
+            {
+              "name": "Modular Cyberlimb"
+            },
+            {
+              "name": "Enhanced Agility",
+              "rating": "1"
+            },
+            {
+              "name": "Cyberskates"
+            },
+            {
+              "name": "Skimmer Discs"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Shiawase Reccear Recon Suite",
+      "grade": [
+        "Standard"
+      ],
+      "cyberwares": [
+        {
+          "name": "Ultrasound Sensor"
+        },
+        {
+          "name": "Cybereyes Basic System",
+          "rating": "2",
+          "cyberwares": [
+            {
+              "name": "Ocular Drone"
+            },
+            {
+              "name": "Vision Magnification"
+            }
+          ]
+        },
+        {
+          "name": "Cyberears",
+          "rating": "2",
+          "cyberwares": [
+            {
+              "name": "Audio Enhancement",
+              "rating": "3"
+            },
+            {
+              "name": "Select Sound Filter",
+              "rating": "3"
+            },
+            {
+              "name": "Spatial Recognizer"
+            }
+          ]
+        },
+        {
+          "name": "Attention Coprocessor",
+          "rating": "1"
+        },
+        {
+          "name": "Radar Sensor",
+          "rating": "3"
+        },
+        {
+          "name": "Synthetic Full Arm",
+          "cyberwares": [
+            {
+              "name": "Modular Cyberlimb"
+            },
+            {
+              "name": "Drone Hand"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Shiawase Reccear Elite Suite",
+      "grade": [
+        "Alphaware"
+      ],
+      "cyberwares": [
+        {
+          "name": "Ultrasound Sensor"
+        },
+        {
+          "name": "Cybereyes Basic System",
+          "rating": "2",
+          "cyberwares": [
+            {
+              "name": "Ocular Drone"
+            },
+            {
+              "name": "Vision Magnification"
+            }
+          ]
+        },
+        {
+          "name": "Cyberears",
+          "rating": "2",
+          "cyberwares": [
+            {
+              "name": "Audio Enhancement",
+              "rating": "3"
+            },
+            {
+              "name": "Select Sound Filter",
+              "rating": "3"
+            },
+            {
+              "name": "Spatial Recognizer"
+            }
+          ]
+        },
+        {
+          "name": "Attention Coprocessor",
+          "rating": "1"
+        },
+        {
+          "name": "Radar Sensor",
+          "rating": "3"
+        },
+        {
+          "name": "Synthetic Full Arm",
+          "cyberwares": [
+            {
+              "name": "Modular Cyberlimb"
+            },
+            {
+              "name": "Drone Hand"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Universal Omnitech Infiltr8R",
+      "grade": [
+        "Standard"
+      ],
+      "cyberwares": [
+        {
+          "name": "Dermal Sheath",
+          "rating": "3",
+          "cyberwares": [
+            {
+              "name": "Dermal Sheath, Ruthenium Polymer Coating"
+            },
+            {
+              "name": "Dermal Sheath, Chameleon Modification"
+            }
+          ]
+        },
+        {
+          "name": "Retinal Duplication",
+          "rating": "5"
+        },
+        {
+          "name": "Voice Modulator"
+        },
+        {
+          "name": "Voice Modulator (Secondary Pattern)",
+          "rating": "5"
+        },
+        {
+          "name": "Dynamic Handprints",
+          "rating": "5"
+        }
+      ]
+    },
+    {
+      "name": "Universal Omnitech Glenn Space Survivorsuite",
+      "grade": [
+        "Standard"
+      ],
+      "cyberwares": [
+        {
+          "name": "Flare Compensation"
+        },
+        {
+          "name": "Damper"
+        },
+        {
+          "name": "Obvious Torso",
+          "cyberwares": [
+            {
+              "name": "Armor",
+              "rating": "1"
+            },
+            {
+              "name": "Grapple Gun"
+            },
+            {
+              "name": "Internal Air Tank"
+            }
+          ]
+        },
+        {
+          "name": "Auto-Injector (Reusable)",
+          "rating": "1"
+        },
+        {
+          "name": "Blood Circuit Control System"
+        },
+        {
+          "name": "Gastric Neurostimulator"
+        },
+        {
+          "name": "Magnetic System"
+        },
+        {
+          "name": "Magnetic System"
+        }
+      ]
+    },
+    {
+      "name": "Urban Gunfighter",
+      "grade": [
+        "Standard"
+      ],
+      "cyberwares": [
+        {
+          "name": "Cybereyes Basic System",
+          "rating": "3",
+          "cyberwares": [
+            {
+              "name": "Flare Compensation"
+            },
+            {
+              "name": "Low-Light Vision"
+            },
+            {
+              "name": "Smartlink"
+            },
+            {
+              "name": "Thermographic Vision"
+            },
+            {
+              "name": "Vision Enhancement",
+              "rating": "2"
+            },
+            {
+              "name": "Vision Magnification"
+            }
+          ]
+        },
+        {
+          "name": "Wired Reflexes",
+          "rating": "1"
+        },
+        {
+          "name": "Heavy Pistol"
+        },
+        {
+          "name": "Heavy Pistol"
+        },
+        {
+          "name": {
+            "value": "Obvious Full Leg",
+            "select": "Left"
           },
-          {
-            "name": "Attention Coprocessor",
-            "rating": "2"
+          "cyberwares": [
+            {
+              "name": "Armor",
+              "rating": "2"
+            },
+            {
+              "name": "Cyber Holster"
+            }
+          ]
+        },
+        {
+          "name": {
+            "value": "Obvious Full Leg",
+            "select": "Left"
           },
-          {
-            "name": "Move-by-Wire System",
-            "rating": "1"
+          "cyberwares": [
+            {
+              "name": "Armor",
+              "rating": "2"
+            },
+            {
+              "name": "Cyber Holster"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Urban Gunfighter Aleph",
+      "grade": [
+        "Alphaware"
+      ],
+      "cyberwares": [
+        {
+          "name": "Cybereyes Basic System",
+          "rating": "3",
+          "cyberwares": [
+            {
+              "name": "Flare Compensation"
+            },
+            {
+              "name": "Low-Light Vision"
+            },
+            {
+              "name": "Smartlink"
+            },
+            {
+              "name": "Thermographic Vision"
+            },
+            {
+              "name": "Vision Enhancement",
+              "rating": "2"
+            },
+            {
+              "name": "Vision Magnification"
+            }
+          ]
+        },
+        {
+          "name": "Wired Reflexes",
+          "rating": "1"
+        },
+        {
+          "name": "Heavy Pistol"
+        },
+        {
+          "name": "Heavy Pistol"
+        },
+        {
+          "name": {
+            "value": "Obvious Full Leg",
+            "select": "Left"
           },
-          {
-            "name": "Bone Lacing (Kevlar)"
+          "cyberwares": [
+            {
+              "name": "Armor",
+              "rating": "2"
+            },
+            {
+              "name": "Cyber Holster"
+            }
+          ]
+        },
+        {
+          "name": {
+            "value": "Obvious Full Leg",
+            "select": "Left"
           },
-          {
-            "name": "Synthetic Full Arm",
-            "cyberwares": [
-              {
-                "name": "Customized Body",
-                "rating": "6"
-              },
-              {
-                "name": "Customized Strength",
-                "rating": "6"
-              },
-              {
-                "name": "Customized Agility",
-                "rating": "6"
-              },
-              {
-                "name": "Armor",
-                "rating": "1"
-              },
-              {
-                "name": "Scanner System",
-                "rating": "4"
-              },
-              {
-                "name": "Shock Hand"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Aztechnology Cipactli",
-        "grade": [
-          "Alphaware"
-        ],
-        "cyberwares": [
-          {
-            "name": "Commlink"
-          },
-          {
-            "name": "Cybereyes Basic System",
-            "rating": "3",
-            "cyberwares": [
-              {
-                "name": "Flare Compensation"
-              },
-              {
-                "name": "Low-Light Vision"
-              },
-              {
-                "name": "Smartlink"
-              },
-              {
-                "name": "Vision Enhancement",
-                "rating": "3"
-              },
-              {
-                "name": "Vision Magnification"
-              }
-            ]
-          },
-          {
-            "name": "Bone Lacing (Ceramic)"
-          },
-          {
-            "name": "Muscle Replacement",
-            "rating": "2"
-          },
-          {
-            "name": "Move-by-Wire System",
-            "rating": "2"
-          },
-          {
-            "name": "Projectile Spur"
-          }
-        ]
-      }
-    ]
-  }
+          "cyberwares": [
+            {
+              "name": "Armor",
+              "rating": "2"
+            },
+            {
+              "name": "Cyber Holster"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Spin-X Handyman",
+      "grade": [
+        "Standard"
+      ],
+      "cyberwares": [
+        {
+          "name": "Flare Compensation"
+        },
+        {
+          "name": "Eye Light System"
+        },
+        {
+          "name": "Cyberears",
+          "rating": "1",
+          "cyberwares": [
+            {
+              "name": "Damper"
+            },
+            {
+              "name": "Spatial Recognizer"
+            }
+          ]
+        },
+        {
+          "name": "Math SPU"
+        },
+        {
+          "name": "Obvious Full Arm",
+          "cyberwares": [
+            {
+              "name": "Customized Body",
+              "rating": "5"
+            },
+            {
+              "name": "Customized Strength",
+              "rating": "5"
+            },
+            {
+              "name": "Customized Agility",
+              "rating": "4"
+            },
+            {
+              "name": "Modular Cyberlimb"
+            },
+            {
+              "name": "Built-in Utility Kit"
+            },
+            {
+              "name": "Built-in Medkit",
+              "rating": "5"
+            },
+            {
+              "name": "Hydraulic Press"
+            },
+            {
+              "name": "Jackhammer"
+            },
+            {
+              "name": "Nail Pistol"
+            },
+            {
+              "name": "Vacuum Pump"
+            },
+            {
+              "name": "Welding Laser"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Ares Bodyguard",
+      "grade": [
+        "Standard"
+      ],
+      "cyberwares": [
+        {
+          "name": "Cybereyes Basic System",
+          "rating": "3",
+          "cyberwares": [
+            {
+              "name": "Flare Compensation"
+            },
+            {
+              "name": "Low-Light Vision"
+            },
+            {
+              "name": "Smartlink"
+            },
+            {
+              "name": "Vision Enhancement",
+              "rating": "3"
+            },
+            {
+              "name": "Vision Magnification"
+            }
+          ]
+        },
+        {
+          "name": "Cyberears",
+          "rating": "2",
+          "cyberwares": [
+            {
+              "name": "Audio Enhancement",
+              "rating": "3"
+            },
+            {
+              "name": "Damper"
+            },
+            {
+              "name": "Spatial Recognizer"
+            }
+          ]
+        },
+        {
+          "name": "Attention Coprocessor",
+          "rating": "2"
+        },
+        {
+          "name": "Move-by-Wire System",
+          "rating": "1"
+        },
+        {
+          "name": "Bone Lacing (Kevlar)"
+        },
+        {
+          "name": "Synthetic Full Arm",
+          "cyberwares": [
+            {
+              "name": "Customized Body",
+              "rating": "6"
+            },
+            {
+              "name": "Customized Strength",
+              "rating": "6"
+            },
+            {
+              "name": "Customized Agility",
+              "rating": "6"
+            },
+            {
+              "name": "Armor",
+              "rating": "1"
+            },
+            {
+              "name": "Scanner System",
+              "rating": "4"
+            },
+            {
+              "name": "Shock Hand"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Ares Bodyguard Pro",
+      "grade": [
+        "Alphaware"
+      ],
+      "cyberwares": [
+        {
+          "name": "Cybereyes Basic System",
+          "rating": "3",
+          "cyberwares": [
+            {
+              "name": "Flare Compensation"
+            },
+            {
+              "name": "Low-Light Vision"
+            },
+            {
+              "name": "Smartlink"
+            },
+            {
+              "name": "Vision Enhancement",
+              "rating": "3"
+            },
+            {
+              "name": "Vision Magnification"
+            }
+          ]
+        },
+        {
+          "name": "Cyberears",
+          "rating": "2",
+          "cyberwares": [
+            {
+              "name": "Audio Enhancement",
+              "rating": "3"
+            },
+            {
+              "name": "Damper"
+            },
+            {
+              "name": "Spatial Recognizer"
+            }
+          ]
+        },
+        {
+          "name": "Attention Coprocessor",
+          "rating": "2"
+        },
+        {
+          "name": "Move-by-Wire System",
+          "rating": "1"
+        },
+        {
+          "name": "Bone Lacing (Kevlar)"
+        },
+        {
+          "name": "Synthetic Full Arm",
+          "cyberwares": [
+            {
+              "name": "Customized Body",
+              "rating": "6"
+            },
+            {
+              "name": "Customized Strength",
+              "rating": "6"
+            },
+            {
+              "name": "Customized Agility",
+              "rating": "6"
+            },
+            {
+              "name": "Armor",
+              "rating": "1"
+            },
+            {
+              "name": "Scanner System",
+              "rating": "4"
+            },
+            {
+              "name": "Shock Hand"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Aztechnology Cipactli",
+      "grade": [
+        "Alphaware"
+      ],
+      "cyberwares": [
+        {
+          "name": "Commlink"
+        },
+        {
+          "name": "Cybereyes Basic System",
+          "rating": "3",
+          "cyberwares": [
+            {
+              "name": "Flare Compensation"
+            },
+            {
+              "name": "Low-Light Vision"
+            },
+            {
+              "name": "Smartlink"
+            },
+            {
+              "name": "Vision Enhancement",
+              "rating": "3"
+            },
+            {
+              "name": "Vision Magnification"
+            }
+          ]
+        },
+        {
+          "name": "Bone Lacing (Ceramic)"
+        },
+        {
+          "name": "Muscle Replacement",
+          "rating": "2"
+        },
+        {
+          "name": "Move-by-Wire System",
+          "rating": "2"
+        },
+        {
+          "name": "Projectile Spur"
+        }
+      ]
+    }
+  ]
 }

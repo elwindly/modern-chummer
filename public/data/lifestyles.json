@@ -82,161 +82,151 @@
       "page": "157"
     }
   ],
-  "comforts": {
-    "comfort": [
-      {
-        "name": "Street",
-        "lp": "0"
-      },
-      {
-        "name": "Squatter",
-        "lp": "1"
-      },
-      {
-        "name": "Low",
-        "lp": "2"
-      },
-      {
-        "name": "Middle",
-        "lp": "3"
-      },
-      {
-        "name": "High",
-        "lp": "4"
-      },
-      {
-        "name": "Luxury",
-        "lp": "6",
-        "slp": "5"
-      }
-    ]
-  },
-  "entertainments": {
-    "entertainment": [
-      {
-        "name": "Street",
-        "lp": "0"
-      },
-      {
-        "name": "Squatter",
-        "lp": "1"
-      },
-      {
-        "name": "Low",
-        "lp": "2"
-      },
-      {
-        "name": "Middle",
-        "lp": "3"
-      },
-      {
-        "name": "High",
-        "lp": "4"
-      },
-      {
-        "name": "Luxury",
-        "lp": "6",
-        "slp": "5"
-      }
-    ]
-  },
-  "necessities": {
-    "necessity": [
-      {
-        "name": "Street",
-        "lp": "0"
-      },
-      {
-        "name": "Squatter",
-        "lp": "1"
-      },
-      {
-        "name": "Low",
-        "lp": "2"
-      },
-      {
-        "name": "Middle",
-        "lp": "3"
-      },
-      {
-        "name": "High",
-        "lp": "4"
-      },
-      {
-        "name": "Luxury",
-        "lp": "6",
-        "slp": "5"
-      }
-    ]
-  },
-  "neighborhoods": {
-    "neighborhood": [
-      {
-        "name": "Street - Z-zones/Barrens",
-        "lp": "0",
-        "slp": "remove"
-      },
-      {
-        "name": "Street",
-        "lp": "0"
-      },
-      {
-        "name": "Squatter",
-        "lp": "1"
-      },
-      {
-        "name": "Low",
-        "lp": "2"
-      },
-      {
-        "name": "Middle",
-        "lp": "3"
-      },
-      {
-        "name": "High",
-        "lp": "4"
-      },
-      {
-        "name": "Luxury",
-        "lp": "6",
-        "slp": "5"
-      },
-      {
-        "name": "Luxury-AAA",
-        "lp": "7",
-        "slp": "remove"
-      }
-    ]
-  },
-  "securities": {
-    "security": [
-      {
-        "name": "Street",
-        "lp": "0"
-      },
-      {
-        "name": "Squatter",
-        "lp": "1"
-      },
-      {
-        "name": "Low",
-        "lp": "2"
-      },
-      {
-        "name": "Middle",
-        "lp": "3"
-      },
-      {
-        "name": "High",
-        "lp": "4"
-      },
-      {
-        "name": "Luxury",
-        "lp": "6",
-        "slp": "5"
-      }
-    ]
-  },
+  "comforts": [
+    {
+      "name": "Street",
+      "lp": "0"
+    },
+    {
+      "name": "Squatter",
+      "lp": "1"
+    },
+    {
+      "name": "Low",
+      "lp": "2"
+    },
+    {
+      "name": "Middle",
+      "lp": "3"
+    },
+    {
+      "name": "High",
+      "lp": "4"
+    },
+    {
+      "name": "Luxury",
+      "lp": "6",
+      "slp": "5"
+    }
+  ],
+  "entertainments": [
+    {
+      "name": "Street",
+      "lp": "0"
+    },
+    {
+      "name": "Squatter",
+      "lp": "1"
+    },
+    {
+      "name": "Low",
+      "lp": "2"
+    },
+    {
+      "name": "Middle",
+      "lp": "3"
+    },
+    {
+      "name": "High",
+      "lp": "4"
+    },
+    {
+      "name": "Luxury",
+      "lp": "6",
+      "slp": "5"
+    }
+  ],
+  "necessities": [
+    {
+      "name": "Street",
+      "lp": "0"
+    },
+    {
+      "name": "Squatter",
+      "lp": "1"
+    },
+    {
+      "name": "Low",
+      "lp": "2"
+    },
+    {
+      "name": "Middle",
+      "lp": "3"
+    },
+    {
+      "name": "High",
+      "lp": "4"
+    },
+    {
+      "name": "Luxury",
+      "lp": "6",
+      "slp": "5"
+    }
+  ],
+  "neighborhoods": [
+    {
+      "name": "Street - Z-zones/Barrens",
+      "lp": "0",
+      "slp": "remove"
+    },
+    {
+      "name": "Street",
+      "lp": "0"
+    },
+    {
+      "name": "Squatter",
+      "lp": "1"
+    },
+    {
+      "name": "Low",
+      "lp": "2"
+    },
+    {
+      "name": "Middle",
+      "lp": "3"
+    },
+    {
+      "name": "High",
+      "lp": "4"
+    },
+    {
+      "name": "Luxury",
+      "lp": "6",
+      "slp": "5"
+    },
+    {
+      "name": "Luxury-AAA",
+      "lp": "7",
+      "slp": "remove"
+    }
+  ],
+  "securities": [
+    {
+      "name": "Street",
+      "lp": "0"
+    },
+    {
+      "name": "Squatter",
+      "lp": "1"
+    },
+    {
+      "name": "Low",
+      "lp": "2"
+    },
+    {
+      "name": "Middle",
+      "lp": "3"
+    },
+    {
+      "name": "High",
+      "lp": "4"
+    },
+    {
+      "name": "Luxury",
+      "lp": "6",
+      "slp": "5"
+    }
+  ],
   "qualities": [
     {
       "name": "Aspected Domain",
@@ -1653,200 +1643,198 @@
       ]
     }
   ],
-  "safehousecosts": {
-    "cost": [
-      {
-        "lp": "0",
-        "cost": [
-          "0"
-        ]
-      },
-      {
-        "lp": "1",
-        "cost": [
-          "75"
-        ]
-      },
-      {
-        "lp": "2",
-        "cost": [
-          "150"
-        ]
-      },
-      {
-        "lp": "3",
-        "cost": [
-          "200"
-        ]
-      },
-      {
-        "lp": "4",
-        "cost": [
-          "350"
-        ]
-      },
-      {
-        "lp": "5",
-        "cost": [
-          "400"
-        ]
-      },
-      {
-        "lp": "6",
-        "cost": [
-          "700"
-        ]
-      },
-      {
-        "lp": "7",
-        "cost": [
-          "1000"
-        ]
-      },
-      {
-        "lp": "8",
-        "cost": [
-          "1300"
-        ]
-      },
-      {
-        "lp": "9",
-        "cost": [
-          "1600"
-        ]
-      },
-      {
-        "lp": "10",
-        "cost": [
-          "1900"
-        ]
-      },
-      {
-        "lp": "11",
-        "cost": [
-          "2600"
-        ]
-      },
-      {
-        "lp": "12",
-        "cost": [
-          "3200"
-        ]
-      },
-      {
-        "lp": "13",
-        "cost": [
-          "3800"
-        ]
-      },
-      {
-        "lp": "14",
-        "cost": [
-          "4400"
-        ]
-      },
-      {
-        "lp": "15",
-        "cost": [
-          "5000"
-        ]
-      },
-      {
-        "lp": "16",
-        "cost": [
-          "7500"
-        ]
-      },
-      {
-        "lp": "17",
-        "cost": [
-          "9000"
-        ]
-      },
-      {
-        "lp": "18",
-        "cost": [
-          "10500"
-        ]
-      },
-      {
-        "lp": "19",
-        "cost": [
-          "12000"
-        ]
-      },
-      {
-        "lp": "20",
-        "cost": [
-          "13500"
-        ]
-      },
-      {
-        "lp": "21",
-        "cost": [
-          "20000"
-        ]
-      },
-      {
-        "lp": "22",
-        "cost": [
-          "25000"
-        ]
-      },
-      {
-        "lp": "23",
-        "cost": [
-          "35000"
-        ]
-      },
-      {
-        "lp": "24",
-        "cost": [
-          "45000"
-        ]
-      },
-      {
-        "lp": "25",
-        "cost": [
-          "55000"
-        ]
-      },
-      {
-        "lp": "26",
-        "cost": [
-          "65000"
-        ]
-      },
-      {
-        "lp": "27",
-        "cost": [
-          "75000"
-        ]
-      },
-      {
-        "lp": "28",
-        "cost": [
-          "85000"
-        ]
-      },
-      {
-        "lp": "29",
-        "cost": [
-          "95000"
-        ]
-      },
-      {
-        "lp": "30",
-        "cost": [
-          "110000"
-        ]
-      },
-      {
-        "lp": "31+",
-        "cost": [
-          "35000"
-        ]
-      }
-    ]
-  }
+  "safehousecosts": [
+    {
+      "lp": "0",
+      "cost": [
+        "0"
+      ]
+    },
+    {
+      "lp": "1",
+      "cost": [
+        "75"
+      ]
+    },
+    {
+      "lp": "2",
+      "cost": [
+        "150"
+      ]
+    },
+    {
+      "lp": "3",
+      "cost": [
+        "200"
+      ]
+    },
+    {
+      "lp": "4",
+      "cost": [
+        "350"
+      ]
+    },
+    {
+      "lp": "5",
+      "cost": [
+        "400"
+      ]
+    },
+    {
+      "lp": "6",
+      "cost": [
+        "700"
+      ]
+    },
+    {
+      "lp": "7",
+      "cost": [
+        "1000"
+      ]
+    },
+    {
+      "lp": "8",
+      "cost": [
+        "1300"
+      ]
+    },
+    {
+      "lp": "9",
+      "cost": [
+        "1600"
+      ]
+    },
+    {
+      "lp": "10",
+      "cost": [
+        "1900"
+      ]
+    },
+    {
+      "lp": "11",
+      "cost": [
+        "2600"
+      ]
+    },
+    {
+      "lp": "12",
+      "cost": [
+        "3200"
+      ]
+    },
+    {
+      "lp": "13",
+      "cost": [
+        "3800"
+      ]
+    },
+    {
+      "lp": "14",
+      "cost": [
+        "4400"
+      ]
+    },
+    {
+      "lp": "15",
+      "cost": [
+        "5000"
+      ]
+    },
+    {
+      "lp": "16",
+      "cost": [
+        "7500"
+      ]
+    },
+    {
+      "lp": "17",
+      "cost": [
+        "9000"
+      ]
+    },
+    {
+      "lp": "18",
+      "cost": [
+        "10500"
+      ]
+    },
+    {
+      "lp": "19",
+      "cost": [
+        "12000"
+      ]
+    },
+    {
+      "lp": "20",
+      "cost": [
+        "13500"
+      ]
+    },
+    {
+      "lp": "21",
+      "cost": [
+        "20000"
+      ]
+    },
+    {
+      "lp": "22",
+      "cost": [
+        "25000"
+      ]
+    },
+    {
+      "lp": "23",
+      "cost": [
+        "35000"
+      ]
+    },
+    {
+      "lp": "24",
+      "cost": [
+        "45000"
+      ]
+    },
+    {
+      "lp": "25",
+      "cost": [
+        "55000"
+      ]
+    },
+    {
+      "lp": "26",
+      "cost": [
+        "65000"
+      ]
+    },
+    {
+      "lp": "27",
+      "cost": [
+        "75000"
+      ]
+    },
+    {
+      "lp": "28",
+      "cost": [
+        "85000"
+      ]
+    },
+    {
+      "lp": "29",
+      "cost": [
+        "95000"
+      ]
+    },
+    {
+      "lp": "30",
+      "cost": [
+        "110000"
+      ]
+    },
+    {
+      "lp": "31+",
+      "cost": [
+        "35000"
+      ]
+    }
+  ]
 }

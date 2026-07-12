@@ -66,17 +66,45 @@ describe('bp-calculator', () => {
   });
 
   it('charges 10 BP per attribute raise and 15 at racial max', () => {
+    const character = createEmptyCharacter({
+      attributes: {
+        ...createEmptyCharacter().attributes,
+        BOD: { min: 1, max: 6, augMax: 9, base: 4, value: 4 },
+      },
+    });
+    const manager = new ImprovementManager(character);
+    const catalog = loadQualityCatalog();
+
+    const bp = calculateBp(character, manager, DEFAULT_CHARACTER_OPTIONS, catalog);
+    expect(bp.primaryAttributes).toBe(30);
+    expect(bp.remaining).toBe(370);
+  });
+
+  it('starts with zero primary attribute BP at racial minimum', () => {
     const character = createEmptyCharacter();
     const manager = new ImprovementManager(character);
     const catalog = loadQualityCatalog();
 
     const bp = calculateBp(character, manager, DEFAULT_CHARACTER_OPTIONS, catalog);
-    expect(bp.primaryAttributes).toBe(240);
-    expect(bp.remaining).toBe(160);
+    expect(bp.primaryAttributes).toBe(0);
+    expect(bp.remaining).toBe(400);
+    expect(isAttributeBpWithinLimit(character, DEFAULT_CHARACTER_OPTIONS)).toBe(true);
   });
 
   it('enforces half-pool primary attribute cap', () => {
-    const character = createEmptyCharacter();
+    const character = createEmptyCharacter({
+      attributes: {
+        ...createEmptyCharacter().attributes,
+        BOD: { min: 1, max: 6, augMax: 9, base: 6, value: 6 },
+        AGI: { min: 1, max: 6, augMax: 9, base: 6, value: 6 },
+        REA: { min: 1, max: 6, augMax: 9, base: 6, value: 6 },
+        STR: { min: 1, max: 6, augMax: 9, base: 6, value: 6 },
+        CHA: { min: 1, max: 6, augMax: 9, base: 6, value: 6 },
+        INT: { min: 1, max: 6, augMax: 9, base: 6, value: 6 },
+        LOG: { min: 1, max: 6, augMax: 9, base: 6, value: 6 },
+        WIL: { min: 1, max: 6, augMax: 9, base: 6, value: 6 },
+      },
+    });
     expect(isAttributeBpWithinLimit(character, DEFAULT_CHARACTER_OPTIONS)).toBe(false);
     expect(
       isAttributeBpWithinLimit(character, {

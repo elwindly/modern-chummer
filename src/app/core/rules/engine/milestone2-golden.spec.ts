@@ -140,6 +140,7 @@ describe('golden tests from game data fixtures', () => {
   it('Tough as Nails increases physical CM using effective BOD from qualities.json', () => {
     const quality = findQuality('Tough as Nails (Rating 1)');
     const character = createEmptyCharacter();
+    character.attributes.BOD.base = 4;
     const manager = new ImprovementManager(character);
 
     applyQualityBonus(character, manager, quality.name, quality.bonus);

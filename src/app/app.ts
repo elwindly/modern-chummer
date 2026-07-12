@@ -80,7 +80,7 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
       display: flex;
       align-items: center;
       gap: 0.75rem;
-      color: inherit;
+      color: var(--color-text);
       text-decoration: none;
 
       &:hover {

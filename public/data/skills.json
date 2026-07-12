@@ -1308,1524 +1308,1522 @@
       "page": "128"
     }
   ],
-  "knowledgeskills": {
-    "skill": [
-      {
-        "name": "Arabic",
-        "attribute": "INT",
-        "category": [
-          "Language"
-        ],
-        "default": "No",
-        "specs": [
-          "Read/Write",
-          "Speak",
-          "Dialect",
-          "Lingo"
-        ]
-      },
-      {
-        "name": "Bengali",
-        "attribute": "INT",
-        "category": [
-          "Language"
-        ],
-        "default": "No",
-        "specs": [
-          "Read/Write",
-          "Speak",
-          "Dialect",
-          "Lingo"
-        ]
-      },
-      {
-        "name": "Bulgarian",
-        "attribute": "INT",
-        "category": [
-          "Language"
-        ],
-        "default": "No",
-        "specs": [
-          "Read/Write",
-          "Speak",
-          "Dialect",
-          "Lingo"
-        ]
-      },
-      {
-        "name": "Croatian",
-        "attribute": "INT",
-        "category": [
-          "Language"
-        ],
-        "default": "No",
-        "specs": [
-          "Read/Write",
-          "Speak",
-          "Dialect",
-          "Lingo"
-        ]
-      },
-      {
-        "name": "Cantonese",
-        "attribute": "INT",
-        "category": [
-          "Language"
-        ],
-        "default": "No",
-        "specs": [
-          "Read/Write",
-          "Speak",
-          "Dialect",
-          "Lingo"
-        ]
-      },
-      {
-        "name": "Danish",
-        "attribute": "INT",
-        "category": [
-          "Language"
-        ],
-        "default": "No",
-        "specs": [
-          "Read/Write",
-          "Speak",
-          "Dialect",
-          "Lingo"
-        ]
-      },
-      {
-        "name": "English",
-        "attribute": "INT",
-        "category": [
-          "Language"
-        ],
-        "default": "No",
-        "specs": [
-          "Read/Write",
-          "Speak",
-          "Dialect",
-          "Lingo"
-        ]
-      },
-      {
-        "name": "French",
-        "attribute": "INT",
-        "category": [
-          "Language"
-        ],
-        "default": "No",
-        "specs": [
-          "Read/Write",
-          "Speak",
-          "Dialect",
-          "Lingo"
-        ]
-      },
-      {
-        "name": "German",
-        "attribute": "INT",
-        "category": [
-          "Language"
-        ],
-        "default": "No",
-        "specs": [
-          "Read/Write",
-          "Speak",
-          "Dialect",
-          "Lingo"
-        ]
-      },
-      {
-        "name": "Hebrew",
-        "attribute": "INT",
-        "category": [
-          "Language"
-        ],
-        "default": "No",
-        "specs": [
-          "Read/Write",
-          "Speak",
-          "Dialect",
-          "Lingo"
-        ]
-      },
-      {
-        "name": "Hindi-Urdu",
-        "attribute": "INT",
-        "category": [
-          "Language"
-        ],
-        "default": "No",
-        "specs": [
-          "Read/Write",
-          "Speak",
-          "Dialect",
-          "Lingo"
-        ]
-      },
-      {
-        "name": "Indonesian",
-        "attribute": "INT",
-        "category": [
-          "Language"
-        ],
-        "default": "No",
-        "specs": [
-          "Read/Write",
-          "Speak",
-          "Dialect",
-          "Lingo"
-        ]
-      },
-      {
-        "name": "Italian",
-        "attribute": "INT",
-        "category": [
-          "Language"
-        ],
-        "default": "No",
-        "specs": [
-          "Read/Write",
-          "Speak",
-          "Dialect",
-          "Lingo"
-        ]
-      },
-      {
-        "name": "Japanese",
-        "attribute": "INT",
-        "category": [
-          "Language"
-        ],
-        "default": "No",
-        "specs": [
-          "Read/Write",
-          "Speak",
-          "Dialect",
-          "Lingo"
-        ]
-      },
-      {
-        "name": "Korean",
-        "attribute": "INT",
-        "category": [
-          "Language"
-        ],
-        "default": "No",
-        "specs": [
-          "Read/Write",
-          "Speak",
-          "Dialect",
-          "Lingo"
-        ]
-      },
-      {
-        "name": "Latin",
-        "attribute": "INT",
-        "category": [
-          "Language"
-        ],
-        "default": "No",
-        "specs": [
-          "Read/Write",
-          "Speak",
-          "Dialect",
-          "Lingo"
-        ]
-      },
-      {
-        "name": "Mandarin",
-        "attribute": "INT",
-        "category": [
-          "Language"
-        ],
-        "default": "No",
-        "specs": [
-          "Read/Write",
-          "Speak",
-          "Dialect",
-          "Lingo"
-        ]
-      },
-      {
-        "name": "Or'zet",
-        "attribute": "INT",
-        "category": [
-          "Language"
-        ],
-        "default": "No",
-        "specs": [
-          "Read/Write",
-          "Speak",
-          "Dialect",
-          "Lingo"
-        ]
-      },
-      {
-        "name": "Persian",
-        "attribute": "INT",
-        "category": [
-          "Language"
-        ],
-        "default": "No",
-        "specs": [
-          "Read/Write",
-          "Speak",
-          "Dialect",
-          "Lingo"
-        ]
-      },
-      {
-        "name": "Portuguese",
-        "attribute": "INT",
-        "category": [
-          "Language"
-        ],
-        "default": "No",
-        "specs": [
-          "Read/Write",
-          "Speak",
-          "Dialect",
-          "Lingo"
-        ]
-      },
-      {
-        "name": "Punjabi",
-        "attribute": "INT",
-        "category": [
-          "Language"
-        ],
-        "default": "No",
-        "specs": [
-          "Read/Write",
-          "Speak",
-          "Dialect",
-          "Lingo"
-        ]
-      },
-      {
-        "name": "Polish",
-        "attribute": "INT",
-        "category": [
-          "Language"
-        ],
-        "default": "No",
-        "specs": [
-          "Read/Write",
-          "Speak",
-          "Dialect",
-          "Lingo"
-        ]
-      },
-      {
-        "name": "Russian",
-        "attribute": "INT",
-        "category": [
-          "Language"
-        ],
-        "default": "No",
-        "specs": [
-          "Read/Write",
-          "Speak",
-          "Dialect",
-          "Lingo"
-        ]
-      },
-      {
-        "name": "Sioux",
-        "attribute": "INT",
-        "category": [
-          "Language"
-        ],
-        "default": "No",
-        "specs": [
-          "Read/Write",
-          "Speak",
-          "Dialect",
-          "Lingo"
-        ]
-      },
-      {
-        "name": "Spanish",
-        "attribute": "INT",
-        "category": [
-          "Language"
-        ],
-        "default": "No",
-        "specs": [
-          "Read/Write",
-          "Speak",
-          "Dialect",
-          "Lingo"
-        ]
-      },
-      {
-        "name": "Sperethiel",
-        "attribute": "INT",
-        "category": [
-          "Language"
-        ],
-        "default": "No",
-        "specs": [
-          "Read/Write",
-          "Speak",
-          "Dialect",
-          "Lingo"
-        ]
-      },
-      {
-        "name": "Thai",
-        "attribute": "INT",
-        "category": [
-          "Language"
-        ],
-        "default": "No",
-        "specs": [
-          "Read/Write",
-          "Speak",
-          "Dialect",
-          "Lingo"
-        ]
-      },
-      {
-        "name": "Turkish",
-        "attribute": "INT",
-        "category": [
-          "Language"
-        ],
-        "default": "No",
-        "specs": [
-          "Read/Write",
-          "Speak",
-          "Dialect",
-          "Lingo"
-        ]
-      },
-      {
-        "name": "Wu",
-        "attribute": "INT",
-        "category": [
-          "Language"
-        ],
-        "default": "No",
-        "specs": [
-          "Read/Write",
-          "Speak",
-          "Dialect",
-          "Lingo"
-        ]
-      },
-      {
-        "name": "Xiang",
-        "attribute": "INT",
-        "category": [
-          "Language"
-        ],
-        "default": "No",
-        "specs": [
-          "Read/Write",
-          "Speak",
-          "Dialect",
-          "Lingo"
-        ]
-      },
-      {
-        "name": "Area Knowledge: Atlanta",
-        "attribute": "INT",
-        "category": [
-          "Street"
-        ],
-        "default": "No"
-      },
-      {
-        "name": "Area Knowledge: Cheyenne",
-        "attribute": "INT",
-        "category": [
-          "Street"
-        ],
-        "default": "No"
-      },
-      {
-        "name": "Area Knowledge: Chicago",
-        "attribute": "INT",
-        "category": [
-          "Street"
-        ],
-        "default": "No"
-      },
-      {
-        "name": "Area Knowledge: Denver",
-        "attribute": "INT",
-        "category": [
-          "Street"
-        ],
-        "default": "No"
-      },
-      {
-        "name": "Area Knowledge: FDC",
-        "attribute": "INT",
-        "category": [
-          "Street"
-        ],
-        "default": "No"
-      },
-      {
-        "name": "Area Knowledge: Hong-Kong",
-        "attribute": "INT",
-        "category": [
-          "Street"
-        ],
-        "default": "No"
-      },
-      {
-        "name": "Area Knowledge: LA",
-        "attribute": "INT",
-        "category": [
-          "Street"
-        ],
-        "default": "No"
-      },
-      {
-        "name": "Area Knowledge: Manhattan",
-        "attribute": "INT",
-        "category": [
-          "Street"
-        ],
-        "default": "No"
-      },
-      {
-        "name": "Area Knowledge: Portland",
-        "attribute": "INT",
-        "category": [
-          "Street"
-        ],
-        "default": "No"
-      },
-      {
-        "name": "Area Knowledge: Seattle",
-        "attribute": "INT",
-        "category": [
-          "Street"
-        ],
-        "default": "No",
-        "specs": [
-          "Auburn",
-          "Bellevue",
-          "Council Island",
-          "Downtown",
-          "Everett",
-          "Puyallup",
-          "Redmond",
-          "Renton",
-          "Snohomish",
-          "Outremer",
-          "Seattle Matrix",
-          "Salish-Shide"
-        ]
-      },
-      {
-        "name": "Alcohol",
-        "attribute": "INT",
-        "category": [
-          "Interest"
-        ],
-        "default": "No",
-        "specs": [
-          "Beers",
-          "Coolers",
-          "Hard Liquor",
-          "Wines",
-          "Atlanta",
-          "Cheyenne",
-          "Chicago",
-          "Denver",
-          "Hong-Kong",
-          "LA",
-          "Manhattan",
-          "FDC",
-          "Portland",
-          "Seattle",
-          "Saskatoon",
-          "Sacramento",
-          "Quebec City",
-          "Algonkian-Manitou Council",
-          "Athabaskan Council",
-          "Amazonia",
-          "Aztlan",
-          "Carribean League",
-          "California Free State",
-          "Pueblo Corporate Council",
-          "CAS",
-          "UCAS",
-          "Quebec",
-          "Salish-Shidhe Council",
-          "Sioux",
-          "Tir Tairngire",
-          "Tsimshian Protectorate",
-          "Yukutan",
-          "N. America",
-          "S. America",
-          "Antarctica",
-          "Africa",
-          "Western Europe",
-          "Eastern Europe",
-          "Northern Europe",
-          "Asia - Pacific",
-          "Asia - Minor",
-          "Middle East",
-          "Australia"
-        ]
-      },
-      {
-        "name": "Architecture",
-        "attribute": "LOG",
-        "category": [
-          "Professional"
-        ],
-        "default": "No",
-        "specs": [
-          "Commercial",
-          "Residential",
-          "Elven",
-          "Orcish",
-          "Medieval",
-          "Gothic",
-          "Renaissance",
-          "Baroque",
-          "Victorian",
-          "Neo-Classical",
-          "Modern",
-          "High-Tech"
-        ]
-      },
-      {
-        "name": "Art",
-        "attribute": "LOG",
-        "category": [
-          "Academic"
-        ],
-        "default": "No",
-        "specs": [
-          "Da Vinci",
-          "Monet",
-          "Matisse",
-          "Michelangelo",
-          "Picasso",
-          "Rembrandt",
-          "Van Gogh",
-          "N. America",
-          "S. America",
-          "Antarctica",
-          "Africa",
-          "Western Europe",
-          "Eastern Europe",
-          "Northern Europe",
-          "Asia - Pacific",
-          "Asia - Minor",
-          "Middle East",
-          "Australia"
-        ]
-      },
-      {
-        "name": "Biology",
-        "attribute": "LOG",
-        "category": [
-          "Academic"
-        ],
-        "default": "No",
-        "specs": [
-          "Anatomy",
-          "Microbiology",
-          "Physiology"
-        ]
-      },
-      {
-        "name": "Business",
-        "attribute": "LOG",
-        "category": [
-          "Professional"
-        ],
-        "default": "No",
-        "specs": [
-          "Budgeting",
-          "Compliance",
-          "Reporting",
-          "Manufacturing",
-          "People Management",
-          "Project Management",
-          "Retail",
-          "Supply and Demand",
-          "Small Business",
-          "Time Management"
-        ]
-      },
-      {
-        "name": "Chemistry",
-        "attribute": "LOG",
-        "category": [
-          "Academic"
-        ],
-        "default": "No",
-        "specs": [
-          "Industrial",
-          "Organic",
-          "Pharmaceuticals"
-        ]
-      },
-      {
-        "name": "Combat Tactics",
-        "attribute": "LOG",
-        "category": [
-          "Professional"
-        ],
-        "default": "No",
-        "specs": [
-          "Ambush",
-          "Guerilla",
-          "Hostage Rescue",
-          "Magic",
-          "Anti-Magic",
-          "Open Field",
-          "Outer Space",
-          "Terror",
-          "Underwater",
-          "Urban",
-          "Wilderness"
-        ]
-      },
-      {
-        "name": "Bars and Clubs",
-        "attribute": "INT",
-        "category": [
-          "Street"
-        ],
-        "default": "No",
-        "specs": [
-          "Atlanta",
-          "Awakened",
-          "Biker",
-          "Cheyenne",
-          "Chicago",
-          "Corporate",
-          "Denver",
-          "Dwarf",
-          "Elf",
-          "FDC",
-          "Gay",
-          "High-Class",
-          "Hotel",
-          "Jazz",
-          "Hong-Kong",
-          "LA",
-          "Low-Class",
-          "Mafia",
-          "Matrix",
-          "Manhattan",
-          "Ork",
-          "Portland",
-          "Piano",
-          "Pubs",
-          "Quebec City",
-          "Rock",
-          "Sacramento",
-          "Saskatoon",
-          "Seattle",
-          "Sports",
-          "Surge",
-          "Triad",
-          "Troll",
-          "Vory",
-          "Yakuza"
-        ]
-      },
-      {
-        "name": "Data Havens",
-        "attribute": "INT",
-        "category": [
-          "Street"
-        ],
-        "default": "No",
-        "specs": [
-          "Hacking",
-          "Magic",
-          "Matrix",
-          "Shadows",
-          "N. America",
-          "S. America",
-          "Antarctica",
-          "Africa",
-          "Western Europe",
-          "Eastern Europe",
-          "Northern Europe",
-          "Asia - Pacific",
-          "Asia - Minor",
-          "Middle East",
-          "Australia"
-        ]
-      },
-      {
-        "name": "Economics",
-        "attribute": "LOG",
-        "category": [
-          "Academic"
-        ],
-        "default": "No",
-        "specs": [
-          "Corporate",
-          "Tribal",
-          "Underworld",
-          "Atlanta",
-          "Cheyenne",
-          "Chicago",
-          "Denver",
-          "Hong-Kong",
-          "LA",
-          "Manhattan",
-          "FDC",
-          "Portland",
-          "Seattle",
-          "Saskatoon",
-          "Sacramento",
-          "Quebec City",
-          "Algonkian-Manitou Council",
-          "Athabaskan Council",
-          "Amazonia",
-          "Aztlan",
-          "Carribean League",
-          "California Free State",
-          "Pueblo Corporate Council",
-          "CAS",
-          "UCAS",
-          "Quebec",
-          "Salish-Shidhe Council",
-          "Sioux",
-          "Tir Tairngire",
-          "Tsimshian Protectorate",
-          "Yukutan",
-          "N. America",
-          "S. America",
-          "Antarctica",
-          "Africa",
-          "Western Europe",
-          "Eastern Europe",
-          "Northern Europe",
-          "Asia - Pacific",
-          "Asia - Minor",
-          "Middle East",
-          "Australia"
-        ]
-      },
-      {
-        "name": "Engineering",
-        "attribute": "LOG",
-        "category": [
-          "Academic"
-        ],
-        "default": "No",
-        "specs": [
-          "Chemical",
-          "Civil",
-          "Electrical",
-          "Mechanical",
-          "Nuclear"
-        ]
-      },
-      {
-        "name": "Firearms",
-        "attribute": "LOG",
-        "category": [
-          "Professional"
-        ],
-        "default": "No",
-        "specs": [
-          "Accessories",
-          "Ammunition",
-          "Automatics",
-          "Design",
-          "Heavy Weapons",
-          "History",
-          "Longarms",
-          "Modification",
-          "Pistols"
-        ]
-      },
-      {
-        "name": "Gaming",
-        "attribute": "INT",
-        "category": [
-          "Interest"
-        ],
-        "default": "No",
-        "specs": [
-          "Dawn of Atlantis",
-          "Dark Eye",
-          "Grand Larceny",
-          "Killing Floor",
-          "Paranormal Crisis",
-          "Miracle Shooter",
-          "Spectrum Delta",
-          "SC IV: Protoss Gate",
-          "World of Shadows",
-          "Urban Brawl League 70",
-          "Guild Ages"
-        ]
-      },
-      {
-        "name": "Gangs",
-        "attribute": "INT",
-        "category": [
-          "Street"
-        ],
-        "default": "No",
-        "specs": [
-          "Ancients",
-          "Area Boys",
-          "Cirque du Sorciere",
-          "Chaos Engine",
-          "Cocotona",
-          "Comando Verdge",
-          "Cutters",
-          "Desolation Angels",
-          "First Nations",
-          "Ghost Cartels",
-          "Haloweeners",
-          "Hell's Angels",
-          "Iron Crosses",
-          "Los Verdugos",
-          "Los Angeles Ardientes",
-          "Lynch Mob",
-          "Merlyns",
-          "Numbers Gang",
-          "Spikes",
-          "Steppin Wulfs",
-          "Thunder Boys",
-          "Yardies",
-          "Vikings",
-          "Atlanta",
-          "Cheyenne",
-          "Chicago",
-          "Denver",
-          "Hong-Kong",
-          "LA",
-          "Manhattan",
-          "FDC",
-          "Portland",
-          "Seattle",
-          "Saskatoon",
-          "Sacramento",
-          "Quebec City",
-          "Algonkian-Manitou Council",
-          "Athabaskan Council",
-          "Amazonia",
-          "Aztlan",
-          "Carribean League",
-          "California Free State",
-          "Pueblo Corporate Council",
-          "CAS",
-          "UCAS",
-          "Quebec",
-          "Salish-Shidhe Council",
-          "Sioux",
-          "Tir Tairngire",
-          "Tsimshian Protectorate",
-          "Yukutan"
-        ]
-      },
-      {
-        "name": "Ghost Cartels",
-        "attribute": "INT",
-        "category": [
-          "Street"
-        ],
-        "default": "No",
-        "specs": [
-          "Turf",
-          "Politics",
-          "Signs",
-          "History",
-          "Organizations",
-          "Safe Houses"
-        ]
-      },
-      {
-        "name": "History",
-        "attribute": "LOG",
-        "category": [
-          "Academic"
-        ],
-        "default": "No",
-        "specs": [
-          "Art",
-          "Corporate",
-          "Military",
-          "Political",
-          "Religion",
-          "Social",
-          "Tribal",
-          "Underworld",
-          "Atlanta",
-          "Cheyenne",
-          "Chicago",
-          "Denver",
-          "Hong-Kong",
-          "LA",
-          "Manhattan",
-          "FDC",
-          "Portland",
-          "Seattle",
-          "Saskatoon",
-          "Sacramento",
-          "Quebec City",
-          "Algonkian-Manitou Council",
-          "Athabaskan Council",
-          "Amazonia",
-          "Aztlan",
-          "Carribean League",
-          "California Free State",
-          "Pueblo Corporate Council",
-          "CAS",
-          "UCAS",
-          "Quebec",
-          "Salish-Shidhe Council",
-          "Sioux",
-          "Tir Tairngire",
-          "Tsimshian Protectorate",
-          "Yukutan",
-          "N. America",
-          "S. America",
-          "Antarctica",
-          "Africa",
-          "Western Europe",
-          "Eastern Europe",
-          "Northern Europe",
-          "Asia - Pacific",
-          "Asia - Minor",
-          "Middle East",
-          "Australia"
-        ]
-      },
-      {
-        "name": "Music",
-        "attribute": "INT",
-        "category": [
-          "Interest"
-        ],
-        "default": "No",
-        "specs": [
-          "Goblin Rock",
-          "Powernoize",
-          "Rockabilly",
-          "Sinthcore",
-          "Wizpunk",
-          "Trash Metal Troll",
-          "Retro Gothic",
-          "Elven Rap",
-          "Neo-J Pop",
-          "Nova K Rock"
-        ]
-      },
-      {
-        "name": "News",
-        "attribute": "INT",
-        "category": [
-          "Interest"
-        ],
-        "default": "No",
-        "specs": [
-          "Business",
-          "Entertainment",
-          "Health",
-          "Science/Environment",
-          "Sports",
-          "Technology",
-          "Underworld",
-          "Atlanta",
-          "Cheyenne",
-          "Chicago",
-          "Denver",
-          "Hong-Kong",
-          "LA",
-          "Manhattan",
-          "FDC",
-          "Portland",
-          "Seattle",
-          "Saskatoon",
-          "Sacramento",
-          "Quebec City",
-          "Algonkian-Manitou Council",
-          "Athabaskan Council",
-          "Amazonia",
-          "Aztlan",
-          "Carribean League",
-          "California Free State",
-          "Pueblo Corporate Council",
-          "CAS",
-          "UCAS",
-          "Quebec",
-          "Salish-Shidhe Council",
-          "Sioux",
-          "Tir Tairngire",
-          "Tsimshian Protectorate",
-          "Yukutan",
-          "N. America",
-          "S. America",
-          "Antarctica",
-          "Africa",
-          "Western Europe",
-          "Eastern Europe",
-          "Northern Europe",
-          "Asia - Pacific",
-          "Asia - Minor",
-          "Middle East",
-          "Australia"
-        ]
-      },
-      {
-        "name": "Parazoology",
-        "attribute": "LOG",
-        "category": [
-          "Academic"
-        ],
-        "default": "No",
-        "specs": [
-          "Spirits",
-          "N. America",
-          "S. America",
-          "Antarctica",
-          "Africa",
-          "Western Europe",
-          "Eastern Europe",
-          "Northern Europe",
-          "Asia - Pacific",
-          "Asia - Minor",
-          "Middle East",
-          "Australia"
-        ]
-      },
-      {
-        "name": "Politics",
-        "attribute": "LOG",
-        "category": [
-          "Academic"
-        ],
-        "default": "No",
-        "specs": [
-          "Corporate",
-          "Military",
-          "Political",
-          "Social",
-          "Tribal",
-          "Underworld",
-          "Atlanta",
-          "Cheyenne",
-          "Chicago",
-          "Denver",
-          "Hong-Kong",
-          "LA",
-          "Manhattan",
-          "FDC",
-          "Portland",
-          "Seattle",
-          "Saskatoon",
-          "Sacramento",
-          "Quebec City",
-          "Algonkian-Manitou Council",
-          "Athabaskan Council",
-          "Amazonia",
-          "Aztlan",
-          "Carribean League",
-          "California Free State",
-          "Pueblo Corporate Council",
-          "CAS",
-          "UCAS",
-          "Quebec",
-          "Salish-Shidhe Council",
-          "Sioux",
-          "Tir Tairngire",
-          "Tsimshian Protectorate",
-          "Yukutan",
-          "N. America",
-          "S. America",
-          "Antarctica",
-          "Africa",
-          "Western Europe",
-          "Eastern Europe",
-          "Northern Europe",
-          "Asia - Pacific",
-          "Asia - Minor",
-          "Middle East",
-          "Australia",
-          "Politics"
-        ]
-      },
-      {
-        "name": "Literature",
-        "attribute": "LOG",
-        "category": [
-          "Academic"
-        ],
-        "default": "No",
-        "specs": [
-          "Science Fiction",
-          "Poetry",
-          "Romance",
-          "N. America",
-          "S. America",
-          "Antarctica",
-          "Africa",
-          "Western Europe",
-          "Eastern Europe",
-          "Northern Europe",
-          "Asia - Pacific",
-          "Asia - Minor",
-          "Middle East",
-          "Australia"
-        ]
-      },
-      {
-        "name": "Mafia",
-        "attribute": "INT",
-        "category": [
-          "Street"
-        ],
-        "default": "No",
-        "specs": [
-          "Turf",
-          "Politics",
-          "Signs",
-          "History",
-          "Organizations",
-          "Safe Houses"
-        ]
-      },
-      {
-        "name": "Magic Traditions",
-        "attribute": "LOG",
-        "category": [
-          "Academic"
-        ],
-        "default": "No",
-        "specs": [
-          "Adepts",
-          "Shamans",
-          "Mages",
-          "Magic Adepts"
-        ]
-      },
-      {
-        "name": "Magical Theory",
-        "attribute": "LOG",
-        "category": [
-          "Academic"
-        ],
-        "default": "No",
-        "specs": [
-          "Sorcery",
-          "Conjuring",
-          "Enchanting",
-          "Foci",
-          "Astral World",
-          "Metaplanes",
-          "Initiation",
-          "Mentor Spirits"
-        ]
-      },
-      {
-        "name": "Magical Threats",
-        "attribute": "LOG",
-        "category": [
-          "Academic"
-        ],
-        "default": "No",
-        "specs": [
-          "Blood Magic",
-          "Toxic Magic",
-          "Insect Spirits"
-        ]
-      },
-      {
-        "name": "Military",
-        "attribute": "INT",
-        "category": [
-          "Interest"
-        ],
-        "default": "No",
-        "specs": [
-          "Air Force",
-          "Army",
-          "Coast Guard",
-          "Marines",
-          "Military Magic",
-          "Navy",
-          "Special Forces"
-        ]
-      },
-      {
-        "name": "Religion",
-        "attribute": "LOG",
-        "category": [
-          "Academic"
-        ],
-        "default": "No",
-        "specs": [
-          "Islam",
-          "Judaism",
-          "Buddhism",
-          "Christianity",
-          "Hinduism",
-          "Zoroastrianism",
-          "Shinto",
-          "Paganism",
-          "Taoism"
-        ]
-      },
-      {
-        "name": "Security Design",
-        "attribute": "INT",
-        "category": [
-          "Interest"
-        ],
-        "default": "No",
-        "specs": [
-          "Bank",
-          "Corporate",
-          "Government",
-          "Home",
-          "Public Event",
-          "Vehicle"
-        ]
-      },
-      {
-        "name": "Security Companies",
-        "attribute": "LOG",
-        "category": [
-          "Academic"
-        ],
-        "default": "No",
-        "specs": [
-          "Lone Star",
-          "Knight Errant",
-          "Hard Corps",
-          "Minutemen Security"
-        ]
-      },
-      {
-        "name": "Security Tactics",
-        "attribute": "LOG",
-        "category": [
-          "Academic"
-        ],
-        "default": "No",
-        "specs": [
-          "Corporate",
-          "Crimson Rush",
-          "Entertainment",
-          "Government",
-          "Security Company",
-          "Rapid Response",
-          "Border Patrol",
-          "Customs"
-        ]
-      },
-      {
-        "name": "Shadow Community",
-        "attribute": "INT",
-        "category": [
-          "Street"
-        ],
-        "default": "No",
-        "specs": [
-          "Turf",
-          "Politics",
-          "History",
-          "Organizations",
-          "Safe Houses",
-          "News",
-          "Personalities",
-          "Rumours"
-        ]
-      },
-      {
-        "name": "Spirits",
-        "attribute": "LOG",
-        "category": [
-          "Professional"
-        ],
-        "default": "No",
-        "specs": [
-          "Beast",
-          "Earth",
-          "Fire",
-          "Guardian",
-          "Guidance",
-          "Man",
-          "Plant",
-          "Task",
-          "Wind",
-          "Water",
-          "Watcher"
-        ]
-      },
-      {
-        "name": "Sports",
-        "attribute": "INT",
-        "category": [
-          "Interest"
-        ],
-        "default": "No",
-        "specs": [
-          "Baseball",
-          "Combat Biking",
-          "Football",
-          "Hockey",
-          "Soccer",
-          "UFC",
-          "Urban Brawl",
-          "Wrestling"
-        ]
-      },
-      {
-        "name": "Syndicates",
-        "attribute": "INT",
-        "category": [
-          "Street"
-        ],
-        "default": "No",
-        "specs": [
-          "Ghost Cartels",
-          "Mafia",
-          "Triad",
-          "Yakuza",
-          "Vory",
-          "Atlanta",
-          "Cheyenne",
-          "Chicago",
-          "Denver",
-          "Hong-Kong",
-          "LA",
-          "Manhattan",
-          "FDC",
-          "Portland",
-          "Seattle",
-          "Saskatoon",
-          "Sacramento",
-          "Quebec City",
-          "Algonkian-Manitou Council",
-          "Athabaskan Council",
-          "Amazonia",
-          "Aztlan",
-          "Carribean League",
-          "California Free State",
-          "Pueblo Corporate Council",
-          "CAS",
-          "UCAS",
-          "Quebec",
-          "Salish-Shidhe Council",
-          "Sioux",
-          "Tir Tairngire",
-          "Tsimshian Protectorate",
-          "Yukutan"
-        ]
-      },
-      {
-        "name": "Triads",
-        "attribute": "INT",
-        "category": [
-          "Street"
-        ],
-        "default": "No",
-        "specs": [
-          "Turf",
-          "Politics",
-          "Signs",
-          "History",
-          "Organizations",
-          "Safe Houses"
-        ]
-      },
-      {
-        "name": "Trids",
-        "attribute": "INT",
-        "category": [
-          "Interest"
-        ],
-        "default": "No",
-        "specs": [
-          "Action",
-          "Cop",
-          "Documentary",
-          "Fantasy",
-          "Rom-Com",
-          "Sci-fi"
-        ]
-      },
-      {
-        "name": "Underworld",
-        "attribute": "INT",
-        "category": [
-          "Street"
-        ],
-        "default": "No",
-        "specs": [
-          "Arson",
-          "Black Magic",
-          "Blackmail",
-          "BTL",
-          "Counterfitting",
-          "Drugs",
-          "Fencing",
-          "Financial Crime",
-          "Fixing",
-          "Forgery",
-          "Gambling",
-          "Grifting",
-          "Hijacking",
-          "Kidnapping",
-          "Loansharking",
-          "Medicine",
-          "Matrix Crime",
-          "Money Laundering",
-          "Pornography",
-          "Prostitution",
-          "Protection",
-          "Robbery",
-          "Smuggling",
-          "White Collar"
-        ]
-      },
-      {
-        "name": "Vory",
-        "attribute": "INT",
-        "category": [
-          "Street"
-        ],
-        "default": "No",
-        "specs": [
-          "Turf",
-          "Politics",
-          "Signs",
-          "History",
-          "Organizations",
-          "Safe Houses"
-        ]
-      },
-      {
-        "name": "Yakuza",
-        "attribute": "INT",
-        "category": [
-          "Street"
-        ],
-        "default": "No",
-        "specs": [
-          "Turf",
-          "Politics",
-          "Signs",
-          "History",
-          "Organizations",
-          "Safe Houses"
-        ]
-      }
-    ]
-  }
+  "knowledgeskills": [
+    {
+      "name": "Arabic",
+      "attribute": "INT",
+      "category": [
+        "Language"
+      ],
+      "default": "No",
+      "specs": [
+        "Read/Write",
+        "Speak",
+        "Dialect",
+        "Lingo"
+      ]
+    },
+    {
+      "name": "Bengali",
+      "attribute": "INT",
+      "category": [
+        "Language"
+      ],
+      "default": "No",
+      "specs": [
+        "Read/Write",
+        "Speak",
+        "Dialect",
+        "Lingo"
+      ]
+    },
+    {
+      "name": "Bulgarian",
+      "attribute": "INT",
+      "category": [
+        "Language"
+      ],
+      "default": "No",
+      "specs": [
+        "Read/Write",
+        "Speak",
+        "Dialect",
+        "Lingo"
+      ]
+    },
+    {
+      "name": "Croatian",
+      "attribute": "INT",
+      "category": [
+        "Language"
+      ],
+      "default": "No",
+      "specs": [
+        "Read/Write",
+        "Speak",
+        "Dialect",
+        "Lingo"
+      ]
+    },
+    {
+      "name": "Cantonese",
+      "attribute": "INT",
+      "category": [
+        "Language"
+      ],
+      "default": "No",
+      "specs": [
+        "Read/Write",
+        "Speak",
+        "Dialect",
+        "Lingo"
+      ]
+    },
+    {
+      "name": "Danish",
+      "attribute": "INT",
+      "category": [
+        "Language"
+      ],
+      "default": "No",
+      "specs": [
+        "Read/Write",
+        "Speak",
+        "Dialect",
+        "Lingo"
+      ]
+    },
+    {
+      "name": "English",
+      "attribute": "INT",
+      "category": [
+        "Language"
+      ],
+      "default": "No",
+      "specs": [
+        "Read/Write",
+        "Speak",
+        "Dialect",
+        "Lingo"
+      ]
+    },
+    {
+      "name": "French",
+      "attribute": "INT",
+      "category": [
+        "Language"
+      ],
+      "default": "No",
+      "specs": [
+        "Read/Write",
+        "Speak",
+        "Dialect",
+        "Lingo"
+      ]
+    },
+    {
+      "name": "German",
+      "attribute": "INT",
+      "category": [
+        "Language"
+      ],
+      "default": "No",
+      "specs": [
+        "Read/Write",
+        "Speak",
+        "Dialect",
+        "Lingo"
+      ]
+    },
+    {
+      "name": "Hebrew",
+      "attribute": "INT",
+      "category": [
+        "Language"
+      ],
+      "default": "No",
+      "specs": [
+        "Read/Write",
+        "Speak",
+        "Dialect",
+        "Lingo"
+      ]
+    },
+    {
+      "name": "Hindi-Urdu",
+      "attribute": "INT",
+      "category": [
+        "Language"
+      ],
+      "default": "No",
+      "specs": [
+        "Read/Write",
+        "Speak",
+        "Dialect",
+        "Lingo"
+      ]
+    },
+    {
+      "name": "Indonesian",
+      "attribute": "INT",
+      "category": [
+        "Language"
+      ],
+      "default": "No",
+      "specs": [
+        "Read/Write",
+        "Speak",
+        "Dialect",
+        "Lingo"
+      ]
+    },
+    {
+      "name": "Italian",
+      "attribute": "INT",
+      "category": [
+        "Language"
+      ],
+      "default": "No",
+      "specs": [
+        "Read/Write",
+        "Speak",
+        "Dialect",
+        "Lingo"
+      ]
+    },
+    {
+      "name": "Japanese",
+      "attribute": "INT",
+      "category": [
+        "Language"
+      ],
+      "default": "No",
+      "specs": [
+        "Read/Write",
+        "Speak",
+        "Dialect",
+        "Lingo"
+      ]
+    },
+    {
+      "name": "Korean",
+      "attribute": "INT",
+      "category": [
+        "Language"
+      ],
+      "default": "No",
+      "specs": [
+        "Read/Write",
+        "Speak",
+        "Dialect",
+        "Lingo"
+      ]
+    },
+    {
+      "name": "Latin",
+      "attribute": "INT",
+      "category": [
+        "Language"
+      ],
+      "default": "No",
+      "specs": [
+        "Read/Write",
+        "Speak",
+        "Dialect",
+        "Lingo"
+      ]
+    },
+    {
+      "name": "Mandarin",
+      "attribute": "INT",
+      "category": [
+        "Language"
+      ],
+      "default": "No",
+      "specs": [
+        "Read/Write",
+        "Speak",
+        "Dialect",
+        "Lingo"
+      ]
+    },
+    {
+      "name": "Or'zet",
+      "attribute": "INT",
+      "category": [
+        "Language"
+      ],
+      "default": "No",
+      "specs": [
+        "Read/Write",
+        "Speak",
+        "Dialect",
+        "Lingo"
+      ]
+    },
+    {
+      "name": "Persian",
+      "attribute": "INT",
+      "category": [
+        "Language"
+      ],
+      "default": "No",
+      "specs": [
+        "Read/Write",
+        "Speak",
+        "Dialect",
+        "Lingo"
+      ]
+    },
+    {
+      "name": "Portuguese",
+      "attribute": "INT",
+      "category": [
+        "Language"
+      ],
+      "default": "No",
+      "specs": [
+        "Read/Write",
+        "Speak",
+        "Dialect",
+        "Lingo"
+      ]
+    },
+    {
+      "name": "Punjabi",
+      "attribute": "INT",
+      "category": [
+        "Language"
+      ],
+      "default": "No",
+      "specs": [
+        "Read/Write",
+        "Speak",
+        "Dialect",
+        "Lingo"
+      ]
+    },
+    {
+      "name": "Polish",
+      "attribute": "INT",
+      "category": [
+        "Language"
+      ],
+      "default": "No",
+      "specs": [
+        "Read/Write",
+        "Speak",
+        "Dialect",
+        "Lingo"
+      ]
+    },
+    {
+      "name": "Russian",
+      "attribute": "INT",
+      "category": [
+        "Language"
+      ],
+      "default": "No",
+      "specs": [
+        "Read/Write",
+        "Speak",
+        "Dialect",
+        "Lingo"
+      ]
+    },
+    {
+      "name": "Sioux",
+      "attribute": "INT",
+      "category": [
+        "Language"
+      ],
+      "default": "No",
+      "specs": [
+        "Read/Write",
+        "Speak",
+        "Dialect",
+        "Lingo"
+      ]
+    },
+    {
+      "name": "Spanish",
+      "attribute": "INT",
+      "category": [
+        "Language"
+      ],
+      "default": "No",
+      "specs": [
+        "Read/Write",
+        "Speak",
+        "Dialect",
+        "Lingo"
+      ]
+    },
+    {
+      "name": "Sperethiel",
+      "attribute": "INT",
+      "category": [
+        "Language"
+      ],
+      "default": "No",
+      "specs": [
+        "Read/Write",
+        "Speak",
+        "Dialect",
+        "Lingo"
+      ]
+    },
+    {
+      "name": "Thai",
+      "attribute": "INT",
+      "category": [
+        "Language"
+      ],
+      "default": "No",
+      "specs": [
+        "Read/Write",
+        "Speak",
+        "Dialect",
+        "Lingo"
+      ]
+    },
+    {
+      "name": "Turkish",
+      "attribute": "INT",
+      "category": [
+        "Language"
+      ],
+      "default": "No",
+      "specs": [
+        "Read/Write",
+        "Speak",
+        "Dialect",
+        "Lingo"
+      ]
+    },
+    {
+      "name": "Wu",
+      "attribute": "INT",
+      "category": [
+        "Language"
+      ],
+      "default": "No",
+      "specs": [
+        "Read/Write",
+        "Speak",
+        "Dialect",
+        "Lingo"
+      ]
+    },
+    {
+      "name": "Xiang",
+      "attribute": "INT",
+      "category": [
+        "Language"
+      ],
+      "default": "No",
+      "specs": [
+        "Read/Write",
+        "Speak",
+        "Dialect",
+        "Lingo"
+      ]
+    },
+    {
+      "name": "Area Knowledge: Atlanta",
+      "attribute": "INT",
+      "category": [
+        "Street"
+      ],
+      "default": "No"
+    },
+    {
+      "name": "Area Knowledge: Cheyenne",
+      "attribute": "INT",
+      "category": [
+        "Street"
+      ],
+      "default": "No"
+    },
+    {
+      "name": "Area Knowledge: Chicago",
+      "attribute": "INT",
+      "category": [
+        "Street"
+      ],
+      "default": "No"
+    },
+    {
+      "name": "Area Knowledge: Denver",
+      "attribute": "INT",
+      "category": [
+        "Street"
+      ],
+      "default": "No"
+    },
+    {
+      "name": "Area Knowledge: FDC",
+      "attribute": "INT",
+      "category": [
+        "Street"
+      ],
+      "default": "No"
+    },
+    {
+      "name": "Area Knowledge: Hong-Kong",
+      "attribute": "INT",
+      "category": [
+        "Street"
+      ],
+      "default": "No"
+    },
+    {
+      "name": "Area Knowledge: LA",
+      "attribute": "INT",
+      "category": [
+        "Street"
+      ],
+      "default": "No"
+    },
+    {
+      "name": "Area Knowledge: Manhattan",
+      "attribute": "INT",
+      "category": [
+        "Street"
+      ],
+      "default": "No"
+    },
+    {
+      "name": "Area Knowledge: Portland",
+      "attribute": "INT",
+      "category": [
+        "Street"
+      ],
+      "default": "No"
+    },
+    {
+      "name": "Area Knowledge: Seattle",
+      "attribute": "INT",
+      "category": [
+        "Street"
+      ],
+      "default": "No",
+      "specs": [
+        "Auburn",
+        "Bellevue",
+        "Council Island",
+        "Downtown",
+        "Everett",
+        "Puyallup",
+        "Redmond",
+        "Renton",
+        "Snohomish",
+        "Outremer",
+        "Seattle Matrix",
+        "Salish-Shide"
+      ]
+    },
+    {
+      "name": "Alcohol",
+      "attribute": "INT",
+      "category": [
+        "Interest"
+      ],
+      "default": "No",
+      "specs": [
+        "Beers",
+        "Coolers",
+        "Hard Liquor",
+        "Wines",
+        "Atlanta",
+        "Cheyenne",
+        "Chicago",
+        "Denver",
+        "Hong-Kong",
+        "LA",
+        "Manhattan",
+        "FDC",
+        "Portland",
+        "Seattle",
+        "Saskatoon",
+        "Sacramento",
+        "Quebec City",
+        "Algonkian-Manitou Council",
+        "Athabaskan Council",
+        "Amazonia",
+        "Aztlan",
+        "Carribean League",
+        "California Free State",
+        "Pueblo Corporate Council",
+        "CAS",
+        "UCAS",
+        "Quebec",
+        "Salish-Shidhe Council",
+        "Sioux",
+        "Tir Tairngire",
+        "Tsimshian Protectorate",
+        "Yukutan",
+        "N. America",
+        "S. America",
+        "Antarctica",
+        "Africa",
+        "Western Europe",
+        "Eastern Europe",
+        "Northern Europe",
+        "Asia - Pacific",
+        "Asia - Minor",
+        "Middle East",
+        "Australia"
+      ]
+    },
+    {
+      "name": "Architecture",
+      "attribute": "LOG",
+      "category": [
+        "Professional"
+      ],
+      "default": "No",
+      "specs": [
+        "Commercial",
+        "Residential",
+        "Elven",
+        "Orcish",
+        "Medieval",
+        "Gothic",
+        "Renaissance",
+        "Baroque",
+        "Victorian",
+        "Neo-Classical",
+        "Modern",
+        "High-Tech"
+      ]
+    },
+    {
+      "name": "Art",
+      "attribute": "LOG",
+      "category": [
+        "Academic"
+      ],
+      "default": "No",
+      "specs": [
+        "Da Vinci",
+        "Monet",
+        "Matisse",
+        "Michelangelo",
+        "Picasso",
+        "Rembrandt",
+        "Van Gogh",
+        "N. America",
+        "S. America",
+        "Antarctica",
+        "Africa",
+        "Western Europe",
+        "Eastern Europe",
+        "Northern Europe",
+        "Asia - Pacific",
+        "Asia - Minor",
+        "Middle East",
+        "Australia"
+      ]
+    },
+    {
+      "name": "Biology",
+      "attribute": "LOG",
+      "category": [
+        "Academic"
+      ],
+      "default": "No",
+      "specs": [
+        "Anatomy",
+        "Microbiology",
+        "Physiology"
+      ]
+    },
+    {
+      "name": "Business",
+      "attribute": "LOG",
+      "category": [
+        "Professional"
+      ],
+      "default": "No",
+      "specs": [
+        "Budgeting",
+        "Compliance",
+        "Reporting",
+        "Manufacturing",
+        "People Management",
+        "Project Management",
+        "Retail",
+        "Supply and Demand",
+        "Small Business",
+        "Time Management"
+      ]
+    },
+    {
+      "name": "Chemistry",
+      "attribute": "LOG",
+      "category": [
+        "Academic"
+      ],
+      "default": "No",
+      "specs": [
+        "Industrial",
+        "Organic",
+        "Pharmaceuticals"
+      ]
+    },
+    {
+      "name": "Combat Tactics",
+      "attribute": "LOG",
+      "category": [
+        "Professional"
+      ],
+      "default": "No",
+      "specs": [
+        "Ambush",
+        "Guerilla",
+        "Hostage Rescue",
+        "Magic",
+        "Anti-Magic",
+        "Open Field",
+        "Outer Space",
+        "Terror",
+        "Underwater",
+        "Urban",
+        "Wilderness"
+      ]
+    },
+    {
+      "name": "Bars and Clubs",
+      "attribute": "INT",
+      "category": [
+        "Street"
+      ],
+      "default": "No",
+      "specs": [
+        "Atlanta",
+        "Awakened",
+        "Biker",
+        "Cheyenne",
+        "Chicago",
+        "Corporate",
+        "Denver",
+        "Dwarf",
+        "Elf",
+        "FDC",
+        "Gay",
+        "High-Class",
+        "Hotel",
+        "Jazz",
+        "Hong-Kong",
+        "LA",
+        "Low-Class",
+        "Mafia",
+        "Matrix",
+        "Manhattan",
+        "Ork",
+        "Portland",
+        "Piano",
+        "Pubs",
+        "Quebec City",
+        "Rock",
+        "Sacramento",
+        "Saskatoon",
+        "Seattle",
+        "Sports",
+        "Surge",
+        "Triad",
+        "Troll",
+        "Vory",
+        "Yakuza"
+      ]
+    },
+    {
+      "name": "Data Havens",
+      "attribute": "INT",
+      "category": [
+        "Street"
+      ],
+      "default": "No",
+      "specs": [
+        "Hacking",
+        "Magic",
+        "Matrix",
+        "Shadows",
+        "N. America",
+        "S. America",
+        "Antarctica",
+        "Africa",
+        "Western Europe",
+        "Eastern Europe",
+        "Northern Europe",
+        "Asia - Pacific",
+        "Asia - Minor",
+        "Middle East",
+        "Australia"
+      ]
+    },
+    {
+      "name": "Economics",
+      "attribute": "LOG",
+      "category": [
+        "Academic"
+      ],
+      "default": "No",
+      "specs": [
+        "Corporate",
+        "Tribal",
+        "Underworld",
+        "Atlanta",
+        "Cheyenne",
+        "Chicago",
+        "Denver",
+        "Hong-Kong",
+        "LA",
+        "Manhattan",
+        "FDC",
+        "Portland",
+        "Seattle",
+        "Saskatoon",
+        "Sacramento",
+        "Quebec City",
+        "Algonkian-Manitou Council",
+        "Athabaskan Council",
+        "Amazonia",
+        "Aztlan",
+        "Carribean League",
+        "California Free State",
+        "Pueblo Corporate Council",
+        "CAS",
+        "UCAS",
+        "Quebec",
+        "Salish-Shidhe Council",
+        "Sioux",
+        "Tir Tairngire",
+        "Tsimshian Protectorate",
+        "Yukutan",
+        "N. America",
+        "S. America",
+        "Antarctica",
+        "Africa",
+        "Western Europe",
+        "Eastern Europe",
+        "Northern Europe",
+        "Asia - Pacific",
+        "Asia - Minor",
+        "Middle East",
+        "Australia"
+      ]
+    },
+    {
+      "name": "Engineering",
+      "attribute": "LOG",
+      "category": [
+        "Academic"
+      ],
+      "default": "No",
+      "specs": [
+        "Chemical",
+        "Civil",
+        "Electrical",
+        "Mechanical",
+        "Nuclear"
+      ]
+    },
+    {
+      "name": "Firearms",
+      "attribute": "LOG",
+      "category": [
+        "Professional"
+      ],
+      "default": "No",
+      "specs": [
+        "Accessories",
+        "Ammunition",
+        "Automatics",
+        "Design",
+        "Heavy Weapons",
+        "History",
+        "Longarms",
+        "Modification",
+        "Pistols"
+      ]
+    },
+    {
+      "name": "Gaming",
+      "attribute": "INT",
+      "category": [
+        "Interest"
+      ],
+      "default": "No",
+      "specs": [
+        "Dawn of Atlantis",
+        "Dark Eye",
+        "Grand Larceny",
+        "Killing Floor",
+        "Paranormal Crisis",
+        "Miracle Shooter",
+        "Spectrum Delta",
+        "SC IV: Protoss Gate",
+        "World of Shadows",
+        "Urban Brawl League 70",
+        "Guild Ages"
+      ]
+    },
+    {
+      "name": "Gangs",
+      "attribute": "INT",
+      "category": [
+        "Street"
+      ],
+      "default": "No",
+      "specs": [
+        "Ancients",
+        "Area Boys",
+        "Cirque du Sorciere",
+        "Chaos Engine",
+        "Cocotona",
+        "Comando Verdge",
+        "Cutters",
+        "Desolation Angels",
+        "First Nations",
+        "Ghost Cartels",
+        "Haloweeners",
+        "Hell's Angels",
+        "Iron Crosses",
+        "Los Verdugos",
+        "Los Angeles Ardientes",
+        "Lynch Mob",
+        "Merlyns",
+        "Numbers Gang",
+        "Spikes",
+        "Steppin Wulfs",
+        "Thunder Boys",
+        "Yardies",
+        "Vikings",
+        "Atlanta",
+        "Cheyenne",
+        "Chicago",
+        "Denver",
+        "Hong-Kong",
+        "LA",
+        "Manhattan",
+        "FDC",
+        "Portland",
+        "Seattle",
+        "Saskatoon",
+        "Sacramento",
+        "Quebec City",
+        "Algonkian-Manitou Council",
+        "Athabaskan Council",
+        "Amazonia",
+        "Aztlan",
+        "Carribean League",
+        "California Free State",
+        "Pueblo Corporate Council",
+        "CAS",
+        "UCAS",
+        "Quebec",
+        "Salish-Shidhe Council",
+        "Sioux",
+        "Tir Tairngire",
+        "Tsimshian Protectorate",
+        "Yukutan"
+      ]
+    },
+    {
+      "name": "Ghost Cartels",
+      "attribute": "INT",
+      "category": [
+        "Street"
+      ],
+      "default": "No",
+      "specs": [
+        "Turf",
+        "Politics",
+        "Signs",
+        "History",
+        "Organizations",
+        "Safe Houses"
+      ]
+    },
+    {
+      "name": "History",
+      "attribute": "LOG",
+      "category": [
+        "Academic"
+      ],
+      "default": "No",
+      "specs": [
+        "Art",
+        "Corporate",
+        "Military",
+        "Political",
+        "Religion",
+        "Social",
+        "Tribal",
+        "Underworld",
+        "Atlanta",
+        "Cheyenne",
+        "Chicago",
+        "Denver",
+        "Hong-Kong",
+        "LA",
+        "Manhattan",
+        "FDC",
+        "Portland",
+        "Seattle",
+        "Saskatoon",
+        "Sacramento",
+        "Quebec City",
+        "Algonkian-Manitou Council",
+        "Athabaskan Council",
+        "Amazonia",
+        "Aztlan",
+        "Carribean League",
+        "California Free State",
+        "Pueblo Corporate Council",
+        "CAS",
+        "UCAS",
+        "Quebec",
+        "Salish-Shidhe Council",
+        "Sioux",
+        "Tir Tairngire",
+        "Tsimshian Protectorate",
+        "Yukutan",
+        "N. America",
+        "S. America",
+        "Antarctica",
+        "Africa",
+        "Western Europe",
+        "Eastern Europe",
+        "Northern Europe",
+        "Asia - Pacific",
+        "Asia - Minor",
+        "Middle East",
+        "Australia"
+      ]
+    },
+    {
+      "name": "Music",
+      "attribute": "INT",
+      "category": [
+        "Interest"
+      ],
+      "default": "No",
+      "specs": [
+        "Goblin Rock",
+        "Powernoize",
+        "Rockabilly",
+        "Sinthcore",
+        "Wizpunk",
+        "Trash Metal Troll",
+        "Retro Gothic",
+        "Elven Rap",
+        "Neo-J Pop",
+        "Nova K Rock"
+      ]
+    },
+    {
+      "name": "News",
+      "attribute": "INT",
+      "category": [
+        "Interest"
+      ],
+      "default": "No",
+      "specs": [
+        "Business",
+        "Entertainment",
+        "Health",
+        "Science/Environment",
+        "Sports",
+        "Technology",
+        "Underworld",
+        "Atlanta",
+        "Cheyenne",
+        "Chicago",
+        "Denver",
+        "Hong-Kong",
+        "LA",
+        "Manhattan",
+        "FDC",
+        "Portland",
+        "Seattle",
+        "Saskatoon",
+        "Sacramento",
+        "Quebec City",
+        "Algonkian-Manitou Council",
+        "Athabaskan Council",
+        "Amazonia",
+        "Aztlan",
+        "Carribean League",
+        "California Free State",
+        "Pueblo Corporate Council",
+        "CAS",
+        "UCAS",
+        "Quebec",
+        "Salish-Shidhe Council",
+        "Sioux",
+        "Tir Tairngire",
+        "Tsimshian Protectorate",
+        "Yukutan",
+        "N. America",
+        "S. America",
+        "Antarctica",
+        "Africa",
+        "Western Europe",
+        "Eastern Europe",
+        "Northern Europe",
+        "Asia - Pacific",
+        "Asia - Minor",
+        "Middle East",
+        "Australia"
+      ]
+    },
+    {
+      "name": "Parazoology",
+      "attribute": "LOG",
+      "category": [
+        "Academic"
+      ],
+      "default": "No",
+      "specs": [
+        "Spirits",
+        "N. America",
+        "S. America",
+        "Antarctica",
+        "Africa",
+        "Western Europe",
+        "Eastern Europe",
+        "Northern Europe",
+        "Asia - Pacific",
+        "Asia - Minor",
+        "Middle East",
+        "Australia"
+      ]
+    },
+    {
+      "name": "Politics",
+      "attribute": "LOG",
+      "category": [
+        "Academic"
+      ],
+      "default": "No",
+      "specs": [
+        "Corporate",
+        "Military",
+        "Political",
+        "Social",
+        "Tribal",
+        "Underworld",
+        "Atlanta",
+        "Cheyenne",
+        "Chicago",
+        "Denver",
+        "Hong-Kong",
+        "LA",
+        "Manhattan",
+        "FDC",
+        "Portland",
+        "Seattle",
+        "Saskatoon",
+        "Sacramento",
+        "Quebec City",
+        "Algonkian-Manitou Council",
+        "Athabaskan Council",
+        "Amazonia",
+        "Aztlan",
+        "Carribean League",
+        "California Free State",
+        "Pueblo Corporate Council",
+        "CAS",
+        "UCAS",
+        "Quebec",
+        "Salish-Shidhe Council",
+        "Sioux",
+        "Tir Tairngire",
+        "Tsimshian Protectorate",
+        "Yukutan",
+        "N. America",
+        "S. America",
+        "Antarctica",
+        "Africa",
+        "Western Europe",
+        "Eastern Europe",
+        "Northern Europe",
+        "Asia - Pacific",
+        "Asia - Minor",
+        "Middle East",
+        "Australia",
+        "Politics"
+      ]
+    },
+    {
+      "name": "Literature",
+      "attribute": "LOG",
+      "category": [
+        "Academic"
+      ],
+      "default": "No",
+      "specs": [
+        "Science Fiction",
+        "Poetry",
+        "Romance",
+        "N. America",
+        "S. America",
+        "Antarctica",
+        "Africa",
+        "Western Europe",
+        "Eastern Europe",
+        "Northern Europe",
+        "Asia - Pacific",
+        "Asia - Minor",
+        "Middle East",
+        "Australia"
+      ]
+    },
+    {
+      "name": "Mafia",
+      "attribute": "INT",
+      "category": [
+        "Street"
+      ],
+      "default": "No",
+      "specs": [
+        "Turf",
+        "Politics",
+        "Signs",
+        "History",
+        "Organizations",
+        "Safe Houses"
+      ]
+    },
+    {
+      "name": "Magic Traditions",
+      "attribute": "LOG",
+      "category": [
+        "Academic"
+      ],
+      "default": "No",
+      "specs": [
+        "Adepts",
+        "Shamans",
+        "Mages",
+        "Magic Adepts"
+      ]
+    },
+    {
+      "name": "Magical Theory",
+      "attribute": "LOG",
+      "category": [
+        "Academic"
+      ],
+      "default": "No",
+      "specs": [
+        "Sorcery",
+        "Conjuring",
+        "Enchanting",
+        "Foci",
+        "Astral World",
+        "Metaplanes",
+        "Initiation",
+        "Mentor Spirits"
+      ]
+    },
+    {
+      "name": "Magical Threats",
+      "attribute": "LOG",
+      "category": [
+        "Academic"
+      ],
+      "default": "No",
+      "specs": [
+        "Blood Magic",
+        "Toxic Magic",
+        "Insect Spirits"
+      ]
+    },
+    {
+      "name": "Military",
+      "attribute": "INT",
+      "category": [
+        "Interest"
+      ],
+      "default": "No",
+      "specs": [
+        "Air Force",
+        "Army",
+        "Coast Guard",
+        "Marines",
+        "Military Magic",
+        "Navy",
+        "Special Forces"
+      ]
+    },
+    {
+      "name": "Religion",
+      "attribute": "LOG",
+      "category": [
+        "Academic"
+      ],
+      "default": "No",
+      "specs": [
+        "Islam",
+        "Judaism",
+        "Buddhism",
+        "Christianity",
+        "Hinduism",
+        "Zoroastrianism",
+        "Shinto",
+        "Paganism",
+        "Taoism"
+      ]
+    },
+    {
+      "name": "Security Design",
+      "attribute": "INT",
+      "category": [
+        "Interest"
+      ],
+      "default": "No",
+      "specs": [
+        "Bank",
+        "Corporate",
+        "Government",
+        "Home",
+        "Public Event",
+        "Vehicle"
+      ]
+    },
+    {
+      "name": "Security Companies",
+      "attribute": "LOG",
+      "category": [
+        "Academic"
+      ],
+      "default": "No",
+      "specs": [
+        "Lone Star",
+        "Knight Errant",
+        "Hard Corps",
+        "Minutemen Security"
+      ]
+    },
+    {
+      "name": "Security Tactics",
+      "attribute": "LOG",
+      "category": [
+        "Academic"
+      ],
+      "default": "No",
+      "specs": [
+        "Corporate",
+        "Crimson Rush",
+        "Entertainment",
+        "Government",
+        "Security Company",
+        "Rapid Response",
+        "Border Patrol",
+        "Customs"
+      ]
+    },
+    {
+      "name": "Shadow Community",
+      "attribute": "INT",
+      "category": [
+        "Street"
+      ],
+      "default": "No",
+      "specs": [
+        "Turf",
+        "Politics",
+        "History",
+        "Organizations",
+        "Safe Houses",
+        "News",
+        "Personalities",
+        "Rumours"
+      ]
+    },
+    {
+      "name": "Spirits",
+      "attribute": "LOG",
+      "category": [
+        "Professional"
+      ],
+      "default": "No",
+      "specs": [
+        "Beast",
+        "Earth",
+        "Fire",
+        "Guardian",
+        "Guidance",
+        "Man",
+        "Plant",
+        "Task",
+        "Wind",
+        "Water",
+        "Watcher"
+      ]
+    },
+    {
+      "name": "Sports",
+      "attribute": "INT",
+      "category": [
+        "Interest"
+      ],
+      "default": "No",
+      "specs": [
+        "Baseball",
+        "Combat Biking",
+        "Football",
+        "Hockey",
+        "Soccer",
+        "UFC",
+        "Urban Brawl",
+        "Wrestling"
+      ]
+    },
+    {
+      "name": "Syndicates",
+      "attribute": "INT",
+      "category": [
+        "Street"
+      ],
+      "default": "No",
+      "specs": [
+        "Ghost Cartels",
+        "Mafia",
+        "Triad",
+        "Yakuza",
+        "Vory",
+        "Atlanta",
+        "Cheyenne",
+        "Chicago",
+        "Denver",
+        "Hong-Kong",
+        "LA",
+        "Manhattan",
+        "FDC",
+        "Portland",
+        "Seattle",
+        "Saskatoon",
+        "Sacramento",
+        "Quebec City",
+        "Algonkian-Manitou Council",
+        "Athabaskan Council",
+        "Amazonia",
+        "Aztlan",
+        "Carribean League",
+        "California Free State",
+        "Pueblo Corporate Council",
+        "CAS",
+        "UCAS",
+        "Quebec",
+        "Salish-Shidhe Council",
+        "Sioux",
+        "Tir Tairngire",
+        "Tsimshian Protectorate",
+        "Yukutan"
+      ]
+    },
+    {
+      "name": "Triads",
+      "attribute": "INT",
+      "category": [
+        "Street"
+      ],
+      "default": "No",
+      "specs": [
+        "Turf",
+        "Politics",
+        "Signs",
+        "History",
+        "Organizations",
+        "Safe Houses"
+      ]
+    },
+    {
+      "name": "Trids",
+      "attribute": "INT",
+      "category": [
+        "Interest"
+      ],
+      "default": "No",
+      "specs": [
+        "Action",
+        "Cop",
+        "Documentary",
+        "Fantasy",
+        "Rom-Com",
+        "Sci-fi"
+      ]
+    },
+    {
+      "name": "Underworld",
+      "attribute": "INT",
+      "category": [
+        "Street"
+      ],
+      "default": "No",
+      "specs": [
+        "Arson",
+        "Black Magic",
+        "Blackmail",
+        "BTL",
+        "Counterfitting",
+        "Drugs",
+        "Fencing",
+        "Financial Crime",
+        "Fixing",
+        "Forgery",
+        "Gambling",
+        "Grifting",
+        "Hijacking",
+        "Kidnapping",
+        "Loansharking",
+        "Medicine",
+        "Matrix Crime",
+        "Money Laundering",
+        "Pornography",
+        "Prostitution",
+        "Protection",
+        "Robbery",
+        "Smuggling",
+        "White Collar"
+      ]
+    },
+    {
+      "name": "Vory",
+      "attribute": "INT",
+      "category": [
+        "Street"
+      ],
+      "default": "No",
+      "specs": [
+        "Turf",
+        "Politics",
+        "Signs",
+        "History",
+        "Organizations",
+        "Safe Houses"
+      ]
+    },
+    {
+      "name": "Yakuza",
+      "attribute": "INT",
+      "category": [
+        "Street"
+      ],
+      "default": "No",
+      "specs": [
+        "Turf",
+        "Politics",
+        "Signs",
+        "History",
+        "Organizations",
+        "Safe Houses"
+      ]
+    }
+  ]
 }
