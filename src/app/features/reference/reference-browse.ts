@@ -9,6 +9,7 @@ import {
 } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { ChummerDataService } from '../../core/services/chummer-data.service';
+import { ContentFilterService } from '../../core/services/content-filter.service';
 import { BookRegistryService } from '../../core/services/book-registry.service';
 import {
   DataCatalogEntry,
@@ -20,12 +21,15 @@ import {
   categoryLabel,
   itemSummary,
   matchesSearch,
+  matchesSourceScope,
   sortByName,
 } from '../../core/utils/item-helpers';
+import { contentSourceScopeLabel } from '../../core/models/content-source-scope';
+import { SourceFilterControl } from '../../shared/source-filter-control';
 
 @Component({
   selector: 'app-reference-browse',
-  imports: [RouterLink],
+  imports: [RouterLink, SourceFilterControl],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
   <nav class="breadcrumb" aria-label="Breadcrumb">
@@ -75,8 +79,12 @@ import {
           autocomplete="off"
         />
       </label>
+
+      <app-source-filter-control />
+
       <p class="result-count" role="status" aria-live="polite">
-        {{ filteredItems().length }} of {{ items().length }} items
+        {{ filteredItems().length }} of {{ scopedItems().length }} items
+        <span class="scope-label">({{ contentSourceScopeLabel(contentFilter.scope()) }})</span>
       </p>
     </div>
 
@@ -203,6 +211,11 @@ import {
       margin: 0;
       font-size: 0.875rem;
       color: var(--color-text-muted);
+
+      .scope-label {
+        display: block;
+        font-size: 0.8125rem;
+      }
     }
 
     .loading,
@@ -274,6 +287,7 @@ export class ReferenceBrowse {
   readonly categoryId = input.required<string>();
 
   private readonly data = inject(ChummerDataService);
+  readonly contentFilter = inject(ContentFilterService);
   readonly bookRegistry = inject(BookRegistryService);
 
   readonly catalogEntry = computed(() => getCatalogEntry(this.categoryId()));
@@ -289,8 +303,19 @@ export class ReferenceBrowse {
 
   readonly filteredItems = computed(() => {
     const query = this.searchQuery();
-    return sortByName(this.items().filter((item) => matchesSearch(item, query)));
+    return sortByName(
+      this.scopedItems().filter((item) => matchesSearch(item, query)),
+    );
   });
+
+  readonly scopedItems = computed(() => {
+    this.contentFilter.scope();
+    return this.items().filter((item) =>
+      matchesSourceScope(item, this.contentFilter.scope()),
+    );
+  });
+
+  protected readonly contentSourceScopeLabel = contentSourceScopeLabel;
 
   protected readonly categoryLabel = categoryLabel;
   protected readonly itemSummary = itemSummary;

@@ -1,5 +1,6 @@
 export * from './models/attribute';
 export * from './models/character';
+export * from './models/character-quality';
 export * from './models/improvement';
 export * from './engine/formula-evaluator';
 export * from './engine/improvement-manager';

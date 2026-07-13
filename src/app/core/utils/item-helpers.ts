@@ -1,4 +1,5 @@
 import { ChummerItem } from '../models/chummer-data.types';
+import { ContentSourceScope, isBaseGameSource } from '../models/content-source-scope';
 
 export function categoryLabel(item: ChummerItem): string {
   const category = item['category'] as unknown;
@@ -61,6 +62,11 @@ export function itemSummary(item: ChummerItem): string {
   if (item['dice']) parts.push(`Dice: ${scalarValue(item['dice'])}`);
 
   return parts.join(' · ');
+}
+
+export function matchesSourceScope(item: ChummerItem, scope: ContentSourceScope): boolean {
+  if (scope === 'all') return true;
+  return isBaseGameSource(item.source);
 }
 
 export function matchesSearch(item: ChummerItem, query: string): boolean {

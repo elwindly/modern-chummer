@@ -106,14 +106,48 @@ function parseImprovements(root: Record<string, unknown>): Improvement[] {
     );
 }
 
-function parseQualities(root: Record<string, unknown>): string[] {
+function parseQualities(root: Record<string, unknown>): {
+  names: string[];
+  origins: Record<string, import('../models/character-quality').QualityOrigin>;
+  adjustments: Record<string, import('../models/character-quality').QualityAdjustment>;
+} {
   const qualitiesNode = root['qualities'] as Record<string, unknown> | undefined;
   const qualityNodes = asArray(qualitiesNode?.['quality'] as ChumNode);
 
-  return qualityNodes
-    .filter((node): node is Record<string, unknown> => !!node && typeof node === 'object')
-    .map((node) => text(node['name']))
-    .filter(Boolean);
+  const names: string[] = [];
+  const origins: Record<string, import('../models/character-quality').QualityOrigin> = {};
+  const adjustments: Record<string, import('../models/character-quality').QualityAdjustment> = {};
+
+  for (const node of qualityNodes) {
+    if (!node || typeof node !== 'object') continue;
+    const record = node as Record<string, unknown>;
+    const name = text(record['name']);
+    if (!name) continue;
+
+    names.push(name);
+
+    const source = text(record['qualitysource']).toLowerCase();
+    if (source === 'metatype') {
+      origins[name] = 'metatype';
+    } else if (source === 'metatyperemovable') {
+      origins[name] = 'metatypeRemovable';
+    } else {
+      origins[name] = 'selected';
+    }
+
+    const bp = Number(text(record['bp']));
+    const contributeToLimit = text(record['contributetolimit']).toLowerCase();
+    if (
+      origins[name] === 'selected' &&
+      contributeToLimit === 'false' &&
+      Number.isFinite(bp) &&
+      bp !== 0
+    ) {
+      adjustments[name] = { bp, excludeFromLimit: true };
+    }
+  }
+
+  return { names, origins, adjustments };
 }
 
 function parseFlags(root: Record<string, unknown>): CharacterFlags {
@@ -163,6 +197,8 @@ export function importChumDocument(root: Record<string, unknown>): ChumImportRes
     }
   }
 
+  const parsedQualities = parseQualities(root);
+
   const character: Character = {
     id: createCharacterId(),
     name: text(root['alias']) || text(root['name']),
@@ -176,7 +212,9 @@ export function importChumDocument(root: Record<string, unknown>): ChumImportRes
     ignoreRules: bool(root['ignorerules']),
     magicTradition: text(root['tradition']) || undefined,
     technomancerStream: text(root['stream']) || undefined,
-    qualities: parseQualities(root),
+    qualities: parsedQualities.names,
+    qualityOrigins: parsedQualities.origins,
+    qualityAdjustments: parsedQualities.adjustments,
     contacts: [],
     purchases: [],
     attributes: parseAttributes(root['attributes'], warnings),

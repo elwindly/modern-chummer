@@ -25,6 +25,8 @@ import {
   deserializeCharacter,
   getAttributeTotal,
   getEffectiveLimits,
+  getQualityOrigin,
+  buyOffMetatypeQualityBp,
   grantBonus,
   initializeMetatype,
   listSelectableAttributes,
@@ -40,6 +42,10 @@ import {
   type BonusNode,
   type ChumImportResult,
 } from '../rules';
+
+export type RemoveQualityResult =
+  | { ok: true }
+  | { ok: false; reason: 'not-found' | 'metatype' | 'needs-confirmation'; buyOffBp?: number };
 import { CharacterStorageService } from './character-storage.service';
 import { ChummerDataService } from './chummer-data.service';
 
@@ -265,19 +271,63 @@ export class CharacterStoreService {
     }
   }
 
-  removeQuality(qualityName: string): void {
+  removeQuality(qualityName: string, options: { confirmed?: boolean } = {}): RemoveQualityResult {
     const character = this.character();
     const manager = this.manager;
-    if (!character || !manager) return;
+    if (!character || !manager) return { ok: false, reason: 'not-found' };
+
+    if (!character.qualities.includes(qualityName)) {
+      return { ok: false, reason: 'not-found' };
+    }
+
+    const origin = getQualityOrigin(character, qualityName);
+
+    if (origin === 'metatype') {
+      return { ok: false, reason: 'metatype' };
+    }
+
+    if (origin === 'metatypeRemovable') {
+      const catalogEntry = this.qualityCatalog().get(qualityName);
+      const buyOffBp = catalogEntry ? buyOffMetatypeQualityBp(catalogEntry.bp) : 0;
+
+      if (!options.confirmed) {
+        return { ok: false, reason: 'needs-confirmation', buyOffBp };
+      }
+
+      character.improvements = character.improvements.filter(
+        (improvement) => improvement.sourceName !== qualityName,
+      );
+
+      character.qualityOrigins ??= {};
+      character.qualityAdjustments ??= {};
+      character.qualityOrigins[qualityName] = 'selected';
+      character.qualityAdjustments[qualityName] = {
+        bp: buyOffBp,
+        excludeFromLimit: true,
+      };
+
+      this.character.set(touchCharacter(character));
+      this.bump();
+      this.scheduleAutoSave();
+      return { ok: true };
+    }
 
     character.qualities = character.qualities.filter((name) => name !== qualityName);
     character.improvements = character.improvements.filter(
       (improvement) => improvement.sourceName !== qualityName,
     );
 
+    if (character.qualityOrigins) {
+      delete character.qualityOrigins[qualityName];
+    }
+    if (character.qualityAdjustments) {
+      delete character.qualityAdjustments[qualityName];
+    }
+
     this.character.set(touchCharacter(character));
     this.bump();
     this.scheduleAutoSave();
+    return { ok: true };
   }
 
   resolveSelection(value: string): void {
@@ -346,6 +396,8 @@ export class CharacterStoreService {
     if (!character.qualities.includes(qualityName)) {
       character.qualities.push(qualityName);
     }
+    character.qualityOrigins ??= {};
+    character.qualityOrigins[qualityName] = 'selected';
   }
 
   private hasInteractiveBonus(bonus: BonusNode): boolean {

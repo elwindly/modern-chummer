@@ -1,5 +1,6 @@
 import { AttributeCode } from '../models/attribute';
 import { Character } from '../models/character';
+import { QualityOrigin } from '../models/character-quality';
 import { CharacterOptions } from '../models/character-options';
 import { createAttributeState } from '../models/attribute';
 import { ImprovementSource } from '../models/improvement';
@@ -16,8 +17,8 @@ export interface MetatypeRecord {
   bp?: string;
   bonus?: Record<string, unknown>;
   qualities?: {
-    positive?: { quality?: string | Array<string | { value: string; select?: string }> };
-    negative?: { quality?: string | Array<string | { value: string; select?: string }> };
+    positive?: { quality?: string | Array<string | MetatypeQualityRef> };
+    negative?: { quality?: string | Array<string | MetatypeQualityRef> };
   };
   metavariants?: MetavariantRecord[];
   [key: string]: unknown;
@@ -28,6 +29,17 @@ export interface MetavariantRecord {
   bp?: string;
   bonus?: Record<string, unknown>;
   qualities?: MetatypeRecord['qualities'];
+}
+
+interface MetatypeQualityRef {
+  value: string;
+  select?: string;
+  removable?: string;
+}
+
+interface BundledQualityEntry {
+  name: string;
+  origin: QualityOrigin;
 }
 
 export interface QualityRecord {
@@ -64,12 +76,21 @@ function resolveLimit(expression: string, force: number): number {
   return evaluateFormula(expression, { rating: force });
 }
 
-function extractQualityNames(
-  node: string | Array<string | { value: string; select?: string }> | undefined,
-): string[] {
+function extractBundledQualities(
+  node: string | Array<string | MetatypeQualityRef> | undefined,
+): BundledQualityEntry[] {
   if (!node) return [];
   const items = Array.isArray(node) ? node : [node];
-  return items.map((item) => (typeof item === 'string' ? item : item.value));
+  return items.map((item) => {
+    if (typeof item === 'string') {
+      return { name: item, origin: 'metatype' as const };
+    }
+    const removable = item.removable === 'true';
+    return {
+      name: item.value,
+      origin: removable ? ('metatypeRemovable' as const) : ('metatype' as const),
+    };
+  });
 }
 
 function findMetatype(metatypes: MetatypeRecord[], name: string): MetatypeRecord | undefined {
@@ -129,6 +150,8 @@ export function initializeMetatype(
 
   character.improvements = [];
   character.qualities = [];
+  character.qualityOrigins = {};
+  character.qualityAdjustments = {};
   character.flags = {
     magicianEnabled: false,
     adeptEnabled: false,
@@ -172,13 +195,15 @@ function grantBundledQualities(
 ): void {
   if (!qualities) return;
 
-  const positive = extractQualityNames(qualities.positive?.quality);
-  const negative = extractQualityNames(qualities.negative?.quality);
+  const positive = extractBundledQualities(qualities.positive?.quality);
+  const negative = extractBundledQualities(qualities.negative?.quality);
 
-  for (const name of [...positive, ...negative]) {
+  for (const { name, origin } of [...positive, ...negative]) {
     if (!character.qualities.includes(name)) {
       character.qualities.push(name);
     }
+    character.qualityOrigins ??= {};
+    character.qualityOrigins[name] = origin;
 
     const record = catalog.get(name);
     if (record?.bonus) {

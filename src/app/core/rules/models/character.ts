@@ -1,6 +1,7 @@
 import { createDefaultAttributes } from './attribute';
 import { CharacterContact, PurchasedItem } from './economy';
 import { Improvement } from './improvement';
+import { QualityAdjustment, QualityOrigin } from './character-quality';
 
 export type BonusNode = Record<string, unknown>;
 
@@ -28,6 +29,8 @@ export interface Character {
   magicTradition?: string;
   technomancerStream?: string;
   qualities: string[];
+  qualityOrigins?: Record<string, QualityOrigin>;
+  qualityAdjustments?: Record<string, QualityAdjustment>;
   contacts: CharacterContact[];
   purchases: PurchasedItem[];
   attributes: ReturnType<typeof createDefaultAttributes>;
@@ -46,6 +49,8 @@ export function createEmptyCharacter(overrides: Partial<Character> = {}): Charac
     maximumAvailability: 12,
     nuyenBpSpent: 0,
     qualities: [],
+    qualityOrigins: {},
+    qualityAdjustments: {},
     contacts: [],
     purchases: [],
     attributes: createDefaultAttributes({

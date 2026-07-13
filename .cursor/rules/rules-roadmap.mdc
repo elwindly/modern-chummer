@@ -39,6 +39,239 @@ Use this when continuing Phase 3 implementation.
 - IndexedDB persistence via `CharacterStorageService`
 - Legacy `.chum` import via `chum-importer.ts`
 
+## Milestone 6 — Common tab completion
+
+Finish the character foundation before skills and gear. Most of this extends existing models and the Common / Character Info tabs.
+
+### Rules / models
+
+- `CharacterSkill`, `CharacterSkillGroup`, `CharacterKnowledgeSkill` models (rating, specs, free/default flags)
+- `skill-calculator.ts` — BP for active skills, skill groups, knowledge/language skills (uses `CharacterOptions.bp*`)
+- Extend `calculateBp()` with skill and martial-arts line items
+- Metavariant selection in `metatype-initializer.ts` (UI + data from `metatypes.json`)
+- Special attribute editing: EDG, MAG, RES (respect metatype min/max and BP costs)
+- Contacts BP already in `bp-calculator.ts`; wire `character.contacts` editing
+
+### UI
+
+- Metavariant picker on Common tab (per metatype, including “None”)
+- Special attributes section on Common tab
+- Contacts editor (connection / loyalty / group, enemy, free)
+- Nuyen-for-BP slider or input (updates `nuyenBpSpent`, respects `getMaxNuyenBp()`)
+- Replace **Character Info** placeholder with notes, sex/age/height/weight fields (persist on character)
+
+### Persistence / import
+
+- Extend `chum-importer.ts` for `<contacts>` and `<skills>` / `<skillgroups>` / knowledge skills
+- Round-trip contacts and basic info in IndexedDB documents
+
+### Tests
+
+- Skill BP golden cases (default skill, raised skill, skill group, knowledge skill)
+- Metavariant bundled qualities + BP
+- Contact free-CH A refund logic
+
+### Legacy reference
+
+- `frmCreate.cs` — contact BP, nuyen BP, special attribute raises
+- `clsCharacter.cs` — skill rating storage
+
+### Done when
+
+A Human with contacts, raised EDG, and a few default skills validates BP correctly and survives save/load.
+
+---
+
+## Milestone 7 — Skills & martial arts
+
+Replace the **Skills** and **Martial Arts** placeholders with full editing.
+
+### Rules / models
+
+- `skill-totals.ts` — effective rating = base + `ImprovementType.Skill` / `SkillGroup` / `SkillCategory` bonuses
+- Skill requirement checks (`requirement-validator.ts` extended for skill prerequisites)
+- `martial-art-calculator.ts` — style rating BP (`bpMartialArt`), maneuver costs
+- Default vs non-default skill handling from `skills.json` (`default: Yes/No`)
+
+### UI
+
+- **Skills** tab: browse/filter active skills (reuse `SourceFilterControl`), set ratings and specializations
+- Skill groups sub-section (buy group vs individual skills)
+- Knowledge & language skills sub-section
+- **Martial Arts** tab: add style, set rating, list maneuvers from data
+- Show effective rating (base + quality/cyberware bonuses) read-only where relevant
+
+### Store
+
+- `CharacterStoreService` methods: `setSkillRating`, `setSkillSpec`, `addMartialArt`, etc.
+- Feed skill list into selection handlers (`selectskill`, `selectskillgroup`) for quality grants
+
+### Persistence / import
+
+- Import/export skills and martial arts sections from `.chum`
+
+### Tests
+
+- Aptitude + skill rating interaction
+- College Education category bonus on ratings
+- Martial art rating BP cap (35 BP positive-quality interaction)
+
+### Legacy reference
+
+- `frmCreate.cs` — skill list UI logic (extract BP rules, not TreeView code)
+
+### Done when
+
+Skills, knowledge skills, and one martial art contribute to BP breakdown and validation; quality skill pickers offer real character skills.
+
+---
+
+## Milestone 8 — Street gear & availability
+
+Replace the **Street Gear** placeholder. Reuse reference-browser patterns for gear, weapons, and armor.
+
+### Rules / models
+
+- Extend `PurchasedItem` (or add `CharacterGear`, `CharacterWeapon`, `CharacterArmor`) with parent/child nesting, mods, accessories
+- `gear-calculator.ts` — nuyen cost, cost formulas via `evaluateFormula()`
+- Wire `validateAvailability()` into `validateCharacter()` via `availabilityItems` built from purchases
+- Restricted item count from `ImprovementType.RestrictedItemCount`
+
+### UI
+
+- **Street Gear** tab with sub-sections: Gear, Weapons (+ accessories/mods), Armor (+ mods)
+- Browse/add/remove items; show avail, cost, remaining nuyen
+- PACKS kit loader (optional stretch: apply `packs.json` as a bundle)
+- Source filter (`SourceFilterControl`) on all browse lists
+
+### Store
+
+- `addPurchase` / `removePurchase` with nested children
+- Auto-update `character.purchases` for nuyen breakdown
+
+### Persistence / import
+
+- Import `<gears>`, `<weapons>`, `<armors>` from `.chum` (warn on unsupported nested sections initially)
+
+### Tests
+
+- Availability violation detection
+- Nuyen overspend validation
+- Formula-based gear cost (rating-dependent items)
+
+### Legacy reference
+
+- `frmCreate.cs` — nuyen spending, availability enforcement
+- `clsCharacter.cs` — gear tree structure
+
+### Done when
+
+A character can buy core-rulebook gear within avail and nuyen limits; BP Summary nuyen section reflects purchases.
+
+---
+
+## Milestone 9 — Cyberware & bioware
+
+Replace the **Cyberware** placeholder. Essence and augmentation bonuses integrate with the improvement system.
+
+### Rules / models
+
+- `CharacterCyberware`, `CharacterBioware` tree models (grade, rating, children, essence cost)
+- `essence-calculator.ts` — ESS from base 6 minus ware; support `essencemin` from metatype
+- `ware-calculator.ts` — nuyen + availability + essence cost
+- Apply ware `bonus` nodes through `applyBonusHandlers()` (many handlers already exist; add missing ones as encountered)
+- Validation: essence floor (0.01), over-max availability, magic loss thresholds
+
+### UI
+
+- **Cyberware** tab: category tree browser, add/remove ware, grade/rating pickers
+- Bioware section (same tab or sub-nav)
+- Show current essence, lost essence, remaining capacity
+- Disable incompatible ware where data `required`/`forbidden` blocks it
+
+### Store
+
+- Transaction-safe ware install/remove (rollback improvements on failure)
+
+### Persistence / import
+
+- Import `<cyberwares>`, `<biowares>` from `.chum`
+
+### Tests
+
+- Essence math with graded cyberware
+- Ware bonus applied (e.g. attribute bonuses, skill bonuses)
+- Magic/resonance reduction thresholds (if applicable from ware)
+
+### Legacy reference
+
+- `frmCreate.cs` — cyberware install, essence penalties
+- `clsImprovement.cs` — ware bonus handlers
+
+### Done when
+
+Cyberware/bioware installs adjust ESS and improvements correctly; removing ware rolls back bonuses.
+
+---
+
+## Milestone 10 — Magic, matrix, vehicles & career
+
+Replace remaining conditional tabs and close the creation loop with export and career transition.
+
+### Rules / models
+
+- `CharacterSpell`, `CharacterPower`, `CharacterProgram`, `CharacterMetamagic`, `CharacterInitiationGrade`, `CharacterVehicle`
+- BP/karma cost calculators per type (spells, adept powers, programs, initiation grades)
+- Tradition/stream selection updates `magicTradition` / `technomancerStream` and enables validation rules already in `character-validator.ts`
+
+### UI
+
+- **Magician** tab: tradition picker, spells (free spells, BP purchases), bound spirits (stretch)
+- **Adept** tab: power picker with point allocation
+- **Technomancer** tab: stream picker, programs/complex forms (basic list + rating)
+- **Critter** tab: critter powers from metatype/quality (mostly read-only + BP display)
+- **Initiation** tab: grades, metamagic/echoes when enabled
+- **Vehicles** tab: vehicle/drone list with mods (basic add/remove)
+- **BP Summary** tab: extend with skills, gear, ware, magic line items
+
+### Persistence / export
+
+- `chum-exporter.ts` — serialize full character to `.chum` XML (mirror importer field order)
+- Expand `chum-importer.ts` for spells, powers, programs, vehicles, lifestyles, martial arts
+- `created` flag + career mode entry (read-only creation BP or karma advancement stub)
+
+### Validation & finalize
+
+- “Finalize character” action: set `created: true`, run full validation suite
+- Block finalize when overspent BP/nuyen, avail violations, or missing tradition/stream
+
+### Tests
+
+- Magician with tradition + spells validates
+- Adept power point cap
+- Round-trip: export → import preserves character state (golden `.chum` fixture)
+
+### Legacy reference
+
+- `frmCreate.cs` — spell/power BP, initiation
+- `clsCharacter.cs` — Save() XML structure
+
+### Done when
+
+A magician adept (or other enabled build) can be created end-to-end, exported as `.chum`, re-imported, and marked created for career mode.
+
+---
+
+## Implementation notes (Milestones 6–10)
+
+- **Order matters**: each milestone builds on the previous (skills before gear is optional, but contacts/special attrs before magic validation is not).
+- **UI pattern**: browse table + source filter + add/remove list (same as Common qualities tab).
+- **Rules stay pure**: all BP/nuyen/essence math in `core/rules/`; Angular only calls store methods.
+- **Incremental handlers**: add bonus handlers only when a milestone needs them; golden-test each from real JSON.
+- **Scope control**: defer PACKS, bound spirits, advanced vehicle mod UI, and full lifestyle editor unless needed for vertical slice.
+
 ## Vertical slice test (reference)
 
 Human BOD 4 → Physical CM 10; Tough as Nails (Rating 1) → CM 11; Adept → `magEnabled` + adept tab.
+
+**Post–Milestone 10 stretch goal:** Human street samurai — Pistols 4, Wired Reflexes 1, Ares Predator, 400 BP valid, export/import identical.

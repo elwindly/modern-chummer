@@ -52,6 +52,15 @@ function cloneCharacter(character: Character): Character {
   return {
     ...character,
     qualities: [...character.qualities],
+    qualityOrigins: character.qualityOrigins ? { ...character.qualityOrigins } : {},
+    qualityAdjustments: character.qualityAdjustments
+      ? Object.fromEntries(
+          Object.entries(character.qualityAdjustments).map(([name, adjustment]) => [
+            name,
+            { ...adjustment },
+          ]),
+        )
+      : {},
     contacts: character.contacts.map((contact) => ({ ...contact })),
     purchases: character.purchases.map((purchase) => ({ ...purchase })),
     improvements: character.improvements.map(cloneImprovement),

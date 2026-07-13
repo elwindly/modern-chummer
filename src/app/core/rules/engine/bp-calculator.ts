@@ -2,6 +2,11 @@ import { AttributeCode } from '../models/attribute';
 import { Character } from '../models/character';
 import { CharacterOptions } from '../models/character-options';
 import {
+  getQualityAdjustment,
+  getQualityOrigin,
+  isMetatypeBundledOrigin,
+} from '../models/character-quality';
+import {
   QualityCatalogEntry,
   isNegativeQuality,
   isPositiveQuality,
@@ -116,14 +121,28 @@ export function calculateBp(
 
   for (const qualityName of character.qualities) {
     const entry = qualityCatalog.get(qualityName);
-    if (!entry || entry.contributetolimit === 'no') continue;
+    if (!entry) continue;
+
+    const origin = getQualityOrigin(character, qualityName);
+    const adjustment = getQualityAdjustment(character, qualityName);
+
+    if (isMetatypeBundledOrigin(origin) && !adjustment) continue;
+
+    const bp = adjustment?.bp ?? entry.bp;
+
+    if (adjustment) {
+      remaining -= bp;
+      continue;
+    }
+
+    if (entry.contributetolimit === 'no') continue;
 
     if (isPositiveQuality(entry)) {
-      remaining -= entry.bp;
-      positiveQualities += entry.bp;
+      remaining -= bp;
+      positiveQualities += bp;
     } else if (isNegativeQuality(entry)) {
-      remaining -= entry.bp;
-      negativeQualities += entry.bp;
+      remaining -= bp;
+      negativeQualities += bp;
     }
   }
 

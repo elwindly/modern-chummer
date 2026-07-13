@@ -9,15 +9,18 @@ import {
 import { FormsModule } from '@angular/forms';
 import { CharacterStoreService } from '../../../core/services/character-store.service';
 import { ChummerDataService } from '../../../core/services/chummer-data.service';
+import { ContentFilterService } from '../../../core/services/content-filter.service';
 import { ChummerItem } from '../../../core/models/chummer-data.types';
-import { canTakeQuality } from '../../../core/rules';
-import { categoryLabel, matchesSearch, sortByName } from '../../../core/utils/item-helpers';
+import { contentSourceScopeLabel } from '../../../core/models/content-source-scope';
+import { canTakeQuality, getQualityOrigin } from '../../../core/rules';
+import { categoryLabel, matchesSearch, matchesSourceScope, sortByName } from '../../../core/utils/item-helpers';
+import { SourceFilterControl } from '../../../shared/source-filter-control';
 
 type QualityFilter = 'Positive' | 'Negative';
 
 @Component({
   selector: 'app-common-tab',
-  imports: [FormsModule],
+  imports: [FormsModule, SourceFilterControl],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     @if (store.character(); as character) {
@@ -35,18 +38,23 @@ type QualityFilter = 'Positive' | 'Negative';
         </div>
 
         <div class="metatype-row" aria-label="Metatype selection">
-          <span class="label">Metatype</span>
-          <strong>{{ character.metatype }}</strong>
-          @if (character.metavariant) {
-            <span class="muted">({{ character.metavariant }})</span>
-          }
-          <div class="metatype-actions">
+          <span class="field-label" id="metatype-label">Metatype</span>
+          <div class="metatype-actions" role="group" aria-labelledby="metatype-label">
             @for (metatype of metatypes; track metatype) {
-              <button type="button" (click)="store.initializeMetatype(metatype)">
+              <button
+                type="button"
+                class="metatype-btn"
+                [class.active]="character.metatype === metatype"
+                [attr.aria-pressed]="character.metatype === metatype"
+                (click)="store.initializeMetatype(metatype)"
+              >
                 {{ metatype }}
               </button>
             }
           </div>
+          @if (character.metavariant) {
+            <span class="muted metavariant">{{ character.metavariant }}</span>
+          }
         </div>
 
         <div class="attributes" aria-label="Primary attributes">
@@ -69,7 +77,8 @@ type QualityFilter = 'Positive' | 'Negative';
         <div class="qualities" aria-label="Qualities">
           <h3>Qualities</h3>
           <p class="muted">
-            Browse positive and negative qualities from Chummer data ({{ qualityCatalog().length }} total).
+            Browse positive and negative qualities from Chummer data
+            ({{ scopedQualities().length }} in {{ contentSourceScopeLabel(contentFilter.scope()) }}).
           </p>
 
           @if (character.qualities.length) {
@@ -77,9 +86,18 @@ type QualityFilter = 'Positive' | 'Negative';
               <h4>Selected</h4>
               <ul class="quality-list">
                 @for (quality of character.qualities; track quality) {
-                  <li>
-                    <span>{{ quality }}</span>
-                    <button type="button" (click)="store.removeQuality(quality)">Remove</button>
+                  <li [class.metatype-quality]="isMetatypeQuality(quality)">
+                    <span>
+                      {{ quality }}
+                      @if (qualityOriginLabel(quality); as label) {
+                        <span class="quality-origin">{{ label }}</span>
+                      }
+                    </span>
+                    @if (canRemoveQuality(quality)) {
+                      <button type="button" (click)="removeQuality(quality)">
+                        {{ isBuyOffQuality(quality) ? 'Buy off' : 'Remove' }}
+                      </button>
+                    }
                   </li>
                 }
               </ul>
@@ -99,6 +117,8 @@ type QualityFilter = 'Positive' | 'Negative';
                 </button>
               }
             </div>
+
+            <app-source-filter-control />
 
             <label class="search-field">
               <span class="sr-only">Search qualities</span>
@@ -183,14 +203,28 @@ type QualityFilter = 'Positive' | 'Negative';
       align-items: center;
       margin-bottom: 1rem;
 
-      .label { color: var(--color-text-muted); }
-      .muted { color: var(--color-text-muted); }
+      .field-label {
+        width: 100%;
+        font-weight: 500;
+        color: var(--color-text-muted);
+        font-size: 0.875rem;
+      }
+
+      .metavariant {
+        font-size: 0.875rem;
+      }
     }
 
     .metatype-actions {
       display: flex;
       flex-wrap: wrap;
       gap: 0.5rem;
+    }
+
+    .metatype-btn.active {
+      border-color: var(--color-accent);
+      background: var(--color-surface-raised);
+      font-weight: 600;
     }
 
     button {
@@ -247,6 +281,16 @@ type QualityFilter = 'Positive' | 'Negative';
         border-bottom: 1px solid var(--color-border);
 
         &:last-child { border-bottom: none; }
+      }
+
+      .metatype-quality {
+        color: var(--color-text-muted);
+      }
+
+      .quality-origin {
+        display: block;
+        font-size: 0.75rem;
+        color: var(--color-text-muted);
       }
     }
 
@@ -344,7 +388,10 @@ type QualityFilter = 'Positive' | 'Negative';
 })
 export class CommonTab implements OnInit {
   readonly store = inject(CharacterStoreService);
+  readonly contentFilter = inject(ContentFilterService);
   private readonly data = inject(ChummerDataService);
+
+  protected readonly contentSourceScopeLabel = contentSourceScopeLabel;
 
   readonly primaryAttributes = ['BOD', 'AGI', 'REA', 'STR', 'CHA', 'INT', 'LOG', 'WIL'] as const;
   readonly metatypes = ['Human', 'Elf', 'Dwarf', 'Ork', 'Troll'];
@@ -355,13 +402,20 @@ export class CommonTab implements OnInit {
   readonly categoryFilter = signal<QualityFilter>('Positive');
   readonly searchQuery = signal('');
 
+  readonly scopedQualities = computed(() => {
+    this.contentFilter.scope();
+    return this.qualityCatalog().filter((quality) =>
+      matchesSourceScope(quality, this.contentFilter.scope()),
+    );
+  });
+
   readonly filteredQualities = computed(() => {
     const filter = this.categoryFilter();
     const query = this.searchQuery();
     const selected = new Set(this.store.character()?.qualities ?? []);
 
     return sortByName(
-      this.qualityCatalog().filter((quality) => {
+      this.scopedQualities().filter((quality) => {
         if (selected.has(quality.name)) return false;
         if (categoryLabel(quality) !== filter) return false;
         return matchesSearch(quality, query);
@@ -400,5 +454,54 @@ export class CommonTab implements OnInit {
   addQuality(quality: ChummerItem): void {
     if (!this.canAddQuality(quality)) return;
     this.store.applyQuality(quality.name, quality['bonus'] as Record<string, unknown> | undefined);
+  }
+
+  isMetatypeQuality(qualityName: string): boolean {
+    const character = this.store.character();
+    if (!character) return false;
+    const origin = getQualityOrigin(character, qualityName);
+    return origin === 'metatype' || origin === 'metatypeRemovable';
+  }
+
+  isBuyOffQuality(qualityName: string): boolean {
+    const character = this.store.character();
+    if (!character) return false;
+    return getQualityOrigin(character, qualityName) === 'metatypeRemovable';
+  }
+
+  canRemoveQuality(qualityName: string): boolean {
+    const character = this.store.character();
+    if (!character) return false;
+    return getQualityOrigin(character, qualityName) !== 'metatype';
+  }
+
+  qualityOriginLabel(qualityName: string): string | null {
+    const character = this.store.character();
+    if (!character) return null;
+    const origin = getQualityOrigin(character, qualityName);
+    if (origin === 'metatype') return 'From metatype';
+    if (origin === 'metatypeRemovable') return 'From metatype (can buy off)';
+    if (character.qualityAdjustments?.[qualityName]) return 'Bought off';
+    return null;
+  }
+
+  removeQuality(qualityName: string): void {
+    const result = this.store.removeQuality(qualityName);
+    if (result.ok) return;
+
+    if (result.reason === 'metatype') {
+      window.alert('This quality comes from your metatype and cannot be removed.');
+      return;
+    }
+
+    if (result.reason === 'needs-confirmation') {
+      const bp = result.buyOffBp ?? 0;
+      const confirmed = window.confirm(
+        `Buying off this quality costs ${bp} BP. Continue?`,
+      );
+      if (confirmed) {
+        this.store.removeQuality(qualityName, { confirmed: true });
+      }
+    }
   }
 }

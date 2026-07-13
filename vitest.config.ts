@@ -2,7 +2,7 @@ import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
   test: {
-    include: ['src/app/core/rules/**/*.spec.ts'],
+    include: ['src/app/core/**/*.spec.ts'],
     environment: 'node',
   },
   resolve: {
