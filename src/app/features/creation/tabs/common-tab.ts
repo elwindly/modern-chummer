@@ -98,7 +98,6 @@ type QualityFilter = 'Positive' | 'Negative';
                 [min]="character.attributes[code].min"
                 [max]="character.attributes[code].max"
               />
-              <span class="total">{{ store.getAttributeValue(code) }}</span>
             </label>
           }
         </div>
@@ -116,7 +115,6 @@ type QualityFilter = 'Positive' | 'Negative';
                   [min]="character.attributes[code].min"
                   [max]="character.attributes[code].max"
                 />
-                <span class="total">{{ store.getAttributeValue(code) }}</span>
               </label>
             }
           </div>
@@ -531,12 +529,11 @@ type QualityFilter = 'Positive' | 'Negative';
 
     .attr-row {
       display: grid;
-      grid-template-columns: 2rem 1fr 2rem;
+      grid-template-columns: 2rem 1fr;
       gap: 0.5rem;
       align-items: center;
 
       input { width: 100%; padding: 0.25rem; }
-      .total { text-align: right; color: var(--color-text-muted); }
     }
 
     .selected-qualities {
