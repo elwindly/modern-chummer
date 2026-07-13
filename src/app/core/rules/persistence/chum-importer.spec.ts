@@ -201,15 +201,27 @@ describe('chum-importer', () => {
     expect(warnings).toEqual([]);
   });
 
-  it('warns about unsupported sections', () => {
+  it('warns about unsupported sections and imports skills', () => {
     const root = {
       ...parseFixture(SAMPLE_CHUM),
-      skills: { skill: { name: 'Pistols' } },
+      skills: {
+        skill: {
+          name: 'Pistols',
+          rating: '2',
+          ratingmax: '6',
+          knowledge: 'False',
+          grouped: 'False',
+          default: 'Yes',
+        },
+      },
       created: 'True',
     };
 
-    const { warnings } = importChumDocument(root);
-    expect(warnings.some((warning) => warning.includes('skills'))).toBe(true);
+    const { character, warnings } = importChumDocument(root);
+    expect(character.skills).toHaveLength(1);
+    expect(character.skills[0].name).toBe('Pistols');
+    expect(character.skills[0].rating).toBe(2);
+    expect(warnings.some((warning) => warning.includes('skills'))).toBe(false);
     expect(warnings.some((warning) => warning.includes('Created'))).toBe(true);
   });
 });

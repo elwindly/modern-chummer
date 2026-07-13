@@ -6,13 +6,14 @@ import {
   OnInit,
   signal,
 } from '@angular/core';
+import { DecimalPipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { CharacterStoreService } from '../../../core/services/character-store.service';
 import { ChummerDataService } from '../../../core/services/chummer-data.service';
 import { ContentFilterService } from '../../../core/services/content-filter.service';
 import { ChummerItem } from '../../../core/models/chummer-data.types';
 import { contentSourceScopeLabel } from '../../../core/models/content-source-scope';
-import { canTakeQuality, getQualityOrigin } from '../../../core/rules';
+import { canTakeQuality, getQualityOrigin, type AttributeCode } from '../../../core/rules';
 import { categoryLabel, matchesSearch, matchesSourceScope, sortByName } from '../../../core/utils/item-helpers';
 import { SourceFilterControl } from '../../../shared/source-filter-control';
 
@@ -20,7 +21,7 @@ type QualityFilter = 'Positive' | 'Negative';
 
 @Component({
   selector: 'app-common-tab',
-  imports: [FormsModule, SourceFilterControl],
+  imports: [FormsModule, SourceFilterControl, DecimalPipe],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     @if (store.character(); as character) {
@@ -37,24 +38,52 @@ type QualityFilter = 'Positive' | 'Negative';
           />
         </div>
 
-        <div class="metatype-row" aria-label="Metatype selection">
-          <span class="field-label" id="metatype-label">Metatype</span>
-          <div class="metatype-actions" role="group" aria-labelledby="metatype-label">
-            @for (metatype of metatypes; track metatype) {
-              <button
-                type="button"
-                class="metatype-btn"
-                [class.active]="character.metatype === metatype"
-                [attr.aria-pressed]="character.metatype === metatype"
-                (click)="store.initializeMetatype(metatype)"
-              >
-                {{ metatype }}
-              </button>
+        <div class="metatype-panel" aria-label="Metatype selection">
+          <div class="metatype-field">
+            <span class="field-label" id="metatype-label">Metatype</span>
+            <div class="metatype-actions" role="group" aria-labelledby="metatype-label">
+              @for (metatype of playableMetatypes(); track metatype.name) {
+                <button
+                  type="button"
+                  class="metatype-btn"
+                  [class.active]="character.metatype === metatype.name"
+                  [attr.aria-pressed]="character.metatype === metatype.name"
+                  (click)="onMetatypeSelect(metatype.name)"
+                >
+                  {{ metatype.name }}
+                </button>
+              }
+            </div>
+            @if (baseMetatypeBp(); as baseBp) {
+              <p class="metatype-cost muted">
+                Base cost: {{ baseBp }} BP
+                @if (character.metavariant) {
+                  · Selected: {{ character.metatypeBp }} BP total
+                }
+              </p>
             }
           </div>
-          @if (character.metavariant) {
-            <span class="muted metavariant">{{ character.metavariant }}</span>
-          }
+
+          <label class="metavariant-field">
+            <span class="field-label" id="metavariant-label">Metavariant</span>
+            <select
+              id="metavariant-select"
+              aria-labelledby="metavariant-label"
+              [value]="metavariantSelection()"
+              (change)="onMetavariantChange($event)"
+              [disabled]="!metavariants().length"
+            >
+              <option value="None">None</option>
+              @for (variant of metavariants(); track variant.name) {
+                <option [value]="variant.name">
+                  {{ variant.name }}@if (variant.bp) { ({{ variant.bp }} BP)}
+                </option>
+              }
+            </select>
+            @if (!metavariants().length) {
+              <span class="field-hint">No metavariants for this metatype</span>
+            }
+          </label>
         </div>
 
         <div class="attributes" aria-label="Primary attributes">
@@ -70,6 +99,159 @@ type QualityFilter = 'Positive' | 'Negative';
                 [max]="character.attributes[code].max"
               />
               <span class="total">{{ store.getAttributeValue(code) }}</span>
+            </label>
+          }
+        </div>
+
+        @if (specialAttributeCodes().length) {
+          <div class="attributes special-attrs" aria-label="Special attributes">
+            <h3>Special Attributes</h3>
+            @for (code of specialAttributeCodes(); track code) {
+              <label class="attr-row">
+                <span>{{ code }}</span>
+                <input
+                  type="number"
+                  [ngModel]="character.attributes[code].base"
+                  (ngModelChange)="store.setAttributeBase(code, $event)"
+                  [min]="character.attributes[code].min"
+                  [max]="character.attributes[code].max"
+                />
+                <span class="total">{{ store.getAttributeValue(code) }}</span>
+              </label>
+            }
+          </div>
+        }
+
+        <div class="nuyen-section" aria-label="Nuyen from build points">
+          <h3>Nuyen</h3>
+          <label class="nuyen-row">
+            <span>BP spent on nuyen (max {{ store.maxNuyenBp() }})</span>
+            <input
+              type="number"
+              [ngModel]="character.nuyenBpSpent"
+              (ngModelChange)="store.setNuyenBpSpent($event)"
+              [min]="0"
+              [max]="store.maxNuyenBp()"
+            />
+          </label>
+          @if (store.nuyenBreakdown(); as nuyen) {
+            <p class="muted nuyen-summary">
+              {{ nuyen.fromBp | number }}¥ from BP
+              @if (nuyen.fromImprovements) {
+                + {{ nuyen.fromImprovements | number }}¥ from qualities
+              }
+            </p>
+          }
+        </div>
+
+        <div class="contacts-section" aria-label="Contacts">
+          <div class="section-header">
+            <h3>Contacts</h3>
+            <button type="button" (click)="store.addContact()">Add contact</button>
+          </div>
+
+          @if (!character.contacts.length) {
+            <p class="muted">No contacts yet.</p>
+          } @else {
+            <ul class="contact-list">
+              @for (contact of character.contacts; track $index; let i = $index) {
+                <li>
+                  <label>
+                    <span class="sr-only">Name</span>
+                    <input
+                      type="text"
+                      placeholder="Name"
+                      [ngModel]="contact.name"
+                      (ngModelChange)="store.updateContact(i, { name: $event })"
+                    />
+                  </label>
+                  <label>
+                    <span>Conn</span>
+                    <input
+                      type="number"
+                      [ngModel]="contact.connection"
+                      (ngModelChange)="store.updateContact(i, { connection: $event })"
+                      min="0"
+                    />
+                  </label>
+                  <label>
+                    <span>Loy</span>
+                    <input
+                      type="number"
+                      [ngModel]="contact.loyalty"
+                      (ngModelChange)="store.updateContact(i, { loyalty: $event })"
+                      min="0"
+                    />
+                  </label>
+                  <label>
+                    <span>Grp</span>
+                    <input
+                      type="number"
+                      [ngModel]="contact.group"
+                      (ngModelChange)="store.updateContact(i, { group: $event })"
+                      min="0"
+                    />
+                  </label>
+                  <label class="checkbox-label">
+                    <input
+                      type="checkbox"
+                      [ngModel]="contact.enemy"
+                      (ngModelChange)="store.updateContact(i, { enemy: $event })"
+                    />
+                    Enemy
+                  </label>
+                  <label class="checkbox-label">
+                    <input
+                      type="checkbox"
+                      [ngModel]="contact.free"
+                      (ngModelChange)="store.updateContact(i, { free: $event })"
+                    />
+                    Free
+                  </label>
+                  <button type="button" (click)="store.removeContact(i)">Remove</button>
+                </li>
+              }
+            </ul>
+          }
+        </div>
+
+        <div class="skills-preview" aria-label="Skills preview">
+          <div class="section-header">
+            <h3>Skills (preview)</h3>
+          </div>
+          <p class="muted">
+            Add default active skills here. Full skill editing comes in the Skills tab.
+            Free knowledge points: {{ store.freeKnowledgeSkillPoints() }}.
+          </p>
+
+          @if (character.skills.length) {
+            <ul class="skill-list">
+              @for (skill of character.skills; track skill.name) {
+                <li>
+                  <span>{{ skill.name }}</span>
+                  <input
+                    type="number"
+                    [ngModel]="skill.rating"
+                    (ngModelChange)="store.setActiveSkillRating(skill.name, $event)"
+                    [min]="0"
+                    [max]="skill.ratingMax ?? 6"
+                  />
+                  <button type="button" (click)="store.removeActiveSkill(skill.name)">Remove</button>
+                </li>
+              }
+            </ul>
+          }
+
+          @if (defaultSkills().length) {
+            <label class="add-skill-row">
+              <span class="sr-only">Add default skill</span>
+              <select #skillSelect>
+                <option value="">Add default skill…</option>
+                @for (skill of defaultSkills(); track skill.name) {
+                  <option [value]="skill.name">{{ skill.name }}</option>
+                }
+              </select>
+              <button type="button" (click)="addDefaultSkill(skillSelect)">Add</button>
             </label>
           }
         </div>
@@ -196,23 +378,38 @@ type QualityFilter = 'Positive' | 'Negative';
       }
     }
 
-    .metatype-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      align-items: center;
+    .metatype-panel {
+      display: grid;
+      gap: 1rem;
       margin-bottom: 1rem;
 
-      .field-label {
-        width: 100%;
-        font-weight: 500;
-        color: var(--color-text-muted);
-        font-size: 0.875rem;
+      @media (min-width: 40rem) {
+        grid-template-columns: minmax(0, 1fr) minmax(14rem, 18rem);
+        align-items: start;
       }
+    }
 
-      .metavariant {
-        font-size: 0.875rem;
-      }
+    .metatype-field,
+    .metavariant-field {
+      display: grid;
+      gap: 0.375rem;
+      align-content: start;
+    }
+
+    .field-label {
+      font-weight: 500;
+      color: var(--color-text-muted);
+      font-size: 0.875rem;
+    }
+
+    .field-hint {
+      font-size: 0.75rem;
+      color: var(--color-text-muted);
+    }
+
+    .metatype-cost {
+      margin: 0.25rem 0 0;
+      font-size: 0.8125rem;
     }
 
     .metatype-actions {
@@ -221,10 +418,92 @@ type QualityFilter = 'Positive' | 'Negative';
       gap: 0.5rem;
     }
 
+    .metatype-btn,
+    .metavariant-field select {
+      min-height: 2.25rem;
+      box-sizing: border-box;
+    }
+
     .metatype-btn.active {
       border-color: var(--color-accent);
       background: var(--color-surface-raised);
       font-weight: 600;
+    }
+
+    .metavariant-field select {
+      width: 100%;
+      padding: 0.375rem 0.625rem;
+    }
+
+    .metavariant-field select:disabled {
+      opacity: 0.55;
+      cursor: not-allowed;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-bottom: 0.5rem;
+
+      h3 { margin: 0; }
+    }
+
+    .special-attrs { margin-bottom: 1.25rem; }
+
+    .nuyen-section,
+    .contacts-section,
+    .skills-preview {
+      margin-bottom: 1.25rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .nuyen-row {
+      display: grid;
+      gap: 0.25rem;
+      max-width: 20rem;
+
+      input { padding: 0.375rem 0.5rem; }
+    }
+
+    .nuyen-summary { margin: 0.5rem 0 0; font-size: 0.875rem; }
+
+    .contact-list,
+    .skill-list {
+      margin: 0 0 0.75rem;
+      padding: 0;
+      list-style: none;
+
+      li {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        align-items: center;
+        padding: 0.5rem 0;
+        border-bottom: 1px solid var(--color-border);
+
+        &:last-child { border-bottom: none; }
+
+        input[type='text'] { min-width: 8rem; flex: 1; }
+        input[type='number'] { width: 3.5rem; }
+      }
+    }
+
+    .checkbox-label {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      font-size: 0.875rem;
+    }
+
+    .add-skill-row {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+
+      select { flex: 1; max-width: 20rem; padding: 0.375rem 0.5rem; }
     }
 
     button {
@@ -394,13 +673,62 @@ export class CommonTab implements OnInit {
   protected readonly contentSourceScopeLabel = contentSourceScopeLabel;
 
   readonly primaryAttributes = ['BOD', 'AGI', 'REA', 'STR', 'CHA', 'INT', 'LOG', 'WIL'] as const;
-  readonly metatypes = ['Human', 'Elf', 'Dwarf', 'Ork', 'Troll'];
   readonly qualityFilters: QualityFilter[] = ['Positive', 'Negative'];
 
+  readonly playableMetatypes = computed(() => {
+    const metatypes = this.store.metatypes();
+    return metatypes
+      .filter((metatype) => {
+        const category = Array.isArray(metatype.category)
+          ? metatype.category[0]
+          : metatype.category;
+        return category === 'Metahuman';
+      })
+      .sort((a, b) => a.name.localeCompare(b.name));
+  });
+
+  readonly baseMetatypeBp = computed(() => {
+    const character = this.store.character();
+    if (!character) return null;
+    const metatype = this.playableMetatypes().find((entry) => entry.name === character.metatype);
+    return metatype?.bp ? Number(metatype.bp) : 0;
+  });
+
+  readonly metavariants = computed(() => this.store.getMetavariantsForCurrentMetatype());
+
   readonly qualityCatalog = signal<ChummerItem[]>([]);
+  readonly activeSkillCatalog = signal<ChummerItem[]>([]);
   readonly loadingQualities = signal(true);
   readonly categoryFilter = signal<QualityFilter>('Positive');
   readonly searchQuery = signal('');
+
+  readonly metavariantSelection = computed(() => {
+    const character = this.store.character();
+    if (!character?.metavariant) return 'None';
+    const valid = this.metavariants().some((variant) => variant.name === character.metavariant);
+    return valid ? character.metavariant : 'None';
+  });
+
+  readonly specialAttributeCodes = computed((): AttributeCode[] => {
+    const character = this.store.character();
+    if (!character) return [];
+    const codes: AttributeCode[] = ['EDG'];
+    if (character.flags.magEnabled) codes.push('MAG');
+    if (character.flags.resEnabled) codes.push('RES');
+    return codes;
+  });
+
+  readonly defaultSkills = computed(() => {
+    const character = this.store.character();
+    const selected = new Set(character?.skills.map((skill) => skill.name) ?? []);
+    return sortByName(
+      this.activeSkillCatalog().filter((skill) => {
+        if (selected.has(skill.name)) return false;
+        const isDefault = skill['default'];
+        return isDefault === 'Yes' || isDefault === true;
+      }),
+    );
+  });
 
   readonly scopedQualities = computed(() => {
     this.contentFilter.scope();
@@ -424,9 +752,62 @@ export class CommonTab implements OnInit {
   });
 
   async ngOnInit(): Promise<void> {
-    const qualities = await this.data.loadItems('qualities', 'qualities');
+    const [qualities, skills] = await Promise.all([
+      this.data.loadItems('qualities', 'qualities'),
+      this.data.loadItems('skills', 'skills'),
+    ]);
     this.qualityCatalog.set(qualities);
+    this.activeSkillCatalog.set(skills);
     this.loadingQualities.set(false);
+  }
+
+  onMetatypeSelect(metatypeName: string): void {
+    const character = this.store.character();
+    if (!character || character.metatype === metatypeName) return;
+    if (
+      !window.confirm('Changing metatype resets attributes, qualities, and skills. Continue?')
+    ) {
+      return;
+    }
+    this.store.initializeMetatype(metatypeName);
+  }
+
+  onMetavariantChange(event: Event): void {
+    const select = event.target as HTMLSelectElement;
+    const value = select.value;
+    const current = this.store.character()?.metavariant ?? 'None';
+    if (value === current) return;
+    if (
+      !window.confirm('Changing metavariant resets metatype bonuses. Continue?')
+    ) {
+      select.value = current;
+      return;
+    }
+    this.store.setMetavariant(value === 'None' ? undefined : value);
+  }
+
+  addDefaultSkill(select: HTMLSelectElement): void {
+    const name = select.value;
+    if (!name) return;
+    const record = this.activeSkillCatalog().find((skill) => skill.name === name);
+    if (!record) return;
+
+    const category = record['category'];
+    const skillCategory = Array.isArray(category)
+      ? String(category[0] ?? '')
+      : String(category ?? '');
+
+    this.store.addActiveSkill({
+      name: record.name,
+      rating: 0,
+      ratingMax: 6,
+      skillGroup: String(record['skillgroup'] ?? '') || undefined,
+      skillCategory,
+      attribute: String(record['attribute'] ?? '') || undefined,
+      defaultSkill: true,
+      grouped: false,
+    });
+    select.value = '';
   }
 
   formatBp(quality: ChummerItem): string {

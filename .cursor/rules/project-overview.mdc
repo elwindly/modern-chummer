@@ -32,8 +32,8 @@ npm run build        # production build
 
 ## Implementation phases
 
-1. **Done** — Data pipeline, reference browser, rules engine (Milestones 1–5)
-2. **In progress** — Per-tab character creation (Milestones 6–10; see `rules-roadmap.mdc`)
+1. **Done** — Data pipeline, reference browser, rules engine (Milestones 1–6)
+2. **Next** — Skills & martial arts tab (Milestone 7; see `rules-roadmap.mdc`)
 3. **Future** — Career mode advancement (karma, post-creation editing)
 
 ## Legacy reference (when porting rules)

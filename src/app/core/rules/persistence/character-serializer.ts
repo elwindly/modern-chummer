@@ -62,6 +62,10 @@ function cloneCharacter(character: Character): Character {
         )
       : {},
     contacts: character.contacts.map((contact) => ({ ...contact })),
+    skills: (character.skills ?? []).map((skill) => ({ ...skill })),
+    skillGroups: (character.skillGroups ?? []).map((group) => ({ ...group })),
+    knowledgeSkills: (character.knowledgeSkills ?? []).map((skill) => ({ ...skill })),
+    profile: { ...(character.profile ?? {}) },
     purchases: character.purchases.map((purchase) => ({ ...purchase })),
     improvements: character.improvements.map(cloneImprovement),
     flags: { ...character.flags },

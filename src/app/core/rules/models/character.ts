@@ -2,6 +2,8 @@ import { createDefaultAttributes } from './attribute';
 import { CharacterContact, PurchasedItem } from './economy';
 import { Improvement } from './improvement';
 import { QualityAdjustment, QualityOrigin } from './character-quality';
+import { createEmptyProfile, CharacterProfile } from './character-profile';
+import { CharacterSkill, CharacterSkillGroup } from './skill';
 
 export type BonusNode = Record<string, unknown>;
 
@@ -31,6 +33,11 @@ export interface Character {
   qualities: string[];
   qualityOrigins?: Record<string, QualityOrigin>;
   qualityAdjustments?: Record<string, QualityAdjustment>;
+  skills: CharacterSkill[];
+  skillGroups: CharacterSkillGroup[];
+  knowledgeSkills: CharacterSkill[];
+  knowledgeSkillPoints?: number;
+  profile: CharacterProfile;
   contacts: CharacterContact[];
   purchases: PurchasedItem[];
   attributes: ReturnType<typeof createDefaultAttributes>;
@@ -51,6 +58,10 @@ export function createEmptyCharacter(overrides: Partial<Character> = {}): Charac
     qualities: [],
     qualityOrigins: {},
     qualityAdjustments: {},
+    skills: [],
+    skillGroups: [],
+    knowledgeSkills: [],
+    profile: createEmptyProfile(),
     contacts: [],
     purchases: [],
     attributes: createDefaultAttributes({

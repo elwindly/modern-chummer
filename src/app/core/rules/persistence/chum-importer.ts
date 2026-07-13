@@ -1,5 +1,8 @@
 import { AttributeCode, ATTRIBUTE_CODES, createDefaultAttributes } from '../models/attribute';
 import { Character, CharacterFlags } from '../models/character';
+import { createEmptyProfile } from '../models/character-profile';
+import { CharacterContact } from '../models/economy';
+import { CharacterSkill, CharacterSkillGroup } from '../models/skill';
 import { Improvement, ImprovementSource, ImprovementType, createImprovement } from '../models/improvement';
 import { createCharacterId } from './character-serializer';
 
@@ -150,6 +153,84 @@ function parseQualities(root: Record<string, unknown>): {
   return { names, origins, adjustments };
 }
 
+function parseContacts(root: Record<string, unknown>): CharacterContact[] {
+  const contactsNode = root['contacts'] as Record<string, unknown> | undefined;
+  const contactNodes = asArray(contactsNode?.['contact'] as ChumNode);
+
+  return contactNodes
+    .filter((node): node is Record<string, unknown> => !!node && typeof node === 'object')
+    .map((node) => {
+      const type = text(node['type']).toLowerCase();
+      return {
+        name: text(node['name']) || 'Unnamed contact',
+        connection: number(node['connection'], 1),
+        loyalty: number(node['loyalty'], 1),
+        group: number(node['membership']),
+        free: bool(node['free']),
+        enemy: type === 'enemy',
+      };
+    });
+}
+
+function parseSkills(root: Record<string, unknown>): {
+  skills: CharacterSkill[];
+  skillGroups: CharacterSkillGroup[];
+  knowledgeSkills: CharacterSkill[];
+} {
+  const skillsNode = root['skills'] as Record<string, unknown> | undefined;
+  const skillNodes = asArray(skillsNode?.['skill'] as ChumNode);
+  const skills: CharacterSkill[] = [];
+  const knowledgeSkills: CharacterSkill[] = [];
+
+  for (const node of skillNodes) {
+    if (!node || typeof node !== 'object') continue;
+    const record = node as Record<string, unknown>;
+    const skill: CharacterSkill = {
+      name: text(record['name']),
+      rating: number(record['rating']),
+      ratingMax: number(record['ratingmax'], 6),
+      skillGroup: text(record['skillgroup']) || undefined,
+      skillCategory: text(record['skillcategory']) || undefined,
+      attribute: text(record['attribute']) || undefined,
+      defaultSkill: bool(record['default']),
+      grouped: bool(record['grouped']),
+      specialization: text(record['spec']) || undefined,
+      knowledge: bool(record['knowledge']),
+      exotic: bool(record['exotic']),
+    };
+    if (!skill.name) continue;
+    if (skill.knowledge) {
+      knowledgeSkills.push(skill);
+    } else {
+      skills.push(skill);
+    }
+  }
+
+  const groupsNode = root['skillgroups'] as Record<string, unknown> | undefined;
+  const groupNodes = asArray(groupsNode?.['skillgroup'] as ChumNode);
+  const skillGroups: CharacterSkillGroup[] = groupNodes
+    .filter((node): node is Record<string, unknown> => !!node && typeof node === 'object')
+    .map((node) => ({
+      name: text(node['name']),
+      rating: number(node['rating']),
+      ratingMax: number(node['ratingmax'], 6),
+      broken: bool(node['broken']),
+    }))
+    .filter((group) => group.name);
+
+  return { skills, skillGroups, knowledgeSkills };
+}
+
+function parseProfile(root: Record<string, unknown>): Character['profile'] {
+  return {
+    sex: text(root['sex']) || undefined,
+    age: text(root['age']) || undefined,
+    height: text(root['height']) || undefined,
+    weight: text(root['weight']) || undefined,
+    description: text(root['description']) || undefined,
+    notes: text(root['notes']) || undefined,
+  };
+}
 function parseFlags(root: Record<string, unknown>): CharacterFlags {
   return {
     magicianEnabled: bool(root['magician']),
@@ -175,9 +256,6 @@ export function importChumDocument(root: Record<string, unknown>): ChumImportRes
   }
 
   const unsupportedSections = [
-    'skills',
-    'skillgroups',
-    'contacts',
     'armors',
     'weapons',
     'cyberwares',
@@ -198,6 +276,7 @@ export function importChumDocument(root: Record<string, unknown>): ChumImportRes
   }
 
   const parsedQualities = parseQualities(root);
+  const parsedSkills = parseSkills(root);
 
   const character: Character = {
     id: createCharacterId(),
@@ -215,7 +294,12 @@ export function importChumDocument(root: Record<string, unknown>): ChumImportRes
     qualities: parsedQualities.names,
     qualityOrigins: parsedQualities.origins,
     qualityAdjustments: parsedQualities.adjustments,
-    contacts: [],
+    skills: parsedSkills.skills,
+    skillGroups: parsedSkills.skillGroups,
+    knowledgeSkills: parsedSkills.knowledgeSkills,
+    knowledgeSkillPoints: number(root['knowpts']) || undefined,
+    profile: parseProfile(root),
+    contacts: parseContacts(root),
     purchases: [],
     attributes: parseAttributes(root['attributes'], warnings),
     improvements: parseImprovements(root),

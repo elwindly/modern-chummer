@@ -39,7 +39,7 @@ Use this when continuing Phase 3 implementation.
 - IndexedDB persistence via `CharacterStorageService`
 - Legacy `.chum` import via `chum-importer.ts`
 
-## Milestone 6 — Common tab completion
+## Milestone 6 — Done
 
 Finish the character foundation before skills and gear. Most of this extends existing models and the Common / Character Info tabs.
 

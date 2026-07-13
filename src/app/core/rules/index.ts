@@ -1,6 +1,8 @@
 export * from './models/attribute';
 export * from './models/character';
 export * from './models/character-quality';
+export * from './models/character-profile';
+export * from './models/skill';
 export * from './models/improvement';
 export * from './engine/formula-evaluator';
 export * from './engine/improvement-manager';
@@ -9,6 +11,7 @@ export * from './engine/attribute-totals';
 export * from './engine/requirement-validator';
 export * from './models/character-options';
 export * from './models/economy';
+export * from './engine/skill-calculator';
 export * from './engine/bp-calculator';
 export * from './engine/nuyen-calculator';
 export * from './engine/availability-validator';

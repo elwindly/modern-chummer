@@ -104,6 +104,23 @@ function findMetavariant(
   return metatype.metavariants?.find((item) => item.name === name);
 }
 
+export function listMetavariants(
+  metatypes: MetatypeRecord[],
+  metatypeName: string,
+): MetavariantRecord[] {
+  const metatype = findMetatype(metatypes, metatypeName);
+  return metatype?.metavariants ?? [];
+}
+
+export function listMetahumanMetatypes(metatypes: MetatypeRecord[]): MetatypeRecord[] {
+  return metatypes.filter((metatype) => {
+    const category = Array.isArray(metatype.category)
+      ? metatype.category[0]
+      : metatype.category;
+    return category === 'Metahuman';
+  });
+}
+
 export function initializeMetatype(
   character: Character,
   manager: ImprovementManager,
@@ -152,6 +169,9 @@ export function initializeMetatype(
   character.qualities = [];
   character.qualityOrigins = {};
   character.qualityAdjustments = {};
+  character.skills = [];
+  character.skillGroups = [];
+  character.knowledgeSkills = [];
   character.flags = {
     magicianEnabled: false,
     adeptEnabled: false,

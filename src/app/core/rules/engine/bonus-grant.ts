@@ -178,10 +178,20 @@ export function touchCharacter(character: Character): Character {
   return {
     ...character,
     qualities: [...character.qualities],
+    qualityOrigins: character.qualityOrigins ? { ...character.qualityOrigins } : {},
+    qualityAdjustments: character.qualityAdjustments
+      ? { ...character.qualityAdjustments }
+      : {},
+    skills: (character.skills ?? []).map((skill) => ({ ...skill })),
+    skillGroups: (character.skillGroups ?? []).map((group) => ({ ...group })),
+    knowledgeSkills: (character.knowledgeSkills ?? []).map((skill) => ({ ...skill })),
+    profile: { ...(character.profile ?? {}) },
     contacts: [...character.contacts],
     purchases: [...character.purchases],
     improvements: [...character.improvements],
     flags: { ...character.flags },
-    attributes: { ...character.attributes },
+    attributes: Object.fromEntries(
+      Object.entries(character.attributes).map(([code, state]) => [code, { ...state }]),
+    ) as Character['attributes'],
   };
 }

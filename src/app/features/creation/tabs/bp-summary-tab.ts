@@ -38,6 +38,28 @@ import { CharacterStoreService } from '../../../core/services/character-store.se
               <th scope="row">Contacts</th>
               <td>{{ bp.contacts }}</td>
             </tr>
+            @if (bp.enemies) {
+              <tr>
+                <th scope="row">Enemies</th>
+                <td>{{ bp.enemies }}</td>
+              </tr>
+            }
+            <tr>
+              <th scope="row">Active skills</th>
+              <td>{{ bp.activeSkills }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Skill groups</th>
+              <td>{{ bp.skillGroups }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Knowledge skills</th>
+              <td>{{ bp.knowledgeSkills }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Nuyen (BP)</th>
+              <td>{{ bp.nuyenBp }}</td>
+            </tr>
             <tr>
               <th scope="row">Remaining</th>
               <td [class.overspent]="bp.remaining < 0">{{ bp.remaining }}</td>

@@ -14,6 +14,7 @@ import {
 import { ImprovementType } from '../models/improvement';
 import { getTotalMaximum } from './attribute-totals';
 import { ImprovementManager } from './improvement-manager';
+import { calculateSkillBp } from './skill-calculator';
 
 const PRIMARY_ATTRIBUTES: AttributeCode[] = [
   'BOD',
@@ -37,6 +38,10 @@ export interface BpBreakdown {
   negativeQualities: number;
   primaryAttributes: number;
   specialAttributes: number;
+  activeSkills: number;
+  skillGroups: number;
+  knowledgeSkills: number;
+  nuyenBp: number;
 }
 
 function contactCost(contact: Character['contacts'][number], bpContact: number): number {
@@ -99,6 +104,7 @@ export function calculateBp(
 
   let contacts = 0;
   let enemies = 0;
+  let grossContactCost = 0;
 
   for (const contact of character.contacts) {
     if (contact.free) continue;
@@ -108,13 +114,12 @@ export function calculateBp(
       remaining += cost;
       enemies += cost;
     } else {
-      remaining -= cost;
-      contacts += cost;
+      grossContactCost += cost;
     }
   }
 
-  contacts = applyFreeContacts(contacts, character, options);
-  remaining += contacts;
+  contacts = applyFreeContacts(grossContactCost, character, options);
+  remaining -= contacts;
 
   let positiveQualities = 0;
   let negativeQualities = 0;
@@ -163,6 +168,12 @@ export function calculateBp(
   const specialAttributes = calculateAttributeBp(character, SPECIAL_ATTRIBUTES, options);
   remaining -= primaryAttributes + specialAttributes;
 
+  const skillBp = calculateSkillBp(character, options);
+  remaining -= skillBp.total;
+
+  const nuyenBp = character.nuyenBpSpent;
+  remaining -= nuyenBp;
+
   return {
     remaining,
     metatype,
@@ -172,6 +183,10 @@ export function calculateBp(
     negativeQualities,
     primaryAttributes,
     specialAttributes,
+    activeSkills: skillBp.activeSkills,
+    skillGroups: skillBp.skillGroups,
+    knowledgeSkills: skillBp.knowledgeSkills,
+    nuyenBp,
   };
 }
 

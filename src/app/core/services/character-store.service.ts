@@ -27,8 +27,11 @@ import {
   getEffectiveLimits,
   getQualityOrigin,
   buyOffMetatypeQualityBp,
+  getMaxNuyenBp,
+  getFreeKnowledgeSkillPoints,
   grantBonus,
   initializeMetatype,
+  listMetavariants,
   listSelectableAttributes,
   loadCharacterOptions,
   MetatypeRecord,
@@ -41,6 +44,9 @@ import {
   type BonusGrantSession,
   type BonusNode,
   type ChumImportResult,
+  type CharacterContact,
+  type CharacterProfile,
+  type CharacterSkill,
 } from '../rules';
 
 export type RemoveQualityResult =
@@ -96,6 +102,21 @@ export class CharacterStoreService {
     const character = this.character();
     if (!manager || !character) return null;
     return calculateNuyen(character, manager, this.options());
+  });
+
+  readonly maxNuyenBp = computed((): number => {
+    this.revision();
+    const manager = this.manager;
+    const character = this.character();
+    if (!manager || !character) return 0;
+    return getMaxNuyenBp(character, manager);
+  });
+
+  readonly freeKnowledgeSkillPoints = computed((): number => {
+    this.revision();
+    const character = this.character();
+    if (!character) return 0;
+    return getFreeKnowledgeSkillPoints(character);
   });
 
   readonly validation = computed((): ValidationResult | null => {
@@ -197,6 +218,7 @@ export class CharacterStoreService {
       name: this.character()?.name ?? '',
       buildPoints: this.options().buildPoints,
       maximumAvailability: this.options().maximumAvailability,
+      profile: { ...(this.character()?.profile ?? {}) },
     });
     const manager = new ImprovementManager(character);
 
@@ -221,6 +243,138 @@ export class CharacterStoreService {
     const character = this.character();
     if (!character) return;
     character.name = name;
+    this.character.set(touchCharacter(character));
+    this.bump();
+    this.scheduleAutoSave();
+  }
+
+  setMetavariant(metavariantName: string | undefined): void {
+    const character = this.character();
+    if (!character) return;
+    this.initializeMetatype(
+      character.metatype,
+      metavariantName && metavariantName !== 'None' ? metavariantName : undefined,
+    );
+  }
+
+  getMetavariantsForCurrentMetatype(): Array<{ name: string; bp?: string }> {
+    const character = this.character();
+    if (!character) return [];
+    return listMetavariants(this.metatypes(), character.metatype);
+  }
+
+  setNuyenBpSpent(value: number): void {
+    const character = this.character();
+    const manager = this.manager;
+    if (!character || !manager) return;
+
+    const max = getMaxNuyenBp(character, manager);
+    character.nuyenBpSpent = Math.min(Math.max(0, Math.floor(value)), max);
+    this.character.set(touchCharacter(character));
+    this.bump();
+    this.scheduleAutoSave();
+  }
+
+  updateProfile(profile: Partial<CharacterProfile>): void {
+    const character = this.character();
+    if (!character) return;
+    character.profile = { ...character.profile, ...profile };
+    this.character.set(touchCharacter(character));
+    this.bump();
+    this.scheduleAutoSave();
+  }
+
+  addContact(contact: CharacterContact = {
+    name: '',
+    connection: 1,
+    loyalty: 1,
+    group: 0,
+  }): void {
+    const character = this.character();
+    if (!character) return;
+    character.contacts.push({ ...contact });
+    this.character.set(touchCharacter(character));
+    this.bump();
+    this.scheduleAutoSave();
+  }
+
+  updateContact(index: number, contact: Partial<CharacterContact>): void {
+    const character = this.character();
+    if (!character || index < 0 || index >= character.contacts.length) return;
+    character.contacts[index] = { ...character.contacts[index], ...contact };
+    this.character.set(touchCharacter(character));
+    this.bump();
+    this.scheduleAutoSave();
+  }
+
+  removeContact(index: number): void {
+    const character = this.character();
+    if (!character || index < 0 || index >= character.contacts.length) return;
+    character.contacts.splice(index, 1);
+    this.character.set(touchCharacter(character));
+    this.bump();
+    this.scheduleAutoSave();
+  }
+
+  addActiveSkill(skill: CharacterSkill): void {
+    const character = this.character();
+    if (!character) return;
+    if (character.skills.some((entry) => entry.name === skill.name)) return;
+    character.skills.push({ ...skill, knowledge: false });
+    this.character.set(touchCharacter(character));
+    this.bump();
+    this.scheduleAutoSave();
+  }
+
+  setActiveSkillRating(skillName: string, rating: number): void {
+    const character = this.character();
+    if (!character) return;
+    const skill = character.skills.find((entry) => entry.name === skillName);
+    if (!skill) return;
+    const max = skill.ratingMax ?? 6;
+    skill.rating = Math.min(Math.max(0, Math.floor(rating)), max);
+    this.character.set(touchCharacter(character));
+    this.bump();
+    this.scheduleAutoSave();
+  }
+
+  removeActiveSkill(skillName: string): void {
+    const character = this.character();
+    if (!character) return;
+    character.skills = character.skills.filter((entry) => entry.name !== skillName);
+    this.character.set(touchCharacter(character));
+    this.bump();
+    this.scheduleAutoSave();
+  }
+
+  addKnowledgeSkill(skill: CharacterSkill): void {
+    const character = this.character();
+    if (!character) return;
+    if (character.knowledgeSkills.some((entry) => entry.name === skill.name)) return;
+    character.knowledgeSkills.push({ ...skill, knowledge: true });
+    this.character.set(touchCharacter(character));
+    this.bump();
+    this.scheduleAutoSave();
+  }
+
+  setKnowledgeSkillRating(skillName: string, rating: number): void {
+    const character = this.character();
+    if (!character) return;
+    const skill = character.knowledgeSkills.find((entry) => entry.name === skillName);
+    if (!skill) return;
+    const max = skill.ratingMax ?? 6;
+    skill.rating = Math.min(Math.max(0, Math.floor(rating)), max);
+    this.character.set(touchCharacter(character));
+    this.bump();
+    this.scheduleAutoSave();
+  }
+
+  removeKnowledgeSkill(skillName: string): void {
+    const character = this.character();
+    if (!character) return;
+    character.knowledgeSkills = character.knowledgeSkills.filter(
+      (entry) => entry.name !== skillName,
+    );
     this.character.set(touchCharacter(character));
     this.bump();
     this.scheduleAutoSave();

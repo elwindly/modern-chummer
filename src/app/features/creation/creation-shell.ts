@@ -13,6 +13,7 @@ import { BpSummaryBar } from './components/bp-summary-bar';
 import { SelectionDialog } from './components/selection-dialog';
 import { CreationTabId, visibleCreationTabs } from './creation-tabs';
 import { BpSummaryTab } from './tabs/bp-summary-tab';
+import { CharacterInfoTab } from './tabs/character-info-tab';
 import { CommonTab } from './tabs/common-tab';
 import { PlaceholderTab } from './tabs/placeholder-tab';
 
@@ -23,6 +24,7 @@ import { PlaceholderTab } from './tabs/placeholder-tab';
     BpSummaryBar,
     SelectionDialog,
     CommonTab,
+    CharacterInfoTab,
     BpSummaryTab,
     PlaceholderTab,
   ],
@@ -72,6 +74,9 @@ import { PlaceholderTab } from './tabs/placeholder-tab';
             }
             @case ('bp-summary') {
               <app-bp-summary-tab />
+            }
+            @case ('info') {
+              <app-character-info-tab />
             }
             @default {
               <app-placeholder-tab [title]="activeTabLabel()" />
