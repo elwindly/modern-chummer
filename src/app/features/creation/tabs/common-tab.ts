@@ -213,46 +213,10 @@ type QualityFilter = 'Positive' | 'Negative';
           }
         </div>
 
-        <div class="skills-preview" aria-label="Skills preview">
-          <div class="section-header">
-            <h3>Skills (preview)</h3>
-          </div>
-          <p class="muted">
-            Add default active skills here. Full skill editing comes in the Skills tab.
-            Free knowledge points: {{ store.freeKnowledgeSkillPoints() }}.
-          </p>
-
-          @if (character.skills.length) {
-            <ul class="skill-list">
-              @for (skill of character.skills; track skill.name) {
-                <li>
-                  <span>{{ skill.name }}</span>
-                  <input
-                    type="number"
-                    [ngModel]="skill.rating"
-                    (ngModelChange)="store.setActiveSkillRating(skill.name, $event)"
-                    [min]="0"
-                    [max]="skill.ratingMax ?? 6"
-                  />
-                  <button type="button" (click)="store.removeActiveSkill(skill.name)">Remove</button>
-                </li>
-              }
-            </ul>
-          }
-
-          @if (defaultSkills().length) {
-            <label class="add-skill-row">
-              <span class="sr-only">Add default skill</span>
-              <select #skillSelect>
-                <option value="">Add default skill…</option>
-                @for (skill of defaultSkills(); track skill.name) {
-                  <option [value]="skill.name">{{ skill.name }}</option>
-                }
-              </select>
-              <button type="button" (click)="addDefaultSkill(skillSelect)">Add</button>
-            </label>
-          }
-        </div>
+        <p class="muted skills-note">
+          Edit active skills, skill groups, and knowledge skills on the
+          <strong>Skills</strong> tab. Free knowledge points: {{ store.freeKnowledgeSkillPoints() }}.
+        </p>
 
         <div class="qualities" aria-label="Qualities">
           <h3>Qualities</h3>
@@ -694,7 +658,6 @@ export class CommonTab implements OnInit {
   readonly metavariants = computed(() => this.store.getMetavariantsForCurrentMetatype());
 
   readonly qualityCatalog = signal<ChummerItem[]>([]);
-  readonly activeSkillCatalog = signal<ChummerItem[]>([]);
   readonly loadingQualities = signal(true);
   readonly categoryFilter = signal<QualityFilter>('Positive');
   readonly searchQuery = signal('');
@@ -713,18 +676,6 @@ export class CommonTab implements OnInit {
     if (character.flags.magEnabled) codes.push('MAG');
     if (character.flags.resEnabled) codes.push('RES');
     return codes;
-  });
-
-  readonly defaultSkills = computed(() => {
-    const character = this.store.character();
-    const selected = new Set(character?.skills.map((skill) => skill.name) ?? []);
-    return sortByName(
-      this.activeSkillCatalog().filter((skill) => {
-        if (selected.has(skill.name)) return false;
-        const isDefault = skill['default'];
-        return isDefault === 'Yes' || isDefault === true;
-      }),
-    );
   });
 
   readonly scopedQualities = computed(() => {
@@ -749,12 +700,8 @@ export class CommonTab implements OnInit {
   });
 
   async ngOnInit(): Promise<void> {
-    const [qualities, skills] = await Promise.all([
-      this.data.loadItems('qualities', 'qualities'),
-      this.data.loadItems('skills', 'skills'),
-    ]);
+    const qualities = await this.data.loadItems('qualities', 'qualities');
     this.qualityCatalog.set(qualities);
-    this.activeSkillCatalog.set(skills);
     this.loadingQualities.set(false);
   }
 
@@ -781,30 +728,6 @@ export class CommonTab implements OnInit {
       return;
     }
     this.store.setMetavariant(value === 'None' ? undefined : value);
-  }
-
-  addDefaultSkill(select: HTMLSelectElement): void {
-    const name = select.value;
-    if (!name) return;
-    const record = this.activeSkillCatalog().find((skill) => skill.name === name);
-    if (!record) return;
-
-    const category = record['category'];
-    const skillCategory = Array.isArray(category)
-      ? String(category[0] ?? '')
-      : String(category ?? '');
-
-    this.store.addActiveSkill({
-      name: record.name,
-      rating: 0,
-      ratingMax: 6,
-      skillGroup: String(record['skillgroup'] ?? '') || undefined,
-      skillCategory,
-      attribute: String(record['attribute'] ?? '') || undefined,
-      defaultSkill: true,
-      grouped: false,
-    });
-    select.value = '';
   }
 
   formatBp(quality: ChummerItem): string {

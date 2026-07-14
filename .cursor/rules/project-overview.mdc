@@ -25,15 +25,15 @@ Shadowrun 4th Anniversary Edition web app. Game data comes from legacy ChummerGe
 
 ```bash
 npm run convert      # regenerate JSON from ChummerGenSR4
-npm run test:rules   # rules engine unit tests (Vitest)
+npm test             # unit tests (Vitest)
 npm start            # dev server at localhost:4200
 npm run build        # production build
 ```
 
 ## Implementation phases
 
-1. **Done** — Data pipeline, reference browser, rules engine (Milestones 1–6)
-2. **Next** — Skills & martial arts tab (Milestone 7; see `rules-roadmap.mdc`)
+1. **Done** — Data pipeline, reference browser, rules engine (Milestones 1–7)
+2. **Next** — Street gear tab (Milestone 8; see `rules-roadmap.mdc`)
 3. **Future** — Career mode advancement (karma, post-creation editing)
 
 ## Legacy reference (when porting rules)

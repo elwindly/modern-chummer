@@ -45,7 +45,7 @@ Handlers like `selectskill` return a `SelectionRequest`; Angular UI resolves the
 ## Tests
 
 ```bash
-npm run test:rules
+npm test
 ```
 
 Always add tests when adding handlers or changing `ValueOf` / formula evaluation.

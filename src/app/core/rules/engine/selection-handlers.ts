@@ -112,6 +112,61 @@ export function listSelectableAttributes(
   return attributes;
 }
 
+export function listSelectableSkillGroups(
+  config: SkillSelectionConfig,
+  skillGroupNames: string[],
+): string[] {
+  let groups = [...skillGroupNames];
+
+  if (config.skillGroup) {
+    groups = groups.filter((name) => name === config.skillGroup);
+  }
+
+  return groups.sort((a, b) => a.localeCompare(b));
+}
+
+export interface SelectableSkillEntry {
+  name: string;
+  skillGroup?: string;
+  skillCategory?: string;
+}
+
+export function listSelectableSkills(
+  config: SkillSelectionConfig,
+  catalogSkills: SelectableSkillEntry[],
+  characterSkills: SelectableSkillEntry[],
+): string[] {
+  const merged = new Map<string, SelectableSkillEntry>();
+  for (const skill of [...catalogSkills, ...characterSkills]) {
+    merged.set(skill.name, skill);
+  }
+
+  let skills = [...merged.values()];
+
+  if (config.limitToSkill) {
+    skills = skills.filter((skill) => skill.name === config.limitToSkill);
+  }
+
+  if (config.skillGroup) {
+    skills = skills.filter((skill) => skill.skillGroup === config.skillGroup);
+  }
+
+  if (config.skillCategory) {
+    skills = skills.filter((skill) => skill.skillCategory === config.skillCategory);
+  }
+
+  if (config.excludeCategory) {
+    skills = skills.filter((skill) => skill.skillCategory !== config.excludeCategory);
+  }
+
+  const names = skills.map((skill) => skill.name);
+  const characterNames = new Set(characterSkills.map((skill) => skill.name));
+  const onCharacter = names.filter((name) => characterNames.has(name));
+  const source = onCharacter.length ? onCharacter : names;
+
+  return [...new Set(source)].sort((a, b) => a.localeCompare(b));
+}
+
 export function applySelectText(
   manager: ImprovementManager,
   source: ImprovementSource,

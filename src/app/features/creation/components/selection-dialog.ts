@@ -4,8 +4,6 @@ import {
   computed,
   effect,
   inject,
-  OnInit,
-  signal,
 } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CharacterStoreService } from '../../../core/services/character-store.service';
@@ -32,7 +30,18 @@ import {
           </select>
         } @else if (selection.kind === 'skill') {
           <label for="selection-value">Skill</label>
-          <input id="selection-value" type="text" [(ngModel)]="selectionValue" />
+          <select id="selection-value" [(ngModel)]="selectionValue">
+            @for (option of skillOptions(); track option) {
+              <option [value]="option">{{ option }}</option>
+            }
+          </select>
+        } @else if (selection.kind === 'skill-group') {
+          <label for="selection-value">Skill group</label>
+          <select id="selection-value" [(ngModel)]="selectionValue">
+            @for (option of skillGroupOptions(); track option) {
+              <option [value]="option">{{ option }}</option>
+            }
+          </select>
         } @else {
           <label for="selection-value">Value</label>
           <input id="selection-value" type="text" [(ngModel)]="selectionValue" />
@@ -99,6 +108,12 @@ export class SelectionDialog {
     return listSelectableAttributes(config, character.flags.magEnabled, character.flags.resEnabled);
   });
 
+  readonly skillOptions = computed(() => this.store.getSelectableSkillsForPendingSelection());
+
+  readonly skillGroupOptions = computed(() =>
+    this.store.getSelectableSkillGroupsForPendingSelection(),
+  );
+
   constructor() {
     effect(() => {
       const selection = this.store.pendingSelection();
@@ -110,7 +125,9 @@ export class SelectionDialog {
       if (selection.kind === 'attribute') {
         this.selectionValue = this.attributeOptions()[0] ?? '';
       } else if (selection.kind === 'skill') {
-        this.selectionValue = 'Pistols';
+        this.selectionValue = this.skillOptions()[0] ?? '';
+      } else if (selection.kind === 'skill-group') {
+        this.selectionValue = this.skillGroupOptions()[0] ?? '';
       } else {
         this.selectionValue = '';
       }

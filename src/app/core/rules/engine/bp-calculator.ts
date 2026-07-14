@@ -15,6 +15,7 @@ import { ImprovementType } from '../models/improvement';
 import { getTotalMaximum } from './attribute-totals';
 import { ImprovementManager } from './improvement-manager';
 import { calculateSkillBp } from './skill-calculator';
+import { calculateMartialArtBp } from './martial-art-calculator';
 
 const PRIMARY_ATTRIBUTES: AttributeCode[] = [
   'BOD',
@@ -41,6 +42,8 @@ export interface BpBreakdown {
   activeSkills: number;
   skillGroups: number;
   knowledgeSkills: number;
+  martialArts: number;
+  martialArtManeuvers: number;
   nuyenBp: number;
 }
 
@@ -171,6 +174,13 @@ export function calculateBp(
   const skillBp = calculateSkillBp(character, options);
   remaining -= skillBp.total;
 
+  const martialBp = calculateMartialArtBp(
+    character.martialArts ?? [],
+    character.martialArtManeuvers ?? [],
+    options,
+  );
+  remaining -= martialBp.total;
+
   const nuyenBp = character.nuyenBpSpent;
   remaining -= nuyenBp;
 
@@ -186,6 +196,8 @@ export function calculateBp(
     activeSkills: skillBp.activeSkills,
     skillGroups: skillBp.skillGroups,
     knowledgeSkills: skillBp.knowledgeSkills,
+    martialArts: martialBp.styles,
+    martialArtManeuvers: martialBp.maneuvers,
     nuyenBp,
   };
 }

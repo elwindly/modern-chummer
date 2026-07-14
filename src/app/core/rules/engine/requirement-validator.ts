@@ -1,4 +1,5 @@
 import { BonusNode, Character } from '../models/character';
+import { characterHasSkillAtRating } from './skill-totals';
 
 export interface RequirementContext {
   character: Character;
@@ -49,6 +50,14 @@ function matchesRequirementChild(
       return character.metatypeCategory
         ? asStringList(childValue).includes(character.metatypeCategory)
         : false;
+    case 'skill': {
+      const entries = asStringList(childValue);
+      return entries.some((entry) => {
+        const [name, minRatingText] = entry.split(':');
+        const minRating = minRatingText ? Number(minRatingText) : 1;
+        return characterHasSkillAtRating(character, name.trim(), minRating);
+      });
+    }
     default:
       return false;
   }

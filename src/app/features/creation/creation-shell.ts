@@ -16,6 +16,8 @@ import { BpSummaryTab } from './tabs/bp-summary-tab';
 import { CharacterInfoTab } from './tabs/character-info-tab';
 import { CommonTab } from './tabs/common-tab';
 import { PlaceholderTab } from './tabs/placeholder-tab';
+import { SkillsTab } from './tabs/skills-tab';
+import { MartialArtsTab } from './tabs/martial-arts-tab';
 
 @Component({
   selector: 'app-creation-shell',
@@ -26,6 +28,8 @@ import { PlaceholderTab } from './tabs/placeholder-tab';
     CommonTab,
     CharacterInfoTab,
     BpSummaryTab,
+    SkillsTab,
+    MartialArtsTab,
     PlaceholderTab,
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -77,6 +81,12 @@ import { PlaceholderTab } from './tabs/placeholder-tab';
             }
             @case ('info') {
               <app-character-info-tab />
+            }
+            @case ('skills') {
+              <app-skills-tab />
+            }
+            @case ('martial-arts') {
+              <app-martial-arts-tab />
             }
             @default {
               <app-placeholder-tab [title]="activeTabLabel()" />

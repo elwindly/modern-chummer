@@ -7,6 +7,7 @@ export interface CharacterOptions {
   bpAttributeMax: number;
   bpContact: number;
   bpMartialArt: number;
+  bpMartialArtManeuver: number;
   bpSkillGroup: number;
   bpActiveSkill: number;
   bpKnowledgeSkill: number;
@@ -29,6 +30,7 @@ export const DEFAULT_CHARACTER_OPTIONS: CharacterOptions = {
   bpAttributeMax: 15,
   bpContact: 1,
   bpMartialArt: 5,
+  bpMartialArtManeuver: 2,
   bpSkillGroup: 10,
   bpActiveSkill: 4,
   bpKnowledgeSkill: 1,

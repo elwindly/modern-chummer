@@ -57,6 +57,14 @@ import { CharacterStoreService } from '../../../core/services/character-store.se
               <td>{{ bp.knowledgeSkills }}</td>
             </tr>
             <tr>
+              <th scope="row">Martial arts</th>
+              <td>{{ bp.martialArts }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Martial art maneuvers</th>
+              <td>{{ bp.martialArtManeuvers }}</td>
+            </tr>
+            <tr>
               <th scope="row">Nuyen (BP)</th>
               <td>{{ bp.nuyenBp }}</td>
             </tr>

@@ -2,7 +2,7 @@ import { AttributeCode, ATTRIBUTE_CODES, createDefaultAttributes } from '../mode
 import { Character, CharacterFlags } from '../models/character';
 import { createEmptyProfile } from '../models/character-profile';
 import { CharacterContact } from '../models/economy';
-import { CharacterSkill, CharacterSkillGroup } from '../models/skill';
+import { CharacterSkill, CharacterSkillGroup, CharacterMartialArt, CharacterMartialArtManeuver } from '../models/skill';
 import { Improvement, ImprovementSource, ImprovementType, createImprovement } from '../models/improvement';
 import { createCharacterId } from './character-serializer';
 
@@ -221,6 +221,37 @@ function parseSkills(root: Record<string, unknown>): {
   return { skills, skillGroups, knowledgeSkills };
 }
 
+function parseMartialArts(root: Record<string, unknown>): {
+  martialArts: CharacterMartialArt[];
+  martialArtManeuvers: CharacterMartialArtManeuver[];
+} {
+  const artsNode = root['martialarts'] as Record<string, unknown> | undefined;
+  const artNodes = asArray(artsNode?.['martialart'] as ChumNode);
+  const martialArts: CharacterMartialArt[] = artNodes
+    .filter((node): node is Record<string, unknown> => !!node && typeof node === 'object')
+    .map((node) => ({
+      name: text(node['name']),
+      rating: number(node['rating'], 1),
+      source: text(node['source']) || undefined,
+      page: text(node['page']) || undefined,
+    }))
+    .filter((art) => art.name);
+
+  const maneuversNode = root['martialartmaneuvers'] as Record<string, unknown> | undefined;
+  const maneuverNodes = asArray(maneuversNode?.['martialartmaneuver'] as ChumNode);
+  const martialArtManeuvers: CharacterMartialArtManeuver[] = maneuverNodes
+    .filter((node): node is Record<string, unknown> => !!node && typeof node === 'object')
+    .map((node) => ({
+      id: text(node['guid']) || `maneuver-${text(node['name'])}-${maneuverNodes.indexOf(node)}`,
+      name: text(node['name']),
+      source: text(node['source']) || undefined,
+      page: text(node['page']) || undefined,
+    }))
+    .filter((maneuver) => maneuver.name);
+
+  return { martialArts, martialArtManeuvers };
+}
+
 function parseProfile(root: Record<string, unknown>): Character['profile'] {
   return {
     sex: text(root['sex']) || undefined,
@@ -265,7 +296,6 @@ export function importChumDocument(root: Record<string, unknown>): ChumImportRes
     'spells',
     'powers',
     'programs',
-    'martialarts',
     'lifestyles',
   ];
 
@@ -277,6 +307,7 @@ export function importChumDocument(root: Record<string, unknown>): ChumImportRes
 
   const parsedQualities = parseQualities(root);
   const parsedSkills = parseSkills(root);
+  const parsedMartialArts = parseMartialArts(root);
 
   const character: Character = {
     id: createCharacterId(),
@@ -297,6 +328,8 @@ export function importChumDocument(root: Record<string, unknown>): ChumImportRes
     skills: parsedSkills.skills,
     skillGroups: parsedSkills.skillGroups,
     knowledgeSkills: parsedSkills.knowledgeSkills,
+    martialArts: parsedMartialArts.martialArts,
+    martialArtManeuvers: parsedMartialArts.martialArtManeuvers,
     knowledgeSkillPoints: number(root['knowpts']) || undefined,
     profile: parseProfile(root),
     contacts: parseContacts(root),

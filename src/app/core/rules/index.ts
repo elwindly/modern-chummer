@@ -12,6 +12,8 @@ export * from './engine/requirement-validator';
 export * from './models/character-options';
 export * from './models/economy';
 export * from './engine/skill-calculator';
+export * from './engine/skill-totals';
+export * from './engine/martial-art-calculator';
 export * from './engine/bp-calculator';
 export * from './engine/nuyen-calculator';
 export * from './engine/availability-validator';

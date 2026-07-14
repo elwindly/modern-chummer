@@ -36,7 +36,10 @@ export function serializeCharacter(
 }
 
 export function deserializeCharacter(document: StoredCharacterDocument): Character {
-  return cloneCharacter(document.character);
+  const character = cloneCharacter(document.character);
+  character.martialArts ??= [];
+  character.martialArtManeuvers ??= [];
+  return character;
 }
 
 export function toListEntry(document: StoredCharacterDocument): CharacterListEntry {
@@ -65,6 +68,10 @@ function cloneCharacter(character: Character): Character {
     skills: (character.skills ?? []).map((skill) => ({ ...skill })),
     skillGroups: (character.skillGroups ?? []).map((group) => ({ ...group })),
     knowledgeSkills: (character.knowledgeSkills ?? []).map((skill) => ({ ...skill })),
+    martialArts: (character.martialArts ?? []).map((art) => ({ ...art })),
+    martialArtManeuvers: (character.martialArtManeuvers ?? []).map((maneuver) => ({
+      ...maneuver,
+    })),
     profile: { ...(character.profile ?? {}) },
     purchases: character.purchases.map((purchase) => ({ ...purchase })),
     improvements: character.improvements.map(cloneImprovement),

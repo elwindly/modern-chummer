@@ -3,7 +3,12 @@ import { CharacterContact, PurchasedItem } from './economy';
 import { Improvement } from './improvement';
 import { QualityAdjustment, QualityOrigin } from './character-quality';
 import { createEmptyProfile, CharacterProfile } from './character-profile';
-import { CharacterSkill, CharacterSkillGroup } from './skill';
+import {
+  CharacterMartialArt,
+  CharacterMartialArtManeuver,
+  CharacterSkill,
+  CharacterSkillGroup,
+} from './skill';
 
 export type BonusNode = Record<string, unknown>;
 
@@ -36,6 +41,8 @@ export interface Character {
   skills: CharacterSkill[];
   skillGroups: CharacterSkillGroup[];
   knowledgeSkills: CharacterSkill[];
+  martialArts: CharacterMartialArt[];
+  martialArtManeuvers: CharacterMartialArtManeuver[];
   knowledgeSkillPoints?: number;
   profile: CharacterProfile;
   contacts: CharacterContact[];
@@ -61,6 +68,8 @@ export function createEmptyCharacter(overrides: Partial<Character> = {}): Charac
     skills: [],
     skillGroups: [],
     knowledgeSkills: [],
+    martialArts: [],
+    martialArtManeuvers: [],
     profile: createEmptyProfile(),
     contacts: [],
     purchases: [],

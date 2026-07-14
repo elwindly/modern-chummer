@@ -30,6 +30,12 @@ import {
   getMaxNuyenBp,
   getFreeKnowledgeSkillPoints,
   grantBonus,
+  getSkillRatingMaximum,
+  getEffectiveSkillRating,
+  syncSkillGrouping,
+  listSelectableSkills,
+  listSelectableSkillGroups,
+  parseSkillSelectionConfig,
   initializeMetatype,
   listMetavariants,
   listSelectableAttributes,
@@ -47,6 +53,7 @@ import {
   type CharacterContact,
   type CharacterProfile,
   type CharacterSkill,
+  type CharacterMartialArt,
 } from '../rules';
 
 export type RemoveQualityResult =
@@ -77,6 +84,12 @@ export class CharacterStoreService {
   readonly grantInProgress = signal(false);
   readonly initialized = signal(false);
   readonly lastImportWarnings = signal<string[]>([]);
+
+  readonly skillCatalog = signal<Array<{ name: string; skillGroup?: string; skillCategory?: string; default?: string; specs?: string[] }>>([]);
+  readonly knowledgeCatalog = signal<Array<{ name: string; skillCategory?: string; specs?: string[] }>>([]);
+  readonly skillGroupNames = signal<string[]>([]);
+  readonly martialArtCatalog = signal<Array<{ name: string; source?: string; page?: string }>>([]);
+  readonly maneuverCatalog = signal<Array<{ name: string; source?: string; page?: string }>>([]);
 
   readonly derivedStats = computed((): DerivedStats | null => {
     this.revision();
@@ -135,10 +148,12 @@ export class CharacterStoreService {
   async ensureInitialized(): Promise<void> {
     if (this.initialized()) return;
 
-    const [settings, qualitiesDoc, metatypesDoc] = await Promise.all([
+    const [settings, qualitiesDoc, metatypesDoc, skillsDoc, martialArtsDoc] = await Promise.all([
       firstValueFrom(this.http.get<Partial<CharacterOptions>>('/data/settings/default.json')),
       this.data.loadDocument('qualities'),
       this.data.loadDocument('metatypes'),
+      this.data.loadDocument('skills'),
+      this.data.loadDocument('martialarts'),
     ]);
 
     this.options.set(loadCharacterOptions(settings));
@@ -150,6 +165,41 @@ export class CharacterStoreService {
     this.metatypes.set(
       (metatypesDoc as { metatypes: MetatypeRecord[] }).metatypes ?? [],
     );
+
+    const skillsData = skillsDoc as {
+      skills?: Array<{ name: string; skillgroup?: string; category?: string[]; default?: string; specs?: string[] }>;
+      knowledgeskills?: Array<{ name: string; category?: string[]; specs?: string[] }>;
+      skillgroups?: Array<{ name: string } | string>;
+    };
+    this.skillCatalog.set(
+      (skillsData.skills ?? []).map((skill) => ({
+        name: skill.name,
+        skillGroup: skill.skillgroup,
+        skillCategory: Array.isArray(skill.category) ? skill.category[0] : undefined,
+        default: skill.default,
+        specs: skill.specs,
+      })),
+    );
+    this.knowledgeCatalog.set(
+      (skillsData.knowledgeskills ?? []).map((skill) => ({
+        name: skill.name,
+        skillCategory: Array.isArray(skill.category) ? skill.category[0] : undefined,
+        specs: skill.specs,
+      })),
+    );
+    this.skillGroupNames.set(
+      (skillsData.skillgroups ?? []).map((group) =>
+        typeof group === 'string' ? group : group.name,
+      ),
+    );
+
+    const martialData = martialArtsDoc as {
+      martialarts?: Array<{ name: string; source?: string; page?: string }>;
+      maneuvers?: Array<{ name: string; source?: string; page?: string }>;
+    };
+    this.martialArtCatalog.set(martialData.martialarts ?? []);
+    this.maneuverCatalog.set(martialData.maneuvers ?? []);
+
     this.initialized.set(true);
     await this.refreshCharacterList();
   }
@@ -331,11 +381,37 @@ export class CharacterStoreService {
     if (!character) return;
     const skill = character.skills.find((entry) => entry.name === skillName);
     if (!skill) return;
-    const max = skill.ratingMax ?? 6;
+    const max = getSkillRatingMaximum(character, skill);
     skill.rating = Math.min(Math.max(0, Math.floor(rating)), max);
+    syncSkillGrouping(character);
     this.character.set(touchCharacter(character));
     this.bump();
     this.scheduleAutoSave();
+  }
+
+  setActiveSkillSpec(skillName: string, specialization: string): void {
+    const character = this.character();
+    if (!character) return;
+    const skill = character.skills.find((entry) => entry.name === skillName);
+    if (!skill) return;
+    skill.specialization = specialization.trim() || undefined;
+    this.character.set(touchCharacter(character));
+    this.bump();
+    this.scheduleAutoSave();
+  }
+
+  addActiveSkillFromCatalog(skillName: string): void {
+    const catalogSkill = this.skillCatalog().find((entry) => entry.name === skillName);
+    if (!catalogSkill) return;
+
+    this.addActiveSkill({
+      name: catalogSkill.name,
+      rating: 0,
+      skillGroup: catalogSkill.skillGroup,
+      skillCategory: catalogSkill.skillCategory,
+      defaultSkill: catalogSkill.default?.toLowerCase() === 'yes',
+      knowledge: false,
+    });
   }
 
   removeActiveSkill(skillName: string): void {
@@ -367,6 +443,157 @@ export class CharacterStoreService {
     this.character.set(touchCharacter(character));
     this.bump();
     this.scheduleAutoSave();
+  }
+
+  setKnowledgeSkillSpec(skillName: string, specialization: string): void {
+    const character = this.character();
+    if (!character) return;
+    const skill = character.knowledgeSkills.find((entry) => entry.name === skillName);
+    if (!skill) return;
+    skill.specialization = specialization.trim() || undefined;
+    this.character.set(touchCharacter(character));
+    this.bump();
+    this.scheduleAutoSave();
+  }
+
+  addKnowledgeSkillFromCatalog(skillName: string): void {
+    const catalogSkill = this.knowledgeCatalog().find((entry) => entry.name === skillName);
+    if (!catalogSkill) return;
+
+    this.addKnowledgeSkill({
+      name: catalogSkill.name,
+      rating: 0,
+      skillCategory: catalogSkill.skillCategory,
+      knowledge: true,
+    });
+  }
+
+  addSkillGroup(groupName: string): void {
+    const character = this.character();
+    if (!character) return;
+    if (character.skillGroups.some((group) => group.name === groupName)) return;
+    character.skillGroups.push({ name: groupName, rating: 0 });
+    this.character.set(touchCharacter(character));
+    this.bump();
+    this.scheduleAutoSave();
+  }
+
+  setSkillGroupRating(groupName: string, rating: number): void {
+    const character = this.character();
+    if (!character) return;
+    const group = character.skillGroups.find((entry) => entry.name === groupName);
+    if (!group) return;
+    const max = group.ratingMax ?? 6;
+    group.rating = Math.min(Math.max(0, Math.floor(rating)), max);
+    syncSkillGrouping(character);
+    this.character.set(touchCharacter(character));
+    this.bump();
+    this.scheduleAutoSave();
+  }
+
+  removeSkillGroup(groupName: string): void {
+    const character = this.character();
+    if (!character) return;
+    character.skillGroups = character.skillGroups.filter((group) => group.name !== groupName);
+    syncSkillGrouping(character);
+    this.character.set(touchCharacter(character));
+    this.bump();
+    this.scheduleAutoSave();
+  }
+
+  addMartialArt(art: CharacterMartialArt): void {
+    const character = this.character();
+    if (!character) return;
+    if (character.martialArts.some((entry) => entry.name === art.name)) return;
+    character.martialArts.push({ ...art, rating: art.rating || 1 });
+    this.character.set(touchCharacter(character));
+    this.bump();
+    this.scheduleAutoSave();
+  }
+
+  setMartialArtRating(artName: string, rating: number): void {
+    const character = this.character();
+    if (!character) return;
+    const art = character.martialArts.find((entry) => entry.name === artName);
+    if (!art) return;
+    art.rating = Math.min(Math.max(1, Math.floor(rating)), 6);
+    this.character.set(touchCharacter(character));
+    this.bump();
+    this.scheduleAutoSave();
+  }
+
+  removeMartialArt(artName: string): void {
+    const character = this.character();
+    if (!character) return;
+    character.martialArts = character.martialArts.filter((art) => art.name !== artName);
+    this.character.set(touchCharacter(character));
+    this.bump();
+    this.scheduleAutoSave();
+  }
+
+  addMartialArtManeuver(name: string, source?: string, page?: string): void {
+    const character = this.character();
+    if (!character) return;
+    if (character.martialArtManeuvers.some((entry) => entry.name === name)) return;
+    character.martialArtManeuvers.push({
+      id: createCharacterId(),
+      name,
+      source,
+      page,
+    });
+    this.character.set(touchCharacter(character));
+    this.bump();
+    this.scheduleAutoSave();
+  }
+
+  removeMartialArtManeuver(maneuverId: string): void {
+    const character = this.character();
+    if (!character) return;
+    character.martialArtManeuvers = character.martialArtManeuvers.filter(
+      (maneuver) => maneuver.id !== maneuverId,
+    );
+    this.character.set(touchCharacter(character));
+    this.bump();
+    this.scheduleAutoSave();
+  }
+
+  getEffectiveSkillRating(skillName: string): number {
+    this.revision();
+    const character = this.character();
+    if (!character) return 0;
+    const skill = character.skills.find((entry) => entry.name === skillName);
+    if (!skill) return 0;
+    return getEffectiveSkillRating(character, skill);
+  }
+
+  getSelectableSkillsForPendingSelection(): string[] {
+    const selection = this.pendingSelection();
+    const character = this.character();
+    if (!selection || selection.kind !== 'skill' || !character) return [];
+
+    const configNode = selection.config['selectskill'] as Record<string, unknown>;
+    const config = parseSkillSelectionConfig(configNode);
+    const catalog = this.skillCatalog().map((skill) => ({
+      name: skill.name,
+      skillGroup: skill.skillGroup,
+      skillCategory: skill.skillCategory,
+    }));
+    const onCharacter = character.skills.map((skill) => ({
+      name: skill.name,
+      skillGroup: skill.skillGroup,
+      skillCategory: skill.skillCategory,
+    }));
+
+    return listSelectableSkills(config, catalog, onCharacter);
+  }
+
+  getSelectableSkillGroupsForPendingSelection(): string[] {
+    const selection = this.pendingSelection();
+    if (!selection || selection.kind !== 'skill-group') return [];
+
+    const configNode = selection.config['selectskillgroup'] as Record<string, unknown>;
+    const config = parseSkillSelectionConfig(configNode);
+    return listSelectableSkillGroups(config, this.skillGroupNames());
   }
 
   removeKnowledgeSkill(skillName: string): void {

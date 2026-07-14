@@ -21,6 +21,20 @@ export interface CharacterSkillGroup {
 
 export type CharacterKnowledgeSkill = CharacterSkill;
 
+export interface CharacterMartialArt {
+  name: string;
+  rating: number;
+  source?: string;
+  page?: string;
+}
+
+export interface CharacterMartialArtManeuver {
+  id: string;
+  name: string;
+  source?: string;
+  page?: string;
+}
+
 export interface SkillBpBreakdown {
   activeSkills: number;
   skillGroups: number;
