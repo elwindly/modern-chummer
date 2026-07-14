@@ -2,19 +2,31 @@ import {
   ChangeDetectionStrategy,
   Component,
   computed,
+  effect,
   inject,
+  linkedSignal,
   signal,
+  untracked,
 } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { form, FormField } from '@angular/forms/signals';
 import { CharacterStoreService } from '../../../core/services/character-store.service';
 import { ContentFilterService } from '../../../core/services/content-filter.service';
 import { contentSourceScopeLabel } from '../../../core/models/content-source-scope';
+import { type CharacterMartialArt } from '../../../core/rules';
 import { matchesSearch, matchesSourceScope, sortByName } from '../../../core/utils/item-helpers';
 import { SourceFilterControl } from '../../../shared/source-filter-control';
 
+function martialArtsEqual(a: CharacterMartialArt[], b: CharacterMartialArt[]): boolean {
+  if (a.length !== b.length) return false;
+  return a.every((art, index) => {
+    const other = b[index];
+    return art.name === other.name && art.rating === other.rating;
+  });
+}
+
 @Component({
   selector: 'app-martial-arts-tab',
-  imports: [FormsModule, SourceFilterControl],
+  imports: [FormField, SourceFilterControl],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     @if (store.character(); as character) {
@@ -33,8 +45,7 @@ import { SourceFilterControl } from '../../../shared/source-filter-control';
               <input
                 type="search"
                 placeholder="Search styles…"
-                [ngModel]="styleSearch()"
-                (ngModelChange)="styleSearch.set($event)"
+                [formField]="styleSearchForm.query"
               />
             </label>
             <app-source-filter-control />
@@ -75,7 +86,7 @@ import { SourceFilterControl } from '../../../shared/source-filter-control';
           @if (character.martialArts.length) {
             <h4>Character styles</h4>
             <ul class="editor-list">
-              @for (art of character.martialArts; track art.name) {
+              @for (art of character.martialArts; track art.name; let i = $index) {
                 <li>
                   <div class="editor-row">
                     <span class="item-name">{{ art.name }}</span>
@@ -83,10 +94,7 @@ import { SourceFilterControl } from '../../../shared/source-filter-control';
                       <span class="sr-only">Rating for {{ art.name }}</span>
                       <input
                         type="number"
-                        [ngModel]="art.rating"
-                        (ngModelChange)="store.setMartialArtRating(art.name, $event)"
-                        [min]="1"
-                        [max]="6"
+                        [formField]="martialArtsForm[i].rating"
                       />
                     </label>
                     <span class="muted">{{ art.rating * store.options().bpMartialArt }} BP</span>
@@ -110,8 +118,7 @@ import { SourceFilterControl } from '../../../shared/source-filter-control';
               <input
                 type="search"
                 placeholder="Search maneuvers…"
-                [ngModel]="maneuverSearch()"
-                (ngModelChange)="maneuverSearch.set($event)"
+                [formField]="maneuverSearchForm.query"
               />
             </label>
             <app-source-filter-control />
@@ -266,11 +273,19 @@ export class MartialArtsTab {
   readonly filter = inject(ContentFilterService);
   readonly contentSourceScopeLabel = contentSourceScopeLabel;
 
-  readonly styleSearch = signal('');
-  readonly maneuverSearch = signal('');
+  readonly styleSearchModel = signal({ query: '' });
+  readonly styleSearchForm = form(this.styleSearchModel);
+
+  readonly maneuverSearchModel = signal({ query: '' });
+  readonly maneuverSearchForm = form(this.maneuverSearchModel);
+
+  readonly martialArtsModel = linkedSignal(() =>
+    (this.store.character()?.martialArts ?? []).map((art) => ({ ...art })),
+  );
+  readonly martialArtsForm = form(this.martialArtsModel);
 
   readonly filteredStyles = computed(() => {
-    const query = this.styleSearch();
+    const query = this.styleSearchModel().query;
     const scope = this.filter.scope();
     return sortByName(
       this.store.martialArtCatalog().filter(
@@ -281,7 +296,7 @@ export class MartialArtsTab {
   });
 
   readonly filteredManeuvers = computed(() => {
-    const query = this.maneuverSearch();
+    const query = this.maneuverSearchModel().query;
     const scope = this.filter.scope();
     return sortByName(
       this.store.maneuverCatalog().filter(
@@ -290,6 +305,15 @@ export class MartialArtsTab {
       ),
     );
   });
+
+  constructor() {
+    effect(() => {
+      const next = this.martialArtsModel();
+      const current = this.store.character()?.martialArts ?? [];
+      if (martialArtsEqual(current, next)) return;
+      untracked(() => this.store.syncMartialArts(next));
+    });
+  }
 
   hasStyle(name: string): boolean {
     return this.store.character()?.martialArts.some((art) => art.name === name) ?? false;

@@ -45,6 +45,7 @@ npm run build        # production build
 
 ## Principles
 
+- Use Signal Forms for all UI form state — see `angular-app.mdc` Forms section
 - Reuse Chummer data and rules semantics; do not invent new game mechanics
 - Keep formula strings as strings at data layer; evaluate in rules engine
 - Item primary key is always `name`

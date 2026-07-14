@@ -54,6 +54,7 @@ import {
   type CharacterProfile,
   type CharacterSkill,
   type CharacterMartialArt,
+  type CharacterSkillGroup,
 } from '../rules';
 
 export type RemoveQualityResult =
@@ -329,6 +330,110 @@ export class CharacterStoreService {
     const character = this.character();
     if (!character) return;
     character.profile = { ...character.profile, ...profile };
+    this.character.set(touchCharacter(character));
+    this.bump();
+    this.scheduleAutoSave();
+  }
+
+  syncContacts(contacts: CharacterContact[]): void {
+    const character = this.character();
+    if (!character) return;
+
+    const normalized = contacts.map((contact) => ({
+      name: contact.name,
+      connection: Math.max(0, Math.floor(contact.connection)),
+      loyalty: Math.max(0, Math.floor(contact.loyalty)),
+      group: Math.max(0, Math.floor(contact.group)),
+      free: contact.free ?? false,
+      enemy: contact.enemy ?? false,
+    }));
+
+    if (this.contactsEqual(character.contacts, normalized)) return;
+
+    character.contacts = normalized;
+    this.character.set(touchCharacter(character));
+    this.bump();
+    this.scheduleAutoSave();
+  }
+
+  syncActiveSkills(skills: CharacterSkill[]): void {
+    const character = this.character();
+    if (!character) return;
+
+    const normalized = skills.map((skill) => {
+      const max = getSkillRatingMaximum(character, skill);
+      return {
+        ...skill,
+        rating: Math.min(Math.max(0, Math.floor(skill.rating)), max),
+        specialization: skill.specialization?.trim() || undefined,
+        knowledge: false as const,
+      };
+    });
+
+    if (this.activeSkillsEqual(character.skills, normalized)) return;
+
+    character.skills = normalized;
+    syncSkillGrouping(character);
+    this.character.set(touchCharacter(character));
+    this.bump();
+    this.scheduleAutoSave();
+  }
+
+  syncKnowledgeSkills(skills: CharacterSkill[]): void {
+    const character = this.character();
+    if (!character) return;
+
+    const normalized = skills.map((skill) => {
+      const max = skill.ratingMax ?? 6;
+      return {
+        ...skill,
+        rating: Math.min(Math.max(0, Math.floor(skill.rating)), max),
+        specialization: skill.specialization?.trim() || undefined,
+        knowledge: true as const,
+      };
+    });
+
+    if (this.knowledgeSkillsEqual(character.knowledgeSkills, normalized)) return;
+
+    character.knowledgeSkills = normalized;
+    this.character.set(touchCharacter(character));
+    this.bump();
+    this.scheduleAutoSave();
+  }
+
+  syncSkillGroups(groups: CharacterSkillGroup[]): void {
+    const character = this.character();
+    if (!character) return;
+
+    const normalized = groups.map((group) => {
+      const max = group.ratingMax ?? 6;
+      return {
+        ...group,
+        rating: Math.min(Math.max(0, Math.floor(group.rating)), max),
+      };
+    });
+
+    if (this.skillGroupsEqual(character.skillGroups, normalized)) return;
+
+    character.skillGroups = normalized;
+    syncSkillGrouping(character);
+    this.character.set(touchCharacter(character));
+    this.bump();
+    this.scheduleAutoSave();
+  }
+
+  syncMartialArts(arts: CharacterMartialArt[]): void {
+    const character = this.character();
+    if (!character) return;
+
+    const normalized = arts.map((art) => ({
+      ...art,
+      rating: Math.min(Math.max(1, Math.floor(art.rating)), 6),
+    }));
+
+    if (this.martialArtsEqual(character.martialArts, normalized)) return;
+
+    character.martialArts = normalized;
     this.character.set(touchCharacter(character));
     this.bump();
     this.scheduleAutoSave();
@@ -808,5 +913,52 @@ export class CharacterStoreService {
 
   private bump(): void {
     this.revision.update((value) => value + 1);
+  }
+
+  private contactsEqual(a: CharacterContact[], b: CharacterContact[]): boolean {
+    if (a.length !== b.length) return false;
+    return a.every((contact, index) => {
+      const other = b[index];
+      return (
+        contact.name === other.name &&
+        contact.connection === other.connection &&
+        contact.loyalty === other.loyalty &&
+        contact.group === other.group &&
+        (contact.free ?? false) === (other.free ?? false) &&
+        (contact.enemy ?? false) === (other.enemy ?? false)
+      );
+    });
+  }
+
+  private activeSkillsEqual(a: CharacterSkill[], b: CharacterSkill[]): boolean {
+    if (a.length !== b.length) return false;
+    return a.every((skill, index) => {
+      const other = b[index];
+      return (
+        skill.name === other.name &&
+        skill.rating === other.rating &&
+        (skill.specialization ?? '') === (other.specialization ?? '')
+      );
+    });
+  }
+
+  private knowledgeSkillsEqual(a: CharacterSkill[], b: CharacterSkill[]): boolean {
+    return this.activeSkillsEqual(a, b);
+  }
+
+  private skillGroupsEqual(a: CharacterSkillGroup[], b: CharacterSkillGroup[]): boolean {
+    if (a.length !== b.length) return false;
+    return a.every((group, index) => {
+      const other = b[index];
+      return group.name === other.name && group.rating === other.rating;
+    });
+  }
+
+  private martialArtsEqual(a: CharacterMartialArt[], b: CharacterMartialArt[]): boolean {
+    if (a.length !== b.length) return false;
+    return a.every((art, index) => {
+      const other = b[index];
+      return art.name === other.name && art.rating === other.rating;
+    });
   }
 }

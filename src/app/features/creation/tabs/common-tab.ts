@@ -2,26 +2,78 @@ import {
   ChangeDetectionStrategy,
   Component,
   computed,
+  effect,
   inject,
+  linkedSignal,
   OnInit,
   signal,
+  untracked,
 } from '@angular/core';
 import { DecimalPipe } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { form, FormField } from '@angular/forms/signals';
 import { CharacterStoreService } from '../../../core/services/character-store.service';
 import { ChummerDataService } from '../../../core/services/chummer-data.service';
 import { ContentFilterService } from '../../../core/services/content-filter.service';
 import { ChummerItem } from '../../../core/models/chummer-data.types';
 import { contentSourceScopeLabel } from '../../../core/models/content-source-scope';
-import { canTakeQuality, getQualityOrigin, type AttributeCode } from '../../../core/rules';
+import { canTakeQuality, createEmptyCharacter, getQualityOrigin, type AttributeCode, type Character } from '../../../core/rules';
 import { categoryLabel, matchesSearch, matchesSourceScope, sortByName } from '../../../core/utils/item-helpers';
 import { SourceFilterControl } from '../../../shared/source-filter-control';
 
 type QualityFilter = 'Positive' | 'Negative';
 
+interface ContactFormModel {
+  name: string;
+  connection: number;
+  loyalty: number;
+  group: number;
+  free: boolean;
+  enemy: boolean;
+}
+
+interface CommonFormModel {
+  name: string;
+  attributes: Character['attributes'];
+  nuyenBpSpent: number;
+  contacts: ContactFormModel[];
+}
+
+function toCommonFormModel(character: Character): CommonFormModel {
+  return {
+    name: character.name,
+    attributes: Object.fromEntries(
+      Object.entries(character.attributes).map(([code, state]) => [code, { ...state }]),
+    ) as Character['attributes'],
+    nuyenBpSpent: character.nuyenBpSpent,
+    contacts: character.contacts.map((contact) => ({
+      name: contact.name,
+      connection: contact.connection,
+      loyalty: contact.loyalty,
+      group: contact.group,
+      free: contact.free ?? false,
+      enemy: contact.enemy ?? false,
+    })),
+  };
+}
+
+function contactsFormEqual(a: ContactFormModel[], b: ContactFormModel[]): boolean {
+  if (a.length !== b.length) return false;
+  return a.every((contact, index) => {
+    const other = b[index];
+    return (
+      contact.name === other.name &&
+      contact.connection === other.connection &&
+      contact.loyalty === other.loyalty &&
+      contact.group === other.group &&
+      (contact.free ?? false) === (other.free ?? false) &&
+      (contact.enemy ?? false) === (other.enemy ?? false)
+    );
+  });
+}
+
 @Component({
   selector: 'app-common-tab',
-  imports: [FormsModule, SourceFilterControl, DecimalPipe],
+  imports: [FormField, SourceFilterControl, DecimalPipe],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     @if (store.character(); as character) {
@@ -33,8 +85,7 @@ type QualityFilter = 'Positive' | 'Negative';
           <input
             id="character-name"
             type="text"
-            [ngModel]="character.name"
-            (ngModelChange)="store.setCharacterName($event)"
+            [formField]="commonForm.name"
           />
         </div>
 
@@ -93,10 +144,7 @@ type QualityFilter = 'Positive' | 'Negative';
               <span>{{ code }}</span>
               <input
                 type="number"
-                [ngModel]="character.attributes[code].base"
-                (ngModelChange)="store.setAttributeBase(code, $event)"
-                [min]="character.attributes[code].min"
-                [max]="character.attributes[code].max"
+                [formField]="commonForm.attributes[code].base"
               />
             </label>
           }
@@ -110,10 +158,7 @@ type QualityFilter = 'Positive' | 'Negative';
                 <span>{{ code }}</span>
                 <input
                   type="number"
-                  [ngModel]="character.attributes[code].base"
-                  (ngModelChange)="store.setAttributeBase(code, $event)"
-                  [min]="character.attributes[code].min"
-                  [max]="character.attributes[code].max"
+                  [formField]="commonForm.attributes[code].base"
                 />
               </label>
             }
@@ -126,10 +171,7 @@ type QualityFilter = 'Positive' | 'Negative';
             <span>BP spent on nuyen (max {{ store.maxNuyenBp() }})</span>
             <input
               type="number"
-              [ngModel]="character.nuyenBpSpent"
-              (ngModelChange)="store.setNuyenBpSpent($event)"
-              [min]="0"
-              [max]="store.maxNuyenBp()"
+              [formField]="commonForm.nuyenBpSpent"
             />
           </label>
           @if (store.nuyenBreakdown(); as nuyen) {
@@ -159,50 +201,41 @@ type QualityFilter = 'Positive' | 'Negative';
                     <input
                       type="text"
                       placeholder="Name"
-                      [ngModel]="contact.name"
-                      (ngModelChange)="store.updateContact(i, { name: $event })"
+                      [formField]="commonForm.contacts[i].name"
                     />
                   </label>
                   <label>
                     <span>Conn</span>
                     <input
                       type="number"
-                      [ngModel]="contact.connection"
-                      (ngModelChange)="store.updateContact(i, { connection: $event })"
-                      min="0"
+                      [formField]="commonForm.contacts[i].connection"
                     />
                   </label>
                   <label>
                     <span>Loy</span>
                     <input
                       type="number"
-                      [ngModel]="contact.loyalty"
-                      (ngModelChange)="store.updateContact(i, { loyalty: $event })"
-                      min="0"
+                      [formField]="commonForm.contacts[i].loyalty"
                     />
                   </label>
                   <label>
                     <span>Grp</span>
                     <input
                       type="number"
-                      [ngModel]="contact.group"
-                      (ngModelChange)="store.updateContact(i, { group: $event })"
-                      min="0"
+                      [formField]="commonForm.contacts[i].group"
                     />
                   </label>
                   <label class="checkbox-label">
                     <input
                       type="checkbox"
-                      [ngModel]="contact.enemy"
-                      (ngModelChange)="store.updateContact(i, { enemy: $event })"
+                      [formField]="commonForm.contacts[i].enemy"
                     />
                     Enemy
                   </label>
                   <label class="checkbox-label">
                     <input
                       type="checkbox"
-                      [ngModel]="contact.free"
-                      (ngModelChange)="store.updateContact(i, { free: $event })"
+                      [formField]="commonForm.contacts[i].free"
                     />
                     Free
                   </label>
@@ -269,8 +302,7 @@ type QualityFilter = 'Positive' | 'Negative';
               <input
                 type="search"
                 placeholder="Search qualities…"
-                [ngModel]="searchQuery()"
-                (ngModelChange)="searchQuery.set($event)"
+                [formField]="searchForm.query"
               />
             </label>
 
@@ -636,6 +668,19 @@ export class CommonTab implements OnInit {
   readonly primaryAttributes = ['BOD', 'AGI', 'REA', 'STR', 'CHA', 'INT', 'LOG', 'WIL'] as const;
   readonly qualityFilters: QualityFilter[] = ['Positive', 'Negative'];
 
+  readonly commonModel = linkedSignal(() => {
+    const character = this.store.character();
+    if (!character) {
+      return toCommonFormModel(createEmptyCharacter());
+    }
+    return toCommonFormModel(character);
+  });
+
+  readonly commonForm = form(this.commonModel);
+
+  readonly searchModel = signal({ query: '' });
+  readonly searchForm = form(this.searchModel);
+
   readonly playableMetatypes = computed(() => {
     const metatypes = this.store.metatypes();
     return metatypes
@@ -660,7 +705,6 @@ export class CommonTab implements OnInit {
   readonly qualityCatalog = signal<ChummerItem[]>([]);
   readonly loadingQualities = signal(true);
   readonly categoryFilter = signal<QualityFilter>('Positive');
-  readonly searchQuery = signal('');
 
   readonly metavariantSelection = computed(() => {
     const character = this.store.character();
@@ -687,7 +731,7 @@ export class CommonTab implements OnInit {
 
   readonly filteredQualities = computed(() => {
     const filter = this.categoryFilter();
-    const query = this.searchQuery();
+    const query = this.searchModel().query;
     const selected = new Set(this.store.character()?.qualities ?? []);
 
     return sortByName(
@@ -698,6 +742,36 @@ export class CommonTab implements OnInit {
       }),
     );
   });
+
+  constructor() {
+    effect(() => {
+      const next = this.commonModel();
+      const character = this.store.character();
+      if (!character) return;
+
+      untracked(() => {
+        if (next.name !== character.name) {
+          this.store.setCharacterName(next.name);
+        }
+
+        if (next.nuyenBpSpent !== character.nuyenBpSpent) {
+          this.store.setNuyenBpSpent(next.nuyenBpSpent);
+        }
+
+        for (const code of Object.keys(next.attributes) as AttributeCode[]) {
+          const nextBase = next.attributes[code]?.base;
+          const currentBase = character.attributes[code]?.base;
+          if (nextBase !== undefined && nextBase !== currentBase) {
+            this.store.setAttributeBase(code, nextBase);
+          }
+        }
+
+        if (!contactsFormEqual(toCommonFormModel(character).contacts, next.contacts)) {
+          this.store.syncContacts(next.contacts);
+        }
+      });
+    });
+  }
 
   async ngOnInit(): Promise<void> {
     const qualities = await this.data.loadItems('qualities', 'qualities');

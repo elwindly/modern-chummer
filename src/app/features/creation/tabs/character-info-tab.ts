@@ -1,13 +1,63 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  effect,
+  inject,
+  linkedSignal,
+  untracked,
+} from '@angular/core';
+import { form, FormField } from '@angular/forms/signals';
 import { CharacterStoreService } from '../../../core/services/character-store.service';
+import { createEmptyProfile, type CharacterProfile } from '../../../core/rules';
+
+interface ProfileFormModel {
+  sex: string;
+  age: string;
+  height: string;
+  weight: string;
+  description: string;
+  notes: string;
+}
+
+function toProfileFormModel(profile: CharacterProfile): ProfileFormModel {
+  return {
+    sex: profile.sex ?? '',
+    age: profile.age ?? '',
+    height: profile.height ?? '',
+    weight: profile.weight ?? '',
+    description: profile.description ?? '',
+    notes: profile.notes ?? '',
+  };
+}
+
+function profileFormEqual(a: ProfileFormModel, b: ProfileFormModel): boolean {
+  return (
+    a.sex === b.sex &&
+    a.age === b.age &&
+    a.height === b.height &&
+    a.weight === b.weight &&
+    a.description === b.description &&
+    a.notes === b.notes
+  );
+}
+
+function toCharacterProfile(model: ProfileFormModel): CharacterProfile {
+  return {
+    sex: model.sex || undefined,
+    age: model.age || undefined,
+    height: model.height || undefined,
+    weight: model.weight || undefined,
+    description: model.description || undefined,
+    notes: model.notes || undefined,
+  };
+}
 
 @Component({
   selector: 'app-character-info-tab',
-  imports: [FormsModule],
+  imports: [FormField],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
-    @if (store.character(); as character) {
+    @if (store.character()) {
       <section aria-labelledby="info-heading">
         <h2 id="info-heading">Character Info</h2>
         <p class="muted">Descriptive details stored with the character.</p>
@@ -15,57 +65,33 @@ import { CharacterStoreService } from '../../../core/services/character-store.se
         <div class="info-grid">
           <label class="field-row">
             <span>Sex</span>
-            <input
-              type="text"
-              [ngModel]="character.profile.sex ?? ''"
-              (ngModelChange)="updateProfileField('sex', $event)"
-            />
+            <input type="text" [formField]="profileForm.sex" />
           </label>
 
           <label class="field-row">
             <span>Age</span>
-            <input
-              type="text"
-              [ngModel]="character.profile.age ?? ''"
-              (ngModelChange)="updateProfileField('age', $event)"
-            />
+            <input type="text" [formField]="profileForm.age" />
           </label>
 
           <label class="field-row">
             <span>Height</span>
-            <input
-              type="text"
-              [ngModel]="character.profile.height ?? ''"
-              (ngModelChange)="updateProfileField('height', $event)"
-            />
+            <input type="text" [formField]="profileForm.height" />
           </label>
 
           <label class="field-row">
             <span>Weight</span>
-            <input
-              type="text"
-              [ngModel]="character.profile.weight ?? ''"
-              (ngModelChange)="updateProfileField('weight', $event)"
-            />
+            <input type="text" [formField]="profileForm.weight" />
           </label>
         </div>
 
         <label class="field-row block">
           <span>Description</span>
-          <textarea
-            rows="4"
-            [ngModel]="character.profile.description ?? ''"
-            (ngModelChange)="updateProfileField('description', $event)"
-          ></textarea>
+          <textarea rows="4" [formField]="profileForm.description"></textarea>
         </label>
 
         <label class="field-row block">
           <span>Notes</span>
-          <textarea
-            rows="4"
-            [ngModel]="character.profile.notes ?? ''"
-            (ngModelChange)="updateProfileField('notes', $event)"
-          ></textarea>
+          <textarea rows="4" [formField]="profileForm.notes"></textarea>
         </label>
       </section>
     }
@@ -103,10 +129,19 @@ import { CharacterStoreService } from '../../../core/services/character-store.se
 export class CharacterInfoTab {
   readonly store = inject(CharacterStoreService);
 
-  updateProfileField(
-    field: 'sex' | 'age' | 'height' | 'weight' | 'description' | 'notes',
-    value: string,
-  ): void {
-    this.store.updateProfile({ [field]: value });
+  readonly profileModel = linkedSignal(() =>
+    toProfileFormModel(this.store.character()?.profile ?? createEmptyProfile()),
+  );
+
+  readonly profileForm = form(this.profileModel);
+
+  constructor() {
+    effect(() => {
+      const next = this.profileModel();
+      const current = toProfileFormModel(this.store.character()?.profile ?? createEmptyProfile());
+      if (profileFormEqual(current, next)) return;
+
+      untracked(() => this.store.updateProfile(toCharacterProfile(next)));
+    });
   }
 }

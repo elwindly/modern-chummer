@@ -15,6 +15,16 @@ alwaysApply: false
 - Native control flow: `@if`, `@for`, `@switch` — no `*ngIf` / `*ngFor`
 - No `ngClass` / `ngStyle` — use `class` / `style` bindings
 
+## Forms
+
+Use **Signal Forms only** — see [Angular Signal Forms overview](https://angular.dev/guide/forms/signals/overview).
+
+- Import from `@angular/forms/signals`: `form()`, `FormField`, schema validators (`required`, `min`, `max`, etc.)
+- Bind inputs with `[formField]="myForm.fieldName"`; import `FormField` in the component
+- **Do not use** `FormsModule`, `ngModel`, `ReactiveFormsModule`, `FormGroup`, `FormControl`, `FormArray`, or `formControlName`
+- **Local UI filters:** use a local `signal` model + `form()` (e.g. `searchModel = signal({ query: '' })`)
+- **Store-backed editing:** bridge with `linkedSignal` + `effect()` → store setters; never bind `form()` directly to `store.character` (ImprovementManager holds a mutable character reference)
+
 ## Structure
 
 ```

@@ -4,8 +4,9 @@ import {
   computed,
   effect,
   inject,
+  signal,
 } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { form, FormField } from '@angular/forms/signals';
 import { CharacterStoreService } from '../../../core/services/character-store.service';
 import {
   listSelectableAttributes,
@@ -14,7 +15,7 @@ import {
 
 @Component({
   selector: 'app-selection-dialog',
-  imports: [FormsModule],
+  imports: [FormField],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     @if (store.pendingSelection(); as selection) {
@@ -23,28 +24,28 @@ import {
 
         @if (selection.kind === 'attribute') {
           <label for="selection-value">Attribute</label>
-          <select id="selection-value" [(ngModel)]="selectionValue">
+          <select id="selection-value" [formField]="selectionForm.value">
             @for (option of attributeOptions(); track option) {
               <option [value]="option">{{ option }}</option>
             }
           </select>
         } @else if (selection.kind === 'skill') {
           <label for="selection-value">Skill</label>
-          <select id="selection-value" [(ngModel)]="selectionValue">
+          <select id="selection-value" [formField]="selectionForm.value">
             @for (option of skillOptions(); track option) {
               <option [value]="option">{{ option }}</option>
             }
           </select>
         } @else if (selection.kind === 'skill-group') {
           <label for="selection-value">Skill group</label>
-          <select id="selection-value" [(ngModel)]="selectionValue">
+          <select id="selection-value" [formField]="selectionForm.value">
             @for (option of skillGroupOptions(); track option) {
               <option [value]="option">{{ option }}</option>
             }
           </select>
         } @else {
           <label for="selection-value">Value</label>
-          <input id="selection-value" type="text" [(ngModel)]="selectionValue" />
+          <input id="selection-value" type="text" [formField]="selectionForm.value" />
         }
 
         <div class="dialog-actions">
@@ -94,7 +95,9 @@ import {
 })
 export class SelectionDialog {
   readonly store = inject(CharacterStoreService);
-  selectionValue = '';
+
+  readonly selectionModel = signal({ value: '' });
+  readonly selectionForm = form(this.selectionModel);
 
   readonly attributeOptions = computed(() => {
     const selection = this.store.pendingSelection();
@@ -118,25 +121,26 @@ export class SelectionDialog {
     effect(() => {
       const selection = this.store.pendingSelection();
       if (!selection) {
-        this.selectionValue = '';
+        this.selectionModel.set({ value: '' });
         return;
       }
 
       if (selection.kind === 'attribute') {
-        this.selectionValue = this.attributeOptions()[0] ?? '';
+        this.selectionModel.set({ value: this.attributeOptions()[0] ?? '' });
       } else if (selection.kind === 'skill') {
-        this.selectionValue = this.skillOptions()[0] ?? '';
+        this.selectionModel.set({ value: this.skillOptions()[0] ?? '' });
       } else if (selection.kind === 'skill-group') {
-        this.selectionValue = this.skillGroupOptions()[0] ?? '';
+        this.selectionModel.set({ value: this.skillGroupOptions()[0] ?? '' });
       } else {
-        this.selectionValue = '';
+        this.selectionModel.set({ value: '' });
       }
     });
   }
 
   confirmSelection(): void {
-    if (!this.selectionValue.trim()) return;
-    this.store.resolveSelection(this.selectionValue.trim());
-    this.selectionValue = '';
+    const value = this.selectionModel().value.trim();
+    if (!value) return;
+    this.store.resolveSelection(value);
+    this.selectionModel.set({ value: '' });
   }
 }

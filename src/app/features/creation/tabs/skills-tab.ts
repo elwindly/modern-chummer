@@ -2,22 +2,68 @@ import {
   ChangeDetectionStrategy,
   Component,
   computed,
+  effect,
   inject,
+  linkedSignal,
   OnInit,
   signal,
+  untracked,
 } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { form, FormField } from '@angular/forms/signals';
 import { CharacterStoreService } from '../../../core/services/character-store.service';
 import { ContentFilterService } from '../../../core/services/content-filter.service';
 import { ChummerItem } from '../../../core/models/chummer-data.types';
 import { contentSourceScopeLabel } from '../../../core/models/content-source-scope';
-import { getEffectiveSkillRating, getSkillRatingMaximum } from '../../../core/rules';
+import {
+  getEffectiveSkillRating,
+  getSkillRatingMaximum,
+  type CharacterSkill,
+  type CharacterSkillGroup,
+} from '../../../core/rules';
 import { categoryLabel, matchesSearch, matchesSourceScope, sortByName } from '../../../core/utils/item-helpers';
 import { SourceFilterControl } from '../../../shared/source-filter-control';
 
+interface SkillEditorModel extends CharacterSkill {
+  specialization: string;
+}
+
+function toSkillEditorModels(skills: CharacterSkill[]): SkillEditorModel[] {
+  return skills.map((skill) => ({
+    ...skill,
+    specialization: skill.specialization ?? '',
+  }));
+}
+
+function skillEditorsEqual(a: SkillEditorModel[], b: SkillEditorModel[]): boolean {
+  if (a.length !== b.length) return false;
+  return a.every((skill, index) => {
+    const other = b[index];
+    return (
+      skill.name === other.name &&
+      skill.rating === other.rating &&
+      skill.specialization === other.specialization
+    );
+  });
+}
+
+function toCharacterSkills(models: SkillEditorModel[]): CharacterSkill[] {
+  return models.map(({ specialization, ...skill }) => ({
+    ...skill,
+    specialization: specialization.trim() || undefined,
+  }));
+}
+
+function skillGroupsEqual(a: CharacterSkillGroup[], b: CharacterSkillGroup[]): boolean {
+  if (a.length !== b.length) return false;
+  return a.every((group, index) => {
+    const other = b[index];
+    return group.name === other.name && group.rating === other.rating;
+  });
+}
+
 @Component({
   selector: 'app-skills-tab',
-  imports: [FormsModule, SourceFilterControl],
+  imports: [FormField, SourceFilterControl],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     @if (store.character(); as character) {
@@ -35,8 +81,7 @@ import { SourceFilterControl } from '../../../shared/source-filter-control';
               <input
                 type="search"
                 placeholder="Search skills…"
-                [ngModel]="activeSearch()"
-                (ngModelChange)="activeSearch.set($event)"
+                [formField]="activeSearchForm.query"
               />
             </label>
             <app-source-filter-control />
@@ -76,7 +121,7 @@ import { SourceFilterControl } from '../../../shared/source-filter-control';
           @if (character.skills.length) {
             <h4>Character active skills</h4>
             <ul class="skill-editor-list">
-              @for (skill of character.skills; track skill.name) {
+              @for (skill of character.skills; track skill.name; let i = $index) {
                 <li>
                   <div class="skill-row">
                     <span class="skill-name">{{ skill.name }}</span>
@@ -84,10 +129,7 @@ import { SourceFilterControl } from '../../../shared/source-filter-control';
                       <span class="sr-only">Rating for {{ skill.name }}</span>
                       <input
                         type="number"
-                        [ngModel]="skill.rating"
-                        (ngModelChange)="store.setActiveSkillRating(skill.name, $event)"
-                        [min]="0"
-                        [max]="skillMax(skill.name)"
+                        [formField]="activeSkillsForm[i].rating"
                       />
                     </label>
                     @if (effectiveRating(skill.name); as effective) {
@@ -105,8 +147,7 @@ import { SourceFilterControl } from '../../../shared/source-filter-control';
                       <input
                         type="text"
                         placeholder="Specialization"
-                        [ngModel]="skill.specialization ?? ''"
-                        (ngModelChange)="store.setActiveSkillSpec(skill.name, $event)"
+                        [formField]="activeSkillsForm[i].specialization"
                       />
                     </label>
                     <button type="button" (click)="store.removeActiveSkill(skill.name)">Remove</button>
@@ -141,7 +182,7 @@ import { SourceFilterControl } from '../../../shared/source-filter-control';
 
           @if (character.skillGroups.length) {
             <ul class="skill-editor-list">
-              @for (group of character.skillGroups; track group.name) {
+              @for (group of character.skillGroups; track group.name; let i = $index) {
                 <li>
                   <div class="skill-row">
                     <span class="skill-name">{{ group.name }}</span>
@@ -149,10 +190,7 @@ import { SourceFilterControl } from '../../../shared/source-filter-control';
                       <span class="sr-only">Rating for {{ group.name }}</span>
                       <input
                         type="number"
-                        [ngModel]="group.rating"
-                        (ngModelChange)="store.setSkillGroupRating(group.name, $event)"
-                        [min]="0"
-                        [max]="group.ratingMax ?? 6"
+                        [formField]="skillGroupsForm[i].rating"
                       />
                     </label>
                     @if (group.broken) {
@@ -182,8 +220,7 @@ import { SourceFilterControl } from '../../../shared/source-filter-control';
               <input
                 type="search"
                 placeholder="Search knowledge skills…"
-                [ngModel]="knowledgeSearch()"
-                (ngModelChange)="knowledgeSearch.set($event)"
+                [formField]="knowledgeSearchForm.query"
               />
             </label>
           </div>
@@ -219,7 +256,7 @@ import { SourceFilterControl } from '../../../shared/source-filter-control';
           @if (character.knowledgeSkills.length) {
             <h4>Character knowledge skills</h4>
             <ul class="skill-editor-list">
-              @for (skill of character.knowledgeSkills; track skill.name) {
+              @for (skill of character.knowledgeSkills; track skill.name; let i = $index) {
                 <li>
                   <div class="skill-row">
                     <span class="skill-name">{{ skill.name }}</span>
@@ -227,10 +264,7 @@ import { SourceFilterControl } from '../../../shared/source-filter-control';
                       <span class="sr-only">Rating for {{ skill.name }}</span>
                       <input
                         type="number"
-                        [ngModel]="skill.rating"
-                        (ngModelChange)="store.setKnowledgeSkillRating(skill.name, $event)"
-                        [min]="0"
-                        [max]="skill.ratingMax ?? 6"
+                        [formField]="knowledgeSkillsForm[i].rating"
                       />
                     </label>
                     <label class="spec-field">
@@ -238,8 +272,7 @@ import { SourceFilterControl } from '../../../shared/source-filter-control';
                       <input
                         type="text"
                         placeholder="Specialization"
-                        [ngModel]="skill.specialization ?? ''"
-                        (ngModelChange)="store.setKnowledgeSkillSpec(skill.name, $event)"
+                        [formField]="knowledgeSkillsForm[i].specialization"
                       />
                     </label>
                     <button type="button" (click)="store.removeKnowledgeSkill(skill.name)">
@@ -382,13 +415,32 @@ export class SkillsTab implements OnInit {
   readonly contentSourceScopeLabel = contentSourceScopeLabel;
   readonly categoryLabel = categoryLabel;
 
-  readonly activeSearch = signal('');
-  readonly knowledgeSearch = signal('');
+  readonly activeSearchModel = signal({ query: '' });
+  readonly activeSearchForm = form(this.activeSearchModel);
+
+  readonly knowledgeSearchModel = signal({ query: '' });
+  readonly knowledgeSearchForm = form(this.knowledgeSearchModel);
+
+  readonly activeSkillsModel = linkedSignal(() =>
+    toSkillEditorModels(this.store.character()?.skills ?? []),
+  );
+  readonly activeSkillsForm = form(this.activeSkillsModel);
+
+  readonly skillGroupsModel = linkedSignal(() =>
+    (this.store.character()?.skillGroups ?? []).map((group) => ({ ...group })),
+  );
+  readonly skillGroupsForm = form(this.skillGroupsModel);
+
+  readonly knowledgeSkillsModel = linkedSignal(() =>
+    toSkillEditorModels(this.store.character()?.knowledgeSkills ?? []),
+  );
+  readonly knowledgeSkillsForm = form(this.knowledgeSkillsModel);
+
   readonly activeCatalog = signal<ChummerItem[]>([]);
   readonly knowledgeCatalog = signal<ChummerItem[]>([]);
 
   readonly filteredActiveCatalog = computed(() => {
-    const query = this.activeSearch();
+    const query = this.activeSearchModel().query;
     const scope = this.filter.scope();
     return sortByName(
       this.activeCatalog().filter(
@@ -398,7 +450,7 @@ export class SkillsTab implements OnInit {
   });
 
   readonly filteredKnowledgeCatalog = computed(() => {
-    const query = this.knowledgeSearch();
+    const query = this.knowledgeSearchModel().query;
     return sortByName(
       this.knowledgeCatalog().filter((item) => matchesSearch(item, query)),
     );
@@ -410,6 +462,29 @@ export class SkillsTab implements OnInit {
     const owned = new Set(character.skillGroups.map((group) => group.name));
     return this.store.skillGroupNames().filter((name) => !owned.has(name));
   });
+
+  constructor() {
+    effect(() => {
+      const next = this.activeSkillsModel();
+      const current = toSkillEditorModels(this.store.character()?.skills ?? []);
+      if (skillEditorsEqual(current, next)) return;
+      untracked(() => this.store.syncActiveSkills(toCharacterSkills(next)));
+    });
+
+    effect(() => {
+      const next = this.skillGroupsModel();
+      const current = this.store.character()?.skillGroups ?? [];
+      if (skillGroupsEqual(current, next)) return;
+      untracked(() => this.store.syncSkillGroups(next));
+    });
+
+    effect(() => {
+      const next = this.knowledgeSkillsModel();
+      const current = toSkillEditorModels(this.store.character()?.knowledgeSkills ?? []);
+      if (skillEditorsEqual(current, next)) return;
+      untracked(() => this.store.syncKnowledgeSkills(toCharacterSkills(next)));
+    });
+  }
 
   ngOnInit(): void {
     this.activeCatalog.set(
