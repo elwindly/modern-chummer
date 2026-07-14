@@ -26,6 +26,7 @@ Shadowrun 4th Anniversary Edition web app. Game data comes from legacy ChummerGe
 ```bash
 npm run convert      # regenerate JSON from ChummerGenSR4
 npm test             # unit tests (Vitest)
+npm run test:coverage # coverage report (HTML in coverage/)
 npm start            # dev server at localhost:4200
 npm run build        # production build
 ```

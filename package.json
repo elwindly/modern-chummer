@@ -11,7 +11,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage"
   },
   "dependencies": {
     "@angular/common": "^21.0.0",
@@ -29,6 +30,7 @@
     "@angular/cli": "^21.0.0",
     "@angular/compiler-cli": "^21.0.0",
     "@types/node": "^22.0.0",
+    "@vitest/coverage-v8": "^4.1.10",
     "fast-xml-parser": "^5.2.5",
     "typescript": "~5.9.0",
     "vitest": "^4.0.8"
