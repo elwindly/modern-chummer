@@ -11,7 +11,7 @@ Shadowrun 4th Anniversary Edition web app. Game data comes from legacy ChummerGe
 
 | Path | Role |
 |------|------|
-| `C:\Users\elwin\projects\modern-chummer-4` | Angular 21 app (this project) |
+| `C:\Users\elwin\projects\modern-chummer-4` | Angular 22 app (this project) |
 | `C:\Users\elwin\projects\ChummerGenSR4` | Legacy C# Chummer — XML source of truth |
 
 ## Key paths

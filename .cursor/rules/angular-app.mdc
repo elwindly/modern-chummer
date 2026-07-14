@@ -1,5 +1,5 @@
 ---
-description: Angular 21 conventions for Modern Chummer UI
+description: Angular 22 conventions for Modern Chummer UI
 globs: src/app/**/*.ts
 alwaysApply: false
 ---
@@ -8,7 +8,7 @@ alwaysApply: false
 
 ## Stack
 
-- Angular 21, standalone components (do not set `standalone: true` — it's default)
+- Angular 22, standalone components (do not set `standalone: true` — it's default)
 - Signals for state, `computed()` for derived values, `OnPush` change detection
 - `inject()` instead of constructor injection
 - `input()` / `output()` instead of decorators
