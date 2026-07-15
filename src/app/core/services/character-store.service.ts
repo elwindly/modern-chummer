@@ -23,6 +23,9 @@ import {
   createEmptyCharacter,
   deriveStats,
   deserializeCharacter,
+  collectAvailabilityItems,
+  createStreetItemFromCatalog,
+  findStreetItem,
   getAttributeTotal,
   getEffectiveLimits,
   getQualityOrigin,
@@ -33,6 +36,7 @@ import {
   getSkillRatingMaximum,
   getEffectiveSkillRating,
   syncSkillGrouping,
+  syncLegacyPurchases,
   listSelectableSkills,
   listSelectableSkillGroups,
   parseSkillSelectionConfig,
@@ -45,8 +49,12 @@ import {
   parseAttributeSelectionConfig,
   parseChumXml,
   QualityCatalogEntry,
+  refreshStreetItemFromCatalog,
+  removeStreetItemFromList,
   touchCharacter,
   validateCharacter,
+  isRatedCatalogEntry,
+  getCatalogMaxRating,
   type BonusGrantSession,
   type BonusNode,
   type ChumImportResult,
@@ -55,6 +63,7 @@ import {
   type CharacterSkill,
   type CharacterMartialArt,
   type CharacterSkillGroup,
+  type StreetCatalogEntry,
 } from '../rules';
 
 export type RemoveQualityResult =
@@ -62,6 +71,8 @@ export type RemoveQualityResult =
   | { ok: false; reason: 'not-found' | 'metatype' | 'needs-confirmation'; buyOffBp?: number };
 import { CharacterStorageService } from './character-storage.service';
 import { ChummerDataService } from './chummer-data.service';
+import { extractCollection } from '../utils/collection-utils';
+import { ChummerItem } from '../models/chummer-data.types';
 
 @Injectable({ providedIn: 'root' })
 export class CharacterStoreService {
@@ -91,6 +102,12 @@ export class CharacterStoreService {
   readonly skillGroupNames = signal<string[]>([]);
   readonly martialArtCatalog = signal<Array<{ name: string; source?: string; page?: string }>>([]);
   readonly maneuverCatalog = signal<Array<{ name: string; source?: string; page?: string }>>([]);
+  readonly gearCatalog = signal<Map<string, StreetCatalogEntry>>(new Map());
+  readonly weaponCatalog = signal<Map<string, StreetCatalogEntry>>(new Map());
+  readonly armorCatalog = signal<Map<string, StreetCatalogEntry>>(new Map());
+  readonly weaponAccessoryCatalog = signal<Map<string, StreetCatalogEntry>>(new Map());
+  readonly weaponModCatalog = signal<Map<string, StreetCatalogEntry>>(new Map());
+  readonly armorModCatalog = signal<Map<string, StreetCatalogEntry>>(new Map());
 
   readonly derivedStats = computed((): DerivedStats | null => {
     this.revision();
@@ -143,18 +160,23 @@ export class CharacterStoreService {
       manager,
       options: this.options(),
       qualityCatalog: this.qualityCatalog(),
+      availabilityItems: collectAvailabilityItems(character),
     });
   });
 
   async ensureInitialized(): Promise<void> {
     if (this.initialized()) return;
 
-    const [settings, qualitiesDoc, metatypesDoc, skillsDoc, martialArtsDoc] = await Promise.all([
+    const [settings, qualitiesDoc, metatypesDoc, skillsDoc, martialArtsDoc, gearDoc, weaponsDoc, armorDoc] =
+      await Promise.all([
       firstValueFrom(this.http.get<Partial<CharacterOptions>>('/data/settings/default.json')),
       this.data.loadDocument('qualities'),
       this.data.loadDocument('metatypes'),
       this.data.loadDocument('skills'),
       this.data.loadDocument('martialarts'),
+      this.data.loadDocument('gear'),
+      this.data.loadDocument('weapons'),
+      this.data.loadDocument('armor'),
     ]);
 
     this.options.set(loadCharacterOptions(settings));
@@ -200,6 +222,23 @@ export class CharacterStoreService {
     };
     this.martialArtCatalog.set(martialData.martialarts ?? []);
     this.maneuverCatalog.set(martialData.maneuvers ?? []);
+
+    this.gearCatalog.set(this.buildCatalogMap(extractCollection(gearDoc['gears']) as ChummerItem[]));
+    this.weaponCatalog.set(this.buildCatalogMap(extractCollection(weaponsDoc['weapons']) as ChummerItem[]));
+    this.armorCatalog.set(this.buildCatalogMap(extractCollection(armorDoc['armors']) as ChummerItem[]));
+    this.weaponAccessoryCatalog.set(
+      this.buildCatalogMap(extractCollection(weaponsDoc['accessories']) as ChummerItem[]),
+    );
+    this.weaponModCatalog.set(
+      this.buildCatalogMap(extractCollection((weaponsDoc['mods'] as { mod?: unknown })?.mod) as ChummerItem[]),
+    );
+    this.armorModCatalog.set(
+      this.buildCatalogMap(
+        extractCollection(armorDoc['mods']).flatMap((entry) =>
+          extractCollection((entry as { mod?: unknown }).mod),
+        ) as ChummerItem[],
+      ),
+    );
 
     this.initialized.set(true);
     await this.refreshCharacterList();
@@ -662,6 +701,104 @@ export class CharacterStoreService {
     this.scheduleAutoSave();
   }
 
+  addGear(name: string, rating = 1): void {
+    const entry = this.gearCatalog().get(name);
+    if (!entry) return;
+    this.addTopLevelStreetItem('gear', entry, rating);
+  }
+
+  addWeapon(name: string): void {
+    const entry = this.weaponCatalog().get(name);
+    if (!entry) return;
+    this.addTopLevelStreetItem('weapons', entry, 0);
+  }
+
+  addArmor(name: string): void {
+    const entry = this.armorCatalog().get(name);
+    if (!entry) return;
+    this.addTopLevelStreetItem('armors', entry, 0);
+  }
+
+  addWeaponAccessory(weaponId: string, accessoryName: string): void {
+    const character = this.character();
+    if (!character) return;
+    const weapon = findStreetItem(character, 'weapons', weaponId);
+    const entry = this.weaponAccessoryCatalog().get(accessoryName);
+    if (!weapon || !entry) return;
+    if (weapon.children.some((child) => child.name === accessoryName)) return;
+
+    weapon.children.push(
+      createStreetItemFromCatalog(entry, {
+        kind: 'accessory',
+        parentCost: weapon.cost,
+      }),
+    );
+    this.commitStreetGear(character);
+  }
+
+  addWeaponMod(weaponId: string, modName: string, rating = 1): void {
+    const character = this.character();
+    if (!character) return;
+    const weapon = findStreetItem(character, 'weapons', weaponId);
+    const entry = this.weaponModCatalog().get(modName);
+    if (!weapon || !entry) return;
+    if (weapon.children.some((child) => child.name === modName)) return;
+
+    weapon.children.push(
+      createStreetItemFromCatalog(entry, {
+        kind: 'weapon-mod',
+        rating: isRatedCatalogEntry(entry) ? rating : undefined,
+        parentCost: weapon.cost,
+      }),
+    );
+    this.commitStreetGear(character);
+  }
+
+  addArmorMod(armorId: string, modName: string, rating = 1): void {
+    const character = this.character();
+    if (!character) return;
+    const armor = findStreetItem(character, 'armors', armorId);
+    const entry = this.armorModCatalog().get(modName);
+    if (!armor || !entry) return;
+    if (armor.children.some((child) => child.name === modName)) return;
+
+    armor.children.push(
+      createStreetItemFromCatalog(entry, {
+        kind: 'armor-mod',
+        rating: isRatedCatalogEntry(entry) ? rating : undefined,
+      }),
+    );
+    this.commitStreetGear(character);
+  }
+
+  setStreetItemRating(
+    container: 'gear' | 'weapons' | 'armors',
+    id: string,
+    rating: number,
+  ): void {
+    const character = this.character();
+    if (!character) return;
+    const item = findStreetItem(character, container, id);
+    if (!item) return;
+
+    const catalog = this.catalogForItem(item);
+    if (!catalog) return;
+
+    const refreshed = refreshStreetItemFromCatalog(item, catalog, {
+      rating,
+      parentCost: container === 'weapons' ? item.cost : undefined,
+    });
+    Object.assign(item, refreshed);
+    this.commitStreetGear(character);
+  }
+
+  removeStreetItem(container: 'gear' | 'weapons' | 'armors', id: string): void {
+    const character = this.character();
+    if (!character) return;
+    character[container] = removeStreetItemFromList(character[container], id);
+    this.commitStreetGear(character);
+  }
+
   getEffectiveSkillRating(skillName: string): number {
     this.revision();
     const character = this.character();
@@ -913,6 +1050,60 @@ export class CharacterStoreService {
 
   private bump(): void {
     this.revision.update((value) => value + 1);
+  }
+
+  private buildCatalogMap(items: ChummerItem[] | undefined): Map<string, StreetCatalogEntry> {
+    const map = new Map<string, StreetCatalogEntry>();
+    for (const item of items ?? []) {
+      if (!item.name) continue;
+      map.set(item.name, item as StreetCatalogEntry);
+    }
+    return map;
+  }
+
+  private addTopLevelStreetItem(
+    container: 'gear' | 'weapons' | 'armors',
+    entry: StreetCatalogEntry,
+    rating: number,
+  ): void {
+    const character = this.character();
+    if (!character) return;
+
+    const kind = container === 'gear' ? 'gear' : container === 'weapons' ? 'weapon' : 'armor';
+    character[container].push(
+      createStreetItemFromCatalog(entry, {
+        kind,
+        rating: isRatedCatalogEntry(entry) ? rating : undefined,
+      }),
+    );
+    this.commitStreetGear(character);
+  }
+
+  private catalogForItem(item: { kind: string; name: string }): StreetCatalogEntry | undefined {
+    switch (item.kind) {
+      case 'gear':
+      case 'nested-gear':
+        return this.gearCatalog().get(item.name);
+      case 'weapon':
+        return this.weaponCatalog().get(item.name);
+      case 'armor':
+        return this.armorCatalog().get(item.name);
+      case 'accessory':
+        return this.weaponAccessoryCatalog().get(item.name);
+      case 'weapon-mod':
+        return this.weaponModCatalog().get(item.name);
+      case 'armor-mod':
+        return this.armorModCatalog().get(item.name);
+      default:
+        return undefined;
+    }
+  }
+
+  private commitStreetGear(character: ReturnType<typeof touchCharacter>): void {
+    syncLegacyPurchases(character);
+    this.character.set(touchCharacter(character));
+    this.bump();
+    this.scheduleAutoSave();
   }
 
   private contactsEqual(a: CharacterContact[], b: CharacterContact[]): boolean {

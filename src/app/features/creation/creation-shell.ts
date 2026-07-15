@@ -18,6 +18,7 @@ import { CommonTab } from './tabs/common-tab';
 import { PlaceholderTab } from './tabs/placeholder-tab';
 import { SkillsTab } from './tabs/skills-tab';
 import { MartialArtsTab } from './tabs/martial-arts-tab';
+import { StreetGearTab } from './tabs/street-gear-tab';
 
 @Component({
   selector: 'app-creation-shell',
@@ -30,6 +31,7 @@ import { MartialArtsTab } from './tabs/martial-arts-tab';
     BpSummaryTab,
     SkillsTab,
     MartialArtsTab,
+    StreetGearTab,
     PlaceholderTab,
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -87,6 +89,9 @@ import { MartialArtsTab } from './tabs/martial-arts-tab';
             }
             @case ('martial-arts') {
               <app-martial-arts-tab />
+            }
+            @case ('street-gear') {
+              <app-street-gear-tab />
             }
             @default {
               <app-placeholder-tab [title]="activeTabLabel()" />

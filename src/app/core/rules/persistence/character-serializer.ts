@@ -1,5 +1,6 @@
 import { Character } from '../models/character';
 import { Improvement } from '../models/improvement';
+import { CharacterStreetItem } from '../models/street-gear';
 
 export interface StoredCharacterDocument {
   version: 1;
@@ -39,6 +40,9 @@ export function deserializeCharacter(document: StoredCharacterDocument): Charact
   const character = cloneCharacter(document.character);
   character.martialArts ??= [];
   character.martialArtManeuvers ??= [];
+  character.gear ??= [];
+  character.weapons ??= [];
+  character.armors ??= [];
   return character;
 }
 
@@ -72,6 +76,9 @@ function cloneCharacter(character: Character): Character {
     martialArtManeuvers: (character.martialArtManeuvers ?? []).map((maneuver) => ({
       ...maneuver,
     })),
+    gear: (character.gear ?? []).map(cloneStreetItem),
+    weapons: (character.weapons ?? []).map(cloneStreetItem),
+    armors: (character.armors ?? []).map(cloneStreetItem),
     profile: { ...(character.profile ?? {}) },
     purchases: character.purchases.map((purchase) => ({ ...purchase })),
     improvements: character.improvements.map(cloneImprovement),
@@ -79,6 +86,13 @@ function cloneCharacter(character: Character): Character {
     attributes: Object.fromEntries(
       Object.entries(character.attributes).map(([code, state]) => [code, { ...state }]),
     ) as Character['attributes'],
+  };
+}
+
+function cloneStreetItem(item: CharacterStreetItem): CharacterStreetItem {
+  return {
+    ...item,
+    children: item.children.map(cloneStreetItem),
   };
 }
 

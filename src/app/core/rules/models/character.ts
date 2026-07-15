@@ -9,6 +9,7 @@ import {
   CharacterSkill,
   CharacterSkillGroup,
 } from './skill';
+import { CharacterStreetItem } from './street-gear';
 
 export type BonusNode = Record<string, unknown>;
 
@@ -43,6 +44,9 @@ export interface Character {
   knowledgeSkills: CharacterSkill[];
   martialArts: CharacterMartialArt[];
   martialArtManeuvers: CharacterMartialArtManeuver[];
+  gear: CharacterStreetItem[];
+  weapons: CharacterStreetItem[];
+  armors: CharacterStreetItem[];
   knowledgeSkillPoints?: number;
   profile: CharacterProfile;
   contacts: CharacterContact[];
@@ -70,6 +74,9 @@ export function createEmptyCharacter(overrides: Partial<Character> = {}): Charac
     knowledgeSkills: [],
     martialArts: [],
     martialArtManeuvers: [],
+    gear: [],
+    weapons: [],
+    armors: [],
     profile: createEmptyProfile(),
     contacts: [],
     purchases: [],

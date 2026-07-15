@@ -3,8 +3,10 @@ import { Character, CharacterFlags } from '../models/character';
 import { createEmptyProfile } from '../models/character-profile';
 import { CharacterContact } from '../models/economy';
 import { CharacterSkill, CharacterSkillGroup, CharacterMartialArt, CharacterMartialArtManeuver } from '../models/skill';
+import { CharacterStreetItem, StreetItemKind } from '../models/street-gear';
 import { Improvement, ImprovementSource, ImprovementType, createImprovement } from '../models/improvement';
 import { createCharacterId } from './character-serializer';
+import { syncLegacyPurchases } from '../engine/gear-calculator';
 
 export interface ChumImportResult {
   character: Character;
@@ -252,6 +254,110 @@ function parseMartialArts(root: Record<string, unknown>): {
   return { martialArts, martialArtManeuvers };
 }
 
+function parseStreetItemNode(
+  node: Record<string, unknown>,
+  kind: StreetItemKind,
+  warnings: string[],
+): CharacterStreetItem {
+  const included =
+    bool(node['includedinparent']) ||
+    bool(node['includedinweapon']) ||
+    bool(node['included']);
+
+  const item: CharacterStreetItem = {
+    id: text(node['guid']) || createCharacterId(),
+    kind,
+    name: text(node['name']),
+    rating: number(node['rating']),
+    availability: text(node['avail']) || '0',
+    cost: number(node['cost']),
+    includedInParent: included,
+    children: [],
+  };
+
+  if (kind === 'gear') {
+    const childrenNode = node['children'] as Record<string, unknown> | undefined;
+    const childNodes = asArray(childrenNode?.['gear'] as ChumNode);
+    for (const child of childNodes) {
+      if (!child || typeof child !== 'object') continue;
+      item.children.push(parseStreetItemNode(child as Record<string, unknown>, 'nested-gear', warnings));
+    }
+    if (childNodes.some((child) => child && typeof child === 'object')) {
+      const nestedGear = (childNodes[0] as Record<string, unknown> | undefined)?.['children'];
+      if (nestedGear) {
+        warnings.push(`Nested gear under "${item.name}" may not be fully imported.`);
+      }
+    }
+  }
+
+  if (kind === 'weapon') {
+    const accessoriesNode = node['accessories'] as Record<string, unknown> | undefined;
+    const accessoryNodes = asArray(accessoriesNode?.['accessory'] as ChumNode);
+    for (const child of accessoryNodes) {
+      if (!child || typeof child !== 'object') continue;
+      item.children.push(
+        parseStreetItemNode(child as Record<string, unknown>, 'accessory', warnings),
+      );
+    }
+
+    const modsNode = node['weaponmods'] as Record<string, unknown> | undefined;
+    const modNodes = asArray(modsNode?.['weaponmod'] as ChumNode);
+    for (const child of modNodes) {
+      if (!child || typeof child !== 'object') continue;
+      item.children.push(
+        parseStreetItemNode(child as Record<string, unknown>, 'weapon-mod', warnings),
+      );
+    }
+
+    if (node['underbarrel']) {
+      warnings.push(`Underbarrel weapons on "${item.name}" were not imported.`);
+    }
+  }
+
+  if (kind === 'armor') {
+    const modsNode = node['armormods'] as Record<string, unknown> | undefined;
+    const modNodes = asArray(modsNode?.['armormod'] as ChumNode);
+    for (const child of modNodes) {
+      if (!child || typeof child !== 'object') continue;
+      item.children.push(
+        parseStreetItemNode(child as Record<string, unknown>, 'armor-mod', warnings),
+      );
+    }
+
+    if (node['gears']) {
+      warnings.push(`Gear installed on armor "${item.name}" was not imported.`);
+    }
+  }
+
+  return item;
+}
+
+function parseStreetGear(root: Record<string, unknown>, warnings: string[]): {
+  gear: CharacterStreetItem[];
+  weapons: CharacterStreetItem[];
+  armors: CharacterStreetItem[];
+} {
+  const gearNode = root['gears'] as Record<string, unknown> | undefined;
+  const gearItems = asArray(gearNode?.['gear'] as ChumNode)
+    .filter((node): node is Record<string, unknown> => !!node && typeof node === 'object')
+    .map((node) => parseStreetItemNode(node, 'gear', warnings))
+    .filter((item) => item.name);
+
+  const weaponsNode = root['weapons'] as Record<string, unknown> | undefined;
+  const weaponItems = asArray(weaponsNode?.['weapon'] as ChumNode)
+    .filter((node): node is Record<string, unknown> => !!node && typeof node === 'object')
+    .map((node) => parseStreetItemNode(node, 'weapon', warnings))
+    .filter((item) => item.name);
+
+  const armorsNode = root['armors'] as Record<string, unknown> | undefined;
+  const armorItems = asArray(armorsNode?.['armor'] as ChumNode)
+    .filter((node): node is Record<string, unknown> => !!node && typeof node === 'object')
+    .map((node) => parseStreetItemNode(node, 'armor', warnings))
+    .filter((item) => item.name);
+
+  return { gear: gearItems, weapons: weaponItems, armors: armorItems };
+}
+
 function parseProfile(root: Record<string, unknown>): Character['profile'] {
   return {
     sex: text(root['sex']) || undefined,
@@ -287,11 +393,8 @@ export function importChumDocument(root: Record<string, unknown>): ChumImportRes
   }
 
   const unsupportedSections = [
-    'armors',
-    'weapons',
     'cyberwares',
     'biowares',
-    'gears',
     'vehicles',
     'spells',
     'powers',
@@ -308,6 +411,7 @@ export function importChumDocument(root: Record<string, unknown>): ChumImportRes
   const parsedQualities = parseQualities(root);
   const parsedSkills = parseSkills(root);
   const parsedMartialArts = parseMartialArts(root);
+  const parsedStreetGear = parseStreetGear(root, warnings);
 
   const character: Character = {
     id: createCharacterId(),
@@ -330,6 +434,9 @@ export function importChumDocument(root: Record<string, unknown>): ChumImportRes
     knowledgeSkills: parsedSkills.knowledgeSkills,
     martialArts: parsedMartialArts.martialArts,
     martialArtManeuvers: parsedMartialArts.martialArtManeuvers,
+    gear: parsedStreetGear.gear,
+    weapons: parsedStreetGear.weapons,
+    armors: parsedStreetGear.armors,
     knowledgeSkillPoints: number(root['knowpts']) || undefined,
     profile: parseProfile(root),
     contacts: parseContacts(root),
@@ -338,6 +445,8 @@ export function importChumDocument(root: Record<string, unknown>): ChumImportRes
     improvements: parseImprovements(root),
     flags: parseFlags(root),
   };
+
+  syncLegacyPurchases(character);
 
   return { character, warnings };
 }

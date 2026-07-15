@@ -1,6 +1,7 @@
 import { Character } from '../models/character';
 import { CharacterOptions } from '../models/character-options';
 import { ImprovementType } from '../models/improvement';
+import { calculateTotalStreetCost } from './gear-calculator';
 import { ImprovementManager } from './improvement-manager';
 
 export interface NuyenBreakdown {
@@ -19,7 +20,7 @@ export function calculateNuyen(
   const fromImprovements = manager.valueOf(ImprovementType.Nuyen);
   const total = fromBp + fromImprovements;
 
-  const spent = character.purchases.reduce((sum, item) => sum + item.cost, 0);
+  const spent = calculateTotalStreetCost(character);
 
   return {
     remaining: total - spent,

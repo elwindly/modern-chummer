@@ -1,5 +1,5 @@
 import { DecimalPipe } from '@angular/common';
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
 import { CharacterStoreService } from '../../../core/services/character-store.service';
 
 @Component({
@@ -93,6 +93,12 @@ import { CharacterStoreService } from '../../../core/services/character-store.se
               <th scope="row">Spent</th>
               <td>{{ nuyen.spent | number }}</td>
             </tr>
+            @if (hasStreetGear()) {
+              <tr>
+                <th scope="row">Gear items</th>
+                <td>{{ purchaseCount() }}</td>
+              </tr>
+            }
             <tr>
               <th scope="row">Remaining</th>
               <td>{{ nuyen.remaining | number }}</td>
@@ -160,4 +166,22 @@ import { CharacterStoreService } from '../../../core/services/character-store.se
 })
 export class BpSummaryTab {
   readonly store = inject(CharacterStoreService);
+
+  readonly purchaseCount = computed(() => {
+    const character = this.store.character();
+    if (!character) return 0;
+    const countItems = (items: typeof character.gear): number =>
+      items.reduce((sum, item) => sum + 1 + countItems(item.children), 0);
+    return (
+      countItems(character.gear) +
+      countItems(character.weapons) +
+      countItems(character.armors)
+    );
+  });
+
+  hasStreetGear(): boolean {
+    const character = this.store.character();
+    if (!character) return false;
+    return character.gear.length + character.weapons.length + character.armors.length > 0;
+  }
 }
