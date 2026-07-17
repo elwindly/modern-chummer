@@ -60,7 +60,14 @@ import { VehiclesTab } from './tabs/vehicles-tab';
         <div>
           <a routerLink="/characters" class="back-link">← Characters</a>
           <h1>{{ store.character()!.name || 'Unnamed character' }}</h1>
-          <p class="meta">Character creation</p>
+          @if (store.character()!.created) {
+            <p class="meta finalized-meta">
+              <span class="finalized-badge">Finalized</span>
+              Creation complete — reopen to keep editing the build.
+            </p>
+          } @else {
+            <p class="meta">Character creation</p>
+          }
         </div>
         <div class="header-actions">
           @if (saveMessage()) {
@@ -68,9 +75,24 @@ import { VehiclesTab } from './tabs/vehicles-tab';
           }
           <button type="button" (click)="saveNow()">Save</button>
           <button type="button" (click)="exportChum()">Export .chum</button>
-          <button type="button" (click)="finalizeCharacter()">Finalize character</button>
+          @if (store.character()!.created) {
+            <button type="button" (click)="reopenCreation()">Reopen for editing</button>
+          } @else {
+            <button type="button" (click)="finalizeCharacter()">Finalize character</button>
+          }
         </div>
       </header>
+
+      @if (store.character()!.created) {
+        <div class="finalized-banner" role="status">
+          This character is marked finalized. Saving keeps that status.
+          Any edit reopens creation so you can finalize again when ready.
+        </div>
+      } @else if (store.reopenedByEdit()) {
+        <div class="reopened-banner" role="status">
+          Creation was reopened because you edited a finalized character.
+        </div>
+      }
 
       <app-bp-summary-bar />
 
@@ -150,6 +172,45 @@ import { VehiclesTab } from './tabs/vehicles-tab';
 
       h1 { margin: 0.25rem 0; font-size: 1.5rem; }
       .meta { margin: 0; color: var(--color-text-muted); }
+      .finalized-meta {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+      }
+    }
+
+    .finalized-badge {
+      display: inline-block;
+      padding: 0.15rem 0.5rem;
+      border: 1px solid var(--color-accent);
+      border-radius: var(--radius);
+      background: var(--color-surface-raised);
+      color: var(--color-text);
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    .finalized-banner {
+      margin-bottom: 1rem;
+      padding: 0.75rem 1rem;
+      border: 1px solid var(--color-accent);
+      border-radius: var(--radius);
+      background: var(--color-surface-raised);
+      color: var(--color-text);
+      font-size: 0.9375rem;
+    }
+
+    .reopened-banner {
+      margin-bottom: 1rem;
+      padding: 0.75rem 1rem;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      background: var(--color-surface-raised);
+      color: var(--color-text-muted);
+      font-size: 0.9375rem;
     }
 
     .back-link {
@@ -303,6 +364,12 @@ export class CreationShell implements OnInit {
       const message = result.issues[0]?.message ?? 'Validation failed';
       this.saveMessage.set(`Cannot finalize: ${message}`);
     }
+    window.setTimeout(() => this.saveMessage.set(''), 4000);
+  }
+
+  reopenCreation(): void {
+    this.store.reopenCreation();
+    this.saveMessage.set('Creation reopened — finalize again when ready');
     window.setTimeout(() => this.saveMessage.set(''), 4000);
   }
 }

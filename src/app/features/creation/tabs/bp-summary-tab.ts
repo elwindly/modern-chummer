@@ -159,7 +159,14 @@ import { CharacterStoreService } from '../../../core/services/character-store.se
       }
 
       @if (store.character()?.created) {
-        <p class="finalized status-panel" role="status">Character finalized for career mode.</p>
+        <p class="finalized status-panel" role="status">
+          Character is finalized. Use <strong>Reopen for editing</strong> in the header to return to creation,
+          or edit any field — that also clears finalized status.
+        </p>
+      } @else if (store.reopenedByEdit()) {
+        <p class="reopened status-panel" role="status">
+          Creation was reopened because the character was edited after finalize.
+        </p>
       }
 
       @if (store.validation(); as validation) {
@@ -212,6 +219,15 @@ import { CharacterStoreService } from '../../../core/services/character-store.se
       border: 1px solid var(--color-accent);
       border-radius: var(--radius);
       background: var(--color-surface-raised);
+    }
+
+    .reopened {
+      margin-top: 1rem;
+      padding: 0.75rem;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      background: var(--color-surface-raised);
+      color: var(--color-text-muted);
     }
 
     .sr-only {

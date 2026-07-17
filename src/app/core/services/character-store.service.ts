@@ -158,6 +158,8 @@ export class CharacterStoreService {
   readonly grantInProgress = signal(false);
   readonly initialized = signal(false);
   readonly lastImportWarnings = signal<string[]>([]);
+  /** True when an edit cleared the finalized flag (for UI feedback). */
+  readonly reopenedByEdit = signal(false);
 
   readonly skillCatalog = signal<Array<{ name: string; skillGroup?: string; skillCategory?: string; default?: string; specs?: string[] }>>([]);
   readonly knowledgeCatalog = signal<Array<{ name: string; skillCategory?: string; specs?: string[] }>>([]);
@@ -398,6 +400,7 @@ export class CharacterStoreService {
     });
     this.manager = new ImprovementManager(character);
     this.character.set(character);
+    this.reopenedByEdit.set(false);
     this.clearGrantState();
     this.bump();
     this.scheduleAutoSave();
@@ -410,6 +413,7 @@ export class CharacterStoreService {
     const character = deserializeCharacter(stored);
     this.manager = new ImprovementManager(character);
     this.character.set(character);
+    this.reopenedByEdit.set(false);
     this.clearGrantState();
     this.bump();
     return true;
@@ -473,9 +477,7 @@ export class CharacterStoreService {
     const character = this.character();
     if (!character) return;
     character.name = name;
-    this.character.set(touchCharacter(character));
-    this.bump();
-    this.scheduleAutoSave();
+    this.afterEdit(character);
   }
 
   setMetavariant(metavariantName: string | undefined): void {
@@ -500,18 +502,14 @@ export class CharacterStoreService {
 
     const max = getMaxNuyenBp(character, manager);
     character.nuyenBpSpent = Math.min(Math.max(0, Math.floor(value)), max);
-    this.character.set(touchCharacter(character));
-    this.bump();
-    this.scheduleAutoSave();
+    this.afterEdit(character);
   }
 
   updateProfile(profile: Partial<CharacterProfile>): void {
     const character = this.character();
     if (!character) return;
     character.profile = { ...character.profile, ...profile };
-    this.character.set(touchCharacter(character));
-    this.bump();
-    this.scheduleAutoSave();
+    this.afterEdit(character);
   }
 
   syncContacts(contacts: CharacterContact[]): void {
@@ -530,9 +528,7 @@ export class CharacterStoreService {
     if (this.contactsEqual(character.contacts, normalized)) return;
 
     character.contacts = normalized;
-    this.character.set(touchCharacter(character));
-    this.bump();
-    this.scheduleAutoSave();
+    this.afterEdit(character);
   }
 
   syncActiveSkills(skills: CharacterSkill[]): void {
@@ -553,9 +549,7 @@ export class CharacterStoreService {
 
     character.skills = normalized;
     syncSkillGrouping(character);
-    this.character.set(touchCharacter(character));
-    this.bump();
-    this.scheduleAutoSave();
+    this.afterEdit(character);
   }
 
   syncKnowledgeSkills(skills: CharacterSkill[]): void {
@@ -575,9 +569,7 @@ export class CharacterStoreService {
     if (this.knowledgeSkillsEqual(character.knowledgeSkills, normalized)) return;
 
     character.knowledgeSkills = normalized;
-    this.character.set(touchCharacter(character));
-    this.bump();
-    this.scheduleAutoSave();
+    this.afterEdit(character);
   }
 
   syncSkillGroups(groups: CharacterSkillGroup[]): void {
@@ -596,9 +588,7 @@ export class CharacterStoreService {
 
     character.skillGroups = normalized;
     syncSkillGrouping(character);
-    this.character.set(touchCharacter(character));
-    this.bump();
-    this.scheduleAutoSave();
+    this.afterEdit(character);
   }
 
   syncMartialArts(arts: CharacterMartialArt[]): void {
@@ -613,9 +603,7 @@ export class CharacterStoreService {
     if (this.martialArtsEqual(character.martialArts, normalized)) return;
 
     character.martialArts = normalized;
-    this.character.set(touchCharacter(character));
-    this.bump();
-    this.scheduleAutoSave();
+    this.afterEdit(character);
   }
 
   addContact(contact: CharacterContact = {
@@ -627,27 +615,21 @@ export class CharacterStoreService {
     const character = this.character();
     if (!character) return;
     character.contacts.push({ ...contact });
-    this.character.set(touchCharacter(character));
-    this.bump();
-    this.scheduleAutoSave();
+    this.afterEdit(character);
   }
 
   updateContact(index: number, contact: Partial<CharacterContact>): void {
     const character = this.character();
     if (!character || index < 0 || index >= character.contacts.length) return;
     character.contacts[index] = { ...character.contacts[index], ...contact };
-    this.character.set(touchCharacter(character));
-    this.bump();
-    this.scheduleAutoSave();
+    this.afterEdit(character);
   }
 
   removeContact(index: number): void {
     const character = this.character();
     if (!character || index < 0 || index >= character.contacts.length) return;
     character.contacts.splice(index, 1);
-    this.character.set(touchCharacter(character));
-    this.bump();
-    this.scheduleAutoSave();
+    this.afterEdit(character);
   }
 
   addActiveSkill(skill: CharacterSkill): void {
@@ -655,9 +637,7 @@ export class CharacterStoreService {
     if (!character) return;
     if (character.skills.some((entry) => entry.name === skill.name)) return;
     character.skills.push({ ...skill, knowledge: false });
-    this.character.set(touchCharacter(character));
-    this.bump();
-    this.scheduleAutoSave();
+    this.afterEdit(character);
   }
 
   setActiveSkillRating(skillName: string, rating: number): void {
@@ -668,9 +648,7 @@ export class CharacterStoreService {
     const max = getSkillRatingMaximum(character, skill);
     skill.rating = Math.min(Math.max(0, Math.floor(rating)), max);
     syncSkillGrouping(character);
-    this.character.set(touchCharacter(character));
-    this.bump();
-    this.scheduleAutoSave();
+    this.afterEdit(character);
   }
 
   setActiveSkillSpec(skillName: string, specialization: string): void {
@@ -679,9 +657,7 @@ export class CharacterStoreService {
     const skill = character.skills.find((entry) => entry.name === skillName);
     if (!skill) return;
     skill.specialization = specialization.trim() || undefined;
-    this.character.set(touchCharacter(character));
-    this.bump();
-    this.scheduleAutoSave();
+    this.afterEdit(character);
   }
 
   addActiveSkillFromCatalog(skillName: string): void {
@@ -702,9 +678,7 @@ export class CharacterStoreService {
     const character = this.character();
     if (!character) return;
     character.skills = character.skills.filter((entry) => entry.name !== skillName);
-    this.character.set(touchCharacter(character));
-    this.bump();
-    this.scheduleAutoSave();
+    this.afterEdit(character);
   }
 
   addKnowledgeSkill(skill: CharacterSkill): void {
@@ -712,9 +686,7 @@ export class CharacterStoreService {
     if (!character) return;
     if (character.knowledgeSkills.some((entry) => entry.name === skill.name)) return;
     character.knowledgeSkills.push({ ...skill, knowledge: true });
-    this.character.set(touchCharacter(character));
-    this.bump();
-    this.scheduleAutoSave();
+    this.afterEdit(character);
   }
 
   setKnowledgeSkillRating(skillName: string, rating: number): void {
@@ -724,9 +696,7 @@ export class CharacterStoreService {
     if (!skill) return;
     const max = skill.ratingMax ?? 6;
     skill.rating = Math.min(Math.max(0, Math.floor(rating)), max);
-    this.character.set(touchCharacter(character));
-    this.bump();
-    this.scheduleAutoSave();
+    this.afterEdit(character);
   }
 
   setKnowledgeSkillSpec(skillName: string, specialization: string): void {
@@ -735,9 +705,7 @@ export class CharacterStoreService {
     const skill = character.knowledgeSkills.find((entry) => entry.name === skillName);
     if (!skill) return;
     skill.specialization = specialization.trim() || undefined;
-    this.character.set(touchCharacter(character));
-    this.bump();
-    this.scheduleAutoSave();
+    this.afterEdit(character);
   }
 
   addKnowledgeSkillFromCatalog(skillName: string): void {
@@ -757,9 +725,7 @@ export class CharacterStoreService {
     if (!character) return;
     if (character.skillGroups.some((group) => group.name === groupName)) return;
     character.skillGroups.push({ name: groupName, rating: 0 });
-    this.character.set(touchCharacter(character));
-    this.bump();
-    this.scheduleAutoSave();
+    this.afterEdit(character);
   }
 
   setSkillGroupRating(groupName: string, rating: number): void {
@@ -770,9 +736,7 @@ export class CharacterStoreService {
     const max = group.ratingMax ?? 6;
     group.rating = Math.min(Math.max(0, Math.floor(rating)), max);
     syncSkillGrouping(character);
-    this.character.set(touchCharacter(character));
-    this.bump();
-    this.scheduleAutoSave();
+    this.afterEdit(character);
   }
 
   removeSkillGroup(groupName: string): void {
@@ -780,9 +744,7 @@ export class CharacterStoreService {
     if (!character) return;
     character.skillGroups = character.skillGroups.filter((group) => group.name !== groupName);
     syncSkillGrouping(character);
-    this.character.set(touchCharacter(character));
-    this.bump();
-    this.scheduleAutoSave();
+    this.afterEdit(character);
   }
 
   addMartialArt(art: CharacterMartialArt): void {
@@ -790,9 +752,7 @@ export class CharacterStoreService {
     if (!character) return;
     if (character.martialArts.some((entry) => entry.name === art.name)) return;
     character.martialArts.push({ ...art, rating: art.rating || 1 });
-    this.character.set(touchCharacter(character));
-    this.bump();
-    this.scheduleAutoSave();
+    this.afterEdit(character);
   }
 
   setMartialArtRating(artName: string, rating: number): void {
@@ -801,18 +761,14 @@ export class CharacterStoreService {
     const art = character.martialArts.find((entry) => entry.name === artName);
     if (!art) return;
     art.rating = Math.min(Math.max(1, Math.floor(rating)), 6);
-    this.character.set(touchCharacter(character));
-    this.bump();
-    this.scheduleAutoSave();
+    this.afterEdit(character);
   }
 
   removeMartialArt(artName: string): void {
     const character = this.character();
     if (!character) return;
     character.martialArts = character.martialArts.filter((art) => art.name !== artName);
-    this.character.set(touchCharacter(character));
-    this.bump();
-    this.scheduleAutoSave();
+    this.afterEdit(character);
   }
 
   addMartialArtManeuver(name: string, source?: string, page?: string): void {
@@ -825,9 +781,7 @@ export class CharacterStoreService {
       source,
       page,
     });
-    this.character.set(touchCharacter(character));
-    this.bump();
-    this.scheduleAutoSave();
+    this.afterEdit(character);
   }
 
   removeMartialArtManeuver(maneuverId: string): void {
@@ -836,9 +790,7 @@ export class CharacterStoreService {
     character.martialArtManeuvers = character.martialArtManeuvers.filter(
       (maneuver) => maneuver.id !== maneuverId,
     );
-    this.character.set(touchCharacter(character));
-    this.bump();
-    this.scheduleAutoSave();
+    this.afterEdit(character);
   }
 
   addGear(name: string, rating = 1): void {
@@ -1210,6 +1162,10 @@ export class CharacterStoreService {
       return { valid: false, issues: [{ code: 'no-character', message: 'No character loaded' }] };
     }
 
+    if (character.created) {
+      return { valid: true, issues: [] };
+    }
+
     const validation = validateCharacter({
       character,
       manager,
@@ -1223,10 +1179,22 @@ export class CharacterStoreService {
     }
 
     character.created = true;
+    this.reopenedByEdit.set(false);
     this.character.set(touchCharacter(character));
     this.bump();
     void this.saveCurrentCharacter();
     return validation;
+  }
+
+  reopenCreation(): void {
+    const character = this.character();
+    if (!character?.created) return;
+
+    character.created = false;
+    this.reopenedByEdit.set(false);
+    this.character.set(touchCharacter(character));
+    this.bump();
+    void this.saveCurrentCharacter();
   }
 
   exportCurrentChum(): string | null {
@@ -1444,9 +1412,7 @@ export class CharacterStoreService {
     character.knowledgeSkills = character.knowledgeSkills.filter(
       (entry) => entry.name !== skillName,
     );
-    this.character.set(touchCharacter(character));
-    this.bump();
-    this.scheduleAutoSave();
+    this.afterEdit(character);
   }
 
   setAttributeBase(code: AttributeCode, value: number): void {
@@ -1457,9 +1423,7 @@ export class CharacterStoreService {
     const limits = getEffectiveLimits(character, code);
     const clamped = Math.min(Math.max(value, limits.min), limits.max);
     character.attributes[code].base = clamped;
-    this.character.set(touchCharacter(character));
-    this.bump();
-    this.scheduleAutoSave();
+    this.afterEdit(character);
   }
 
   applyQuality(qualityName: string, bonus: BonusNode | null | undefined, rating = 1): void {
@@ -1469,9 +1433,7 @@ export class CharacterStoreService {
     if (!this.hasInteractiveBonus(bonus)) {
       applyQualityBonus(manager.getCharacter(), manager, qualityName, bonus, rating);
       this.addQualityName(qualityName);
-      this.character.set(touchCharacter(manager.getCharacter()));
-      this.bump();
-      this.scheduleAutoSave();
+      this.afterEdit(manager.getCharacter());
       return;
     }
 
@@ -1529,9 +1491,7 @@ export class CharacterStoreService {
         excludeFromLimit: true,
       };
 
-      this.character.set(touchCharacter(character));
-      this.bump();
-      this.scheduleAutoSave();
+      this.afterEdit(character);
       return { ok: true };
     }
 
@@ -1547,9 +1507,7 @@ export class CharacterStoreService {
       delete character.qualityAdjustments[qualityName];
     }
 
-    this.character.set(touchCharacter(character));
-    this.bump();
-    this.scheduleAutoSave();
+    this.afterEdit(character);
     return { ok: true };
   }
 
@@ -1607,10 +1565,8 @@ export class CharacterStoreService {
     if (!manager) return;
 
     this.addQualityName(qualityName);
-    this.character.set(touchCharacter(manager.getCharacter()));
     this.clearGrantState();
-    this.bump();
-    this.scheduleAutoSave();
+    this.afterEdit(manager.getCharacter());
   }
 
   private addQualityName(qualityName: string): void {
@@ -1721,8 +1677,17 @@ export class CharacterStoreService {
     this.stripWareImprovements(item.id);
   }
 
-  private commitWare(character: ReturnType<typeof touchCharacter>): void {
+  private commitWare(character: Character): void {
     syncLegacyPurchases(character);
+    this.afterEdit(character);
+  }
+
+  /** Persist an edit; clears finalized status so creation can be finished again. */
+  private afterEdit(character: Character): void {
+    if (character.created) {
+      character.created = false;
+      this.reopenedByEdit.set(true);
+    }
     this.character.set(touchCharacter(character));
     this.bump();
     this.scheduleAutoSave();
@@ -1766,18 +1731,14 @@ export class CharacterStoreService {
     }
   }
 
-  private commitStreetGear(character: ReturnType<typeof touchCharacter>): void {
+  private commitStreetGear(character: Character): void {
     syncLegacyPurchases(character);
-    this.character.set(touchCharacter(character));
-    this.bump();
-    this.scheduleAutoSave();
+    this.afterEdit(character);
   }
 
-  private commitCharacter(character: ReturnType<typeof touchCharacter>): void {
+  private commitCharacter(character: Character): void {
     syncLegacyPurchases(character);
-    this.character.set(touchCharacter(character));
-    this.bump();
-    this.scheduleAutoSave();
+    this.afterEdit(character);
   }
 
   private stripPowerImprovements(id: string): void {
