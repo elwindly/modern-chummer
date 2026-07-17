@@ -3,6 +3,7 @@ import { CharacterOptions } from '../models/character-options';
 import { ImprovementType } from '../models/improvement';
 import { calculateTotalNuyenSpent } from './ware-calculator';
 import { calculateTotalVehicleCost } from './vehicle-calculator';
+import { calculateLifestyleCost } from './lifestyle-calculator';
 import { ImprovementManager } from './improvement-manager';
 
 export interface NuyenBreakdown {
@@ -17,11 +18,17 @@ export function calculateNuyen(
   manager: ImprovementManager,
   options: CharacterOptions,
 ): NuyenBreakdown {
-  const fromBp = character.nuyenBpSpent * options.nuyenPerBp;
+  const fromBp =
+    options.buildMethod === 'Karma'
+      ? character.nuyenBpSpent * options.karmaNuyen
+      : character.nuyenBpSpent * options.nuyenPerBp;
   const fromImprovements = manager.valueOf(ImprovementType.Nuyen);
   const total = fromBp + fromImprovements;
 
-  const spent = calculateTotalNuyenSpent(character) + calculateTotalVehicleCost(character);
+  const spent =
+    calculateTotalNuyenSpent(character) +
+    calculateTotalVehicleCost(character) +
+    calculateLifestyleCost(character);
 
   return {
     remaining: total - spent,
@@ -39,7 +46,10 @@ export function calculateRemainingNuyen(
   return calculateNuyen(character, manager, options).remaining;
 }
 
-export function getMaxNuyenBp(character: Character, manager: ImprovementManager): number {
+export function getMaxNuyenBp(character: Character, manager: ImprovementManager, options?: CharacterOptions): number {
   const bonus = manager.valueOf(ImprovementType.NuyenMaxBP);
-  return Math.floor(character.buildPoints / 10) + bonus;
+  const pool = options?.buildMethod === 'Karma'
+    ? (character.buildKarma ?? options.buildKarma)
+    : character.buildPoints;
+  return Math.floor(pool / 10) + bonus;
 }

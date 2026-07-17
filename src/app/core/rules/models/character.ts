@@ -11,13 +11,16 @@ import {
 } from './skill';
 import { CharacterStreetItem } from './street-gear';
 import { CharacterWare } from './ware';
+import { CharacterLifestyle, CharacterPet } from './lifestyle';
 import {
   CharacterCritterPower,
+  CharacterFocus,
   CharacterInitiationGrade,
   CharacterMetamagic,
   CharacterPower,
   CharacterProgram,
   CharacterSpell,
+  CharacterSpirit,
 } from './magic';
 import { CharacterVehicle } from './vehicle';
 
@@ -41,6 +44,7 @@ export interface Character {
   metavariant?: string;
   metatypeBp: number;
   buildPoints: number;
+  buildKarma?: number;
   maximumAvailability: number;
   nuyenBpSpent: number;
   ignoreRules?: boolean;
@@ -67,6 +71,10 @@ export interface Character {
   metamagics: CharacterMetamagic[];
   initiationGrades: CharacterInitiationGrade[];
   critterPowers: CharacterCritterPower[];
+  spirits: CharacterSpirit[];
+  foci: CharacterFocus[];
+  lifestyles: CharacterLifestyle[];
+  pets: CharacterPet[];
   vehicles: CharacterVehicle[];
   knowledgeSkillPoints?: number;
   profile: CharacterProfile;
@@ -85,6 +93,7 @@ export function createEmptyCharacter(overrides: Partial<Character> = {}): Charac
     metatypeCategory: 'Metahuman',
     metatypeBp: 0,
     buildPoints: 400,
+    buildKarma: 750,
     maximumAvailability: 12,
     nuyenBpSpent: 0,
     qualities: [],
@@ -106,6 +115,10 @@ export function createEmptyCharacter(overrides: Partial<Character> = {}): Charac
     metamagics: [],
     initiationGrades: [],
     critterPowers: [],
+    spirits: [],
+    foci: [],
+    lifestyles: [],
+    pets: [],
     vehicles: [],
     created: false,
     profile: createEmptyProfile(),

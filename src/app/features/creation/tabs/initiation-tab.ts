@@ -21,7 +21,7 @@ import { SourceFilterControl } from '../../../shared/source-filter-control';
   template: `
     @if (store.character(); as character) {
       <section aria-labelledby="initiation-heading">
-        <h2 id="initiation-heading">Initiation & Metamagic</h2>
+        <h2 id="initiation-heading">Initiation & {{ metamagicLabel() }}</h2>
 
         <div class="grade-panel">
           <h3>Initiation grades</h3>
@@ -59,18 +59,18 @@ import { SourceFilterControl } from '../../../shared/source-filter-control';
         </div>
 
         <div class="metamagic-panel">
-          <h3>Metamagic</h3>
+          <h3>{{ metamagicLabel() }}</h3>
           <div class="filter-toolbar">
             <label>
-              <span class="sr-only">Search metamagic</span>
-              <input type="search" placeholder="Search metamagic…" [formField]="searchForm.query" />
+              <span class="sr-only">Search {{ metamagicLabel().toLowerCase() }}</span>
+              <input type="search" [placeholder]="'Search ' + metamagicLabel().toLowerCase() + '…'" [formField]="searchForm.query" />
             </label>
             <app-source-filter-control />
             <span class="muted">{{ contentSourceScopeLabel(filter.scope()) }}</span>
           </div>
 
           <table class="catalog-table">
-            <caption class="sr-only">Metamagic catalog</caption>
+            <caption class="sr-only">{{ metamagicLabel() }} catalog</caption>
             <thead>
               <tr>
                 <th scope="col">Name</th>
@@ -96,7 +96,7 @@ import { SourceFilterControl } from '../../../shared/source-filter-control';
           </table>
 
           @if (character.metamagics.length) {
-            <h4>Selected metamagic</h4>
+            <h4>Selected {{ metamagicLabel().toLowerCase() }}</h4>
             <ul class="editor-list">
               @for (entry of character.metamagics; track entry.id) {
                 <li class="editor-row">
@@ -211,6 +211,10 @@ export class InitiationTab {
       ) as ChummerItem[],
     ) as MetamagicCatalogEntry[];
   });
+
+  readonly metamagicLabel = computed(() =>
+    this.store.character()?.flags.resEnabled ? 'Echoes' : 'Metamagic',
+  );
 
   addGrade(): void {
     this.store.addInitiationGrade({

@@ -20,7 +20,7 @@ import {
   template: `
     @if (store.pendingSelection(); as selection) {
       <dialog class="selection-dialog" open aria-labelledby="selection-title">
-        <h2 id="selection-title">{{ selection.sourceName }}: {{ selection.prompt }}</h2>
+        <h2 id="selection-title">{{ store.pendingGrantLabel() || selection.sourceName }}: {{ selection.prompt }}</h2>
 
         @if (selection.kind === 'attribute') {
           <label for="selection-value">Attribute</label>

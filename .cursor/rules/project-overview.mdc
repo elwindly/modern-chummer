@@ -33,9 +33,9 @@ npm run build        # production build
 
 ## Implementation phases
 
-1. **Done** — Data pipeline, reference browser, rules engine (Milestones 1–9)
-2. **Next** — Magic, matrix, vehicles & career (Milestone 10; see `rules-roadmap.mdc`)
-3. **Future** — Career mode advancement (karma, post-creation editing)
+1. **Done** — Data pipeline, reference browser, rules engine (Milestones 1–10)
+2. **Done** — Creation parity Phases 11–15 (handlers, magic depth, lifestyles, PACKS/print, karma options)
+3. **Next** — Career mode advancement (post-finalize karma spends; see `rules-roadmap.mdc`)
 
 ## Legacy reference (when porting rules)
 

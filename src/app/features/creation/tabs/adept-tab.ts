@@ -83,6 +83,9 @@ import { SourceFilterControl } from '../../../shared/source-filter-control';
                       />
                     </label>
                   }
+                  @if (requiresSelection(power)) {
+                    <span class="muted selection-note">Requires selection</span>
+                  }
                   <button
                     type="button"
                     (click)="addPower(power)"
@@ -173,6 +176,7 @@ import { SourceFilterControl } from '../../../shared/source-filter-control';
 
     .item-name { min-width: 10rem; font-weight: 500; }
     .inline-rating input { width: 4rem; margin-right: 0.35rem; }
+    .selection-note { font-size: 0.8125rem; margin-right: 0.35rem; }
     .muted { color: var(--color-text-muted); }
 
     select, input, button {
@@ -251,7 +255,11 @@ export class AdeptTab {
   }
 
   addPower(power: PowerCatalogEntry): void {
-    this.store.addPower(power.name, this.pendingRating(power.name));
+    this.store.applyAdeptPower(power.name, this.pendingRating(power.name));
+  }
+
+  requiresSelection(power: PowerCatalogEntry): boolean {
+    return this.store.powerRequiresSelection(power.name);
   }
 
   hasPower(name: string): boolean {

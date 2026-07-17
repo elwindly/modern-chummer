@@ -52,6 +52,9 @@ import { ChummerDataService } from '../../core/services/chummer-data.service';
                   <a [routerLink]="['/characters', entry.id]" class="character-name">
                     {{ entry.name }}
                   </a>
+                  @if (entry.created) {
+                    <span class="finalized-badge">Finalized</span>
+                  }
                   <p class="meta">{{ entry.metatype }} · updated {{ formatDate(entry.updatedAt) }}</p>
                 </div>
                 <button type="button" (click)="deleteCharacter(entry.id)">Delete</button>
@@ -140,6 +143,20 @@ import { ChummerDataService } from '../../core/services/chummer-data.service';
       text-decoration: none;
 
       &:hover { color: var(--color-accent); }
+    }
+
+    .finalized-badge {
+      display: inline-block;
+      margin-left: 0.5rem;
+      padding: 0.1rem 0.45rem;
+      border: 1px solid var(--color-accent);
+      border-radius: var(--radius);
+      background: var(--color-surface-raised);
+      font-size: 0.6875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      vertical-align: middle;
     }
 
     .meta {

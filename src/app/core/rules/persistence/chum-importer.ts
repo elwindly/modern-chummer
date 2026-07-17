@@ -7,17 +7,21 @@ import { CharacterStreetItem, StreetItemKind } from '../models/street-gear';
 import { CharacterWare, WareKind } from '../models/ware';
 import {
   CharacterCritterPower,
+  CharacterFocus,
   CharacterInitiationGrade,
   CharacterMetamagic,
   CharacterPower,
   CharacterProgram,
   CharacterSpell,
+  CharacterSpirit,
 } from '../models/magic';
+import { CharacterLifestyle, CharacterPet } from '../models/lifestyle';
 import { CharacterVehicle, CharacterVehicleMod } from '../models/vehicle';
 import { Improvement, ImprovementSource, ImprovementType, createImprovement } from '../models/improvement';
 import { createCharacterId } from './character-serializer';
 import { syncLegacyPurchases } from '../engine/gear-calculator';
-import { createSpell, refreshPowerPoints } from '../engine/magic-calculator';
+import { createSpell, createFocus, createSpirit, refreshPowerPoints } from '../engine/magic-calculator';
+import { createLifestyle, createPet } from '../engine/lifestyle-calculator';
 
 export interface ChumImportResult {
   character: Character;
@@ -457,6 +461,18 @@ function parsePowers(root: Record<string, unknown>): CharacterPower[] {
     .filter((power) => power.name);
 }
 
+function parseProgramOptions(node: Record<string, unknown> | undefined): CharacterProgram['options'] {
+  const optionNodes = asArray(node?.['option'] as ChumNode);
+  return optionNodes
+    .filter((entry): entry is Record<string, unknown> => !!entry && typeof entry === 'object')
+    .map((entry) => ({
+      id: text(entry['guid']) || createCharacterId(),
+      name: text(entry['name']),
+      rating: number(entry['rating'], 1),
+    }))
+    .filter((option) => option.name);
+}
+
 function parsePrograms(root: Record<string, unknown>): CharacterProgram[] {
   const node = (root['techprograms'] ?? root['programs']) as Record<string, unknown> | undefined;
   return asArray(node?.['techprogram'] as ChumNode)
@@ -468,9 +484,82 @@ function parsePrograms(root: Record<string, unknown>): CharacterProgram[] {
       rating: number(entry['rating'], 1),
       maxRating: number(entry['maxrating'], 6),
       capacity: text(entry['capacity']),
+      options: parseProgramOptions(entry['options'] as Record<string, unknown> | undefined),
       extra: text(entry['extra']) || undefined,
     }))
     .filter((program) => program.name);
+}
+
+function parseSpirits(root: Record<string, unknown>): CharacterSpirit[] {
+  const node = root['spirits'] as Record<string, unknown> | undefined;
+  return asArray(node?.['spirit'] as ChumNode)
+    .filter((entry): entry is Record<string, unknown> => !!entry && typeof entry === 'object')
+    .map((entry) =>
+      createSpirit(text(entry['name']), {
+        id: text(entry['guid']) || undefined,
+        force: number(entry['force'], 1),
+        servicesOwed: number(entry['services']),
+        bound: bool(entry['bound']),
+        sprite: text(entry['type']).toLowerCase() === 'sprite',
+      }),
+    )
+    .filter((spirit) => spirit.name);
+}
+
+function parseFoci(root: Record<string, unknown>): CharacterFocus[] {
+  const node = root['foci'] as Record<string, unknown> | undefined;
+  return asArray(node?.['focus'] as ChumNode)
+    .filter((entry): entry is Record<string, unknown> => !!entry && typeof entry === 'object')
+    .map((entry) =>
+      createFocus(text(entry['name']), number(entry['rating'], 1), {
+        id: text(entry['guid']) || undefined,
+        bonded: bool(entry['bonded'], true),
+      }),
+    )
+    .filter((focus) => focus.name);
+}
+
+function parseLifestyles(root: Record<string, unknown>): CharacterLifestyle[] {
+  const node = root['lifestyles'] as Record<string, unknown> | undefined;
+  return asArray(node?.['lifestyle'] as ChumNode)
+    .filter((entry): entry is Record<string, unknown> => !!entry && typeof entry === 'object')
+    .map((entry) =>
+      createLifestyle(text(entry['name']), number(entry['cost']), {
+        id: text(entry['guid']) || undefined,
+        months: number(entry['months'], 1),
+        lifestyleType: text(entry['type']) || undefined,
+      }),
+    )
+    .filter((lifestyle) => lifestyle.name);
+}
+
+function parsePets(root: Record<string, unknown>): CharacterPet[] {
+  const petsNode = root['pets'] as Record<string, unknown> | undefined;
+  const petNodes = asArray(petsNode?.['pet'] as ChumNode);
+  const pets = petNodes
+    .filter((entry): entry is Record<string, unknown> => !!entry && typeof entry === 'object')
+    .map((entry) =>
+      createPet(text(entry['name']), {
+        id: text(entry['guid']) || undefined,
+      }),
+    )
+    .filter((pet) => pet.name);
+
+  if (pets.length > 0) {
+    return pets;
+  }
+
+  const contactsNode = root['contacts'] as Record<string, unknown> | undefined;
+  const contactNodes = asArray(contactsNode?.['contact'] as ChumNode);
+  return contactNodes
+    .filter((entry): entry is Record<string, unknown> => !!entry && typeof entry === 'object')
+    .filter((entry) => text(entry['type']).toLowerCase() === 'pet')
+    .map((entry) =>
+      createPet(text(entry['name']), {
+        id: text(entry['guid']) || undefined,
+      }),
+    )
+    .filter((pet) => pet.name);
 }
 
 function parseMetamagics(root: Record<string, unknown>): CharacterMetamagic[] {
@@ -585,13 +674,18 @@ export function importChumDocument(root: Record<string, unknown>): ChumImportRes
     warnings.push('Character is marked as Created (career mode). Only creation data was imported.');
   }
 
-  const unsupportedSections = ['lifestyles', 'foci', 'stackedfoci', 'spirits'];
+  const unsupportedSections = ['stackedfoci'];
 
   for (const section of unsupportedSections) {
     if (root[section]) {
       warnings.push(`Section "${section}" was not imported (not yet supported).`);
     }
   }
+
+  const spirits = parseSpirits(root);
+  const foci = parseFoci(root);
+  const lifestyles = parseLifestyles(root);
+  const pets = parsePets(root);
 
   const parsedQualities = parseQualities(root);
   const parsedSkills = parseSkills(root);
@@ -639,6 +733,10 @@ export function importChumDocument(root: Record<string, unknown>): ChumImportRes
     metamagics,
     initiationGrades,
     critterPowers,
+    spirits,
+    foci,
+    lifestyles,
+    pets,
     vehicles,
     knowledgeSkillPoints: number(root['knowpts']) || undefined,
     profile: parseProfile(root),

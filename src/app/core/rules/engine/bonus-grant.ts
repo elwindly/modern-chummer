@@ -203,10 +203,17 @@ export function touchCharacter(character: Character): Character {
     bioware: cloneWareList(character.bioware ?? []),
     spells: [...(character.spells ?? [])],
     powers: [...(character.powers ?? [])],
-    programs: [...(character.programs ?? [])],
+    programs: (character.programs ?? []).map((program) => ({
+      ...program,
+      options: [...(program.options ?? [])],
+    })),
     metamagics: [...(character.metamagics ?? [])],
     initiationGrades: [...(character.initiationGrades ?? [])],
     critterPowers: [...(character.critterPowers ?? [])],
+    spirits: [...(character.spirits ?? [])],
+    foci: [...(character.foci ?? [])],
+    lifestyles: [...(character.lifestyles ?? [])],
+    pets: [...(character.pets ?? [])],
     vehicles: (character.vehicles ?? []).map((vehicle) => ({
       ...vehicle,
       mods: [...vehicle.mods],

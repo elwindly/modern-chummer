@@ -39,6 +39,12 @@ import { SourceFilterControl } from '../../../shared/source-filter-control';
           </label>
         </div>
 
+        @if (mentorSpiritName(); as mentor) {
+          <p class="mentor-readout muted" role="status">
+            Mentor spirit: <strong>{{ mentor }}</strong>
+          </p>
+        }
+
         <p class="spell-limit status-panel" role="status">
           Spells: <strong>{{ character.spells.length }}</strong>
           / {{ store.getSpellLimit() }}
@@ -54,6 +60,17 @@ import { SourceFilterControl } from '../../../shared/source-filter-control';
           </label>
           <app-source-filter-control />
           <span class="muted">{{ contentSourceScopeLabel(filter.scope()) }}</span>
+        </div>
+
+        <div class="spell-flags-toolbar" aria-label="Spell options when adding">
+          <label class="checkbox-label">
+            <input type="checkbox" [checked]="addLimited()" (change)="addLimited.set($any($event.target).checked)" />
+            Limited
+          </label>
+          <label class="checkbox-label">
+            <input type="checkbox" [checked]="addExtended()" (change)="addExtended.set($any($event.target).checked)" />
+            Extended
+          </label>
         </div>
 
         <table class="catalog-table">
@@ -73,7 +90,7 @@ import { SourceFilterControl } from '../../../shared/source-filter-control';
                 <td>
                   <button
                     type="button"
-                    (click)="store.addSpell(spell.name)"
+                    (click)="addSpell(spell.name)"
                     [disabled]="hasSpell(spell.name)"
                   >
                     Add
@@ -91,10 +108,71 @@ import { SourceFilterControl } from '../../../shared/source-filter-control';
               <li class="editor-row">
                 <span class="item-name">{{ spell.name }}</span>
                 <span class="muted">{{ spell.category }}</span>
+                <label class="checkbox-label">
+                  <input
+                    type="checkbox"
+                    [checked]="spell.limited ?? false"
+                    (change)="toggleSpellFlag(spell.id, 'limited', $event)"
+                  />
+                  Limited
+                </label>
+                <label class="checkbox-label">
+                  <input
+                    type="checkbox"
+                    [checked]="spell.extended ?? false"
+                    (change)="toggleSpellFlag(spell.id, 'extended', $event)"
+                  />
+                  Extended
+                </label>
                 <button type="button" (click)="store.removeSpell(spell.id)">Remove</button>
               </li>
             }
           </ul>
+        }
+
+        <h3>Spirits</h3>
+        <div class="spirit-add-panel">
+          @if (traditionSpirits().length) {
+            <label>
+              <span class="field-label">Spirit type</span>
+              <select [value]="spiritName()" (change)="onSpiritNameChange($event)">
+                <option value="">Select spirit…</option>
+                @for (spirit of traditionSpirits(); track spirit) {
+                  <option [value]="spirit">{{ spirit }}</option>
+                }
+                <option value="__custom__">Custom name…</option>
+              </select>
+            </label>
+          }
+          @if (!traditionSpirits().length || spiritName() === '__custom__') {
+            <label>
+              <span class="field-label">Spirit name</span>
+              <input type="text" [formField]="spiritForm.name" placeholder="Spirit name" />
+            </label>
+          }
+          <label>
+            <span class="field-label">Force</span>
+            <input type="number" [formField]="spiritForm.force" />
+          </label>
+          <label>
+            <span class="field-label">Services owed</span>
+            <input type="number" [formField]="spiritForm.services" />
+          </label>
+          <button type="button" (click)="addSpirit()">Add spirit</button>
+        </div>
+
+        @if (ownedSpirits().length) {
+          <ul class="editor-list">
+            @for (spirit of ownedSpirits(); track spirit.id) {
+              <li class="editor-row">
+                <span class="item-name">{{ spirit.name }}</span>
+                <span class="muted">Force {{ spirit.force }} · Services {{ spirit.servicesOwed }}</span>
+                <button type="button" (click)="store.removeSpirit(spirit.id)">Remove</button>
+              </li>
+            }
+          </ul>
+        } @else {
+          <p class="muted">No spirits yet.</p>
         }
       </section>
     }
@@ -118,11 +196,26 @@ import { SourceFilterControl } from '../../../shared/source-filter-control';
     button:hover:not(:disabled) { border-color: var(--color-accent); }
     button:disabled { opacity: 0.5; cursor: not-allowed; }
 
-    .filter-toolbar {
+    .filter-toolbar, .spell-flags-toolbar {
       display: flex;
       gap: 0.75rem;
       flex-wrap: wrap;
       align-items: center;
+      margin-bottom: 0.75rem;
+    }
+
+    .checkbox-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.875rem;
+    }
+
+    .spirit-add-panel {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: end;
       margin-bottom: 0.75rem;
     }
 
@@ -158,7 +251,7 @@ import { SourceFilterControl } from '../../../shared/source-filter-control';
     .item-name { min-width: 10rem; font-weight: 500; }
     .muted { color: var(--color-text-muted); }
     .warn { color: var(--color-danger); }
-    .spell-limit { margin: 0 0 1rem; }
+    .spell-limit, .mentor-readout { margin: 0 0 1rem; }
 
     .sr-only {
       position: absolute;
@@ -181,6 +274,13 @@ export class MagicianTab {
   readonly searchModel = signal({ query: '' });
   readonly searchForm = form(this.searchModel);
 
+  readonly addLimited = signal(false);
+  readonly addExtended = signal(false);
+
+  readonly spiritName = signal('');
+  readonly spiritModel = signal({ name: '', force: 1, services: 0 });
+  readonly spiritForm = form(this.spiritModel);
+
   readonly filteredSpells = computed(() => {
     const query = this.searchModel().query;
     const scope = this.filter.scope();
@@ -194,11 +294,62 @@ export class MagicianTab {
     ) as SpellCatalogEntry[];
   });
 
+  readonly mentorSpiritName = computed(() => {
+    const character = this.store.character();
+    if (!character) return null;
+    return character.qualities.find((quality) => quality.includes('Mentor')) ?? null;
+  });
+
+  readonly traditionSpirits = computed(() => {
+    const character = this.store.character();
+    if (!character?.magicTradition) return [] as string[];
+    const tradition = this.store.traditionCatalog().find(
+      (entry) => entry.name === character.magicTradition,
+    );
+    return tradition?.spirits ?? [];
+  });
+
+  readonly ownedSpirits = computed(() => {
+    const character = this.store.character();
+    if (!character) return [];
+    return character.spirits.filter((spirit) => !spirit.sprite);
+  });
+
   onTraditionChange(event: Event): void {
     const value = (event.target as HTMLSelectElement).value;
     if (value) {
       this.store.setMagicTradition(value);
+      this.spiritName.set('');
     }
+  }
+
+  onSpiritNameChange(event: Event): void {
+    const value = (event.target as HTMLSelectElement).value;
+    this.spiritName.set(value);
+    if (value && value !== '__custom__') {
+      this.spiritModel.update((current) => ({ ...current, name: value }));
+    }
+  }
+
+  addSpell(name: string): void {
+    this.store.addSpell(name, {
+      limited: this.addLimited(),
+      extended: this.addExtended(),
+    });
+  }
+
+  addSpirit(): void {
+    const model = this.spiritModel();
+    const name = model.name.trim();
+    if (!name) return;
+    this.store.addSpirit(name, model.force, model.services, false);
+    this.spiritModel.set({ name: '', force: 1, services: 0 });
+    this.spiritName.set('');
+  }
+
+  toggleSpellFlag(id: string, flag: 'limited' | 'extended', event: Event): void {
+    const checked = (event.target as HTMLInputElement).checked;
+    this.store.setSpellFlags(id, { [flag]: checked });
   }
 
   hasSpell(name: string): boolean {

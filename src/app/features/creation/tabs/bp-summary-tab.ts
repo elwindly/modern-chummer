@@ -158,6 +158,83 @@ import { CharacterStoreService } from '../../../core/services/character-store.se
         </table>
       }
 
+      @if (store.derivedStats(); as stats) {
+        <h3>Other info</h3>
+        <table class="summary-table">
+          <caption class="sr-only">Derived character statistics</caption>
+          <tbody>
+            <tr>
+              <th scope="row">Composure</th>
+              <td>{{ stats.composure }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Judge intentions</th>
+              <td>{{ stats.judgeIntentions }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Memory</th>
+              <td>{{ stats.memory }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Lift / carry (kg)</th>
+              <td>{{ stats.liftCarry }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Walking (m/combat turn)</th>
+              <td>{{ stats.walking }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Running (m/combat turn)</th>
+              <td>{{ stats.running }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Initiative bonus</th>
+              <td>{{ stats.initiativeBonus }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Initiative passes</th>
+              <td>{{ stats.initiativePasses }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Matrix initiative bonus</th>
+              <td>{{ stats.matrixInitiativeBonus }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Physical CM</th>
+              <td>{{ stats.physicalCm }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Stun CM</th>
+              <td>{{ stats.stunCm }}</td>
+            </tr>
+            <tr>
+              <th scope="row">CM threshold</th>
+              <td>{{ stats.cmThreshold }}</td>
+            </tr>
+            <tr>
+              <th scope="row">CM threshold offset</th>
+              <td>{{ stats.cmThresholdOffset }}</td>
+            </tr>
+            <tr>
+              <th scope="row">CM overflow</th>
+              <td>{{ stats.cmOverflow }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Damage resistance</th>
+              <td>{{ stats.damageResistance }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Unarmed DV</th>
+              <td>{{ stats.unarmedDV }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Reach</th>
+              <td>{{ stats.reach }}</td>
+            </tr>
+          </tbody>
+        </table>
+      }
+
       @if (store.character()?.created) {
         <p class="finalized status-panel" role="status">
           Character is finalized. Use <strong>Reopen for editing</strong> in the header to return to creation,

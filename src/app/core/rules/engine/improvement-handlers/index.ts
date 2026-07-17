@@ -431,6 +431,197 @@ export const handleInitiativePass: BonusHandler = (bonus, ctx) => {
   );
 };
 
+export const handleSpellLimit: BonusHandler = (bonus, ctx) => {
+  if (!nodeHasKey(bonus, 'spelllimit')) return;
+
+  ctx.manager.addImprovement(
+    createImprovement({
+      source: ctx.source,
+      sourceName: ctx.sourceName,
+      type: ImprovementType.SpellLimit,
+      uniqueName: ctx.uniqueName,
+      value: ctx.manager.valueToInt(nodeText(bonus['spelllimit']), ctx.rating),
+    }),
+  );
+};
+
+export const handleAdeptPowerPoints: BonusHandler = (bonus, ctx) => {
+  const key = nodeHasKey(bonus, 'adeptpowerpoints')
+    ? 'adeptpowerpoints'
+    : nodeHasKey(bonus, 'powerpoints')
+      ? 'powerpoints'
+      : null;
+  if (!key) return;
+
+  ctx.manager.addImprovement(
+    createImprovement({
+      source: ctx.source,
+      sourceName: ctx.sourceName,
+      type: ImprovementType.AdeptPowerPoints,
+      uniqueName: ctx.uniqueName,
+      value: ctx.manager.valueToInt(nodeText(bonus[key]), ctx.rating),
+    }),
+  );
+};
+
+export const handleUnarmedDV: BonusHandler = (bonus, ctx) => {
+  if (!nodeHasKey(bonus, 'unarmeddv')) return;
+
+  ctx.manager.addImprovement(
+    createImprovement({
+      source: ctx.source,
+      sourceName: ctx.sourceName,
+      type: ImprovementType.UnarmedDV,
+      uniqueName: ctx.uniqueName,
+      value: ctx.manager.valueToInt(nodeText(bonus['unarmeddv']), ctx.rating),
+    }),
+  );
+};
+
+export const handleReach: BonusHandler = (bonus, ctx) => {
+  if (!nodeHasKey(bonus, 'reach')) return;
+
+  ctx.manager.addImprovement(
+    createImprovement({
+      source: ctx.source,
+      sourceName: ctx.sourceName,
+      type: ImprovementType.Reach,
+      uniqueName: ctx.uniqueName,
+      value: ctx.manager.valueToInt(nodeText(bonus['reach']), ctx.rating),
+    }),
+  );
+};
+
+export const handleSkillGroup: BonusHandler = (bonus, ctx) => {
+  if (!nodeHasKey(bonus, 'skillgroup')) return;
+
+  for (const entry of asBonusArray(bonus['skillgroup'])) {
+    const addToRating = nodeText(entry['applytorating']).toLowerCase() === 'yes';
+    let uniqueName = ctx.uniqueName;
+
+    if (entry['precedence'] !== undefined) {
+      uniqueName = `precedence${nodeText(entry['precedence'])}`;
+    }
+
+    if (entry['bonus'] !== undefined) {
+      ctx.manager.addImprovement(
+        createImprovement({
+          improvedName: nodeText(entry['name']),
+          source: ctx.source,
+          sourceName: ctx.sourceName,
+          type: ImprovementType.SkillGroup,
+          uniqueName,
+          value: ctx.manager.valueToInt(nodeText(entry['bonus']), ctx.rating),
+          addToRating,
+        }),
+      );
+    }
+  }
+};
+
+export const handleNuyenMaxBP: BonusHandler = (bonus, ctx) => {
+  if (!nodeHasKey(bonus, 'nuyenmaxbp')) return;
+
+  ctx.manager.addImprovement(
+    createImprovement({
+      source: ctx.source,
+      sourceName: ctx.sourceName,
+      type: ImprovementType.NuyenMaxBP,
+      uniqueName: ctx.uniqueName,
+      value: ctx.manager.valueToInt(nodeText(bonus['nuyenmaxbp']), ctx.rating),
+    }),
+  );
+};
+
+export const handleMovementPercent: BonusHandler = (bonus, ctx) => {
+  if (!nodeHasKey(bonus, 'movementpercent')) return;
+
+  ctx.manager.addImprovement(
+    createImprovement({
+      source: ctx.source,
+      sourceName: ctx.sourceName,
+      type: ImprovementType.MovementPercent,
+      uniqueName: ctx.uniqueName,
+      value: ctx.manager.valueToInt(nodeText(bonus['movementpercent']), ctx.rating),
+    }),
+  );
+};
+
+export const handleWeaponCategoryDV: BonusHandler = (bonus, ctx) => {
+  if (!nodeHasKey(bonus, 'weaponcategorydv')) return;
+
+  for (const entry of asBonusArray(bonus['weaponcategorydv'])) {
+    const category = nodeText(entry['category'] ?? entry['name']);
+
+    ctx.manager.addImprovement(
+      createImprovement({
+        improvedName: category,
+        source: ctx.source,
+        sourceName: ctx.sourceName,
+        type: ImprovementType.WeaponCategoryDV,
+        uniqueName: ctx.uniqueName,
+        value: ctx.manager.valueToInt(nodeText(entry['bonus']), ctx.rating),
+      }),
+    );
+  }
+};
+
+export const handleSmartlink: BonusHandler = (bonus, ctx) => {
+  if (!nodeHasKey(bonus, 'smartlink')) return;
+
+  ctx.manager.addImprovement(
+    createImprovement({
+      source: ctx.source,
+      sourceName: ctx.sourceName,
+      type: ImprovementType.Smartlink,
+      uniqueName: ctx.uniqueName,
+      value: 1,
+    }),
+  );
+};
+
+export const handleCyberwareEssCost: BonusHandler = (bonus, ctx) => {
+  if (!nodeHasKey(bonus, 'cyberwareesscost')) return;
+
+  ctx.manager.addImprovement(
+    createImprovement({
+      source: ctx.source,
+      sourceName: ctx.sourceName,
+      type: ImprovementType.CyberwareEssCost,
+      uniqueName: ctx.uniqueName,
+      value: ctx.manager.valueToInt(nodeText(bonus['cyberwareesscost']), ctx.rating),
+    }),
+  );
+};
+
+export const handleBiowareEssCost: BonusHandler = (bonus, ctx) => {
+  if (!nodeHasKey(bonus, 'biowareesscost')) return;
+
+  ctx.manager.addImprovement(
+    createImprovement({
+      source: ctx.source,
+      sourceName: ctx.sourceName,
+      type: ImprovementType.BiowareEssCost,
+      uniqueName: ctx.uniqueName,
+      value: ctx.manager.valueToInt(nodeText(bonus['biowareesscost']), ctx.rating),
+    }),
+  );
+};
+
+export const handleRestrictedItemCount: BonusHandler = (bonus, ctx) => {
+  if (!nodeHasKey(bonus, 'restricteditemcount')) return;
+
+  ctx.manager.addImprovement(
+    createImprovement({
+      source: ctx.source,
+      sourceName: ctx.sourceName,
+      type: ImprovementType.RestrictedItemCount,
+      uniqueName: ctx.uniqueName,
+      value: ctx.manager.valueToInt(nodeText(bonus['restricteditemcount']), ctx.rating),
+    }),
+  );
+};
+
 export const BONUS_HANDLERS: BonusHandler[] = [
   handleAddAttribute,
   handleEnableTab,
@@ -446,6 +637,18 @@ export const BONUS_HANDLERS: BonusHandler[] = [
   handleNuyenAmt,
   handleLivingPersona,
   handleInitiativePass,
+  handleSpellLimit,
+  handleAdeptPowerPoints,
+  handleUnarmedDV,
+  handleReach,
+  handleSkillGroup,
+  handleNuyenMaxBP,
+  handleMovementPercent,
+  handleWeaponCategoryDV,
+  handleSmartlink,
+  handleCyberwareEssCost,
+  handleBiowareEssCost,
+  handleRestrictedItemCount,
 ];
 
 export function applyBonusHandlers(

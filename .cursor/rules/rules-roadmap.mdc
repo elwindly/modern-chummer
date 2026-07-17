@@ -214,7 +214,7 @@ Cyberware/bioware installs adjust ESS and improvements correctly; removing ware 
 
 ---
 
-## Milestone 10 — Magic, matrix, vehicles & career
+## Milestone 10 — Magic, matrix, vehicles & career ✅
 
 Replace remaining conditional tabs and close the creation loop with export and career transition.
 
@@ -259,6 +259,14 @@ Replace remaining conditional tabs and close the creation loop with export and c
 ### Done when
 
 A magician adept (or other enabled build) can be created end-to-end, exported as `.chum`, re-imported, and marked created for career mode.
+
+---
+
+## Creation parity Phases 11–15 ✅
+
+Full create-mode parity work (see Finish Creation plan): handlers + Other Info, spirits/foci/lifestyles, PACKS/print, karma build method + Options page. Vertical slices: street samurai + magician round-trip specs in `creation-parity-slices.spec.ts`.
+
+**Next:** Career mode (`frmCareer` karma advancement) — out of creation scope.
 
 ---
 

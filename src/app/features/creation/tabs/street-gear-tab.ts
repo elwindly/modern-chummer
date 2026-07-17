@@ -21,7 +21,7 @@ import {
 import { itemSummary, matchesSearch, matchesSourceScope, sortByName } from '../../../core/utils/item-helpers';
 import { SourceFilterControl } from '../../../shared/source-filter-control';
 
-type StreetSection = 'gear' | 'weapons' | 'armor';
+type StreetSection = 'gear' | 'weapons' | 'armor' | 'lifestyle' | 'pets';
 
 @Component({
   selector: 'app-street-gear-tab',
@@ -325,6 +325,81 @@ type StreetSection = 'gear' | 'weapons' | 'armor';
             }
           </div>
         }
+
+        @if (activeSection() === 'lifestyle') {
+          <div class="subsection" aria-labelledby="lifestyle-heading">
+            <h3 id="lifestyle-heading">Lifestyle</h3>
+            <div class="filter-toolbar">
+              <label>
+                <span class="sr-only">Search lifestyles</span>
+                <input type="search" placeholder="Search lifestyles…" [formField]="lifestyleSearchForm.query" />
+              </label>
+              <app-source-filter-control />
+            </div>
+            <label class="months-row">
+              <span>Months</span>
+              <input
+                type="number"
+                min="1"
+                [value]="lifestyleMonths()"
+                (change)="onLifestyleMonthsChange($event)"
+              />
+            </label>
+            <table class="catalog-table">
+              <caption class="sr-only">Lifestyle catalog</caption>
+              <tbody>
+                @for (item of filteredLifestyleCatalog(); track item.name) {
+                  <tr>
+                    <td>{{ item.name }}</td>
+                    <td class="muted">{{ lifestyleSummary(item.name) }}</td>
+                    <td>
+                      <button type="button" (click)="addLifestyle(item.name)">Add</button>
+                    </td>
+                  </tr>
+                }
+              </tbody>
+            </table>
+
+            @if (character.lifestyles.length) {
+              <h4>Purchased lifestyles</h4>
+              <ul class="editor-list">
+                @for (item of character.lifestyles; track item.id) {
+                  <li class="editor-row">
+                    <span class="item-name">{{ item.name }}</span>
+                    <span class="muted">{{ item.months }} months · {{ item.cost | number }}¥</span>
+                    <button type="button" (click)="store.removeLifestyle(item.id)">Remove</button>
+                  </li>
+                }
+              </ul>
+            }
+          </div>
+        }
+
+        @if (activeSection() === 'pets') {
+          <div class="subsection" aria-labelledby="pets-heading">
+            <h3 id="pets-heading">Pets</h3>
+            <div class="pet-add-row">
+              <label>
+                <span class="field-label">Pet name</span>
+                <input type="text" placeholder="Pet name" [formField]="petForm.name" />
+              </label>
+              <button type="button" (click)="addPet()">Add pet</button>
+            </div>
+
+            @if (character.pets.length) {
+              <ul class="editor-list">
+                @for (pet of character.pets; track pet.id) {
+                  <li class="editor-row">
+                    <span class="item-name">{{ pet.name }}</span>
+                    <button type="button" (click)="store.removePet(pet.id)">Remove</button>
+                  </li>
+                }
+              </ul>
+            } @else {
+              <p class="muted">No pets yet.</p>
+            }
+          </div>
+        }
       </section>
     }
   `,
@@ -409,6 +484,13 @@ type StreetSection = 'gear' | 'weapons' | 'armor';
 
     .inline-rating input { width: 4rem; margin-right: 0.35rem; }
     .child-panel { margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid var(--color-border); }
+    .months-row, .pet-add-row {
+      display: flex;
+      gap: 0.75rem;
+      align-items: end;
+      margin-bottom: 0.75rem;
+    }
+    .field-label { display: block; margin-bottom: 0.25rem; font-weight: 500; }
     .muted { color: var(--color-text-muted); }
 
     input, button {
@@ -441,11 +523,14 @@ export class StreetGearTab {
   readonly contentSourceScopeLabel = contentSourceScopeLabel;
   readonly getCatalogMaxRating = getCatalogMaxRating;
   readonly isRatedCatalogEntry = isRatedCatalogEntry;
+  readonly itemSummary = itemSummary;
 
   readonly sections: Array<{ id: StreetSection; label: string }> = [
     { id: 'gear', label: 'Gear' },
     { id: 'weapons', label: 'Weapons' },
     { id: 'armor', label: 'Armor' },
+    { id: 'lifestyle', label: 'Lifestyle' },
+    { id: 'pets', label: 'Pets' },
   ];
 
   readonly activeSection = signal<StreetSection>('gear');
@@ -459,6 +544,11 @@ export class StreetGearTab {
   readonly weaponSearchForm = form(this.weaponSearchModel);
   readonly armorSearchModel = signal({ query: '' });
   readonly armorSearchForm = form(this.armorSearchModel);
+  readonly lifestyleSearchModel = signal({ query: '' });
+  readonly lifestyleSearchForm = form(this.lifestyleSearchModel);
+  readonly petModel = signal({ name: '' });
+  readonly petForm = form(this.petModel);
+  readonly lifestyleMonths = signal(1);
 
   readonly filteredGearCatalog = computed(() =>
     this.filterCatalog([...this.store.gearCatalog().values()], this.gearSearchModel().query),
@@ -471,6 +561,19 @@ export class StreetGearTab {
   readonly filteredArmorCatalog = computed(() =>
     this.filterCatalog([...this.store.armorCatalog().values()], this.armorSearchModel().query),
   );
+
+  readonly filteredLifestyleCatalog = computed(() => {
+    const query = this.lifestyleSearchModel().query;
+    const scope = this.filter.scope();
+    const items = [...this.store.lifestyleCatalog().values()];
+    return sortByName(
+      items.filter(
+        (item) =>
+          matchesSourceScope(item as ChummerItem, scope) &&
+          matchesSearch(item as ChummerItem, query),
+      ) as ChummerItem[],
+    );
+  });
 
   readonly selectedWeapon = computed(() => {
     const id = this.selectedWeaponId();
@@ -508,6 +611,29 @@ export class StreetGearTab {
 
   addGearItem(item: StreetCatalogEntry): void {
     this.store.addGear(item.name, this.catalogRating(item));
+  }
+
+  addLifestyle(name: string): void {
+    this.store.addLifestyleFromCatalog(name, this.lifestyleMonths());
+  }
+
+  lifestyleSummary(name: string): string {
+    const entry = this.store.lifestyleCatalog().get(name);
+    return entry ? itemSummary(entry as ChummerItem) : '';
+  }
+
+  addPet(): void {
+    const name = this.petModel().name.trim();
+    if (!name) return;
+    this.store.addPet(name);
+    this.petModel.set({ name: '' });
+  }
+
+  onLifestyleMonthsChange(event: Event): void {
+    const value = Number((event.target as HTMLInputElement).value);
+    if (Number.isFinite(value)) {
+      this.lifestyleMonths.set(Math.max(1, Math.floor(value)));
+    }
   }
 
   summarizeItem(item: StreetCatalogEntry): string {

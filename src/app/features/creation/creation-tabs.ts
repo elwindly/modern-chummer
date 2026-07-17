@@ -50,7 +50,9 @@ export const CREATION_TABS: CreationTabDefinition[] = [
     id: 'initiation',
     label: 'Initiation',
     visible: (character) =>
-      character.flags.initiationEnabled || character.flags.magEnabled || character.flags.resEnabled,
+      character.flags.initiationEnabled ||
+      character.flags.magEnabled ||
+      character.flags.resEnabled,
   },
   { id: 'cyberware', label: 'Cyberware', always: true },
   { id: 'street-gear', label: 'Street Gear', always: true },

@@ -39,6 +39,46 @@ import { SourceFilterControl } from '../../../shared/source-filter-control';
           </label>
         </div>
 
+        @if (store.derivedStats(); as stats) {
+          @if (stats.matrixInitiativeBonus) {
+            <p class="living-persona status-panel" role="status">
+              Living persona matrix initiative bonus:
+              <strong>+{{ stats.matrixInitiativeBonus }}</strong>
+            </p>
+          }
+        }
+
+        <h3>Sprites</h3>
+        <div class="sprite-add-panel">
+          <label>
+            <span class="field-label">Sprite name</span>
+            <input type="text" [formField]="spriteForm.name" placeholder="Sprite name" />
+          </label>
+          <label>
+            <span class="field-label">Force</span>
+            <input type="number" [formField]="spriteForm.force" />
+          </label>
+          <label>
+            <span class="field-label">Services owed</span>
+            <input type="number" [formField]="spriteForm.services" />
+          </label>
+          <button type="button" (click)="addSprite()">Add sprite</button>
+        </div>
+
+        @if (ownedSprites().length) {
+          <ul class="editor-list">
+            @for (sprite of ownedSprites(); track sprite.id) {
+              <li class="editor-row">
+                <span class="item-name">{{ sprite.name }}</span>
+                <span class="muted">Force {{ sprite.force }} · Services {{ sprite.servicesOwed }}</span>
+                <button type="button" (click)="store.removeSpirit(sprite.id)">Remove</button>
+              </li>
+            }
+          </ul>
+        } @else {
+          <p class="muted">No sprites yet.</p>
+        }
+
         <h3>Complex forms</h3>
 
         <div class="filter-toolbar">
@@ -94,8 +134,15 @@ import { SourceFilterControl } from '../../../shared/source-filter-control';
           <h3>Known complex forms</h3>
           <ul class="editor-list">
             @for (program of character.programs; track program.id) {
-              <li class="editor-row">
-                <span class="item-name">{{ program.name }}</span>
+              <li class="editor-row program-row">
+                <button
+                  type="button"
+                  class="select-btn"
+                  [class.selected]="selectedProgramId() === program.id"
+                  (click)="selectedProgramId.set(program.id)"
+                >
+                  {{ program.name }}
+                </button>
                 <label>
                   <span class="sr-only">Rating for {{ program.name }}</span>
                   <input
@@ -112,15 +159,52 @@ import { SourceFilterControl } from '../../../shared/source-filter-control';
             }
           </ul>
         }
+
+        @if (selectedProgram(); as program) {
+          <div class="options-panel">
+            <h4>Options for {{ program.name }}</h4>
+            <div class="option-add-row">
+              <label>
+                <span class="sr-only">Option name</span>
+                <input type="text" placeholder="Option name" [formField]="optionForm.name" />
+              </label>
+              <button type="button" (click)="addProgramOption(program.id)">Add option</button>
+            </div>
+            @if (program.options.length) {
+              <ul class="editor-list">
+                @for (option of program.options; track option.id) {
+                  <li class="editor-row">
+                    <span>{{ option.name }}</span>
+                    <button type="button" (click)="store.removeProgramOption(program.id, option.id)">
+                      Remove
+                    </button>
+                  </li>
+                }
+              </ul>
+            } @else {
+              <p class="muted">No options yet.</p>
+            }
+          </div>
+        }
       </section>
     }
   `,
   styles: `
-    h2, h3 { margin: 0 0 0.75rem; }
-    h3 { font-size: 1rem; margin-top: 1.25rem; }
+    h2, h3, h4 { margin: 0 0 0.75rem; }
+    h3, h4 { font-size: 1rem; margin-top: 1.25rem; }
 
     .field-row { margin-bottom: 1rem; }
     .field-label { display: block; margin-bottom: 0.25rem; font-weight: 500; }
+
+    .living-persona { margin: 0 0 1rem; }
+
+    .sprite-add-panel, .option-add-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: end;
+      margin-bottom: 0.75rem;
+    }
 
     .filter-toolbar {
       display: flex;
@@ -160,7 +244,21 @@ import { SourceFilterControl } from '../../../shared/source-filter-control';
       flex-wrap: wrap;
     }
 
-    .item-name { min-width: 10rem; font-weight: 500; }
+    .program-row { margin-bottom: 0.25rem; }
+
+    .item-name, .select-btn { min-width: 10rem; font-weight: 500; text-align: left; }
+
+    .select-btn.selected {
+      border-color: var(--color-accent);
+      background: var(--color-surface-raised);
+    }
+
+    .options-panel {
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--color-border);
+    }
+
     .inline-rating input { width: 4rem; margin-right: 0.35rem; }
     .muted { color: var(--color-text-muted); }
 
@@ -197,6 +295,13 @@ export class TechnomancerTab {
   readonly searchModel = signal({ query: '' });
   readonly searchForm = form(this.searchModel);
   readonly pendingRatings = signal<Record<string, number>>({});
+  readonly selectedProgramId = signal<string | null>(null);
+
+  readonly spriteModel = signal({ name: '', force: 1, services: 0 });
+  readonly spriteForm = form(this.spriteModel);
+
+  readonly optionModel = signal({ name: '' });
+  readonly optionForm = form(this.optionModel);
 
   readonly filteredPrograms = computed(() => {
     const query = this.searchModel().query;
@@ -213,11 +318,39 @@ export class TechnomancerTab {
     ) as ProgramCatalogEntry[];
   });
 
+  readonly ownedSprites = computed(() => {
+    const character = this.store.character();
+    if (!character) return [];
+    return character.spirits.filter((spirit) => spirit.sprite);
+  });
+
+  readonly selectedProgram = computed(() => {
+    const id = this.selectedProgramId();
+    const character = this.store.character();
+    if (!id || !character) return null;
+    return character.programs.find((program) => program.id === id) ?? null;
+  });
+
   onStreamChange(event: Event): void {
     const value = (event.target as HTMLSelectElement).value;
     if (value) {
       this.store.setTechnomancerStream(value);
     }
+  }
+
+  addSprite(): void {
+    const model = this.spriteModel();
+    const name = model.name.trim();
+    if (!name) return;
+    this.store.addSpirit(name, model.force, model.services, true);
+    this.spriteModel.set({ name: '', force: 1, services: 0 });
+  }
+
+  addProgramOption(programId: string): void {
+    const name = this.optionModel().name.trim();
+    if (!name) return;
+    this.store.addProgramOption(programId, name);
+    this.optionModel.set({ name: '' });
   }
 
   isRated(program: ProgramCatalogEntry): boolean {

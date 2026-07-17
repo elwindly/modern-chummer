@@ -17,6 +17,12 @@ export interface CharacterPower {
   extra?: string;
 }
 
+export interface CharacterProgramOption {
+  id: string;
+  name: string;
+  rating: number;
+}
+
 export interface CharacterProgram {
   id: string;
   name: string;
@@ -24,7 +30,24 @@ export interface CharacterProgram {
   rating: number;
   maxRating: number;
   capacity: string;
+  options: CharacterProgramOption[];
   extra?: string;
+}
+
+export interface CharacterSpirit {
+  id: string;
+  name: string;
+  force: number;
+  servicesOwed: number;
+  bound: boolean;
+  sprite: boolean;
+}
+
+export interface CharacterFocus {
+  id: string;
+  name: string;
+  rating: number;
+  bonded: boolean;
 }
 
 export interface CharacterMetamagic {

@@ -2,11 +2,13 @@ import { Character } from '../models/character';
 import { CharacterOptions } from '../models/character-options';
 import {
   CharacterCritterPower,
+  CharacterFocus,
   CharacterInitiationGrade,
   CharacterMetamagic,
   CharacterPower,
   CharacterProgram,
   CharacterSpell,
+  CharacterSpirit,
   PowerCatalogEntry,
   ProgramCatalogEntry,
 } from '../models/magic';
@@ -66,7 +68,35 @@ export function createProgramFromCatalog(
     rating: effectiveRating,
     maxRating,
     capacity: String(entry.capacity ?? ''),
+    options: options.options ?? [],
     extra: options.extra,
+  };
+}
+
+export function createSpirit(
+  name: string,
+  options: Partial<CharacterSpirit> = {},
+): CharacterSpirit {
+  return {
+    id: options.id ?? createCharacterId(),
+    name,
+    force: options.force ?? 1,
+    servicesOwed: options.servicesOwed ?? 0,
+    bound: options.bound ?? false,
+    sprite: options.sprite ?? false,
+  };
+}
+
+export function createFocus(
+  name: string,
+  rating = 1,
+  options: Partial<CharacterFocus> = {},
+): CharacterFocus {
+  return {
+    id: options.id ?? createCharacterId(),
+    name,
+    rating,
+    bonded: options.bonded ?? true,
   };
 }
 
@@ -113,7 +143,8 @@ export function getSpellLimit(character: Character, manager: ImprovementManager)
 
 export function calculateSpellBp(character: Character, options: CharacterOptions): number {
   if (!character.flags.magicianEnabled) return 0;
-  return character.spells.length * options.bpSpell;
+  const rate = options.buildMethod === 'Karma' ? options.karmaSpell : options.bpSpell;
+  return character.spells.length * rate;
 }
 
 export function getAdeptPowerPointPool(character: Character, manager: ImprovementManager): number {
@@ -148,13 +179,35 @@ export function calculateComplexFormBp(
 
   let total = 0;
   for (const program of character.programs) {
-    if (options.alternateComplexFormCost) {
+    if (options.buildMethod === 'Karma') {
+      if (options.alternateComplexFormCost) {
+        total += options.karmaSpell;
+      } else {
+        total += options.karmaNewComplexForm;
+        for (let rating = 2; rating <= program.rating; rating++) {
+          total += rating * options.karmaImproveComplexForm;
+        }
+      }
+    } else if (options.alternateComplexFormCost) {
       total += options.bpSpell;
     } else {
       total += program.rating * options.bpComplexForm;
     }
   }
   return total;
+}
+
+export function calculateSpiritBp(character: Character, options: CharacterOptions): number {
+  const rate = options.buildMethod === 'Karma' ? options.karmaSpirit : options.bpSpirit;
+  return character.spirits.reduce((sum, spirit) => sum + spirit.servicesOwed * rate, 0);
+}
+
+export function calculateFocusBp(character: Character, options: CharacterOptions): number {
+  const rate = options.buildMethod === 'Karma' ? options.karmaFocus : options.bpFocus;
+  return character.foci.reduce(
+    (sum, focus) => sum + (focus.bonded ? focus.rating * rate : 0),
+    0,
+  );
 }
 
 export function calculateInitiationGradeKarmaCost(
@@ -191,16 +244,22 @@ export function calculateMagicBp(
   spells: number;
   complexForms: number;
   initiation: number;
+  spirits: number;
+  foci: number;
   total: number;
 } {
   const spells = calculateSpellBp(character, options);
   const complexForms = calculateComplexFormBp(character, options);
   const initiation = calculateInitiationBp(character, options);
+  const spirits = calculateSpiritBp(character, options);
+  const foci = calculateFocusBp(character, options);
   return {
     spells,
     complexForms,
     initiation,
-    total: spells + complexForms + initiation,
+    spirits,
+    foci,
+    total: spells + complexForms + initiation + spirits + foci,
   };
 }
 

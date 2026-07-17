@@ -48,6 +48,8 @@ export interface BpBreakdown {
   spells: number;
   complexForms: number;
   initiation: number;
+  spirits: number;
+  foci: number;
   nuyenBp: number;
 }
 
@@ -61,15 +63,22 @@ function calculateAttributeBp(
   options: CharacterOptions,
 ): number {
   let total = 0;
+  const karma = options.buildMethod === 'Karma';
 
   for (const code of codes) {
     const state = character.attributes[code];
     const raises = Math.max(0, state.base - state.min);
-    total += raises * options.bpAttribute;
 
-    const racialMax = getTotalMaximum(character, code);
-    if (state.base === racialMax && racialMax > 0 && state.min !== racialMax) {
-      total += options.bpAttributeMax;
+    if (karma) {
+      for (let rating = state.min + 1; rating <= state.base; rating++) {
+        total += rating * options.karmaAttribute;
+      }
+    } else {
+      total += raises * options.bpAttribute;
+      const racialMax = getTotalMaximum(character, code);
+      if (state.base === racialMax && racialMax > 0 && state.min !== racialMax) {
+        total += options.bpAttributeMax;
+      }
     }
   }
 
@@ -104,7 +113,10 @@ export function calculateBp(
   options: CharacterOptions,
   qualityCatalog: Map<string, QualityCatalogEntry>,
 ): BpBreakdown {
-  let remaining = character.buildPoints;
+  const karma = options.buildMethod === 'Karma';
+  let remaining = karma
+    ? (character.buildKarma ?? options.buildKarma)
+    : character.buildPoints;
 
   const metatype = character.metatypeBp;
   remaining -= metatype;
@@ -208,6 +220,8 @@ export function calculateBp(
     spells: magicBp.spells,
     complexForms: magicBp.complexForms,
     initiation: magicBp.initiation,
+    spirits: magicBp.spirits,
+    foci: magicBp.foci,
     nuyenBp,
   };
 }
@@ -229,6 +243,9 @@ export function isAttributeBpWithinLimit(
     return true;
   }
 
-  const primaryBp = calculateAttributeBp(character, PRIMARY_ATTRIBUTES, options);
+  const primaryBp = calculateAttributeBp(character, PRIMARY_ATTRIBUTES, {
+    ...options,
+    buildMethod: 'BP',
+  });
   return primaryBp <= character.buildPoints / 2;
 }

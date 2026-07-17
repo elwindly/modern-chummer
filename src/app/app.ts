@@ -25,6 +25,7 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
             </a>
             <a routerLink="/reference" routerLinkActive="active">Reference</a>
             <a routerLink="/characters" routerLinkActive="active">Characters</a>
+            <a routerLink="/options" routerLinkActive="active">Options</a>
           </nav>
         </div>
       </header>

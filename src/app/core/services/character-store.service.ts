@@ -15,6 +15,8 @@ import {
   ValidationResult,
   applyQualityBonus,
   buildQualityCatalog,
+  isNegativeQuality,
+  isPositiveQuality,
   calculateBp,
   calculateNuyen,
   cancelBonusGrant,
@@ -78,6 +80,10 @@ import {
   createMetamagic,
   createInitiationGrade,
   createCritterPower,
+  createSpirit,
+  createFocus,
+  createLifestyle,
+  createPet,
   createVehicleFromCatalog,
   createVehicleModFromCatalog,
   getSpellLimit,
@@ -96,6 +102,10 @@ import {
   type CharacterWare,
   type CharacterPower,
   type CharacterProgram,
+  type CharacterFocus,
+  type CharacterLifestyle,
+  type CharacterPet,
+  type LifestyleCatalogEntry,
   type CharacterVehicle,
   type CritterPowerCatalogEntry,
   type EssenceBreakdown,
@@ -113,6 +123,10 @@ import {
   type WareKind,
 } from '../rules';
 import { applyBonusHandlers } from '../rules/engine/improvement-handlers';
+import { CharacterStorageService } from './character-storage.service';
+import { ChummerDataService } from './chummer-data.service';
+import { extractCollection } from '../utils/collection-utils';
+import { ChummerItem } from '../models/chummer-data.types';
 
 export type RemoveQualityResult =
   | { ok: true }
@@ -131,10 +145,46 @@ export type InstallWareResult =
         | 'interactive-bonus'
         | 'no-character';
     };
-import { CharacterStorageService } from './character-storage.service';
-import { ChummerDataService } from './chummer-data.service';
-import { extractCollection } from '../utils/collection-utils';
-import { ChummerItem } from '../models/chummer-data.types';
+
+export type ApplyPackResult = { ok: boolean; applied: string[]; errors: string[] };
+
+export type ApplyCyberwareSuiteResult = { ok: boolean; installed: string[]; errors: string[] };
+
+interface PackSkillEntry {
+  name: string;
+  rating?: string;
+  spec?: string | string[];
+}
+
+interface PackPowerEntry {
+  name: string | { value: string; select?: string };
+  rating?: string;
+}
+
+interface PackGearEntry {
+  name: string | { value: string; select?: string };
+  qty?: string;
+  rating?: string;
+}
+
+export interface PackEntry {
+  name: string;
+  category?: string[];
+  attributes?: Record<string, string>;
+  skills?: PackSkillEntry[] | Record<string, string>;
+  spells?: string[];
+  powers?: PackPowerEntry[];
+  gears?: PackGearEntry[];
+  weapons?: Array<{ name: string }>;
+  armors?: Array<{ name: string }>;
+  nuyenbp?: string;
+}
+
+export interface CyberwareSuiteEntry {
+  name: string;
+  grade?: string | string[];
+  cyberwares?: Array<{ name: string; rating?: string }>;
+}
 
 @Injectable({ providedIn: 'root' })
 export class CharacterStoreService {
@@ -145,7 +195,11 @@ export class CharacterStoreService {
   private readonly revision = signal(0);
   private manager: ImprovementManager | null = null;
   private grantSession: BonusGrantSession | null = null;
+  private pendingGrantKind: 'quality' | 'power' | null = null;
   private pendingQualityName: string | null = null;
+  private pendingPowerName: string | null = null;
+  private pendingPowerRating = 1;
+  private pendingPowerId: string | null = null;
   private saveTimer: ReturnType<typeof setTimeout> | null = null;
 
   readonly options = signal<CharacterOptions>(DEFAULT_CHARACTER_OPTIONS);
@@ -185,6 +239,10 @@ export class CharacterStoreService {
   readonly vehicleCatalog = signal<Map<string, VehicleCatalogEntry>>(new Map());
   readonly vehicleModCatalog = signal<Map<string, VehicleModCatalogEntry>>(new Map());
   readonly critterPowerCatalog = signal<Map<string, CritterPowerCatalogEntry>>(new Map());
+  readonly lifestyleCatalog = signal<Map<string, LifestyleCatalogEntry>>(new Map());
+  readonly packsCatalog = signal<Map<string, PackEntry>>(new Map());
+  readonly cyberwareSuitesCatalog = signal<CyberwareSuiteEntry[]>([]);
+  readonly pendingGrantLabel = signal('');
 
   readonly derivedStats = computed((): DerivedStats | null => {
     this.revision();
@@ -217,14 +275,14 @@ export class CharacterStoreService {
     const manager = this.manager;
     const character = this.character();
     if (!manager || !character) return 0;
-    return getMaxNuyenBp(character, manager);
+    return getMaxNuyenBp(character, manager, this.options());
   });
 
   readonly freeKnowledgeSkillPoints = computed((): number => {
     this.revision();
     const character = this.character();
     if (!character) return 0;
-    return getFreeKnowledgeSkillPoints(character);
+    return getFreeKnowledgeSkillPoints(character, this.options());
   });
 
   readonly essenceBreakdown = computed((): EssenceBreakdown | null => {
@@ -264,7 +322,7 @@ export class CharacterStoreService {
   async ensureInitialized(): Promise<void> {
     if (this.initialized()) return;
 
-    const [settings, qualitiesDoc, metatypesDoc, skillsDoc, martialArtsDoc, gearDoc, weaponsDoc, armorDoc, cyberwareDoc, biowareDoc, spellsDoc, powersDoc, programsDoc, traditionsDoc, streamsDoc, metamagicDoc, vehiclesDoc, critterpowersDoc] =
+    const [settings, qualitiesDoc, metatypesDoc, skillsDoc, martialArtsDoc, gearDoc, weaponsDoc, armorDoc, cyberwareDoc, biowareDoc, spellsDoc, powersDoc, programsDoc, traditionsDoc, streamsDoc, metamagicDoc, vehiclesDoc, critterpowersDoc, lifestylesDoc, packsDoc] =
       await Promise.all([
       firstValueFrom(this.http.get<Partial<CharacterOptions>>('/data/settings/default.json')),
       this.data.loadDocument('qualities'),
@@ -284,6 +342,8 @@ export class CharacterStoreService {
       this.data.loadDocument('metamagic'),
       this.data.loadDocument('vehicles'),
       this.data.loadDocument('critterpowers'),
+      this.data.loadDocument('lifestyles'),
+      firstValueFrom(this.http.get<{ packs?: PackEntry[] }>('/data/packs.json')),
     ]);
 
     this.options.set(loadCharacterOptions(settings));
@@ -381,6 +441,15 @@ export class CharacterStoreService {
     this.critterPowerCatalog.set(
       this.buildCatalogMap(extractCollection(critterpowersDoc['powers']) as ChummerItem[]),
     );
+    this.lifestyleCatalog.set(
+      this.buildCatalogMap(extractCollection(lifestylesDoc['lifestyles']) as ChummerItem[]),
+    );
+    this.packsCatalog.set(
+      new Map((packsDoc.packs ?? []).map((pack) => [pack.name, pack])),
+    );
+    this.cyberwareSuitesCatalog.set(
+      (cyberwareDoc as { suites?: CyberwareSuiteEntry[] }).suites ?? [],
+    );
 
     this.initialized.set(true);
     await this.refreshCharacterList();
@@ -395,6 +464,7 @@ export class CharacterStoreService {
     const character = createEmptyCharacter({
       id: overrides.id ?? createCharacterId(),
       buildPoints: options.buildPoints,
+      buildKarma: options.buildKarma,
       maximumAvailability: options.maximumAvailability,
       ...overrides,
     });
@@ -404,6 +474,19 @@ export class CharacterStoreService {
     this.clearGrantState();
     this.bump();
     this.scheduleAutoSave();
+  }
+
+  setOptions(next: CharacterOptions): void {
+    this.options.set(loadCharacterOptions(next));
+    const character = this.character();
+    if (character) {
+      character.buildPoints = this.options().buildPoints;
+      character.buildKarma = this.options().buildKarma;
+      character.maximumAvailability = this.options().maximumAvailability;
+      this.afterEdit(character);
+    } else {
+      this.bump();
+    }
   }
 
   async openCharacter(id: string): Promise<boolean> {
@@ -500,8 +583,22 @@ export class CharacterStoreService {
     const manager = this.manager;
     if (!character || !manager) return;
 
-    const max = getMaxNuyenBp(character, manager);
+    const max = getMaxNuyenBp(character, manager, this.options());
     character.nuyenBpSpent = Math.min(Math.max(0, Math.floor(value)), max);
+    this.afterEdit(character);
+  }
+
+  setBuildPoints(value: number): void {
+    const character = this.character();
+    if (!character) return;
+    character.buildPoints = Math.max(0, Math.floor(value));
+    this.afterEdit(character);
+  }
+
+  setMaximumAvailability(value: number): void {
+    const character = this.character();
+    if (!character) return;
+    character.maximumAvailability = Math.max(0, Math.floor(value));
     this.afterEdit(character);
   }
 
@@ -922,7 +1019,7 @@ export class CharacterStoreService {
     return getSpellLimit(character, manager);
   }
 
-  addSpell(name: string): void {
+  addSpell(name: string, options: { limited?: boolean; extended?: boolean } = {}): void {
     const character = this.character();
     const manager = this.manager;
     if (!character || !manager) return;
@@ -941,7 +1038,27 @@ export class CharacterStoreService {
         : String(entry.category ?? '')
       : '';
 
-    character.spells.push(createSpell(name, category));
+    character.spells.push(
+      createSpell(name, category, {
+        limited: options.limited ?? false,
+        extended: options.extended ?? false,
+      }),
+    );
+    this.commitCharacter(character);
+  }
+
+  setSpellFlags(
+    id: string,
+    flags: { limited?: boolean; extended?: boolean },
+  ): void {
+    const character = this.character();
+    if (!character) return;
+
+    const spell = character.spells.find((entry) => entry.id === id);
+    if (!spell) return;
+
+    if (flags.limited !== undefined) spell.limited = flags.limited;
+    if (flags.extended !== undefined) spell.extended = flags.extended;
     this.commitCharacter(character);
   }
 
@@ -953,6 +1070,14 @@ export class CharacterStoreService {
   }
 
   addPower(name: string, rating = 1): boolean {
+    return this.applyAdeptPower(name, rating);
+  }
+
+  applyAdeptPower(
+    name: string,
+    rating = 1,
+    forcedSelections?: Record<string, string>,
+  ): boolean {
     const character = this.character();
     const manager = this.manager;
     if (!character || !manager) return false;
@@ -962,20 +1087,26 @@ export class CharacterStoreService {
 
     if (character.powers.some((power) => power.name === name)) return false;
 
-    if (entry.bonus && this.hasInteractiveBonus(entry.bonus as BonusNode)) {
-      return false;
+    const powerId = createCharacterId();
+    const effectiveRating = Math.max(1, Math.floor(rating));
+
+    if (!entry.bonus) {
+      character.powers.push(createPowerFromCatalog(entry, effectiveRating, { id: powerId }));
+      this.commitCharacter(character);
+      return true;
     }
 
-    const power = createPowerFromCatalog(entry, rating);
+    const bonus = entry.bonus as BonusNode;
 
-    if (entry.bonus) {
+    if (!this.hasInteractiveBonus(bonus)) {
+      const power = createPowerFromCatalog(entry, effectiveRating, { id: powerId });
       manager.beginTransaction();
       try {
-        applyBonusHandlers(entry.bonus, {
+        applyBonusHandlers(bonus, {
           character: manager.getCharacter(),
           manager,
           source: ImprovementSource.Power,
-          sourceName: power.id,
+          sourceName: powerId,
           rating: power.rating || 1,
           uniqueName: '',
         });
@@ -984,11 +1115,41 @@ export class CharacterStoreService {
         return false;
       }
       manager.commit();
+      character.powers.push(power);
+      this.commitCharacter(character);
+      return true;
     }
 
-    character.powers.push(power);
-    this.commitCharacter(character);
+    this.grantInProgress.set(true);
+    this.pendingGrantKind = 'power';
+    this.pendingPowerName = name;
+    this.pendingPowerRating = effectiveRating;
+    this.pendingPowerId = powerId;
+    this.pendingGrantLabel.set(name);
+
+    const { result, session } = grantBonus(manager, {
+      source: ImprovementSource.Power,
+      sourceName: powerId,
+      bonus,
+      rating: effectiveRating,
+      forcedSelections,
+    });
+
+    this.grantSession = session;
+
+    if (result.status === 'pending' && result.pending) {
+      this.pendingSelection.set(result.pending);
+    } else if (result.status === 'complete') {
+      this.completePowerGrant();
+    }
+
     return true;
+  }
+
+  powerRequiresSelection(name: string): boolean {
+    const entry = this.powerCatalog().get(name);
+    if (!entry?.bonus) return false;
+    return this.hasInteractiveBonus(entry.bonus as BonusNode);
   }
 
   setPowerRating(id: string, rating: number): void {
@@ -1044,6 +1205,38 @@ export class CharacterStoreService {
     const character = this.character();
     if (!character) return;
     character.programs = character.programs.filter((program) => program.id !== id);
+    this.commitCharacter(character);
+  }
+
+  addProgramOption(programId: string, name: string, rating = 0): void {
+    const character = this.character();
+    if (!character) return;
+
+    const program = character.programs.find((entry) => entry.id === programId);
+    if (!program) return;
+
+    const trimmed = name.trim();
+    if (!trimmed) return;
+
+    program.options ??= [];
+    if (program.options.some((option) => option.name === trimmed)) return;
+
+    program.options.push({
+      id: createCharacterId(),
+      name: trimmed,
+      rating: Math.max(0, Math.floor(rating)),
+    });
+    this.commitCharacter(character);
+  }
+
+  removeProgramOption(programId: string, optionId: string): void {
+    const character = this.character();
+    if (!character) return;
+
+    const program = character.programs.find((entry) => entry.id === programId);
+    if (!program?.options?.length) return;
+
+    program.options = program.options.filter((option) => option.id !== optionId);
     this.commitCharacter(character);
   }
 
@@ -1111,6 +1304,208 @@ export class CharacterStoreService {
     if (!character) return;
     character.critterPowers = character.critterPowers.filter((power) => power.id !== id);
     this.commitCharacter(character);
+  }
+
+  addSpirit(name: string, force = 1, servicesOwed = 0, sprite = false): void {
+    const character = this.character();
+    if (!character) return;
+    character.spirits.push(
+      createSpirit(name, {
+        force: Math.max(1, Math.floor(force)),
+        servicesOwed: Math.max(0, Math.floor(servicesOwed)),
+        sprite,
+      }),
+    );
+    this.commitCharacter(character);
+  }
+
+  removeSpirit(id: string): void {
+    const character = this.character();
+    if (!character) return;
+    character.spirits = character.spirits.filter((spirit) => spirit.id !== id);
+    this.commitCharacter(character);
+  }
+
+  addFocus(name: string, rating = 1, bonded = true): void {
+    const character = this.character();
+    if (!character) return;
+    character.foci.push(createFocus(name, rating, { bonded }));
+    this.commitCharacter(character);
+  }
+
+  removeFocus(id: string): void {
+    const character = this.character();
+    if (!character) return;
+    character.foci = character.foci.filter((focus) => focus.id !== id);
+    this.commitCharacter(character);
+  }
+
+  addLifestyle(lifestyle: CharacterLifestyle): void {
+    const character = this.character();
+    if (!character) return;
+    character.lifestyles.push({ ...lifestyle });
+    this.commitCharacter(character);
+  }
+
+  addLifestyleFromCatalog(name: string, months = 1): void {
+    const entry = this.lifestyleCatalog().get(name);
+    if (!entry) return;
+
+    const cost = Array.isArray(entry.cost)
+      ? Number(entry.cost[0] ?? 0)
+      : Number(entry.cost ?? 0);
+
+    this.addLifestyle(createLifestyle(name, Number.isFinite(cost) ? cost : 0, { months }));
+  }
+
+  removeLifestyle(id: string): void {
+    const character = this.character();
+    if (!character) return;
+    character.lifestyles = character.lifestyles.filter((lifestyle) => lifestyle.id !== id);
+    this.commitCharacter(character);
+  }
+
+  addPet(name: string): void {
+    const character = this.character();
+    if (!character) return;
+    character.pets.push(createPet(name));
+    this.commitCharacter(character);
+  }
+
+  removePet(id: string): void {
+    const character = this.character();
+    if (!character) return;
+    character.pets = character.pets.filter((pet) => pet.id !== id);
+    this.commitCharacter(character);
+  }
+
+  applyPack(name: string): ApplyPackResult {
+    const pack = this.packsCatalog().get(name);
+    const character = this.character();
+    const manager = this.manager;
+    const applied: string[] = [];
+    const errors: string[] = [];
+
+    if (!pack) {
+      return { ok: false, applied, errors: ['Pack not found'] };
+    }
+    if (!character || !manager) {
+      return { ok: false, applied, errors: ['No character loaded'] };
+    }
+
+    if (pack.attributes) {
+      for (const [key, value] of Object.entries(pack.attributes)) {
+        const code = key.toUpperCase() as AttributeCode;
+        if (!(code in character.attributes)) {
+          errors.push(`Unknown attribute: ${key}`);
+          continue;
+        }
+        this.setAttributeBase(code, Number(value));
+        applied.push(`Attribute ${code}`);
+      }
+    }
+
+    const skillEntries = this.normalizePackSkills(pack.skills);
+    for (const skillEntry of skillEntries) {
+      if (!character.skills.some((skill) => skill.name === skillEntry.name)) {
+        this.addActiveSkillFromCatalog(skillEntry.name);
+      }
+      if (character.skills.some((skill) => skill.name === skillEntry.name)) {
+        this.setActiveSkillRating(skillEntry.name, skillEntry.rating);
+        if (skillEntry.spec) {
+          this.setActiveSkillSpec(skillEntry.name, skillEntry.spec);
+        }
+        applied.push(`Skill ${skillEntry.name}`);
+      } else {
+        errors.push(`Skill ${skillEntry.name}`);
+      }
+    }
+
+    for (const spellName of pack.spells ?? []) {
+      if (character.spells.some((spell) => spell.name === spellName)) continue;
+      this.addSpell(spellName);
+      applied.push(`Spell ${spellName}`);
+    }
+
+    for (const powerEntry of pack.powers ?? []) {
+      const parsed = this.parsePackPowerEntry(powerEntry);
+      if (this.applyAdeptPower(parsed.name, parsed.rating, parsed.forcedSelections)) {
+        applied.push(`Power ${parsed.name}`);
+      } else {
+        errors.push(`Power ${parsed.name}`);
+      }
+    }
+
+    for (const gearEntry of pack.gears ?? []) {
+      const gearName = this.resolvePackItemName(gearEntry.name);
+      const entry = this.gearCatalog().get(gearName);
+      if (!entry) {
+        errors.push(`Gear ${gearName}`);
+        continue;
+      }
+      const rating = Number(gearEntry.rating ?? 1);
+      this.addGear(gearName, Number.isFinite(rating) ? rating : 1);
+      applied.push(`Gear ${gearName}`);
+    }
+
+    for (const weaponEntry of pack.weapons ?? []) {
+      if (this.weaponCatalog().has(weaponEntry.name)) {
+        this.addWeapon(weaponEntry.name);
+        applied.push(`Weapon ${weaponEntry.name}`);
+      } else {
+        errors.push(`Weapon ${weaponEntry.name}`);
+      }
+    }
+
+    for (const armorEntry of pack.armors ?? []) {
+      if (this.armorCatalog().has(armorEntry.name)) {
+        this.addArmor(armorEntry.name);
+        applied.push(`Armor ${armorEntry.name}`);
+      } else {
+        errors.push(`Armor ${armorEntry.name}`);
+      }
+    }
+
+    if (pack.nuyenbp) {
+      const extra = Number(pack.nuyenbp);
+      if (Number.isFinite(extra)) {
+        this.setNuyenBpSpent(character.nuyenBpSpent + extra);
+        applied.push('Nuyen BP');
+      }
+    }
+
+    return { ok: errors.length === 0, applied, errors };
+  }
+
+  applyCyberwareSuite(name: string): ApplyCyberwareSuiteResult {
+    const suite = this.cyberwareSuitesCatalog().find((entry) => entry.name === name);
+    const installed: string[] = [];
+    const errors: string[] = [];
+
+    if (!suite) {
+      return { ok: false, installed, errors: ['Suite not found'] };
+    }
+
+    const grade = Array.isArray(suite.grade)
+      ? String(suite.grade[0] ?? 'Standard')
+      : String(suite.grade ?? 'Standard');
+
+    for (const item of suite.cyberwares ?? []) {
+      const rating = item.rating ? Number(item.rating) : 1;
+      const result = this.installWare(
+        'cyberware',
+        item.name,
+        grade,
+        Number.isFinite(rating) ? rating : 1,
+      );
+      if (result.ok) {
+        installed.push(item.name);
+      } else {
+        errors.push(`${item.name} (${result.reason})`);
+      }
+    }
+
+    return { ok: errors.length === 0, installed, errors };
   }
 
   addVehicle(name: string): void {
@@ -1200,7 +1595,17 @@ export class CharacterStoreService {
   exportCurrentChum(): string | null {
     const character = this.character();
     if (!character) return null;
-    return exportChumDocument(character);
+
+    const qualityTypes = new Map<string, string>();
+    for (const [name, entry] of this.qualityCatalog()) {
+      if (isPositiveQuality(entry)) {
+        qualityTypes.set(name, 'Positive');
+      } else if (isNegativeQuality(entry)) {
+        qualityTypes.set(name, 'Negative');
+      }
+    }
+
+    return exportChumDocument(character, qualityTypes);
   }
 
   canInstallWare(kind: WareKind, name: string): RequirementResult {
@@ -1438,7 +1843,9 @@ export class CharacterStoreService {
     }
 
     this.grantInProgress.set(true);
+    this.pendingGrantKind = 'quality';
     this.pendingQualityName = qualityName;
+    this.pendingGrantLabel.set(qualityName);
 
     const { result, session } = grantBonus(manager, {
       source: ImprovementSource.Quality,
@@ -1515,9 +1922,8 @@ export class CharacterStoreService {
     const manager = this.manager;
     const session = this.grantSession;
     const pending = this.pendingSelection();
-    const qualityName = this.pendingQualityName;
 
-    if (!manager || !session || !pending || !qualityName) return;
+    if (!manager || !session || !pending) return;
 
     const { result, session: updated } = continueBonusGrant(manager, session, {
       requestId: pending.id,
@@ -1532,7 +1938,11 @@ export class CharacterStoreService {
     }
 
     if (result.status === 'complete') {
-      this.completeQualityGrant(qualityName);
+      if (this.pendingGrantKind === 'quality' && this.pendingQualityName) {
+        this.completeQualityGrant(this.pendingQualityName);
+      } else if (this.pendingGrantKind === 'power') {
+        this.completePowerGrant();
+      }
     }
   }
 
@@ -1569,6 +1979,25 @@ export class CharacterStoreService {
     this.afterEdit(manager.getCharacter());
   }
 
+  private completePowerGrant(): void {
+    const manager = this.manager;
+    const name = this.pendingPowerName;
+    const rating = this.pendingPowerRating;
+    const powerId = this.pendingPowerId;
+    if (!manager || !name || !powerId) return;
+
+    const entry = this.powerCatalog().get(name);
+    const character = manager.getCharacter();
+    if (!entry || character.powers.some((power) => power.name === name)) {
+      this.clearGrantState();
+      return;
+    }
+
+    character.powers.push(createPowerFromCatalog(entry, rating, { id: powerId }));
+    this.clearGrantState();
+    this.afterEdit(character);
+  }
+
   private addQualityName(qualityName: string): void {
     const character = this.manager?.getCharacter();
     if (!character) return;
@@ -1588,10 +2017,70 @@ export class CharacterStoreService {
     );
   }
 
+  private normalizePackSkills(
+    skills: PackEntry['skills'],
+  ): Array<{ name: string; rating: number; spec?: string }> {
+    if (!skills) return [];
+    if (Array.isArray(skills)) {
+      return skills.map((entry) => ({
+        name: entry.name,
+        rating: Number(entry.rating ?? 0),
+        spec: Array.isArray(entry.spec) ? entry.spec[0] : entry.spec,
+      }));
+    }
+    return Object.entries(skills).map(([name, rating]) => ({
+      name,
+      rating: Number(rating),
+    }));
+  }
+
+  private parsePackPowerEntry(entry: PackPowerEntry): {
+    name: string;
+    rating: number;
+    forcedSelections?: Record<string, string>;
+  } {
+    const rawName = entry.name;
+    const name = typeof rawName === 'string' ? rawName : rawName.value;
+    const select = typeof rawName === 'string' ? undefined : rawName.select;
+    const rating = Number(entry.rating ?? 1);
+    const catalogEntry = this.powerCatalog().get(name);
+    const forcedSelections = select
+      ? this.buildForcedSelections(catalogEntry?.bonus as BonusNode | undefined, select)
+      : undefined;
+
+    return {
+      name,
+      rating: Number.isFinite(rating) ? rating : 1,
+      forcedSelections,
+    };
+  }
+
+  private buildForcedSelections(
+    bonus: BonusNode | undefined,
+    select: string,
+  ): Record<string, string> | undefined {
+    if (!bonus) return undefined;
+    if ('selectskill' in bonus) return { selectskill: select };
+    if ('selectattribute' in bonus) return { selectattribute: select };
+    if ('selectskillgroup' in bonus) return { selectskillgroup: select };
+    if ('selecttext' in bonus) return { selecttext: select };
+    return undefined;
+  }
+
+  private resolvePackItemName(name: string | { value: string; select?: string }): string {
+    if (typeof name === 'string') return name;
+    return name.select ? `${name.value} (${name.select})` : name.value;
+  }
+
   private clearGrantState(): void {
     this.grantSession = null;
+    this.pendingGrantKind = null;
     this.pendingQualityName = null;
+    this.pendingPowerName = null;
+    this.pendingPowerRating = 1;
+    this.pendingPowerId = null;
     this.pendingSelection.set(null);
+    this.pendingGrantLabel.set('');
     this.grantInProgress.set(false);
   }
 

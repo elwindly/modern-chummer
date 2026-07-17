@@ -17,6 +17,11 @@ export const routes: Routes = [
     title: 'Characters',
   },
   {
+    path: 'options',
+    loadComponent: () => import('./features/options/options-page').then((m) => m.OptionsPage),
+    title: 'Creation options',
+  },
+  {
     path: '**',
     redirectTo: '',
   },

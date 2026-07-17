@@ -4,12 +4,15 @@ import { CharacterStreetItem } from '../models/street-gear';
 import { CharacterWare } from '../models/ware';
 import {
   CharacterCritterPower,
+  CharacterFocus,
   CharacterInitiationGrade,
   CharacterMetamagic,
   CharacterPower,
   CharacterProgram,
   CharacterSpell,
+  CharacterSpirit,
 } from '../models/magic';
+import { CharacterLifestyle, CharacterPet } from '../models/lifestyle';
 import { CharacterVehicle, CharacterVehicleMod } from '../models/vehicle';
 
 export interface StoredCharacterDocument {
@@ -27,6 +30,7 @@ export interface CharacterListEntry {
   name: string;
   metatype: string;
   updatedAt: string;
+  created: boolean;
 }
 
 export function serializeCharacter(
@@ -61,6 +65,10 @@ export function deserializeCharacter(document: StoredCharacterDocument): Charact
   character.metamagics ??= [];
   character.initiationGrades ??= [];
   character.critterPowers ??= [];
+  character.spirits ??= [];
+  character.foci ??= [];
+  character.lifestyles ??= [];
+  character.pets ??= [];
   character.vehicles ??= [];
   character.created ??= false;
   return character;
@@ -72,6 +80,7 @@ export function toListEntry(document: StoredCharacterDocument): CharacterListEnt
     name: document.name,
     metatype: document.metatype,
     updatedAt: document.updatedAt,
+    created: document.character.created ?? false,
   };
 }
 
@@ -103,10 +112,17 @@ function cloneCharacter(character: Character): Character {
     bioware: (character.bioware ?? []).map(cloneWare),
     spells: (character.spells ?? []).map((spell) => ({ ...spell })),
     powers: (character.powers ?? []).map((power) => ({ ...power })),
-    programs: (character.programs ?? []).map((program) => ({ ...program })),
+    programs: (character.programs ?? []).map((program) => ({
+      ...program,
+      options: [...(program.options ?? [])],
+    })),
     metamagics: (character.metamagics ?? []).map((metamagic) => ({ ...metamagic })),
     initiationGrades: (character.initiationGrades ?? []).map((grade) => ({ ...grade })),
     critterPowers: (character.critterPowers ?? []).map((power) => ({ ...power })),
+    spirits: (character.spirits ?? []).map((spirit) => ({ ...spirit })),
+    foci: (character.foci ?? []).map((focus) => ({ ...focus })),
+    lifestyles: (character.lifestyles ?? []).map((lifestyle) => ({ ...lifestyle })),
+    pets: (character.pets ?? []).map((pet) => ({ ...pet })),
     vehicles: (character.vehicles ?? []).map(cloneVehicle),
     profile: { ...(character.profile ?? {}) },
     purchases: character.purchases.map((purchase) => ({ ...purchase })),

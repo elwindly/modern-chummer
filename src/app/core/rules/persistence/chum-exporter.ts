@@ -44,10 +44,11 @@ function exportAttributes(character: Character): string {
   return wrap('attributes', nodes);
 }
 
-function exportQualities(character: Character): string {
+function exportQualities(character: Character, qualityTypes?: Map<string, string>): string {
   const nodes = character.qualities
-    .map((name) =>
-      wrap(
+    .map((name) => {
+      const qualityType = qualityTypes?.get(name) ?? 'Positive';
+      return wrap(
         'quality',
         [
           el('name', name),
@@ -55,11 +56,11 @@ function exportQualities(character: Character): string {
           el('bp', character.qualityAdjustments?.[name]?.bp ?? 0),
           el('contributetolimit', 'True'),
           el('print', 'True'),
-          el('qualitytype', 'Positive'),
+          el('qualitytype', qualityType),
           el('qualitysource', character.qualityOrigins?.[name] ?? 'Selected'),
         ].join(''),
-      ),
-    )
+      );
+    })
     .join('');
   return wrap('qualities', nodes);
 }
@@ -113,7 +114,7 @@ function exportSkills(character: Character): string {
     )
     .join('');
 
-  return wrap('skills', skillNodes + groupNodes);
+  return wrap('skills', skillNodes) + wrap('skillgroups', groupNodes);
 }
 
 function exportContacts(character: Character): string {
@@ -246,11 +247,101 @@ function exportPrograms(character: Character): string {
           el('maxrating', program.maxRating),
           el('capacity', program.capacity),
           el('extra', program.extra ?? ''),
+          wrap(
+            'options',
+            (program.options ?? [])
+              .map((option) =>
+                wrap(
+                  'option',
+                  [
+                    el('guid', option.id),
+                    el('name', option.name),
+                    el('rating', option.rating),
+                  ].join(''),
+                ),
+              )
+              .join(''),
+          ),
         ].join(''),
       ),
     )
     .join('');
   return wrap('techprograms', nodes);
+}
+
+function exportSpirits(character: Character): string {
+  const nodes = (character.spirits ?? [])
+    .map((spirit) =>
+      wrap(
+        'spirit',
+        [
+          el('guid', spirit.id),
+          el('name', spirit.name),
+          el('force', spirit.force),
+          el('services', spirit.servicesOwed),
+          el('bound', bool(spirit.bound)),
+          el('type', spirit.sprite ? 'Sprite' : 'Spirit'),
+        ].join(''),
+      ),
+    )
+    .join('');
+  return wrap('spirits', nodes);
+}
+
+function exportFoci(character: Character): string {
+  const nodes = (character.foci ?? [])
+    .map((focus) =>
+      wrap(
+        'focus',
+        [
+          el('guid', focus.id),
+          el('name', focus.name),
+          el('rating', focus.rating),
+          el('bonded', bool(focus.bonded)),
+        ].join(''),
+      ),
+    )
+    .join('');
+  return wrap('foci', nodes);
+}
+
+function exportLifestyles(character: Character): string {
+  const nodes = (character.lifestyles ?? [])
+    .map((lifestyle) =>
+      wrap(
+        'lifestyle',
+        [
+          el('guid', lifestyle.id),
+          el('name', lifestyle.name),
+          el('cost', lifestyle.cost),
+          el('months', lifestyle.months),
+          el('type', lifestyle.lifestyleType ?? 'Standard'),
+        ].join(''),
+      ),
+    )
+    .join('');
+  return wrap('lifestyles', nodes);
+}
+
+function exportPets(character: Character): string {
+  const nodes = (character.pets ?? [])
+    .map((pet) =>
+      wrap('pet', [el('guid', pet.id), el('name', pet.name)].join('')),
+    )
+    .join('');
+  return wrap('pets', nodes);
+}
+
+function exportProfile(character: Character): string {
+  const profile = character.profile ?? {};
+  return [
+    el('sex', profile.sex ?? ''),
+    el('age', profile.age ?? ''),
+    el('height', profile.height ?? ''),
+    el('weight', profile.weight ?? ''),
+    el('description', profile.description ?? ''),
+    el('notes', profile.notes ?? ''),
+  ].join('');
 }
 
 function exportMetamagics(character: Character): string {
@@ -399,7 +490,10 @@ function exportImprovements(character: Character): string {
 /**
  * Serialize a character into legacy-compatible .chum XML.
  */
-export function exportChumDocument(character: Character): string {
+export function exportChumDocument(
+  character: Character,
+  qualityTypes?: Map<string, string>,
+): string {
   const body = [
     el('gameedition', 'SR4'),
     el('settings', 'default.xml'),
@@ -409,6 +503,7 @@ export function exportChumDocument(character: Character): string {
     el('metatypecategory', character.metatypeCategory ?? ''),
     el('alias', character.name),
     el('name', character.name),
+    exportProfile(character),
     el('bp', character.buildPoints),
     el('maxavail', character.maximumAvailability),
     el('nuyenbp', character.nuyenBpSpent),
@@ -425,13 +520,17 @@ export function exportChumDocument(character: Character): string {
     el('stream', character.technomancerStream ?? ''),
     el('knowpts', character.knowledgeSkillPoints ?? 0),
     exportAttributes(character),
-    exportQualities(character),
+    exportQualities(character, qualityTypes),
     exportImprovements(character),
     exportSkills(character),
     exportContacts(character),
     exportSpells(character),
     exportPowers(character),
     exportPrograms(character),
+    exportSpirits(character),
+    exportFoci(character),
+    exportLifestyles(character),
+    exportPets(character),
     exportMartialArts(character),
     exportStreetItems('gears', 'gear', character.gear),
     exportStreetItems('weapons', 'weapon', character.weapons),

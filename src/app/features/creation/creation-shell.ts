@@ -11,6 +11,7 @@ import { CharacterStoreService } from '../../core/services/character-store.servi
 import { ChummerDataService } from '../../core/services/chummer-data.service';
 import { BpSummaryBar } from './components/bp-summary-bar';
 import { SelectionDialog } from './components/selection-dialog';
+import { PacksDialog } from './components/packs-dialog';
 import { CreationTabId, visibleCreationTabs } from './creation-tabs';
 import { BpSummaryTab } from './tabs/bp-summary-tab';
 import { CharacterInfoTab } from './tabs/character-info-tab';
@@ -33,6 +34,7 @@ import { VehiclesTab } from './tabs/vehicles-tab';
     RouterLink,
     BpSummaryBar,
     SelectionDialog,
+    PacksDialog,
     CommonTab,
     CharacterInfoTab,
     BpSummaryTab,
@@ -70,9 +72,31 @@ import { VehiclesTab } from './tabs/vehicles-tab';
           }
         </div>
         <div class="header-actions">
+          <div class="creation-options" aria-label="Creation options">
+            <label>
+              <span class="option-label">BP</span>
+              <input
+                type="number"
+                min="0"
+                [value]="store.character()!.buildPoints"
+                (change)="onBuildPointsChange($event)"
+              />
+            </label>
+            <label>
+              <span class="option-label">Max avail</span>
+              <input
+                type="number"
+                min="0"
+                [value]="store.character()!.maximumAvailability"
+                (change)="onMaxAvailabilityChange($event)"
+              />
+            </label>
+          </div>
           @if (saveMessage()) {
             <span class="save-message" role="status" aria-live="polite">{{ saveMessage() }}</span>
           }
+          <button type="button" (click)="packsDialog.show()">Add PACKS</button>
+          <button type="button" (click)="printCharacter()">Print</button>
           <button type="button" (click)="saveNow()">Save</button>
           <button type="button" (click)="exportChum()">Export .chum</button>
           @if (store.character()!.created) {
@@ -160,6 +184,7 @@ import { VehiclesTab } from './tabs/vehicles-tab';
       </div>
 
       <app-selection-dialog />
+      <app-packs-dialog #packsDialog />
     }
   `,
   styles: `
@@ -225,6 +250,29 @@ import { VehiclesTab } from './tabs/vehicles-tab';
       display: flex;
       align-items: center;
       gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .creation-options {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+
+      label {
+        display: flex;
+        align-items: center;
+        gap: 0.35rem;
+        font-size: 0.875rem;
+      }
+
+      input {
+        width: 4.5rem;
+        padding: 0.35rem 0.5rem;
+      }
+    }
+
+    .option-label {
+      color: var(--color-text-muted);
     }
 
     .save-message {
@@ -371,5 +419,80 @@ export class CreationShell implements OnInit {
     this.store.reopenCreation();
     this.saveMessage.set('Creation reopened — finalize again when ready');
     window.setTimeout(() => this.saveMessage.set(''), 4000);
+  }
+
+  onBuildPointsChange(event: Event): void {
+    const value = Number((event.target as HTMLInputElement).value);
+    if (Number.isFinite(value)) {
+      this.store.setBuildPoints(value);
+    }
+  }
+
+  onMaxAvailabilityChange(event: Event): void {
+    const value = Number((event.target as HTMLInputElement).value);
+    if (Number.isFinite(value)) {
+      this.store.setMaximumAvailability(value);
+    }
+  }
+
+  printCharacter(): void {
+    const character = this.store.character();
+    if (!character) return;
+
+    const attrs = Object.entries(character.attributes)
+      .map(([code, state]) => `<tr><th>${code}</th><td>${state.base}</td></tr>`)
+      .join('');
+
+    const skills = character.skills
+      .map((skill) => `<li>${skill.name} ${skill.rating}${skill.specialization ? ` (${skill.specialization})` : ''}</li>`)
+      .join('');
+
+    const gear = character.gear.map((item) => `<li>${item.name}</li>`).join('');
+    const weapons = character.weapons.map((item) => `<li>${item.name}</li>`).join('');
+    const ware = [
+      ...character.cyberware.map((item) => `<li>${item.name}</li>`),
+      ...character.bioware.map((item) => `<li>${item.name}</li>`),
+    ].join('');
+    const spells = character.spells.map((spell) => `<li>${spell.name}</li>`).join('');
+
+    const html = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>${character.name || 'Character'}</title>
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 1.5rem; color: #111; }
+    h1 { margin: 0 0 0.25rem; }
+    h2 { margin: 1.25rem 0 0.5rem; font-size: 1rem; border-bottom: 1px solid #ccc; }
+    table { border-collapse: collapse; }
+    th, td { padding: 0.25rem 0.75rem 0.25rem 0; text-align: left; }
+    ul { margin: 0; padding-left: 1.25rem; }
+    .meta { color: #555; margin: 0 0 1rem; }
+  </style>
+</head>
+<body>
+  <h1>${character.name || 'Unnamed character'}</h1>
+  <p class="meta">${character.metatype}${character.metavariant ? ` · ${character.metavariant}` : ''}</p>
+  <h2>Attributes</h2>
+  <table>${attrs}</table>
+  <h2>Skills</h2>
+  <ul>${skills || '<li>None</li>'}</ul>
+  <h2>Gear</h2>
+  <ul>${gear || '<li>None</li>'}</ul>
+  <h2>Weapons</h2>
+  <ul>${weapons || '<li>None</li>'}</ul>
+  <h2>Cyberware / Bioware</h2>
+  <ul>${ware || '<li>None</li>'}</ul>
+  <h2>Spells</h2>
+  <ul>${spells || '<li>None</li>'}</ul>
+</body>
+</html>`;
+
+    const printWindow = window.open('', '_blank', 'noopener,noreferrer,width=800,height=900');
+    if (!printWindow) return;
+    printWindow.document.write(html);
+    printWindow.document.close();
+    printWindow.focus();
+    printWindow.print();
   }
 }
