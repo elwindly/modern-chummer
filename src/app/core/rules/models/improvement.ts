@@ -68,6 +68,8 @@ export enum ImprovementType {
   MovementPercent = 'MovementPercent',
   InitiativePassAdd = 'InitiativePassAdd',
   MatrixInitiativePassAdd = 'MatrixInitiativePassAdd',
+  SpellLimit = 'SpellLimit',
+  AdeptPowerPoints = 'AdeptPowerPoints',
 }
 
 export interface Improvement {

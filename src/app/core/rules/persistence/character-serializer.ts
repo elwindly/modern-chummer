@@ -1,6 +1,16 @@
 import { Character } from '../models/character';
 import { Improvement } from '../models/improvement';
 import { CharacterStreetItem } from '../models/street-gear';
+import { CharacterWare } from '../models/ware';
+import {
+  CharacterCritterPower,
+  CharacterInitiationGrade,
+  CharacterMetamagic,
+  CharacterPower,
+  CharacterProgram,
+  CharacterSpell,
+} from '../models/magic';
+import { CharacterVehicle, CharacterVehicleMod } from '../models/vehicle';
 
 export interface StoredCharacterDocument {
   version: 1;
@@ -43,6 +53,16 @@ export function deserializeCharacter(document: StoredCharacterDocument): Charact
   character.gear ??= [];
   character.weapons ??= [];
   character.armors ??= [];
+  character.cyberware ??= [];
+  character.bioware ??= [];
+  character.spells ??= [];
+  character.powers ??= [];
+  character.programs ??= [];
+  character.metamagics ??= [];
+  character.initiationGrades ??= [];
+  character.critterPowers ??= [];
+  character.vehicles ??= [];
+  character.created ??= false;
   return character;
 }
 
@@ -79,6 +99,15 @@ function cloneCharacter(character: Character): Character {
     gear: (character.gear ?? []).map(cloneStreetItem),
     weapons: (character.weapons ?? []).map(cloneStreetItem),
     armors: (character.armors ?? []).map(cloneStreetItem),
+    cyberware: (character.cyberware ?? []).map(cloneWare),
+    bioware: (character.bioware ?? []).map(cloneWare),
+    spells: (character.spells ?? []).map((spell) => ({ ...spell })),
+    powers: (character.powers ?? []).map((power) => ({ ...power })),
+    programs: (character.programs ?? []).map((program) => ({ ...program })),
+    metamagics: (character.metamagics ?? []).map((metamagic) => ({ ...metamagic })),
+    initiationGrades: (character.initiationGrades ?? []).map((grade) => ({ ...grade })),
+    critterPowers: (character.critterPowers ?? []).map((power) => ({ ...power })),
+    vehicles: (character.vehicles ?? []).map(cloneVehicle),
     profile: { ...(character.profile ?? {}) },
     purchases: character.purchases.map((purchase) => ({ ...purchase })),
     improvements: character.improvements.map(cloneImprovement),
@@ -93,6 +122,20 @@ function cloneStreetItem(item: CharacterStreetItem): CharacterStreetItem {
   return {
     ...item,
     children: item.children.map(cloneStreetItem),
+  };
+}
+
+function cloneWare(item: CharacterWare): CharacterWare {
+  return {
+    ...item,
+    children: item.children.map(cloneWare),
+  };
+}
+
+function cloneVehicle(item: CharacterVehicle): CharacterVehicle {
+  return {
+    ...item,
+    mods: item.mods.map((mod: CharacterVehicleMod) => ({ ...mod })),
   };
 }
 

@@ -24,8 +24,24 @@ import {
   deriveStats,
   deserializeCharacter,
   collectAvailabilityItems,
+  collectAllAvailabilityItems,
+  calculateEssence,
   createStreetItemFromCatalog,
+  createWareFromCatalog,
   findStreetItem,
+  findWare,
+  getAllowedGrades,
+  characterHasWareByName,
+  isRatedWareEntry,
+  refreshWareFromCatalog,
+  removeWareFromList,
+  requirementsMet,
+  calculateParentCapacityTotal,
+  calculateWareCapacityUsed,
+  parseCapacityCost,
+  scalarCatalogValue,
+  wouldExceedEssenceMinimum,
+  wareSourceName,
   getAttributeTotal,
   getEffectiveLimits,
   getQualityOrigin,
@@ -48,6 +64,7 @@ import {
   NuyenBreakdown,
   parseAttributeSelectionConfig,
   parseChumXml,
+  exportChumDocument,
   QualityCatalogEntry,
   refreshStreetItemFromCatalog,
   removeStreetItemFromList,
@@ -55,6 +72,19 @@ import {
   validateCharacter,
   isRatedCatalogEntry,
   getCatalogMaxRating,
+  createSpell,
+  createPowerFromCatalog,
+  createProgramFromCatalog,
+  createMetamagic,
+  createInitiationGrade,
+  createCritterPower,
+  createVehicleFromCatalog,
+  createVehicleModFromCatalog,
+  getSpellLimit,
+  getAdeptPowerPointPool,
+  calculatePowerPointsUsed,
+  calculatePowerPointRemaining,
+  refreshPowerPoints,
   type BonusGrantSession,
   type BonusNode,
   type ChumImportResult,
@@ -63,12 +93,44 @@ import {
   type CharacterSkill,
   type CharacterMartialArt,
   type CharacterSkillGroup,
+  type CharacterWare,
+  type CharacterPower,
+  type CharacterProgram,
+  type CharacterVehicle,
+  type CritterPowerCatalogEntry,
+  type EssenceBreakdown,
+  type MetamagicCatalogEntry,
+  type PowerCatalogEntry,
+  type ProgramCatalogEntry,
+  type RequirementResult,
+  type SpellCatalogEntry,
   type StreetCatalogEntry,
+  type TraditionEntry,
+  type VehicleCatalogEntry,
+  type VehicleModCatalogEntry,
+  type WareCatalogEntry,
+  type WareGrade,
+  type WareKind,
 } from '../rules';
+import { applyBonusHandlers } from '../rules/engine/improvement-handlers';
 
 export type RemoveQualityResult =
   | { ok: true }
   | { ok: false; reason: 'not-found' | 'metatype' | 'needs-confirmation'; buyOffBp?: number };
+
+export type InstallWareResult =
+  | { ok: true }
+  | {
+      ok: false;
+      reason:
+        | 'not-found'
+        | 'requirements'
+        | 'essence'
+        | 'capacity'
+        | 'duplicate'
+        | 'interactive-bonus'
+        | 'no-character';
+    };
 import { CharacterStorageService } from './character-storage.service';
 import { ChummerDataService } from './chummer-data.service';
 import { extractCollection } from '../utils/collection-utils';
@@ -108,6 +170,19 @@ export class CharacterStoreService {
   readonly weaponAccessoryCatalog = signal<Map<string, StreetCatalogEntry>>(new Map());
   readonly weaponModCatalog = signal<Map<string, StreetCatalogEntry>>(new Map());
   readonly armorModCatalog = signal<Map<string, StreetCatalogEntry>>(new Map());
+  readonly cyberwareCatalog = signal<Map<string, WareCatalogEntry>>(new Map());
+  readonly biowareCatalog = signal<Map<string, WareCatalogEntry>>(new Map());
+  readonly cyberwareGrades = signal<Map<string, WareGrade>>(new Map());
+  readonly biowareGrades = signal<Map<string, WareGrade>>(new Map());
+  readonly spellCatalog = signal<Map<string, SpellCatalogEntry>>(new Map());
+  readonly powerCatalog = signal<Map<string, PowerCatalogEntry>>(new Map());
+  readonly programCatalog = signal<Map<string, ProgramCatalogEntry>>(new Map());
+  readonly metamagicCatalog = signal<Map<string, MetamagicCatalogEntry>>(new Map());
+  readonly traditionCatalog = signal<TraditionEntry[]>([]);
+  readonly streamCatalog = signal<TraditionEntry[]>([]);
+  readonly vehicleCatalog = signal<Map<string, VehicleCatalogEntry>>(new Map());
+  readonly vehicleModCatalog = signal<Map<string, VehicleModCatalogEntry>>(new Map());
+  readonly critterPowerCatalog = signal<Map<string, CritterPowerCatalogEntry>>(new Map());
 
   readonly derivedStats = computed((): DerivedStats | null => {
     this.revision();
@@ -150,6 +225,14 @@ export class CharacterStoreService {
     return getFreeKnowledgeSkillPoints(character);
   });
 
+  readonly essenceBreakdown = computed((): EssenceBreakdown | null => {
+    this.revision();
+    const manager = this.manager;
+    const character = this.character();
+    if (!manager || !character) return null;
+    return calculateEssence(character, manager);
+  });
+
   readonly validation = computed((): ValidationResult | null => {
     this.revision();
     const manager = this.manager;
@@ -160,14 +243,26 @@ export class CharacterStoreService {
       manager,
       options: this.options(),
       qualityCatalog: this.qualityCatalog(),
-      availabilityItems: collectAvailabilityItems(character),
+      availabilityItems: collectAllAvailabilityItems(character),
     });
+  });
+
+  readonly powerPointBreakdown = computed((): { pool: number; used: number; remaining: number } | null => {
+    this.revision();
+    const manager = this.manager;
+    const character = this.character();
+    if (!manager || !character) return null;
+    return {
+      pool: getAdeptPowerPointPool(character, manager),
+      used: calculatePowerPointsUsed(character),
+      remaining: calculatePowerPointRemaining(character, manager),
+    };
   });
 
   async ensureInitialized(): Promise<void> {
     if (this.initialized()) return;
 
-    const [settings, qualitiesDoc, metatypesDoc, skillsDoc, martialArtsDoc, gearDoc, weaponsDoc, armorDoc] =
+    const [settings, qualitiesDoc, metatypesDoc, skillsDoc, martialArtsDoc, gearDoc, weaponsDoc, armorDoc, cyberwareDoc, biowareDoc, spellsDoc, powersDoc, programsDoc, traditionsDoc, streamsDoc, metamagicDoc, vehiclesDoc, critterpowersDoc] =
       await Promise.all([
       firstValueFrom(this.http.get<Partial<CharacterOptions>>('/data/settings/default.json')),
       this.data.loadDocument('qualities'),
@@ -177,6 +272,16 @@ export class CharacterStoreService {
       this.data.loadDocument('gear'),
       this.data.loadDocument('weapons'),
       this.data.loadDocument('armor'),
+      this.data.loadDocument('cyberware'),
+      this.data.loadDocument('bioware'),
+      this.data.loadDocument('spells'),
+      this.data.loadDocument('powers'),
+      this.data.loadDocument('programs'),
+      this.data.loadDocument('traditions'),
+      this.data.loadDocument('streams'),
+      this.data.loadDocument('metamagic'),
+      this.data.loadDocument('vehicles'),
+      this.data.loadDocument('critterpowers'),
     ]);
 
     this.options.set(loadCharacterOptions(settings));
@@ -238,6 +343,41 @@ export class CharacterStoreService {
           extractCollection((entry as { mod?: unknown }).mod),
         ) as ChummerItem[],
       ),
+    );
+
+    this.cyberwareCatalog.set(
+      this.buildWareCatalogMap(extractCollection(cyberwareDoc['cyberwares']) as ChummerItem[]),
+    );
+    this.biowareCatalog.set(
+      this.buildWareCatalogMap(extractCollection(biowareDoc['biowares']) as ChummerItem[]),
+    );
+    this.cyberwareGrades.set(this.buildGradeMap(cyberwareDoc as { grades?: WareGrade[] }));
+    this.biowareGrades.set(this.buildGradeMap(biowareDoc as { grades?: WareGrade[] }));
+
+    this.spellCatalog.set(this.buildCatalogMap(extractCollection(spellsDoc['spells']) as ChummerItem[]));
+    this.powerCatalog.set(this.buildCatalogMap(extractCollection(powersDoc['powers']) as ChummerItem[]));
+    this.programCatalog.set(this.buildCatalogMap(extractCollection(programsDoc['programs']) as ChummerItem[]));
+    this.metamagicCatalog.set(
+      this.buildCatalogMap(extractCollection(metamagicDoc['metamagics']) as ChummerItem[]),
+    );
+    this.traditionCatalog.set(
+      (traditionsDoc as { traditions?: TraditionEntry[] }).traditions ?? [],
+    );
+    this.streamCatalog.set(
+      (streamsDoc as { traditions?: TraditionEntry[] }).traditions ?? [],
+    );
+    this.vehicleCatalog.set(
+      this.buildCatalogMap(extractCollection(vehiclesDoc['vehicles']) as ChummerItem[]),
+    );
+    this.vehicleModCatalog.set(
+      this.buildCatalogMap(
+        extractCollection(vehiclesDoc['mods']).flatMap((entry) =>
+          extractCollection((entry as { mod?: unknown }).mod),
+        ) as ChummerItem[],
+      ),
+    );
+    this.critterPowerCatalog.set(
+      this.buildCatalogMap(extractCollection(critterpowersDoc['powers']) as ChummerItem[]),
     );
 
     this.initialized.set(true);
@@ -799,6 +939,466 @@ export class CharacterStoreService {
     this.commitStreetGear(character);
   }
 
+  setMagicTradition(name: string): void {
+    const character = this.character();
+    if (!character) return;
+    character.magicTradition = name;
+    this.commitCharacter(character);
+  }
+
+  setTechnomancerStream(name: string): void {
+    const character = this.character();
+    if (!character) return;
+    character.technomancerStream = name;
+    this.commitCharacter(character);
+  }
+
+  setMagAdept(value: number): void {
+    const character = this.character();
+    const manager = this.manager;
+    if (!character || !manager) return;
+    const maxMag = getAttributeTotal(character, 'MAG');
+    character.magAdept = Math.min(Math.max(0, Math.floor(value)), maxMag);
+    this.commitCharacter(character);
+  }
+
+  getSpellLimit(): number {
+    this.revision();
+    const manager = this.manager;
+    const character = this.character();
+    if (!manager || !character) return 0;
+    return getSpellLimit(character, manager);
+  }
+
+  addSpell(name: string): void {
+    const character = this.character();
+    const manager = this.manager;
+    if (!character || !manager) return;
+
+    if (character.spells.some((spell) => spell.name === name)) return;
+
+    if (!character.ignoreRules) {
+      const limit = getSpellLimit(character, manager);
+      if (character.spells.length >= limit) return;
+    }
+
+    const entry = this.spellCatalog().get(name);
+    const category = entry
+      ? Array.isArray(entry.category)
+        ? String(entry.category[0] ?? '')
+        : String(entry.category ?? '')
+      : '';
+
+    character.spells.push(createSpell(name, category));
+    this.commitCharacter(character);
+  }
+
+  removeSpell(id: string): void {
+    const character = this.character();
+    if (!character) return;
+    character.spells = character.spells.filter((spell) => spell.id !== id);
+    this.commitCharacter(character);
+  }
+
+  addPower(name: string, rating = 1): boolean {
+    const character = this.character();
+    const manager = this.manager;
+    if (!character || !manager) return false;
+
+    const entry = this.powerCatalog().get(name);
+    if (!entry) return false;
+
+    if (character.powers.some((power) => power.name === name)) return false;
+
+    if (entry.bonus && this.hasInteractiveBonus(entry.bonus as BonusNode)) {
+      return false;
+    }
+
+    const power = createPowerFromCatalog(entry, rating);
+
+    if (entry.bonus) {
+      manager.beginTransaction();
+      try {
+        applyBonusHandlers(entry.bonus, {
+          character: manager.getCharacter(),
+          manager,
+          source: ImprovementSource.Power,
+          sourceName: power.id,
+          rating: power.rating || 1,
+          uniqueName: '',
+        });
+      } catch {
+        manager.rollback();
+        return false;
+      }
+      manager.commit();
+    }
+
+    character.powers.push(power);
+    this.commitCharacter(character);
+    return true;
+  }
+
+  setPowerRating(id: string, rating: number): void {
+    const character = this.character();
+    if (!character) return;
+
+    const power = character.powers.find((entry) => entry.id === id);
+    if (!power || !power.levels) return;
+
+    const refreshed = refreshPowerPoints({ ...power, rating: Math.max(1, Math.floor(rating)) });
+    Object.assign(power, refreshed);
+    this.commitCharacter(character);
+  }
+
+  removePower(id: string): void {
+    const character = this.character();
+    if (!character) return;
+
+    this.stripPowerImprovements(id);
+    character.powers = character.powers.filter((power) => power.id !== id);
+    this.commitCharacter(character);
+  }
+
+  addProgram(name: string, rating = 1): void {
+    const character = this.character();
+    if (!character) return;
+
+    const entry = this.programCatalog().get(name);
+    if (!entry) return;
+    if (character.programs.some((program) => program.name === name)) return;
+
+    character.programs.push(createProgramFromCatalog(entry, rating));
+    this.commitCharacter(character);
+  }
+
+  setProgramRating(id: string, rating: number): void {
+    const character = this.character();
+    if (!character) return;
+
+    const program = character.programs.find((entry) => entry.id === id);
+    const entry = program ? this.programCatalog().get(program.name) : undefined;
+    if (!program || !entry) return;
+
+    const refreshed = createProgramFromCatalog(entry, rating, {
+      id: program.id,
+      extra: program.extra,
+    });
+    Object.assign(program, refreshed);
+    this.commitCharacter(character);
+  }
+
+  removeProgram(id: string): void {
+    const character = this.character();
+    if (!character) return;
+    character.programs = character.programs.filter((program) => program.id !== id);
+    this.commitCharacter(character);
+  }
+
+  addMetamagic(name: string): void {
+    const character = this.character();
+    if (!character) return;
+    if (character.metamagics.some((entry) => entry.name === name)) return;
+
+    const entry = this.metamagicCatalog().get(name);
+    character.metamagics.push(
+      createMetamagic(name, false),
+    );
+    if (entry?.source) {
+      const added = character.metamagics[character.metamagics.length - 1];
+      added.source = String(entry.source);
+      if (entry.page !== undefined) added.page = String(entry.page);
+    }
+    this.commitCharacter(character);
+  }
+
+  removeMetamagic(id: string): void {
+    const character = this.character();
+    if (!character) return;
+    character.metamagics = character.metamagics.filter((entry) => entry.id !== id);
+    this.commitCharacter(character);
+  }
+
+  addInitiationGrade(options: { group?: boolean; ordeal?: boolean } = {}): void {
+    const character = this.character();
+    if (!character) return;
+
+    const grade = character.initiationGrades.length + 1;
+    character.initiationGrades.push(
+      createInitiationGrade(grade, {
+        group: options.group ?? false,
+        ordeal: options.ordeal ?? false,
+        technomancer: character.flags.resEnabled,
+      }),
+    );
+    this.commitCharacter(character);
+  }
+
+  removeInitiationGrade(id: string): void {
+    const character = this.character();
+    if (!character) return;
+
+    character.initiationGrades = character.initiationGrades
+      .filter((grade) => grade.id !== id)
+      .map((grade, index) => ({ ...grade, grade: index + 1 }));
+    this.commitCharacter(character);
+  }
+
+  addCritterPower(name: string): void {
+    const character = this.character();
+    if (!character) return;
+    if (character.critterPowers.some((power) => power.name === name)) return;
+    if (!this.critterPowerCatalog().has(name)) return;
+
+    character.critterPowers.push(createCritterPower(name));
+    this.commitCharacter(character);
+  }
+
+  removeCritterPower(id: string): void {
+    const character = this.character();
+    if (!character) return;
+    character.critterPowers = character.critterPowers.filter((power) => power.id !== id);
+    this.commitCharacter(character);
+  }
+
+  addVehicle(name: string): void {
+    const character = this.character();
+    if (!character) return;
+
+    const entry = this.vehicleCatalog().get(name);
+    if (!entry) return;
+
+    character.vehicles.push(createVehicleFromCatalog(entry));
+    this.commitCharacter(character);
+  }
+
+  removeVehicle(id: string): void {
+    const character = this.character();
+    if (!character) return;
+    character.vehicles = character.vehicles.filter((vehicle) => vehicle.id !== id);
+    this.commitCharacter(character);
+  }
+
+  addVehicleMod(vehicleId: string, modName: string, rating = 1): void {
+    const character = this.character();
+    if (!character) return;
+
+    const vehicle = character.vehicles.find((entry) => entry.id === vehicleId);
+    const entry = this.vehicleModCatalog().get(modName);
+    if (!vehicle || !entry) return;
+    if (vehicle.mods.some((mod) => mod.name === modName)) return;
+
+    vehicle.mods.push(createVehicleModFromCatalog(entry, rating));
+    this.commitCharacter(character);
+  }
+
+  removeVehicleMod(vehicleId: string, modId: string): void {
+    const character = this.character();
+    if (!character) return;
+
+    const vehicle = character.vehicles.find((entry) => entry.id === vehicleId);
+    if (!vehicle) return;
+
+    vehicle.mods = vehicle.mods.filter((mod) => mod.id !== modId);
+    this.commitCharacter(character);
+  }
+
+  finalizeCharacter(): ValidationResult {
+    const manager = this.manager;
+    const character = this.character();
+    if (!manager || !character) {
+      return { valid: false, issues: [{ code: 'no-character', message: 'No character loaded' }] };
+    }
+
+    const validation = validateCharacter({
+      character,
+      manager,
+      options: this.options(),
+      qualityCatalog: this.qualityCatalog(),
+      availabilityItems: collectAllAvailabilityItems(character),
+    });
+
+    if (!validation.valid) {
+      return validation;
+    }
+
+    character.created = true;
+    this.character.set(touchCharacter(character));
+    this.bump();
+    void this.saveCurrentCharacter();
+    return validation;
+  }
+
+  exportCurrentChum(): string | null {
+    const character = this.character();
+    if (!character) return null;
+    return exportChumDocument(character);
+  }
+
+  canInstallWare(kind: WareKind, name: string): RequirementResult {
+    const character = this.character();
+    if (!character) return { met: false, reason: 'No character' };
+    const entry = this.wareCatalogFor(kind).get(name);
+    if (!entry) return { met: false, reason: 'Not found' };
+    return requirementsMet(entry, {
+      character,
+      ignoreRules: character.ignoreRules,
+    });
+  }
+
+  installWare(
+    kind: WareKind,
+    name: string,
+    grade = 'Standard',
+    rating = 1,
+    parentId?: string,
+  ): InstallWareResult {
+    const character = this.character();
+    const manager = this.manager;
+    if (!character || !manager) {
+      return { ok: false, reason: 'no-character' };
+    }
+
+    const entry = this.wareCatalogFor(kind).get(name);
+    if (!entry) {
+      return { ok: false, reason: 'not-found' };
+    }
+
+    const requirement = requirementsMet(entry, {
+      character,
+      ignoreRules: character.ignoreRules,
+    });
+    if (!requirement.met) {
+      return { ok: false, reason: 'requirements' };
+    }
+
+    if (entry['limit'] !== 'no' && !parentId && characterHasWareByName(character, name)) {
+      return { ok: false, reason: 'duplicate' };
+    }
+
+    const grades = this.gradesFor(kind);
+
+    const item = createWareFromCatalog(entry, grades, manager, {
+      kind,
+      grade,
+      rating: isRatedWareEntry(entry) ? rating : undefined,
+      parentCapacity: parentId ? scalarCatalogValue(entry.capacity) : undefined,
+    });
+
+    const additionalCyber = kind === 'cyberware' ? item.essence : 0;
+    const additionalBioware = kind === 'bioware' ? item.essence : 0;
+    if (wouldExceedEssenceMinimum(character, manager, additionalCyber, additionalBioware)) {
+      return { ok: false, reason: 'essence' };
+    }
+
+    if (parentId) {
+      const parent = findWare(character, kind, parentId);
+      if (!parent) {
+        return { ok: false, reason: 'not-found' };
+      }
+      const capacityCost = parseCapacityCost(String(entry.capacity ?? '0'));
+      const totalCapacity = calculateParentCapacityTotal(parent.capacity);
+      if (
+        totalCapacity > 0 &&
+        calculateWareCapacityUsed(parent) + capacityCost > totalCapacity
+      ) {
+        return { ok: false, reason: 'capacity' };
+      }
+    }
+
+    if (entry.bonus && this.hasInteractiveBonus(entry.bonus as BonusNode)) {
+      return { ok: false, reason: 'interactive-bonus' };
+    }
+
+    manager.beginTransaction();
+    if (entry.bonus && !this.applyWareBonuses(item, entry)) {
+      manager.rollback();
+      return { ok: false, reason: 'interactive-bonus' };
+    }
+
+    if (parentId) {
+      const parent = findWare(character, kind, parentId);
+      if (!parent) {
+        manager.rollback();
+        this.stripWareImprovements(item.id);
+        return { ok: false, reason: 'not-found' };
+      }
+      parent.children.push(item);
+    } else if (kind === 'cyberware') {
+      character.cyberware.push(item);
+    } else {
+      character.bioware.push(item);
+    }
+
+    manager.commit();
+    this.commitWare(character);
+    return { ok: true };
+  }
+
+  removeWare(kind: WareKind, id: string): void {
+    const character = this.character();
+    if (!character) return;
+
+    const item = findWare(character, kind, id);
+    if (!item) return;
+
+    this.removeWareTreeBonuses(item);
+    if (kind === 'cyberware') {
+      character.cyberware = removeWareFromList(character.cyberware, id);
+    } else {
+      character.bioware = removeWareFromList(character.bioware, id);
+    }
+    this.commitWare(character);
+  }
+
+  setWareGrade(kind: WareKind, id: string, grade: string): void {
+    const character = this.character();
+    const manager = this.manager;
+    if (!character || !manager) return;
+
+    const item = findWare(character, kind, id);
+    const entry = item ? this.wareCatalogFor(kind).get(item.name) : undefined;
+    if (!item || !entry) return;
+
+    this.stripWareImprovements(item.id);
+    item.grade = grade;
+    Object.assign(
+      item,
+      refreshWareFromCatalog(item, entry, this.gradesFor(kind), manager),
+    );
+    if (entry.bonus) {
+      this.applyWareBonuses(item, entry);
+    }
+    this.commitWare(character);
+  }
+
+  setWareRating(kind: WareKind, id: string, rating: number): void {
+    const character = this.character();
+    const manager = this.manager;
+    if (!character || !manager) return;
+
+    const item = findWare(character, kind, id);
+    const entry = item ? this.wareCatalogFor(kind).get(item.name) : undefined;
+    if (!item || !entry || !isRatedWareEntry(entry)) return;
+
+    this.stripWareImprovements(item.id);
+    item.rating = rating;
+    Object.assign(
+      item,
+      refreshWareFromCatalog(item, entry, this.gradesFor(kind), manager),
+    );
+    if (entry.bonus) {
+      this.applyWareBonuses(item, entry);
+    }
+    this.commitWare(character);
+  }
+
+  getAllowedWareGrades(kind: WareKind, name: string): string[] {
+    const entry = this.wareCatalogFor(kind).get(name);
+    if (!entry) return [];
+    return getAllowedGrades(entry, this.gradesFor(kind));
+  }
+
   getEffectiveSkillRating(skillName: string): number {
     this.revision();
     const character = this.character();
@@ -1061,6 +1661,73 @@ export class CharacterStoreService {
     return map;
   }
 
+  private buildWareCatalogMap(items: ChummerItem[] | undefined): Map<string, WareCatalogEntry> {
+    const map = new Map<string, WareCatalogEntry>();
+    for (const item of items ?? []) {
+      if (!item.name) continue;
+      map.set(item.name, item as WareCatalogEntry);
+    }
+    return map;
+  }
+
+  private buildGradeMap(doc: { grades?: WareGrade[] }): Map<string, WareGrade> {
+    const map = new Map<string, WareGrade>();
+    for (const grade of doc.grades ?? []) {
+      map.set(grade.name, grade);
+    }
+    return map;
+  }
+
+  private wareCatalogFor(kind: WareKind): Map<string, WareCatalogEntry> {
+    return kind === 'cyberware' ? this.cyberwareCatalog() : this.biowareCatalog();
+  }
+
+  private gradesFor(kind: WareKind): Map<string, WareGrade> {
+    return kind === 'cyberware' ? this.cyberwareGrades() : this.biowareGrades();
+  }
+
+  private applyWareBonuses(item: CharacterWare, entry: WareCatalogEntry): boolean {
+    const manager = this.manager;
+    if (!manager || !entry.bonus) return true;
+
+    try {
+      applyBonusHandlers(entry.bonus, {
+        character: manager.getCharacter(),
+        manager,
+        source: item.kind === 'cyberware' ? ImprovementSource.Cyberware : ImprovementSource.Bioware,
+        sourceName: wareSourceName(item.id),
+        rating: item.rating || 1,
+        uniqueName: '',
+      });
+      return true;
+    } catch {
+      return false;
+    }
+  }
+
+  private stripWareImprovements(id: string): void {
+    const character = this.manager?.getCharacter();
+    if (!character) return;
+    const sourceName = wareSourceName(id);
+    character.improvements = character.improvements.filter(
+      (improvement) => improvement.sourceName !== sourceName,
+    );
+  }
+
+  private removeWareTreeBonuses(item: CharacterWare): void {
+    for (const child of item.children) {
+      this.removeWareTreeBonuses(child);
+    }
+    this.stripWareImprovements(item.id);
+  }
+
+  private commitWare(character: ReturnType<typeof touchCharacter>): void {
+    syncLegacyPurchases(character);
+    this.character.set(touchCharacter(character));
+    this.bump();
+    this.scheduleAutoSave();
+  }
+
   private addTopLevelStreetItem(
     container: 'gear' | 'weapons' | 'armors',
     entry: StreetCatalogEntry,
@@ -1104,6 +1771,21 @@ export class CharacterStoreService {
     this.character.set(touchCharacter(character));
     this.bump();
     this.scheduleAutoSave();
+  }
+
+  private commitCharacter(character: ReturnType<typeof touchCharacter>): void {
+    syncLegacyPurchases(character);
+    this.character.set(touchCharacter(character));
+    this.bump();
+    this.scheduleAutoSave();
+  }
+
+  private stripPowerImprovements(id: string): void {
+    const character = this.manager?.getCharacter();
+    if (!character) return;
+    character.improvements = character.improvements.filter(
+      (improvement) => improvement.sourceName !== id,
+    );
   }
 
   private contactsEqual(a: CharacterContact[], b: CharacterContact[]): boolean {

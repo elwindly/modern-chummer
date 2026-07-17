@@ -16,6 +16,7 @@ import { getTotalMaximum } from './attribute-totals';
 import { ImprovementManager } from './improvement-manager';
 import { calculateSkillBp } from './skill-calculator';
 import { calculateMartialArtBp } from './martial-art-calculator';
+import { calculateMagicBp } from './magic-calculator';
 
 const PRIMARY_ATTRIBUTES: AttributeCode[] = [
   'BOD',
@@ -44,6 +45,9 @@ export interface BpBreakdown {
   knowledgeSkills: number;
   martialArts: number;
   martialArtManeuvers: number;
+  spells: number;
+  complexForms: number;
+  initiation: number;
   nuyenBp: number;
 }
 
@@ -181,6 +185,9 @@ export function calculateBp(
   );
   remaining -= martialBp.total;
 
+  const magicBp = calculateMagicBp(character, options);
+  remaining -= magicBp.total;
+
   const nuyenBp = character.nuyenBpSpent;
   remaining -= nuyenBp;
 
@@ -198,6 +205,9 @@ export function calculateBp(
     knowledgeSkills: skillBp.knowledgeSkills,
     martialArts: martialBp.styles,
     martialArtManeuvers: martialBp.maneuvers,
+    spells: magicBp.spells,
+    complexForms: magicBp.complexForms,
+    initiation: magicBp.initiation,
     nuyenBp,
   };
 }

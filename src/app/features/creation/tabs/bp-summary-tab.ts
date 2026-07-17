@@ -64,6 +64,24 @@ import { CharacterStoreService } from '../../../core/services/character-store.se
               <th scope="row">Martial art maneuvers</th>
               <td>{{ bp.martialArtManeuvers }}</td>
             </tr>
+            @if (bp.spells) {
+              <tr>
+                <th scope="row">Spells</th>
+                <td>{{ bp.spells }}</td>
+              </tr>
+            }
+            @if (bp.complexForms) {
+              <tr>
+                <th scope="row">Complex forms</th>
+                <td>{{ bp.complexForms }}</td>
+              </tr>
+            }
+            @if (bp.initiation) {
+              <tr>
+                <th scope="row">Initiation (karma BP)</th>
+                <td>{{ bp.initiation }}</td>
+              </tr>
+            }
             <tr>
               <th scope="row">Nuyen (BP)</th>
               <td>{{ bp.nuyenBp }}</td>
@@ -99,12 +117,49 @@ import { CharacterStoreService } from '../../../core/services/character-store.se
                 <td>{{ purchaseCount() }}</td>
               </tr>
             }
+            @if (wareCount()) {
+              <tr>
+                <th scope="row">Cyberware / bioware</th>
+                <td>{{ wareCount() }} items</td>
+              </tr>
+            }
+            @if (vehicleCount()) {
+              <tr>
+                <th scope="row">Vehicles</th>
+                <td>{{ vehicleCount() }} ({{ vehicleModCount() }} mods)</td>
+              </tr>
+            }
             <tr>
               <th scope="row">Remaining</th>
               <td>{{ nuyen.remaining | number }}</td>
             </tr>
           </tbody>
         </table>
+      }
+
+      @if (showPowerPoints() && store.powerPointBreakdown(); as pp) {
+        <h3>Power points</h3>
+        <table class="summary-table">
+          <caption class="sr-only">Adept power point breakdown</caption>
+          <tbody>
+            <tr>
+              <th scope="row">Pool</th>
+              <td>{{ pp.pool }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Used</th>
+              <td>{{ pp.used }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Remaining</th>
+              <td [class.overspent]="pp.remaining < 0">{{ pp.remaining }}</td>
+            </tr>
+          </tbody>
+        </table>
+      }
+
+      @if (store.character()?.created) {
+        <p class="finalized status-panel" role="status">Character finalized for career mode.</p>
       }
 
       @if (store.validation(); as validation) {
@@ -151,6 +206,14 @@ import { CharacterStoreService } from '../../../core/services/character-store.se
       ul { margin: 0; padding-left: 1.25rem; }
     }
 
+    .finalized {
+      margin-top: 1rem;
+      padding: 0.75rem;
+      border: 1px solid var(--color-accent);
+      border-radius: var(--radius);
+      background: var(--color-surface-raised);
+    }
+
     .sr-only {
       position: absolute;
       width: 1px;
@@ -178,6 +241,26 @@ export class BpSummaryTab {
       countItems(character.armors)
     );
   });
+
+  readonly wareCount = computed(() => {
+    const character = this.store.character();
+    if (!character) return 0;
+    const countWare = (items: typeof character.cyberware): number =>
+      items.reduce((sum, item) => sum + 1 + countWare(item.children), 0);
+    return countWare(character.cyberware) + countWare(character.bioware);
+  });
+
+  readonly vehicleCount = computed(() => this.store.character()?.vehicles.length ?? 0);
+
+  readonly vehicleModCount = computed(() => {
+    const character = this.store.character();
+    if (!character) return 0;
+    return character.vehicles.reduce((sum, vehicle) => sum + vehicle.mods.length, 0);
+  });
+
+  readonly showPowerPoints = computed(
+    () => this.store.character()?.flags.adeptEnabled === true,
+  );
 
   hasStreetGear(): boolean {
     const character = this.store.character();

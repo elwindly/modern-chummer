@@ -10,6 +10,16 @@ import {
   CharacterSkillGroup,
 } from './skill';
 import { CharacterStreetItem } from './street-gear';
+import { CharacterWare } from './ware';
+import {
+  CharacterCritterPower,
+  CharacterInitiationGrade,
+  CharacterMetamagic,
+  CharacterPower,
+  CharacterProgram,
+  CharacterSpell,
+} from './magic';
+import { CharacterVehicle } from './vehicle';
 
 export type BonusNode = Record<string, unknown>;
 
@@ -34,8 +44,10 @@ export interface Character {
   maximumAvailability: number;
   nuyenBpSpent: number;
   ignoreRules?: boolean;
+  created?: boolean;
   magicTradition?: string;
   technomancerStream?: string;
+  magAdept?: number;
   qualities: string[];
   qualityOrigins?: Record<string, QualityOrigin>;
   qualityAdjustments?: Record<string, QualityAdjustment>;
@@ -47,6 +59,15 @@ export interface Character {
   gear: CharacterStreetItem[];
   weapons: CharacterStreetItem[];
   armors: CharacterStreetItem[];
+  cyberware: CharacterWare[];
+  bioware: CharacterWare[];
+  spells: CharacterSpell[];
+  powers: CharacterPower[];
+  programs: CharacterProgram[];
+  metamagics: CharacterMetamagic[];
+  initiationGrades: CharacterInitiationGrade[];
+  critterPowers: CharacterCritterPower[];
+  vehicles: CharacterVehicle[];
   knowledgeSkillPoints?: number;
   profile: CharacterProfile;
   contacts: CharacterContact[];
@@ -77,6 +98,16 @@ export function createEmptyCharacter(overrides: Partial<Character> = {}): Charac
     gear: [],
     weapons: [],
     armors: [],
+    cyberware: [],
+    bioware: [],
+    spells: [],
+    powers: [],
+    programs: [],
+    metamagics: [],
+    initiationGrades: [],
+    critterPowers: [],
+    vehicles: [],
+    created: false,
     profile: createEmptyProfile(),
     contacts: [],
     purchases: [],

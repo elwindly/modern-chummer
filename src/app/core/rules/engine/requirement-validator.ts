@@ -1,5 +1,6 @@
 import { BonusNode, Character } from '../models/character';
 import { characterHasSkillAtRating } from './skill-totals';
+import { characterHasWareByName } from './ware-calculator';
 
 export interface RequirementContext {
   character: Character;
@@ -57,6 +58,11 @@ function matchesRequirementChild(
         const minRating = minRatingText ? Number(minRatingText) : 1;
         return characterHasSkillAtRating(character, name.trim(), minRating);
       });
+    }
+    case 'cyberware':
+    case 'bioware': {
+      const names = asStringList(childValue);
+      return names.some((name) => characterHasWareByName(character, name));
     }
     default:
       return false;

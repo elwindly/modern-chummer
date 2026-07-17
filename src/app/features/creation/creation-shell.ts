@@ -19,6 +19,13 @@ import { PlaceholderTab } from './tabs/placeholder-tab';
 import { SkillsTab } from './tabs/skills-tab';
 import { MartialArtsTab } from './tabs/martial-arts-tab';
 import { StreetGearTab } from './tabs/street-gear-tab';
+import { CyberwareTab } from './tabs/cyberware-tab';
+import { MagicianTab } from './tabs/magician-tab';
+import { AdeptTab } from './tabs/adept-tab';
+import { TechnomancerTab } from './tabs/technomancer-tab';
+import { CritterTab } from './tabs/critter-tab';
+import { InitiationTab } from './tabs/initiation-tab';
+import { VehiclesTab } from './tabs/vehicles-tab';
 
 @Component({
   selector: 'app-creation-shell',
@@ -32,6 +39,13 @@ import { StreetGearTab } from './tabs/street-gear-tab';
     SkillsTab,
     MartialArtsTab,
     StreetGearTab,
+    CyberwareTab,
+    MagicianTab,
+    AdeptTab,
+    TechnomancerTab,
+    CritterTab,
+    InitiationTab,
+    VehiclesTab,
     PlaceholderTab,
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -53,6 +67,8 @@ import { StreetGearTab } from './tabs/street-gear-tab';
             <span class="save-message" role="status" aria-live="polite">{{ saveMessage() }}</span>
           }
           <button type="button" (click)="saveNow()">Save</button>
+          <button type="button" (click)="exportChum()">Export .chum</button>
+          <button type="button" (click)="finalizeCharacter()">Finalize character</button>
         </div>
       </header>
 
@@ -92,6 +108,27 @@ import { StreetGearTab } from './tabs/street-gear-tab';
             }
             @case ('street-gear') {
               <app-street-gear-tab />
+            }
+            @case ('cyberware') {
+              <app-cyberware-tab />
+            }
+            @case ('magician') {
+              <app-magician-tab />
+            }
+            @case ('adept') {
+              <app-adept-tab />
+            }
+            @case ('technomancer') {
+              <app-technomancer-tab />
+            }
+            @case ('critter') {
+              <app-critter-tab />
+            }
+            @case ('initiation') {
+              <app-initiation-tab />
+            }
+            @case ('vehicles') {
+              <app-vehicles-tab />
             }
             @default {
               <app-placeholder-tab [title]="activeTabLabel()" />
@@ -236,5 +273,36 @@ export class CreationShell implements OnInit {
     await this.store.saveCurrentCharacter();
     this.saveMessage.set('Saved locally');
     window.setTimeout(() => this.saveMessage.set(''), 2000);
+  }
+
+  exportChum(): void {
+    const character = this.store.character();
+    const xml = this.store.exportCurrentChum();
+    if (!xml || !character) {
+      this.saveMessage.set('Nothing to export');
+      window.setTimeout(() => this.saveMessage.set(''), 2000);
+      return;
+    }
+
+    const blob = new Blob([xml], { type: 'application/xml' });
+    const url = URL.createObjectURL(blob);
+    const anchor = document.createElement('a');
+    anchor.href = url;
+    anchor.download = `${character.name.trim() || 'character'}.chum`;
+    anchor.click();
+    URL.revokeObjectURL(url);
+    this.saveMessage.set('Exported .chum file');
+    window.setTimeout(() => this.saveMessage.set(''), 2000);
+  }
+
+  finalizeCharacter(): void {
+    const result = this.store.finalizeCharacter();
+    if (result.valid) {
+      this.saveMessage.set('Character finalized');
+    } else {
+      const message = result.issues[0]?.message ?? 'Validation failed';
+      this.saveMessage.set(`Cannot finalize: ${message}`);
+    }
+    window.setTimeout(() => this.saveMessage.set(''), 4000);
   }
 }

@@ -11,6 +11,11 @@ export interface CharacterOptions {
   bpSkillGroup: number;
   bpActiveSkill: number;
   bpKnowledgeSkill: number;
+  bpSpell: number;
+  bpComplexForm: number;
+  karmaInitiation: number;
+  karmaMetamagic: number;
+  alternateComplexFormCost: boolean;
   freeContacts: boolean;
   freeContactsMultiplier: number;
   freeContactsFlat: boolean;
@@ -34,6 +39,11 @@ export const DEFAULT_CHARACTER_OPTIONS: CharacterOptions = {
   bpSkillGroup: 10,
   bpActiveSkill: 4,
   bpKnowledgeSkill: 1,
+  bpSpell: 3,
+  bpComplexForm: 1,
+  karmaInitiation: 3,
+  karmaMetamagic: 15,
+  alternateComplexFormCost: false,
   freeContacts: false,
   freeContactsMultiplier: 2,
   freeContactsFlat: false,

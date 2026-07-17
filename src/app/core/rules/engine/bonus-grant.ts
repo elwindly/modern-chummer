@@ -1,5 +1,6 @@
 import { BonusNode, Character } from '../models/character';
 import { ImprovementSource } from '../models/improvement';
+import { CharacterWare } from '../models/ware';
 import { SelectionRequest, SelectionResolution } from '../models/selection-request';
 import { applyBonusHandlers } from './improvement-handlers';
 import { ImprovementManager } from './improvement-manager';
@@ -174,6 +175,13 @@ export function cancelBonusGrant(manager: ImprovementManager): void {
   manager.rollback();
 }
 
+function cloneWareList(items: CharacterWare[]): CharacterWare[] {
+  return items.map((item) => ({
+    ...item,
+    children: cloneWareList(item.children),
+  }));
+}
+
 export function touchCharacter(character: Character): Character {
   return {
     ...character,
@@ -188,6 +196,21 @@ export function touchCharacter(character: Character): Character {
     profile: { ...(character.profile ?? {}) },
     contacts: [...character.contacts],
     purchases: [...character.purchases],
+    gear: (character.gear ?? []).map((item) => ({ ...item, children: [...item.children] })),
+    weapons: (character.weapons ?? []).map((item) => ({ ...item, children: [...item.children] })),
+    armors: (character.armors ?? []).map((item) => ({ ...item, children: [...item.children] })),
+    cyberware: cloneWareList(character.cyberware ?? []),
+    bioware: cloneWareList(character.bioware ?? []),
+    spells: [...(character.spells ?? [])],
+    powers: [...(character.powers ?? [])],
+    programs: [...(character.programs ?? [])],
+    metamagics: [...(character.metamagics ?? [])],
+    initiationGrades: [...(character.initiationGrades ?? [])],
+    critterPowers: [...(character.critterPowers ?? [])],
+    vehicles: (character.vehicles ?? []).map((vehicle) => ({
+      ...vehicle,
+      mods: [...vehicle.mods],
+    })),
     improvements: [...character.improvements],
     flags: { ...character.flags },
     attributes: Object.fromEntries(

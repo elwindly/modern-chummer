@@ -1,7 +1,8 @@
 import { Character } from '../models/character';
 import { CharacterOptions } from '../models/character-options';
 import { ImprovementType } from '../models/improvement';
-import { calculateTotalStreetCost } from './gear-calculator';
+import { calculateTotalNuyenSpent } from './ware-calculator';
+import { calculateTotalVehicleCost } from './vehicle-calculator';
 import { ImprovementManager } from './improvement-manager';
 
 export interface NuyenBreakdown {
@@ -20,7 +21,7 @@ export function calculateNuyen(
   const fromImprovements = manager.valueOf(ImprovementType.Nuyen);
   const total = fromBp + fromImprovements;
 
-  const spent = calculateTotalStreetCost(character);
+  const spent = calculateTotalNuyenSpent(character) + calculateTotalVehicleCost(character);
 
   return {
     remaining: total - spent,

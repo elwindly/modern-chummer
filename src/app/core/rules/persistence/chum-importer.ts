@@ -4,9 +4,20 @@ import { createEmptyProfile } from '../models/character-profile';
 import { CharacterContact } from '../models/economy';
 import { CharacterSkill, CharacterSkillGroup, CharacterMartialArt, CharacterMartialArtManeuver } from '../models/skill';
 import { CharacterStreetItem, StreetItemKind } from '../models/street-gear';
+import { CharacterWare, WareKind } from '../models/ware';
+import {
+  CharacterCritterPower,
+  CharacterInitiationGrade,
+  CharacterMetamagic,
+  CharacterPower,
+  CharacterProgram,
+  CharacterSpell,
+} from '../models/magic';
+import { CharacterVehicle, CharacterVehicleMod } from '../models/vehicle';
 import { Improvement, ImprovementSource, ImprovementType, createImprovement } from '../models/improvement';
 import { createCharacterId } from './character-serializer';
 import { syncLegacyPurchases } from '../engine/gear-calculator';
+import { createSpell, refreshPowerPoints } from '../engine/magic-calculator';
 
 export interface ChumImportResult {
   character: Character;
@@ -358,6 +369,188 @@ function parseStreetGear(root: Record<string, unknown>, warnings: string[]): {
   return { gear: gearItems, weapons: weaponItems, armors: armorItems };
 }
 
+function parseWareNode(
+  node: Record<string, unknown>,
+  kind: WareKind,
+  warnings: string[],
+): CharacterWare {
+  const item: CharacterWare = {
+    id: text(node['guid']) || createCharacterId(),
+    kind,
+    name: text(node['name']),
+    grade: text(node['grade']) || 'Standard',
+    rating: number(node['rating'], 1),
+    availability: text(node['avail']) || '0',
+    cost: number(node['cost']),
+    essence: number(node['ess']),
+    capacity: text(node['capacity']) || '0',
+    capacityUsed: 0,
+    children: [],
+  };
+
+  const childrenNode = node['children'] as Record<string, unknown> | undefined;
+  const childNodes = asArray(childrenNode?.['cyberware'] as ChumNode);
+  for (const child of childNodes) {
+    if (!child || typeof child !== 'object') continue;
+    item.children.push(parseWareNode(child as Record<string, unknown>, kind, warnings));
+  }
+
+  if (node['gears']) {
+    warnings.push(`Gear installed on ${kind} "${item.name}" was not imported.`);
+  }
+
+  return item;
+}
+
+function parseWareSections(root: Record<string, unknown>, warnings: string[]): {
+  cyberware: CharacterWare[];
+  bioware: CharacterWare[];
+} {
+  const cyberwareNode = root['cyberwares'] as Record<string, unknown> | undefined;
+  const cyberware = asArray(cyberwareNode?.['cyberware'] as ChumNode)
+    .filter((node): node is Record<string, unknown> => !!node && typeof node === 'object')
+    .map((node) => parseWareNode(node, 'cyberware', warnings))
+    .filter((item) => item.name);
+
+  const biowareNode = root['biowares'] as Record<string, unknown> | undefined;
+  const bioware = asArray(biowareNode?.['bioware'] as ChumNode)
+    .filter((node): node is Record<string, unknown> => !!node && typeof node === 'object')
+    .map((node) => parseWareNode(node, 'bioware', warnings))
+    .filter((item) => item.name);
+
+  return { cyberware, bioware };
+}
+
+function parseSpells(root: Record<string, unknown>): CharacterSpell[] {
+  const node = root['spells'] as Record<string, unknown> | undefined;
+  return asArray(node?.['spell'] as ChumNode)
+    .filter((entry): entry is Record<string, unknown> => !!entry && typeof entry === 'object')
+    .map((entry) =>
+      createSpell(text(entry['name']), text(entry['category']), {
+        id: text(entry['guid']) || undefined,
+        limited: bool(entry['limited']),
+        extended: bool(entry['extended']),
+        extra: text(entry['extra']) || undefined,
+      }),
+    )
+    .filter((spell) => spell.name);
+}
+
+function parsePowers(root: Record<string, unknown>): CharacterPower[] {
+  const node = root['powers'] as Record<string, unknown> | undefined;
+  return asArray(node?.['power'] as ChumNode)
+    .filter((entry): entry is Record<string, unknown> => !!entry && typeof entry === 'object')
+    .map((entry) => {
+      const rating = number(entry['rating']);
+      const pointsPerLevel = number(entry['pointsperlevel']);
+      const levels = rating > 0;
+      return refreshPowerPoints({
+        id: text(entry['guid']) || createCharacterId(),
+        name: text(entry['name']),
+        rating,
+        levels,
+        pointsPerLevel,
+        totalPoints: number(entry['totalpoints'], levels ? pointsPerLevel * rating : pointsPerLevel),
+        extra: text(entry['extra']) || undefined,
+      });
+    })
+    .filter((power) => power.name);
+}
+
+function parsePrograms(root: Record<string, unknown>): CharacterProgram[] {
+  const node = (root['techprograms'] ?? root['programs']) as Record<string, unknown> | undefined;
+  return asArray(node?.['techprogram'] as ChumNode)
+    .filter((entry): entry is Record<string, unknown> => !!entry && typeof entry === 'object')
+    .map((entry) => ({
+      id: text(entry['guid']) || createCharacterId(),
+      name: text(entry['name']),
+      category: text(entry['category']),
+      rating: number(entry['rating'], 1),
+      maxRating: number(entry['maxrating'], 6),
+      capacity: text(entry['capacity']),
+      extra: text(entry['extra']) || undefined,
+    }))
+    .filter((program) => program.name);
+}
+
+function parseMetamagics(root: Record<string, unknown>): CharacterMetamagic[] {
+  const node = root['metamagics'] as Record<string, unknown> | undefined;
+  return asArray(node?.['metamagic'] as ChumNode)
+    .filter((entry): entry is Record<string, unknown> => !!entry && typeof entry === 'object')
+    .map((entry) => ({
+      id: text(entry['guid']) || createCharacterId(),
+      name: text(entry['name']),
+      paidWithKarma: bool(entry['paidwithkarma']),
+      source: text(entry['source']) || undefined,
+      page: text(entry['page']) || undefined,
+    }))
+    .filter((item) => item.name);
+}
+
+function parseInitiationGrades(root: Record<string, unknown>): CharacterInitiationGrade[] {
+  const node = root['initiationgrades'] as Record<string, unknown> | undefined;
+  return asArray(node?.['initiationgrade'] as ChumNode)
+    .filter((entry): entry is Record<string, unknown> => !!entry && typeof entry === 'object')
+    .map((entry) => ({
+      id: text(entry['guid']) || createCharacterId(),
+      grade: number(entry['grade']),
+      group: bool(entry['group']),
+      ordeal: bool(entry['ordeal']),
+      technomancer: bool(entry['res']),
+      notes: text(entry['notes']) || undefined,
+    }));
+}
+
+function parseCritterPowers(root: Record<string, unknown>): CharacterCritterPower[] {
+  const node = root['critterpowers'] as Record<string, unknown> | undefined;
+  return asArray(node?.['critterpower'] as ChumNode)
+    .filter((entry): entry is Record<string, unknown> => !!entry && typeof entry === 'object')
+    .map((entry) => ({
+      id: text(entry['guid']) || createCharacterId(),
+      name: text(entry['name']),
+      rating: number(entry['rating']),
+      points: number(entry['points']),
+    }))
+    .filter((power) => power.name);
+}
+
+function parseVehicleMods(node: Record<string, unknown> | undefined): CharacterVehicleMod[] {
+  return asArray(node?.['mod'] as ChumNode)
+    .filter((entry): entry is Record<string, unknown> => !!entry && typeof entry === 'object')
+    .map((entry) => ({
+      id: text(entry['guid']) || createCharacterId(),
+      name: text(entry['name']),
+      rating: number(entry['rating']),
+      availability: text(entry['avail']) || '0',
+      cost: number(entry['cost']),
+    }))
+    .filter((mod) => mod.name);
+}
+
+function parseVehicles(root: Record<string, unknown>): CharacterVehicle[] {
+  const node = root['vehicles'] as Record<string, unknown> | undefined;
+  return asArray(node?.['vehicle'] as ChumNode)
+    .filter((entry): entry is Record<string, unknown> => !!entry && typeof entry === 'object')
+    .map((entry) => ({
+      id: text(entry['guid']) || createCharacterId(),
+      name: text(entry['name']),
+      category: text(entry['category']),
+      handling: number(entry['handling']),
+      accel: text(entry['accel']) || '0',
+      speed: number(entry['speed']),
+      pilot: number(entry['pilot']),
+      body: number(entry['body']),
+      armor: number(entry['armor']),
+      sensor: number(entry['sensor']),
+      deviceRating: number(entry['devicerating']),
+      availability: text(entry['avail']) || '0',
+      cost: number(entry['cost']),
+      vehicleName: text(entry['vehiclename']) || undefined,
+      mods: parseVehicleMods(entry['mods'] as Record<string, unknown> | undefined),
+    }))
+    .filter((vehicle) => vehicle.name);
+}
+
 function parseProfile(root: Record<string, unknown>): Character['profile'] {
   return {
     sex: text(root['sex']) || undefined,
@@ -392,15 +585,7 @@ export function importChumDocument(root: Record<string, unknown>): ChumImportRes
     warnings.push('Character is marked as Created (career mode). Only creation data was imported.');
   }
 
-  const unsupportedSections = [
-    'cyberwares',
-    'biowares',
-    'vehicles',
-    'spells',
-    'powers',
-    'programs',
-    'lifestyles',
-  ];
+  const unsupportedSections = ['lifestyles', 'foci', 'stackedfoci', 'spirits'];
 
   for (const section of unsupportedSections) {
     if (root[section]) {
@@ -412,6 +597,14 @@ export function importChumDocument(root: Record<string, unknown>): ChumImportRes
   const parsedSkills = parseSkills(root);
   const parsedMartialArts = parseMartialArts(root);
   const parsedStreetGear = parseStreetGear(root, warnings);
+  const parsedWare = parseWareSections(root, warnings);
+  const spells = parseSpells(root);
+  const powers = parsePowers(root);
+  const programs = parsePrograms(root);
+  const metamagics = parseMetamagics(root);
+  const initiationGrades = parseInitiationGrades(root);
+  const critterPowers = parseCritterPowers(root);
+  const vehicles = parseVehicles(root);
 
   const character: Character = {
     id: createCharacterId(),
@@ -424,6 +617,7 @@ export function importChumDocument(root: Record<string, unknown>): ChumImportRes
     maximumAvailability: number(root['maxavail'], 12),
     nuyenBpSpent: number(root['nuyenbp']),
     ignoreRules: bool(root['ignorerules']),
+    created: bool(root['created']),
     magicTradition: text(root['tradition']) || undefined,
     technomancerStream: text(root['stream']) || undefined,
     qualities: parsedQualities.names,
@@ -437,6 +631,15 @@ export function importChumDocument(root: Record<string, unknown>): ChumImportRes
     gear: parsedStreetGear.gear,
     weapons: parsedStreetGear.weapons,
     armors: parsedStreetGear.armors,
+    cyberware: parsedWare.cyberware,
+    bioware: parsedWare.bioware,
+    spells,
+    powers,
+    programs,
+    metamagics,
+    initiationGrades,
+    critterPowers,
+    vehicles,
     knowledgeSkillPoints: number(root['knowpts']) || undefined,
     profile: parseProfile(root),
     contacts: parseContacts(root),
