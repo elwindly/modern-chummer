@@ -147,7 +147,7 @@ function exportStreetItems(
         [
           el('guid', item.id),
           el('name', item.name),
-          el('category', item.category ?? ''),
+          el('category', ''),
           el('rating', item.rating),
           el('avail', item.availability),
           el('cost', item.cost),
@@ -354,7 +354,7 @@ function exportVehicles(character: Character): string {
 function exportMartialArts(character: Character): string {
   const arts = character.martialArts
     .map((art) =>
-      wrap('martialart', [el('guid', art.id), el('name', art.name), el('rating', art.rating)].join('')),
+      wrap('martialart', [el('name', art.name), el('rating', art.rating)].join('')),
     )
     .join('');
   const maneuvers = character.martialArtManeuvers
@@ -408,7 +408,7 @@ export function exportChumDocument(character: Character): string {
     el('metavariant', character.metavariant ?? ''),
     el('metatypecategory', character.metatypeCategory ?? ''),
     el('alias', character.name),
-    el('name', character.profile.realName ?? character.name),
+    el('name', character.name),
     el('bp', character.buildPoints),
     el('maxavail', character.maximumAvailability),
     el('nuyenbp', character.nuyenBpSpent),
