@@ -127,6 +127,7 @@ import { applyBonusHandlers } from '../rules/engine/improvement-handlers';
 import { CharacterStorageService } from './character-storage.service';
 import { ChummerDataService } from './chummer-data.service';
 import { extractCollection } from '../utils/collection-utils';
+import { injectAppBaseHref, joinAppUrl } from '../utils/app-url';
 import { ChummerItem } from '../models/chummer-data.types';
 
 export type RemoveQualityResult =
@@ -191,6 +192,7 @@ export interface CyberwareSuiteEntry {
 export class CharacterStoreService {
   private readonly http = inject(HttpClient);
   private readonly data = inject(ChummerDataService);
+  private readonly baseHref = injectAppBaseHref();
   private readonly storage = inject(CharacterStorageService);
 
   private readonly revision = signal(0);
@@ -325,7 +327,7 @@ export class CharacterStoreService {
 
     const [settings, qualitiesDoc, metatypesDoc, skillsDoc, martialArtsDoc, gearDoc, weaponsDoc, armorDoc, cyberwareDoc, biowareDoc, spellsDoc, powersDoc, programsDoc, traditionsDoc, streamsDoc, metamagicDoc, vehiclesDoc, critterpowersDoc, lifestylesDoc, packsDoc] =
       await Promise.all([
-      firstValueFrom(this.http.get<Partial<CharacterOptions>>('/data/settings/default.json')),
+      firstValueFrom(this.http.get<Partial<CharacterOptions>>(joinAppUrl(this.baseHref, 'data/settings/default.json'))),
       this.data.loadDocument('qualities'),
       this.data.loadDocument('metatypes'),
       this.data.loadDocument('skills'),
@@ -344,7 +346,7 @@ export class CharacterStoreService {
       this.data.loadDocument('vehicles'),
       this.data.loadDocument('critterpowers'),
       this.data.loadDocument('lifestyles'),
-      firstValueFrom(this.http.get<{ packs?: PackEntry[] }>('/data/packs.json')),
+      firstValueFrom(this.http.get<{ packs?: PackEntry[] }>(joinAppUrl(this.baseHref, 'data/packs.json'))),
     ]);
 
     this.options.set(loadCharacterOptions(settings));

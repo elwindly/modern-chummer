@@ -9,6 +9,7 @@
     "setup": "npm install && npm run convert",
     "start": "ng serve",
     "build": "ng build",
+    "build:gh-pages": "ng build --configuration=github-pages",
     "watch": "ng build --watch --configuration development",
     "test": "vitest run",
     "test:watch": "vitest",

@@ -38,6 +38,17 @@
               ],
               "outputHashing": "all"
             },
+            "github-pages": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2MB",
+                  "maximumError": "5MB"
+                }
+              ],
+              "outputHashing": "all",
+              "baseHref": "/modern-chummer/"
+            },
             "development": {
               "optimization": false,
               "extractLicenses": false,
