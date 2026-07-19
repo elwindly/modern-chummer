@@ -47,7 +47,7 @@
                 }
               ],
               "outputHashing": "all",
-              "baseHref": "/modern-chummer/"
+              "baseHref": "/modern-chummer/docs/"
             },
             "development": {
               "optimization": false,
