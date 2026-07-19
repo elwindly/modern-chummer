@@ -1,0 +1,4077 @@
+{
+  "version": -917,
+  "categories": [
+    "Combat",
+    "Detection",
+    "Health",
+    "Illusion",
+    "Manipulation",
+    "Geomancy Ritual"
+  ],
+  "spells": [
+    {
+      "name": "Acid Stream",
+      "descriptor": "Indirect, Elemental",
+      "category": [
+        "Combat"
+      ],
+      "type": "P",
+      "range": [
+        "LOS"
+      ],
+      "damage": "P",
+      "duration": "I",
+      "dv": "(F/2)+3",
+      "source": "SR4",
+      "page": "204"
+    },
+    {
+      "name": "Ball Lightning",
+      "descriptor": "Indirect, Elemental, Area",
+      "category": [
+        "Combat"
+      ],
+      "type": "P",
+      "range": [
+        "LOS (A)"
+      ],
+      "damage": "P",
+      "duration": "I",
+      "dv": "(F/2)+5",
+      "source": "SR4",
+      "page": "205"
+    },
+    {
+      "name": "Blast",
+      "descriptor": "Indirect, Area",
+      "category": [
+        "Combat"
+      ],
+      "type": "P",
+      "range": [
+        "LOS (A)"
+      ],
+      "damage": "S",
+      "duration": "I",
+      "dv": "(F/2)+2",
+      "source": "SR4",
+      "page": "204"
+    },
+    {
+      "name": "Clout",
+      "descriptor": "Indirect",
+      "category": [
+        "Combat"
+      ],
+      "type": "P",
+      "range": [
+        "LOS"
+      ],
+      "damage": "S",
+      "duration": "I",
+      "dv": "(F/2)",
+      "source": "SR4",
+      "page": "204"
+    },
+    {
+      "name": "Corrode [Object]",
+      "descriptor": "Indirect, Touch, Elemental",
+      "category": [
+        "Combat"
+      ],
+      "type": "P",
+      "range": [
+        "T"
+      ],
+      "damage": "P",
+      "duration": "I",
+      "dv": "(F/2)",
+      "source": "SM",
+      "page": "164"
+    },
+    {
+      "name": "Death Touch",
+      "descriptor": "Direct, Touch",
+      "category": [
+        "Combat"
+      ],
+      "type": "M",
+      "range": [
+        "T"
+      ],
+      "damage": "P",
+      "duration": "I",
+      "dv": "(F/2)-2",
+      "source": "SR4",
+      "page": "204"
+    },
+    {
+      "name": "Demolish [Object]",
+      "descriptor": "Direct",
+      "category": [
+        "Combat"
+      ],
+      "type": "P",
+      "range": [
+        "LOS (A)"
+      ],
+      "damage": "P",
+      "duration": "I",
+      "dv": "(F/2)+2",
+      "source": "SM",
+      "page": "165"
+    },
+    {
+      "name": "Destroy [Free Spirit]",
+      "descriptor": "Direct",
+      "category": [
+        "Combat"
+      ],
+      "type": "M",
+      "range": [
+        "LOS"
+      ],
+      "damage": "P",
+      "duration": "I",
+      "dv": "(F/2)-2",
+      "source": "DG",
+      "page": "16"
+    },
+    {
+      "name": "Disrupt [Focus]",
+      "descriptor": "Direct",
+      "category": [
+        "Combat"
+      ],
+      "type": "M",
+      "range": [
+        "LOS"
+      ],
+      "damage": "S",
+      "duration": "I",
+      "dv": "(F/2)-1",
+      "source": "DG",
+      "page": "16"
+    },
+    {
+      "name": "[Element] Grenade",
+      "descriptor": "Indirect, Elemental",
+      "category": [
+        "Combat"
+      ],
+      "type": "P",
+      "range": [
+        "LOS (A)"
+      ],
+      "damage": "P",
+      "duration": "I",
+      "dv": "(F/2)+4",
+      "source": "WAR",
+      "page": "177"
+    },
+    {
+      "name": "Fireball",
+      "descriptor": "Indirect, Elemental, Area",
+      "category": [
+        "Combat"
+      ],
+      "type": "P",
+      "range": [
+        "LOS (A)"
+      ],
+      "damage": "P",
+      "duration": "I",
+      "dv": "(F/2)+5",
+      "source": "SR4",
+      "page": "204"
+    },
+    {
+      "name": "Firewater",
+      "descriptor": "Indirect, Elemental",
+      "category": [
+        "Combat"
+      ],
+      "type": "P",
+      "range": [
+        "LOS"
+      ],
+      "damage": "P",
+      "duration": "I",
+      "dv": "(F/2)+5",
+      "source": "SM",
+      "page": "164"
+    },
+    {
+      "name": "Flamethrower",
+      "descriptor": "Indirect, Elemental",
+      "category": [
+        "Combat"
+      ],
+      "type": "P",
+      "range": [
+        "LOS"
+      ],
+      "damage": "P",
+      "duration": "I",
+      "dv": "(F/2)+3",
+      "source": "SR4",
+      "page": "204"
+    },
+    {
+      "name": "Knockout",
+      "descriptor": "Direct, Touch",
+      "category": [
+        "Combat"
+      ],
+      "type": "M",
+      "range": [
+        "T"
+      ],
+      "damage": "S",
+      "duration": "I",
+      "dv": "(F/2)-3",
+      "source": "SR4",
+      "page": "205"
+    },
+    {
+      "name": "Lightning Bolt",
+      "descriptor": "Indirect, Elemental",
+      "category": [
+        "Combat"
+      ],
+      "type": "P",
+      "range": [
+        "LOS"
+      ],
+      "damage": "P",
+      "duration": "I",
+      "dv": "(F/2)+3",
+      "source": "SR4",
+      "page": "205"
+    },
+    {
+      "name": "Manaball",
+      "descriptor": "Direct, Area",
+      "category": [
+        "Combat"
+      ],
+      "type": "M",
+      "range": [
+        "LOS (A)"
+      ],
+      "damage": "P",
+      "duration": "I",
+      "dv": "(F/2)+2",
+      "source": "SR4",
+      "page": "204"
+    },
+    {
+      "name": "Manabolt",
+      "descriptor": "Direct",
+      "category": [
+        "Combat"
+      ],
+      "type": "M",
+      "range": [
+        "LOS"
+      ],
+      "damage": "P",
+      "duration": "I",
+      "dv": "(F/2)",
+      "source": "SR4",
+      "page": "204"
+    },
+    {
+      "name": "Melt [Object]",
+      "descriptor": "Indirect, Elemental",
+      "category": [
+        "Combat"
+      ],
+      "type": "P",
+      "range": [
+        "LOS"
+      ],
+      "damage": "P",
+      "duration": "I",
+      "dv": "(F/2)+2",
+      "source": "SM",
+      "page": "164"
+    },
+    {
+      "name": "Napalm",
+      "descriptor": "Indirect, Area, Elemental",
+      "category": [
+        "Combat"
+      ],
+      "type": "P",
+      "range": [
+        "LOS (A)"
+      ],
+      "damage": "P",
+      "duration": "I",
+      "dv": "(F/2)+7",
+      "source": "SM",
+      "page": "164"
+    },
+    {
+      "name": "One Less [Metatype/Species]",
+      "descriptor": "Direct, Touch",
+      "category": [
+        "Combat"
+      ],
+      "type": "M",
+      "range": [
+        "T"
+      ],
+      "damage": "P",
+      "duration": "I",
+      "dv": "(F/2)-3",
+      "source": "SM",
+      "page": "165"
+    },
+    {
+      "name": "Powerball",
+      "descriptor": "Direct, Area",
+      "category": [
+        "Combat"
+      ],
+      "type": "P",
+      "range": [
+        "LOS (A)"
+      ],
+      "damage": "P",
+      "duration": "I",
+      "dv": "(F/2)+3",
+      "source": "SR4",
+      "page": "205"
+    },
+    {
+      "name": "Powerbolt",
+      "descriptor": "Direct",
+      "category": [
+        "Combat"
+      ],
+      "type": "P",
+      "range": [
+        "LOS"
+      ],
+      "damage": "P",
+      "duration": "I",
+      "dv": "(F/2)+1",
+      "source": "SR4",
+      "page": "205"
+    },
+    {
+      "name": "Punch",
+      "descriptor": "Indirect, Touch",
+      "category": [
+        "Combat"
+      ],
+      "type": "P",
+      "range": [
+        "T"
+      ],
+      "damage": "S",
+      "duration": "I",
+      "dv": "(F/2)-2",
+      "source": "SR4",
+      "page": "204"
+    },
+    {
+      "name": "Ram [Object]",
+      "descriptor": "Direct, Touch",
+      "category": [
+        "Combat"
+      ],
+      "type": "P",
+      "range": [
+        "T"
+      ],
+      "damage": "P",
+      "duration": "I",
+      "dv": "(F/2)-2",
+      "source": "SM",
+      "page": "165"
+    },
+    {
+      "name": "Shatter",
+      "descriptor": "Direct, Touch",
+      "category": [
+        "Combat"
+      ],
+      "type": "P",
+      "range": [
+        "T"
+      ],
+      "damage": "P",
+      "duration": "I",
+      "dv": "(F/2)-1",
+      "source": "SR4",
+      "page": "205"
+    },
+    {
+      "name": "Shattershield",
+      "descriptor": "Direct, Touch",
+      "category": [
+        "Combat"
+      ],
+      "type": "M",
+      "range": [
+        "T"
+      ],
+      "damage": "P",
+      "duration": "I",
+      "dv": "(F/2)-3",
+      "source": "SM",
+      "page": "165"
+    },
+    {
+      "name": "Slaughter [Metatype/Species]",
+      "descriptor": "Direct, Area",
+      "category": [
+        "Combat"
+      ],
+      "type": "M",
+      "range": [
+        "LOS (A)"
+      ],
+      "damage": "P",
+      "duration": "I",
+      "dv": "(F/2)+1",
+      "source": "SM",
+      "page": "165"
+    },
+    {
+      "name": "Slay [Metatype/Species]",
+      "descriptor": "Direct",
+      "category": [
+        "Combat"
+      ],
+      "type": "M",
+      "range": [
+        "LOS"
+      ],
+      "damage": "P",
+      "duration": "I",
+      "dv": "(F/2)-1",
+      "source": "SM",
+      "page": "165"
+    },
+    {
+      "name": "Sludge [Object]",
+      "descriptor": "Indirect, Area, Elemental",
+      "category": [
+        "Combat"
+      ],
+      "type": "P",
+      "range": [
+        "LOS (A)"
+      ],
+      "damage": "P",
+      "duration": "I",
+      "dv": "(F/2)+4",
+      "source": "SM",
+      "page": "164"
+    },
+    {
+      "name": "Stunball",
+      "descriptor": "Direct, Area",
+      "category": [
+        "Combat"
+      ],
+      "type": "M",
+      "range": [
+        "LOS (A)"
+      ],
+      "damage": "S",
+      "duration": "I",
+      "dv": "(F/2)+1",
+      "source": "SR4",
+      "page": "205"
+    },
+    {
+      "name": "Stunbolt",
+      "descriptor": "Direct",
+      "category": [
+        "Combat"
+      ],
+      "type": "M",
+      "range": [
+        "LOS"
+      ],
+      "damage": "S",
+      "duration": "I",
+      "dv": "(F/2)-1",
+      "source": "SR4",
+      "page": "205"
+    },
+    {
+      "name": "Toxic Wave",
+      "descriptor": "Indirect, Elemental, Area",
+      "category": [
+        "Combat"
+      ],
+      "type": "P",
+      "range": [
+        "LOS (A)"
+      ],
+      "damage": "P",
+      "duration": "I",
+      "dv": "(F/2)+5",
+      "source": "SR4",
+      "page": "204"
+    },
+    {
+      "name": "Wreck [Object]",
+      "descriptor": "Direct",
+      "category": [
+        "Combat"
+      ],
+      "type": "P",
+      "range": [
+        "LOS"
+      ],
+      "damage": "P",
+      "duration": "I",
+      "dv": "(F/2)",
+      "source": "SM",
+      "page": "165"
+    },
+    {
+      "name": "Boom",
+      "descriptor": "Indirect, Elemental",
+      "category": [
+        "Combat"
+      ],
+      "type": "P",
+      "range": [
+        "LOS"
+      ],
+      "damage": "P",
+      "duration": "I",
+      "dv": "(F/2)+3",
+      "source": "SM",
+      "page": "168"
+    },
+    {
+      "name": "Shockwave",
+      "descriptor": "Indirect, Elemental, Area",
+      "category": [
+        "Combat"
+      ],
+      "type": "P",
+      "range": [
+        "LOS (A)"
+      ],
+      "damage": "P",
+      "duration": "I",
+      "dv": "(F/2)+5",
+      "source": "SM",
+      "page": "168"
+    },
+    {
+      "name": "Frost",
+      "descriptor": "Indirect, Elemental",
+      "category": [
+        "Combat"
+      ],
+      "type": "P",
+      "range": [
+        "LOS"
+      ],
+      "damage": "P",
+      "duration": "I",
+      "dv": "(F/2)+3",
+      "source": "SM",
+      "page": "168"
+    },
+    {
+      "name": "Blizzard",
+      "descriptor": "Indirect, Elemental, Area",
+      "category": [
+        "Combat"
+      ],
+      "type": "P",
+      "range": [
+        "LOS (A)"
+      ],
+      "damage": "P",
+      "duration": "I",
+      "dv": "(F/2)+5",
+      "source": "SM",
+      "page": "168"
+    },
+    {
+      "name": "Laser",
+      "descriptor": "Indirect, Elemental",
+      "category": [
+        "Combat"
+      ],
+      "type": "P",
+      "range": [
+        "LOS"
+      ],
+      "damage": "P",
+      "duration": "I",
+      "dv": "(F/2)+3",
+      "source": "SM",
+      "page": "168"
+    },
+    {
+      "name": "Nova",
+      "descriptor": "Indirect, Elemental, Area",
+      "category": [
+        "Combat"
+      ],
+      "type": "P",
+      "range": [
+        "LOS (A)"
+      ],
+      "damage": "P",
+      "duration": "I",
+      "dv": "(F/2)+5",
+      "source": "SM",
+      "page": "168"
+    },
+    {
+      "name": "Frag",
+      "descriptor": "Indirect, Elemental",
+      "category": [
+        "Combat"
+      ],
+      "type": "P",
+      "range": [
+        "LOS"
+      ],
+      "damage": "P",
+      "duration": "I",
+      "dv": "(F/2)+3",
+      "source": "SM",
+      "page": "168"
+    },
+    {
+      "name": "Shred",
+      "descriptor": "Indirect, Elemental, Area",
+      "category": [
+        "Combat"
+      ],
+      "type": "P",
+      "range": [
+        "LOS (A)"
+      ],
+      "damage": "P",
+      "duration": "I",
+      "dv": "(F/2)+5",
+      "source": "SM",
+      "page": "168"
+    },
+    {
+      "name": "Dust Devil",
+      "descriptor": "Indirect, Elemental",
+      "category": [
+        "Combat"
+      ],
+      "type": "P",
+      "range": [
+        "LOS"
+      ],
+      "damage": "P",
+      "duration": "I",
+      "dv": "(F/2)+3",
+      "source": "SM",
+      "page": "168"
+    },
+    {
+      "name": "Sandstorm",
+      "descriptor": "Indirect, Elemental, Area",
+      "category": [
+        "Combat"
+      ],
+      "type": "P",
+      "range": [
+        "LOS (A)"
+      ],
+      "damage": "P",
+      "duration": "I",
+      "dv": "(F/2)+5",
+      "source": "SM",
+      "page": "168"
+    },
+    {
+      "name": "Steam",
+      "descriptor": "Indirect, Elemental",
+      "category": [
+        "Combat"
+      ],
+      "type": "P",
+      "range": [
+        "LOS"
+      ],
+      "damage": "P",
+      "duration": "I",
+      "dv": "(F/2)+3",
+      "source": "SM",
+      "page": "168"
+    },
+    {
+      "name": "Smoke Cloud",
+      "descriptor": "Indirect, Elemental, Area",
+      "category": [
+        "Combat"
+      ],
+      "type": "P",
+      "range": [
+        "LOS (A)"
+      ],
+      "damage": "P",
+      "duration": "I",
+      "dv": "(F/2)+5",
+      "source": "SM",
+      "page": "168"
+    },
+    {
+      "name": "Screech",
+      "descriptor": "Indirect, Elemental",
+      "category": [
+        "Combat"
+      ],
+      "type": "P",
+      "range": [
+        "LOS"
+      ],
+      "damage": "P",
+      "duration": "I",
+      "dv": "(F/2)+3",
+      "source": "SM",
+      "page": "168"
+    },
+    {
+      "name": "Soundwave",
+      "descriptor": "Indirect, Elemental, Area",
+      "category": [
+        "Combat"
+      ],
+      "type": "P",
+      "range": [
+        "LOS (A)"
+      ],
+      "damage": "P",
+      "duration": "I",
+      "dv": "(F/2)+5",
+      "source": "SM",
+      "page": "168"
+    },
+    {
+      "name": "Hose",
+      "descriptor": "Indirect, Elemental",
+      "category": [
+        "Combat"
+      ],
+      "type": "P",
+      "range": [
+        "LOS"
+      ],
+      "damage": "P",
+      "duration": "I",
+      "dv": "(F/2)+3",
+      "source": "SM",
+      "page": "168"
+    },
+    {
+      "name": "Tsunami",
+      "descriptor": "Indirect, Elemental, Area",
+      "category": [
+        "Combat"
+      ],
+      "type": "P",
+      "range": [
+        "LOS (A)"
+      ],
+      "damage": "P",
+      "duration": "I",
+      "dv": "(F/2)+5",
+      "source": "SM",
+      "page": "168"
+    },
+    {
+      "name": "Analyze Device",
+      "descriptor": "Active, Directional",
+      "category": [
+        "Detection"
+      ],
+      "type": "P",
+      "range": [
+        "T"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)",
+      "source": "SR4",
+      "page": "206"
+    },
+    {
+      "name": "Analyze Magic",
+      "descriptor": "Active, Directional",
+      "category": [
+        "Detection"
+      ],
+      "type": "M",
+      "range": [
+        "T"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)",
+      "source": "SM",
+      "page": "165"
+    },
+    {
+      "name": "Analyze Truth",
+      "descriptor": "Active, Directional",
+      "category": [
+        "Detection"
+      ],
+      "type": "M",
+      "range": [
+        "T"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)",
+      "source": "SR4",
+      "page": "206"
+    },
+    {
+      "name": "Animal Sense",
+      "descriptor": "Active, Directional",
+      "category": [
+        "Detection"
+      ],
+      "type": "M",
+      "range": [
+        "T"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)-1",
+      "source": "SM",
+      "page": "166"
+    },
+    {
+      "name": "Area Thought Recognition",
+      "descriptor": "Active, Psychic, Area",
+      "category": [
+        "Detection"
+      ],
+      "type": "M",
+      "range": [
+        "T"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)+2",
+      "source": "SM",
+      "page": "168"
+    },
+    {
+      "name": "Astral Clairvoyance",
+      "descriptor": "Passive, Directional",
+      "category": [
+        "Detection"
+      ],
+      "type": "M",
+      "range": [
+        "T"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)-1",
+      "source": "SM",
+      "page": "166"
+    },
+    {
+      "name": "Astral Window",
+      "descriptor": "Active, Directional",
+      "category": [
+        "Detection"
+      ],
+      "type": "M",
+      "range": [
+        "T"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)",
+      "source": "SM",
+      "page": "168"
+    },
+    {
+      "name": "Blood Sight",
+      "descriptor": "Active",
+      "category": [
+        "Detection"
+      ],
+      "type": "M",
+      "range": [
+        "LOS"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)+2",
+      "source": "SG",
+      "page": "163"
+    },
+    {
+      "name": "Borrow Sense",
+      "descriptor": "Active, Directional",
+      "category": [
+        "Detection"
+      ],
+      "type": "M",
+      "range": [
+        "T"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)",
+      "source": "SM",
+      "page": "166"
+    },
+    {
+      "name": "Catalog",
+      "descriptor": "Active, Area",
+      "category": [
+        "Detection"
+      ],
+      "type": "P",
+      "range": [
+        "T"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)+2",
+      "source": "SM",
+      "page": "167"
+    },
+    {
+      "name": "Clairaudience",
+      "descriptor": "Passive, Directional",
+      "category": [
+        "Detection"
+      ],
+      "type": "M",
+      "range": [
+        "T"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)-1",
+      "source": "SR4",
+      "page": "206"
+    },
+    {
+      "name": "Clairvoyance",
+      "descriptor": "Passive, Directional",
+      "category": [
+        "Detection"
+      ],
+      "type": "M",
+      "range": [
+        "T"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)-1",
+      "source": "SR4",
+      "page": "206"
+    },
+    {
+      "name": "Combat Sense",
+      "descriptor": "Active, Psychic",
+      "category": [
+        "Detection"
+      ],
+      "type": "M",
+      "range": [
+        "T"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)+2",
+      "source": "SR4",
+      "page": "206"
+    },
+    {
+      "name": "Detect Enemies",
+      "descriptor": "Active, Area",
+      "category": [
+        "Detection"
+      ],
+      "type": "M",
+      "range": [
+        "T"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)+1",
+      "source": "SR4",
+      "page": "206"
+    },
+    {
+      "name": "Detect Enemies, Extended",
+      "descriptor": "Active, Extended Area",
+      "category": [
+        "Detection"
+      ],
+      "type": "M",
+      "range": [
+        "T"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)+3",
+      "source": "SR4",
+      "page": "206"
+    },
+    {
+      "name": "Detect Individual",
+      "descriptor": "Active, Area",
+      "category": [
+        "Detection"
+      ],
+      "type": "M",
+      "range": [
+        "T"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)-1",
+      "source": "SR4",
+      "page": "206"
+    },
+    {
+      "name": "Detect Life",
+      "descriptor": "Active, Area",
+      "category": [
+        "Detection"
+      ],
+      "type": "M",
+      "range": [
+        "T"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)",
+      "source": "SR4",
+      "page": "206"
+    },
+    {
+      "name": "Detect Life, Extended",
+      "descriptor": "Active, Extended Area",
+      "category": [
+        "Detection"
+      ],
+      "type": "M",
+      "range": [
+        "T"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)+2",
+      "source": "SR4",
+      "page": "206"
+    },
+    {
+      "name": "Detect [Life Form]",
+      "descriptor": "Active, Area",
+      "category": [
+        "Detection"
+      ],
+      "type": "M",
+      "range": [
+        "T"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)-1",
+      "source": "SR4",
+      "page": "207"
+    },
+    {
+      "name": "Detect [Life Form], Extended",
+      "descriptor": "Active, Extended Area",
+      "category": [
+        "Detection"
+      ],
+      "type": "M",
+      "range": [
+        "T"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)+1",
+      "source": "SR4",
+      "page": "207"
+    },
+    {
+      "name": "Detect Magic",
+      "descriptor": "Active, Area",
+      "category": [
+        "Detection"
+      ],
+      "type": "M",
+      "range": [
+        "T"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)",
+      "source": "SR4",
+      "page": "207"
+    },
+    {
+      "name": "Detect Magic, Extended Area",
+      "descriptor": "Active, Extended Area",
+      "category": [
+        "Detection"
+      ],
+      "type": "M",
+      "range": [
+        "T"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)+2",
+      "source": "SR4",
+      "page": "207"
+    },
+    {
+      "name": "Detect [Object]",
+      "descriptor": "Active, Area",
+      "category": [
+        "Detection"
+      ],
+      "type": "P",
+      "range": [
+        "T"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)-1",
+      "source": "SR4",
+      "page": "207"
+    },
+    {
+      "name": "Diagnose",
+      "descriptor": "Active, Directional",
+      "category": [
+        "Detection"
+      ],
+      "type": "M",
+      "range": [
+        "T"
+      ],
+      "damage": "0",
+      "duration": "I",
+      "dv": "(F/2)",
+      "source": "SM",
+      "page": "167"
+    },
+    {
+      "name": "Enhance Aim",
+      "descriptor": "Passive, Directional",
+      "category": [
+        "Detection"
+      ],
+      "type": "P",
+      "range": [
+        "T"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)-1",
+      "source": "SM",
+      "page": "167"
+    },
+    {
+      "name": "Eyes of the Pack",
+      "descriptor": "Passive, Directional",
+      "category": [
+        "Detection"
+      ],
+      "type": "M",
+      "range": [
+        "T"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)+1",
+      "source": "SM",
+      "page": "166"
+    },
+    {
+      "name": "Hawkeye",
+      "descriptor": "Passive, Directional",
+      "category": [
+        "Detection"
+      ],
+      "type": "P",
+      "range": [
+        "T"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)-1",
+      "source": "SM",
+      "page": "167"
+    },
+    {
+      "name": "Mana Window",
+      "descriptor": "Active, Directional",
+      "category": [
+        "Detection"
+      ],
+      "type": "M",
+      "range": [
+        "T"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)",
+      "source": "SM",
+      "page": "168"
+    },
+    {
+      "name": "Mind Probe",
+      "descriptor": "Active, Directional",
+      "category": [
+        "Detection"
+      ],
+      "type": "M",
+      "range": [
+        "T"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)+2",
+      "source": "SR4",
+      "page": "207"
+    },
+    {
+      "name": "Mindlink",
+      "descriptor": "Active, Psychic",
+      "category": [
+        "Detection"
+      ],
+      "type": "M",
+      "range": [
+        "T"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)+1",
+      "source": "SR4",
+      "page": "207"
+    },
+    {
+      "name": "Mindnet",
+      "descriptor": "Active, Psychic, Area",
+      "category": [
+        "Detection"
+      ],
+      "type": "M",
+      "range": [
+        "T (A)"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)+3",
+      "source": "SM",
+      "page": "168"
+    },
+    {
+      "name": "Mindnet, Extended",
+      "descriptor": "Active, Psychic, Extended Area",
+      "category": [
+        "Detection"
+      ],
+      "type": "M",
+      "range": [
+        "T (A)"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)+5",
+      "source": "SM",
+      "page": "168"
+    },
+    {
+      "name": "Night Vision",
+      "descriptor": "Passive, Directional",
+      "category": [
+        "Detection"
+      ],
+      "type": "P",
+      "range": [
+        "T"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)-1",
+      "source": "SM",
+      "page": "168"
+    },
+    {
+      "name": "Passenger",
+      "descriptor": "Active, Psychic",
+      "category": [
+        "Detection"
+      ],
+      "type": "M",
+      "range": [
+        "T"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)+3",
+      "source": "DG",
+      "page": "17"
+    },
+    {
+      "name": "Recorded Room",
+      "descriptor": "Passive, Area",
+      "category": [
+        "Detection"
+      ],
+      "type": "P",
+      "range": [
+        "LOS (A)"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)+3",
+      "source": "SG",
+      "page": "163"
+    },
+    {
+      "name": "Secret Handshake",
+      "descriptor": "Active, Area",
+      "category": [
+        "Detection"
+      ],
+      "type": "M",
+      "range": [
+        "T"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)-2",
+      "source": "SG",
+      "page": "163"
+    },
+    {
+      "name": "Sending",
+      "descriptor": "Active, Area, Psychic",
+      "category": [
+        "Detection"
+      ],
+      "type": "M",
+      "range": [
+        "T"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)+1",
+      "source": "WAR",
+      "page": "177"
+    },
+    {
+      "name": "[Sense] Cryptesthesia",
+      "descriptor": "Passive, Directional",
+      "category": [
+        "Detection"
+      ],
+      "type": "M",
+      "range": [
+        "T"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)",
+      "source": "SM",
+      "page": "168"
+    },
+    {
+      "name": "[Sense] Link",
+      "descriptor": "Active, Psychic",
+      "category": [
+        "Detection"
+      ],
+      "type": "M",
+      "range": [
+        "T"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)-1",
+      "source": "DG",
+      "page": "17"
+    },
+    {
+      "name": "Spatial Sense",
+      "descriptor": "Passive, Area",
+      "category": [
+        "Detection"
+      ],
+      "type": "P",
+      "range": [
+        "T"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)+2",
+      "source": "SM",
+      "page": "168"
+    },
+    {
+      "name": "Spatial Sense, Extended",
+      "descriptor": "Passive, Extended Area",
+      "category": [
+        "Detection"
+      ],
+      "type": "P",
+      "range": [
+        "T"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)+4",
+      "source": "SM",
+      "page": "168"
+    },
+    {
+      "name": "Thermographic Vision",
+      "descriptor": "Passive, Directional",
+      "category": [
+        "Detection"
+      ],
+      "type": "P",
+      "range": [
+        "T"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)-1",
+      "source": "SM",
+      "page": "168"
+    },
+    {
+      "name": "Thought Recognition",
+      "descriptor": "Active, Psychic, Directional",
+      "category": [
+        "Detection"
+      ],
+      "type": "M",
+      "range": [
+        "T"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)",
+      "source": "SM",
+      "page": "168"
+    },
+    {
+      "name": "Translate",
+      "descriptor": "Active, Psychic, Directional",
+      "category": [
+        "Detection"
+      ],
+      "type": "M",
+      "range": [
+        "T"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)",
+      "source": "SM",
+      "page": "169"
+    },
+    {
+      "name": "Alleviate Addiction",
+      "category": [
+        "Health"
+      ],
+      "type": "M",
+      "range": [
+        "T"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)-4",
+      "source": "SM",
+      "page": "169"
+    },
+    {
+      "name": "Alleviate Allergy",
+      "category": [
+        "Health"
+      ],
+      "type": "M",
+      "range": [
+        "T"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)-4",
+      "source": "SM",
+      "page": "169"
+    },
+    {
+      "name": "Alleviate Nausea",
+      "category": [
+        "Health"
+      ],
+      "type": "M",
+      "range": [
+        "T"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)-3",
+      "source": "DG",
+      "page": "17"
+    },
+    {
+      "name": "Antidote",
+      "category": [
+        "Health"
+      ],
+      "type": "M",
+      "range": [
+        "T"
+      ],
+      "damage": "0",
+      "duration": "P",
+      "dv": "(Toxin DV)-2",
+      "source": "SR4",
+      "page": "207"
+    },
+    {
+      "name": "Awaken",
+      "category": [
+        "Health"
+      ],
+      "type": "M",
+      "range": [
+        "T"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)-4",
+      "source": "SM",
+      "page": "169"
+    },
+    {
+      "name": "Calm Mind",
+      "category": [
+        "Health"
+      ],
+      "type": "M",
+      "range": [
+        "T"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)-2",
+      "source": "WAR",
+      "page": "178"
+    },
+    {
+      "name": "Crank",
+      "category": [
+        "Health"
+      ],
+      "type": "P",
+      "range": [
+        "T"
+      ],
+      "damage": "0",
+      "duration": "P",
+      "dv": "(F/2)",
+      "source": "SM",
+      "page": "169"
+    },
+    {
+      "name": "Cure Disease",
+      "category": [
+        "Health"
+      ],
+      "type": "M",
+      "range": [
+        "T"
+      ],
+      "damage": "0",
+      "duration": "P",
+      "dv": "(Disease DV)-2",
+      "source": "SR4",
+      "page": "207"
+    },
+    {
+      "name": "Decontamination",
+      "category": [
+        "Health"
+      ],
+      "type": "M",
+      "range": [
+        "T"
+      ],
+      "damage": "0",
+      "duration": "P",
+      "dv": "(Radiation Power)-2",
+      "source": "DG",
+      "page": "17"
+    },
+    {
+      "name": "Decrease [Attribute]",
+      "descriptor": "Negative",
+      "category": [
+        "Health"
+      ],
+      "type": "P",
+      "range": [
+        "T"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)+1",
+      "bonus": {
+        "selectattribute": {
+          "excludeattribute": [
+            "MAG",
+            "RES",
+            "EDG"
+          ]
+        }
+      },
+      "source": "SR4",
+      "page": "207"
+    },
+    {
+      "name": "Decrease Reflexes",
+      "descriptor": "Negative",
+      "category": [
+        "Health"
+      ],
+      "type": "P",
+      "range": [
+        "T"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)+1",
+      "source": "SM",
+      "page": "169"
+    },
+    {
+      "name": "Detox",
+      "category": [
+        "Health"
+      ],
+      "type": "M",
+      "range": [
+        "T"
+      ],
+      "damage": "0",
+      "duration": "P",
+      "dv": "(Toxin DV)-4",
+      "source": "SR4",
+      "page": "207"
+    },
+    {
+      "name": "Enabler",
+      "descriptor": "Negative",
+      "category": [
+        "Health"
+      ],
+      "type": "M",
+      "range": [
+        "T"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)",
+      "source": "SM",
+      "page": "169"
+    },
+    {
+      "name": "Fast",
+      "category": [
+        "Health"
+      ],
+      "type": "M",
+      "range": [
+        "T"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)-5",
+      "source": "SM",
+      "page": "169"
+    },
+    {
+      "name": "Heal",
+      "category": [
+        "Health"
+      ],
+      "type": "M",
+      "range": [
+        "T"
+      ],
+      "damage": "0",
+      "duration": "P",
+      "dv": "(Damage Value)-2",
+      "source": "SR4",
+      "page": "208"
+    },
+    {
+      "name": "Healthy Glow",
+      "category": [
+        "Health"
+      ],
+      "type": "P",
+      "range": [
+        "T"
+      ],
+      "damage": "0",
+      "duration": "P",
+      "dv": "(F/2)-1",
+      "source": "SM",
+      "page": "169"
+    },
+    {
+      "name": "Hibernate",
+      "category": [
+        "Health"
+      ],
+      "type": "M",
+      "range": [
+        "T"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)-3",
+      "source": "SR4",
+      "page": "208"
+    },
+    {
+      "name": "Increase [Attribute]",
+      "category": [
+        "Health"
+      ],
+      "type": "P",
+      "range": [
+        "T"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)-2",
+      "bonus": {
+        "selectattribute": {
+          "excludeattribute": [
+            "MAG",
+            "RES",
+            "EDG"
+          ]
+        }
+      },
+      "source": "SR4",
+      "page": "208"
+    },
+    {
+      "name": "Increase Reflexes",
+      "category": [
+        "Health"
+      ],
+      "type": "P",
+      "range": [
+        "T"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)+2",
+      "source": "SR4",
+      "page": "208"
+    },
+    {
+      "name": "Intoxication",
+      "descriptor": "Negative",
+      "category": [
+        "Health"
+      ],
+      "type": "M",
+      "range": [
+        "T"
+      ],
+      "damage": "0",
+      "duration": "P",
+      "dv": "(F/2)",
+      "source": "SM",
+      "page": "169"
+    },
+    {
+      "name": "Nauseate",
+      "descriptor": "Negative",
+      "category": [
+        "Health"
+      ],
+      "type": "M",
+      "range": [
+        "T"
+      ],
+      "damage": "0",
+      "duration": "I",
+      "dv": "(F/2)",
+      "source": "DG",
+      "page": "17"
+    },
+    {
+      "name": "Nutrition",
+      "category": [
+        "Health"
+      ],
+      "type": "P",
+      "range": [
+        "T"
+      ],
+      "damage": "0",
+      "duration": "P",
+      "dv": "(F/2)",
+      "source": "SM",
+      "page": "170"
+    },
+    {
+      "name": "Oxygenate",
+      "category": [
+        "Health"
+      ],
+      "type": "P",
+      "range": [
+        "T"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)-1",
+      "source": "SR4",
+      "page": "208"
+    },
+    {
+      "name": "Prophylaxis",
+      "category": [
+        "Health"
+      ],
+      "type": "M",
+      "range": [
+        "T"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)-2",
+      "source": "SR4",
+      "page": "208"
+    },
+    {
+      "name": "Resist Pain",
+      "category": [
+        "Health"
+      ],
+      "type": "M",
+      "range": [
+        "T"
+      ],
+      "damage": "0",
+      "duration": "P",
+      "dv": "(Damage Value)-4",
+      "source": "SR4",
+      "page": "208"
+    },
+    {
+      "name": "Stabilize",
+      "category": [
+        "Health"
+      ],
+      "type": "M",
+      "range": [
+        "T"
+      ],
+      "damage": "0",
+      "duration": "P",
+      "dv": "(Overflow damage)-2",
+      "source": "SR4",
+      "page": "208"
+    },
+    {
+      "name": "Stim",
+      "category": [
+        "Health"
+      ],
+      "type": "M",
+      "range": [
+        "T"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)-5",
+      "source": "SM",
+      "page": "170"
+    },
+    {
+      "name": "Agony",
+      "descriptor": "Realistic, Single-Sense",
+      "category": [
+        "Illusion"
+      ],
+      "type": "M",
+      "range": [
+        "LOS"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)-2",
+      "source": "SM",
+      "page": "170"
+    },
+    {
+      "name": "Bugs",
+      "descriptor": "Realistic, Multi-Sense",
+      "category": [
+        "Illusion"
+      ],
+      "type": "M",
+      "range": [
+        "LOS"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)",
+      "source": "SM",
+      "page": "170"
+    },
+    {
+      "name": "Camouflage",
+      "descriptor": "Realistic, Single-Sense",
+      "category": [
+        "Illusion"
+      ],
+      "type": "M",
+      "range": [
+        "LOS"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)-2",
+      "source": "SM",
+      "page": "170"
+    },
+    {
+      "name": "Chaff",
+      "descriptor": "Realistic, Multi-Sense",
+      "category": [
+        "Illusion"
+      ],
+      "type": "P",
+      "range": [
+        "LOS"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)",
+      "source": "SM",
+      "page": "170"
+    },
+    {
+      "name": "Chaos",
+      "descriptor": "Realistic, Multi-Sense",
+      "category": [
+        "Illusion"
+      ],
+      "type": "P",
+      "range": [
+        "LOS"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)+1",
+      "source": "SR4",
+      "page": "209"
+    },
+    {
+      "name": "Chaotic World",
+      "descriptor": "Realistic, Multi-Sense, Area",
+      "category": [
+        "Illusion"
+      ],
+      "type": "P",
+      "range": [
+        "LOS (A)"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)+3",
+      "source": "SR4",
+      "page": "209"
+    },
+    {
+      "name": "Confusion",
+      "descriptor": "Realistic, Multi-Sense",
+      "category": [
+        "Illusion"
+      ],
+      "type": "M",
+      "range": [
+        "LOS"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)",
+      "source": "SR4",
+      "page": "209"
+    },
+    {
+      "name": "Designate",
+      "descriptor": "Realistic, Single-Sense",
+      "category": [
+        "Illusion"
+      ],
+      "type": "P",
+      "range": [
+        "LOS"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)-1",
+      "source": "WAR",
+      "page": "178"
+    },
+    {
+      "name": "Double Image",
+      "descriptor": "Realistic, Multi-Sense",
+      "category": [
+        "Illusion"
+      ],
+      "type": "M",
+      "range": [
+        "T"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)-3",
+      "source": "SM",
+      "page": "170"
+    },
+    {
+      "name": "Dream",
+      "descriptor": "Realistic, Multi-Sense",
+      "category": [
+        "Illusion"
+      ],
+      "type": "M",
+      "range": [
+        "LOS"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)-1",
+      "source": "SM",
+      "page": "170"
+    },
+    {
+      "name": "Entertainment",
+      "descriptor": "Obvious, Multi-Sense, Area",
+      "category": [
+        "Illusion"
+      ],
+      "type": "M",
+      "range": [
+        "LOS (A)"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)+1",
+      "source": "SR4",
+      "page": "209"
+    },
+    {
+      "name": "False Impression",
+      "descriptor": "Realistic, Multi-Sense",
+      "category": [
+        "Illusion"
+      ],
+      "type": "M",
+      "range": [
+        "LOS"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)-1",
+      "source": "DG",
+      "page": "17"
+    },
+    {
+      "name": "Flak",
+      "descriptor": "Realistic, Multi-Sense, Area",
+      "category": [
+        "Illusion"
+      ],
+      "type": "P",
+      "range": [
+        "LOS (A)"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)+2",
+      "source": "SM",
+      "page": "170"
+    },
+    {
+      "name": "Flash",
+      "descriptor": "Realistic, Single-Sense",
+      "category": [
+        "Illusion"
+      ],
+      "type": "P",
+      "range": [
+        "LOS (A)"
+      ],
+      "damage": "0",
+      "duration": "I",
+      "dv": "(F/2)",
+      "source": "WAR",
+      "page": "178"
+    },
+    {
+      "name": "Flicker",
+      "descriptor": "Realistic, Single-Sense",
+      "category": [
+        "Illusion"
+      ],
+      "type": "M",
+      "range": [
+        "LOS (A)"
+      ],
+      "damage": "0",
+      "duration": "I",
+      "dv": "(F/2)-1",
+      "source": "WAR",
+      "page": "178"
+    },
+    {
+      "name": "Foreboding",
+      "descriptor": "Realistic, Multi-Sense",
+      "category": [
+        "Illusion"
+      ],
+      "type": "M",
+      "range": [
+        "LOS (A)"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)+2",
+      "source": "SM",
+      "page": "171"
+    },
+    {
+      "name": "Hot Potato",
+      "descriptor": "Realistic, Single-Sense",
+      "category": [
+        "Illusion"
+      ],
+      "type": "M",
+      "range": [
+        "LOS (A)"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)-1",
+      "source": "SM",
+      "page": "171"
+    },
+    {
+      "name": "Hush",
+      "descriptor": "Realistic, Single-Sense, Area",
+      "category": [
+        "Illusion"
+      ],
+      "type": "M",
+      "range": [
+        "LOS (A)"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)+2",
+      "source": "SR4",
+      "page": "209"
+    },
+    {
+      "name": "Improved Invisibility",
+      "descriptor": "Realistic, Single-Sense",
+      "category": [
+        "Illusion"
+      ],
+      "type": "P",
+      "range": [
+        "LOS"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)+1",
+      "source": "SR4",
+      "page": "209"
+    },
+    {
+      "name": "Invisibility",
+      "descriptor": "Realistic, Single-Sense",
+      "category": [
+        "Illusion"
+      ],
+      "type": "M",
+      "range": [
+        "LOS"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)",
+      "source": "SR4",
+      "page": "209"
+    },
+    {
+      "name": "Manascape",
+      "descriptor": "Realistic, Multi-Sense, Area",
+      "category": [
+        "Illusion"
+      ],
+      "type": "M",
+      "range": [
+        "LOS (A)"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)+1",
+      "source": "DG",
+      "page": "17"
+    },
+    {
+      "name": "Mask",
+      "descriptor": "Realistic, Multi-Sense",
+      "category": [
+        "Illusion"
+      ],
+      "type": "M",
+      "range": [
+        "T"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)",
+      "source": "SR4",
+      "page": "209"
+    },
+    {
+      "name": "Mass Agony",
+      "descriptor": "Realistic, Single-Sense, Area",
+      "category": [
+        "Illusion"
+      ],
+      "type": "M",
+      "range": [
+        "LOS (A)"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)",
+      "source": "SM",
+      "page": "170"
+    },
+    {
+      "name": "Mass Confusion",
+      "descriptor": "Realistic, Multi-Sense, Area",
+      "category": [
+        "Illusion"
+      ],
+      "type": "M",
+      "range": [
+        "LOS (A)"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)+2",
+      "source": "SR4",
+      "page": "209"
+    },
+    {
+      "name": "Mass [Sense] Removal",
+      "descriptor": "Realistic, Single-Sense, Area",
+      "category": [
+        "Illusion"
+      ],
+      "type": "P",
+      "range": [
+        "LOS (A)"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)+1",
+      "source": "SM",
+      "page": "171"
+    },
+    {
+      "name": "Orgasm",
+      "descriptor": "Realistic, Single-Sense",
+      "category": [
+        "Illusion"
+      ],
+      "type": "M",
+      "range": [
+        "LOS"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)-2",
+      "source": "SM",
+      "page": "171"
+    },
+    {
+      "name": "Orgy",
+      "descriptor": "Realistic, Single-Sense",
+      "category": [
+        "Illusion"
+      ],
+      "type": "M",
+      "range": [
+        "LOS (A)"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)",
+      "source": "SM",
+      "page": "171"
+    },
+    {
+      "name": "Phantasm",
+      "descriptor": "Realistic, Multi-Sense, Area",
+      "category": [
+        "Illusion"
+      ],
+      "type": "M",
+      "range": [
+        "LOS (A)"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)+2",
+      "source": "SR4",
+      "page": "209"
+    },
+    {
+      "name": "Physical Camouflage",
+      "descriptor": "Realistic, Single-Sense",
+      "category": [
+        "Illusion"
+      ],
+      "type": "M",
+      "range": [
+        "LOS"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)-1",
+      "source": "SM",
+      "page": "170"
+    },
+    {
+      "name": "Physical Double Image",
+      "descriptor": "Realistic, Multi-Sense, Area",
+      "category": [
+        "Illusion"
+      ],
+      "type": "P",
+      "range": [
+        "LOS (A)"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)-2",
+      "source": "SM",
+      "page": "170"
+    },
+    {
+      "name": "Physical Mask",
+      "descriptor": "Realistic, Multi-Sense",
+      "category": [
+        "Illusion"
+      ],
+      "type": "P",
+      "range": [
+        "T"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)+1",
+      "source": "SR4",
+      "page": "209"
+    },
+    {
+      "name": "[Sense] Removal",
+      "descriptor": "Realistic, Single-Sense",
+      "category": [
+        "Illusion"
+      ],
+      "type": "P",
+      "range": [
+        "LOS"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)-1",
+      "source": "SM",
+      "page": "171"
+    },
+    {
+      "name": "Silence",
+      "descriptor": "Realistic, Single-Sense, Area",
+      "category": [
+        "Illusion"
+      ],
+      "type": "P",
+      "range": [
+        "LOS (A)"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)+3",
+      "source": "SR4",
+      "page": "209"
+    },
+    {
+      "name": "Sound Barrier",
+      "descriptor": "Realistic, Single-Sense, Area",
+      "category": [
+        "Illusion"
+      ],
+      "type": "P",
+      "range": [
+        "LOS (A)"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)+3",
+      "source": "SM",
+      "page": "171"
+    },
+    {
+      "name": "Stealth",
+      "descriptor": "Realistic, Single-Sense",
+      "category": [
+        "Illusion"
+      ],
+      "type": "P",
+      "range": [
+        "LOS"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)+1",
+      "source": "SR4",
+      "page": "209"
+    },
+    {
+      "name": "Stench",
+      "descriptor": "Realistic, Single-Sense, Area",
+      "category": [
+        "Illusion"
+      ],
+      "type": "M",
+      "range": [
+        "LOS (A)"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)",
+      "source": "SM",
+      "page": "171"
+    },
+    {
+      "name": "Stink",
+      "descriptor": "Realistic, Single-Sense",
+      "category": [
+        "Illusion"
+      ],
+      "type": "M",
+      "range": [
+        "LOS"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)-2",
+      "source": "SM",
+      "page": "171"
+    },
+    {
+      "name": "Swarm",
+      "descriptor": "Realistic, Multi-Sense",
+      "category": [
+        "Illusion"
+      ],
+      "type": "M",
+      "range": [
+        "LOS (A)"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)+2",
+      "source": "SM",
+      "page": "170"
+    },
+    {
+      "name": "Trid Entertainment",
+      "descriptor": "Obvious, Multi-Sense, Area",
+      "category": [
+        "Illusion"
+      ],
+      "type": "P",
+      "range": [
+        "LOS (A)"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)+2",
+      "source": "SR4",
+      "page": "209"
+    },
+    {
+      "name": "Trid Phantasm",
+      "descriptor": "Realistic, Multi-Sense, Area",
+      "category": [
+        "Illusion"
+      ],
+      "type": "P",
+      "range": [
+        "LOS (A)"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)+3",
+      "source": "SR4",
+      "page": "209"
+    },
+    {
+      "name": "Vehicle Mask",
+      "descriptor": "Realistic, Multi-Sense",
+      "category": [
+        "Illusion"
+      ],
+      "type": "P",
+      "range": [
+        "T"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)-2",
+      "source": "SM",
+      "page": "171"
+    },
+    {
+      "name": "Alter Memory",
+      "descriptor": "Mental",
+      "category": [
+        "Manipulation"
+      ],
+      "type": "M",
+      "range": [
+        "LOS"
+      ],
+      "damage": "0",
+      "duration": "P",
+      "dv": "(F/2)+2",
+      "source": "SM",
+      "page": "171"
+    },
+    {
+      "name": "Alter Temperature",
+      "descriptor": "Environmental, Area",
+      "category": [
+        "Manipulation"
+      ],
+      "type": "P",
+      "range": [
+        "LOS (A)"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)+1",
+      "source": "SM",
+      "page": "171"
+    },
+    {
+      "name": "Animate",
+      "descriptor": "Physical",
+      "category": [
+        "Manipulation"
+      ],
+      "type": "P",
+      "range": [
+        "LOS"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)",
+      "source": "SM",
+      "page": "172"
+    },
+    {
+      "name": "Armor",
+      "descriptor": "Physical",
+      "category": [
+        "Manipulation"
+      ],
+      "type": "P",
+      "range": [
+        "LOS"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)+3",
+      "source": "SR4",
+      "page": "210"
+    },
+    {
+      "name": "Astral Armor",
+      "descriptor": "Mana",
+      "category": [
+        "Manipulation"
+      ],
+      "type": "M",
+      "range": [
+        "LOS"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)+2",
+      "source": "SM",
+      "page": "172"
+    },
+    {
+      "name": "Bind",
+      "descriptor": "Physical",
+      "category": [
+        "Manipulation"
+      ],
+      "type": "P",
+      "range": [
+        "LOS"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)+1",
+      "source": "SM",
+      "page": "172"
+    },
+    {
+      "name": "Calm Animal",
+      "descriptor": "Mental",
+      "category": [
+        "Manipulation"
+      ],
+      "type": "M",
+      "range": [
+        "LOS"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)-1",
+      "source": "SM",
+      "page": "172"
+    },
+    {
+      "name": "Calm Pack",
+      "descriptor": "Mental, Area",
+      "category": [
+        "Manipulation"
+      ],
+      "type": "M",
+      "range": [
+        "LOS (A)"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)+1",
+      "source": "SM",
+      "page": "172"
+    },
+    {
+      "name": "Catfall",
+      "descriptor": "Physical",
+      "category": [
+        "Manipulation"
+      ],
+      "type": "P",
+      "range": [
+        "LOS"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)",
+      "source": "SM",
+      "page": "172"
+    },
+    {
+      "name": "Clean [Element]",
+      "descriptor": "Environmental, Area",
+      "category": [
+        "Manipulation"
+      ],
+      "type": "P",
+      "range": [
+        "LOS (A)"
+      ],
+      "damage": "0",
+      "duration": "P",
+      "dv": "(F/2)+2",
+      "source": "SM",
+      "page": "172"
+    },
+    {
+      "name": "Compel Truth",
+      "descriptor": "Mental",
+      "category": [
+        "Manipulation"
+      ],
+      "type": "M",
+      "range": [
+        "LOS"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)-1",
+      "source": "SM",
+      "page": "172"
+    },
+    {
+      "name": "Control Actions",
+      "descriptor": "Mental",
+      "category": [
+        "Manipulation"
+      ],
+      "type": "M",
+      "range": [
+        "LOS"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)",
+      "source": "SR4",
+      "page": "210"
+    },
+    {
+      "name": "Control Animal",
+      "descriptor": "Mental",
+      "category": [
+        "Manipulation"
+      ],
+      "type": "M",
+      "range": [
+        "LOS"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)+1",
+      "source": "SM",
+      "page": "172"
+    },
+    {
+      "name": "Control Emotions",
+      "descriptor": "Mental",
+      "category": [
+        "Manipulation"
+      ],
+      "type": "M",
+      "range": [
+        "LOS"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)",
+      "source": "SR4",
+      "page": "210"
+    },
+    {
+      "name": "Control Pack",
+      "descriptor": "Mental, Area",
+      "category": [
+        "Manipulation"
+      ],
+      "type": "M",
+      "range": [
+        "LOS (A)"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)+3",
+      "source": "SM",
+      "page": "172"
+    },
+    {
+      "name": "Control Thoughts",
+      "descriptor": "Mental",
+      "category": [
+        "Manipulation"
+      ],
+      "type": "M",
+      "range": [
+        "LOS"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)+2",
+      "source": "SR4",
+      "page": "210"
+    },
+    {
+      "name": "Critter Form [Critter]",
+      "descriptor": "Physical",
+      "category": [
+        "Manipulation"
+      ],
+      "type": "P",
+      "range": [
+        "LOS"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)+1",
+      "source": "SR4",
+      "page": "211"
+    },
+    {
+      "name": "Deflection",
+      "descriptor": "Physical",
+      "category": [
+        "Manipulation"
+      ],
+      "type": "P",
+      "range": [
+        "LOS"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)+1",
+      "source": "SM",
+      "page": "172"
+    },
+    {
+      "name": "[Elemental] Aura",
+      "descriptor": "Environmental",
+      "category": [
+        "Manipulation"
+      ],
+      "type": "P",
+      "range": [
+        "LOS"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)+3",
+      "source": "SM",
+      "page": "173"
+    },
+    {
+      "name": "[Elemental] Cloud",
+      "descriptor": "Environmental",
+      "category": [
+        "Manipulation"
+      ],
+      "type": "P",
+      "range": [
+        "LOS (A)"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)+5",
+      "source": "WAR",
+      "page": "178"
+    },
+    {
+      "name": "[Elemental] Wall",
+      "descriptor": "Environmental, Area",
+      "category": [
+        "Manipulation"
+      ],
+      "type": "P",
+      "range": [
+        "LOS (A)"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)+5",
+      "source": "SM",
+      "page": "173"
+    },
+    {
+      "name": "Fashion",
+      "descriptor": "Physical",
+      "category": [
+        "Manipulation"
+      ],
+      "type": "P",
+      "range": [
+        "T"
+      ],
+      "damage": "0",
+      "duration": "P",
+      "dv": "(F/2)",
+      "source": "SM",
+      "page": "173"
+    },
+    {
+      "name": "Firewater Aura",
+      "descriptor": "Environmental",
+      "category": [
+        "Manipulation"
+      ],
+      "type": "P",
+      "range": [
+        "LOS"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)+6",
+      "source": "DG",
+      "page": "17"
+    },
+    {
+      "name": "Fix",
+      "descriptor": "Physical",
+      "category": [
+        "Manipulation"
+      ],
+      "type": "P",
+      "range": [
+        "T"
+      ],
+      "damage": "0",
+      "duration": "P",
+      "dv": "(F/2)+1",
+      "source": "SM",
+      "page": "173"
+    },
+    {
+      "name": "Fling",
+      "descriptor": "Physical",
+      "category": [
+        "Manipulation"
+      ],
+      "type": "P",
+      "range": [
+        "LOS"
+      ],
+      "damage": "0",
+      "duration": "I",
+      "dv": "(F/2)+1",
+      "source": "SR4",
+      "page": "210"
+    },
+    {
+      "name": "Gecko Crawl",
+      "descriptor": "Physical",
+      "category": [
+        "Manipulation"
+      ],
+      "type": "P",
+      "range": [
+        "T"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)-1",
+      "source": "SM",
+      "page": "173"
+    },
+    {
+      "name": "Glue",
+      "descriptor": "Physical",
+      "category": [
+        "Manipulation"
+      ],
+      "type": "P",
+      "range": [
+        "LOS"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)+1",
+      "source": "SM",
+      "page": "173"
+    },
+    {
+      "name": "Glue Strip",
+      "descriptor": "Physical, Area",
+      "category": [
+        "Manipulation"
+      ],
+      "type": "P",
+      "range": [
+        "LOS (A)"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)+3",
+      "source": "SM",
+      "page": "173"
+    },
+    {
+      "name": "Hidden Pocket",
+      "descriptor": "Physical",
+      "category": [
+        "Manipulation"
+      ],
+      "type": "P",
+      "range": [
+        "T"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)+3",
+      "source": "SG",
+      "page": "163"
+    },
+    {
+      "name": "Ice Sheet",
+      "descriptor": "Environmental, Area",
+      "category": [
+        "Manipulation"
+      ],
+      "type": "P",
+      "range": [
+        "LOS (A)"
+      ],
+      "damage": "0",
+      "duration": "I",
+      "dv": "(F/2)+3",
+      "source": "SR4",
+      "page": "210"
+    },
+    {
+      "name": "Ignite",
+      "descriptor": "Physical",
+      "category": [
+        "Manipulation"
+      ],
+      "type": "P",
+      "range": [
+        "LOS"
+      ],
+      "damage": "0",
+      "duration": "P",
+      "dv": "(F/2)",
+      "source": "SR4",
+      "page": "210"
+    },
+    {
+      "name": "Influence",
+      "descriptor": "Mental",
+      "category": [
+        "Manipulation"
+      ],
+      "type": "M",
+      "range": [
+        "LOS"
+      ],
+      "damage": "0",
+      "duration": "P",
+      "dv": "(F/2)+1",
+      "source": "SR4",
+      "page": "210"
+    },
+    {
+      "name": "Interference",
+      "descriptor": "Environmental, Area",
+      "category": [
+        "Manipulation"
+      ],
+      "type": "P",
+      "range": [
+        "LOS (A)"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)+3",
+      "source": "SM",
+      "page": "173"
+    },
+    {
+      "name": "Levitate",
+      "descriptor": "Physical",
+      "category": [
+        "Manipulation"
+      ],
+      "type": "P",
+      "range": [
+        "LOS"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)+1",
+      "source": "SR4",
+      "page": "210"
+    },
+    {
+      "name": "Light",
+      "descriptor": "Environmental, Area",
+      "category": [
+        "Manipulation"
+      ],
+      "type": "P",
+      "range": [
+        "LOS (A)"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)-1",
+      "source": "SR4",
+      "page": "211"
+    },
+    {
+      "name": "Lock",
+      "descriptor": "Physical",
+      "category": [
+        "Manipulation"
+      ],
+      "type": "P",
+      "range": [
+        "LOS"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)",
+      "source": "SM",
+      "page": "173"
+    },
+    {
+      "name": "Looking Glass",
+      "descriptor": "Physical",
+      "category": [
+        "Manipulation"
+      ],
+      "type": "P",
+      "range": [
+        "T"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)+3",
+      "source": "SG",
+      "page": "163"
+    },
+    {
+      "name": "Magic Fingers",
+      "descriptor": "Physical",
+      "category": [
+        "Manipulation"
+      ],
+      "type": "P",
+      "range": [
+        "LOS"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)+1",
+      "source": "SR4",
+      "page": "211"
+    },
+    {
+      "name": "Makeover",
+      "descriptor": "Physical",
+      "category": [
+        "Manipulation"
+      ],
+      "type": "P",
+      "range": [
+        "T"
+      ],
+      "damage": "0",
+      "duration": "P",
+      "dv": "(F/2)",
+      "source": "SM",
+      "page": "173"
+    },
+    {
+      "name": "Mana Barrier",
+      "descriptor": "Environmental, Area",
+      "category": [
+        "Manipulation"
+      ],
+      "type": "M",
+      "range": [
+        "LOS (A)"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)+1",
+      "source": "SR4",
+      "page": "211"
+    },
+    {
+      "name": "Mana Bind",
+      "descriptor": "Mana",
+      "category": [
+        "Manipulation"
+      ],
+      "type": "M",
+      "range": [
+        "LOS"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)",
+      "source": "SM",
+      "page": "172"
+    },
+    {
+      "name": "Mana Net",
+      "descriptor": "Mana, Area",
+      "category": [
+        "Manipulation"
+      ],
+      "type": "M",
+      "range": [
+        "LOS (A)"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)+2",
+      "source": "SM",
+      "page": "172"
+    },
+    {
+      "name": "Mana Static",
+      "descriptor": "Environmental, Area",
+      "category": [
+        "Manipulation"
+      ],
+      "type": "M",
+      "range": [
+        "LOS (A)"
+      ],
+      "damage": "0",
+      "duration": "P",
+      "dv": "(F/2)+4",
+      "source": "SM",
+      "page": "173"
+    },
+    {
+      "name": "Mass Animate",
+      "descriptor": "Physical",
+      "category": [
+        "Manipulation"
+      ],
+      "type": "P",
+      "range": [
+        "LOS (A)"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)+2",
+      "source": "SM",
+      "page": "172"
+    },
+    {
+      "name": "Mist",
+      "descriptor": "Environmental, Area",
+      "category": [
+        "Manipulation"
+      ],
+      "type": "P",
+      "range": [
+        "LOS (A)"
+      ],
+      "damage": "0",
+      "duration": "I",
+      "dv": "(F/2)+3",
+      "source": "SM",
+      "page": "174"
+    },
+    {
+      "name": "Mob Control",
+      "descriptor": "Mental, Area",
+      "category": [
+        "Manipulation"
+      ],
+      "type": "M",
+      "range": [
+        "LOS (A)"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)+2",
+      "source": "SR4",
+      "page": "210"
+    },
+    {
+      "name": "Mob Mind",
+      "descriptor": "Mental, Area",
+      "category": [
+        "Manipulation"
+      ],
+      "type": "M",
+      "range": [
+        "LOS (A)"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)+4",
+      "source": "SR4",
+      "page": "210"
+    },
+    {
+      "name": "Mob Mood",
+      "descriptor": "Mental, Area",
+      "category": [
+        "Manipulation"
+      ],
+      "type": "M",
+      "range": [
+        "LOS (A)"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)+2",
+      "source": "SR4",
+      "page": "210"
+    },
+    {
+      "name": "Napalm Wall",
+      "descriptor": "Environmental, Area",
+      "category": [
+        "Manipulation"
+      ],
+      "type": "P",
+      "range": [
+        "LOS (A)"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)+8",
+      "source": "DG",
+      "page": "17"
+    },
+    {
+      "name": "Net",
+      "descriptor": "Physical, Area",
+      "category": [
+        "Manipulation"
+      ],
+      "type": "P",
+      "range": [
+        "LOS (A)"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)+3",
+      "source": "SM",
+      "page": "172"
+    },
+    {
+      "name": "Offensive Mana Barrier",
+      "descriptor": "Environmental, Area",
+      "category": [
+        "Manipulation"
+      ],
+      "type": "M",
+      "range": [
+        "LOS (A)"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)+3",
+      "source": "SM",
+      "page": "174"
+    },
+    {
+      "name": "Petrify",
+      "descriptor": "Physical",
+      "category": [
+        "Manipulation"
+      ],
+      "type": "P",
+      "range": [
+        "LOS"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)+2",
+      "source": "SR4",
+      "page": "211"
+    },
+    {
+      "name": "Physical Barrier",
+      "descriptor": "Environmental, Area",
+      "category": [
+        "Manipulation"
+      ],
+      "type": "P",
+      "range": [
+        "LOS (A)"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)+3",
+      "source": "SR4",
+      "page": "211"
+    },
+    {
+      "name": "Poltergeist",
+      "descriptor": "Environmental, Area",
+      "category": [
+        "Manipulation"
+      ],
+      "type": "P",
+      "range": [
+        "LOS (A)"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)+3",
+      "source": "SR4",
+      "page": "211"
+    },
+    {
+      "name": "Preserve",
+      "descriptor": "Physical, Area",
+      "category": [
+        "Manipulation"
+      ],
+      "type": "P",
+      "range": [
+        "T"
+      ],
+      "damage": "0",
+      "duration": "P",
+      "dv": "(F/2)",
+      "source": "SM",
+      "page": "174"
+    },
+    {
+      "name": "Pulse",
+      "descriptor": "Environmental, Area",
+      "category": [
+        "Manipulation"
+      ],
+      "type": "P",
+      "range": [
+        "LOS (A)"
+      ],
+      "damage": "0",
+      "duration": "I",
+      "dv": "(F/2)+3",
+      "source": "SM",
+      "page": "174"
+    },
+    {
+      "name": "Radiation Barrier",
+      "descriptor": "Environmental, Area",
+      "category": [
+        "Manipulation"
+      ],
+      "type": "P",
+      "range": [
+        "LOS (A)"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)+5",
+      "source": "DG",
+      "page": "17"
+    },
+    {
+      "name": "Radiation Shield",
+      "descriptor": "Environmental",
+      "category": [
+        "Manipulation"
+      ],
+      "type": "P",
+      "range": [
+        "LOS"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)+3",
+      "source": "DG",
+      "page": "17"
+    },
+    {
+      "name": "Recharge",
+      "descriptor": "Physical",
+      "category": [
+        "Manipulation"
+      ],
+      "type": "P",
+      "range": [
+        "T"
+      ],
+      "damage": "0",
+      "duration": "P",
+      "dv": "(F/2)+1",
+      "source": "WAR",
+      "page": "178"
+    },
+    {
+      "name": "Reinforce",
+      "descriptor": "Physical",
+      "category": [
+        "Manipulation"
+      ],
+      "type": "P",
+      "range": [
+        "LOS"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)+1",
+      "source": "SM",
+      "page": "174"
+    },
+    {
+      "name": "Shadow",
+      "descriptor": "Environmental, Area",
+      "category": [
+        "Manipulation"
+      ],
+      "type": "P",
+      "range": [
+        "LOS (A)"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)+1",
+      "source": "SR4",
+      "page": "211"
+    },
+    {
+      "name": "Shape [Material]",
+      "descriptor": "Environmental, Area",
+      "category": [
+        "Manipulation"
+      ],
+      "type": "P",
+      "range": [
+        "LOS (A)"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)+3",
+      "source": "SM",
+      "page": "174"
+    },
+    {
+      "name": "Shapechange",
+      "descriptor": "Physical",
+      "category": [
+        "Manipulation"
+      ],
+      "type": "P",
+      "range": [
+        "LOS"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)+2",
+      "source": "SR4",
+      "page": "211"
+    },
+    {
+      "name": "Slow",
+      "descriptor": "Physical",
+      "category": [
+        "Manipulation"
+      ],
+      "type": "P",
+      "range": [
+        "LOS (A)"
+      ],
+      "damage": "0",
+      "duration": "P",
+      "dv": "(F/2)+3",
+      "source": "WAR",
+      "page": "178"
+    },
+    {
+      "name": "Spirit Barrier",
+      "descriptor": "Environmental, Area",
+      "category": [
+        "Manipulation"
+      ],
+      "type": "M",
+      "range": [
+        "LOS (A)"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)",
+      "source": "SM",
+      "page": "174"
+    },
+    {
+      "name": "Spirit Zapper",
+      "descriptor": "Environmental, Area",
+      "category": [
+        "Manipulation"
+      ],
+      "type": "M",
+      "range": [
+        "LOS (A)"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)+2",
+      "source": "SM",
+      "page": "174"
+    },
+    {
+      "name": "Sterilize",
+      "descriptor": "Physical, Area",
+      "category": [
+        "Manipulation"
+      ],
+      "type": "P",
+      "range": [
+        "LOS (A)"
+      ],
+      "damage": "0",
+      "duration": "I",
+      "dv": "(F/2)+2",
+      "source": "SM",
+      "page": "174"
+    },
+    {
+      "name": "Turn to Goo",
+      "descriptor": "Physical",
+      "category": [
+        "Manipulation"
+      ],
+      "type": "P",
+      "range": [
+        "LOS"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)+2",
+      "source": "SR4",
+      "page": "211"
+    },
+    {
+      "name": "Antirad Shield",
+      "descriptor": "Physical",
+      "category": [
+        "Manipulation"
+      ],
+      "type": "P",
+      "range": [
+        "LOS"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)+3",
+      "source": "SOX",
+      "page": "59"
+    },
+    {
+      "name": "Antirad Barrier",
+      "descriptor": "Physical, Area",
+      "category": [
+        "Manipulation"
+      ],
+      "type": "P",
+      "range": [
+        "LOS (A)"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)+5",
+      "source": "SOX",
+      "page": "59"
+    },
+    {
+      "name": "Radiation Therapy",
+      "descriptor": "Physical",
+      "category": [
+        "Manipulation"
+      ],
+      "type": "P",
+      "range": [
+        "LOS"
+      ],
+      "damage": "0",
+      "duration": "P",
+      "dv": "(F/2)+3",
+      "source": "SOX",
+      "page": "59"
+    },
+    {
+      "name": "Air Filter",
+      "category": [
+        "Manipulation"
+      ],
+      "type": "M",
+      "range": [
+        "LOS"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)-1",
+      "source": "HP",
+      "page": "162"
+    },
+    {
+      "name": "Convert Blood to Ichor",
+      "category": [
+        "Health"
+      ],
+      "type": "P",
+      "range": [
+        "T"
+      ],
+      "damage": "0",
+      "duration": "I",
+      "dv": "(F/2)+1",
+      "source": "HP",
+      "page": "162"
+    },
+    {
+      "name": "Dehydrate",
+      "descriptor": "Negative",
+      "category": [
+        "Health"
+      ],
+      "type": "P",
+      "range": [
+        "T"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)+2",
+      "source": "HP",
+      "page": "162"
+    },
+    {
+      "name": "Detect Air Pocket",
+      "descriptor": "Active, Area",
+      "category": [
+        "Detection"
+      ],
+      "type": "M",
+      "range": [
+        "T"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)+1",
+      "source": "HP",
+      "page": "162"
+    },
+    {
+      "name": "Detect Air Pocket, Extended",
+      "descriptor": "Active, Extended Area",
+      "category": [
+        "Detection"
+      ],
+      "type": "M",
+      "range": [
+        "T"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)+3",
+      "source": "HP",
+      "page": "162"
+    },
+    {
+      "name": "Evaporate",
+      "descriptor": "Physical",
+      "category": [
+        "Manipulation"
+      ],
+      "type": "M",
+      "range": [
+        "LOS"
+      ],
+      "damage": "0",
+      "duration": "P",
+      "dv": "(F/2)+2",
+      "source": "HP",
+      "page": "162"
+    },
+    {
+      "name": "Hydrate",
+      "category": [
+        "Health"
+      ],
+      "type": "P",
+      "range": [
+        "T"
+      ],
+      "damage": "0",
+      "duration": "P",
+      "dv": "(F/2)",
+      "source": "HP",
+      "page": "162"
+    },
+    {
+      "name": "Inflict Disease",
+      "category": [
+        "Health"
+      ],
+      "type": "P",
+      "range": [
+        "T"
+      ],
+      "damage": "0",
+      "duration": "I",
+      "dv": "(F/2)+1",
+      "source": "HP",
+      "page": "162"
+    },
+    {
+      "name": "Insulate",
+      "category": [
+        "Manipulation"
+      ],
+      "type": "P",
+      "range": [
+        "LOS(A)"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)-1",
+      "source": "HP",
+      "page": "162"
+    },
+    {
+      "name": "Pack Snow",
+      "descriptor": "Physical",
+      "category": [
+        "Manipulation"
+      ],
+      "type": "P",
+      "range": [
+        "LOS(A)"
+      ],
+      "damage": "0",
+      "duration": "P",
+      "dv": "(F/2)+4",
+      "source": "HP",
+      "page": "162"
+    },
+    {
+      "name": "Personal Warmth",
+      "category": [
+        "Health"
+      ],
+      "type": "P",
+      "range": [
+        "LOS"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)",
+      "source": "HP",
+      "page": "162"
+    },
+    {
+      "name": "Polar Fog",
+      "descriptor": "Realistic, Single-Sense, Area",
+      "category": [
+        "Illusion"
+      ],
+      "type": "M",
+      "range": [
+        "LOS(A)"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)-1",
+      "source": "HP",
+      "page": "162"
+    },
+    {
+      "name": "Improved Polar Fog",
+      "descriptor": "Realistic, Single-Sense, Area",
+      "category": [
+        "Illusion"
+      ],
+      "type": "P",
+      "range": [
+        "LOS(A)"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)+1",
+      "source": "HP",
+      "page": "162"
+    },
+    {
+      "name": "Rot",
+      "category": [
+        "Health"
+      ],
+      "type": "P",
+      "range": [
+        "T"
+      ],
+      "damage": "0",
+      "duration": "I",
+      "dv": "(F/2)+3",
+      "source": "HP",
+      "page": "162"
+    },
+    {
+      "name": "Snow Tunnel",
+      "descriptor": "Physical",
+      "category": [
+        "Manipulation"
+      ],
+      "type": "P",
+      "range": [
+        "LOS"
+      ],
+      "damage": "0",
+      "duration": "P",
+      "dv": "(F/2)+3",
+      "source": "HP",
+      "page": "163"
+    },
+    {
+      "name": "Shape Ice",
+      "descriptor": "Physical",
+      "category": [
+        "Manipulation"
+      ],
+      "type": "P",
+      "range": [
+        "LOS"
+      ],
+      "damage": "0",
+      "duration": "P",
+      "dv": "(F/2)",
+      "source": "HP",
+      "page": "163"
+    },
+    {
+      "name": "Body Glove",
+      "descriptor": "Physical",
+      "category": [
+        "Manipulation"
+      ],
+      "type": "P",
+      "range": [
+        "LOS"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)+4",
+      "source": "LOP",
+      "page": "23"
+    },
+    {
+      "name": "Geopathic Connection",
+      "category": [
+        "Geomancy Ritual"
+      ],
+      "type": "P",
+      "range": [
+        "LOI"
+      ],
+      "damage": "P",
+      "duration": "I",
+      "dv": "(F/2)+2",
+      "source": "PG",
+      "page": "31",
+      "required": {
+        "allof": {
+          "metamagic": [
+            "Geomancy",
+            "Home Advantage"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Ley Sight",
+      "category": [
+        "Geomancy Ritual"
+      ],
+      "type": "M",
+      "range": [
+        "LOI"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)+1",
+      "source": "PG",
+      "page": "31",
+      "required": {
+        "allof": {
+          "metamagic": [
+            "Geomancy"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Manifest Sha",
+      "category": [
+        "Geomancy Ritual"
+      ],
+      "type": "M",
+      "range": [
+        "LOI"
+      ],
+      "damage": "0",
+      "duration": "I",
+      "dv": "(F/2)+4",
+      "source": "PG",
+      "page": "32",
+      "required": {
+        "allof": {
+          "metamagic": [
+            "Geomancy",
+            "Cleansing"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Yang Zhai",
+      "category": [
+        "Geomancy Ritual"
+      ],
+      "type": "M",
+      "range": [
+        "LOI"
+      ],
+      "damage": "0",
+      "duration": "S",
+      "dv": "(F/2)+2",
+      "source": "PG",
+      "page": "32",
+      "required": {
+        "allof": {
+          "metamagic": [
+            "Geomancy",
+            "Patronage"
+          ]
+        }
+      }
+    }
+  ]
+}

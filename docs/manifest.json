@@ -1,0 +1,169 @@
+{
+  "generatedAt": "2026-07-12T11:24:57.963Z",
+  "source": "C:\\Users\\elwin\\projects\\ChummerGenSR4\\bin\\data",
+  "files": [
+    {
+      "source": "armor.xml",
+      "output": "data/armor.json",
+      "items": 194
+    },
+    {
+      "source": "bioware.xml",
+      "output": "data/bioware.json",
+      "items": 169
+    },
+    {
+      "source": "books.xml",
+      "output": "data/books.json",
+      "items": 48
+    },
+    {
+      "source": "critterpowers.xml",
+      "output": "data/critterpowers.json",
+      "items": 190
+    },
+    {
+      "source": "critters.xml",
+      "output": "data/critters.json",
+      "items": 545
+    },
+    {
+      "source": "cyberware.xml",
+      "output": "data/cyberware.json",
+      "items": 332
+    },
+    {
+      "source": "echoes.xml",
+      "output": "data/echoes.json",
+      "items": 37
+    },
+    {
+      "source": "gear.xml",
+      "output": "data/gear.json",
+      "items": 1598
+    },
+    {
+      "source": "improvements.xml",
+      "output": "data/improvements.json",
+      "items": 59
+    },
+    {
+      "source": "lifestyles.xml",
+      "output": "data/lifestyles.json",
+      "items": 226
+    },
+    {
+      "source": "martialarts.xml",
+      "output": "data/martialarts.json",
+      "items": 65
+    },
+    {
+      "source": "mentors.xml",
+      "output": "data/mentors.json",
+      "items": 43
+    },
+    {
+      "source": "metamagic.xml",
+      "output": "data/metamagic.json",
+      "items": 47
+    },
+    {
+      "source": "metatypes.xml",
+      "output": "data/metatypes.json",
+      "items": 25
+    },
+    {
+      "source": "packs.xml",
+      "output": "data/packs.json",
+      "items": 172
+    },
+    {
+      "source": "paragons.xml",
+      "output": "data/paragons.json",
+      "items": 24
+    },
+    {
+      "source": "powers.xml",
+      "output": "data/powers.json",
+      "items": 89
+    },
+    {
+      "source": "programs.xml",
+      "output": "data/programs.json",
+      "items": 96
+    },
+    {
+      "source": "qualities.xml",
+      "output": "data/qualities.json",
+      "items": 483
+    },
+    {
+      "source": "ranges.xml",
+      "output": "data/ranges.json",
+      "items": 32
+    },
+    {
+      "source": "skills.xml",
+      "output": "data/skills.json",
+      "items": 157
+    },
+    {
+      "source": "spells.xml",
+      "output": "data/spells.json",
+      "items": 253
+    },
+    {
+      "source": "streams.xml",
+      "output": "data/streams.json",
+      "items": 9
+    },
+    {
+      "source": "traditions.xml",
+      "output": "data/traditions.json",
+      "items": 27
+    },
+    {
+      "source": "vehicles.xml",
+      "output": "data/vehicles.json",
+      "items": 504
+    },
+    {
+      "source": "vessels.xml",
+      "output": "data/vessels.json",
+      "items": 3
+    },
+    {
+      "source": "weapons.xml",
+      "output": "data/weapons.json",
+      "items": 862
+    },
+    {
+      "source": "de_data.xml",
+      "output": "lang/de_data.json"
+    },
+    {
+      "source": "fr_data.xml",
+      "output": "lang/fr_data.json"
+    },
+    {
+      "source": "jp_data.xml",
+      "output": "lang/jp_data.json"
+    },
+    {
+      "source": "en-us.xml",
+      "output": "lang/en-us.ui.json"
+    },
+    {
+      "source": "de.xml",
+      "output": "lang/de.ui.json"
+    },
+    {
+      "source": "fr.xml",
+      "output": "lang/fr.ui.json"
+    },
+    {
+      "source": "jp.xml",
+      "output": "lang/jp.ui.json"
+    }
+  ]
+}

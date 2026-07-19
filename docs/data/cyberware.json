@@ -1,0 +1,6760 @@
+{
+  "version": -890,
+  "grades": [
+    {
+      "name": "Standard",
+      "ess": "1",
+      "cost": [
+        "1"
+      ],
+      "avail": "0",
+      "source": "SR4"
+    },
+    {
+      "name": "Standard (Adapsin)",
+      "ess": "0.9",
+      "cost": [
+        "1"
+      ],
+      "avail": "0",
+      "source": "SR4"
+    },
+    {
+      "name": "Standard (Second-Hand)",
+      "ess": "1.2",
+      "cost": [
+        "0.5"
+      ],
+      "avail": "-1",
+      "source": "AU"
+    },
+    {
+      "name": "Standard (Second-Hand) (Adapsin)",
+      "ess": "1.1",
+      "cost": [
+        "0.5"
+      ],
+      "avail": "-1",
+      "source": "AU"
+    },
+    {
+      "name": "Alphaware",
+      "ess": "0.8",
+      "cost": [
+        "2"
+      ],
+      "avail": "0",
+      "source": "SR4"
+    },
+    {
+      "name": "Alphaware (Adapsin)",
+      "ess": "0.7",
+      "cost": [
+        "2"
+      ],
+      "avail": "0",
+      "source": "SR4"
+    },
+    {
+      "name": "Alphaware (Second-Hand)",
+      "ess": "0.96",
+      "cost": [
+        "1"
+      ],
+      "avail": "-1",
+      "source": "AU"
+    },
+    {
+      "name": "Alphaware (Second-Hand) (Adapsin)",
+      "ess": "0.86",
+      "cost": [
+        "1"
+      ],
+      "avail": "-1",
+      "source": "AU"
+    },
+    {
+      "name": "Betaware",
+      "ess": "0.7",
+      "cost": [
+        "4"
+      ],
+      "avail": "0",
+      "source": "SR4"
+    },
+    {
+      "name": "Betaware (Adapsin)",
+      "ess": "0.6",
+      "cost": [
+        "4"
+      ],
+      "avail": "0",
+      "source": "SR4"
+    },
+    {
+      "name": "Deltaware",
+      "ess": "0.5",
+      "cost": [
+        "10"
+      ],
+      "avail": "0",
+      "source": "SR4"
+    },
+    {
+      "name": "Deltaware (Adapsin)",
+      "ess": "0.4",
+      "cost": [
+        "10"
+      ],
+      "avail": "0",
+      "source": "SR4"
+    }
+  ],
+  "categories": [
+    "Headware",
+    "Eyeware",
+    "Earware",
+    "Biodrone Control",
+    "Bodyware",
+    "Cyberlimb",
+    "Cyberlimb Enhancement",
+    "Cyberlimb Accessory",
+    "Cyberweapon",
+    "Cosmetic Modification",
+    "Cosmetic Implant",
+    {
+      "value": "Modular Plug-In",
+      "show": "false"
+    },
+    "Nanocybernetics"
+  ],
+  "cyberwares": [
+    {
+      "name": "Attention Coprocessor",
+      "category": [
+        "Headware"
+      ],
+      "rating": "3",
+      "ess": "0.3",
+      "capacity": "0",
+      "avail": "8",
+      "cost": [
+        "Rating * 3000"
+      ],
+      "bonus": {
+        "specificskill": {
+          "name": "Perception",
+          "bonus": "Rating"
+        }
+      },
+      "source": "AU",
+      "page": "36"
+    },
+    {
+      "name": "Commlink",
+      "category": [
+        "Headware"
+      ],
+      "ess": "0.2",
+      "capacity": "[2]",
+      "avail": "0",
+      "cost": [
+        "2000"
+      ],
+      "allowgear": {
+        "gearcategory": "Commlink"
+      },
+      "source": "SR4",
+      "page": "338"
+    },
+    {
+      "name": "Control Rig",
+      "category": [
+        "Headware"
+      ],
+      "ess": "0.5",
+      "capacity": "0",
+      "avail": "8",
+      "cost": [
+        "10000"
+      ],
+      "source": "SR4",
+      "page": "338"
+    },
+    {
+      "name": "Cranial Bomb - Kink Bomb",
+      "category": [
+        "Headware"
+      ],
+      "ess": "0",
+      "capacity": "[1]",
+      "avail": "16F",
+      "cost": [
+        "2000"
+      ],
+      "source": "SR4",
+      "page": "339"
+    },
+    {
+      "name": "Cranial Bomb - Microbomb",
+      "category": [
+        "Headware"
+      ],
+      "ess": "0",
+      "capacity": "[2]",
+      "avail": "16F",
+      "cost": [
+        "5000"
+      ],
+      "source": "SR4",
+      "page": "339"
+    },
+    {
+      "name": "Cranial Bomb - Area Bomb",
+      "category": [
+        "Headware"
+      ],
+      "ess": "0",
+      "capacity": "[3]",
+      "avail": "20F",
+      "cost": [
+        "10000"
+      ],
+      "source": "SR4",
+      "page": "339"
+    },
+    {
+      "name": "Data Filter",
+      "category": [
+        "Headware"
+      ],
+      "ess": "0.2",
+      "capacity": "0",
+      "avail": "12",
+      "cost": [
+        "2500"
+      ],
+      "source": "AU",
+      "page": "36"
+    },
+    {
+      "name": "Datajack",
+      "category": [
+        "Headware"
+      ],
+      "ess": "0.1",
+      "capacity": "[1]",
+      "avail": "0",
+      "cost": [
+        "500"
+      ],
+      "source": "SR4",
+      "page": "339"
+    },
+    {
+      "name": "Data Lock",
+      "category": [
+        "Headware"
+      ],
+      "ess": "0.1",
+      "capacity": "[1]",
+      "avail": "12",
+      "cost": [
+        "1000"
+      ],
+      "source": "SR4",
+      "page": "339"
+    },
+    {
+      "name": "Encephalon Rating 1",
+      "category": [
+        "Headware"
+      ],
+      "ess": "0.75",
+      "capacity": "0",
+      "avail": "8",
+      "cost": [
+        "30000"
+      ],
+      "bonus": {
+        "skillattribute": {
+          "name": "LOG",
+          "bonus": "1"
+        }
+      },
+      "source": "AU",
+      "page": "36"
+    },
+    {
+      "name": "Encephalon Rating 2",
+      "category": [
+        "Headware"
+      ],
+      "ess": "1.5",
+      "capacity": "0",
+      "avail": "10",
+      "cost": [
+        "75000"
+      ],
+      "bonus": {
+        "skillattribute": {
+          "name": "LOG",
+          "bonus": "1"
+        },
+        "skillgroup": [
+          {
+            "name": "Cracking",
+            "bonus": "1"
+          },
+          {
+            "name": "Electronics",
+            "bonus": "1"
+          }
+        ]
+      },
+      "source": "AU",
+      "page": "36"
+    },
+    {
+      "name": "Invoked Memory Stimulator",
+      "category": [
+        "Headware"
+      ],
+      "ess": "0.2",
+      "capacity": "0",
+      "avail": "24",
+      "cost": [
+        "50000"
+      ],
+      "source": "AU",
+      "page": "157"
+    },
+    {
+      "name": "Math SPU",
+      "category": [
+        "Headware"
+      ],
+      "ess": "0.15",
+      "capacity": "0",
+      "avail": "9",
+      "cost": [
+        "4500"
+      ],
+      "source": "AU",
+      "page": "36"
+    },
+    {
+      "name": "Olfactory Booster",
+      "category": [
+        "Headware"
+      ],
+      "rating": "6",
+      "ess": "0.2",
+      "capacity": "[2]",
+      "avail": "Rating * 4",
+      "cost": [
+        "Rating * 1000"
+      ],
+      "source": "SR4",
+      "page": "339"
+    },
+    {
+      "name": "Orientation System",
+      "category": [
+        "Headware"
+      ],
+      "ess": "0.2",
+      "capacity": "[1]",
+      "avail": "4",
+      "cost": [
+        "1250"
+      ],
+      "bonus": {
+        "specificskill": {
+          "name": "Navigation",
+          "bonus": "2"
+        }
+      },
+      "source": "AU",
+      "page": "36"
+    },
+    {
+      "name": "Radar Sensor",
+      "category": [
+        "Headware"
+      ],
+      "rating": "4",
+      "ess": "0.3",
+      "capacity": "[2]",
+      "avail": "12",
+      "cost": [
+        "Rating * 3000"
+      ],
+      "source": "AU",
+      "page": "36"
+    },
+    {
+      "name": "Sim Module",
+      "category": [
+        "Headware"
+      ],
+      "ess": "0.2",
+      "capacity": "[2]",
+      "avail": "0",
+      "cost": [
+        "2000"
+      ],
+      "bonus": {
+        "matrixinitiativepass": "1"
+      },
+      "source": "SR4",
+      "page": "339"
+    },
+    {
+      "name": "Sim Module (Hot-Sim Modified)",
+      "category": [
+        "Headware"
+      ],
+      "ess": "0.2",
+      "capacity": "[2]",
+      "avail": "12F",
+      "cost": [
+        "5000"
+      ],
+      "bonus": {
+        "matrixinitiativepass": "2"
+      },
+      "source": "SR4",
+      "page": "339"
+    },
+    {
+      "name": "Simsense Booster",
+      "category": [
+        "Headware"
+      ],
+      "ess": "0.5",
+      "capacity": "0",
+      "avail": "8",
+      "cost": [
+        "65000"
+      ],
+      "bonus": {
+        "matrixinitiativepassadd": "1"
+      },
+      "source": "AU",
+      "page": "37"
+    },
+    {
+      "name": "Taste Booster",
+      "category": [
+        "Headware"
+      ],
+      "rating": "6",
+      "ess": "0.2",
+      "capacity": "0",
+      "avail": "Rating * 4",
+      "cost": [
+        "Rating * 1500"
+      ],
+      "source": "SR4",
+      "page": "339"
+    },
+    {
+      "name": "Tooth Storage Compartment",
+      "category": [
+        "Headware"
+      ],
+      "ess": "0",
+      "capacity": "0",
+      "avail": "8",
+      "cost": [
+        "200"
+      ],
+      "source": "SR4",
+      "page": "339"
+    },
+    {
+      "name": "Tooth Breakable Compartment",
+      "category": [
+        "Headware"
+      ],
+      "ess": "0",
+      "capacity": "0",
+      "avail": "12",
+      "cost": [
+        "500"
+      ],
+      "source": "SR4",
+      "page": "339"
+    },
+    {
+      "name": "Ultrasound Sensor",
+      "category": [
+        "Headware"
+      ],
+      "ess": "0.3",
+      "capacity": "[2]",
+      "avail": "10",
+      "cost": [
+        "6000"
+      ],
+      "source": "SR4",
+      "page": "339"
+    },
+    {
+      "name": "Voice Mask",
+      "category": [
+        "Headware"
+      ],
+      "ess": "0.1",
+      "capacity": "0",
+      "avail": "7F",
+      "cost": [
+        "3000"
+      ],
+      "source": "AU",
+      "page": "37"
+    },
+    {
+      "name": "Voice Modulator",
+      "category": [
+        "Headware"
+      ],
+      "ess": "0.2",
+      "capacity": "0",
+      "avail": "4",
+      "cost": [
+        "7500"
+      ],
+      "source": "SR4",
+      "page": "339"
+    },
+    {
+      "name": "Voice Modulator (Secondary Pattern)",
+      "category": [
+        "Headware"
+      ],
+      "rating": "6",
+      "ess": "0",
+      "capacity": "0",
+      "avail": "(Rating * 3)F",
+      "cost": [
+        "Rating * 5000"
+      ],
+      "source": "SR4",
+      "page": "339"
+    },
+    {
+      "name": "Cybereyes Basic System",
+      "category": [
+        "Eyeware"
+      ],
+      "rating": "4",
+      "ess": "(Rating * 0.1) + 0.1",
+      "capacity": "(Rating * 4)",
+      "avail": "FixedValues(0,4,6,8)",
+      "cost": [
+        "FixedValues(500,750,1000,1500)"
+      ],
+      "subsystems": {
+        "subsystem": [
+          "Eyeware",
+          "Nanocybernetics"
+        ]
+      },
+      "source": "SR4",
+      "page": "340"
+    },
+    {
+      "name": "Eye Laser Designator",
+      "category": [
+        "Eyeware"
+      ],
+      "ess": "0",
+      "capacity": "[0]",
+      "avail": "12R",
+      "cost": [
+        "1000"
+      ],
+      "source": "AU",
+      "page": "39"
+    },
+    {
+      "name": "Eye Laser Microphone",
+      "category": [
+        "Eyeware"
+      ],
+      "rating": "3",
+      "ess": "0",
+      "capacity": "[0]",
+      "avail": "12R",
+      "cost": [
+        "Rating * 500"
+      ],
+      "source": "AU",
+      "page": "39"
+    },
+    {
+      "name": "Eye Laser Range Finder",
+      "category": [
+        "Eyeware"
+      ],
+      "ess": "0",
+      "capacity": "[0]",
+      "avail": "10",
+      "cost": [
+        "1000"
+      ],
+      "source": "AU",
+      "page": "39"
+    },
+    {
+      "name": "Eye Laser System",
+      "category": [
+        "Eyeware"
+      ],
+      "ess": "0",
+      "capacity": "[3]",
+      "avail": "10",
+      "cost": [
+        "2000"
+      ],
+      "source": "AU",
+      "page": "38"
+    },
+    {
+      "name": "Eye Light System",
+      "category": [
+        "Eyeware"
+      ],
+      "ess": "0.1",
+      "capacity": "[2]",
+      "avail": "6",
+      "cost": [
+        "750"
+      ],
+      "source": "AU",
+      "page": "38"
+    },
+    {
+      "name": "Eye Recording Unit",
+      "category": [
+        "Eyeware"
+      ],
+      "ess": "0.1",
+      "capacity": "[*]",
+      "avail": "4",
+      "cost": [
+        "2000"
+      ],
+      "source": "SR4",
+      "page": "340"
+    },
+    {
+      "name": "Eye Tool Laser",
+      "category": [
+        "Eyeware"
+      ],
+      "ess": "0",
+      "capacity": "[6]",
+      "avail": "10R",
+      "addweapon": "Eye Tool Laser",
+      "cost": [
+        "2000"
+      ],
+      "source": "AU",
+      "page": "39"
+    },
+    {
+      "name": "Eyeband",
+      "category": [
+        "Eyeware"
+      ],
+      "rating": "3",
+      "ess": "(Rating * 0.1) + 0.2",
+      "capacity": "FixedValues(6,8,12)",
+      "avail": "(Rating * 2) + 2",
+      "cost": [
+        "FixedValues(800,1000,1250)"
+      ],
+      "subsystems": {
+        "subsystem": [
+          "Eyeware",
+          "Nanocybernetics"
+        ]
+      },
+      "source": "AU",
+      "page": "37"
+    },
+    {
+      "name": "Flare Compensation",
+      "category": [
+        "Eyeware"
+      ],
+      "ess": "0.1",
+      "capacity": "[1]",
+      "avail": "4",
+      "cost": [
+        "750"
+      ],
+      "source": "SR4",
+      "page": "340"
+    },
+    {
+      "name": "Image Link",
+      "category": [
+        "Eyeware"
+      ],
+      "ess": "0.1",
+      "capacity": "[*]",
+      "avail": "4",
+      "cost": [
+        "500"
+      ],
+      "source": "SR4",
+      "page": "340"
+    },
+    {
+      "name": "Low-Light Vision",
+      "category": [
+        "Eyeware"
+      ],
+      "ess": "0.1",
+      "capacity": "[2]",
+      "avail": "4",
+      "cost": [
+        "1000"
+      ],
+      "source": "SR4",
+      "page": "340"
+    },
+    {
+      "name": "Microscopic Vision",
+      "category": [
+        "Eyeware"
+      ],
+      "ess": "0.2",
+      "capacity": "[3]",
+      "avail": "4",
+      "cost": [
+        "1300"
+      ],
+      "source": "AU",
+      "page": "38"
+    },
+    {
+      "name": "Ocular Drone",
+      "category": [
+        "Eyeware"
+      ],
+      "ess": "0",
+      "capacity": "[6]",
+      "avail": "6",
+      "cost": [
+        "3000"
+      ],
+      "source": "SR4",
+      "page": "340"
+    },
+    {
+      "name": "Protective Covers",
+      "category": [
+        "Eyeware"
+      ],
+      "ess": "0",
+      "capacity": "[0]",
+      "avail": "4",
+      "cost": [
+        "100"
+      ],
+      "source": "SR4",
+      "page": "340"
+    },
+    {
+      "name": "Retinal Duplication",
+      "category": [
+        "Eyeware"
+      ],
+      "rating": "6",
+      "ess": "0.1",
+      "capacity": "[1]",
+      "avail": "16F",
+      "cost": [
+        "Rating * 15000"
+      ],
+      "source": "SR4",
+      "page": "340"
+    },
+    {
+      "name": "Single Cybereye",
+      "category": [
+        "Eyeware"
+      ],
+      "rating": "4",
+      "ess": "(Rating * 0.05) + 0.05",
+      "capacity": "Rating * 2/[Rating]",
+      "avail": "FixedValues(0,4,6,8)",
+      "cost": [
+        "FixedValues(300,450,600,900)"
+      ],
+      "subsystems": {
+        "subsystem": [
+          "Eyeware",
+          "Nanocybernetics"
+        ]
+      },
+      "source": "AU",
+      "page": "38"
+    },
+    {
+      "name": "Smartlink",
+      "category": [
+        "Eyeware"
+      ],
+      "ess": "0.1",
+      "capacity": "[3]",
+      "avail": "8R",
+      "cost": [
+        "1000"
+      ],
+      "source": "SR4",
+      "page": "340"
+    },
+    {
+      "name": "Thermographic Vision",
+      "category": [
+        "Eyeware"
+      ],
+      "ess": "0.1",
+      "capacity": "[2]",
+      "avail": "4",
+      "cost": [
+        "1000"
+      ],
+      "source": "SR4",
+      "page": "340"
+    },
+    {
+      "name": "Vision Enhancement",
+      "category": [
+        "Eyeware"
+      ],
+      "rating": "3",
+      "ess": "0.1",
+      "capacity": "[Rating]",
+      "avail": "Rating * 3",
+      "cost": [
+        "Rating * 1500"
+      ],
+      "source": "SR4",
+      "page": "340"
+    },
+    {
+      "name": "Vision Magnification",
+      "category": [
+        "Eyeware"
+      ],
+      "ess": "0.1",
+      "capacity": "[2]",
+      "avail": "4",
+      "cost": [
+        "1000"
+      ],
+      "source": "SR4",
+      "page": "340"
+    },
+    {
+      "name": "Cyberears",
+      "category": [
+        "Earware"
+      ],
+      "rating": "4",
+      "ess": "(Rating * 0.1) + 0.1",
+      "capacity": "Rating * 4",
+      "avail": "FixedValues(0,4,6,8)",
+      "cost": [
+        "FixedValues(500,750,1000,1500)"
+      ],
+      "subsystems": {
+        "subsystem": [
+          "Earware",
+          "Nanocybernetics"
+        ]
+      },
+      "source": "SR4",
+      "page": "341"
+    },
+    {
+      "name": "Audio Enhancement",
+      "category": [
+        "Earware"
+      ],
+      "rating": "3",
+      "ess": "0.1",
+      "capacity": "[Rating]",
+      "avail": "Rating * 3",
+      "cost": [
+        "Rating * 1500"
+      ],
+      "source": "SR4",
+      "page": "341"
+    },
+    {
+      "name": "Balance Augmenter",
+      "category": [
+        "Earware"
+      ],
+      "ess": "0.1",
+      "capacity": "[4]",
+      "avail": "10",
+      "cost": [
+        "5000"
+      ],
+      "source": "SR4",
+      "page": "341"
+    },
+    {
+      "name": "Damper",
+      "category": [
+        "Earware"
+      ],
+      "ess": "0.1",
+      "capacity": "[1]",
+      "avail": "4",
+      "cost": [
+        "750"
+      ],
+      "source": "SR4",
+      "page": "341"
+    },
+    {
+      "name": "Ear Recording Unit",
+      "category": [
+        "Earware"
+      ],
+      "ess": "0.1",
+      "capacity": "[*]",
+      "avail": "4",
+      "cost": [
+        "500"
+      ],
+      "source": "SR4",
+      "page": "341"
+    },
+    {
+      "name": "Increased Sensitivity",
+      "category": [
+        "Earware"
+      ],
+      "ess": "0.1",
+      "capacity": "[1]",
+      "avail": "6",
+      "cost": [
+        "1000"
+      ],
+      "source": "AU",
+      "page": "37"
+    },
+    {
+      "name": "Select Sound Filter",
+      "category": [
+        "Earware"
+      ],
+      "rating": "6",
+      "ess": "0.1",
+      "capacity": "[Rating]",
+      "avail": "Rating * 3",
+      "cost": [
+        "Rating * 1000"
+      ],
+      "source": "SR4",
+      "page": "341"
+    },
+    {
+      "name": "Sound Link",
+      "category": [
+        "Earware"
+      ],
+      "ess": "0.1",
+      "capacity": "[*]",
+      "avail": "0",
+      "cost": [
+        "250"
+      ],
+      "source": "SR4",
+      "page": "341"
+    },
+    {
+      "name": "Spatial Recognizer",
+      "category": [
+        "Earware"
+      ],
+      "ess": "0.1",
+      "capacity": "[2]",
+      "avail": "8",
+      "cost": [
+        "750"
+      ],
+      "source": "SR4",
+      "page": "341"
+    },
+    {
+      "name": "Essence Hole",
+      "category": [
+        "Bodyware"
+      ],
+      "rating": "600",
+      "ess": "Rating * 0.01",
+      "capacity": "0",
+      "avail": "0",
+      "cost": [
+        "0"
+      ],
+      "source": "SR4",
+      "page": "0"
+    },
+    {
+      "name": "Auto-Injector (One-shot)",
+      "category": [
+        "Bodyware"
+      ],
+      "rating": "6",
+      "ess": "0.05",
+      "capacity": "[0]",
+      "avail": "8",
+      "cost": [
+        "600 + (Rating * 100)"
+      ],
+      "source": "AU",
+      "page": "39"
+    },
+    {
+      "name": "Auto-Injector (Reusable)",
+      "category": [
+        "Bodyware"
+      ],
+      "rating": "6",
+      "ess": "0.1",
+      "capacity": "[0]",
+      "avail": "4",
+      "cost": [
+        "400 + (Rating * 100)"
+      ],
+      "source": "AU",
+      "page": "39"
+    },
+    {
+      "name": "Balance Tail",
+      "category": [
+        "Bodyware"
+      ],
+      "ess": "0.5",
+      "capacity": "[2]",
+      "avail": "9",
+      "cost": [
+        "5500"
+      ],
+      "source": "AU",
+      "page": "39"
+    },
+    {
+      "name": "Biomonitor",
+      "category": [
+        "Bodyware"
+      ],
+      "ess": "0.3",
+      "capacity": "[1]",
+      "avail": "4",
+      "cost": [
+        "1000"
+      ],
+      "source": "AU",
+      "page": "39"
+    },
+    {
+      "name": "Blood Circuit Control System",
+      "category": [
+        "Bodyware"
+      ],
+      "ess": "1",
+      "capacity": "0",
+      "avail": "15",
+      "cost": [
+        "30000"
+      ],
+      "source": "AU",
+      "page": "39"
+    },
+    {
+      "name": "Bone Lacing (Aluminum)",
+      "category": [
+        "Bodyware"
+      ],
+      "ess": "1",
+      "capacity": "0",
+      "avail": "12F",
+      "addweapon": "Aluminum Bone Lacing",
+      "cost": [
+        "15000"
+      ],
+      "bonus": {
+        "armor": [
+          {
+            "i": "1"
+          }
+        ],
+        "damageresistance": "2"
+      },
+      "source": "SR4",
+      "page": "341"
+    },
+    {
+      "name": "Bone Lacing (Ceramic)",
+      "category": [
+        "Bodyware"
+      ],
+      "ess": "1.2",
+      "capacity": "0",
+      "avail": "12F",
+      "addweapon": "Ceramic Bone Lacing",
+      "cost": [
+        "22500"
+      ],
+      "bonus": {
+        "armor": [
+          {
+            "i": "2"
+          }
+        ],
+        "damageresistance": "2"
+      },
+      "source": "AU",
+      "page": "39"
+    },
+    {
+      "name": "Bone Lacing (Kevlar)",
+      "category": [
+        "Bodyware"
+      ],
+      "ess": "1",
+      "capacity": "0",
+      "avail": "10F",
+      "cost": [
+        "10000"
+      ],
+      "bonus": {
+        "armor": [
+          {
+            "b": "1"
+          }
+        ],
+        "damageresistance": "1"
+      },
+      "source": "AU",
+      "page": "39"
+    },
+    {
+      "name": "Bone Lacing (Plastic)",
+      "category": [
+        "Bodyware"
+      ],
+      "ess": "0.5",
+      "capacity": "0",
+      "avail": "8F",
+      "addweapon": "Plastic Bone Lacing",
+      "cost": [
+        "5000"
+      ],
+      "bonus": {
+        "damageresistance": "1"
+      },
+      "source": "SR4",
+      "page": "341"
+    },
+    {
+      "name": "Bone Lacing (Titanium)",
+      "category": [
+        "Bodyware"
+      ],
+      "ess": "1.5",
+      "capacity": "0",
+      "avail": "16F",
+      "addweapon": "Titanium Bone Lacing",
+      "cost": [
+        "40000"
+      ],
+      "bonus": {
+        "armor": [
+          {
+            "b": "1",
+            "i": "1"
+          }
+        ],
+        "damageresistance": "3"
+      },
+      "source": "SR4",
+      "page": "341"
+    },
+    {
+      "name": "Cyber Safety",
+      "category": [
+        "Bodyware"
+      ],
+      "ess": "0",
+      "capacity": "[1]",
+      "avail": "7",
+      "cost": [
+        "350"
+      ],
+      "source": "AU",
+      "page": "39"
+    },
+    {
+      "name": "Cyberfins",
+      "category": [
+        "Bodyware"
+      ],
+      "ess": "0.3",
+      "capacity": "[3]",
+      "avail": "9",
+      "cost": [
+        "3500"
+      ],
+      "bonus": {
+        "specificskill": {
+          "name": "Swimming",
+          "bonus": "2"
+        },
+        "swimpercent": "50"
+      },
+      "source": "AU",
+      "page": "39"
+    },
+    {
+      "name": "Dermal Plating",
+      "category": [
+        "Bodyware"
+      ],
+      "rating": "3",
+      "ess": "Rating * 0.5",
+      "capacity": "0",
+      "avail": "(Rating * 5)R",
+      "cost": [
+        "Rating * 5000"
+      ],
+      "bonus": {
+        "armor": [
+          {
+            "b": "Rating",
+            "i": "Rating"
+          }
+        ]
+      },
+      "source": "SR4",
+      "page": "342"
+    },
+    {
+      "name": "Dermal Sheath",
+      "category": [
+        "Bodyware"
+      ],
+      "rating": "3",
+      "ess": "FixedValues(0.6,1.0,1.6)",
+      "capacity": "0",
+      "avail": "(Rating * 4) + 4",
+      "cost": [
+        "FixedValues(10000,20000,40000)"
+      ],
+      "bonus": {
+        "armor": [
+          {
+            "b": "Rating",
+            "i": "Rating+1"
+          }
+        ]
+      },
+      "source": "AU",
+      "page": "40"
+    },
+    {
+      "name": "Dermal Sheath, Ruthenium Polymer Coating",
+      "category": [
+        "Bodyware"
+      ],
+      "ess": "0",
+      "capacity": "[0]",
+      "avail": "+2",
+      "cost": [
+        "2500"
+      ],
+      "source": "AU",
+      "page": "40"
+    },
+    {
+      "name": "Dermal Sheath, Chameleon Modification",
+      "category": [
+        "Bodyware"
+      ],
+      "ess": "0.2",
+      "capacity": "[0]",
+      "avail": "+4R",
+      "cost": [
+        "4000"
+      ],
+      "source": "AU",
+      "page": "40"
+    },
+    {
+      "name": "Fingertip Compartment",
+      "category": [
+        "Bodyware"
+      ],
+      "ess": "0.1",
+      "capacity": "[1]",
+      "avail": "4",
+      "cost": [
+        "750"
+      ],
+      "source": "SR4",
+      "page": "342"
+    },
+    {
+      "name": "Flex Hands",
+      "category": [
+        "Bodyware"
+      ],
+      "ess": "0.3",
+      "capacity": "0",
+      "avail": "10",
+      "cost": [
+        "3500"
+      ],
+      "bonus": {
+        "specificskill": {
+          "name": "Escape Artist",
+          "bonus": "2"
+        }
+      },
+      "source": "AU",
+      "page": "40"
+    },
+    {
+      "name": "Foot Anchor",
+      "category": [
+        "Bodyware"
+      ],
+      "ess": "0.4",
+      "capacity": "[3]",
+      "avail": "10",
+      "addweapon": "Foot Anchor",
+      "cost": [
+        "4000"
+      ],
+      "source": "AU",
+      "page": "40"
+    },
+    {
+      "name": "Gastric Neurostimulator",
+      "category": [
+        "Bodyware"
+      ],
+      "ess": "0.2",
+      "capacity": "0",
+      "avail": "6",
+      "cost": [
+        "2500"
+      ],
+      "source": "AU",
+      "page": "40"
+    },
+    {
+      "name": "Grapple Gun",
+      "category": [
+        "Bodyware"
+      ],
+      "ess": "0.5",
+      "capacity": "[5]",
+      "avail": "8",
+      "cost": [
+        "1500"
+      ],
+      "source": "SR4",
+      "page": "342"
+    },
+    {
+      "name": "Grip Feet",
+      "category": [
+        "Bodyware"
+      ],
+      "ess": "0.3",
+      "capacity": "[2]",
+      "avail": "10",
+      "cost": [
+        "6000"
+      ],
+      "source": "AU",
+      "page": "40"
+    },
+    {
+      "name": "Internal Air Tank",
+      "category": [
+        "Bodyware"
+      ],
+      "ess": "0.25",
+      "capacity": "[3]",
+      "avail": "4",
+      "cost": [
+        "650"
+      ],
+      "source": "SR4",
+      "page": "342"
+    },
+    {
+      "name": "Magnetic System",
+      "category": [
+        "Bodyware"
+      ],
+      "ess": "0.25",
+      "capacity": "[2]",
+      "avail": "8",
+      "cost": [
+        "1200"
+      ],
+      "source": "AU",
+      "page": "40"
+    },
+    {
+      "name": "Move-by-Wire System",
+      "category": [
+        "Bodyware"
+      ],
+      "rating": "3",
+      "ess": "FixedValues(2,3,5)",
+      "capacity": "0",
+      "avail": "FixedValues(12R,18R,25R)",
+      "cost": [
+        "FixedValues(50000,85000,175000)"
+      ],
+      "bonus": {
+        "initiativepass": "Rating",
+        "skillwire": "FixedValues(2,4,5)",
+        "specificattribute": {
+          "name": {
+            "value": "REA",
+            "precedence": "1"
+          },
+          "val": "2 * Rating"
+        },
+        "specificskill": {
+          "name": "Dodge",
+          "bonus": "Rating",
+          "applytorating": "yes"
+        }
+      },
+      "source": "AU",
+      "page": "40"
+    },
+    {
+      "name": "Muscle Replacement",
+      "category": [
+        "Bodyware"
+      ],
+      "rating": "4",
+      "ess": "Rating * 1",
+      "capacity": "0",
+      "avail": "(Rating * 5)R",
+      "cost": [
+        "Rating * 5000"
+      ],
+      "bonus": {
+        "specificattribute": [
+          {
+            "name": "AGI",
+            "val": "Rating"
+          },
+          {
+            "name": "STR",
+            "val": "Rating"
+          }
+        ]
+      },
+      "source": "SR4",
+      "page": "342"
+    },
+    {
+      "name": "OXSYS Cybergill",
+      "category": [
+        "Bodyware"
+      ],
+      "ess": "0.25",
+      "capacity": "0",
+      "avail": "6",
+      "cost": [
+        "4500"
+      ],
+      "source": "AU",
+      "page": "42"
+    },
+    {
+      "name": "Reaction Enhancers",
+      "category": [
+        "Bodyware"
+      ],
+      "rating": "3",
+      "ess": "Rating * 0.3",
+      "capacity": "0",
+      "avail": "(Rating * 5)R",
+      "cost": [
+        "Rating * 10000"
+      ],
+      "bonus": {
+        "specificattribute": {
+          "name": {
+            "value": "REA",
+            "precedence": "1"
+          },
+          "val": "Rating"
+        }
+      },
+      "source": "SR4",
+      "page": "342"
+    },
+    {
+      "name": "Retractable Climbing Claws",
+      "category": [
+        "Bodyware"
+      ],
+      "ess": "0.2",
+      "capacity": "[2]",
+      "avail": "8",
+      "addweapon": "Retractable Climbing Claws",
+      "cost": [
+        "2200"
+      ],
+      "bonus": {
+        "specificskill": {
+          "name": "Climbing",
+          "bonus": "2"
+        }
+      },
+      "source": "AU",
+      "page": "42"
+    },
+    {
+      "name": "Simrig",
+      "category": [
+        "Bodyware"
+      ],
+      "ess": "0.5",
+      "capacity": "0",
+      "avail": "8",
+      "cost": [
+        "5000"
+      ],
+      "bonus": {
+        "matrixinitiativepass": "1"
+      },
+      "source": "SR4",
+      "page": "342"
+    },
+    {
+      "name": "Skillwire Expert System",
+      "category": [
+        "Bodyware"
+      ],
+      "ess": "0.1",
+      "capacity": "0",
+      "avail": "8",
+      "cost": [
+        "3000"
+      ],
+      "source": "AU",
+      "page": "42"
+    },
+    {
+      "name": "Skillwires",
+      "category": [
+        "Bodyware"
+      ],
+      "rating": "5",
+      "ess": "Rating * 0.2",
+      "capacity": "0",
+      "avail": "(Rating * 4)",
+      "cost": [
+        "Rating * 2000"
+      ],
+      "bonus": {
+        "skillwire": "Rating"
+      },
+      "source": "SR4",
+      "page": "342"
+    },
+    {
+      "name": "Skinlink",
+      "category": [
+        "Bodyware"
+      ],
+      "ess": "0",
+      "capacity": "[0]",
+      "avail": "6",
+      "cost": [
+        "50"
+      ],
+      "source": "SR4",
+      "page": "328"
+    },
+    {
+      "name": "Smart Articulation",
+      "category": [
+        "Bodyware"
+      ],
+      "ess": "0.8",
+      "capacity": "0",
+      "avail": "6",
+      "cost": [
+        "15000"
+      ],
+      "bonus": {
+        "specificskill": [
+          {
+            "name": "Escape Artist",
+            "bonus": "2"
+          },
+          {
+            "name": "Gymnastics",
+            "bonus": "1"
+          },
+          {
+            "name": "Climbing",
+            "bonus": "2"
+          }
+        ]
+      },
+      "source": "AU",
+      "page": "42"
+    },
+    {
+      "name": "Smuggling Compartment",
+      "category": [
+        "Bodyware"
+      ],
+      "ess": "0.2",
+      "capacity": "[2]",
+      "avail": "6",
+      "cost": [
+        "1500"
+      ],
+      "source": "SR4",
+      "page": "342"
+    },
+    {
+      "name": "Touch Link",
+      "category": [
+        "Bodyware"
+      ],
+      "ess": "0.1",
+      "capacity": "0",
+      "avail": "6",
+      "cost": [
+        "1000"
+      ],
+      "source": "SR4",
+      "page": "342"
+    },
+    {
+      "name": "Wired Reflexes",
+      "category": [
+        "Bodyware"
+      ],
+      "rating": "3",
+      "ess": "FixedValues(2,3,5)",
+      "capacity": "0",
+      "avail": "FixedValues(8R,12R,20R)",
+      "cost": [
+        "FixedValues(11000,32000,100000)"
+      ],
+      "bonus": {
+        "initiativepass": "Rating",
+        "specificattribute": {
+          "name": {
+            "value": "REA",
+            "precedence": "1"
+          },
+          "val": "Rating"
+        }
+      },
+      "source": "SR4",
+      "page": "342"
+    },
+    {
+      "name": "Fingerprint Morphing",
+      "category": [
+        "Bodyware"
+      ],
+      "rating": "10",
+      "ess": "0.2",
+      "capacity": "[0]",
+      "avail": "12F",
+      "cost": [
+        "Rating * 10000"
+      ],
+      "source": "SG",
+      "page": "151"
+    },
+    {
+      "name": "Obvious Full Arm",
+      "category": [
+        "Cyberlimb"
+      ],
+      "limbslot": "arm",
+      "ess": "1",
+      "capacity": "15",
+      "avail": "4",
+      "cost": [
+        "15000"
+      ],
+      "bonus": {
+        "conditionmonitor": {
+          "physical": "1"
+        }
+      },
+      "subsystems": {
+        "subsystem": [
+          "Bodyware",
+          "Cyberlimb Enhancement",
+          "Cyberlimb Accessory",
+          "Cyberweapon",
+          "Nanocybernetics"
+        ]
+      },
+      "source": "SR4",
+      "page": "344"
+    },
+    {
+      "name": "Obvious Full Leg",
+      "category": [
+        "Cyberlimb"
+      ],
+      "limbslot": "leg",
+      "ess": "1",
+      "capacity": "20",
+      "avail": "4",
+      "cost": [
+        "15000"
+      ],
+      "bonus": {
+        "conditionmonitor": {
+          "physical": "1"
+        }
+      },
+      "subsystems": {
+        "subsystem": [
+          "Bodyware",
+          "Cyberlimb Enhancement",
+          "Cyberlimb Accessory",
+          "Cyberweapon",
+          "Nanocybernetics"
+        ]
+      },
+      "source": "SR4",
+      "page": "344"
+    },
+    {
+      "name": "Obvious Foot",
+      "category": [
+        "Cyberlimb"
+      ],
+      "ess": "0.25",
+      "capacity": "4",
+      "avail": "2",
+      "cost": [
+        "5000"
+      ],
+      "bonus": {
+        "conditionmonitor": {
+          "physical": "1"
+        }
+      },
+      "subsystems": {
+        "subsystem": [
+          "Bodyware",
+          "Cyberlimb Enhancement",
+          "Cyberlimb Accessory",
+          "Cyberweapon",
+          "Nanocybernetics"
+        ]
+      },
+      "source": "SR4",
+      "page": "344"
+    },
+    {
+      "name": "Obvious Hand",
+      "category": [
+        "Cyberlimb"
+      ],
+      "ess": "0.25",
+      "capacity": "4",
+      "avail": "2",
+      "cost": [
+        "5000"
+      ],
+      "bonus": {
+        "conditionmonitor": {
+          "physical": "1"
+        }
+      },
+      "subsystems": {
+        "subsystem": [
+          "Bodyware",
+          "Cyberlimb Enhancement",
+          "Cyberlimb Accessory",
+          "Cyberweapon",
+          "Nanocybernetics"
+        ]
+      },
+      "source": "SR4",
+      "page": "344"
+    },
+    {
+      "name": "Obvious Lower Arm",
+      "category": [
+        "Cyberlimb"
+      ],
+      "ess": "0.45",
+      "capacity": "10",
+      "avail": "4",
+      "cost": [
+        "10000"
+      ],
+      "bonus": {
+        "conditionmonitor": {
+          "physical": "1"
+        }
+      },
+      "subsystems": {
+        "subsystem": [
+          "Bodyware",
+          "Cyberlimb Enhancement",
+          "Cyberlimb Accessory",
+          "Cyberweapon",
+          "Nanocybernetics"
+        ]
+      },
+      "source": "SR4",
+      "page": "344"
+    },
+    {
+      "name": "Obvious Lower Leg",
+      "category": [
+        "Cyberlimb"
+      ],
+      "ess": "0.45",
+      "capacity": "12",
+      "avail": "4",
+      "cost": [
+        "10000"
+      ],
+      "bonus": {
+        "conditionmonitor": {
+          "physical": "1"
+        }
+      },
+      "subsystems": {
+        "subsystem": [
+          "Bodyware",
+          "Cyberlimb Enhancement",
+          "Cyberlimb Accessory",
+          "Cyberweapon",
+          "Nanocybernetics"
+        ]
+      },
+      "source": "SR4",
+      "page": "344"
+    },
+    {
+      "name": "Obvious Torso",
+      "category": [
+        "Cyberlimb"
+      ],
+      "limbslot": "torso",
+      "ess": "1.5",
+      "capacity": "10",
+      "avail": "12",
+      "cost": [
+        "20000"
+      ],
+      "bonus": {
+        "conditionmonitor": {
+          "physical": "1"
+        }
+      },
+      "subsystems": {
+        "subsystem": [
+          "Bodyware",
+          "Cyberlimb Enhancement",
+          "Cosmetic Modification",
+          "Cosmetic Implant",
+          "Cyberweapon",
+          "Nanocybernetics"
+        ]
+      },
+      "source": "SR4",
+      "page": "344"
+    },
+    {
+      "name": "Obvious Skull",
+      "category": [
+        "Cyberlimb"
+      ],
+      "limbslot": "skull",
+      "ess": "0.75",
+      "capacity": "4",
+      "avail": "16",
+      "cost": [
+        "10000"
+      ],
+      "bonus": {
+        "conditionmonitor": {
+          "physical": "1"
+        }
+      },
+      "subsystems": {
+        "subsystem": [
+          "Headware",
+          "Cyberlimb Enhancement",
+          "Cosmetic Modification",
+          "Cosmetic Implant",
+          "Cyberweapon",
+          "Nanocybernetics"
+        ]
+      },
+      "source": "SR4",
+      "page": "344"
+    },
+    {
+      "name": "Jigsaw Skull",
+      "category": [
+        "Cyberlimb"
+      ],
+      "limbslot": "skull",
+      "rating": "4",
+      "ess": "Rating * 0.6",
+      "capacity": "4",
+      "avail": "12 + Rating",
+      "cost": [
+        "Rating * 15000"
+      ],
+      "bonus": {
+        "conditionmonitor": {
+          "physical": "1"
+        },
+        "specificskill": {
+          "name": "Disguise",
+          "bonus": "Rating",
+          "precedence": "2"
+        }
+      },
+      "subsystems": {
+        "subsystem": [
+          "Headware",
+          "Cyberlimb Enhancement",
+          "Cosmetic Modification",
+          "Cosmetic Implant",
+          "Cyberweapon",
+          "Nanocybernetics"
+        ]
+      },
+      "source": "SG",
+      "page": "144"
+    },
+    {
+      "name": "Synthetic Full Arm",
+      "category": [
+        "Cyberlimb"
+      ],
+      "limbslot": "arm",
+      "ess": "1",
+      "capacity": "8",
+      "avail": "4",
+      "cost": [
+        "20000"
+      ],
+      "bonus": {
+        "conditionmonitor": {
+          "physical": "1"
+        }
+      },
+      "subsystems": {
+        "subsystem": [
+          "Bodyware",
+          "Cyberlimb Enhancement",
+          "Cyberlimb Accessory",
+          "Cyberweapon",
+          "Nanocybernetics"
+        ]
+      },
+      "source": "SR4",
+      "page": "344"
+    },
+    {
+      "name": "Synthetic Full Leg",
+      "category": [
+        "Cyberlimb"
+      ],
+      "limbslot": "leg",
+      "ess": "1",
+      "capacity": "10",
+      "avail": "4",
+      "cost": [
+        "20000"
+      ],
+      "bonus": {
+        "conditionmonitor": {
+          "physical": "1"
+        }
+      },
+      "subsystems": {
+        "subsystem": [
+          "Bodyware",
+          "Cyberlimb Enhancement",
+          "Cyberlimb Accessory",
+          "Cyberweapon",
+          "Nanocybernetics"
+        ]
+      },
+      "source": "SR4",
+      "page": "344"
+    },
+    {
+      "name": "Synthetic Foot",
+      "category": [
+        "Cyberlimb"
+      ],
+      "ess": "0.25",
+      "capacity": "2",
+      "avail": "2",
+      "cost": [
+        "6000"
+      ],
+      "bonus": {
+        "conditionmonitor": {
+          "physical": "1"
+        }
+      },
+      "subsystems": {
+        "subsystem": [
+          "Bodyware",
+          "Cyberlimb Enhancement",
+          "Cyberlimb Accessory",
+          "Cyberweapon",
+          "Nanocybernetics"
+        ]
+      },
+      "source": "SR4",
+      "page": "344"
+    },
+    {
+      "name": "Synthetic Hand",
+      "category": [
+        "Cyberlimb"
+      ],
+      "ess": "0.25",
+      "capacity": "2",
+      "avail": "2",
+      "cost": [
+        "6000"
+      ],
+      "bonus": {
+        "conditionmonitor": {
+          "physical": "1"
+        }
+      },
+      "subsystems": {
+        "subsystem": [
+          "Bodyware",
+          "Cyberlimb Enhancement",
+          "Cyberlimb Accessory",
+          "Cyberweapon",
+          "Nanocybernetics"
+        ]
+      },
+      "source": "SR4",
+      "page": "344"
+    },
+    {
+      "name": "Synthetic Lower Arm",
+      "category": [
+        "Cyberlimb"
+      ],
+      "ess": "0.45",
+      "capacity": "5",
+      "avail": "4",
+      "cost": [
+        "12000"
+      ],
+      "bonus": {
+        "conditionmonitor": {
+          "physical": "1"
+        }
+      },
+      "subsystems": {
+        "subsystem": [
+          "Bodyware",
+          "Cyberlimb Enhancement",
+          "Cyberlimb Accessory",
+          "Cyberweapon",
+          "Nanocybernetics"
+        ]
+      },
+      "source": "SR4",
+      "page": "344"
+    },
+    {
+      "name": "Synthetic Lower Leg",
+      "category": [
+        "Cyberlimb"
+      ],
+      "ess": "0.45",
+      "capacity": "6",
+      "avail": "4",
+      "cost": [
+        "12000"
+      ],
+      "bonus": {
+        "conditionmonitor": {
+          "physical": "1"
+        }
+      },
+      "subsystems": {
+        "subsystem": [
+          "Bodyware",
+          "Cyberlimb Enhancement",
+          "Cyberlimb Accessory",
+          "Cyberweapon",
+          "Nanocybernetics"
+        ]
+      },
+      "source": "SR4",
+      "page": "344"
+    },
+    {
+      "name": "Synthetic Torso",
+      "category": [
+        "Cyberlimb"
+      ],
+      "limbslot": "torso",
+      "ess": "1.5",
+      "capacity": "5",
+      "avail": "12",
+      "cost": [
+        "25000"
+      ],
+      "bonus": {
+        "conditionmonitor": {
+          "physical": "1"
+        }
+      },
+      "subsystems": {
+        "subsystem": [
+          "Bodyware",
+          "Cyberlimb Enhancement",
+          "Cosmetic Modification",
+          "Cosmetic Implant",
+          "Cyberweapon",
+          "Nanocybernetics"
+        ]
+      },
+      "source": "SR4",
+      "page": "344"
+    },
+    {
+      "name": "Synthetic Skull",
+      "category": [
+        "Cyberlimb"
+      ],
+      "limbslot": "skull",
+      "ess": "0.75",
+      "capacity": "2",
+      "avail": "16",
+      "cost": [
+        "15000"
+      ],
+      "bonus": {
+        "conditionmonitor": {
+          "physical": "1"
+        }
+      },
+      "subsystems": {
+        "subsystem": [
+          "Headware",
+          "Cyberlimb Enhancement",
+          "Cosmetic Modification",
+          "Cosmetic Implant",
+          "Cyberweapon",
+          "Nanocybernetics"
+        ]
+      },
+      "source": "SR4",
+      "page": "344"
+    },
+    {
+      "name": "Armor",
+      "category": [
+        "Cyberlimb Enhancement"
+      ],
+      "rating": "4",
+      "ess": "0",
+      "capacity": "[Rating * 2]",
+      "avail": "Rating * 5",
+      "cost": [
+        "Rating * 300"
+      ],
+      "bonus": {
+        "armor": [
+          {
+            "b": "Rating",
+            "i": "Rating"
+          }
+        ]
+      },
+      "source": "SR4",
+      "page": "344"
+    },
+    {
+      "name": "Bulk Modification",
+      "category": [
+        "Cyberlimb Enhancement"
+      ],
+      "rating": "4",
+      "ess": "0",
+      "capacity": "[-Rating]",
+      "avail": "+Rating",
+      "cost": [
+        "Rating * 1000"
+      ],
+      "source": "AU",
+      "page": "44"
+    },
+    {
+      "name": "Customized Body",
+      "category": [
+        "Cyberlimb Enhancement"
+      ],
+      "rating": "20",
+      "minrating": "4",
+      "ess": "0",
+      "capacity": "[0]",
+      "avail": "+(Rating - 3)",
+      "cost": [
+        "(Rating - 3) * 1500"
+      ],
+      "source": "SR4",
+      "page": "344"
+    },
+    {
+      "name": "Customized Strength",
+      "category": [
+        "Cyberlimb Enhancement"
+      ],
+      "rating": "20",
+      "minrating": "4",
+      "ess": "0",
+      "capacity": "[0]",
+      "avail": "+(Rating - 3)",
+      "cost": [
+        "(Rating - 3) * 1500"
+      ],
+      "source": "SR4",
+      "page": "344"
+    },
+    {
+      "name": "Customized Agility",
+      "category": [
+        "Cyberlimb Enhancement"
+      ],
+      "rating": "20",
+      "minrating": "4",
+      "ess": "0",
+      "capacity": "[0]",
+      "avail": "+(Rating - 3)",
+      "cost": [
+        "(Rating - 3) * 1500"
+      ],
+      "source": "SR4",
+      "page": "344"
+    },
+    {
+      "name": "Enhanced Body",
+      "category": [
+        "Cyberlimb Enhancement"
+      ],
+      "rating": "7",
+      "ess": "0",
+      "capacity": "[Rating * 1]",
+      "avail": "(Rating * 3)R",
+      "cost": [
+        "Rating * 200"
+      ],
+      "source": "SR4",
+      "page": "344"
+    },
+    {
+      "name": "Enhanced Strength",
+      "category": [
+        "Cyberlimb Enhancement"
+      ],
+      "rating": "7",
+      "ess": "0",
+      "capacity": "[Rating * 1]",
+      "avail": "(Rating * 3)R",
+      "cost": [
+        "Rating * 250"
+      ],
+      "source": "SR4",
+      "page": "344"
+    },
+    {
+      "name": "Enhanced Agility",
+      "category": [
+        "Cyberlimb Enhancement"
+      ],
+      "rating": "7",
+      "ess": "0",
+      "capacity": "[Rating * 1]",
+      "avail": "(Rating * 3)R",
+      "cost": [
+        "Rating * 250"
+      ],
+      "source": "SR4",
+      "page": "344"
+    },
+    {
+      "name": "MDS Subdermal Sheath",
+      "category": [
+        "Cyberlimb Enhancement"
+      ],
+      "rating": "3",
+      "ess": "0",
+      "capacity": "[0]",
+      "avail": "(Rating * 5)F",
+      "cost": [
+        "Rating * 3000"
+      ],
+      "source": "RC",
+      "page": "35"
+    },
+    {
+      "name": "Optimized: Body+Tech Verticalist",
+      "category": [
+        "Cyberlimb Enhancement"
+      ],
+      "rating": "10",
+      "minrating": "4",
+      "ess": "0",
+      "capacity": "[2]",
+      "avail": "+4",
+      "cost": [
+        "5000"
+      ],
+      "bonus": {
+        "specificskill": {
+          "name": "Climbing",
+          "bonus": "1"
+        }
+      },
+      "source": "AU",
+      "page": "44"
+    },
+    {
+      "name": "Optimized: Evo Kali",
+      "category": [
+        "Cyberlimb Enhancement"
+      ],
+      "rating": "10",
+      "minrating": "4",
+      "ess": "0",
+      "capacity": "[2]",
+      "avail": "+4",
+      "cost": [
+        "5000"
+      ],
+      "bonus": {
+        "specificskill": {
+          "name": "Blades",
+          "bonus": "1"
+        }
+      },
+      "source": "AU",
+      "page": "44"
+    },
+    {
+      "name": "Optimized: Ferrari Sprinter",
+      "category": [
+        "Cyberlimb Enhancement"
+      ],
+      "rating": "10",
+      "minrating": "4",
+      "ess": "0",
+      "capacity": "[2]",
+      "avail": "+4",
+      "cost": [
+        "5000"
+      ],
+      "bonus": {
+        "specificskill": {
+          "name": "Running",
+          "bonus": "1"
+        }
+      },
+      "source": "AU",
+      "page": "44"
+    },
+    {
+      "name": "Optimized: Louisville Slugger",
+      "category": [
+        "Cyberlimb Enhancement"
+      ],
+      "rating": "10",
+      "minrating": "4",
+      "ess": "0",
+      "capacity": "[2]",
+      "avail": "+4",
+      "cost": [
+        "5000"
+      ],
+      "bonus": {
+        "specificskill": {
+          "name": "Clubs",
+          "bonus": "1"
+        }
+      },
+      "source": "AU",
+      "page": "44"
+    },
+    {
+      "name": "Optimized: Nightengale Feet of Fury",
+      "category": [
+        "Cyberlimb Enhancement"
+      ],
+      "rating": "10",
+      "minrating": "4",
+      "ess": "0",
+      "capacity": "[2]",
+      "avail": "+4",
+      "cost": [
+        "5000"
+      ],
+      "source": "AU",
+      "page": "44"
+    },
+    {
+      "name": "Optimized: Ultimate Champion",
+      "category": [
+        "Cyberlimb Enhancement"
+      ],
+      "rating": "10",
+      "minrating": "4",
+      "ess": "0",
+      "capacity": "[2]",
+      "avail": "+4",
+      "cost": [
+        "5000"
+      ],
+      "bonus": {
+        "specificskill": {
+          "name": "Unarmed Combat",
+          "bonus": "1"
+        }
+      },
+      "source": "AU",
+      "page": "44"
+    },
+    {
+      "name": "Optimized: Yankee Pitcher",
+      "category": [
+        "Cyberlimb Enhancement"
+      ],
+      "rating": "10",
+      "minrating": "4",
+      "ess": "0",
+      "capacity": "[2]",
+      "avail": "+4",
+      "cost": [
+        "5000"
+      ],
+      "bonus": {
+        "specificskill": {
+          "name": "Throwing Weapons",
+          "bonus": "1"
+        }
+      },
+      "source": "AU",
+      "page": "44"
+    },
+    {
+      "name": "Rotational Joints",
+      "category": [
+        "Cyberlimb Enhancement"
+      ],
+      "ess": "0",
+      "capacity": "[2]",
+      "avail": "8",
+      "cost": [
+        "5000"
+      ],
+      "bonus": {
+        "specificskill": {
+          "name": "Escape Artist",
+          "bonus": "1"
+        }
+      },
+      "source": "SG",
+      "page": "144"
+    },
+    {
+      "name": "Cyber Holster",
+      "category": [
+        "Cyberlimb Accessory"
+      ],
+      "ess": "0",
+      "capacity": "[7]",
+      "avail": "8R",
+      "cost": [
+        "2000"
+      ],
+      "source": "SR4",
+      "page": "344"
+    },
+    {
+      "name": "Cyberarm Gyromount",
+      "category": [
+        "Cyberlimb Accessory"
+      ],
+      "ess": "0",
+      "capacity": "[4]",
+      "avail": "12F",
+      "cost": [
+        "6000"
+      ],
+      "source": "SR4",
+      "page": "344"
+    },
+    {
+      "name": "Cyberarm Slide",
+      "category": [
+        "Cyberlimb Accessory"
+      ],
+      "ess": "0",
+      "capacity": "[8]",
+      "avail": "12R",
+      "cost": [
+        "3000"
+      ],
+      "source": "SR4",
+      "page": "344"
+    },
+    {
+      "name": "Cyberskates",
+      "category": [
+        "Cyberlimb Accessory"
+      ],
+      "ess": "0",
+      "capacity": "[3]",
+      "avail": "5",
+      "cost": [
+        "325"
+      ],
+      "bonus": {
+        "movementpercent": "25"
+      },
+      "source": "AU",
+      "page": "45"
+    },
+    {
+      "name": "Hydraulic Jacks",
+      "category": [
+        "Cyberlimb Accessory"
+      ],
+      "rating": "6",
+      "ess": "0",
+      "capacity": "[Rating]",
+      "avail": "9",
+      "cost": [
+        "Rating * 1000"
+      ],
+      "source": "SR4",
+      "page": "344"
+    },
+    {
+      "name": "Large Smuggling Compartment",
+      "category": [
+        "Cyberlimb Accessory"
+      ],
+      "ess": "0",
+      "capacity": "[5]",
+      "avail": "6",
+      "cost": [
+        "2000"
+      ],
+      "source": "SR4",
+      "page": "344"
+    },
+    {
+      "name": "Modular Cyberlimb",
+      "category": [
+        "Cyberlimb Accessory"
+      ],
+      "ess": "0",
+      "capacity": "[0]",
+      "avail": "+1",
+      "cost": [
+        "*1.1"
+      ],
+      "subsystems": {
+        "subsystem": "Modular Plug-In"
+      },
+      "source": "AU",
+      "page": "45"
+    },
+    {
+      "name": "Modular Plug-in Adaptation",
+      "category": [
+        "Cyberlimb Accessory"
+      ],
+      "ess": "0",
+      "capacity": "[0]",
+      "avail": "+2",
+      "cost": [
+        "500"
+      ],
+      "subsystems": {
+        "subsystem": "Modular Plug-In"
+      },
+      "source": "AU",
+      "page": "45"
+    },
+    {
+      "name": "Scanner System",
+      "category": [
+        "Cyberlimb Accessory"
+      ],
+      "rating": "4",
+      "ess": "0",
+      "capacity": "[2]",
+      "avail": "6R",
+      "cost": [
+        "Rating * 500"
+      ],
+      "source": "AU",
+      "page": "45"
+    },
+    {
+      "name": "Snake Fingers",
+      "category": [
+        "Cyberlimb Accessory"
+      ],
+      "ess": "0",
+      "capacity": "[1]",
+      "avail": "6",
+      "cost": [
+        "1000"
+      ],
+      "source": "AU",
+      "page": "45"
+    },
+    {
+      "name": "Telescoping Cyberlimb",
+      "category": [
+        "Cyberlimb Accessory"
+      ],
+      "ess": "0",
+      "capacity": "[2]",
+      "avail": "6",
+      "cost": [
+        "2500"
+      ],
+      "source": "AU",
+      "page": "45"
+    },
+    {
+      "name": "Articulated Weapon-Arm",
+      "category": [
+        "Cyberweapon"
+      ],
+      "ess": "0",
+      "capacity": "[8]",
+      "avail": "24F",
+      "cost": [
+        "5000"
+      ],
+      "source": "AU",
+      "page": "43"
+    },
+    {
+      "name": "Dartgun",
+      "category": [
+        "Cyberweapon"
+      ],
+      "ess": "0.35",
+      "capacity": "[3]",
+      "avail": "12R",
+      "addweapon": "Dartgun",
+      "cost": [
+        "1400"
+      ],
+      "source": "AU",
+      "page": "42"
+    },
+    {
+      "name": "External Clip Port",
+      "category": [
+        "Cyberweapon"
+      ],
+      "ess": "0.1",
+      "capacity": "[1]",
+      "avail": "0",
+      "cost": [
+        "100"
+      ],
+      "source": "SR4",
+      "page": "344"
+    },
+    {
+      "name": "External Mount",
+      "category": [
+        "Cyberweapon"
+      ],
+      "ess": "0",
+      "capacity": "[7]",
+      "avail": "16F",
+      "cost": [
+        "2500"
+      ],
+      "source": "AU",
+      "page": "43"
+    },
+    {
+      "name": "Eye Dart",
+      "category": [
+        "Cyberweapon"
+      ],
+      "ess": "0.25",
+      "capacity": "[3]",
+      "avail": "14R",
+      "addweapon": "Eye Dart",
+      "cost": [
+        "1500"
+      ],
+      "source": "AU",
+      "page": "42"
+    },
+    {
+      "name": "Fingertip Dartgun",
+      "category": [
+        "Cyberweapon"
+      ],
+      "ess": "0.45",
+      "capacity": "[4]",
+      "avail": "16R",
+      "addweapon": "Fingertip Dartgun",
+      "cost": [
+        "2750"
+      ],
+      "source": "AU",
+      "page": "42"
+    },
+    {
+      "name": "Grenade Launcher",
+      "category": [
+        "Cyberweapon"
+      ],
+      "ess": "1.5",
+      "capacity": "[15]",
+      "avail": "20F",
+      "addweapon": "Grenade Launcher",
+      "cost": [
+        "4000"
+      ],
+      "source": "SR4",
+      "page": "344"
+    },
+    {
+      "name": "Hand Blade",
+      "category": [
+        "Cyberweapon"
+      ],
+      "ess": "0.25",
+      "capacity": "[3]",
+      "avail": "10F",
+      "addweapon": "Hand Blade",
+      "cost": [
+        "1500"
+      ],
+      "source": "SR4",
+      "page": "345"
+    },
+    {
+      "name": "Hand Razors",
+      "category": [
+        "Cyberweapon"
+      ],
+      "ess": "0.2",
+      "capacity": "[2]",
+      "avail": "10F",
+      "addweapon": "Hand Razors",
+      "cost": [
+        "900"
+      ],
+      "source": "SR4",
+      "page": "345"
+    },
+    {
+      "name": "Heavy Pistol",
+      "category": [
+        "Cyberweapon"
+      ],
+      "ess": "0.6",
+      "capacity": "[6]",
+      "avail": "16R",
+      "addweapon": "Heavy Pistol",
+      "cost": [
+        "3200"
+      ],
+      "source": "SR4",
+      "page": "344"
+    },
+    {
+      "name": "Holdout Pistol",
+      "category": [
+        "Cyberweapon"
+      ],
+      "ess": "0.15",
+      "capacity": "[2]",
+      "avail": "12R",
+      "addweapon": "Holdout Pistol",
+      "cost": [
+        "800"
+      ],
+      "source": "SR4",
+      "page": "344"
+    },
+    {
+      "name": "Laser Sight",
+      "category": [
+        "Cyberweapon"
+      ],
+      "ess": "0.1",
+      "capacity": "[1]",
+      "avail": "0",
+      "cost": [
+        "100"
+      ],
+      "source": "SR4",
+      "page": "344"
+    },
+    {
+      "name": "Light Pistol",
+      "category": [
+        "Cyberweapon"
+      ],
+      "ess": "0.35",
+      "capacity": "[4]",
+      "avail": "14R",
+      "addweapon": "Light Pistol",
+      "cost": [
+        "1500"
+      ],
+      "source": "SR4",
+      "page": "344"
+    },
+    {
+      "name": "Machine Pistol",
+      "category": [
+        "Cyberweapon"
+      ],
+      "ess": "0.4",
+      "capacity": "[4]",
+      "avail": "16R",
+      "addweapon": "Machine Pistol",
+      "cost": [
+        "2000"
+      ],
+      "source": "SR4",
+      "page": "344"
+    },
+    {
+      "name": "Oral Dart",
+      "category": [
+        "Cyberweapon"
+      ],
+      "ess": "0.25",
+      "capacity": "[3]",
+      "avail": "14R",
+      "addweapon": "Oral Dart",
+      "cost": [
+        "1500"
+      ],
+      "source": "AU",
+      "page": "43"
+    },
+    {
+      "name": "Oral Gun",
+      "category": [
+        "Cyberweapon"
+      ],
+      "ess": "0.25",
+      "capacity": "[3]",
+      "avail": "14R",
+      "addweapon": "Oral Gun",
+      "cost": [
+        "1600"
+      ],
+      "source": "AU",
+      "page": "43"
+    },
+    {
+      "name": "Projectile Spur",
+      "category": [
+        "Cyberweapon"
+      ],
+      "ess": "0.3",
+      "capacity": "[4]",
+      "avail": "12F",
+      "addweapon": "Projectile Spur",
+      "cost": [
+        "2200"
+      ],
+      "source": "AU",
+      "page": "43"
+    },
+    {
+      "name": "Oral Slasher",
+      "category": [
+        "Cyberweapon"
+      ],
+      "ess": "0.25",
+      "capacity": "[3]",
+      "avail": "12R",
+      "addweapon": "Oral Slasher",
+      "cost": [
+        "1500"
+      ],
+      "source": "AU",
+      "page": "43"
+    },
+    {
+      "name": "Shock Hand",
+      "category": [
+        "Cyberweapon"
+      ],
+      "ess": "0.25",
+      "capacity": "[3]",
+      "avail": "8R",
+      "addweapon": "Shock Hand",
+      "cost": [
+        "1000"
+      ],
+      "source": "SR4",
+      "page": "345"
+    },
+    {
+      "name": "Shotgun",
+      "category": [
+        "Cyberweapon"
+      ],
+      "ess": "1.1",
+      "capacity": "[11]",
+      "avail": "20R",
+      "addweapon": "Shotgun",
+      "cost": [
+        "2100"
+      ],
+      "source": "SR4",
+      "page": "344"
+    },
+    {
+      "name": "Silencer",
+      "category": [
+        "Cyberweapon"
+      ],
+      "ess": "0.2",
+      "capacity": "[2]",
+      "avail": "0",
+      "cost": [
+        "400"
+      ],
+      "source": "SR4",
+      "page": "344"
+    },
+    {
+      "name": "Sound Suppressor",
+      "category": [
+        "Cyberweapon"
+      ],
+      "ess": "0.3",
+      "capacity": "[3]",
+      "avail": "0",
+      "cost": [
+        "600"
+      ],
+      "source": "SR4",
+      "page": "344"
+    },
+    {
+      "name": "Spur",
+      "category": [
+        "Cyberweapon"
+      ],
+      "ess": "0.3",
+      "capacity": "[3]",
+      "avail": "12F",
+      "addweapon": "Spur",
+      "cost": [
+        "1800"
+      ],
+      "source": "SR4",
+      "page": "345"
+    },
+    {
+      "name": "Squirtgun",
+      "category": [
+        "Cyberweapon"
+      ],
+      "ess": "0.3",
+      "capacity": "[4]",
+      "avail": "10R",
+      "addweapon": "Squirtgun",
+      "cost": [
+        "1250"
+      ],
+      "source": "AU",
+      "page": "43"
+    },
+    {
+      "name": "Submachine Gun",
+      "category": [
+        "Cyberweapon"
+      ],
+      "ess": "1",
+      "capacity": "[10]",
+      "avail": "20R",
+      "addweapon": "Submachine Gun",
+      "cost": [
+        "2500"
+      ],
+      "source": "SR4",
+      "page": "344"
+    },
+    {
+      "name": "Taser",
+      "category": [
+        "Cyberweapon"
+      ],
+      "ess": "0.3",
+      "capacity": "[3]",
+      "avail": "8R",
+      "addweapon": "Taser",
+      "cost": [
+        "1000"
+      ],
+      "source": "AU",
+      "page": "43"
+    },
+    {
+      "name": "Cybergland",
+      "category": [
+        "Cosmetic Modification"
+      ],
+      "rating": "6",
+      "ess": "0.1",
+      "capacity": "[1]",
+      "avail": "+4",
+      "cost": [
+        "500+((Rating-1) * 100)"
+      ],
+      "source": "AU",
+      "page": "33"
+    },
+    {
+      "name": "Cyberlimb Casemod Full Arm",
+      "category": [
+        "Cosmetic Modification"
+      ],
+      "ess": "0",
+      "capacity": "[0]",
+      "avail": "+2",
+      "cost": [
+        "+400"
+      ],
+      "source": "AU",
+      "page": "33"
+    },
+    {
+      "name": "Cyberlimb Casemod Full Leg",
+      "category": [
+        "Cosmetic Modification"
+      ],
+      "ess": "0",
+      "capacity": "[0]",
+      "avail": "+2",
+      "cost": [
+        "+400"
+      ],
+      "source": "AU",
+      "page": "33"
+    },
+    {
+      "name": "Cyberlimb Casemod Lower Arm",
+      "category": [
+        "Cosmetic Modification"
+      ],
+      "ess": "0",
+      "capacity": "[0]",
+      "avail": "+2",
+      "cost": [
+        "+300"
+      ],
+      "source": "AU",
+      "page": "33"
+    },
+    {
+      "name": "Cyberlimb Casemod Lower Leg",
+      "category": [
+        "Cosmetic Modification"
+      ],
+      "ess": "0",
+      "capacity": "[0]",
+      "avail": "+2",
+      "cost": [
+        "+300"
+      ],
+      "source": "AU",
+      "page": "33"
+    },
+    {
+      "name": "Cyberlimb Casemod Hand",
+      "category": [
+        "Cosmetic Modification"
+      ],
+      "ess": "0",
+      "capacity": "[0]",
+      "avail": "+3",
+      "cost": [
+        "250"
+      ],
+      "source": "AU",
+      "page": "33"
+    },
+    {
+      "name": "Cyberlimb Casemod Foot",
+      "category": [
+        "Cosmetic Modification"
+      ],
+      "ess": "0",
+      "capacity": "[0]",
+      "avail": "+3",
+      "cost": [
+        "250"
+      ],
+      "source": "AU",
+      "page": "33"
+    },
+    {
+      "name": "Cyberlimb Casemod Torso",
+      "category": [
+        "Cosmetic Modification"
+      ],
+      "ess": "0",
+      "capacity": "[0]",
+      "avail": "+4",
+      "cost": [
+        "1200"
+      ],
+      "source": "AU",
+      "page": "33"
+    },
+    {
+      "name": "Cyberlimb Casemod Skull",
+      "category": [
+        "Cosmetic Modification"
+      ],
+      "ess": "0",
+      "capacity": "[0]",
+      "avail": "+4",
+      "cost": [
+        "1000"
+      ],
+      "source": "AU",
+      "page": "33"
+    },
+    {
+      "name": "Engraved Datajack",
+      "category": [
+        "Cosmetic Modification"
+      ],
+      "ess": "0",
+      "capacity": "[0]",
+      "avail": "+2",
+      "cost": [
+        "200"
+      ],
+      "source": "AU",
+      "page": "34"
+    },
+    {
+      "name": "Eyemod",
+      "category": [
+        "Cosmetic Modification"
+      ],
+      "ess": "0",
+      "capacity": "[0]",
+      "avail": "+3",
+      "cost": [
+        "500"
+      ],
+      "source": "AU",
+      "page": "34"
+    },
+    {
+      "name": "Shaped Dermal Plating",
+      "category": [
+        "Cosmetic Modification"
+      ],
+      "ess": "0",
+      "capacity": "[0]",
+      "avail": "+5",
+      "cost": [
+        "1200"
+      ],
+      "source": "AU",
+      "page": "34"
+    },
+    {
+      "name": "Wet Sheath",
+      "category": [
+        "Cosmetic Modification"
+      ],
+      "ess": "0",
+      "capacity": "[0]",
+      "avail": "+2",
+      "cost": [
+        "1300"
+      ],
+      "source": "AU",
+      "page": "34"
+    },
+    {
+      "name": "Breast Implants",
+      "category": [
+        "Cosmetic Implant"
+      ],
+      "ess": "0.25",
+      "capacity": "[2]",
+      "avail": "4",
+      "cost": [
+        "3000"
+      ],
+      "source": "AU",
+      "page": "34"
+    },
+    {
+      "name": "Extendable Fang Implants",
+      "category": [
+        "Cosmetic Implant"
+      ],
+      "ess": "0.15",
+      "capacity": "[1]",
+      "avail": "8",
+      "addweapon": "Fang Implants",
+      "cost": [
+        "1200"
+      ],
+      "source": "AU",
+      "page": "34"
+    },
+    {
+      "name": "Fang Implants",
+      "category": [
+        "Cosmetic Implant"
+      ],
+      "ess": "0.1",
+      "capacity": "[1]",
+      "avail": "6",
+      "addweapon": "Fang Implants",
+      "cost": [
+        "800"
+      ],
+      "source": "AU",
+      "page": "34"
+    },
+    {
+      "name": "Fiberoptic Hair",
+      "category": [
+        "Cosmetic Implant"
+      ],
+      "ess": "0.1",
+      "capacity": "[1]",
+      "avail": "0",
+      "cost": [
+        "Variable(450+)"
+      ],
+      "source": "AU",
+      "page": "35"
+    },
+    {
+      "name": "Horn Implants",
+      "category": [
+        "Cosmetic Implant"
+      ],
+      "ess": "0.15",
+      "capacity": "[1]",
+      "avail": "8",
+      "addweapon": "Horn Implants",
+      "cost": [
+        "1500"
+      ],
+      "source": "AU",
+      "page": "35"
+    },
+    {
+      "name": "Penile Implant",
+      "category": [
+        "Cosmetic Implant"
+      ],
+      "ess": "0.25",
+      "capacity": "[1]",
+      "avail": "5",
+      "cost": [
+        "3000"
+      ],
+      "source": "AU",
+      "page": "35"
+    },
+    {
+      "name": "Retractable Horn Implants",
+      "category": [
+        "Cosmetic Implant"
+      ],
+      "ess": "0.25",
+      "capacity": "[1]",
+      "avail": "10",
+      "addweapon": "Horn Implants",
+      "cost": [
+        "2200"
+      ],
+      "source": "AU",
+      "page": "35"
+    },
+    {
+      "name": "Built-in Utility Kit",
+      "category": [
+        "Modular Plug-In"
+      ],
+      "ess": "0",
+      "capacity": "[0]",
+      "avail": "6",
+      "cost": [
+        "1500"
+      ],
+      "source": "AU",
+      "page": "46"
+    },
+    {
+      "name": "Built-in Medkit",
+      "category": [
+        "Modular Plug-In"
+      ],
+      "rating": "6",
+      "ess": "0",
+      "capacity": "[0]",
+      "avail": "7",
+      "cost": [
+        "1000 + (Rating * 100)"
+      ],
+      "source": "AU",
+      "page": "46"
+    },
+    {
+      "name": "Drone Hand",
+      "category": [
+        "Modular Plug-In"
+      ],
+      "ess": "0",
+      "capacity": "[0]",
+      "avail": "8",
+      "cost": [
+        "3500"
+      ],
+      "source": "AU",
+      "page": "46"
+    },
+    {
+      "name": "Grapple Hand",
+      "category": [
+        "Modular Plug-In"
+      ],
+      "ess": "0",
+      "capacity": "[0]",
+      "avail": "12R",
+      "addweapon": "Grapple Hand",
+      "cost": [
+        "3000"
+      ],
+      "source": "AU",
+      "page": "46"
+    },
+    {
+      "name": "Hydraulic Press",
+      "category": [
+        "Modular Plug-In"
+      ],
+      "ess": "0",
+      "capacity": "[0]",
+      "avail": "8",
+      "addweapon": [
+        "Hydraulic Press (pinch)",
+        "Hydraulic Press (strike)"
+      ],
+      "cost": [
+        "5000"
+      ],
+      "source": "AU",
+      "page": "46"
+    },
+    {
+      "name": "Jackhammer",
+      "category": [
+        "Modular Plug-In"
+      ],
+      "ess": "0",
+      "capacity": "[0]",
+      "avail": "8",
+      "addweapon": [
+        "Jackhammer (drill)",
+        "Jackhammer (ram)"
+      ],
+      "cost": [
+        "5000"
+      ],
+      "source": "AU",
+      "page": "47"
+    },
+    {
+      "name": "Nail Pistol",
+      "category": [
+        "Modular Plug-In"
+      ],
+      "ess": "0",
+      "capacity": "[0]",
+      "avail": "8",
+      "addweapon": "Nail Pistol",
+      "cost": [
+        "900"
+      ],
+      "source": "AU",
+      "page": "47"
+    },
+    {
+      "name": "Raptor Cyberlegs",
+      "category": [
+        "Modular Plug-In"
+      ],
+      "ess": "0",
+      "capacity": "[0]",
+      "avail": "12",
+      "cost": [
+        "12500"
+      ],
+      "bonus": {
+        "movementpercent": "25",
+        "specificskill": {
+          "name": "Gymnastics",
+          "bonus": "1"
+        }
+      },
+      "source": "AU",
+      "page": "47"
+    },
+    {
+      "name": "Skimmer Discs",
+      "category": [
+        "Modular Plug-In"
+      ],
+      "ess": "0",
+      "capacity": "[0]",
+      "avail": "8",
+      "cost": [
+        "2500"
+      ],
+      "bonus": {
+        "movementpercent": "50"
+      },
+      "source": "AU",
+      "page": "47"
+    },
+    {
+      "name": "Vacuum Pump",
+      "category": [
+        "Modular Plug-In"
+      ],
+      "ess": "0",
+      "capacity": "[0]",
+      "avail": "6",
+      "cost": [
+        "4000"
+      ],
+      "source": "AU",
+      "page": "48"
+    },
+    {
+      "name": "Waterjets",
+      "category": [
+        "Modular Plug-In"
+      ],
+      "ess": "0",
+      "capacity": "[0]",
+      "avail": "8",
+      "cost": [
+        "1500"
+      ],
+      "bonus": {
+        "swimpercent": "100"
+      },
+      "source": "AU",
+      "page": "48"
+    },
+    {
+      "name": "Welding Laser",
+      "category": [
+        "Modular Plug-In"
+      ],
+      "ess": "0",
+      "capacity": "[0]",
+      "avail": "10R",
+      "addweapon": "Welding Laser",
+      "cost": [
+        "3000"
+      ],
+      "source": "AU",
+      "page": "48"
+    },
+    {
+      "name": "CAST",
+      "category": [
+        "Biodrone Control"
+      ],
+      "ess": "0.5",
+      "capacity": "0",
+      "avail": "25",
+      "cost": [
+        "25000"
+      ],
+      "source": "AU",
+      "page": "152"
+    },
+    {
+      "name": "Orientation Goad",
+      "category": [
+        "Biodrone Control"
+      ],
+      "ess": "0.1",
+      "capacity": "0",
+      "avail": "4",
+      "cost": [
+        "500"
+      ],
+      "source": "AU",
+      "page": "152"
+    },
+    {
+      "name": "Stirrup Interface",
+      "category": [
+        "Biodrone Control"
+      ],
+      "rating": "3",
+      "ess": "FixedValues(2.5,3.5,5.5)",
+      "capacity": "0",
+      "avail": "FixedValues(15R,21R,28R)",
+      "cost": [
+        "FixedValues(45000,80000,100000)"
+      ],
+      "bonus": {
+        "initiativepass": "Rating",
+        "skillwire": "FixedValues(2,4,5)",
+        "specificattribute": {
+          "name": {
+            "value": "REA",
+            "precedence": "1"
+          },
+          "val": "2"
+        },
+        "specificskill": {
+          "name": "Dodge",
+          "bonus": "1",
+          "applytorating": "yes"
+        }
+      },
+      "source": "AU",
+      "page": "153"
+    },
+    {
+      "name": "TRACES",
+      "category": [
+        "Biodrone Control"
+      ],
+      "ess": "0.75",
+      "capacity": "0",
+      "avail": "25F",
+      "cost": [
+        "25000"
+      ],
+      "bonus": {
+        "specificskill": [
+          {
+            "name": "Dodge",
+            "bonus": "2"
+          },
+          {
+            "name": "Unarmed Combat",
+            "bonus": "2"
+          }
+        ]
+      },
+      "source": "AU",
+      "page": "153"
+    },
+    {
+      "name": "SEIES",
+      "category": [
+        "Biodrone Control"
+      ],
+      "ess": "0.75",
+      "capacity": "0",
+      "avail": "25F",
+      "cost": [
+        "20000"
+      ],
+      "source": "AU",
+      "page": "153"
+    },
+    {
+      "name": "Dynamic Handprints",
+      "category": [
+        "Nanocybernetics"
+      ],
+      "rating": "10",
+      "ess": "0.2",
+      "capacity": "0",
+      "avail": "12F",
+      "cost": [
+        "Rating * 1000"
+      ],
+      "source": "AU",
+      "page": "112"
+    },
+    {
+      "name": "Flashback System",
+      "category": [
+        "Nanocybernetics"
+      ],
+      "ess": "0.3",
+      "capacity": "0",
+      "avail": "8",
+      "cost": [
+        "5000"
+      ],
+      "source": "AU",
+      "page": "112"
+    },
+    {
+      "name": "Nano-Biomonitor",
+      "category": [
+        "Nanocybernetics"
+      ],
+      "ess": "0.3",
+      "capacity": "0",
+      "avail": "8",
+      "cost": [
+        "10000"
+      ],
+      "source": "AU",
+      "page": "112"
+    },
+    {
+      "name": "Nanohive",
+      "category": [
+        "Nanocybernetics"
+      ],
+      "rating": "6",
+      "ess": "0.5 + (Rating * 0.25)",
+      "capacity": "[2]",
+      "avail": "Rating * 5",
+      "cost": [
+        "Rating * 10000"
+      ],
+      "source": "AU",
+      "page": "112"
+    },
+    {
+      "name": "Retinal Adjusters",
+      "category": [
+        "Nanocybernetics"
+      ],
+      "rating": "10",
+      "ess": "0.2",
+      "capacity": "0",
+      "avail": "16F",
+      "cost": [
+        "Rating * 5000"
+      ],
+      "source": "AU",
+      "page": "112"
+    },
+    {
+      "name": "Smart Skin",
+      "category": [
+        "Nanocybernetics"
+      ],
+      "rating": "3",
+      "ess": "Rating * 0.5",
+      "capacity": "0",
+      "avail": "Rating * 5",
+      "cost": [
+        "Rating * 10000"
+      ],
+      "source": "AU",
+      "page": "113"
+    },
+    {
+      "name": "Voice Mimic",
+      "category": [
+        "Nanocybernetics"
+      ],
+      "rating": "10",
+      "ess": "0.2",
+      "capacity": "0",
+      "avail": "16F",
+      "cost": [
+        "Rating * 3000"
+      ],
+      "source": "AU",
+      "page": "113"
+    },
+    {
+      "name": "Freefall Balance Augmenter",
+      "category": [
+        "Earware"
+      ],
+      "ess": "0.25",
+      "capacity": "[4]",
+      "avail": "10R",
+      "cost": [
+        "5500"
+      ],
+      "source": "HP",
+      "page": "168"
+    },
+    {
+      "name": "Chipjack (2050)",
+      "category": [
+        "Headware"
+      ],
+      "rating": "4",
+      "ess": "Rating * 0.1",
+      "capacity": "0",
+      "avail": "3",
+      "cost": [
+        "Rating * 2000"
+      ],
+      "source": "2050",
+      "page": "183"
+    },
+    {
+      "name": "Cortex Bomb (2050)",
+      "category": [
+        "Headware"
+      ],
+      "ess": "0",
+      "capacity": "0",
+      "avail": "20F",
+      "cost": [
+        "500000"
+      ],
+      "source": "2050",
+      "page": "183"
+    },
+    {
+      "name": "Data Lock (2050)",
+      "category": [
+        "Headware"
+      ],
+      "ess": "0.2",
+      "capacity": "0",
+      "avail": "6",
+      "cost": [
+        "1000"
+      ],
+      "source": "2050",
+      "page": "184"
+    },
+    {
+      "name": "Datajack (2050)",
+      "category": [
+        "Headware"
+      ],
+      "ess": "0.2",
+      "capacity": "0",
+      "avail": "0",
+      "cost": [
+        "1000"
+      ],
+      "source": "2050",
+      "page": "184"
+    },
+    {
+      "name": "Memory (2050)",
+      "category": [
+        "Headware"
+      ],
+      "rating": "60",
+      "ess": "ceiling(Rating div 20) * 0.1",
+      "capacity": "Rating",
+      "avail": "2",
+      "cost": [
+        "Rating * 500"
+      ],
+      "source": "2050",
+      "page": "184"
+    },
+    {
+      "name": "Radio (2050)",
+      "category": [
+        "Headware"
+      ],
+      "ess": "0.75",
+      "capacity": "0",
+      "avail": "2",
+      "cost": [
+        "4000"
+      ],
+      "source": "2050",
+      "page": "184"
+    },
+    {
+      "name": "Telephone (2050)",
+      "category": [
+        "Headware"
+      ],
+      "ess": "0.5",
+      "capacity": "0",
+      "avail": "3",
+      "cost": [
+        "3700"
+      ],
+      "source": "2050",
+      "page": "184"
+    },
+    {
+      "name": "Cyberears (2050)",
+      "category": [
+        "Earware"
+      ],
+      "rating": "0",
+      "ess": "0.2",
+      "capacity": "4",
+      "avail": "0",
+      "cost": [
+        "5000"
+      ],
+      "subsystems": {
+        "subsystem": [
+          "Earware",
+          "Nanocybernetics"
+        ]
+      },
+      "source": "2050",
+      "page": "185"
+    },
+    {
+      "name": "Cosmetic Modification, Cyberears (2050)",
+      "category": [
+        "Earware"
+      ],
+      "ess": "0",
+      "capacity": "[0]",
+      "avail": "2",
+      "cost": [
+        "1000"
+      ],
+      "source": "2050",
+      "page": "185"
+    },
+    {
+      "name": "Damper (2050)",
+      "category": [
+        "Earware"
+      ],
+      "ess": "0.1",
+      "capacity": "[1]",
+      "avail": "4",
+      "cost": [
+        "3500"
+      ],
+      "source": "2050",
+      "page": "185"
+    },
+    {
+      "name": "Expanded Frequency (2050)",
+      "category": [
+        "Earware"
+      ],
+      "ess": "0.2",
+      "capacity": "[1]",
+      "avail": "4",
+      "cost": [
+        "6000"
+      ],
+      "source": "2050",
+      "page": "185"
+    },
+    {
+      "name": "Hearing Amplification (2050)",
+      "category": [
+        "Earware"
+      ],
+      "ess": "0.2",
+      "capacity": "[1]",
+      "avail": "4",
+      "cost": [
+        "3500"
+      ],
+      "source": "2050",
+      "page": "185"
+    },
+    {
+      "name": "Radio (2050)",
+      "category": [
+        "Earware"
+      ],
+      "ess": "0.75",
+      "capacity": "[1]",
+      "avail": "2",
+      "cost": [
+        "4000"
+      ],
+      "source": "2050",
+      "page": "185"
+    },
+    {
+      "name": "Sound Recorder (2050)",
+      "category": [
+        "Earware"
+      ],
+      "ess": "0.3",
+      "capacity": "[1]",
+      "avail": "8R",
+      "cost": [
+        "7000"
+      ],
+      "source": "2050",
+      "page": "185"
+    },
+    {
+      "name": "Telephone (2050)",
+      "category": [
+        "Earware"
+      ],
+      "ess": "0.5",
+      "capacity": "[1]",
+      "avail": "3",
+      "cost": [
+        "3700"
+      ],
+      "source": "2050",
+      "page": "185"
+    },
+    {
+      "name": "Cybereyes (2050)",
+      "category": [
+        "Eyeware"
+      ],
+      "ess": "0.2",
+      "capacity": "4",
+      "avail": "2",
+      "cost": [
+        "5000"
+      ],
+      "subsystems": {
+        "subsystem": [
+          "Eyeware",
+          "Nanocybernetics"
+        ]
+      },
+      "source": "2050",
+      "page": "186"
+    },
+    {
+      "name": "Camera (2050)",
+      "category": [
+        "Eyeware"
+      ],
+      "ess": "0.1",
+      "capacity": "[1]",
+      "avail": "6",
+      "cost": [
+        "5000"
+      ],
+      "source": "2050",
+      "page": "186"
+    },
+    {
+      "name": "Cosmetic Modifications, Cybereyes (2050)",
+      "category": [
+        "Eyeware"
+      ],
+      "ess": "0",
+      "capacity": "[0]",
+      "avail": "2",
+      "cost": [
+        "1000"
+      ],
+      "source": "2050",
+      "page": "186"
+    },
+    {
+      "name": "Display Link (2050)",
+      "category": [
+        "Eyeware"
+      ],
+      "ess": "0.1",
+      "capacity": "[1]",
+      "avail": "4",
+      "cost": [
+        "1000"
+      ],
+      "source": "2050",
+      "page": "186"
+    },
+    {
+      "name": "Flare Compensation (2050)",
+      "category": [
+        "Eyeware"
+      ],
+      "ess": "0.1",
+      "capacity": "[1]",
+      "avail": "5",
+      "cost": [
+        "2000"
+      ],
+      "source": "2050",
+      "page": "186"
+    },
+    {
+      "name": "Low-Light (2050)",
+      "category": [
+        "Eyeware"
+      ],
+      "ess": "0.2",
+      "capacity": "[1]",
+      "avail": "4",
+      "cost": [
+        "3000"
+      ],
+      "source": "2050",
+      "page": "186"
+    },
+    {
+      "name": "Retinal Duplication (2050)",
+      "category": [
+        "Eyeware"
+      ],
+      "ess": "0.1",
+      "capacity": "[1]",
+      "avail": "12F",
+      "cost": [
+        "50000"
+      ],
+      "source": "2050",
+      "page": "186"
+    },
+    {
+      "name": "Thermographic (2050)",
+      "category": [
+        "Eyeware"
+      ],
+      "ess": "0.2",
+      "capacity": "[1]",
+      "avail": "4",
+      "cost": [
+        "3000"
+      ],
+      "source": "2050",
+      "page": "186"
+    },
+    {
+      "name": "Vision Magnification (2050)",
+      "category": [
+        "Eyeware"
+      ],
+      "ess": "0.2",
+      "capacity": "[2]",
+      "avail": "5",
+      "cost": [
+        "8500"
+      ],
+      "source": "2050",
+      "page": "186"
+    },
+    {
+      "name": "Boosted Reflexes (2050)",
+      "category": [
+        "Bodyware"
+      ],
+      "rating": "6",
+      "ess": "Rating * 0.9",
+      "capacity": "0",
+      "avail": "3R",
+      "cost": [
+        "Rating * 20000"
+      ],
+      "bonus": {
+        "initiative": {
+          "value": "Rating",
+          "precedence": "1"
+        },
+        "initiativepass": "Rating div 2"
+      },
+      "source": "2050",
+      "page": "186"
+    },
+    {
+      "name": "Obvious Full Arm (2050)",
+      "category": [
+        "Cyberlimb"
+      ],
+      "limbslot": "arm",
+      "ess": "1",
+      "capacity": "15",
+      "avail": "4",
+      "cost": [
+        "45000"
+      ],
+      "bonus": {
+        "conditionmonitor": {
+          "physical": "1"
+        }
+      },
+      "subsystems": {
+        "subsystem": [
+          "Bodyware",
+          "Cyberlimb Enhancement",
+          "Cyberlimb Accessory",
+          "Cyberweapon",
+          "Nanocybernetics"
+        ]
+      },
+      "source": "2050",
+      "page": "186"
+    },
+    {
+      "name": "Obvious Full Leg (2050)",
+      "category": [
+        "Cyberlimb"
+      ],
+      "limbslot": "leg",
+      "ess": "1",
+      "capacity": "20",
+      "avail": "4",
+      "cost": [
+        "45000"
+      ],
+      "bonus": {
+        "conditionmonitor": {
+          "physical": "1"
+        }
+      },
+      "subsystems": {
+        "subsystem": [
+          "Bodyware",
+          "Cyberlimb Enhancement",
+          "Cyberlimb Accessory",
+          "Cyberweapon",
+          "Nanocybernetics"
+        ]
+      },
+      "source": "2050",
+      "page": "186"
+    },
+    {
+      "name": "Synthetic Full Arm (2050)",
+      "category": [
+        "Cyberlimb"
+      ],
+      "limbslot": "arm",
+      "ess": "1",
+      "capacity": "8",
+      "avail": "4",
+      "cost": [
+        "50000"
+      ],
+      "bonus": {
+        "conditionmonitor": {
+          "physical": "1"
+        }
+      },
+      "subsystems": {
+        "subsystem": [
+          "Bodyware",
+          "Cyberlimb Enhancement",
+          "Cyberlimb Accessory",
+          "Cyberweapon",
+          "Nanocybernetics"
+        ]
+      },
+      "source": "2050",
+      "page": "186"
+    },
+    {
+      "name": "Synthetic Full Leg (2050)",
+      "category": [
+        "Cyberlimb"
+      ],
+      "limbslot": "leg",
+      "ess": "1",
+      "capacity": "10",
+      "avail": "4",
+      "cost": [
+        "50000"
+      ],
+      "bonus": {
+        "conditionmonitor": {
+          "physical": "1"
+        }
+      },
+      "subsystems": {
+        "subsystem": [
+          "Bodyware",
+          "Cyberlimb Enhancement",
+          "Cyberlimb Accessory",
+          "Cyberweapon",
+          "Nanocybernetics"
+        ]
+      },
+      "source": "2050",
+      "page": "186"
+    },
+    {
+      "name": "Customized Body (2050)",
+      "category": [
+        "Cyberlimb Enhancement"
+      ],
+      "rating": "20",
+      "minrating": "4",
+      "ess": "0",
+      "capacity": "[0]",
+      "avail": "+(Rating)",
+      "cost": [
+        "Rating * 2000"
+      ],
+      "source": "2050",
+      "page": "186"
+    },
+    {
+      "name": "Customized Strength (2050)",
+      "category": [
+        "Cyberlimb Enhancement"
+      ],
+      "rating": "20",
+      "minrating": "4",
+      "ess": "0",
+      "capacity": "[0]",
+      "avail": "+(Rating)",
+      "cost": [
+        "Rating * 2000"
+      ],
+      "source": "2050",
+      "page": "186"
+    },
+    {
+      "name": "Customized Agility (2050)",
+      "category": [
+        "Cyberlimb Enhancement"
+      ],
+      "rating": "20",
+      "minrating": "4",
+      "ess": "0",
+      "capacity": "[0]",
+      "avail": "+(Rating)",
+      "cost": [
+        "Rating * 2000"
+      ],
+      "source": "2050",
+      "page": "186"
+    },
+    {
+      "name": "Enhanced Body (2050)",
+      "category": [
+        "Cyberlimb Enhancement"
+      ],
+      "rating": "3",
+      "ess": "0",
+      "capacity": "[Rating]",
+      "avail": "(Rating)R",
+      "cost": [
+        "Rating * 300"
+      ],
+      "source": "2050",
+      "page": "186"
+    },
+    {
+      "name": "Enhanced Strength (2050)",
+      "category": [
+        "Cyberlimb Enhancement"
+      ],
+      "rating": "3",
+      "ess": "0",
+      "capacity": "[Rating]",
+      "avail": "(Rating)R",
+      "cost": [
+        "Rating * 350"
+      ],
+      "source": "2050",
+      "page": "186"
+    },
+    {
+      "name": "Enhanced Agility (2050)",
+      "category": [
+        "Cyberlimb Enhancement"
+      ],
+      "rating": "3",
+      "ess": "0",
+      "capacity": "[Rating]",
+      "avail": "(Rating)R",
+      "cost": [
+        "Rating * 400"
+      ],
+      "source": "2050",
+      "page": "186"
+    },
+    {
+      "name": "Armor (2050)",
+      "category": [
+        "Cyberlimb Enhancement"
+      ],
+      "rating": "3",
+      "ess": "0",
+      "capacity": "[Rating * 2]",
+      "avail": "Rating * 3",
+      "cost": [
+        "Rating * 500"
+      ],
+      "bonus": {
+        "armor": [
+          {
+            "b": "Rating",
+            "i": "Rating"
+          }
+        ]
+      },
+      "source": "2050",
+      "page": "186"
+    },
+    {
+      "name": "Cosmetic Modifications, Bodyware (2050)",
+      "category": [
+        "Bodyware"
+      ],
+      "ess": "0",
+      "capacity": "[0]",
+      "avail": "2",
+      "cost": [
+        "Variable(2000-10000)"
+      ],
+      "source": "2050",
+      "page": "186"
+    },
+    {
+      "name": "Dermal Plating (2050)",
+      "category": [
+        "Bodyware"
+      ],
+      "rating": "3",
+      "ess": "Rating * 0.5",
+      "capacity": "0",
+      "avail": "(Rating * 4)R",
+      "cost": [
+        "Rating * 5000"
+      ],
+      "bonus": {
+        "armor": [
+          {
+            "b": "Rating",
+            "i": "Rating"
+          }
+        ]
+      },
+      "source": "2050",
+      "page": "186"
+    },
+    {
+      "name": "Filtration System, Air (2050)",
+      "category": [
+        "Bodyware"
+      ],
+      "rating": "6",
+      "ess": "Rating * 0.1",
+      "capacity": "0",
+      "avail": "6",
+      "cost": [
+        "Rating * 15000"
+      ],
+      "source": "2050",
+      "page": "186"
+    },
+    {
+      "name": "Filtration System, Blood (2050)",
+      "category": [
+        "Bodyware"
+      ],
+      "rating": "6",
+      "ess": "Rating * 0.2",
+      "capacity": "0",
+      "avail": "6",
+      "cost": [
+        "Rating * 10000"
+      ],
+      "source": "2050",
+      "page": "186"
+    },
+    {
+      "name": "Filtration System, Cybergill (2050)",
+      "category": [
+        "Bodyware"
+      ],
+      "ess": "0.5",
+      "capacity": "0",
+      "avail": "0",
+      "cost": [
+        "60000"
+      ],
+      "source": "2050",
+      "page": "186"
+    },
+    {
+      "name": "Fingertip Compartment (2050)",
+      "category": [
+        "Bodyware"
+      ],
+      "ess": "0.1",
+      "capacity": "[1]",
+      "avail": "3",
+      "cost": [
+        "3000"
+      ],
+      "source": "2050",
+      "page": "186"
+    },
+    {
+      "name": "Hand Razors (2050)",
+      "category": [
+        "Cyberweapon"
+      ],
+      "ess": "0.1",
+      "capacity": "[1]",
+      "avail": "3F",
+      "addweapon": "Hand Razors",
+      "cost": [
+        "4500"
+      ],
+      "source": "2050",
+      "page": "186"
+    },
+    {
+      "name": "Hand Razors, Retractable (2050)",
+      "category": [
+        "Cyberweapon"
+      ],
+      "ess": "0.2",
+      "capacity": "[2]",
+      "avail": "5F",
+      "addweapon": "Hand Razors",
+      "cost": [
+        "9000"
+      ],
+      "source": "2050",
+      "page": "186"
+    },
+    {
+      "name": "Olfactory Booster (2050)",
+      "category": [
+        "Headware"
+      ],
+      "rating": "6",
+      "ess": "0.2",
+      "capacity": "[0]",
+      "avail": "6",
+      "cost": [
+        "Rating * 1000"
+      ],
+      "source": "2050",
+      "page": "187"
+    },
+    {
+      "name": "Muscle Replacement (2050)",
+      "category": [
+        "Bodyware"
+      ],
+      "rating": "4",
+      "ess": "Rating * 1",
+      "capacity": "0",
+      "avail": "4R",
+      "cost": [
+        "Rating * 20000"
+      ],
+      "bonus": {
+        "specificattribute": [
+          {
+            "name": "AGI",
+            "val": "Rating"
+          },
+          {
+            "name": "STR",
+            "val": "Rating"
+          }
+        ]
+      },
+      "source": "2050",
+      "page": "186"
+    },
+    {
+      "name": "Skillwires (2050)",
+      "category": [
+        "Bodyware"
+      ],
+      "rating": "5",
+      "ess": "Rating * 0.2",
+      "capacity": "0",
+      "avail": "(Rating * 2)",
+      "cost": [
+        "Rating * 50000"
+      ],
+      "bonus": {
+        "skillwire": "Rating"
+      },
+      "source": "2050",
+      "page": "187"
+    },
+    {
+      "name": "Smartlink (2050)",
+      "category": [
+        "Bodyware"
+      ],
+      "ess": "0.5",
+      "capacity": "[0]",
+      "avail": "3R",
+      "cost": [
+        "2500"
+      ],
+      "source": "2050",
+      "page": "187"
+    },
+    {
+      "name": "Spur (2050)",
+      "category": [
+        "Cyberweapon"
+      ],
+      "ess": "0.1",
+      "capacity": "[1]",
+      "avail": "3F",
+      "addweapon": "Spur",
+      "cost": [
+        "7000"
+      ],
+      "source": "2050",
+      "page": "187"
+    },
+    {
+      "name": "Spur, Retractable (2050)",
+      "category": [
+        "Cyberweapon"
+      ],
+      "ess": "0.3",
+      "capacity": "[3]",
+      "avail": "5F",
+      "addweapon": "Spur",
+      "cost": [
+        "11500"
+      ],
+      "source": "2050",
+      "page": "187"
+    },
+    {
+      "name": "Vehicle Control Rig (2050)",
+      "category": [
+        "Bodyware"
+      ],
+      "rating": "3",
+      "ess": "FixedValues(2,3,5)",
+      "capacity": "0",
+      "avail": "FixedValues(6,8,8)",
+      "cost": [
+        "FixedValues(12000,60000,300000)"
+      ],
+      "source": "2050",
+      "page": "187"
+    },
+    {
+      "name": "Voice Modulator (2050)",
+      "category": [
+        "Bodyware"
+      ],
+      "ess": "0.2",
+      "capacity": "0",
+      "avail": "2",
+      "cost": [
+        "50000"
+      ],
+      "source": "2050",
+      "page": "187"
+    },
+    {
+      "name": "Voice Modulator, Playback Feature (2050)",
+      "category": [
+        "Bodyware"
+      ],
+      "ess": "0.2",
+      "capacity": "0",
+      "avail": "4",
+      "cost": [
+        "40000"
+      ],
+      "source": "2050",
+      "page": "187"
+    },
+    {
+      "name": "Voice Modulator, Second Voiceprint",
+      "category": [
+        "Bodyware"
+      ],
+      "ess": "0",
+      "capacity": "0",
+      "avail": "6F",
+      "cost": [
+        "50000"
+      ],
+      "source": "2050",
+      "page": "187"
+    },
+    {
+      "name": "Wired Reflexes (2050)",
+      "category": [
+        "Bodyware"
+      ],
+      "rating": "3",
+      "ess": "FixedValues(2,3,5)",
+      "capacity": "0",
+      "avail": "FixedValues(4R,4R,8R)",
+      "cost": [
+        "FixedValues(55000,165000,500000)"
+      ],
+      "bonus": {
+        "initiativepass": "Rating",
+        "specificattribute": {
+          "name": {
+            "value": "REA",
+            "precedence": "1"
+          },
+          "val": "Rating"
+        }
+      },
+      "source": "2050",
+      "page": "187"
+    },
+    {
+      "name": "Holdout Pistol (2050)",
+      "category": [
+        "Cyberweapon"
+      ],
+      "ess": "0.15",
+      "capacity": "[2]",
+      "avail": "8R",
+      "addweapon": "Holdout Pistol",
+      "cost": [
+        "250"
+      ],
+      "source": "2050",
+      "page": "189"
+    },
+    {
+      "name": "Light Pistol (2050)",
+      "category": [
+        "Cyberweapon"
+      ],
+      "ess": "0.35",
+      "capacity": "[4]",
+      "avail": "8F",
+      "addweapon": "Light Pistol",
+      "cost": [
+        "650"
+      ],
+      "source": "2050",
+      "page": "189"
+    },
+    {
+      "name": "Machine Pistol (2050)",
+      "category": [
+        "Cyberweapon"
+      ],
+      "ess": "0.4",
+      "capacity": "[4]",
+      "avail": "8F",
+      "addweapon": "Machine Pistol",
+      "cost": [
+        "900"
+      ],
+      "source": "2050",
+      "page": "189"
+    },
+    {
+      "name": "Heavy Pistol (2050)",
+      "category": [
+        "Cyberweapon"
+      ],
+      "ess": "0.6",
+      "capacity": "[6]",
+      "avail": "8R",
+      "addweapon": "Heavy Pistol",
+      "cost": [
+        "800"
+      ],
+      "source": "2050",
+      "page": "189"
+    },
+    {
+      "name": "Submachine Gun (2050)",
+      "category": [
+        "Cyberweapon"
+      ],
+      "ess": "1",
+      "capacity": "[10]",
+      "avail": "8R",
+      "addweapon": "Submachine Gun",
+      "cost": [
+        "1800"
+      ],
+      "source": "2050",
+      "page": "189"
+    },
+    {
+      "name": "Shotgun (2050)",
+      "category": [
+        "Cyberweapon"
+      ],
+      "ess": "1.1",
+      "capacity": "[11]",
+      "avail": "8R",
+      "addweapon": "Shotgun",
+      "cost": [
+        "1200"
+      ],
+      "source": "2050",
+      "page": "189"
+    },
+    {
+      "name": "Boosted Reflexes",
+      "category": [
+        "Bodyware"
+      ],
+      "rating": "3",
+      "ess": "Rating * 0.9",
+      "capacity": "0",
+      "avail": "2R",
+      "cost": [
+        "FixedValues(15000,32000,47000)"
+      ],
+      "bonus": {
+        "initiative": {
+          "value": "Rating",
+          "precedence": "1"
+        },
+        "initiativepass": "Rating div 2"
+      },
+      "source": "WS",
+      "page": "14"
+    },
+    {
+      "name": "Arm Blade",
+      "category": [
+        "Cyberweapon"
+      ],
+      "ess": "0.5",
+      "capacity": "[4]",
+      "avail": "14F",
+      "addweapon": "Arm Blade",
+      "cost": [
+        "3500"
+      ],
+      "source": "WS",
+      "page": "14"
+    },
+    {
+      "name": "Cranial Containment Unit",
+      "category": [
+        "Headware"
+      ],
+      "rating": "1",
+      "ess": "0",
+      "capacity": "0",
+      "avail": "0",
+      "cost": [
+        "0"
+      ],
+      "allowgear": {
+        "gearcategory": "Commlink"
+      },
+      "bonus": {
+        "conditionmonitor": {
+          "thresholdoffset": "6"
+        },
+        "matrixinitiativepassadd": "1"
+      },
+      "source": "AU",
+      "page": "158"
+    },
+    {
+      "name": "BattleMech Rigger Control Interface",
+      "category": [
+        "Bodyware"
+      ],
+      "ess": "4.5",
+      "capacity": "0",
+      "avail": "25F",
+      "cost": [
+        "2750000"
+      ],
+      "bonus": {
+        "initiative": {
+          "value": "2",
+          "precedence": "1"
+        },
+        "initiativepass": "2"
+      },
+      "source": "R4",
+      "page": "7"
+    }
+  ],
+  "suites": [
+    {
+      "name": "Aztechnology Topo",
+      "grade": [
+        "Standard"
+      ],
+      "cyberwares": [
+        {
+          "name": "Thermographic Vision"
+        },
+        {
+          "name": "Damper"
+        },
+        {
+          "name": "Bone Lacing (Plastic)"
+        },
+        {
+          "name": "Internal Air Tank"
+        },
+        {
+          "name": "Muscle Replacement",
+          "rating": "2"
+        }
+      ]
+    },
+    {
+      "name": "Clockwerk Bright Cloud Basic",
+      "grade": [
+        "Standard"
+      ],
+      "cyberwares": [
+        {
+          "name": "Balance Augmenter"
+        },
+        {
+          "name": "Gastric Neurostimulator"
+        },
+        {
+          "name": "Retractable Climbing Claws"
+        },
+        {
+          "name": "Grip Feet"
+        },
+        {
+          "name": "Balance Tail"
+        }
+      ]
+    },
+    {
+      "name": "Clockwerk Bright Cloud Alpha",
+      "grade": [
+        "Alphaware"
+      ],
+      "cyberwares": [
+        {
+          "name": "Balance Augmenter"
+        },
+        {
+          "name": "Gastric Neurostimulator"
+        },
+        {
+          "name": "Retractable Climbing Claws"
+        },
+        {
+          "name": "Grip Feet"
+        },
+        {
+          "name": "Balance Tail"
+        }
+      ]
+    },
+    {
+      "name": "Clockwerk Bright Cloud Beta",
+      "grade": [
+        "Betaware"
+      ],
+      "cyberwares": [
+        {
+          "name": "Balance Augmenter"
+        },
+        {
+          "name": "Gastric Neurostimulator"
+        },
+        {
+          "name": "Retractable Climbing Claws"
+        },
+        {
+          "name": "Grip Feet"
+        },
+        {
+          "name": "Balance Tail"
+        }
+      ]
+    },
+    {
+      "name": "Evo Aquanaut Basic",
+      "grade": [
+        "Standard"
+      ],
+      "cyberwares": [
+        {
+          "name": "Orientation System"
+        },
+        {
+          "name": "Image Link"
+        },
+        {
+          "name": "Cyberfins"
+        },
+        {
+          "name": "OXSYS Cybergill"
+        },
+        {
+          "name": "Internal Air Tank"
+        }
+      ]
+    },
+    {
+      "name": "Evo Aquanaut Professional",
+      "grade": [
+        "Alphaware"
+      ],
+      "cyberwares": [
+        {
+          "name": "Orientation System"
+        },
+        {
+          "name": "Image Link"
+        },
+        {
+          "name": "Cyberfins"
+        },
+        {
+          "name": "OXSYS Cybergill"
+        },
+        {
+          "name": "Internal Air Tank"
+        }
+      ]
+    },
+    {
+      "name": "Evo Aquanaut Luxury",
+      "grade": [
+        "Betaware"
+      ],
+      "cyberwares": [
+        {
+          "name": "Orientation System"
+        },
+        {
+          "name": "Image Link"
+        },
+        {
+          "name": "Cyberfins"
+        },
+        {
+          "name": "OXSYS Cybergill"
+        },
+        {
+          "name": "Internal Air Tank"
+        }
+      ]
+    },
+    {
+      "name": "NeoNET/Spin-X Sternschutz Standard ZK",
+      "grade": [
+        "Standard"
+      ],
+      "cyberwares": [
+        {
+          "name": "Commlink"
+        },
+        {
+          "name": "Smartlink"
+        },
+        {
+          "name": "Datajack"
+        },
+        {
+          "name": "Bone Lacing (Kevlar)"
+        },
+        {
+          "name": "Reaction Enhancers",
+          "rating": "1"
+        }
+      ]
+    },
+    {
+      "name": "NeoNET/Spin-X Sternschutz Alpha ZK",
+      "grade": [
+        "Alphaware"
+      ],
+      "cyberwares": [
+        {
+          "name": "Commlink"
+        },
+        {
+          "name": "Smartlink"
+        },
+        {
+          "name": "Datajack"
+        },
+        {
+          "name": "Bone Lacing (Kevlar)"
+        },
+        {
+          "name": "Reaction Enhancers",
+          "rating": "1"
+        }
+      ]
+    },
+    {
+      "name": "Saeder-Krupp Signifier Prime Basic",
+      "grade": [
+        "Standard"
+      ],
+      "cyberwares": [
+        {
+          "name": "Nano-Biomonitor"
+        },
+        {
+          "name": "Nanohive",
+          "rating": "3"
+        },
+        {
+          "name": "Dermal Sheath",
+          "rating": "2"
+        },
+        {
+          "name": "Bone Lacing (Aluminum)"
+        }
+      ]
+    },
+    {
+      "name": "Saeder-Krupp Signifier Prime Alpha",
+      "grade": [
+        "Alphaware"
+      ],
+      "cyberwares": [
+        {
+          "name": "Nano-Biomonitor"
+        },
+        {
+          "name": "Nanohive",
+          "rating": "3"
+        },
+        {
+          "name": "Dermal Sheath",
+          "rating": "2"
+        },
+        {
+          "name": "Bone Lacing (Aluminum)"
+        }
+      ]
+    },
+    {
+      "name": "Saeder-Krupp Signifier Prime Beta",
+      "grade": [
+        "Betaware"
+      ],
+      "cyberwares": [
+        {
+          "name": "Nano-Biomonitor"
+        },
+        {
+          "name": "Nanohive",
+          "rating": "3"
+        },
+        {
+          "name": "Dermal Sheath",
+          "rating": "2"
+        },
+        {
+          "name": "Bone Lacing (Aluminum)"
+        }
+      ]
+    },
+    {
+      "name": "Lone Star SWAT",
+      "grade": [
+        "Standard"
+      ],
+      "cyberwares": [
+        {
+          "name": "Flare Compensation"
+        },
+        {
+          "name": "Thermographic Vision"
+        },
+        {
+          "name": "Smartlink"
+        },
+        {
+          "name": "Bone Lacing (Plastic)"
+        },
+        {
+          "name": "Wired Reflexes",
+          "rating": "1"
+        }
+      ]
+    },
+    {
+      "name": "Lone Star SWAT Watchman",
+      "grade": [
+        "Alphaware"
+      ],
+      "cyberwares": [
+        {
+          "name": "Flare Compensation"
+        },
+        {
+          "name": "Thermographic Vision"
+        },
+        {
+          "name": "Smartlink"
+        },
+        {
+          "name": "Bone Lacing (Plastic)"
+        },
+        {
+          "name": "Wired Reflexes",
+          "rating": "1"
+        }
+      ]
+    },
+    {
+      "name": "Shiawase Executive Suite Silverline",
+      "grade": [
+        "Alphaware"
+      ],
+      "cyberwares": [
+        {
+          "name": "Commlink"
+        },
+        {
+          "name": "Image Link"
+        },
+        {
+          "name": "Datajack"
+        },
+        {
+          "name": "Attention Coprocessor",
+          "rating": "3"
+        },
+        {
+          "name": "Math SPU"
+        }
+      ]
+    },
+    {
+      "name": "Shiawase Executive Suite Goldline",
+      "grade": [
+        "Betaware"
+      ],
+      "cyberwares": [
+        {
+          "name": "Commlink"
+        },
+        {
+          "name": "Image Link"
+        },
+        {
+          "name": "Datajack"
+        },
+        {
+          "name": "Attention Coprocessor",
+          "rating": "3"
+        },
+        {
+          "name": "Math SPU"
+        }
+      ]
+    },
+    {
+      "name": "Saeder-Krupp Cyberlogician Standard Civilian",
+      "grade": [
+        "Alphaware"
+      ],
+      "cyberwares": [
+        {
+          "name": "Commlink"
+        },
+        {
+          "name": "Datajack"
+        },
+        {
+          "name": "Datajack"
+        },
+        {
+          "name": "Datajack"
+        },
+        {
+          "name": "Sim Module"
+        },
+        {
+          "name": "Encephalon Rating 2"
+        },
+        {
+          "name": "Math SPU"
+        },
+        {
+          "name": "Attention Coprocessor",
+          "rating": "3"
+        },
+        {
+          "name": "Data Lock"
+        }
+      ]
+    },
+    {
+      "name": "Saeder-Krupp Cyberlogician Deluxe Civilian",
+      "grade": [
+        "Betaware"
+      ],
+      "cyberwares": [
+        {
+          "name": "Commlink"
+        },
+        {
+          "name": "Datajack"
+        },
+        {
+          "name": "Datajack"
+        },
+        {
+          "name": "Datajack"
+        },
+        {
+          "name": "Sim Module"
+        },
+        {
+          "name": "Encephalon Rating 2"
+        },
+        {
+          "name": "Math SPU"
+        },
+        {
+          "name": "Attention Coprocessor",
+          "rating": "3"
+        },
+        {
+          "name": "Data Lock"
+        }
+      ]
+    },
+    {
+      "name": "Saeder-Krupp Cyberlogician Standard Military",
+      "grade": [
+        "Alphaware"
+      ],
+      "cyberwares": [
+        {
+          "name": "Commlink"
+        },
+        {
+          "name": "Datajack"
+        },
+        {
+          "name": "Datajack"
+        },
+        {
+          "name": "Datajack"
+        },
+        {
+          "name": "Sim Module (Hot-Sim Modified)"
+        },
+        {
+          "name": "Encephalon Rating 2"
+        },
+        {
+          "name": "Math SPU"
+        },
+        {
+          "name": "Attention Coprocessor",
+          "rating": "3"
+        },
+        {
+          "name": "Data Lock"
+        },
+        {
+          "name": "Orientation System"
+        },
+        {
+          "name": "Simsense Booster"
+        }
+      ]
+    },
+    {
+      "name": "Saeder-Krupp Cyberlogician Deluxe Military",
+      "grade": [
+        "Betaware"
+      ],
+      "cyberwares": [
+        {
+          "name": "Commlink"
+        },
+        {
+          "name": "Datajack"
+        },
+        {
+          "name": "Datajack"
+        },
+        {
+          "name": "Datajack"
+        },
+        {
+          "name": "Sim Module (Hot-Sim Modified)"
+        },
+        {
+          "name": "Encephalon Rating 2"
+        },
+        {
+          "name": "Math SPU"
+        },
+        {
+          "name": "Attention Coprocessor",
+          "rating": "3"
+        },
+        {
+          "name": "Data Lock"
+        },
+        {
+          "name": "Orientation System"
+        },
+        {
+          "name": "Simsense Booster"
+        }
+      ]
+    },
+    {
+      "name": "Urban Kshatriya Alpha",
+      "grade": [
+        "Alphaware"
+      ],
+      "cyberwares": [
+        {
+          "name": "Cybereyes Basic System",
+          "rating": "3",
+          "cyberwares": [
+            {
+              "name": "Flare Compensation"
+            },
+            {
+              "name": "Low-Light Vision"
+            },
+            {
+              "name": "Smartlink"
+            },
+            {
+              "name": "Thermographic Vision"
+            },
+            {
+              "name": "Vision Enhancement",
+              "rating": "2"
+            },
+            {
+              "name": "Vision Magnification"
+            }
+          ]
+        },
+        {
+          "name": "Reaction Enhancers",
+          "rating": "1"
+        },
+        {
+          "name": "Muscle Replacement",
+          "rating": "1"
+        },
+        {
+          "name": "Biomonitor"
+        },
+        {
+          "name": "Auto-Injector (Reusable)",
+          "rating": "6"
+        },
+        {
+          "name": "Spur"
+        },
+        {
+          "name": "Spur"
+        }
+      ]
+    },
+    {
+      "name": "Urban Kshatriya Beta",
+      "grade": [
+        "Betaware"
+      ],
+      "cyberwares": [
+        {
+          "name": "Cybereyes Basic System",
+          "rating": "3",
+          "cyberwares": [
+            {
+              "name": "Flare Compensation"
+            },
+            {
+              "name": "Low-Light Vision"
+            },
+            {
+              "name": "Smartlink"
+            },
+            {
+              "name": "Thermographic Vision"
+            },
+            {
+              "name": "Vision Enhancement",
+              "rating": "2"
+            },
+            {
+              "name": "Vision Magnification"
+            }
+          ]
+        },
+        {
+          "name": "Reaction Enhancers",
+          "rating": "1"
+        },
+        {
+          "name": "Muscle Replacement",
+          "rating": "1"
+        },
+        {
+          "name": "Biomonitor"
+        },
+        {
+          "name": "Auto-Injector (Reusable)",
+          "rating": "6"
+        },
+        {
+          "name": "Spur"
+        },
+        {
+          "name": "Spur"
+        }
+      ]
+    },
+    {
+      "name": "Zeiss SenseSation Basic",
+      "grade": [
+        "Standard"
+      ],
+      "cyberwares": [
+        {
+          "name": "Cybereyes Basic System",
+          "rating": "3",
+          "cyberwares": [
+            {
+              "name": "Eye Light System"
+            },
+            {
+              "name": "Low-Light Vision"
+            },
+            {
+              "name": "Vision Enhancement",
+              "rating": "3"
+            },
+            {
+              "name": "Vision Magnification"
+            }
+          ]
+        },
+        {
+          "name": "Cyberears",
+          "rating": "2",
+          "cyberwares": [
+            {
+              "name": "Audio Enhancement"
+            },
+            {
+              "name": "Damper"
+            },
+            {
+              "name": "Select Sound Filter",
+              "rating": "3"
+            },
+            {
+              "name": "Spatial Recognizer"
+            }
+          ]
+        },
+        {
+          "name": "Simrig"
+        },
+        {
+          "name": "Radar Sensor",
+          "rating": "3"
+        }
+      ]
+    },
+    {
+      "name": "Zeiss SenseSation Livecaster",
+      "grade": [
+        "Alphaware"
+      ],
+      "cyberwares": [
+        {
+          "name": "Cybereyes Basic System",
+          "rating": "3",
+          "cyberwares": [
+            {
+              "name": "Eye Light System"
+            },
+            {
+              "name": "Low-Light Vision"
+            },
+            {
+              "name": "Vision Enhancement",
+              "rating": "3"
+            },
+            {
+              "name": "Vision Magnification"
+            }
+          ]
+        },
+        {
+          "name": "Cyberears",
+          "rating": "2",
+          "cyberwares": [
+            {
+              "name": "Audio Enhancement"
+            },
+            {
+              "name": "Damper"
+            },
+            {
+              "name": "Select Sound Filter",
+              "rating": "3"
+            },
+            {
+              "name": "Spatial Recognizer"
+            }
+          ]
+        },
+        {
+          "name": "Simrig"
+        },
+        {
+          "name": "Radar Sensor",
+          "rating": "3"
+        }
+      ]
+    },
+    {
+      "name": "Zeiss SenseSation Executive",
+      "grade": [
+        "Betaware"
+      ],
+      "cyberwares": [
+        {
+          "name": "Cybereyes Basic System",
+          "rating": "3",
+          "cyberwares": [
+            {
+              "name": "Eye Light System"
+            },
+            {
+              "name": "Low-Light Vision"
+            },
+            {
+              "name": "Vision Enhancement",
+              "rating": "3"
+            },
+            {
+              "name": "Vision Magnification"
+            }
+          ]
+        },
+        {
+          "name": "Cyberears",
+          "rating": "2",
+          "cyberwares": [
+            {
+              "name": "Audio Enhancement"
+            },
+            {
+              "name": "Damper"
+            },
+            {
+              "name": "Select Sound Filter",
+              "rating": "3"
+            },
+            {
+              "name": "Spatial Recognizer"
+            }
+          ]
+        },
+        {
+          "name": "Simrig"
+        },
+        {
+          "name": "Radar Sensor",
+          "rating": "3"
+        }
+      ]
+    },
+    {
+      "name": "Cerebrotech Crystal Optics Clearseer",
+      "grade": [
+        "Standard"
+      ],
+      "cyberwares": [
+        {
+          "name": "Cybereyes Basic System",
+          "rating": "2",
+          "cyberwares": [
+            {
+              "name": "Flare Compensation"
+            },
+            {
+              "name": "Low-Light Vision"
+            },
+            {
+              "name": "Vision Enhancement",
+              "rating": "2"
+            },
+            {
+              "name": "Vision Magnification"
+            }
+          ]
+        },
+        {
+          "name": "Ultrasound Sensor"
+        },
+        {
+          "name": "Attention Coprocessor",
+          "rating": "2"
+        }
+      ]
+    },
+    {
+      "name": "Cerebrotech Crystal Optics Clearseer Firewatch",
+      "grade": [
+        "Alphaware"
+      ],
+      "cyberwares": [
+        {
+          "name": "Cybereyes Basic System",
+          "rating": "2",
+          "cyberwares": [
+            {
+              "name": "Flare Compensation"
+            },
+            {
+              "name": "Low-Light Vision"
+            },
+            {
+              "name": "Vision Enhancement",
+              "rating": "2"
+            },
+            {
+              "name": "Vision Magnification"
+            }
+          ]
+        },
+        {
+          "name": "Ultrasound Sensor"
+        },
+        {
+          "name": "Attention Coprocessor",
+          "rating": "2"
+        }
+      ]
+    },
+    {
+      "name": "Mitsuhama NeoBushido",
+      "grade": [
+        "Standard"
+      ],
+      "cyberwares": [
+        {
+          "name": "Cybereyes Basic System",
+          "rating": "1",
+          "cyberwares": [
+            {
+              "name": "Flare Compensation"
+            },
+            {
+              "name": "Smartlink"
+            },
+            {
+              "name": "Protective Covers"
+            }
+          ]
+        },
+        {
+          "name": "Muscle Replacement",
+          "rating": "2"
+        },
+        {
+          "name": "Wired Reflexes",
+          "rating": "1"
+        },
+        {
+          "name": "Hand Blade"
+        }
+      ]
+    },
+    {
+      "name": "Mitsuhama NeoBushido Elite Samurai",
+      "grade": [
+        "Alphaware"
+      ],
+      "cyberwares": [
+        {
+          "name": "Cybereyes Basic System",
+          "rating": "1",
+          "cyberwares": [
+            {
+              "name": "Flare Compensation"
+            },
+            {
+              "name": "Smartlink"
+            },
+            {
+              "name": "Protective Covers"
+            }
+          ]
+        },
+        {
+          "name": "Muscle Replacement",
+          "rating": "2"
+        },
+        {
+          "name": "Wired Reflexes",
+          "rating": "1"
+        },
+        {
+          "name": "Hand Blade"
+        }
+      ]
+    },
+    {
+      "name": "Spin-X Olympian",
+      "grade": [
+        "Alphaware"
+      ],
+      "cyberwares": [
+        {
+          "name": "Muscle Replacement",
+          "rating": "3"
+        },
+        {
+          "name": "Reaction Enhancers",
+          "rating": "2"
+        },
+        {
+          "name": "Internal Air Tank"
+        }
+      ]
+    },
+    {
+      "name": "Mitsuhama Spidersuite",
+      "grade": [
+        "Standard"
+      ],
+      "cyberwares": [
+        {
+          "name": "Orientation System"
+        },
+        {
+          "name": "Cybereyes Basic System",
+          "rating": "2",
+          "cyberwares": [
+            {
+              "name": "Eye Laser System",
+              "cyberwares": [
+                {
+                  "name": "Eye Laser Range Finder"
+                },
+                {
+                  "name": "Eye Laser Microphone",
+                  "rating": "1"
+                }
+              ]
+            },
+            {
+              "name": "Flare Compensation"
+            },
+            {
+              "name": "Low-Light Vision"
+            },
+            {
+              "name": "Vision Magnification"
+            }
+          ]
+        },
+        {
+          "name": "Grapple Gun"
+        },
+        {
+          "name": "Grip Feet"
+        },
+        {
+          "name": "Balance Augmenter"
+        },
+        {
+          "name": "Retractable Climbing Claws"
+        }
+      ]
+    },
+    {
+      "name": "Saeder-Krupp Höllensturm Artillery Suite",
+      "grade": [
+        "Standard"
+      ],
+      "cyberwares": [
+        {
+          "name": {
+            "value": "Obvious Full Arm",
+            "select": "Left"
+          },
+          "cyberwares": [
+            {
+              "name": "Customized Body",
+              "rating": "6"
+            },
+            {
+              "name": "Customized Strength",
+              "rating": "6"
+            },
+            {
+              "name": "Customized Agility",
+              "rating": "4"
+            },
+            {
+              "name": "Armor",
+              "rating": "2"
+            },
+            {
+              "name": "Cyberarm Gyromount"
+            },
+            {
+              "name": "Enhanced Strength",
+              "rating": "3"
+            }
+          ]
+        },
+        {
+          "name": {
+            "value": "Obvious Full Arm",
+            "select": "Right"
+          },
+          "cyberwares": [
+            {
+              "name": "Customized Body",
+              "rating": "6"
+            },
+            {
+              "name": "Customized Strength",
+              "rating": "6"
+            },
+            {
+              "name": "Customized Agility",
+              "rating": "4"
+            },
+            {
+              "name": "Grenade Launcher"
+            }
+          ]
+        },
+        {
+          "name": "Single Cybereye",
+          "rating": "4",
+          "cyberwares": [
+            {
+              "name": "Eye Laser System",
+              "cyberwares": [
+                {
+                  "name": "Eye Laser Designator"
+                }
+              ]
+            },
+            {
+              "name": "Flare Compensation"
+            },
+            {
+              "name": "Smartlink"
+            }
+          ]
+        },
+        {
+          "name": "Bone Lacing (Titanium)"
+        },
+        {
+          "name": {
+            "value": "Obvious Foot",
+            "select": "Left"
+          },
+          "cyberwares": [
+            {
+              "name": "Foot Anchor"
+            }
+          ]
+        },
+        {
+          "name": {
+            "value": "Obvious Foot",
+            "select": "Right"
+          },
+          "cyberwares": [
+            {
+              "name": "Foot Anchor"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Saeder-Krupp Höllensturm Artillery Suite Overwatch",
+      "grade": [
+        "Standard"
+      ],
+      "cyberwares": [
+        {
+          "name": {
+            "value": "Obvious Full Arm",
+            "select": "Left"
+          },
+          "cyberwares": [
+            {
+              "name": "Customized Body",
+              "rating": "6"
+            },
+            {
+              "name": "Customized Strength",
+              "rating": "6"
+            },
+            {
+              "name": "Customized Agility",
+              "rating": "4"
+            },
+            {
+              "name": "Armor",
+              "rating": "2"
+            },
+            {
+              "name": "Cyberarm Gyromount"
+            },
+            {
+              "name": "Enhanced Strength",
+              "rating": "3"
+            }
+          ]
+        },
+        {
+          "name": {
+            "value": "Obvious Full Arm",
+            "select": "Right"
+          },
+          "cyberwares": [
+            {
+              "name": "Customized Body",
+              "rating": "6"
+            },
+            {
+              "name": "Customized Strength",
+              "rating": "6"
+            },
+            {
+              "name": "Customized Agility",
+              "rating": "4"
+            },
+            {
+              "name": "Grenade Launcher"
+            }
+          ]
+        },
+        {
+          "name": "Single Cybereye",
+          "rating": "4",
+          "cyberwares": [
+            {
+              "name": "Eye Laser System",
+              "cyberwares": [
+                {
+                  "name": "Eye Laser Designator"
+                }
+              ]
+            },
+            {
+              "name": "Flare Compensation"
+            },
+            {
+              "name": "Smartlink"
+            }
+          ]
+        },
+        {
+          "name": "Bone Lacing (Titanium)"
+        },
+        {
+          "name": {
+            "value": "Obvious Foot",
+            "select": "Left"
+          },
+          "cyberwares": [
+            {
+              "name": "Foot Anchor"
+            }
+          ]
+        },
+        {
+          "name": {
+            "value": "Obvious Foot",
+            "select": "Right"
+          },
+          "cyberwares": [
+            {
+              "name": "Foot Anchor"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "NeoNET Streetwise Courier Suite",
+      "grade": [
+        "Standard"
+      ],
+      "cyberwares": [
+        {
+          "name": "Balance Augmenter"
+        },
+        {
+          "name": "Bone Lacing (Plastic)"
+        },
+        {
+          "name": "Smuggling Compartment"
+        },
+        {
+          "name": "Reaction Enhancers",
+          "rating": "2"
+        },
+        {
+          "name": "Orientation System"
+        },
+        {
+          "name": {
+            "value": "Obvious Foot",
+            "select": "Left"
+          },
+          "cyberwares": [
+            {
+              "name": "Modular Cyberlimb"
+            },
+            {
+              "name": "Enhanced Agility",
+              "rating": "1"
+            },
+            {
+              "name": "Cyberskates"
+            },
+            {
+              "name": "Skimmer Discs"
+            }
+          ]
+        },
+        {
+          "name": {
+            "value": "Obvious Foot",
+            "select": "Right"
+          },
+          "cyberwares": [
+            {
+              "name": "Modular Cyberlimb"
+            },
+            {
+              "name": "Enhanced Agility",
+              "rating": "1"
+            },
+            {
+              "name": "Cyberskates"
+            },
+            {
+              "name": "Skimmer Discs"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Shiawase Reccear Recon Suite",
+      "grade": [
+        "Standard"
+      ],
+      "cyberwares": [
+        {
+          "name": "Ultrasound Sensor"
+        },
+        {
+          "name": "Cybereyes Basic System",
+          "rating": "2",
+          "cyberwares": [
+            {
+              "name": "Ocular Drone"
+            },
+            {
+              "name": "Vision Magnification"
+            }
+          ]
+        },
+        {
+          "name": "Cyberears",
+          "rating": "2",
+          "cyberwares": [
+            {
+              "name": "Audio Enhancement",
+              "rating": "3"
+            },
+            {
+              "name": "Select Sound Filter",
+              "rating": "3"
+            },
+            {
+              "name": "Spatial Recognizer"
+            }
+          ]
+        },
+        {
+          "name": "Attention Coprocessor",
+          "rating": "1"
+        },
+        {
+          "name": "Radar Sensor",
+          "rating": "3"
+        },
+        {
+          "name": "Synthetic Full Arm",
+          "cyberwares": [
+            {
+              "name": "Modular Cyberlimb"
+            },
+            {
+              "name": "Drone Hand"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Shiawase Reccear Elite Suite",
+      "grade": [
+        "Alphaware"
+      ],
+      "cyberwares": [
+        {
+          "name": "Ultrasound Sensor"
+        },
+        {
+          "name": "Cybereyes Basic System",
+          "rating": "2",
+          "cyberwares": [
+            {
+              "name": "Ocular Drone"
+            },
+            {
+              "name": "Vision Magnification"
+            }
+          ]
+        },
+        {
+          "name": "Cyberears",
+          "rating": "2",
+          "cyberwares": [
+            {
+              "name": "Audio Enhancement",
+              "rating": "3"
+            },
+            {
+              "name": "Select Sound Filter",
+              "rating": "3"
+            },
+            {
+              "name": "Spatial Recognizer"
+            }
+          ]
+        },
+        {
+          "name": "Attention Coprocessor",
+          "rating": "1"
+        },
+        {
+          "name": "Radar Sensor",
+          "rating": "3"
+        },
+        {
+          "name": "Synthetic Full Arm",
+          "cyberwares": [
+            {
+              "name": "Modular Cyberlimb"
+            },
+            {
+              "name": "Drone Hand"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Universal Omnitech Infiltr8R",
+      "grade": [
+        "Standard"
+      ],
+      "cyberwares": [
+        {
+          "name": "Dermal Sheath",
+          "rating": "3",
+          "cyberwares": [
+            {
+              "name": "Dermal Sheath, Ruthenium Polymer Coating"
+            },
+            {
+              "name": "Dermal Sheath, Chameleon Modification"
+            }
+          ]
+        },
+        {
+          "name": "Retinal Duplication",
+          "rating": "5"
+        },
+        {
+          "name": "Voice Modulator"
+        },
+        {
+          "name": "Voice Modulator (Secondary Pattern)",
+          "rating": "5"
+        },
+        {
+          "name": "Dynamic Handprints",
+          "rating": "5"
+        }
+      ]
+    },
+    {
+      "name": "Universal Omnitech Glenn Space Survivorsuite",
+      "grade": [
+        "Standard"
+      ],
+      "cyberwares": [
+        {
+          "name": "Flare Compensation"
+        },
+        {
+          "name": "Damper"
+        },
+        {
+          "name": "Obvious Torso",
+          "cyberwares": [
+            {
+              "name": "Armor",
+              "rating": "1"
+            },
+            {
+              "name": "Grapple Gun"
+            },
+            {
+              "name": "Internal Air Tank"
+            }
+          ]
+        },
+        {
+          "name": "Auto-Injector (Reusable)",
+          "rating": "1"
+        },
+        {
+          "name": "Blood Circuit Control System"
+        },
+        {
+          "name": "Gastric Neurostimulator"
+        },
+        {
+          "name": "Magnetic System"
+        },
+        {
+          "name": "Magnetic System"
+        }
+      ]
+    },
+    {
+      "name": "Urban Gunfighter",
+      "grade": [
+        "Standard"
+      ],
+      "cyberwares": [
+        {
+          "name": "Cybereyes Basic System",
+          "rating": "3",
+          "cyberwares": [
+            {
+              "name": "Flare Compensation"
+            },
+            {
+              "name": "Low-Light Vision"
+            },
+            {
+              "name": "Smartlink"
+            },
+            {
+              "name": "Thermographic Vision"
+            },
+            {
+              "name": "Vision Enhancement",
+              "rating": "2"
+            },
+            {
+              "name": "Vision Magnification"
+            }
+          ]
+        },
+        {
+          "name": "Wired Reflexes",
+          "rating": "1"
+        },
+        {
+          "name": "Heavy Pistol"
+        },
+        {
+          "name": "Heavy Pistol"
+        },
+        {
+          "name": {
+            "value": "Obvious Full Leg",
+            "select": "Left"
+          },
+          "cyberwares": [
+            {
+              "name": "Armor",
+              "rating": "2"
+            },
+            {
+              "name": "Cyber Holster"
+            }
+          ]
+        },
+        {
+          "name": {
+            "value": "Obvious Full Leg",
+            "select": "Left"
+          },
+          "cyberwares": [
+            {
+              "name": "Armor",
+              "rating": "2"
+            },
+            {
+              "name": "Cyber Holster"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Urban Gunfighter Aleph",
+      "grade": [
+        "Alphaware"
+      ],
+      "cyberwares": [
+        {
+          "name": "Cybereyes Basic System",
+          "rating": "3",
+          "cyberwares": [
+            {
+              "name": "Flare Compensation"
+            },
+            {
+              "name": "Low-Light Vision"
+            },
+            {
+              "name": "Smartlink"
+            },
+            {
+              "name": "Thermographic Vision"
+            },
+            {
+              "name": "Vision Enhancement",
+              "rating": "2"
+            },
+            {
+              "name": "Vision Magnification"
+            }
+          ]
+        },
+        {
+          "name": "Wired Reflexes",
+          "rating": "1"
+        },
+        {
+          "name": "Heavy Pistol"
+        },
+        {
+          "name": "Heavy Pistol"
+        },
+        {
+          "name": {
+            "value": "Obvious Full Leg",
+            "select": "Left"
+          },
+          "cyberwares": [
+            {
+              "name": "Armor",
+              "rating": "2"
+            },
+            {
+              "name": "Cyber Holster"
+            }
+          ]
+        },
+        {
+          "name": {
+            "value": "Obvious Full Leg",
+            "select": "Left"
+          },
+          "cyberwares": [
+            {
+              "name": "Armor",
+              "rating": "2"
+            },
+            {
+              "name": "Cyber Holster"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Spin-X Handyman",
+      "grade": [
+        "Standard"
+      ],
+      "cyberwares": [
+        {
+          "name": "Flare Compensation"
+        },
+        {
+          "name": "Eye Light System"
+        },
+        {
+          "name": "Cyberears",
+          "rating": "1",
+          "cyberwares": [
+            {
+              "name": "Damper"
+            },
+            {
+              "name": "Spatial Recognizer"
+            }
+          ]
+        },
+        {
+          "name": "Math SPU"
+        },
+        {
+          "name": "Obvious Full Arm",
+          "cyberwares": [
+            {
+              "name": "Customized Body",
+              "rating": "5"
+            },
+            {
+              "name": "Customized Strength",
+              "rating": "5"
+            },
+            {
+              "name": "Customized Agility",
+              "rating": "4"
+            },
+            {
+              "name": "Modular Cyberlimb"
+            },
+            {
+              "name": "Built-in Utility Kit"
+            },
+            {
+              "name": "Built-in Medkit",
+              "rating": "5"
+            },
+            {
+              "name": "Hydraulic Press"
+            },
+            {
+              "name": "Jackhammer"
+            },
+            {
+              "name": "Nail Pistol"
+            },
+            {
+              "name": "Vacuum Pump"
+            },
+            {
+              "name": "Welding Laser"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Ares Bodyguard",
+      "grade": [
+        "Standard"
+      ],
+      "cyberwares": [
+        {
+          "name": "Cybereyes Basic System",
+          "rating": "3",
+          "cyberwares": [
+            {
+              "name": "Flare Compensation"
+            },
+            {
+              "name": "Low-Light Vision"
+            },
+            {
+              "name": "Smartlink"
+            },
+            {
+              "name": "Vision Enhancement",
+              "rating": "3"
+            },
+            {
+              "name": "Vision Magnification"
+            }
+          ]
+        },
+        {
+          "name": "Cyberears",
+          "rating": "2",
+          "cyberwares": [
+            {
+              "name": "Audio Enhancement",
+              "rating": "3"
+            },
+            {
+              "name": "Damper"
+            },
+            {
+              "name": "Spatial Recognizer"
+            }
+          ]
+        },
+        {
+          "name": "Attention Coprocessor",
+          "rating": "2"
+        },
+        {
+          "name": "Move-by-Wire System",
+          "rating": "1"
+        },
+        {
+          "name": "Bone Lacing (Kevlar)"
+        },
+        {
+          "name": "Synthetic Full Arm",
+          "cyberwares": [
+            {
+              "name": "Customized Body",
+              "rating": "6"
+            },
+            {
+              "name": "Customized Strength",
+              "rating": "6"
+            },
+            {
+              "name": "Customized Agility",
+              "rating": "6"
+            },
+            {
+              "name": "Armor",
+              "rating": "1"
+            },
+            {
+              "name": "Scanner System",
+              "rating": "4"
+            },
+            {
+              "name": "Shock Hand"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Ares Bodyguard Pro",
+      "grade": [
+        "Alphaware"
+      ],
+      "cyberwares": [
+        {
+          "name": "Cybereyes Basic System",
+          "rating": "3",
+          "cyberwares": [
+            {
+              "name": "Flare Compensation"
+            },
+            {
+              "name": "Low-Light Vision"
+            },
+            {
+              "name": "Smartlink"
+            },
+            {
+              "name": "Vision Enhancement",
+              "rating": "3"
+            },
+            {
+              "name": "Vision Magnification"
+            }
+          ]
+        },
+        {
+          "name": "Cyberears",
+          "rating": "2",
+          "cyberwares": [
+            {
+              "name": "Audio Enhancement",
+              "rating": "3"
+            },
+            {
+              "name": "Damper"
+            },
+            {
+              "name": "Spatial Recognizer"
+            }
+          ]
+        },
+        {
+          "name": "Attention Coprocessor",
+          "rating": "2"
+        },
+        {
+          "name": "Move-by-Wire System",
+          "rating": "1"
+        },
+        {
+          "name": "Bone Lacing (Kevlar)"
+        },
+        {
+          "name": "Synthetic Full Arm",
+          "cyberwares": [
+            {
+              "name": "Customized Body",
+              "rating": "6"
+            },
+            {
+              "name": "Customized Strength",
+              "rating": "6"
+            },
+            {
+              "name": "Customized Agility",
+              "rating": "6"
+            },
+            {
+              "name": "Armor",
+              "rating": "1"
+            },
+            {
+              "name": "Scanner System",
+              "rating": "4"
+            },
+            {
+              "name": "Shock Hand"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Aztechnology Cipactli",
+      "grade": [
+        "Alphaware"
+      ],
+      "cyberwares": [
+        {
+          "name": "Commlink"
+        },
+        {
+          "name": "Cybereyes Basic System",
+          "rating": "3",
+          "cyberwares": [
+            {
+              "name": "Flare Compensation"
+            },
+            {
+              "name": "Low-Light Vision"
+            },
+            {
+              "name": "Smartlink"
+            },
+            {
+              "name": "Vision Enhancement",
+              "rating": "3"
+            },
+            {
+              "name": "Vision Magnification"
+            }
+          ]
+        },
+        {
+          "name": "Bone Lacing (Ceramic)"
+        },
+        {
+          "name": "Muscle Replacement",
+          "rating": "2"
+        },
+        {
+          "name": "Move-by-Wire System",
+          "rating": "2"
+        },
+        {
+          "name": "Projectile Spur"
+        }
+      ]
+    }
+  ]
+}

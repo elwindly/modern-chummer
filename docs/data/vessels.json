@@ -1,0 +1,192 @@
+{
+  "version": -999,
+  "categories": [
+    "Inanimate Vessels"
+  ],
+  "metatypes": [
+    {
+      "name": "Plasteel Homunculus",
+      "category": [
+        "Inanimate Vessels"
+      ],
+      "bp": "0",
+      "bodmin": "8",
+      "bodmax": "8",
+      "bodaug": "8",
+      "agimin": "-1",
+      "agimax": "-1",
+      "agiaug": "-1",
+      "reamin": "-1",
+      "reamax": "-1",
+      "reaaug": "-1",
+      "strmin": "8",
+      "strmax": "8",
+      "straug": "8",
+      "chamin": "0",
+      "chamax": "0",
+      "chaaug": "0",
+      "intmin": "0",
+      "intmax": "0",
+      "intaug": "0",
+      "logmin": "0",
+      "logmax": "0",
+      "logaug": "0",
+      "wilmin": "0",
+      "wilmax": "0",
+      "wilaug": "0",
+      "inimin": "0",
+      "inimax": "0",
+      "iniaug": "0",
+      "edgmin": "0",
+      "edgmax": "0",
+      "edgaug": "0",
+      "magmin": "0",
+      "magmax": "0",
+      "magaug": "0",
+      "resmin": "0",
+      "resmax": "0",
+      "resaug": "0",
+      "essmin": "0",
+      "essmax": "0",
+      "essaug": "0",
+      "movement": "10/25",
+      "powers": [
+        {
+          "value": "Armor (Ballistic)",
+          "rating": "8"
+        },
+        {
+          "value": "Armor (Impact)",
+          "rating": "8"
+        },
+        {
+          "value": "Natural Weapon",
+          "select": "Fists: DV (F+7)P, AP 0"
+        }
+      ],
+      "source": "SM",
+      "page": "87"
+    },
+    {
+      "name": "Stone Homunculus",
+      "category": [
+        "Inanimate Vessels"
+      ],
+      "bp": "0",
+      "bodmin": "6",
+      "bodmax": "6",
+      "bodaug": "6",
+      "agimin": "-3",
+      "agimax": "-3",
+      "agiaug": "-3",
+      "reamin": "0",
+      "reamax": "0",
+      "reaaug": "0",
+      "strmin": "6",
+      "strmax": "6",
+      "straug": "6",
+      "chamin": "0",
+      "chamax": "0",
+      "chaaug": "0",
+      "intmin": "0",
+      "intmax": "0",
+      "intaug": "0",
+      "logmin": "0",
+      "logmax": "0",
+      "logaug": "0",
+      "wilmin": "0",
+      "wilmax": "0",
+      "wilaug": "0",
+      "inimin": "0",
+      "inimax": "0",
+      "iniaug": "0",
+      "edgmin": "0",
+      "edgmax": "0",
+      "edgaug": "0",
+      "magmin": "0",
+      "magmax": "0",
+      "magaug": "0",
+      "resmin": "0",
+      "resmax": "0",
+      "resaug": "0",
+      "essmin": "0",
+      "essmax": "0",
+      "essaug": "0",
+      "movement": "5/10",
+      "powers": [
+        {
+          "value": "Armor (Ballistic)",
+          "rating": "5"
+        },
+        {
+          "value": "Armor (Impact)",
+          "rating": "6"
+        },
+        {
+          "value": "Natural Weapon",
+          "select": "Fists: DV (F+5)P, AP 0"
+        }
+      ],
+      "source": "SM",
+      "page": "87"
+    },
+    {
+      "name": "Wicker Man",
+      "category": [
+        "Inanimate Vessels"
+      ],
+      "bp": "0",
+      "bodmin": "2",
+      "bodmax": "2",
+      "bodaug": "2",
+      "agimin": "1",
+      "agimax": "1",
+      "agiaug": "1",
+      "reamin": "1",
+      "reamax": "1",
+      "reaaug": "1",
+      "strmin": "2",
+      "strmax": "2",
+      "straug": "2",
+      "chamin": "0",
+      "chamax": "0",
+      "chaaug": "0",
+      "intmin": "0",
+      "intmax": "0",
+      "intaug": "0",
+      "logmin": "0",
+      "logmax": "0",
+      "logaug": "0",
+      "wilmin": "0",
+      "wilmax": "0",
+      "wilaug": "0",
+      "inimin": "0",
+      "inimax": "0",
+      "iniaug": "0",
+      "edgmin": "0",
+      "edgmax": "0",
+      "edgaug": "0",
+      "magmin": "0",
+      "magmax": "0",
+      "magaug": "0",
+      "resmin": "0",
+      "resmax": "0",
+      "resaug": "0",
+      "essmin": "0",
+      "essmax": "0",
+      "essaug": "0",
+      "movement": "15/30",
+      "bonus": {
+        "reach": "1"
+      },
+      "powers": [
+        {
+          "value": "Allergy",
+          "select": "Fire, Severe"
+        }
+      ],
+      "source": "SM",
+      "page": "87"
+    }
+  ]
+}
