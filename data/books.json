@@ -1,0 +1,197 @@
+{
+  "version": -905,
+  "books": [
+    {
+      "name": "Arsenal",
+      "code": "AR"
+    },
+    {
+      "name": "Arsenal French Content",
+      "code": "ARF"
+    },
+    {
+      "name": "Arsenal German Content",
+      "code": "ARG"
+    },
+    {
+      "name": "Artifacts Unbound",
+      "code": "ART"
+    },
+    {
+      "name": "Attitude",
+      "code": "AT"
+    },
+    {
+      "name": "Augmentation",
+      "code": "AU"
+    },
+    {
+      "name": "Augmentation German Content",
+      "code": "AUG"
+    },
+    {
+      "name": "Corporate Intrigue",
+      "code": "CI"
+    },
+    {
+      "name": "Deadly Waves",
+      "code": "DW"
+    },
+    {
+      "name": "Digital Grimoire",
+      "code": "DG"
+    },
+    {
+      "name": "Euro War Antiques",
+      "code": "EWA"
+    },
+    {
+      "name": "Ghost Cartels",
+      "code": "GC"
+    },
+    {
+      "name": "Gun Heaven",
+      "code": "GH"
+    },
+    {
+      "name": "Gun Heaven 2",
+      "code": "GH2"
+    },
+    {
+      "name": "Gun Heaven 3",
+      "code": "GH3"
+    },
+    {
+      "name": "Hazard Pay",
+      "code": "HP"
+    },
+    {
+      "name": "The Land of Promise",
+      "code": "LOP"
+    },
+    {
+      "name": "MilSpecTech",
+      "code": "MST"
+    },
+    {
+      "name": "MilSpecTech 2",
+      "code": "MST2"
+    },
+    {
+      "name": "Parabotany",
+      "code": "PB"
+    },
+    {
+      "name": "Parageology",
+      "code": "PG"
+    },
+    {
+      "name": "Parazoology",
+      "code": "PZ"
+    },
+    {
+      "name": "Runner's Black Book",
+      "code": "RBB"
+    },
+    {
+      "name": "Runner's Black Book German Content",
+      "code": "RBBG"
+    },
+    {
+      "name": "Runner's Companion",
+      "code": "RC"
+    },
+    {
+      "name": "Running Wild",
+      "code": "RW"
+    },
+    {
+      "name": "Safehouses",
+      "code": "SH"
+    },
+    {
+      "name": "Shadowrun 2050",
+      "code": "2050"
+    },
+    {
+      "name": "Shadowrun 4th Edition",
+      "code": "SR4"
+    },
+    {
+      "name": "S.O.X.",
+      "code": "SOX"
+    },
+    {
+      "name": "Spy Games",
+      "code": "SG"
+    },
+    {
+      "name": "State of the Art: 2073",
+      "code": "SA"
+    },
+    {
+      "name": "Street Legends",
+      "code": "SL"
+    },
+    {
+      "name": "Street Magic",
+      "code": "SM"
+    },
+    {
+      "name": "This Old Drone",
+      "code": "TOD"
+    },
+    {
+      "name": "Unfriendly Skies",
+      "code": "US"
+    },
+    {
+      "name": "Unwired",
+      "code": "UN"
+    },
+    {
+      "name": "Used Car Lot",
+      "code": "UCL"
+    },
+    {
+      "name": "War!",
+      "code": "WAR"
+    },
+    {
+      "name": "The Way of the Adept",
+      "code": "WA"
+    },
+    {
+      "name": "The Way of the Samurai",
+      "code": "WS"
+    },
+    {
+      "name": "The Clutch of Dragons",
+      "code": "COD"
+    },
+    {
+      "name": "Sim Dreams and Nightmares",
+      "code": "SDN"
+    },
+    {
+      "name": "Another Rainy Night",
+      "code": "ARN"
+    },
+    {
+      "name": "April Fool's Day",
+      "code": "AFD"
+    },
+    {
+      "name": "Dumpshock Datahaven Issue 1",
+      "code": "DH1"
+    },
+    {
+      "name": "Dumpshock Datahaven Issue 2",
+      "code": "DH2"
+    },
+    {
+      "name": "Rigger 4",
+      "code": "R4"
+    }
+  ]
+}

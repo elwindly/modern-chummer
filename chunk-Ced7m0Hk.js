@@ -1,0 +1,1 @@
+var o=[{path:"",loadComponent:()=>import('./chunk-7cD6CZNH.js').then(e=>e.ReferenceIndex),title:"Reference \u2014 Modern Chummer"},{path:":categoryId",loadComponent:()=>import('./chunk-CcJrON8_.js').then(e=>e.ReferenceBrowse),title:"Reference \u2014 Modern Chummer"}];export{o as REFERENCE_ROUTES};

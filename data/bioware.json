@@ -1,0 +1,2830 @@
+{
+  "version": -905,
+  "grades": [
+    {
+      "name": "Standard",
+      "ess": "1",
+      "cost": [
+        "1"
+      ],
+      "avail": "0",
+      "source": "SR4"
+    },
+    {
+      "name": "Standard (Second-Hand)",
+      "ess": "1.2",
+      "cost": [
+        "0.5"
+      ],
+      "avail": "-1",
+      "source": "AU"
+    },
+    {
+      "name": "Alphaware",
+      "ess": "0.8",
+      "cost": [
+        "2"
+      ],
+      "avail": "0",
+      "source": "SR4"
+    },
+    {
+      "name": "Betaware",
+      "ess": "0.7",
+      "cost": [
+        "4"
+      ],
+      "avail": "0",
+      "source": "SR4"
+    },
+    {
+      "name": "Deltaware",
+      "ess": "0.5",
+      "cost": [
+        "10"
+      ],
+      "avail": "0",
+      "source": "SR4"
+    }
+  ],
+  "categories": [
+    "Basic",
+    "Biosculpting",
+    "Cosmetic",
+    "Cultured",
+    "Endosymbiont",
+    "Genetech: Genetic Restoration",
+    "Genetech: Phenotype Adjustments",
+    "Genetech: Transgenics",
+    "Genetic Infusions",
+    "Organs and Limbs",
+    "Symbiont"
+  ],
+  "biowares": [
+    {
+      "name": "Essence Hole",
+      "category": [
+        "Basic"
+      ],
+      "rating": "600",
+      "ess": "Rating * 0.01",
+      "capacity": "0",
+      "avail": "0",
+      "cost": [
+        "0"
+      ],
+      "source": "SR4",
+      "page": "0"
+    },
+    {
+      "name": "Adrenaline Pump",
+      "category": [
+        "Basic"
+      ],
+      "rating": "3",
+      "ess": "Rating * 0.75",
+      "capacity": "0",
+      "avail": "(Rating * 6)F",
+      "cost": [
+        "Rating * 30000"
+      ],
+      "source": "SR4",
+      "page": "345"
+    },
+    {
+      "name": "Bone Density Augmentation",
+      "category": [
+        "Basic"
+      ],
+      "rating": "4",
+      "ess": "Rating * 0.3",
+      "capacity": "0",
+      "avail": "12",
+      "cost": [
+        "Rating * 20000"
+      ],
+      "bonus": {
+        "damageresistance": "Rating",
+        "unarmeddv": "Rating-1"
+      },
+      "source": "SR4",
+      "page": "345"
+    },
+    {
+      "name": "Booster",
+      "category": [
+        "Endosymbiont"
+      ],
+      "ess": "0.2",
+      "capacity": "0",
+      "avail": "16",
+      "cost": [
+        "30000"
+      ],
+      "source": "AU",
+      "page": "71"
+    },
+    {
+      "name": "Carapace",
+      "category": [
+        "Symbiont"
+      ],
+      "ess": "0.2",
+      "capacity": "0",
+      "avail": "16",
+      "cost": [
+        "30000"
+      ],
+      "bonus": {
+        "armor": [
+          {
+            "b": "1",
+            "i": "1"
+          }
+        ]
+      },
+      "source": "AU",
+      "page": "71"
+    },
+    {
+      "name": "Cat's Eyes",
+      "category": [
+        "Basic"
+      ],
+      "ess": "0.1",
+      "capacity": "0",
+      "avail": "4",
+      "cost": [
+        "7500"
+      ],
+      "source": "SR4",
+      "page": "345"
+    },
+    {
+      "name": "Cerebral Booster",
+      "category": [
+        "Cultured"
+      ],
+      "rating": "3",
+      "ess": "Rating * 0.2",
+      "capacity": "0",
+      "avail": "Rating * 6",
+      "cost": [
+        "Rating * 10000"
+      ],
+      "bonus": {
+        "specificattribute": {
+          "name": "LOG",
+          "val": "Rating"
+        }
+      },
+      "source": "SR4",
+      "page": "347"
+    },
+    {
+      "name": "Chameleon Skin",
+      "category": [
+        "Cosmetic"
+      ],
+      "ess": "0.2",
+      "capacity": "0",
+      "avail": "6",
+      "cost": [
+        "4000"
+      ],
+      "source": "AU",
+      "page": "62"
+    },
+    {
+      "name": "Chemical Gland",
+      "category": [
+        "Basic"
+      ],
+      "ess": "0.3",
+      "capacity": "0",
+      "avail": "12",
+      "cost": [
+        "Variable(30000+)"
+      ],
+      "source": "AU",
+      "page": "68"
+    },
+    {
+      "name": "Chemical Gland: Exhalation Spray",
+      "category": [
+        "Basic"
+      ],
+      "ess": "0.1",
+      "capacity": "0",
+      "avail": "0",
+      "cost": [
+        "5000"
+      ],
+      "source": "AU",
+      "page": "68"
+    },
+    {
+      "name": "Chemical Gland: Internal Release",
+      "category": [
+        "Basic"
+      ],
+      "ess": "0",
+      "capacity": "0",
+      "avail": "0",
+      "cost": [
+        "1000"
+      ],
+      "source": "AU",
+      "page": "68"
+    },
+    {
+      "name": "Chemical Gland: Spit",
+      "category": [
+        "Basic"
+      ],
+      "ess": "0.1",
+      "capacity": "0",
+      "avail": "0",
+      "cost": [
+        "3000"
+      ],
+      "source": "AU",
+      "page": "68"
+    },
+    {
+      "name": "Chemical Gland: Weapon Reservoir",
+      "category": [
+        "Basic"
+      ],
+      "ess": "0.1",
+      "capacity": "0",
+      "avail": "0",
+      "cost": [
+        "2000"
+      ],
+      "source": "AU",
+      "page": "68"
+    },
+    {
+      "name": "Clean Metabolism",
+      "category": [
+        "Cosmetic"
+      ],
+      "ess": "0.1",
+      "capacity": "0",
+      "avail": "4",
+      "cost": [
+        "2500"
+      ],
+      "source": "AU",
+      "page": "62"
+    },
+    {
+      "name": "Chloroplast Skin",
+      "category": [
+        "Cosmetic"
+      ],
+      "ess": "0.1",
+      "capacity": "0",
+      "avail": "4",
+      "cost": [
+        "2500"
+      ],
+      "source": "AU",
+      "page": "62"
+    },
+    {
+      "name": "Damage Compensators",
+      "category": [
+        "Cultured"
+      ],
+      "rating": "12",
+      "ess": "Rating * 0.1",
+      "capacity": "0",
+      "avail": "(Rating * 3)F",
+      "cost": [
+        "Rating * 15000"
+      ],
+      "bonus": {
+        "conditionmonitor": {
+          "thresholdoffset": "Rating"
+        }
+      },
+      "source": "SR4",
+      "page": "347"
+    },
+    {
+      "name": "Dietware",
+      "category": [
+        "Cosmetic"
+      ],
+      "ess": "0.1",
+      "capacity": "0",
+      "avail": "4",
+      "cost": [
+        "2500"
+      ],
+      "source": "AU",
+      "page": "62"
+    },
+    {
+      "name": "Digester",
+      "category": [
+        "Endosymbiont"
+      ],
+      "ess": "0.2",
+      "capacity": "0",
+      "avail": "12",
+      "cost": [
+        "20000"
+      ],
+      "source": "AU",
+      "page": "71"
+    },
+    {
+      "name": "Digestive Expansion",
+      "category": [
+        "Basic"
+      ],
+      "ess": "0.5",
+      "capacity": "0",
+      "avail": "4",
+      "cost": [
+        "20000"
+      ],
+      "source": "SR4",
+      "page": "345"
+    },
+    {
+      "name": "Dynamic Chameleon Skin",
+      "category": [
+        "Cosmetic"
+      ],
+      "ess": "0.2",
+      "capacity": "0",
+      "avail": "8",
+      "cost": [
+        "7000"
+      ],
+      "source": "AU",
+      "page": "62"
+    },
+    {
+      "name": "Echolocation",
+      "category": [
+        "Basic"
+      ],
+      "ess": "0.1",
+      "capacity": "0",
+      "avail": "8",
+      "cost": [
+        "15000"
+      ],
+      "source": "AU",
+      "page": "63"
+    },
+    {
+      "name": "Elastic Joints",
+      "category": [
+        "Basic"
+      ],
+      "ess": "0.3",
+      "capacity": "0",
+      "avail": "10",
+      "cost": [
+        "15000"
+      ],
+      "bonus": {
+        "specificskill": {
+          "name": "Escape Artist",
+          "bonus": "2"
+        }
+      },
+      "source": "AU",
+      "page": "64"
+    },
+    {
+      "name": "Electroreceptor",
+      "category": [
+        "Endosymbiont"
+      ],
+      "ess": "0.2",
+      "capacity": "0",
+      "avail": "12",
+      "cost": [
+        "20000"
+      ],
+      "source": "AU",
+      "page": "71"
+    },
+    {
+      "name": "Enhanced Articulation",
+      "category": [
+        "Basic"
+      ],
+      "ess": "0.3",
+      "capacity": "0",
+      "avail": "12",
+      "cost": [
+        "40000"
+      ],
+      "bonus": {
+        "skillarticulation": {
+          "bonus": "1"
+        }
+      },
+      "source": "SR4",
+      "page": "345"
+    },
+    {
+      "name": "Enhanced Pheromone Receptors",
+      "category": [
+        "Basic"
+      ],
+      "rating": "3",
+      "ess": "0.1",
+      "capacity": "0",
+      "avail": "10",
+      "cost": [
+        "Rating * 5000"
+      ],
+      "source": "AU",
+      "page": "64"
+    },
+    {
+      "name": "Extended Volume",
+      "category": [
+        "Basic"
+      ],
+      "rating": "3",
+      "ess": "Rating * 0.1",
+      "capacity": "0",
+      "avail": "4",
+      "cost": [
+        "Rating * 4000"
+      ],
+      "source": "AU",
+      "page": "64"
+    },
+    {
+      "name": "False Front",
+      "category": [
+        "Basic"
+      ],
+      "rating": "4",
+      "ess": "Rating * 0.2",
+      "capacity": "0",
+      "avail": "(Rating * 4)R",
+      "cost": [
+        "Rating * 12000"
+      ],
+      "bonus": {
+        "specificskill": {
+          "name": "Disguise",
+          "bonus": "Rating",
+          "precedence": "2"
+        }
+      },
+      "source": "AU",
+      "page": "68"
+    },
+    {
+      "name": "False Front with Mimic Option",
+      "category": [
+        "Basic"
+      ],
+      "rating": "4",
+      "ess": "Rating * 0.2",
+      "capacity": "0",
+      "avail": "(Rating * 4) + 4R",
+      "cost": [
+        "(Rating * 12000) + 10000"
+      ],
+      "bonus": {
+        "specificskill": {
+          "name": "Disguise",
+          "bonus": "Rating",
+          "precedence": "2"
+        }
+      },
+      "source": "AU",
+      "page": "69"
+    },
+    {
+      "name": "Gecko Hands",
+      "category": [
+        "Basic"
+      ],
+      "ess": "0.1",
+      "capacity": "0",
+      "avail": "6",
+      "cost": [
+        "12000"
+      ],
+      "source": "AU",
+      "page": "64"
+    },
+    {
+      "name": "Gills",
+      "category": [
+        "Basic"
+      ],
+      "ess": "0.2",
+      "capacity": "0",
+      "avail": "6",
+      "cost": [
+        "12000"
+      ],
+      "source": "AU",
+      "page": "65"
+    },
+    {
+      "name": "Glow",
+      "category": [
+        "Symbiont"
+      ],
+      "ess": "0.2",
+      "capacity": "0",
+      "avail": "16",
+      "cost": [
+        "40000"
+      ],
+      "source": "AU",
+      "page": "71"
+    },
+    {
+      "name": "Hair Growth",
+      "category": [
+        "Cosmetic"
+      ],
+      "ess": "0",
+      "capacity": "0",
+      "avail": "4",
+      "cost": [
+        "500"
+      ],
+      "source": "AU",
+      "page": "62"
+    },
+    {
+      "name": "Hand and Foot Webbing",
+      "category": [
+        "Basic"
+      ],
+      "ess": "0.1",
+      "capacity": "0",
+      "avail": "6",
+      "cost": [
+        "6000"
+      ],
+      "bonus": {
+        "specificskill": {
+          "name": "Swimming",
+          "bonus": "1"
+        }
+      },
+      "source": "AU",
+      "page": "65"
+    },
+    {
+      "name": "Hearing Enhancement",
+      "category": [
+        "Basic"
+      ],
+      "ess": "0.1",
+      "capacity": "0",
+      "avail": "6",
+      "cost": [
+        "5000"
+      ],
+      "source": "AU",
+      "page": "65"
+    },
+    {
+      "name": "Mender",
+      "category": [
+        "Endosymbiont"
+      ],
+      "ess": "0.2",
+      "capacity": "0",
+      "avail": "16",
+      "cost": [
+        "40000"
+      ],
+      "source": "AU",
+      "page": "71"
+    },
+    {
+      "name": "Metabolic Arrester",
+      "category": [
+        "Basic"
+      ],
+      "ess": "0.3",
+      "capacity": "0",
+      "avail": "8",
+      "cost": [
+        "10000"
+      ],
+      "source": "AU",
+      "page": "66"
+    },
+    {
+      "name": "Mnemonic Enhancer",
+      "category": [
+        "Cultured"
+      ],
+      "rating": "3",
+      "ess": "Rating * 0.1",
+      "capacity": "0",
+      "avail": "Rating * 5",
+      "cost": [
+        "Rating * 7500"
+      ],
+      "bonus": {
+        "skillcategory": [
+          {
+            "name": "Academic",
+            "bonus": "Rating"
+          },
+          {
+            "name": "Language",
+            "bonus": "Rating"
+          },
+          {
+            "name": "Professional",
+            "bonus": "Rating"
+          },
+          {
+            "name": "Street",
+            "bonus": "Rating"
+          }
+        ]
+      },
+      "source": "SR4",
+      "page": "347"
+    },
+    {
+      "name": "Muscle Augmentation",
+      "category": [
+        "Basic"
+      ],
+      "rating": "4",
+      "ess": "Rating * 0.2",
+      "capacity": "0",
+      "avail": "(Rating * 5)R",
+      "cost": [
+        "Rating * 7000"
+      ],
+      "bonus": {
+        "specificattribute": {
+          "name": "STR",
+          "val": "Rating"
+        }
+      },
+      "source": "SR4",
+      "page": "345"
+    },
+    {
+      "name": "Muscle Toner",
+      "category": [
+        "Basic"
+      ],
+      "rating": "4",
+      "ess": "Rating * 0.2",
+      "capacity": "0",
+      "avail": "(Rating * 5)R",
+      "cost": [
+        "Rating * 8000"
+      ],
+      "bonus": {
+        "specificattribute": {
+          "name": "AGI",
+          "val": "Rating"
+        }
+      },
+      "source": "SR4",
+      "page": "346"
+    },
+    {
+      "name": "Nephritic Screen",
+      "category": [
+        "Basic"
+      ],
+      "rating": "4",
+      "ess": "Rating * 0.1",
+      "capacity": "0",
+      "avail": "8",
+      "cost": [
+        "Rating * 10000"
+      ],
+      "source": "AU",
+      "page": "66"
+    },
+    {
+      "name": "Nictitating Membrane",
+      "category": [
+        "Basic"
+      ],
+      "ess": "0.1",
+      "capacity": "0",
+      "avail": "4",
+      "cost": [
+        "2000"
+      ],
+      "source": "AU",
+      "page": "66"
+    },
+    {
+      "name": "Orthoskin",
+      "category": [
+        "Basic"
+      ],
+      "rating": "3",
+      "ess": "Rating * 0.25",
+      "capacity": "0",
+      "avail": "(Rating * 4)R",
+      "cost": [
+        "Rating * 30000"
+      ],
+      "bonus": {
+        "armor": [
+          {
+            "b": "Rating",
+            "i": "Rating"
+          }
+        ]
+      },
+      "source": "SR4",
+      "page": "346"
+    },
+    {
+      "name": "Orthoskin Upgrade: Dragon's Hide",
+      "category": [
+        "Basic"
+      ],
+      "ess": "0.1",
+      "capacity": "0",
+      "avail": "4",
+      "cost": [
+        "7000"
+      ],
+      "source": "AU",
+      "page": "69"
+    },
+    {
+      "name": "Orthoskin Upgrade: Electroshock",
+      "category": [
+        "Basic"
+      ],
+      "ess": "0.25",
+      "capacity": "0",
+      "avail": "4",
+      "cost": [
+        "25000"
+      ],
+      "source": "AU",
+      "page": "69"
+    },
+    {
+      "name": "Orthoskin Upgrade: Sharkskin",
+      "category": [
+        "Basic"
+      ],
+      "ess": "0.1",
+      "capacity": "0",
+      "avail": "4",
+      "cost": [
+        "5000"
+      ],
+      "source": "AU",
+      "page": "69"
+    },
+    {
+      "name": "Orthoskin Upgrade: Smart Insulation",
+      "category": [
+        "Basic"
+      ],
+      "ess": "0.1",
+      "capacity": "0",
+      "avail": "4",
+      "cost": [
+        "12000"
+      ],
+      "source": "AU",
+      "page": "69"
+    },
+    {
+      "name": "Pain Editor",
+      "category": [
+        "Cultured"
+      ],
+      "ess": "0.3",
+      "capacity": "0",
+      "avail": "18F",
+      "cost": [
+        "40000"
+      ],
+      "source": "SR4",
+      "page": "347"
+    },
+    {
+      "name": "Pathogenic Defense",
+      "category": [
+        "Basic"
+      ],
+      "rating": "6",
+      "ess": "Rating * 0.1",
+      "capacity": "0",
+      "avail": "8",
+      "cost": [
+        "Rating * 10000"
+      ],
+      "source": "SR4",
+      "page": "346"
+    },
+    {
+      "name": "Platelet Factories",
+      "category": [
+        "Basic"
+      ],
+      "ess": "0.2",
+      "capacity": "0",
+      "avail": "12",
+      "cost": [
+        "25000"
+      ],
+      "source": "SR4",
+      "page": "346"
+    },
+    {
+      "name": "Quills",
+      "category": [
+        "Basic"
+      ],
+      "ess": "0.25",
+      "capacity": "0",
+      "avail": "6",
+      "addweapon": "Quills",
+      "cost": [
+        "2500"
+      ],
+      "source": "AU",
+      "page": "66"
+    },
+    {
+      "name": "Reception Enhancer",
+      "category": [
+        "Cultured"
+      ],
+      "rating": "3",
+      "ess": "Rating * 0.2",
+      "capacity": "0",
+      "avail": "Rating * 3",
+      "cost": [
+        "Rating * 20000"
+      ],
+      "bonus": {
+        "specificskill": {
+          "name": "Perception",
+          "bonus": "Rating"
+        }
+      },
+      "source": "AU",
+      "page": "70"
+    },
+    {
+      "name": "Reflex Recorder (Skill Group)",
+      "category": [
+        "Cultured"
+      ],
+      "ess": "0.2",
+      "capacity": "0",
+      "avail": "12",
+      "cost": [
+        "25000"
+      ],
+      "bonus": {
+        "selectskillgroup": {
+          "bonus": "1",
+          "applytorating": "yes",
+          "excludecategory": "Magical Active,Resonance Active,Social Active,Technical Active,Vechicle Active"
+        }
+      },
+      "source": "SR4",
+      "page": "347"
+    },
+    {
+      "name": "Reflex Recorder (Skill)",
+      "category": [
+        "Cultured"
+      ],
+      "ess": "0.1",
+      "capacity": "0",
+      "avail": "10",
+      "cost": [
+        "10000"
+      ],
+      "bonus": {
+        "selectskill": {
+          "val": "1",
+          "applytorating": "yes",
+          "excludecategory": "Magical Active,Resonance Active,Social Active,Technical Active,Vechicle Active"
+        }
+      },
+      "source": "SR4",
+      "page": "347"
+    },
+    {
+      "name": "Sac",
+      "category": [
+        "Symbiont"
+      ],
+      "ess": "0.2",
+      "capacity": "0",
+      "avail": "24",
+      "cost": [
+        "30000"
+      ],
+      "source": "AU",
+      "page": "71"
+    },
+    {
+      "name": "Sensitive Skin",
+      "category": [
+        "Cosmetic"
+      ],
+      "ess": "0",
+      "capacity": "0",
+      "avail": "4",
+      "cost": [
+        "2500"
+      ],
+      "source": "AU",
+      "page": "63"
+    },
+    {
+      "name": "Slimworm",
+      "category": [
+        "Endosymbiont"
+      ],
+      "ess": "0.2",
+      "capacity": "0",
+      "avail": "4",
+      "cost": [
+        "1000"
+      ],
+      "source": "AU",
+      "page": "71"
+    },
+    {
+      "name": "Silky Skin",
+      "category": [
+        "Cosmetic"
+      ],
+      "ess": "0",
+      "capacity": "0",
+      "avail": "4",
+      "cost": [
+        "1500"
+      ],
+      "source": "AU",
+      "page": "63"
+    },
+    {
+      "name": "Skin Pigmentation + Biotattoos",
+      "category": [
+        "Cosmetic"
+      ],
+      "ess": "0",
+      "capacity": "0",
+      "avail": "4",
+      "cost": [
+        "1500"
+      ],
+      "source": "AU",
+      "page": "63"
+    },
+    {
+      "name": "Skin Pocket",
+      "category": [
+        "Basic"
+      ],
+      "ess": "0.1",
+      "capacity": "0",
+      "avail": "4",
+      "cost": [
+        "5000"
+      ],
+      "source": "SR4",
+      "page": "346"
+    },
+    {
+      "name": "Sleep Regulator",
+      "category": [
+        "Cultured"
+      ],
+      "ess": "0.15",
+      "capacity": "0",
+      "avail": "8",
+      "cost": [
+        "10000"
+      ],
+      "source": "SR4",
+      "page": "347"
+    },
+    {
+      "name": "Spidersilk Gland",
+      "category": [
+        "Basic"
+      ],
+      "ess": "0.3",
+      "capacity": "0",
+      "avail": "10",
+      "cost": [
+        "40000"
+      ],
+      "source": "AU",
+      "page": "66"
+    },
+    {
+      "name": "Stalwart",
+      "category": [
+        "Endosymbiont"
+      ],
+      "ess": "0.2",
+      "capacity": "0",
+      "avail": "16",
+      "cost": [
+        "30000"
+      ],
+      "source": "AU",
+      "page": "71"
+    },
+    {
+      "name": "Suprathyroid Gland",
+      "category": [
+        "Basic"
+      ],
+      "ess": "0.7",
+      "capacity": "0",
+      "avail": "20F",
+      "cost": [
+        "45000"
+      ],
+      "bonus": {
+        "specificattribute": [
+          {
+            "name": "BOD",
+            "val": "1"
+          },
+          {
+            "name": "AGI",
+            "val": "1"
+          },
+          {
+            "name": {
+              "value": "REA",
+              "precedence": "1"
+            },
+            "val": "1"
+          },
+          {
+            "name": "STR",
+            "val": "1"
+          }
+        ]
+      },
+      "source": "SR4",
+      "page": "346"
+    },
+    {
+      "name": "Symbiotes",
+      "category": [
+        "Basic"
+      ],
+      "rating": "3",
+      "ess": "Rating * 0.2",
+      "capacity": "0",
+      "avail": "Rating * 5",
+      "cost": [
+        "Rating * 10000"
+      ],
+      "source": "SR4",
+      "page": "346"
+    },
+    {
+      "name": "Synaptic Booster",
+      "category": [
+        "Cultured"
+      ],
+      "rating": "3",
+      "ess": "Rating * 0.5",
+      "capacity": "0",
+      "avail": "(Rating * 6)R",
+      "cost": [
+        "Rating * 80000"
+      ],
+      "bonus": {
+        "initiativepass": "Rating",
+        "specificattribute": {
+          "name": {
+            "value": "REA",
+            "precedence": "1"
+          },
+          "val": "Rating"
+        }
+      },
+      "source": "SR4",
+      "page": "347"
+    },
+    {
+      "name": "Synthacardium",
+      "category": [
+        "Basic"
+      ],
+      "rating": "3",
+      "ess": "Rating * 0.1",
+      "capacity": "0",
+      "avail": "Rating * 4",
+      "cost": [
+        "Rating * 10000"
+      ],
+      "bonus": {
+        "skillgroup": {
+          "name": "Athletics",
+          "bonus": "Rating"
+        }
+      },
+      "source": "SR4",
+      "page": "346"
+    },
+    {
+      "name": "Tactile Sensitivity",
+      "category": [
+        "Basic"
+      ],
+      "ess": "0.2",
+      "capacity": "0",
+      "avail": "8",
+      "cost": [
+        "4000"
+      ],
+      "source": "AU",
+      "page": "67"
+    },
+    {
+      "name": "Tailored Critter Pheromones",
+      "category": [
+        "Basic"
+      ],
+      "rating": "3",
+      "ess": "Rating * 0.2",
+      "capacity": "0",
+      "avail": "Rating * 4",
+      "cost": [
+        "Rating * 15000"
+      ],
+      "source": "AU",
+      "page": "67"
+    },
+    {
+      "name": "Tailored Pheromones",
+      "category": [
+        "Basic"
+      ],
+      "rating": "3",
+      "ess": "Rating * 0.2",
+      "capacity": "0",
+      "avail": "(Rating * 4)F",
+      "cost": [
+        "Rating * 15000"
+      ],
+      "bonus": {
+        "skillcategory": {
+          "name": "Social Active",
+          "bonus": "Rating"
+        }
+      },
+      "source": "SR4",
+      "page": "346"
+    },
+    {
+      "name": "Thermosense Organs",
+      "category": [
+        "Cultured"
+      ],
+      "ess": "0.3",
+      "capacity": "0",
+      "avail": "10",
+      "cost": [
+        "15000"
+      ],
+      "source": "AU",
+      "page": "70"
+    },
+    {
+      "name": "Toxin Extractor",
+      "category": [
+        "Basic"
+      ],
+      "rating": "6",
+      "ess": "Rating * 0.2",
+      "capacity": "0",
+      "avail": "Rating * 3",
+      "cost": [
+        "Rating * 20000"
+      ],
+      "source": "SR4",
+      "page": "346"
+    },
+    {
+      "name": "Tracheal Filter",
+      "category": [
+        "Basic"
+      ],
+      "rating": "6",
+      "ess": "Rating * 0.2",
+      "capacity": "0",
+      "avail": "Rating * 3",
+      "cost": [
+        "Rating * 15000"
+      ],
+      "source": "SR4",
+      "page": "346"
+    },
+    {
+      "name": "Trauma Damper",
+      "category": [
+        "Cultured"
+      ],
+      "ess": "0.2",
+      "capacity": "0",
+      "avail": "8R",
+      "cost": [
+        "40000"
+      ],
+      "source": "AU",
+      "page": "70"
+    },
+    {
+      "name": "Troll's Eyes",
+      "category": [
+        "Basic"
+      ],
+      "ess": "0.1",
+      "capacity": "0",
+      "avail": "6",
+      "cost": [
+        "8000"
+      ],
+      "source": "AU",
+      "page": "67"
+    },
+    {
+      "name": "Vocal Range Enhancer",
+      "category": [
+        "Basic"
+      ],
+      "ess": "0.1",
+      "capacity": "0",
+      "avail": "8",
+      "cost": [
+        "12000"
+      ],
+      "source": "AU",
+      "page": "67"
+    },
+    {
+      "name": "Age Rejuvenation, Léonization",
+      "category": [
+        "Genetech: Genetic Restoration"
+      ],
+      "ess": "0",
+      "capacity": "0",
+      "avail": "12R",
+      "cost": [
+        "400000"
+      ],
+      "source": "AU",
+      "page": "88"
+    },
+    {
+      "name": "Age Rejuvenation, Life-span Expansion",
+      "category": [
+        "Genetech: Genetic Restoration"
+      ],
+      "ess": "0",
+      "capacity": "0",
+      "avail": "10R",
+      "cost": [
+        "250000"
+      ],
+      "source": "AU",
+      "page": "88"
+    },
+    {
+      "name": "Age Rejuvenation, Physical Vigor",
+      "category": [
+        "Genetech: Genetic Restoration"
+      ],
+      "ess": "0",
+      "capacity": "0",
+      "avail": "10R",
+      "cost": [
+        "250000"
+      ],
+      "source": "AU",
+      "page": "88"
+    },
+    {
+      "name": "Age Rejuvenation, Maintenance Session",
+      "category": [
+        "Genetech: Genetic Restoration"
+      ],
+      "ess": "0",
+      "capacity": "0",
+      "avail": "0",
+      "cost": [
+        "50000"
+      ],
+      "source": "AU",
+      "page": "88"
+    },
+    {
+      "name": "Augmented Healing",
+      "category": [
+        "Genetech: Genetic Restoration"
+      ],
+      "rating": "8",
+      "ess": "0",
+      "capacity": "0",
+      "avail": "8",
+      "cost": [
+        "Rating * 15000"
+      ],
+      "source": "AU",
+      "page": "88"
+    },
+    {
+      "name": "Augmented Healing, Cellular Repair",
+      "category": [
+        "Genetech: Genetic Restoration"
+      ],
+      "rating": "8",
+      "ess": "0",
+      "capacity": "0",
+      "avail": "8",
+      "cost": [
+        "Rating * 15000"
+      ],
+      "source": "AU",
+      "page": "88"
+    },
+    {
+      "name": "Corrective Therapies",
+      "category": [
+        "Genetech: Genetic Restoration"
+      ],
+      "ess": "0",
+      "capacity": "0",
+      "avail": "4",
+      "cost": [
+        "15000"
+      ],
+      "source": "AU",
+      "page": "88"
+    },
+    {
+      "name": "Revitalization",
+      "category": [
+        "Genetech: Genetic Restoration"
+      ],
+      "rating": "24",
+      "ess": "Rating * -0.1",
+      "capacity": "0",
+      "avail": "12",
+      "cost": [
+        "75000 + (Rating * 20000)"
+      ],
+      "source": "AU",
+      "page": "88"
+    },
+    {
+      "name": "DNA Masking, Genewipe",
+      "category": [
+        "Genetech: Phenotype Adjustments"
+      ],
+      "ess": "0.2",
+      "capacity": "0",
+      "avail": "16F",
+      "cost": [
+        "45000"
+      ],
+      "source": "AU",
+      "page": "89"
+    },
+    {
+      "name": "DNA Masking, Masque",
+      "category": [
+        "Genetech: Phenotype Adjustments"
+      ],
+      "ess": "0.1",
+      "capacity": "0",
+      "avail": "10F",
+      "cost": [
+        "25000"
+      ],
+      "source": "AU",
+      "page": "89"
+    },
+    {
+      "name": "DNA Masking, Reprint",
+      "category": [
+        "Genetech: Phenotype Adjustments"
+      ],
+      "ess": "0.1",
+      "capacity": "0",
+      "avail": "12F",
+      "cost": [
+        "30000"
+      ],
+      "source": "AU",
+      "page": "89"
+    },
+    {
+      "name": "DNA Masking, Shuffle",
+      "category": [
+        "Genetech: Phenotype Adjustments"
+      ],
+      "ess": "0.2",
+      "capacity": "0",
+      "avail": "12F",
+      "cost": [
+        "30000"
+      ],
+      "source": "AU",
+      "page": "89"
+    },
+    {
+      "name": "Genetic Optimization",
+      "category": [
+        "Genetech: Phenotype Adjustments"
+      ],
+      "ess": "0.2",
+      "capacity": "0",
+      "avail": "10",
+      "cost": [
+        "45000"
+      ],
+      "bonus": {
+        "selectattribute": {
+          "excludeattribute": [
+            "EDG",
+            "MAG",
+            "RES"
+          ],
+          "max": "1"
+        }
+      },
+      "source": "AU",
+      "page": "89"
+    },
+    {
+      "name": "Phenotypic Alteration",
+      "category": [
+        "Genetech: Phenotype Adjustments"
+      ],
+      "ess": "0.1",
+      "capacity": "0",
+      "avail": "8",
+      "cost": [
+        "Variable(40000+)"
+      ],
+      "source": "AU",
+      "page": "89"
+    },
+    {
+      "name": "Phenotypic Alteration, Ethnicity Alteration",
+      "category": [
+        "Genetech: Phenotype Adjustments"
+      ],
+      "ess": "0.2",
+      "capacity": "0",
+      "avail": "8",
+      "cost": [
+        "40000"
+      ],
+      "source": "AU",
+      "page": "89"
+    },
+    {
+      "name": "Phenotypic Alteration, Print Removal",
+      "category": [
+        "Genetech: Phenotype Adjustments"
+      ],
+      "ess": "0.1",
+      "capacity": "0",
+      "avail": "8F",
+      "cost": [
+        "25000"
+      ],
+      "source": "AU",
+      "page": "89"
+    },
+    {
+      "name": "Phenotypic Alteration, Metaposeur",
+      "category": [
+        "Genetech: Phenotype Adjustments"
+      ],
+      "ess": "0.1",
+      "capacity": "0",
+      "avail": "8",
+      "cost": [
+        "40000"
+      ],
+      "source": "AU",
+      "page": "90"
+    },
+    {
+      "name": "Enhanced Protein Exchange, Adapsin",
+      "category": [
+        "Genetech: Transgenics"
+      ],
+      "ess": "0.2",
+      "capacity": "0",
+      "avail": "16",
+      "cost": [
+        "30000"
+      ],
+      "forcegrade": "Standard",
+      "source": "AU",
+      "page": "90"
+    },
+    {
+      "name": "Enhanced Protein Exchange, Daredrenaline",
+      "category": [
+        "Genetech: Transgenics"
+      ],
+      "ess": "0.1",
+      "capacity": "0",
+      "avail": "6",
+      "cost": [
+        "25000"
+      ],
+      "bonus": {
+        "drainresist": "1",
+        "skillattribute": {
+          "name": "WIL",
+          "bonus": "1"
+        }
+      },
+      "forcegrade": "Standard",
+      "source": "AU",
+      "page": "90"
+    },
+    {
+      "name": "Enhanced Protein Exchange, Double Elastin",
+      "category": [
+        "Genetech: Transgenics"
+      ],
+      "ess": "0.2",
+      "capacity": "0",
+      "avail": "8",
+      "cost": [
+        "12000"
+      ],
+      "bonus": {
+        "armor": [
+          {
+            "i": "1"
+          }
+        ]
+      },
+      "forcegrade": "Standard",
+      "source": "AU",
+      "page": "90"
+    },
+    {
+      "name": "Enhanced Protein Exchange, Dynomitan",
+      "category": [
+        "Genetech: Transgenics"
+      ],
+      "ess": "0.2",
+      "capacity": "0",
+      "avail": "8",
+      "cost": [
+        "25000"
+      ],
+      "bonus": {
+        "skillattribute": {
+          "name": "INT",
+          "bonus": "1"
+        }
+      },
+      "forcegrade": "Standard",
+      "source": "AU",
+      "page": "90"
+    },
+    {
+      "name": "Enhanced Protein Exchange, Hyper-Glucagon",
+      "category": [
+        "Genetech: Transgenics"
+      ],
+      "ess": "0.1",
+      "capacity": "0",
+      "avail": "6",
+      "cost": [
+        "20000"
+      ],
+      "bonus": {
+        "lifestylecost": "10"
+      },
+      "forcegrade": "Standard",
+      "source": "AU",
+      "page": "90"
+    },
+    {
+      "name": "Enhanced Protein Exchange, Magnesense",
+      "category": [
+        "Genetech: Transgenics"
+      ],
+      "ess": "0.1",
+      "capacity": "0",
+      "avail": "6",
+      "cost": [
+        "20000"
+      ],
+      "forcegrade": "Standard",
+      "source": "AU",
+      "page": "90"
+    },
+    {
+      "name": "Enhanced Protein Exchange, Neo-EPO",
+      "category": [
+        "Genetech: Transgenics"
+      ],
+      "ess": "0.2",
+      "capacity": "0",
+      "avail": "6",
+      "cost": [
+        "25000"
+      ],
+      "bonus": {
+        "skillgroup": {
+          "name": "Athletics",
+          "bonus": "1"
+        }
+      },
+      "forcegrade": "Standard",
+      "source": "AU",
+      "page": "91"
+    },
+    {
+      "name": "Enhanced Protein Exchange, PuSHeD",
+      "category": [
+        "Genetech: Transgenics"
+      ],
+      "ess": "0.1",
+      "capacity": "0",
+      "avail": "8",
+      "cost": [
+        "15000"
+      ],
+      "bonus": {
+        "skillattribute": {
+          "name": "LOG",
+          "bonus": "1"
+        }
+      },
+      "forcegrade": "Standard",
+      "source": "AU",
+      "page": "91"
+    },
+    {
+      "name": "Enhanced Protein Exchange, Qualia",
+      "category": [
+        "Genetech: Transgenics"
+      ],
+      "ess": "0.4",
+      "capacity": "0",
+      "avail": "8",
+      "cost": [
+        "25000"
+      ],
+      "bonus": {
+        "skillattribute": {
+          "name": "INT",
+          "bonus": "1"
+        }
+      },
+      "forcegrade": "Standard",
+      "source": "AU",
+      "page": "91"
+    },
+    {
+      "name": "Enhanced Protein Exchange, Reakt",
+      "category": [
+        "Genetech: Transgenics"
+      ],
+      "ess": "0.4",
+      "capacity": "0",
+      "avail": "10",
+      "cost": [
+        "30000"
+      ],
+      "forcegrade": "Standard",
+      "source": "AU",
+      "page": "91"
+    },
+    {
+      "name": "Enhanced Protein Exchange, Synch",
+      "category": [
+        "Genetech: Transgenics"
+      ],
+      "ess": "0.3",
+      "capacity": "0",
+      "avail": "8",
+      "cost": [
+        "30000"
+      ],
+      "bonus": {
+        "specificskill": {
+          "name": "Perception",
+          "bonus": "1"
+        }
+      },
+      "forcegrade": "Standard",
+      "source": "AU",
+      "page": "91"
+    },
+    {
+      "name": "Enhanced Protein Exchange, Vasocon",
+      "category": [
+        "Genetech: Transgenics"
+      ],
+      "ess": "0.1",
+      "capacity": "0",
+      "avail": "6",
+      "cost": [
+        "25000"
+      ],
+      "forcegrade": "Standard",
+      "source": "AU",
+      "page": "91"
+    },
+    {
+      "name": "Enhanced Protein Exchange, Vegsin",
+      "category": [
+        "Genetech: Transgenics"
+      ],
+      "ess": "0.1",
+      "capacity": "0",
+      "avail": "6",
+      "cost": [
+        "15000"
+      ],
+      "bonus": {
+        "lifestylecost": "-10"
+      },
+      "forcegrade": "Standard",
+      "source": "AU",
+      "page": "91"
+    },
+    {
+      "name": "Environmental Microadaptation, Cold Adaptation",
+      "category": [
+        "Genetech: Transgenics"
+      ],
+      "ess": "0.5",
+      "capacity": "0",
+      "avail": "6",
+      "cost": [
+        "40000"
+      ],
+      "forcegrade": "Standard",
+      "source": "AU",
+      "page": "91"
+    },
+    {
+      "name": "Environmental Microadaptation, Heat Adaptation",
+      "category": [
+        "Genetech: Transgenics"
+      ],
+      "ess": "0.5",
+      "capacity": "0",
+      "avail": "5",
+      "cost": [
+        "40000"
+      ],
+      "forcegrade": "Standard",
+      "source": "AU",
+      "page": "91"
+    },
+    {
+      "name": "Environmental Microadaptation, Low Oxygen Tolerance",
+      "category": [
+        "Genetech: Transgenics"
+      ],
+      "ess": "0.5",
+      "capacity": "0",
+      "avail": "4",
+      "cost": [
+        "35000"
+      ],
+      "bonus": {
+        "lifestylecost": "10"
+      },
+      "forcegrade": "Standard",
+      "source": "AU",
+      "page": "91"
+    },
+    {
+      "name": "Environmental Microadaptation, Microgravity Adaptation",
+      "category": [
+        "Genetech: Transgenics"
+      ],
+      "ess": "0.5",
+      "capacity": "0",
+      "avail": "4",
+      "cost": [
+        "30000"
+      ],
+      "forcegrade": "Standard",
+      "source": "AU",
+      "page": "92"
+    },
+    {
+      "name": "Environmental Microadaptation, Pollution Tolerance",
+      "category": [
+        "Genetech: Transgenics"
+      ],
+      "ess": "0.3",
+      "capacity": "0",
+      "avail": "5",
+      "cost": [
+        "35000"
+      ],
+      "forcegrade": "Standard",
+      "source": "AU",
+      "page": "92"
+    },
+    {
+      "name": "Environmental Microadaptation, Radiation Tolerance",
+      "category": [
+        "Genetech: Transgenics"
+      ],
+      "ess": "0.5",
+      "capacity": "0",
+      "avail": "6",
+      "cost": [
+        "35000"
+      ],
+      "forcegrade": "Standard",
+      "source": "AU",
+      "page": "92"
+    },
+    {
+      "name": "Immunization, Basic Immunity",
+      "category": [
+        "Genetech: Transgenics"
+      ],
+      "ess": "0.1",
+      "capacity": "0",
+      "avail": "4",
+      "cost": [
+        "20000"
+      ],
+      "forcegrade": "Standard",
+      "source": "AU",
+      "page": "93"
+    },
+    {
+      "name": "Immunization, Allergy Immunization",
+      "category": [
+        "Genetech: Transgenics"
+      ],
+      "rating": "20",
+      "ess": "0.1",
+      "capacity": "0",
+      "avail": "4",
+      "cost": [
+        "Rating * 5000"
+      ],
+      "forcegrade": "Standard",
+      "source": "AU",
+      "page": "93"
+    },
+    {
+      "name": "Immunization, Neurotoxin Immunization",
+      "category": [
+        "Genetech: Transgenics"
+      ],
+      "ess": "0.2",
+      "capacity": "0",
+      "avail": "8R",
+      "cost": [
+        "30000"
+      ],
+      "forcegrade": "Standard",
+      "source": "AU",
+      "page": "93"
+    },
+    {
+      "name": "Immunization, Soft-Nanite Immunization",
+      "category": [
+        "Genetech: Transgenics"
+      ],
+      "ess": "0.1",
+      "capacity": "0",
+      "avail": "8",
+      "cost": [
+        "25000"
+      ],
+      "forcegrade": "Standard",
+      "source": "AU",
+      "page": "93"
+    },
+    {
+      "name": "Transgenic Alteration",
+      "category": [
+        "Genetech: Transgenics"
+      ],
+      "ess": "0.2",
+      "capacity": "0",
+      "avail": "10R",
+      "cost": [
+        "Variable(40000+)"
+      ],
+      "forcegrade": "Standard",
+      "source": "AU",
+      "page": "93"
+    },
+    {
+      "name": "Transgenic Alteration, Alien Look",
+      "category": [
+        "Genetech: Transgenics"
+      ],
+      "ess": "0.2",
+      "capacity": "0",
+      "avail": "10R",
+      "cost": [
+        "40000"
+      ],
+      "forcegrade": "Standard",
+      "source": "AU",
+      "page": "93"
+    },
+    {
+      "name": "Transgenic Alteration, Animal Features",
+      "category": [
+        "Genetech: Transgenics"
+      ],
+      "ess": "0.3",
+      "capacity": "0",
+      "avail": "10R",
+      "cost": [
+        "Variable(45000+)"
+      ],
+      "forcegrade": "Standard",
+      "source": "AU",
+      "page": "93"
+    },
+    {
+      "name": "Adrenal Regulator",
+      "category": [
+        "Basic"
+      ],
+      "ess": "0.1",
+      "capacity": "0",
+      "avail": "8",
+      "cost": [
+        "9000"
+      ],
+      "source": "WAR",
+      "page": "164"
+    },
+    {
+      "name": "MPC Bridge",
+      "category": [
+        "Cultured"
+      ],
+      "ess": "0.1",
+      "capacity": "0",
+      "avail": "10",
+      "cost": [
+        "14000"
+      ],
+      "source": "WAR",
+      "page": "164"
+    },
+    {
+      "name": "Braveheart",
+      "category": [
+        "Genetic Infusions"
+      ],
+      "ess": "0.4",
+      "capacity": "0",
+      "avail": "16F",
+      "cost": [
+        "1000"
+      ],
+      "bonus": {
+        "armor": [
+          {
+            "i": "2"
+          }
+        ],
+        "specificattribute": [
+          {
+            "name": "WIL",
+            "val": "1"
+          },
+          {
+            "name": "INT",
+            "val": "-1"
+          }
+        ]
+      },
+      "source": "AU",
+      "page": "94"
+    },
+    {
+      "name": "Endure",
+      "category": [
+        "Genetic Infusions"
+      ],
+      "ess": "0.4",
+      "capacity": "0",
+      "avail": "16F",
+      "cost": [
+        "1000"
+      ],
+      "bonus": {
+        "skillgroup": {
+          "name": "Athletics",
+          "bonus": "1"
+        }
+      },
+      "source": "AU",
+      "page": "94"
+    },
+    {
+      "name": "Inspiration",
+      "category": [
+        "Genetic Infusions"
+      ],
+      "ess": "0.4",
+      "capacity": "0",
+      "avail": "16F",
+      "cost": [
+        "1000"
+      ],
+      "bonus": {
+        "specificattribute": [
+          {
+            "name": "LOG",
+            "val": "1"
+          },
+          {
+            "name": "INT",
+            "val": "1"
+          },
+          {
+            "name": "WIL",
+            "val": "-1"
+          }
+        ]
+      },
+      "source": "AU",
+      "page": "94"
+    },
+    {
+      "name": "Sideways",
+      "category": [
+        "Genetic Infusions"
+      ],
+      "ess": "0.4",
+      "capacity": "0",
+      "avail": "16F",
+      "cost": [
+        "1000"
+      ],
+      "bonus": {
+        "skillcategory": {
+          "name": "Combat Active",
+          "bonus": "1"
+        },
+        "specificskill": {
+          "name": "Perception",
+          "bonus": "1"
+        }
+      },
+      "source": "AU",
+      "page": "94"
+    },
+    {
+      "name": "Biosculpting, Minor Modification",
+      "category": [
+        "Biosculpting"
+      ],
+      "ess": "0",
+      "capacity": "0",
+      "avail": "4",
+      "cost": [
+        "Variable(100-2000)"
+      ],
+      "source": "AU",
+      "page": "61"
+    },
+    {
+      "name": "Biosculpting, Moderate Modification",
+      "category": [
+        "Biosculpting"
+      ],
+      "ess": "0.1",
+      "capacity": "0",
+      "avail": "6",
+      "cost": [
+        "Variable(1000-5000)"
+      ],
+      "source": "AU",
+      "page": "61"
+    },
+    {
+      "name": "Biosculpting, Severe Modification (0.3)",
+      "category": [
+        "Biosculpting"
+      ],
+      "ess": "0.3",
+      "capacity": "0",
+      "avail": "6",
+      "cost": [
+        "Variable(10000+)"
+      ],
+      "source": "AU",
+      "page": "62"
+    },
+    {
+      "name": "Biosculpting, Severe Modification (0.4)",
+      "category": [
+        "Biosculpting"
+      ],
+      "ess": "0.4",
+      "capacity": "0",
+      "avail": "9",
+      "cost": [
+        "Variable(10000+)"
+      ],
+      "source": "AU",
+      "page": "62"
+    },
+    {
+      "name": "Biosculpting, Severe Modification (0.5)",
+      "category": [
+        "Biosculpting"
+      ],
+      "ess": "0.5",
+      "capacity": "0",
+      "avail": "12",
+      "cost": [
+        "Variable(10000+)"
+      ],
+      "source": "AU",
+      "page": "62"
+    },
+    {
+      "name": "Biosculpting, Metatype Change",
+      "category": [
+        "Biosculpting"
+      ],
+      "ess": "0.3",
+      "capacity": "0",
+      "avail": "8",
+      "cost": [
+        "25000"
+      ],
+      "source": "AU",
+      "page": "62"
+    },
+    {
+      "name": "Biosculpting, Sex Change",
+      "category": [
+        "Biosculpting"
+      ],
+      "ess": "0.3",
+      "capacity": "0",
+      "avail": "6",
+      "cost": [
+        "20000"
+      ],
+      "source": "AU",
+      "page": "62"
+    },
+    {
+      "name": "Eye",
+      "category": [
+        "Organs and Limbs"
+      ],
+      "rating": "0",
+      "ess": "0",
+      "capacity": "0",
+      "avail": "0",
+      "cost": [
+        "4000"
+      ],
+      "source": "AU",
+      "page": "126"
+    },
+    {
+      "name": "Organ (Type O)",
+      "category": [
+        "Organs and Limbs"
+      ],
+      "rating": "0",
+      "ess": "0",
+      "capacity": "0",
+      "avail": "0",
+      "cost": [
+        "6000"
+      ],
+      "source": "AU",
+      "page": "126"
+    },
+    {
+      "name": "Organ (Cultured)",
+      "category": [
+        "Organs and Limbs"
+      ],
+      "rating": "0",
+      "ess": "0",
+      "capacity": "0",
+      "avail": "0",
+      "cost": [
+        "9000"
+      ],
+      "source": "AU",
+      "page": "126"
+    },
+    {
+      "name": "Hand",
+      "category": [
+        "Organs and Limbs"
+      ],
+      "rating": "0",
+      "ess": "0",
+      "capacity": "0",
+      "avail": "0",
+      "cost": [
+        "8000"
+      ],
+      "source": "AU",
+      "page": "126"
+    },
+    {
+      "name": "Foot",
+      "category": [
+        "Organs and Limbs"
+      ],
+      "rating": "0",
+      "ess": "0",
+      "capacity": "0",
+      "avail": "0",
+      "cost": [
+        "8000"
+      ],
+      "source": "AU",
+      "page": "126"
+    },
+    {
+      "name": "Full Limb (Type O)",
+      "category": [
+        "Organs and Limbs"
+      ],
+      "rating": "0",
+      "ess": "0",
+      "capacity": "0",
+      "avail": "0",
+      "cost": [
+        "21000"
+      ],
+      "source": "AU",
+      "page": "126"
+    },
+    {
+      "name": "Full Limb (Cultured)",
+      "category": [
+        "Organs and Limbs"
+      ],
+      "rating": "0",
+      "ess": "0",
+      "capacity": "0",
+      "avail": "0",
+      "cost": [
+        "25000"
+      ],
+      "source": "AU",
+      "page": "126"
+    },
+    {
+      "name": "Skin (Type O)",
+      "category": [
+        "Organs and Limbs"
+      ],
+      "rating": "0",
+      "ess": "0",
+      "capacity": "0",
+      "avail": "0",
+      "cost": [
+        "300"
+      ],
+      "source": "AU",
+      "page": "126"
+    },
+    {
+      "name": "Skin (Cultured)",
+      "category": [
+        "Organs and Limbs"
+      ],
+      "rating": "0",
+      "ess": "0",
+      "capacity": "0",
+      "avail": "0",
+      "cost": [
+        "500"
+      ],
+      "source": "AU",
+      "page": "126"
+    },
+    {
+      "name": "Hair (Type O)",
+      "category": [
+        "Organs and Limbs"
+      ],
+      "rating": "0",
+      "ess": "0",
+      "capacity": "0",
+      "avail": "0",
+      "cost": [
+        "300"
+      ],
+      "source": "AU",
+      "page": "126"
+    },
+    {
+      "name": "Hair (Cultured)",
+      "category": [
+        "Organs and Limbs"
+      ],
+      "rating": "0",
+      "ess": "0",
+      "capacity": "0",
+      "avail": "0",
+      "cost": [
+        "500"
+      ],
+      "source": "AU",
+      "page": "126"
+    },
+    {
+      "name": "Spinal Cord",
+      "category": [
+        "Organs and Limbs"
+      ],
+      "rating": "0",
+      "ess": "0",
+      "capacity": "0",
+      "avail": "0",
+      "cost": [
+        "70000"
+      ],
+      "source": "AU",
+      "page": "126"
+    },
+    {
+      "name": "Full Body (Type O)",
+      "category": [
+        "Organs and Limbs"
+      ],
+      "rating": "0",
+      "ess": "0",
+      "capacity": "0",
+      "avail": "0",
+      "cost": [
+        "25000"
+      ],
+      "source": "AU",
+      "page": "126"
+    },
+    {
+      "name": "Full Body (Cultured)",
+      "category": [
+        "Organs and Limbs"
+      ],
+      "rating": "0",
+      "ess": "0",
+      "capacity": "0",
+      "avail": "0",
+      "cost": [
+        "40000"
+      ],
+      "source": "AU",
+      "page": "126"
+    },
+    {
+      "name": "Adrenaline Pump (2050)",
+      "category": [
+        "Basic"
+      ],
+      "rating": "3",
+      "ess": "Rating * 0.75",
+      "capacity": "0",
+      "avail": "10F",
+      "cost": [
+        "Rating * 50000"
+      ],
+      "source": "2050",
+      "page": "189"
+    },
+    {
+      "name": "Cerebral Booster (2050)",
+      "category": [
+        "Cultured"
+      ],
+      "rating": "3",
+      "ess": "Rating * 0.2",
+      "capacity": "0",
+      "avail": "6",
+      "cost": [
+        "Rating * 55000"
+      ],
+      "bonus": {
+        "specificattribute": {
+          "name": "LOG",
+          "val": "Rating"
+        }
+      },
+      "source": "2050",
+      "page": "189"
+    },
+    {
+      "name": "Damage Compensators (2050)",
+      "category": [
+        "Cultured"
+      ],
+      "rating": "12",
+      "ess": "Rating * 0.1",
+      "capacity": "0",
+      "avail": "10F",
+      "cost": [
+        "Rating * 50000"
+      ],
+      "bonus": {
+        "conditionmonitor": {
+          "thresholdoffset": "Rating"
+        }
+      },
+      "source": "2050",
+      "page": "189"
+    },
+    {
+      "name": "Enhanced Articulation (2050)",
+      "category": [
+        "Basic"
+      ],
+      "ess": "0.3",
+      "capacity": "0",
+      "avail": "5",
+      "cost": [
+        "40000"
+      ],
+      "bonus": {
+        "skillarticulation": {
+          "bonus": "1"
+        }
+      },
+      "source": "2050",
+      "page": "190"
+    },
+    {
+      "name": "Mnemonic Enhancer (2050)",
+      "category": [
+        "Cultured"
+      ],
+      "rating": "3",
+      "ess": "Rating * 0.1",
+      "capacity": "0",
+      "avail": "6",
+      "cost": [
+        "Rating * 15000"
+      ],
+      "bonus": {
+        "memory": "Rating",
+        "skillcategory": [
+          {
+            "name": "Academic",
+            "bonus": "Rating"
+          },
+          {
+            "name": "Language",
+            "bonus": "Rating"
+          },
+          {
+            "name": "Professional",
+            "bonus": "Rating"
+          },
+          {
+            "name": "Street",
+            "bonus": "Rating"
+          }
+        ]
+      },
+      "source": "2050",
+      "page": "190"
+    },
+    {
+      "name": "Muscle Augmentation (2050)",
+      "category": [
+        "Basic"
+      ],
+      "rating": "4",
+      "ess": "Rating * 0.2",
+      "capacity": "0",
+      "avail": "(Rating * 5)R",
+      "cost": [
+        "Rating * 20000"
+      ],
+      "bonus": {
+        "specificattribute": {
+          "name": "STR",
+          "val": "Rating"
+        }
+      },
+      "source": "2050",
+      "page": "190"
+    },
+    {
+      "name": "Muscle Toner (2050)",
+      "category": [
+        "Basic"
+      ],
+      "rating": "4",
+      "ess": "Rating * 0.2",
+      "capacity": "0",
+      "avail": "(Rating * 5)R",
+      "cost": [
+        "Rating * 25000"
+      ],
+      "bonus": {
+        "specificattribute": {
+          "name": "AGI",
+          "val": "Rating"
+        }
+      },
+      "source": "2050",
+      "page": "190"
+    },
+    {
+      "name": "Nephritic Screen (2050)",
+      "category": [
+        "Basic"
+      ],
+      "rating": "6",
+      "ess": "Rating * 0.2",
+      "capacity": "0",
+      "avail": "4",
+      "cost": [
+        "Rating * 24000"
+      ],
+      "source": "2050",
+      "page": "190"
+    },
+    {
+      "name": "Orthoskin (2050)",
+      "category": [
+        "Basic"
+      ],
+      "rating": "3",
+      "ess": "Rating * 0.25",
+      "capacity": "0",
+      "avail": "8R",
+      "cost": [
+        "Rating * 30000"
+      ],
+      "bonus": {
+        "armor": [
+          {
+            "b": "Rating",
+            "i": "Rating"
+          }
+        ]
+      },
+      "source": "2050",
+      "page": "190"
+    },
+    {
+      "name": "Pain Editor (2050)",
+      "category": [
+        "Cultured"
+      ],
+      "ess": "0.3",
+      "capacity": "0",
+      "avail": "6F",
+      "cost": [
+        "60000"
+      ],
+      "source": "2050",
+      "page": "190"
+    },
+    {
+      "name": "Platelet Factories (2050)",
+      "category": [
+        "Basic"
+      ],
+      "ess": "0.2",
+      "capacity": "0",
+      "avail": "5",
+      "cost": [
+        "30000"
+      ],
+      "source": "2050",
+      "page": "191"
+    },
+    {
+      "name": "Reflex Recorder (Skill Group) (2050)",
+      "category": [
+        "Cultured"
+      ],
+      "ess": "0.2",
+      "capacity": "0",
+      "avail": "8",
+      "cost": [
+        "25000"
+      ],
+      "bonus": {
+        "selectskillgroup": {
+          "bonus": "1",
+          "applytorating": "yes",
+          "excludecategory": "Magical Active,Resonance Active,Social Active,Technical Active,Vechicle Active"
+        }
+      },
+      "source": "2050",
+      "page": "191"
+    },
+    {
+      "name": "Reflex Recorder (Skill) (2050)",
+      "category": [
+        "Cultured"
+      ],
+      "ess": "0.1",
+      "capacity": "0",
+      "avail": "5",
+      "cost": [
+        "10000"
+      ],
+      "bonus": {
+        "selectskill": {
+          "val": "1",
+          "applytorating": "yes",
+          "excludecategory": "Magical Active,Resonance Active,Social Active,Technical Active,Vechicle Active"
+        }
+      },
+      "source": "2050",
+      "page": "191"
+    },
+    {
+      "name": "Suprathyroid Gland (2050)",
+      "category": [
+        "Basic"
+      ],
+      "ess": "0.7",
+      "capacity": "0",
+      "avail": "8F",
+      "cost": [
+        "50000"
+      ],
+      "bonus": {
+        "lifestylecost": "10",
+        "specificattribute": [
+          {
+            "name": "BOD",
+            "val": "1"
+          },
+          {
+            "name": "AGI",
+            "val": "1"
+          },
+          {
+            "name": {
+              "value": "REA",
+              "precedence": "1"
+            },
+            "val": "1"
+          },
+          {
+            "name": "STR",
+            "val": "1"
+          }
+        ]
+      },
+      "source": "2050",
+      "page": "191"
+    },
+    {
+      "name": "Symbiotes (2050)",
+      "category": [
+        "Basic"
+      ],
+      "rating": "3",
+      "ess": "Rating * 0.2",
+      "capacity": "0",
+      "avail": "5",
+      "cost": [
+        "Rating * 20000"
+      ],
+      "source": "2050",
+      "page": "191"
+    },
+    {
+      "name": "Synaptic Accelerator (2050)",
+      "category": [
+        "Cultured"
+      ],
+      "rating": "3",
+      "ess": "Rating * 0.5",
+      "capacity": "0",
+      "avail": "6R",
+      "cost": [
+        "Rating * 100000"
+      ],
+      "bonus": {
+        "initiativepass": "Rating",
+        "specificattribute": {
+          "name": {
+            "value": "REA",
+            "precedence": "1"
+          },
+          "val": "Rating"
+        }
+      },
+      "source": "2050",
+      "page": "191"
+    },
+    {
+      "name": "Synthacardium (2050)",
+      "category": [
+        "Basic"
+      ],
+      "rating": "3",
+      "ess": "Rating * 0.1",
+      "capacity": "0",
+      "avail": "4",
+      "cost": [
+        "Rating * 10000"
+      ],
+      "bonus": {
+        "skillgroup": {
+          "name": "Athletics",
+          "bonus": "Rating"
+        }
+      },
+      "source": "2050",
+      "page": "191"
+    },
+    {
+      "name": "Tailored Pheromones (2050)",
+      "category": [
+        "Basic"
+      ],
+      "rating": "3",
+      "ess": "Rating * 0.2",
+      "capacity": "0",
+      "avail": "12",
+      "cost": [
+        "Rating * 22000"
+      ],
+      "bonus": {
+        "skillcategory": {
+          "name": "Social Active",
+          "bonus": "Rating"
+        }
+      },
+      "source": "2050",
+      "page": "191"
+    },
+    {
+      "name": "Tracheal Filter (2050)",
+      "category": [
+        "Basic"
+      ],
+      "rating": "6",
+      "ess": "Rating * 0.2",
+      "capacity": "0",
+      "avail": "4",
+      "cost": [
+        "Rating * 30000"
+      ],
+      "source": "2050",
+      "page": "191"
+    }
+  ]
+}

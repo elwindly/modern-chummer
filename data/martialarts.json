@@ -1,0 +1,1027 @@
+{
+  "version": -925,
+  "martialarts": [
+    {
+      "name": "Aikido",
+      "advantages": [
+        {
+          "name": "+1 die for Full Dodge"
+        },
+        {
+          "name": "+1 die for Full Parry"
+        },
+        {
+          "name": "+1 die of Subduing"
+        },
+        {
+          "name": "+1 die on Attacks to Knockdown"
+        }
+      ],
+      "source": "AR",
+      "page": "156"
+    },
+    {
+      "name": "Judo",
+      "advantages": [
+        {
+          "name": "+1 die for Full Dodge"
+        },
+        {
+          "name": "+1 die for Full Parry"
+        },
+        {
+          "name": "+1 die of Subduing"
+        },
+        {
+          "name": "+1 die on Attacks to Knockdown"
+        }
+      ],
+      "source": "AR",
+      "page": "156"
+    },
+    {
+      "name": "Jujutsu",
+      "advantages": [
+        {
+          "name": "+1 die for Full Dodge"
+        },
+        {
+          "name": "+1 die for Full Parry"
+        },
+        {
+          "name": "+1 die of Subduing"
+        },
+        {
+          "name": "+1 die on Attacks to Knockdown"
+        }
+      ],
+      "source": "AR",
+      "page": "156"
+    },
+    {
+      "name": "Arnis De Mano",
+      "advantages": [
+        {
+          "name": "+1 die on Called Shots to disarm"
+        },
+        {
+          "name": "+1 DV on Club attacks",
+          "bonus": {
+            "weaponcategorydv": {
+              "name": "Clubs",
+              "bonus": "1"
+            }
+          }
+        },
+        {
+          "name": "+1 DV on Blades attacks",
+          "bonus": {
+            "weaponcategorydv": {
+              "name": "Blades",
+              "bonus": "1"
+            }
+          }
+        },
+        {
+          "name": "inflict dmage when making Called Shot to disarm"
+        }
+      ],
+      "source": "AR",
+      "page": "157"
+    },
+    {
+      "name": "Escrima",
+      "advantages": [
+        {
+          "name": "+1 die on Called Shots to disarm"
+        },
+        {
+          "name": "+1 DV on Club attacks",
+          "bonus": {
+            "weaponcategorydv": {
+              "name": "Clubs",
+              "bonus": "1"
+            }
+          }
+        },
+        {
+          "name": "+1 DV on Blades attacks",
+          "bonus": {
+            "weaponcategorydv": {
+              "name": "Blades",
+              "bonus": "1"
+            }
+          }
+        },
+        {
+          "name": "inflict dmage when making Called Shot to disarm"
+        }
+      ],
+      "source": "AR",
+      "page": "157"
+    },
+    {
+      "name": "Kali",
+      "advantages": [
+        {
+          "name": "+1 die on Called Shots to disarm"
+        },
+        {
+          "name": "+1 DV on Club attacks",
+          "bonus": {
+            "weaponcategorydv": {
+              "name": "Clubs",
+              "bonus": "1"
+            }
+          }
+        },
+        {
+          "name": "+1 DV on Blades attacks",
+          "bonus": {
+            "weaponcategorydv": {
+              "name": "Blades",
+              "bonus": "1"
+            }
+          }
+        },
+        {
+          "name": "inflict dmage when making Called Shot to disarm"
+        }
+      ],
+      "source": "AR",
+      "page": "157"
+    },
+    {
+      "name": "Boxing",
+      "advantages": [
+        {
+          "name": "+1 DV on Unarmed Combat attacks",
+          "bonus": {
+            "weaponcategorydv": {
+              "name": "Unarmed",
+              "bonus": "1"
+            }
+          }
+        },
+        {
+          "name": "+1 on Defense Tests again unarmed attacks"
+        }
+      ],
+      "source": "AR",
+      "page": "157"
+    },
+    {
+      "name": "Musti Yudha",
+      "advantages": [
+        {
+          "name": "+1 DV on Unarmed Combat attacks",
+          "bonus": {
+            "weaponcategorydv": {
+              "name": "Unarmed",
+              "bonus": "1"
+            }
+          }
+        },
+        {
+          "name": "+1 on Defense Tests again unarmed attacks"
+        }
+      ],
+      "source": "AR",
+      "page": "157"
+    },
+    {
+      "name": "Rince an Bhata Uisce Bheatha",
+      "advantages": [
+        {
+          "name": "+1 DV on Unarmed Combat attacks",
+          "bonus": {
+            "weaponcategorydv": {
+              "name": "Unarmed",
+              "bonus": "1"
+            }
+          }
+        },
+        {
+          "name": "+1 on Defense Tests again unarmed attacks"
+        }
+      ],
+      "source": "AR",
+      "page": "157"
+    },
+    {
+      "name": "Capoeira",
+      "advantages": [
+        {
+          "name": "+1 die on melee dodge Defense Tests"
+        },
+        {
+          "name": "+1 die for Gymnastics Dodge"
+        },
+        {
+          "name": "+1 die on Attacks to Knockdown"
+        }
+      ],
+      "source": "AR",
+      "page": "157"
+    },
+    {
+      "name": "Hopak",
+      "advantages": [
+        {
+          "name": "+1 die on melee dodge Defense Tests"
+        },
+        {
+          "name": "+1 die for Gymnastics Dodge"
+        },
+        {
+          "name": "+1 die on Attacks to Knockdown"
+        }
+      ],
+      "source": "AR",
+      "page": "157"
+    },
+    {
+      "name": "Kalari-payattu",
+      "advantages": [
+        {
+          "name": "+1 die on melee dodge Defense Tests"
+        },
+        {
+          "name": "+1 die for Gymnastics Dodge"
+        },
+        {
+          "name": "+1 die on Attacks to Knockdown"
+        }
+      ],
+      "source": "AR",
+      "page": "157"
+    },
+    {
+      "name": "Carromeleg",
+      "advantages": [
+        {
+          "name": "+1 die on Surprise Tests when initiating an attack"
+        },
+        {
+          "name": "+1 die for Receiving a Charge"
+        },
+        {
+          "name": "+1 die on Interception attacks"
+        }
+      ],
+      "source": "AR",
+      "page": "157"
+    },
+    {
+      "name": "Firefight",
+      "advantages": [
+        {
+          "name": "Reduce ranged combat 'attacker in melee combat' modifier by 1"
+        },
+        {
+          "name": "+1 die to Defense Tests to dodge Ranged Attacks if engaged in melee"
+        },
+        {
+          "name": "+1 die on melee dodge Defense Test"
+        }
+      ],
+      "source": "AR",
+      "page": "157"
+    },
+    {
+      "name": "Karate",
+      "advantages": [
+        {
+          "name": "+1 DV on Unarmed Combat attacks",
+          "bonus": {
+            "weaponcategorydv": {
+              "name": "Unarmed",
+              "bonus": "1"
+            }
+          }
+        },
+        {
+          "name": "+1 die for Full Parry"
+        },
+        {
+          "name": "+1 die on melee block Defense Tests"
+        }
+      ],
+      "source": "AR",
+      "page": "157"
+    },
+    {
+      "name": "Kenpo",
+      "advantages": [
+        {
+          "name": "+1 DV on Unarmed Combat attacks",
+          "bonus": {
+            "weaponcategorydv": {
+              "name": "Unarmed",
+              "bonus": "1"
+            }
+          }
+        },
+        {
+          "name": "+1 die for Full Parry"
+        },
+        {
+          "name": "+1 die on melee block Defense Tests"
+        }
+      ],
+      "source": "AR",
+      "page": "157"
+    },
+    {
+      "name": "Soo Bahk Do",
+      "advantages": [
+        {
+          "name": "+1 DV on Unarmed Combat attacks",
+          "bonus": {
+            "weaponcategorydv": {
+              "name": "Unarmed",
+              "bonus": "1"
+            }
+          }
+        },
+        {
+          "name": "+1 die for Full Parry"
+        },
+        {
+          "name": "+1 die on melee block Defense Tests"
+        }
+      ],
+      "source": "AR",
+      "page": "157"
+    },
+    {
+      "name": "Kiai",
+      "advantages": [
+        {
+          "name": "+1 DV on Attacks of Will"
+        },
+        {
+          "name": "+1 on Intimidation Tests",
+          "bonus": {
+            "specificskill": {
+              "name": "Intimidation",
+              "bonus": "1"
+            }
+          }
+        }
+      ],
+      "source": "AR",
+      "page": "157"
+    },
+    {
+      "name": "Tai Chi Ch'uan",
+      "advantages": [
+        {
+          "name": "+1 DV on Attacks of Will"
+        },
+        {
+          "name": "+1 on Intimidation Tests",
+          "bonus": {
+            "specificskill": {
+              "name": "Intimidation",
+              "bonus": "1"
+            }
+          }
+        }
+      ],
+      "source": "AR",
+      "page": "157"
+    },
+    {
+      "name": "Krav Maga",
+      "advantages": [
+        {
+          "name": "+1 die on Called Shots to disarm"
+        },
+        {
+          "name": "Take Aim as Free Action"
+        },
+        {
+          "name": "Ready Weapon as Free Action"
+        },
+        {
+          "name": "Reduce ranged combat 'attacker in melee combat' modifier by 1"
+        }
+      ],
+      "source": "AR",
+      "page": "157"
+    },
+    {
+      "name": "Hasidut",
+      "advantages": [
+        {
+          "name": "+1 die on Called Shots to disarm"
+        },
+        {
+          "name": "Take Aim as Free Action"
+        },
+        {
+          "name": "Ready Weapon as Free Action"
+        },
+        {
+          "name": "Reduce ranged combat 'attacker in melee combat' modifier by 1"
+        }
+      ],
+      "source": "AR",
+      "page": "157"
+    },
+    {
+      "name": "ROSS",
+      "advantages": [
+        {
+          "name": "+1 die on Called Shots to disarm"
+        },
+        {
+          "name": "Take Aim as Free Action"
+        },
+        {
+          "name": "Ready Weapon as Free Action"
+        },
+        {
+          "name": "Reduce ranged combat 'attacker in melee combat' modifier by 1"
+        }
+      ],
+      "source": "AR",
+      "page": "157"
+    },
+    {
+      "name": "Kung Fu",
+      "advantages": [
+        {
+          "name": "+1 die on block melee Defense Tests"
+        },
+        {
+          "name": "+1 die on dodge melee Defense Tests"
+        },
+        {
+          "name": "+1 die on parry melee Defense Tests"
+        },
+        {
+          "name": "+1 DV on Unarmed Combat attacks",
+          "bonus": {
+            "weaponcategorydv": {
+              "name": "Unarmed",
+              "bonus": "1"
+            }
+          }
+        }
+      ],
+      "source": "AR",
+      "page": "157"
+    },
+    {
+      "name": "Hwarang-do",
+      "advantages": [
+        {
+          "name": "+1 die on block melee Defense Tests"
+        },
+        {
+          "name": "+1 die on dodge melee Defense Tests"
+        },
+        {
+          "name": "+1 die on parry melee Defense Tests"
+        },
+        {
+          "name": "+1 DV on Unarmed Combat attacks",
+          "bonus": {
+            "weaponcategorydv": {
+              "name": "Unarmed",
+              "bonus": "1"
+            }
+          }
+        }
+      ],
+      "source": "AR",
+      "page": "157"
+    },
+    {
+      "name": "Wushu",
+      "advantages": [
+        {
+          "name": "+1 die on block melee Defense Tests"
+        },
+        {
+          "name": "+1 die on dodge melee Defense Tests"
+        },
+        {
+          "name": "+1 die on parry melee Defense Tests"
+        },
+        {
+          "name": "+1 DV on Unarmed Combat attacks",
+          "bonus": {
+            "weaponcategorydv": {
+              "name": "Unarmed",
+              "bonus": "1"
+            }
+          }
+        }
+      ],
+      "source": "AR",
+      "page": "157"
+    },
+    {
+      "name": "Muay Thai",
+      "advantages": [
+        {
+          "name": "+1 DV on Unarmed Combat attacks",
+          "bonus": {
+            "weaponcategorydv": {
+              "name": "Unarmed",
+              "bonus": "1"
+            }
+          }
+        },
+        {
+          "name": "+1 on Defense Tests against unarmed attacks"
+        },
+        {
+          "name": "+1 Full Parry"
+        }
+      ],
+      "source": "AR",
+      "page": "158"
+    },
+    {
+      "name": "Kickboxing",
+      "advantages": [
+        {
+          "name": "+1 DV on Unarmed Combat attacks",
+          "bonus": {
+            "weaponcategorydv": {
+              "name": "Unarmed",
+              "bonus": "1"
+            }
+          }
+        },
+        {
+          "name": "+1 on Defense Tests against unarmed attacks"
+        },
+        {
+          "name": "+1 Full Parry"
+        }
+      ],
+      "source": "AR",
+      "page": "158"
+    },
+    {
+      "name": "Savate",
+      "advantages": [
+        {
+          "name": "+1 DV on Unarmed Combat attacks",
+          "bonus": {
+            "weaponcategorydv": {
+              "name": "Unarmed",
+              "bonus": "1"
+            }
+          }
+        },
+        {
+          "name": "+1 on Defense Tests against unarmed attacks"
+        },
+        {
+          "name": "+1 Full Parry"
+        }
+      ],
+      "source": "AR",
+      "page": "158"
+    },
+    {
+      "name": "Ninjutsu",
+      "advantages": [
+        {
+          "name": "+1 die on Surprise Tests when initiating an attack"
+        },
+        {
+          "name": "+1 die for Gymnastics Dodge"
+        },
+        {
+          "name": "+reduce Visibility modifiers in melee combat by 1"
+        },
+        {
+          "name": "+1 die on Infiltration Tests",
+          "bonus": {
+            "specificskill": {
+              "name": "Infiltration",
+              "bonus": "1"
+            }
+          }
+        }
+      ],
+      "source": "AR",
+      "page": "158"
+    },
+    {
+      "name": "Pentjak-Silat",
+      "advantages": [
+        {
+          "name": "+1 die when using Called Shot to increase attack damage"
+        },
+        {
+          "name": "+1 DV for Astral Combat attacks"
+        },
+        {
+          "name": "+1 die on Attacks to Knockdown"
+        },
+        {
+          "name": "+1 Full Parry"
+        }
+      ],
+      "source": "AR",
+      "page": "158"
+    },
+    {
+      "name": "Bersilat",
+      "advantages": [
+        {
+          "name": "+1 die when using Called Shot to increase attack damage"
+        },
+        {
+          "name": "+1 DV for Astral Combat attacks"
+        },
+        {
+          "name": "+1 die on Attacks to Knockdown"
+        },
+        {
+          "name": "+1 Full Parry"
+        }
+      ],
+      "source": "AR",
+      "page": "158"
+    },
+    {
+      "name": "Gatka",
+      "advantages": [
+        {
+          "name": "+1 die when using Called Shot to increase attack damage"
+        },
+        {
+          "name": "+1 DV for Astral Combat attacks"
+        },
+        {
+          "name": "+1 die on Attacks to Knockdown"
+        },
+        {
+          "name": "+1 Full Parry"
+        }
+      ],
+      "source": "AR",
+      "page": "158"
+    },
+    {
+      "name": "Sangre y Acero",
+      "advantages": [
+        {
+          "name": "+1 die for Exotic Melee Weapon attacks using a cyber-implant in an unusual location"
+        },
+        {
+          "name": "+1 DV on Blades attacks",
+          "bonus": {
+            "weaponcategorydv": {
+              "name": "Blades",
+              "bonus": "1"
+            }
+          }
+        },
+        {
+          "name": "Reduce ranged combat 'attacker in melee combat' modifier by 1"
+        },
+        {
+          "name": "Reduce an opponent's 'friends in melee' bonus by 1"
+        }
+      ],
+      "source": "AR",
+      "page": "158"
+    },
+    {
+      "name": "Eztlitzli",
+      "advantages": [
+        {
+          "name": "+1 die for Exotic Melee Weapon attacks using a cyber-implant in an unusual location"
+        },
+        {
+          "name": "+1 DV on Blades attacks",
+          "bonus": {
+            "weaponcategorydv": {
+              "name": "Blades",
+              "bonus": "1"
+            }
+          }
+        },
+        {
+          "name": "Reduce ranged combat 'attacker in melee combat' modifier by 1"
+        },
+        {
+          "name": "Reduce an opponent's 'friends in melee' bonus by 1"
+        }
+      ],
+      "source": "AR",
+      "page": "158"
+    },
+    {
+      "name": "Ars Cybernetica",
+      "advantages": [
+        {
+          "name": "+1 die for Exotic Melee Weapon attacks using a cyber-implant in an unusual location"
+        },
+        {
+          "name": "+1 DV on Blades attacks",
+          "bonus": {
+            "weaponcategorydv": {
+              "name": "Blades",
+              "bonus": "1"
+            }
+          }
+        },
+        {
+          "name": "Reduce ranged combat 'attacker in melee combat' modifier by 1"
+        },
+        {
+          "name": "Reduce an opponent's 'friends in melee' bonus by 1"
+        }
+      ],
+      "source": "AR",
+      "page": "158"
+    },
+    {
+      "name": "Tae Kwon Do",
+      "advantages": [
+        {
+          "name": "+1 die on Charging attacks"
+        },
+        {
+          "name": "+1 DV on Unarmed Combat attacks",
+          "bonus": {
+            "weaponcategorydv": {
+              "name": "Unarmed",
+              "bonus": "1"
+            }
+          }
+        },
+        {
+          "name": "+1 die on using Unarmed Combat when attacking multiple targets"
+        },
+        {
+          "name": "+1 on Attacks to Knockdown"
+        }
+      ],
+      "source": "AR",
+      "page": "158"
+    },
+    {
+      "name": "Hapkido",
+      "advantages": [
+        {
+          "name": "+1 die on Charging attacks"
+        },
+        {
+          "name": "+1 DV on Unarmed Combat attacks",
+          "bonus": {
+            "weaponcategorydv": {
+              "name": "Unarmed",
+              "bonus": "1"
+            }
+          }
+        },
+        {
+          "name": "+1 die on using Unarmed Combat when attacking multiple targets"
+        },
+        {
+          "name": "+1 on Attacks to Knockdown"
+        }
+      ],
+      "source": "AR",
+      "page": "158"
+    },
+    {
+      "name": "Savate (Alternate)",
+      "advantages": [
+        {
+          "name": "+1 die on Charging attacks"
+        },
+        {
+          "name": "+1 DV on Unarmed Combat attacks",
+          "bonus": {
+            "weaponcategorydv": {
+              "name": "Unarmed",
+              "bonus": "1"
+            }
+          }
+        },
+        {
+          "name": "+1 die on using Unarmed Combat when attacking multiple targets"
+        },
+        {
+          "name": "+1 on Attacks to Knockdown"
+        }
+      ],
+      "source": "AR",
+      "page": "158"
+    },
+    {
+      "name": "Wildcat",
+      "advantages": [
+        {
+          "name": "+1 DV on Unarmed Combat attacks",
+          "bonus": {
+            "weaponcategorydv": {
+              "name": "Unarmed",
+              "bonus": "1"
+            }
+          }
+        },
+        {
+          "name": "+1 die on Called Shots to target an unprotected area"
+        },
+        {
+          "name": "+1 die on Called Shots to increase damage"
+        },
+        {
+          "name": "+1 die on Subduing"
+        }
+      ],
+      "source": "AR",
+      "page": "158"
+    },
+    {
+      "name": "Wrestling",
+      "advantages": [
+        {
+          "name": "+1 die on Attacks to Knockdown"
+        },
+        {
+          "name": "+1 die on Subduing"
+        },
+        {
+          "name": "+1 DV when inflicting damage to a subdued opponent"
+        }
+      ],
+      "source": "AR",
+      "page": "158"
+    },
+    {
+      "name": "Glima",
+      "advantages": [
+        {
+          "name": "+1 die on Attacks to Knockdown"
+        },
+        {
+          "name": "+1 die on Subduing"
+        },
+        {
+          "name": "+1 DV when inflicting damage to a subdued opponent"
+        }
+      ],
+      "source": "AR",
+      "page": "158"
+    },
+    {
+      "name": "Sumo",
+      "advantages": [
+        {
+          "name": "+1 die on Attacks to Knockdown"
+        },
+        {
+          "name": "+1 die on Subduing"
+        },
+        {
+          "name": "+1 DV when inflicting damage to a subdued opponent"
+        }
+      ],
+      "source": "AR",
+      "page": "158"
+    },
+    {
+      "name": "Brazilian Jiu-Jitsu",
+      "advantages": [
+        {
+          "name": "+1 die on Attacks to Knockdown"
+        },
+        {
+          "name": "+1 die on Subduing"
+        },
+        {
+          "name": "+1 DV when inflicting damage to a subdued opponent"
+        }
+      ],
+      "source": "AR",
+      "page": "158"
+    }
+  ],
+  "maneuvers": [
+    {
+      "name": "Blind Fighting",
+      "source": "AR",
+      "page": "158"
+    },
+    {
+      "name": "Break Weapon",
+      "source": "AR",
+      "page": "159"
+    },
+    {
+      "name": "Clinch",
+      "source": "AR",
+      "page": "159"
+    },
+    {
+      "name": "Disarm",
+      "source": "AR",
+      "page": "159"
+    },
+    {
+      "name": "Disorient",
+      "source": "AR",
+      "page": "159"
+    },
+    {
+      "name": "Evasion",
+      "source": "AR",
+      "page": "159"
+    },
+    {
+      "name": "Finishing Move",
+      "source": "AR",
+      "page": "159"
+    },
+    {
+      "name": "Focus Will",
+      "source": "AR",
+      "page": "160"
+    },
+    {
+      "name": "Full Offense",
+      "source": "AR",
+      "page": "160"
+    },
+    {
+      "name": "Ground Fighting",
+      "source": "AR",
+      "page": "160"
+    },
+    {
+      "name": "Herding",
+      "source": "AR",
+      "page": "160"
+    },
+    {
+      "name": "Iaijutsu",
+      "source": "AR",
+      "page": "160"
+    },
+    {
+      "name": "Kick Attack",
+      "source": "AR",
+      "page": "160"
+    },
+    {
+      "name": "Multi-Strike",
+      "source": "AR",
+      "page": "160"
+    },
+    {
+      "name": "Off-Hand Training",
+      "source": "AR",
+      "page": "160"
+    },
+    {
+      "name": "Riposte",
+      "source": "AR",
+      "page": "160"
+    },
+    {
+      "name": "Set-Up",
+      "source": "AR",
+      "page": "160"
+    },
+    {
+      "name": "Sweep",
+      "source": "AR",
+      "page": "160"
+    },
+    {
+      "name": "Throw",
+      "source": "AR",
+      "page": "160"
+    },
+    {
+      "name": "Two Weapon Style",
+      "source": "AR",
+      "page": "160"
+    },
+    {
+      "name": "Vicious Blow",
+      "source": "AR",
+      "page": "160"
+    },
+    {
+      "name": "Watchful Guard",
+      "source": "AR",
+      "page": "160"
+    }
+  ]
+}

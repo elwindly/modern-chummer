@@ -1,0 +1,451 @@
+{
+  "version": -922,
+  "metamagics": [
+    {
+      "name": "Centering",
+      "adept": "no",
+      "magician": "yes",
+      "source": "SR4",
+      "page": "198"
+    },
+    {
+      "name": "Adept Centering",
+      "adept": "yes",
+      "magician": "no",
+      "source": "SR4",
+      "page": "198"
+    },
+    {
+      "name": "Flexible Signature",
+      "adept": "yes",
+      "magician": "yes",
+      "source": "SR4",
+      "page": "198"
+    },
+    {
+      "name": "Masking",
+      "adept": "yes",
+      "magician": "yes",
+      "source": "SR4",
+      "page": "198"
+    },
+    {
+      "name": "Quickening",
+      "adept": "no",
+      "magician": "yes",
+      "source": "SR4",
+      "page": "198"
+    },
+    {
+      "name": "Shielding",
+      "adept": "no",
+      "magician": "yes",
+      "source": "SR4",
+      "page": "198"
+    },
+    {
+      "name": "Ally Conjuration",
+      "adept": "no",
+      "magician": "yes",
+      "source": "SM",
+      "page": "53"
+    },
+    {
+      "name": "Attunement (Animal)",
+      "adept": "yes",
+      "magician": "no",
+      "limit": "no",
+      "source": "SM",
+      "page": "53"
+    },
+    {
+      "name": "Attunement (Item)",
+      "adept": "yes",
+      "magician": "no",
+      "limit": "no",
+      "source": "SM",
+      "page": "54"
+    },
+    {
+      "name": "Channeling",
+      "adept": "no",
+      "magician": "yes",
+      "source": "SM",
+      "page": "54"
+    },
+    {
+      "name": "Cleansing",
+      "adept": "no",
+      "magician": "yes",
+      "source": "SM",
+      "page": "55"
+    },
+    {
+      "name": "Cognition",
+      "adept": "yes",
+      "magician": "no",
+      "source": "SM",
+      "page": "55"
+    },
+    {
+      "name": "Divining",
+      "adept": "yes",
+      "magician": "yes",
+      "source": "SM",
+      "page": "56"
+    },
+    {
+      "name": "Geomancy",
+      "adept": "no",
+      "magician": "yes",
+      "source": "SM",
+      "page": "56"
+    },
+    {
+      "name": "Great Ritual",
+      "adept": "no",
+      "magician": "yes",
+      "source": "SM",
+      "page": "57"
+    },
+    {
+      "name": "Invoking",
+      "adept": "no",
+      "magician": "yes",
+      "source": "SM",
+      "page": "57"
+    },
+    {
+      "name": "Psychometry",
+      "adept": "yes",
+      "magician": "yes",
+      "source": "SM",
+      "page": "57"
+    },
+    {
+      "name": "Sensing",
+      "adept": "yes",
+      "magician": "yes",
+      "source": "SM",
+      "page": "58"
+    },
+    {
+      "name": "Somatic Control",
+      "adept": "yes",
+      "magician": "no",
+      "source": "SM",
+      "page": "58"
+    },
+    {
+      "name": "Sympathetic Linking",
+      "adept": "no",
+      "magician": "yes",
+      "source": "SM",
+      "page": "58"
+    },
+    {
+      "name": "Sacrifice",
+      "adept": "yes",
+      "magician": "yes",
+      "source": "SM",
+      "page": "139"
+    },
+    {
+      "name": "Invoking Blood Spirits",
+      "adept": "no",
+      "magician": "yes",
+      "required": {
+        "allof": {
+          "metamagic": [
+            "Sacrifice",
+            "Invoking"
+          ]
+        }
+      },
+      "source": "SM",
+      "page": "139"
+    },
+    {
+      "name": "Cannibalize",
+      "adept": "yes",
+      "magician": "no",
+      "source": "SM",
+      "page": "140"
+    },
+    {
+      "name": "Power Bleed",
+      "adept": "yes",
+      "magician": "no",
+      "source": "SM",
+      "page": "140"
+    },
+    {
+      "name": "Corruption",
+      "adept": "no",
+      "magician": "yes",
+      "source": "SM",
+      "page": "143"
+    },
+    {
+      "name": "Taint",
+      "adept": "no",
+      "magician": "yes",
+      "source": "SM",
+      "page": "143"
+    },
+    {
+      "name": "Leeching",
+      "adept": "no",
+      "magician": "yes",
+      "required": {
+        "allof": {
+          "metamagic": [
+            "Geomancy"
+          ]
+        }
+      },
+      "source": "SM",
+      "page": "143"
+    },
+    {
+      "name": "Metamorphosis",
+      "adept": "no",
+      "magician": "yes",
+      "source": "SM",
+      "page": "153"
+    },
+    {
+      "name": "Synesthesia",
+      "adept": "no",
+      "magician": "yes",
+      "source": "SG",
+      "page": "164"
+    },
+    {
+      "name": "Spell Masking",
+      "adept": "no",
+      "magician": "yes",
+      "source": "SG",
+      "page": "164"
+    },
+    {
+      "name": "Delay Spell",
+      "adept": "no",
+      "magician": "yes",
+      "source": "SG",
+      "page": "164"
+    },
+    {
+      "name": "Inculcate",
+      "adept": "yes",
+      "magician": "no",
+      "source": "SG",
+      "page": "164"
+    },
+    {
+      "name": "Skin Walker",
+      "adept": "yes",
+      "magician": "no",
+      "required": {
+        "allof": {
+          "metamagic": [
+            "Cannibalize",
+            "Masking"
+          ]
+        }
+      },
+      "source": "SG",
+      "page": "164"
+    },
+    {
+      "name": "Free Spirit Power Point",
+      "adept": "no",
+      "magician": "yes",
+      "bonus": {
+        "freespiritpowerpoints": "1"
+      },
+      "required": {
+        "allof": {
+          "metatype": [
+            "Free Spirit"
+          ]
+        }
+      },
+      "source": "RC",
+      "page": "92"
+    },
+    {
+      "name": "Additional Power Point",
+      "adept": "yes",
+      "magician": "no",
+      "bonus": {
+        "adeptpowerpoints": "1"
+      },
+      "source": "SM",
+      "page": "31"
+    },
+    {
+      "name": "Absorption",
+      "adept": "no",
+      "magician": "yes",
+      "required": {
+        "allof": {
+          "metamagic": [
+            "Shielding"
+          ]
+        }
+      },
+      "source": "SM",
+      "page": "59"
+    },
+    {
+      "name": "Anchoring",
+      "adept": "no",
+      "magician": "yes",
+      "required": {
+        "allof": {
+          "metamagic": [
+            "Quickening"
+          ]
+        }
+      },
+      "source": "SM",
+      "page": "59"
+    },
+    {
+      "name": "Empower Animal",
+      "adept": "yes",
+      "magician": "no",
+      "required": {
+        "allof": {
+          "metamagic": [
+            "Attunement (Animal)"
+          ]
+        }
+      },
+      "source": "SM",
+      "page": "60"
+    },
+    {
+      "name": "Extended Masking",
+      "adept": "yes",
+      "magician": "yes",
+      "required": {
+        "allof": {
+          "metamagic": [
+            "Masking"
+          ]
+        }
+      },
+      "source": "SM",
+      "page": "60"
+    },
+    {
+      "name": "Filtering",
+      "adept": "no",
+      "magician": "yes",
+      "required": {
+        "allof": {
+          "metamagic": [
+            "Cleansing"
+          ]
+        }
+      },
+      "source": "SM",
+      "page": "61"
+    },
+    {
+      "name": "Flux",
+      "adept": "yes",
+      "magician": "yes",
+      "required": {
+        "allof": {
+          "metamagic": [
+            "Masking"
+          ]
+        }
+      },
+      "source": "SM",
+      "page": "61"
+    },
+    {
+      "name": "Infusion",
+      "adept": "yes",
+      "magician": "no",
+      "required": {
+        "allof": {
+          "metamagic": [
+            "Adept Centering"
+          ]
+        }
+      },
+      "source": "SM",
+      "page": "61"
+    },
+    {
+      "name": "Reflecting",
+      "adept": "no",
+      "magician": "yes",
+      "required": {
+        "allof": {
+          "metamagic": [
+            "Shielding"
+          ]
+        }
+      },
+      "source": "SM",
+      "page": "61"
+    },
+    {
+      "name": "Dragonspeech",
+      "adept": "yes",
+      "magician": "yes",
+      "required": {
+        "allof": {
+          "quality": [
+            "Drake"
+          ]
+        }
+      },
+      "source": "RW",
+      "page": "210"
+    },
+    {
+      "name": "Home Advantage",
+      "adept": "no",
+      "magician": "yes",
+      "required": {
+        "oneof": {
+          "metamagic": [
+            "Geomancy",
+            "Geomasonry"
+          ]
+        }
+      },
+      "source": "PG",
+      "page": "31"
+    },
+    {
+      "name": "Patronage",
+      "adept": "no",
+      "magician": "yes",
+      "required": {
+        "oneof": {
+          "metamagic": [
+            "Geomancy",
+            "Geomasonry"
+          ]
+        }
+      },
+      "source": "PG",
+      "page": "31"
+    },
+    {
+      "name": "Transcendence",
+      "adept": "no",
+      "magician": "yes",
+      "source": "AFD",
+      "page": "19"
+    }
+  ]
+}

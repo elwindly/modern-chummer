@@ -1,0 +1,360 @@
+{
+  "version": -923,
+  "traditions": [
+    {
+      "name": "Aboriginal",
+      "drain": "WIL + CHA",
+      "spirits": [
+        "Spirit of Beasts",
+        "Spirit of Earth",
+        "Plant Spirit",
+        "Guidance Spirit",
+        "Spirit of Air"
+      ],
+      "source": "SM",
+      "page": "35"
+    },
+    {
+      "name": "Aztec",
+      "drain": "WIL + CHA",
+      "spirits": [
+        "Guardian Spirit",
+        "Spirit of Fire",
+        "Plant Spirit",
+        "Spirit of Water",
+        "Spirit of Beasts"
+      ],
+      "source": "SM",
+      "page": "35"
+    },
+    {
+      "name": "Black Magic",
+      "drain": "WIL + CHA",
+      "spirits": [
+        "Spirit of Fire",
+        "Spirit of Water",
+        "Spirit of Earth",
+        "Spirit of Air",
+        "Spirit of Man"
+      ],
+      "source": "SM",
+      "page": "36"
+    },
+    {
+      "name": "Buddhist",
+      "drain": "WIL + INT",
+      "spirits": [
+        "Spirit of Air",
+        "Guidance Spirit",
+        "Spirit of Earth",
+        "Spirit of Fire",
+        "Spirit of Water"
+      ],
+      "source": "SM",
+      "page": "36"
+    },
+    {
+      "name": "Chaos Magic",
+      "drain": "WIL + LOG",
+      "spirits": [
+        "Spirit of Fire",
+        "Spirit of Air",
+        "Spirit of Earth",
+        "Spirit of Man",
+        "Spirit of Water"
+      ],
+      "source": "SM",
+      "page": "37"
+    },
+    {
+      "name": "Christian Theurgy",
+      "drain": "WIL + CHA",
+      "spirits": [
+        "Spirit of Fire",
+        "Spirit of Water",
+        "Spirit of Air",
+        "Spirit of Earth",
+        "Guidance Spirit"
+      ],
+      "source": "SM",
+      "page": "37"
+    },
+    {
+      "name": "Druidic",
+      "drain": "WIL + INT",
+      "spirits": [
+        "Spirit of Beasts",
+        "Spirit of Water",
+        "Plant Spirit",
+        "Spirit of Air",
+        "Spirit of Earth"
+      ],
+      "source": "SM",
+      "page": "38"
+    },
+    {
+      "name": "Egyptian",
+      "drain": "WIL + INT",
+      "spirits": [
+        "Spirit of Fire",
+        "Spirit of Earth",
+        "Spirit of Air",
+        "Guidance Spirit",
+        "Spirit of Water"
+      ],
+      "source": "DG",
+      "page": "3"
+    },
+    {
+      "name": "Gardnerian Wicca",
+      "drain": "WIL + LOG",
+      "spirits": [
+        "Spirit of Fire",
+        "Spirit of Water",
+        "Plant Spirit",
+        "Spirit of Air",
+        "Spirit of Earth"
+      ],
+      "source": "SM",
+      "page": "42"
+    },
+    {
+      "name": "Goddess Wicca",
+      "drain": "WIL + INT",
+      "spirits": [
+        "Spirit of Fire",
+        "Spirit of Water",
+        "Plant Spirit",
+        "Spirit of Air",
+        "Spirit of Earth"
+      ],
+      "source": "SM",
+      "page": "42"
+    },
+    {
+      "name": "Hermetic",
+      "drain": "WIL + LOG",
+      "spirits": [
+        "Spirit of Fire",
+        "Spirit of Air",
+        "Spirit of Man",
+        "Spirit of Water",
+        "Spirit of Earth"
+      ],
+      "source": "SR4",
+      "page": "180"
+    },
+    {
+      "name": "Hindu",
+      "drain": "WIL + LOG",
+      "spirits": [
+        "Spirit of Beasts",
+        "Spirit of Water",
+        "Plant Spirit",
+        "Spirit of Air",
+        "Spirit of Fire"
+      ],
+      "source": "SM",
+      "page": "38"
+    },
+    {
+      "name": "Insect",
+      "drain": "WIL + INT",
+      "spirits": [
+        "Soldier Spirit",
+        "Scout Spirit",
+        "Caretaker Spirit",
+        "Nymph Spirit",
+        "Worker Spirit"
+      ],
+      "source": "SM",
+      "page": "149"
+    },
+    {
+      "name": "Islamic",
+      "drain": "WIL + LOG",
+      "spirits": [
+        "Guardian Spirit",
+        "Spirit of Earth",
+        "Plant Spirit",
+        "Spirit of Air",
+        "Spirit of Fire"
+      ],
+      "source": "SM",
+      "page": "39"
+    },
+    {
+      "name": "Norse",
+      "drain": "WIL + CHA",
+      "spirits": [
+        "Guardian Spirit",
+        "Spirit of Water",
+        "Spirit of Fire",
+        "Spirit of Air",
+        "Spirit of Earth"
+      ],
+      "source": "SM",
+      "page": "39"
+    },
+    {
+      "name": "Path of the Wheel",
+      "drain": "WIL + CHA",
+      "spirits": [
+        "Spirit of Earth",
+        "Guidance Spirit",
+        "Spirit of Air",
+        "Spirit of Water",
+        "Spirit of Fire"
+      ],
+      "source": "SM",
+      "page": "40"
+    },
+    {
+      "name": "Poisoner",
+      "drain": "WIL + INT",
+      "spirits": [
+        "Nuclear Spirit",
+        "Acid Spirit",
+        "Sludge Spirit",
+        "Smog Spirit",
+        "Abomination Spirit"
+      ],
+      "source": "DG",
+      "page": "14"
+    },
+    {
+      "name": "Psionic",
+      "drain": "WIL + INT",
+      "spirits": [
+        "Spirit of Fire",
+        "Spirit of Air",
+        "Spirit of Man",
+        "Guidance Spirit",
+        "Task Spirit"
+      ],
+      "source": "DG",
+      "page": "4"
+    },
+    {
+      "name": "Qabbalistic",
+      "drain": "WIL + LOG",
+      "spirits": [
+        "Spirit of Air",
+        "Spirit of Earth",
+        "Spirit of Fire",
+        "Spirit of Water",
+        "Task Spirit"
+      ],
+      "source": "SM",
+      "page": "40"
+    },
+    {
+      "name": "Rastafarian",
+      "drain": "WIL + INT",
+      "spirits": [
+        "Spirit of Man",
+        "Spirit of Beasts",
+        "Plant Spirit",
+        "Spirit of Water",
+        "Guidance Spirit"
+      ],
+      "source": "DG",
+      "page": "4"
+    },
+    {
+      "name": "Shamanic",
+      "drain": "WIL + CHA",
+      "spirits": [
+        "Spirit of Beasts",
+        "Spirit of Water",
+        "Spirit of Earth",
+        "Spirit of Air",
+        "Spirit of Man"
+      ],
+      "source": "SR4",
+      "page": "181"
+    },
+    {
+      "name": "Shinto",
+      "drain": "WIL + CHA",
+      "spirits": [
+        "Spirit of Air",
+        "Spirit of Water",
+        "Plant Spirit",
+        "Spirit of Beasts",
+        "Spirit of Man"
+      ],
+      "source": "SM",
+      "page": "41"
+    },
+    {
+      "name": "Voodoo",
+      "drain": "WIL + CHA",
+      "spirits": [
+        "Guardian Spirit",
+        "Spirit of Water",
+        "Spirit of Man",
+        "Guidance Spirit",
+        "Task Spirit"
+      ],
+      "source": "SM",
+      "page": "42"
+    },
+    {
+      "name": "Witchcraft",
+      "drain": "WIL + INT",
+      "spirits": [
+        "Spirit of Earth",
+        "Spirit of Water",
+        "Plant Spirit",
+        "Spirit of Air",
+        "Task Spirit"
+      ],
+      "source": "SM",
+      "page": "41"
+    },
+    {
+      "name": "Wuxing",
+      "drain": "WIL + LOG",
+      "spirits": [
+        "Spirit of Fire",
+        "Spirit of Earth",
+        "Plant Spirit",
+        "Spirit of Water",
+        "Guidance Spirit"
+      ],
+      "source": "SM",
+      "page": "43"
+    },
+    {
+      "name": "Zoroastrian",
+      "drain": "WIL + LOG",
+      "spirits": [
+        "Guardian Spirit",
+        "Spirit of Fire",
+        "Spirit of Earth",
+        "Spirit of Water",
+        "Spirit of Man"
+      ],
+      "source": "SM",
+      "page": "43"
+    },
+    {
+      "name": "Draconic",
+      "drain": "WIL + LOG",
+      "spirits": [
+        "Guidance Spirit",
+        "Plant Spirit",
+        "Spirit of Air",
+        "Spirit of Beasts",
+        "Spirit of Earth",
+        "Spirit of Fire",
+        "Spirit of Man",
+        "Spirit of Water",
+        "Task Spirit"
+      ],
+      "source": "AFD",
+      "page": "19"
+    }
+  ]
+}

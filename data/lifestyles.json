@@ -1,0 +1,1840 @@
+{
+  "version": -923,
+  "lifestyles": [
+    {
+      "name": "Street",
+      "cost": [
+        "0"
+      ],
+      "dice": "1",
+      "multiplier": "10",
+      "source": "SR4",
+      "page": "268"
+    },
+    {
+      "name": "Squatter",
+      "cost": [
+        "500"
+      ],
+      "dice": "2",
+      "multiplier": "20",
+      "source": "SR4",
+      "page": "268"
+    },
+    {
+      "name": "Low",
+      "cost": [
+        "2000"
+      ],
+      "dice": "3",
+      "multiplier": "50",
+      "source": "SR4",
+      "page": "268"
+    },
+    {
+      "name": "Middle",
+      "cost": [
+        "5000"
+      ],
+      "dice": "4",
+      "multiplier": "100",
+      "source": "SR4",
+      "page": "268"
+    },
+    {
+      "name": "High",
+      "cost": [
+        "10000"
+      ],
+      "dice": "4",
+      "multiplier": "500",
+      "source": "SR4",
+      "page": "268"
+    },
+    {
+      "name": "Full Immersion",
+      "cost": [
+        "30000"
+      ],
+      "dice": "4",
+      "multiplier": "100",
+      "source": "UN",
+      "page": "38"
+    },
+    {
+      "name": "Luxury",
+      "cost": [
+        "100000"
+      ],
+      "dice": "4",
+      "multiplier": "1000",
+      "source": "SR4",
+      "page": "267"
+    },
+    {
+      "name": "Cyberzombie Lifestyle Addition",
+      "cost": [
+        "2000"
+      ],
+      "dice": "0",
+      "multiplier": "0",
+      "source": "AU",
+      "page": "157"
+    }
+  ],
+  "comforts": [
+    {
+      "name": "Street",
+      "lp": "0"
+    },
+    {
+      "name": "Squatter",
+      "lp": "1"
+    },
+    {
+      "name": "Low",
+      "lp": "2"
+    },
+    {
+      "name": "Middle",
+      "lp": "3"
+    },
+    {
+      "name": "High",
+      "lp": "4"
+    },
+    {
+      "name": "Luxury",
+      "lp": "6",
+      "slp": "5"
+    }
+  ],
+  "entertainments": [
+    {
+      "name": "Street",
+      "lp": "0"
+    },
+    {
+      "name": "Squatter",
+      "lp": "1"
+    },
+    {
+      "name": "Low",
+      "lp": "2"
+    },
+    {
+      "name": "Middle",
+      "lp": "3"
+    },
+    {
+      "name": "High",
+      "lp": "4"
+    },
+    {
+      "name": "Luxury",
+      "lp": "6",
+      "slp": "5"
+    }
+  ],
+  "necessities": [
+    {
+      "name": "Street",
+      "lp": "0"
+    },
+    {
+      "name": "Squatter",
+      "lp": "1"
+    },
+    {
+      "name": "Low",
+      "lp": "2"
+    },
+    {
+      "name": "Middle",
+      "lp": "3"
+    },
+    {
+      "name": "High",
+      "lp": "4"
+    },
+    {
+      "name": "Luxury",
+      "lp": "6",
+      "slp": "5"
+    }
+  ],
+  "neighborhoods": [
+    {
+      "name": "Street - Z-zones/Barrens",
+      "lp": "0",
+      "slp": "remove"
+    },
+    {
+      "name": "Street",
+      "lp": "0"
+    },
+    {
+      "name": "Squatter",
+      "lp": "1"
+    },
+    {
+      "name": "Low",
+      "lp": "2"
+    },
+    {
+      "name": "Middle",
+      "lp": "3"
+    },
+    {
+      "name": "High",
+      "lp": "4"
+    },
+    {
+      "name": "Luxury",
+      "lp": "6",
+      "slp": "5"
+    },
+    {
+      "name": "Luxury-AAA",
+      "lp": "7",
+      "slp": "remove"
+    }
+  ],
+  "securities": [
+    {
+      "name": "Street",
+      "lp": "0"
+    },
+    {
+      "name": "Squatter",
+      "lp": "1"
+    },
+    {
+      "name": "Low",
+      "lp": "2"
+    },
+    {
+      "name": "Middle",
+      "lp": "3"
+    },
+    {
+      "name": "High",
+      "lp": "4"
+    },
+    {
+      "name": "Luxury",
+      "lp": "6",
+      "slp": "5"
+    }
+  ],
+  "qualities": [
+    {
+      "name": "Aspected Domain",
+      "category": [
+        "Positive"
+      ],
+      "lp": "5",
+      "allowed": "Advanced,BoltHole,Safehouse",
+      "source": "RC",
+      "page": "161"
+    },
+    {
+      "name": "Astral Repellant",
+      "category": [
+        "Positive"
+      ],
+      "lp": "5",
+      "allowed": "Advanced,BoltHole,Safehouse",
+      "source": "RC",
+      "page": "161"
+    },
+    {
+      "name": "Commercial Zone",
+      "category": [
+        "Positive"
+      ],
+      "lp": "1",
+      "allowed": "Advanced,BoltHole,Safehouse",
+      "source": "RC",
+      "page": "161"
+    },
+    {
+      "name": "Concerned Neighbors",
+      "category": [
+        "Positive"
+      ],
+      "lp": "2",
+      "allowed": "Advanced",
+      "source": "RC",
+      "page": "161"
+    },
+    {
+      "name": "Easy-Going Landlord",
+      "category": [
+        "Positive"
+      ],
+      "lp": "1",
+      "allowed": "Advanced,BoltHole,Safehouse",
+      "source": "RC",
+      "page": "161"
+    },
+    {
+      "name": "Escape Tunnel",
+      "category": [
+        "Positive"
+      ],
+      "lp": "3",
+      "allowed": "Advanced,BoltHole,Safehouse",
+      "source": "RC",
+      "page": "161"
+    },
+    {
+      "name": "Feng Shui",
+      "category": [
+        "Positive"
+      ],
+      "lp": "5",
+      "allowed": "Advanced,BoltHole,Safehouse",
+      "source": "RC",
+      "page": "161"
+    },
+    {
+      "name": "Free Access",
+      "category": [
+        "Positive"
+      ],
+      "lp": "1",
+      "allowed": "Advanced,BoltHole,Safehouse",
+      "source": "RC",
+      "page": "162"
+    },
+    {
+      "name": "Friendly Neighbors",
+      "category": [
+        "Positive"
+      ],
+      "lp": "1",
+      "allowed": "Advanced",
+      "source": "RC",
+      "page": "162"
+    },
+    {
+      "name": "Hasty Exit",
+      "category": [
+        "Positive"
+      ],
+      "lp": "2",
+      "allowed": "Advanced,BoltHole,Safehouse",
+      "source": "RC",
+      "page": "162"
+    },
+    {
+      "name": "Homegrown Farming",
+      "category": [
+        "Positive"
+      ],
+      "lp": "1",
+      "allowed": "Advanced",
+      "source": "RC",
+      "page": "162"
+    },
+    {
+      "name": "In Tune",
+      "category": [
+        "Positive"
+      ],
+      "lp": "5",
+      "allowed": "Advanced,BoltHole,Safehouse",
+      "source": "RC",
+      "page": "162"
+    },
+    {
+      "name": "Inconspicuous Housing, Matrix",
+      "category": [
+        "Positive"
+      ],
+      "lp": "2",
+      "allowed": "Advanced,BoltHole,Safehouse",
+      "source": "RC",
+      "page": "162"
+    },
+    {
+      "name": "Inconspicuous Housing, Physical",
+      "category": [
+        "Positive"
+      ],
+      "lp": "2",
+      "allowed": "Advanced,BoltHole,Safehouse",
+      "source": "RC",
+      "page": "162"
+    },
+    {
+      "name": "No Neighbors",
+      "category": [
+        "Positive"
+      ],
+      "lp": "1",
+      "allowed": "Advanced,BoltHole,Safehouse",
+      "source": "RC",
+      "page": "162"
+    },
+    {
+      "name": "Perfect Roommate",
+      "category": [
+        "Positive"
+      ],
+      "lp": "2",
+      "allowed": "Advanced,BoltHole,Safehouse",
+      "source": "RC",
+      "page": "162"
+    },
+    {
+      "name": "Privacy Screen, Astral (Rating 1)",
+      "category": [
+        "Positive"
+      ],
+      "lp": "1",
+      "allowed": "Advanced,BoltHole,Safehouse",
+      "source": "RC",
+      "page": "162"
+    },
+    {
+      "name": "Privacy Screen, Astral (Rating 2)",
+      "category": [
+        "Positive"
+      ],
+      "lp": "2",
+      "allowed": "Advanced,BoltHole,Safehouse",
+      "source": "RC",
+      "page": "162"
+    },
+    {
+      "name": "Privacy Screen, Astral (Rating 3)",
+      "category": [
+        "Positive"
+      ],
+      "lp": "3",
+      "allowed": "Advanced,BoltHole,Safehouse",
+      "source": "RC",
+      "page": "162"
+    },
+    {
+      "name": "Privacy Screen, Matrix (Rating 1)",
+      "category": [
+        "Positive"
+      ],
+      "lp": "1",
+      "allowed": "Advanced,BoltHole,Safehouse",
+      "source": "RC",
+      "page": "162"
+    },
+    {
+      "name": "Privacy Screen, Matrix (Rating 2)",
+      "category": [
+        "Positive"
+      ],
+      "lp": "2",
+      "allowed": "Advanced,BoltHole,Safehouse",
+      "source": "RC",
+      "page": "162"
+    },
+    {
+      "name": "Privacy Screen, Matrix (Rating 3)",
+      "category": [
+        "Positive"
+      ],
+      "lp": "3",
+      "allowed": "Advanced,BoltHole,Safehouse",
+      "source": "RC",
+      "page": "162"
+    },
+    {
+      "name": "Privacy Screen, Physical (Rating 1)",
+      "category": [
+        "Positive"
+      ],
+      "lp": "1",
+      "allowed": "Advanced,BoltHole,Safehouse",
+      "source": "RC",
+      "page": "162"
+    },
+    {
+      "name": "Privacy Screen, Physical (Rating 2)",
+      "category": [
+        "Positive"
+      ],
+      "lp": "2",
+      "allowed": "Advanced,BoltHole,Safehouse",
+      "source": "RC",
+      "page": "162"
+    },
+    {
+      "name": "Privacy Screen, Physical (Rating 3)",
+      "category": [
+        "Positive"
+      ],
+      "lp": "3",
+      "allowed": "Advanced,BoltHole,Safehouse",
+      "source": "RC",
+      "page": "162"
+    },
+    {
+      "name": "Quiet Neighborhood",
+      "category": [
+        "Positive"
+      ],
+      "lp": "1",
+      "allowed": "Advanced,BoltHole,Safehouse",
+      "source": "RC",
+      "page": "162"
+    },
+    {
+      "name": "Rad Pad",
+      "category": [
+        "Positive"
+      ],
+      "lp": "1",
+      "allowed": "Advanced",
+      "source": "RC",
+      "page": "162"
+    },
+    {
+      "name": "Resonance Well",
+      "category": [
+        "Positive"
+      ],
+      "lp": "5",
+      "allowed": "Advanced,BoltHole,Safehouse",
+      "source": "RC",
+      "page": "162"
+    },
+    {
+      "name": "Security Conscious",
+      "category": [
+        "Positive"
+      ],
+      "lp": "2",
+      "allowed": "Advanced,BoltHole,Safehouse",
+      "source": "RC",
+      "page": "162"
+    },
+    {
+      "name": "Well Made",
+      "category": [
+        "Positive"
+      ],
+      "lp": "1",
+      "allowed": "Advanced,BoltHole,Safehouse",
+      "source": "RC",
+      "page": "162"
+    },
+    {
+      "name": "Workplace",
+      "category": [
+        "Positive"
+      ],
+      "lp": "1",
+      "allowed": "Advanced,BoltHole,Safehouse",
+      "source": "RC",
+      "page": "162"
+    },
+    {
+      "name": "Animal Lover Rating 1",
+      "category": [
+        "Positive"
+      ],
+      "lp": "1",
+      "allowed": "Advanced,BoltHole,Safehouse",
+      "source": "RW",
+      "page": "40"
+    },
+    {
+      "name": "Animal Lover Rating 2",
+      "category": [
+        "Positive"
+      ],
+      "lp": "3",
+      "allowed": "Advanced,BoltHole,Safehouse",
+      "source": "RW",
+      "page": "40"
+    },
+    {
+      "name": "Animal Lover Rating 3",
+      "category": [
+        "Positive"
+      ],
+      "lp": "5",
+      "allowed": "Advanced,BoltHole,Safehouse",
+      "source": "RW",
+      "page": "40"
+    },
+    {
+      "name": "Rural Home",
+      "category": [
+        "Positive"
+      ],
+      "lp": "2",
+      "allowed": "Advanced,BoltHole,Safehouse",
+      "source": "RW",
+      "page": "40"
+    },
+    {
+      "name": "Outbuildings Rating 1",
+      "category": [
+        "Positive"
+      ],
+      "lp": "1",
+      "allowed": "Advanced,BoltHole,Safehouse",
+      "source": "RW",
+      "page": "40"
+    },
+    {
+      "name": "Outbuildings Rating 2",
+      "category": [
+        "Positive"
+      ],
+      "lp": "2",
+      "allowed": "Advanced,BoltHole,Safehouse",
+      "source": "RW",
+      "page": "40"
+    },
+    {
+      "name": "Reinforced Housing Rating 1",
+      "category": [
+        "Positive"
+      ],
+      "lp": "1",
+      "allowed": "Advanced,BoltHole,Safehouse",
+      "source": "RW",
+      "page": "40"
+    },
+    {
+      "name": "Reinforced Housing Rating 2",
+      "category": [
+        "Positive"
+      ],
+      "lp": "3",
+      "allowed": "Advanced,BoltHole,Safehouse",
+      "source": "RW",
+      "page": "40"
+    },
+    {
+      "name": "AI in Residence",
+      "category": [
+        "Negative"
+      ],
+      "lp": "-3",
+      "allowed": "Advanced,BoltHole,Safehouse",
+      "source": "RC",
+      "page": "162"
+    },
+    {
+      "name": "Ambusher's Delight",
+      "category": [
+        "Negative"
+      ],
+      "lp": "-3",
+      "allowed": "Advanced,BoltHole,Safehouse",
+      "source": "RC",
+      "page": "162"
+    },
+    {
+      "name": "Black Hole (Rating 1)",
+      "category": [
+        "Negative"
+      ],
+      "lp": "-2",
+      "allowed": "Advanced,BoltHole,Safehouse",
+      "source": "RC",
+      "page": "163"
+    },
+    {
+      "name": "Black Hole (Rating 2)",
+      "category": [
+        "Negative"
+      ],
+      "lp": "-4",
+      "allowed": "Advanced,BoltHole,Safehouse",
+      "source": "RC",
+      "page": "163"
+    },
+    {
+      "name": "Corporate Owned",
+      "category": [
+        "Negative"
+      ],
+      "lp": "-3",
+      "allowed": "Advanced",
+      "source": "RC",
+      "page": "163"
+    },
+    {
+      "name": "Crash Pad",
+      "category": [
+        "Negative"
+      ],
+      "lp": "-1",
+      "allowed": "Advanced",
+      "source": "RC",
+      "page": "163"
+    },
+    {
+      "name": "Defective CHN",
+      "category": [
+        "Negative"
+      ],
+      "lp": "-1",
+      "allowed": "Advanced,BoltHole,Safehouse",
+      "source": "RC",
+      "page": "163"
+    },
+    {
+      "name": "Green Plan",
+      "category": [
+        "Negative"
+      ],
+      "lp": "-1",
+      "allowed": "Advanced,BoltHole,Safehouse",
+      "source": "RC",
+      "page": "163"
+    },
+    {
+      "name": "Haunted",
+      "category": [
+        "Negative"
+      ],
+      "lp": "-4",
+      "allowed": "Advanced,BoltHole,Safehouse",
+      "source": "RC",
+      "page": "163"
+    },
+    {
+      "name": "Household Gremlins (Rating 1)",
+      "category": [
+        "Negative"
+      ],
+      "lp": "-1",
+      "allowed": "Advanced,BoltHole,Safehouse",
+      "source": "RC",
+      "page": "163"
+    },
+    {
+      "name": "Household Gremlins (Rating 2)",
+      "category": [
+        "Negative"
+      ],
+      "lp": "-3",
+      "allowed": "Advanced,BoltHole,Safehouse",
+      "source": "RC",
+      "page": "163"
+    },
+    {
+      "name": "Lax Security",
+      "category": [
+        "Negative"
+      ],
+      "lp": "-2",
+      "allowed": "Advanced,BoltHole,Safehouse",
+      "source": "RC",
+      "page": "163"
+    },
+    {
+      "name": "Living by Committee",
+      "category": [
+        "Negative"
+      ],
+      "lp": "-2",
+      "allowed": "Advanced",
+      "source": "RC",
+      "page": "163"
+    },
+    {
+      "name": "Living with Parents",
+      "category": [
+        "Negative"
+      ],
+      "lp": "-2",
+      "allowed": "Advanced",
+      "source": "RC",
+      "page": "163"
+    },
+    {
+      "name": "Network Bottleneck",
+      "category": [
+        "Negative"
+      ],
+      "lp": "-1",
+      "allowed": "Advanced,BoltHole,Safehouse",
+      "source": "RC",
+      "page": "164"
+    },
+    {
+      "name": "No Forwarding Address",
+      "category": [
+        "Negative"
+      ],
+      "lp": "-1",
+      "allowed": "Advanced",
+      "source": "RC",
+      "page": "164"
+    },
+    {
+      "name": "Nosy Neighbors",
+      "category": [
+        "Negative"
+      ],
+      "lp": "-2",
+      "allowed": "Advanced",
+      "source": "RC",
+      "page": "164"
+    },
+    {
+      "name": "No Privacy, Astral (Rating 1)",
+      "category": [
+        "Negative"
+      ],
+      "lp": "-1",
+      "allowed": "Advanced",
+      "source": "RC",
+      "page": "164"
+    },
+    {
+      "name": "No Privacy, Astral (Rating 2)",
+      "category": [
+        "Negative"
+      ],
+      "lp": "-2",
+      "allowed": "Advanced",
+      "source": "RC",
+      "page": "164"
+    },
+    {
+      "name": "No Privacy, Astral (Rating 3)",
+      "category": [
+        "Negative"
+      ],
+      "lp": "-3",
+      "allowed": "Advanced",
+      "source": "RC",
+      "page": "164"
+    },
+    {
+      "name": "No Privacy, Matrix (Rating 1)",
+      "category": [
+        "Negative"
+      ],
+      "lp": "-1",
+      "allowed": "Advanced",
+      "source": "RC",
+      "page": "164"
+    },
+    {
+      "name": "No Privacy, Matrix (Rating 2)",
+      "category": [
+        "Negative"
+      ],
+      "lp": "-2",
+      "allowed": "Advanced",
+      "source": "RC",
+      "page": "164"
+    },
+    {
+      "name": "No Privacy, Matrix (Rating 3)",
+      "category": [
+        "Negative"
+      ],
+      "lp": "-3",
+      "allowed": "Advanced",
+      "source": "RC",
+      "page": "164"
+    },
+    {
+      "name": "No Privacy, Physical (Rating 1)",
+      "category": [
+        "Negative"
+      ],
+      "lp": "-1",
+      "allowed": "Advanced",
+      "source": "RC",
+      "page": "164"
+    },
+    {
+      "name": "No Privacy, Physical (Rating 2)",
+      "category": [
+        "Negative"
+      ],
+      "lp": "-2",
+      "allowed": "Advanced",
+      "source": "RC",
+      "page": "164"
+    },
+    {
+      "name": "No Privacy, Physical (Rating 3)",
+      "category": [
+        "Negative"
+      ],
+      "lp": "-3",
+      "allowed": "Advanced",
+      "source": "RC",
+      "page": "164"
+    },
+    {
+      "name": "Pest Magnet (Rating 1)",
+      "category": [
+        "Negative"
+      ],
+      "lp": "-1",
+      "allowed": "Advanced,BoltHole,Safehouse",
+      "source": "RC",
+      "page": "164"
+    },
+    {
+      "name": "Pest Magnet (Rating 2)",
+      "category": [
+        "Negative"
+      ],
+      "lp": "-3",
+      "allowed": "Advanced,BoltHole,Safehouse",
+      "source": "RC",
+      "page": "164"
+    },
+    {
+      "name": "Poor Condition",
+      "category": [
+        "Negative"
+      ],
+      "lp": "-1",
+      "allowed": "Advanced,BoltHole,Safehouse",
+      "source": "RC",
+      "page": "164"
+    },
+    {
+      "name": "Rough Neighborhood",
+      "category": [
+        "Negative"
+      ],
+      "lp": "-1",
+      "allowed": "Advanced,BoltHole,Safehouse",
+      "source": "RC",
+      "page": "164"
+    },
+    {
+      "name": "Sprite Magnet (Rating 1)",
+      "category": [
+        "Negative"
+      ],
+      "lp": "-1",
+      "allowed": "Advanced,BoltHole,Safehouse",
+      "source": "RC",
+      "page": "164"
+    },
+    {
+      "name": "Sprite Magnet (Rating 2)",
+      "category": [
+        "Negative"
+      ],
+      "lp": "-3",
+      "allowed": "Advanced,BoltHole,Safehouse",
+      "source": "RC",
+      "page": "164"
+    },
+    {
+      "name": "This Isn't Big Bob's Autos",
+      "category": [
+        "Negative"
+      ],
+      "lp": "-1",
+      "allowed": "Advanced",
+      "source": "RC",
+      "page": "164"
+    },
+    {
+      "name": "Trigger-Happy Landlord",
+      "category": [
+        "Negative"
+      ],
+      "lp": "-1",
+      "allowed": "Advanced,BoltHole,Safehouse",
+      "source": "RC",
+      "page": "164"
+    },
+    {
+      "name": "Unsound",
+      "category": [
+        "Negative"
+      ],
+      "lp": "-2",
+      "allowed": "Advanced,BoltHole,Safehouse",
+      "source": "RC",
+      "page": "164"
+    },
+    {
+      "name": "Unsafe",
+      "category": [
+        "Negative"
+      ],
+      "lp": "-3",
+      "allowed": "Advanced,BoltHole,Safehouse",
+      "source": "RC",
+      "page": "164"
+    },
+    {
+      "name": "Worse Neighbors",
+      "category": [
+        "Negative"
+      ],
+      "lp": "-1",
+      "allowed": "Advanced",
+      "source": "RC",
+      "page": "164"
+    },
+    {
+      "name": "Deliveryman",
+      "category": [
+        "Positive"
+      ],
+      "lp": "2",
+      "allowed": "Safehouse",
+      "source": "SH",
+      "page": "15"
+    },
+    {
+      "name": "Candyman",
+      "category": [
+        "Positive"
+      ],
+      "lp": "4",
+      "allowed": "Safehouse",
+      "source": "SH",
+      "page": "15"
+    },
+    {
+      "name": "No Masters",
+      "category": [
+        "Positive"
+      ],
+      "lp": "5",
+      "allowed": "Advanced,BoltHole,Safehouse",
+      "source": "SH",
+      "page": "15"
+    },
+    {
+      "name": "Parabellum",
+      "category": [
+        "Positive"
+      ],
+      "lp": "1",
+      "allowed": "Safehouse",
+      "source": "SH",
+      "page": "15"
+    },
+    {
+      "name": "High Traffic",
+      "category": [
+        "Positive"
+      ],
+      "lp": "1",
+      "allowed": "Advanced,BoltHole,Safehouse",
+      "source": "SH",
+      "page": "15"
+    },
+    {
+      "name": "Stocked Up",
+      "category": [
+        "Positive"
+      ],
+      "lp": "1",
+      "allowed": "Advanced,BoltHole,Safehouse",
+      "source": "SH",
+      "page": "15"
+    },
+    {
+      "name": "Alternate Energy",
+      "category": [
+        "Positive"
+      ],
+      "lp": "1",
+      "allowed": "Advanced,BoltHole,Safehouse",
+      "source": "SH",
+      "page": "15"
+    },
+    {
+      "name": "Magician On Staff (Bolt Hole)",
+      "category": [
+        "Positive"
+      ],
+      "lp": "3",
+      "allowed": "BoltHole",
+      "source": "SH",
+      "page": "15"
+    },
+    {
+      "name": "Magician On Staff (Safehouse)",
+      "category": [
+        "Positive"
+      ],
+      "lp": "5",
+      "allowed": "Safehouse",
+      "source": "SH",
+      "page": "15"
+    },
+    {
+      "name": "Dug a Hole",
+      "category": [
+        "Positive"
+      ],
+      "lp": "2",
+      "allowed": "Advanced,BoltHole,Safehouse",
+      "source": "SH",
+      "page": "15"
+    },
+    {
+      "name": "Legitimate",
+      "category": [
+        "Positive"
+      ],
+      "lp": "2",
+      "allowed": "Safehouse",
+      "source": "SH",
+      "page": "15"
+    },
+    {
+      "name": "Shoemaker",
+      "category": [
+        "Positive"
+      ],
+      "lp": "5",
+      "allowed": "Safehouse",
+      "source": "SH",
+      "page": "15"
+    },
+    {
+      "name": "Nurse Is In",
+      "category": [
+        "Positive"
+      ],
+      "lp": "3",
+      "allowed": "Safehouse",
+      "source": "SH",
+      "page": "15"
+    },
+    {
+      "name": "Doctor Is In",
+      "category": [
+        "Positive"
+      ],
+      "lp": "4",
+      "allowed": "Safehouse",
+      "source": "SH",
+      "page": "15"
+    },
+    {
+      "name": "Healer Is In",
+      "category": [
+        "Positive"
+      ],
+      "lp": "5",
+      "allowed": "Safehouse",
+      "source": "SH",
+      "page": "15"
+    },
+    {
+      "name": "Fully Stocked Bar",
+      "category": [
+        "Positive"
+      ],
+      "lp": "1",
+      "allowed": "Advanced,BoltHole,Safehouse",
+      "source": "SH",
+      "page": "15"
+    },
+    {
+      "name": "Middle of Hicksville",
+      "category": [
+        "Positive"
+      ],
+      "lp": "2",
+      "allowed": "Advanced,BoltHole,Safehouse",
+      "source": "SH",
+      "page": "16"
+    },
+    {
+      "name": "Ultramodern",
+      "category": [
+        "Positive"
+      ],
+      "lp": "1",
+      "allowed": "Advanced,BoltHole,Safehouse",
+      "source": "SH",
+      "page": "16"
+    },
+    {
+      "name": "Armory",
+      "category": [
+        "Positive"
+      ],
+      "lp": "3",
+      "allowed": "Safehouse",
+      "source": "SH",
+      "page": "16"
+    },
+    {
+      "name": "Stunt Double",
+      "category": [
+        "Positive"
+      ],
+      "lp": "5",
+      "allowed": "Safehouse",
+      "source": "SH",
+      "page": "16"
+    },
+    {
+      "name": "Made It to Mexico",
+      "category": [
+        "Positive"
+      ],
+      "lp": "5",
+      "allowed": "BoltHole,Safehouse",
+      "source": "SH",
+      "page": "16"
+    },
+    {
+      "name": "Inaccessible",
+      "category": [
+        "Positive"
+      ],
+      "lp": "3",
+      "allowed": "Advanced,BoltHole,Safehouse",
+      "source": "SH",
+      "page": "16"
+    },
+    {
+      "name": "Mr. Johnson's Neighborhood",
+      "category": [
+        "Positive"
+      ],
+      "lp": "2",
+      "allowed": "Advanced,BoltHole,Safehouse",
+      "source": "SH",
+      "page": "16"
+    },
+    {
+      "name": "Hotel California",
+      "category": [
+        "Negative"
+      ],
+      "lp": "-1",
+      "allowed": "Safehouse",
+      "source": "SH",
+      "page": "16"
+    },
+    {
+      "name": "Book Thumpers",
+      "category": [
+        "Negative"
+      ],
+      "lp": "-1",
+      "allowed": "Safehouse",
+      "source": "SH",
+      "page": "16"
+    },
+    {
+      "name": "Affiliated",
+      "category": [
+        "Negative"
+      ],
+      "lp": "-3",
+      "allowed": "Advanced,BoltHole,Safehouse",
+      "source": "SH",
+      "page": "16"
+    },
+    {
+      "name": "Racist Hellhole (Rating 1)",
+      "category": [
+        "Negative"
+      ],
+      "lp": "-1",
+      "allowed": "Safehouse",
+      "source": "SH",
+      "page": "16"
+    },
+    {
+      "name": "Racist Hellhole (Rating 2)",
+      "category": [
+        "Negative"
+      ],
+      "lp": "-2",
+      "allowed": "Safehouse",
+      "source": "SH",
+      "page": "16"
+    },
+    {
+      "name": "Racist Hellhole (Rating 3)",
+      "category": [
+        "Negative"
+      ],
+      "lp": "-3",
+      "allowed": "Safehouse",
+      "source": "SH",
+      "page": "16"
+    },
+    {
+      "name": "Tree-Hugging Hippies",
+      "category": [
+        "Negative"
+      ],
+      "lp": "-2",
+      "allowed": "Safehouse",
+      "source": "SH",
+      "page": "17"
+    },
+    {
+      "name": "Loud Neighborhood",
+      "category": [
+        "Negative"
+      ],
+      "lp": "-1",
+      "allowed": "Advanced,BoltHole,Safehouse",
+      "source": "SH",
+      "page": "17"
+    },
+    {
+      "name": "Not a Home",
+      "category": [
+        "Negative"
+      ],
+      "lp": "-2",
+      "allowed": "Advanced,BoltHole,Safehouse",
+      "source": "SH",
+      "page": "17"
+    },
+    {
+      "name": "Hell's Waiting Room",
+      "category": [
+        "Negative"
+      ],
+      "lp": "-2",
+      "allowed": "Advanced,BoltHole,Safehouse",
+      "source": "SH",
+      "page": "17"
+    },
+    {
+      "name": "Cellmate (Rating 1)",
+      "category": [
+        "Negative"
+      ],
+      "lp": "-2",
+      "allowed": "BoltHole,Safehouse",
+      "source": "SH",
+      "page": "17"
+    },
+    {
+      "name": "Cellmate (Rating 2)",
+      "category": [
+        "Negative"
+      ],
+      "lp": "-2",
+      "allowed": "BoltHole,Safehouse",
+      "source": "SH",
+      "page": "17"
+    },
+    {
+      "name": "Cellmate (Rating 3)",
+      "category": [
+        "Negative"
+      ],
+      "lp": "-3",
+      "allowed": "BoltHole,Safehouse",
+      "source": "SH",
+      "page": "17"
+    },
+    {
+      "name": "Cellmate (Rating 4)",
+      "category": [
+        "Negative"
+      ],
+      "lp": "-4",
+      "allowed": "BoltHole,Safehouse",
+      "source": "SH",
+      "page": "17"
+    },
+    {
+      "name": "Cellmate (Rating 5)",
+      "category": [
+        "Negative"
+      ],
+      "lp": "-5",
+      "allowed": "BoltHole,Safehouse",
+      "source": "SH",
+      "page": "17"
+    },
+    {
+      "name": "Donut Shop (Rating 1)",
+      "category": [
+        "Negative"
+      ],
+      "lp": "-2",
+      "allowed": "Advanced,BoltHole,Safehouse",
+      "source": "SH",
+      "page": "17"
+    },
+    {
+      "name": "Donut Shop (Rating 2)",
+      "category": [
+        "Negative"
+      ],
+      "lp": "-4",
+      "allowed": "Advanced,BoltHole,Safehouse",
+      "source": "SH",
+      "page": "17"
+    },
+    {
+      "name": "Witless Protection",
+      "category": [
+        "Negative"
+      ],
+      "lp": "-3",
+      "allowed": "Advanced,BoltHole,Safehouse",
+      "source": "SH",
+      "page": "17"
+    },
+    {
+      "name": "Under A Rock",
+      "category": [
+        "Negative"
+      ],
+      "lp": "-3",
+      "allowed": "Advanced,BoltHole,Safehouse",
+      "source": "SH",
+      "page": "17"
+    },
+    {
+      "name": "Leaky Faucet",
+      "category": [
+        "Negative"
+      ],
+      "lp": "-2",
+      "allowed": "Advanced,BoltHole,Safehouse",
+      "source": "SH",
+      "page": "17"
+    },
+    {
+      "name": "The Building that Time Forgot",
+      "category": [
+        "Negative"
+      ],
+      "lp": "-1",
+      "allowed": "Advanced,BoltHole,Safehouse",
+      "source": "SH",
+      "page": "17"
+    },
+    {
+      "name": "Fresh Meat",
+      "category": [
+        "Negative"
+      ],
+      "lp": "-3",
+      "allowed": "Advanced,BoltHole,Safehouse",
+      "source": "SH",
+      "page": "17"
+    },
+    {
+      "name": "Maid's on Vacation",
+      "category": [
+        "Negative"
+      ],
+      "lp": "-1",
+      "allowed": "Safehouse",
+      "source": "SH",
+      "page": "17"
+    }
+  ],
+  "costs": [
+    {
+      "lp": "0",
+      "cost": [
+        "0"
+      ]
+    },
+    {
+      "lp": "1",
+      "cost": [
+        "100"
+      ]
+    },
+    {
+      "lp": "2",
+      "cost": [
+        "200"
+      ]
+    },
+    {
+      "lp": "3",
+      "cost": [
+        "300"
+      ]
+    },
+    {
+      "lp": "4",
+      "cost": [
+        "400"
+      ]
+    },
+    {
+      "lp": "5",
+      "cost": [
+        "500"
+      ]
+    },
+    {
+      "lp": "6",
+      "cost": [
+        "800"
+      ]
+    },
+    {
+      "lp": "7",
+      "cost": [
+        "1100"
+      ]
+    },
+    {
+      "lp": "8",
+      "cost": [
+        "1400"
+      ]
+    },
+    {
+      "lp": "9",
+      "cost": [
+        "1700"
+      ]
+    },
+    {
+      "lp": "10",
+      "cost": [
+        "2000"
+      ]
+    },
+    {
+      "lp": "11",
+      "cost": [
+        "2600"
+      ]
+    },
+    {
+      "lp": "12",
+      "cost": [
+        "3200"
+      ]
+    },
+    {
+      "lp": "13",
+      "cost": [
+        "3800"
+      ]
+    },
+    {
+      "lp": "14",
+      "cost": [
+        "4400"
+      ]
+    },
+    {
+      "lp": "15",
+      "cost": [
+        "5000"
+      ]
+    },
+    {
+      "lp": "16",
+      "cost": [
+        "6000"
+      ]
+    },
+    {
+      "lp": "17",
+      "cost": [
+        "7000"
+      ]
+    },
+    {
+      "lp": "18",
+      "cost": [
+        "8000"
+      ]
+    },
+    {
+      "lp": "19",
+      "cost": [
+        "9000"
+      ]
+    },
+    {
+      "lp": "20",
+      "cost": [
+        "10000"
+      ]
+    },
+    {
+      "lp": "21",
+      "cost": [
+        "15000"
+      ]
+    },
+    {
+      "lp": "22",
+      "cost": [
+        "20000"
+      ]
+    },
+    {
+      "lp": "23",
+      "cost": [
+        "30000"
+      ]
+    },
+    {
+      "lp": "24",
+      "cost": [
+        "40000"
+      ]
+    },
+    {
+      "lp": "25",
+      "cost": [
+        "50000"
+      ]
+    },
+    {
+      "lp": "26",
+      "cost": [
+        "60000"
+      ]
+    },
+    {
+      "lp": "27",
+      "cost": [
+        "70000"
+      ]
+    },
+    {
+      "lp": "28",
+      "cost": [
+        "80000"
+      ]
+    },
+    {
+      "lp": "29",
+      "cost": [
+        "90000"
+      ]
+    },
+    {
+      "lp": "30",
+      "cost": [
+        "100000"
+      ]
+    },
+    {
+      "lp": "31+",
+      "cost": [
+        "25000"
+      ]
+    }
+  ],
+  "safehousecosts": [
+    {
+      "lp": "0",
+      "cost": [
+        "0"
+      ]
+    },
+    {
+      "lp": "1",
+      "cost": [
+        "75"
+      ]
+    },
+    {
+      "lp": "2",
+      "cost": [
+        "150"
+      ]
+    },
+    {
+      "lp": "3",
+      "cost": [
+        "200"
+      ]
+    },
+    {
+      "lp": "4",
+      "cost": [
+        "350"
+      ]
+    },
+    {
+      "lp": "5",
+      "cost": [
+        "400"
+      ]
+    },
+    {
+      "lp": "6",
+      "cost": [
+        "700"
+      ]
+    },
+    {
+      "lp": "7",
+      "cost": [
+        "1000"
+      ]
+    },
+    {
+      "lp": "8",
+      "cost": [
+        "1300"
+      ]
+    },
+    {
+      "lp": "9",
+      "cost": [
+        "1600"
+      ]
+    },
+    {
+      "lp": "10",
+      "cost": [
+        "1900"
+      ]
+    },
+    {
+      "lp": "11",
+      "cost": [
+        "2600"
+      ]
+    },
+    {
+      "lp": "12",
+      "cost": [
+        "3200"
+      ]
+    },
+    {
+      "lp": "13",
+      "cost": [
+        "3800"
+      ]
+    },
+    {
+      "lp": "14",
+      "cost": [
+        "4400"
+      ]
+    },
+    {
+      "lp": "15",
+      "cost": [
+        "5000"
+      ]
+    },
+    {
+      "lp": "16",
+      "cost": [
+        "7500"
+      ]
+    },
+    {
+      "lp": "17",
+      "cost": [
+        "9000"
+      ]
+    },
+    {
+      "lp": "18",
+      "cost": [
+        "10500"
+      ]
+    },
+    {
+      "lp": "19",
+      "cost": [
+        "12000"
+      ]
+    },
+    {
+      "lp": "20",
+      "cost": [
+        "13500"
+      ]
+    },
+    {
+      "lp": "21",
+      "cost": [
+        "20000"
+      ]
+    },
+    {
+      "lp": "22",
+      "cost": [
+        "25000"
+      ]
+    },
+    {
+      "lp": "23",
+      "cost": [
+        "35000"
+      ]
+    },
+    {
+      "lp": "24",
+      "cost": [
+        "45000"
+      ]
+    },
+    {
+      "lp": "25",
+      "cost": [
+        "55000"
+      ]
+    },
+    {
+      "lp": "26",
+      "cost": [
+        "65000"
+      ]
+    },
+    {
+      "lp": "27",
+      "cost": [
+        "75000"
+      ]
+    },
+    {
+      "lp": "28",
+      "cost": [
+        "85000"
+      ]
+    },
+    {
+      "lp": "29",
+      "cost": [
+        "95000"
+      ]
+    },
+    {
+      "lp": "30",
+      "cost": [
+        "110000"
+      ]
+    },
+    {
+      "lp": "31+",
+      "cost": [
+        "35000"
+      ]
+    }
+  ]
+}

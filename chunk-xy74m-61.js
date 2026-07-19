@@ -1,0 +1,1 @@
+var e=[{path:"",loadComponent:()=>import('./chunk-DxMDuolj.js').then(t=>t.Characters),title:"Characters"},{path:"new",loadComponent:()=>import('./chunk-BVrZ0YET.js').then(t=>t.CreationShell),title:"New Character"},{path:":id",loadComponent:()=>import('./chunk-BVrZ0YET.js').then(t=>t.CreationShell),title:"Edit Character"}];export{e as CHARACTER_ROUTES};

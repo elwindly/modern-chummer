@@ -1,0 +1,465 @@
+{
+  "version": -925,
+  "categories": [
+    "Resonance",
+    "Disonance"
+  ],
+  "mentors": [
+    {
+      "name": "01",
+      "category": [
+        "Resonance"
+      ],
+      "advantage": [
+        "+1 die for compiling and registering sprites of any type"
+      ],
+      "disadvantage": "Zero-One is the perfection of the code and demands the same from his followers, or at least teaches them a harsh lesson if they fail. Zero-One technomancers must spend 2 points of Edge to negate a glitch or downgrade a critical glitch.",
+      "source": "UN",
+      "page": "150"
+    },
+    {
+      "name": "Alias",
+      "category": [
+        "Resonance"
+      ],
+      "advantage": [
+        "+2 dice to Spoof Tests"
+      ],
+      "disadvantage": "Alias technomancers cannot abide to pay for their lifestyle and must therefore use their abilities to spoof their lifestyle.",
+      "choices": [
+        {
+          "name": "+1 die for Crack spirtes"
+        },
+        {
+          "name": "+1 dice for Sleuth Sprites"
+        }
+      ],
+      "source": "UN",
+      "page": "150"
+    },
+    {
+      "name": "Abort",
+      "category": [
+        "Disonance"
+      ],
+      "advantage": [
+        "+2 dice to all Crash Tests"
+      ],
+      "disadvantage": "An Abort technomancer must make a Willpower + Charisma (3) Test to take any other action in cybercombat except for trying to crash his opponent’s software.",
+      "choices": [
+        {
+          "name": "+1 dice for dissonant Crack sprites"
+        },
+        {
+          "name": "+1 dice for dissonant Fault sprites"
+        }
+      ],
+      "source": "UN",
+      "page": "177"
+    },
+    {
+      "name": "Archivist",
+      "category": [
+        "Resonance"
+      ],
+      "advantage": [
+        "+2 dice for all Browse Tests"
+      ],
+      "disadvantage": "Technomancers following the Archivist cannot willingly destroy or corrupt data. The technomancer must succeed at a Willpower + Logic (3) Test to purposely delete or corrupt data (or order a sprite to do so).",
+      "choices": [
+        {
+          "name": "+1 die for Code sprites"
+        },
+        {
+          "name": "+1 die for Data sprites"
+        }
+      ],
+      "source": "UN",
+      "page": "150"
+    },
+    {
+      "name": "Architect",
+      "category": [
+        "Resonance"
+      ],
+      "advantage": [
+        "+2 die to Edit Tests"
+      ],
+      "disadvantage": "–1 die to Crash Tests",
+      "choices": [
+        {
+          "name": "+1 die for Data sprites"
+        },
+        {
+          "name": "+1 die for Machine sprites"
+        }
+      ],
+      "source": "UN",
+      "page": "150"
+    },
+    {
+      "name": "Babel",
+      "category": [
+        "Resonance"
+      ],
+      "advantage": [
+        "+1 to online Etiquette and Language Tests, +1 die for Courier or Tutor sprites (player must choose one)"
+      ],
+      "disadvantage": "Secrecy is the bane of communication, so Babel technomancers must make a Willpower + Logic (3) Test to encrypt anything.",
+      "choices": [
+        {
+          "name": "+1 die for Courier sprites"
+        },
+        {
+          "name": "+1 die for Tutor sprites"
+        }
+      ],
+      "source": "UN",
+      "page": "150"
+    },
+    {
+      "name": "The Black Hat",
+      "category": [
+        "Resonance"
+      ],
+      "advantage": [
+        "+2 dice to Exploit Tests"
+      ],
+      "disadvantage": "Black Hat technomancers have extreme difficulty restraining themselves from hacking into a node that is interesting in any way. The technomancer must succeed in a Willpower + Charisma (3) Test to avoid hacking such a system when the opportunity arises.",
+      "choices": [
+        {
+          "name": "+1 die for Crack sprites"
+        },
+        {
+          "name": "+1 die for Fault sprites"
+        }
+      ],
+      "source": "UN",
+      "page": "150"
+    },
+    {
+      "name": "Cryptome",
+      "category": [
+        "Resonance"
+      ],
+      "advantage": [
+        "+2 dice to all Encryption and Decryption Tests"
+      ],
+      "disadvantage": "Technomancers who follow Cryptome don’t surrender secrets easily and never to unreliable sources. The technomancer must make a Willpower + Logic (3) Test to share a secret or important information with someone he does not completely trust … and such trust is rare.",
+      "choices": [
+        {
+          "name": "+1 die for Courier sprites"
+        },
+        {
+          "name": "+1 die for Data sprites"
+        }
+      ],
+      "source": "UN",
+      "page": "150"
+    },
+    {
+      "name": "Daedalus",
+      "category": [
+        "Resonance"
+      ],
+      "advantage": [
+        "+2 dice to Hardware Tests"
+      ],
+      "disadvantage": "Technomancers who follow Daedalus tend to interact with the machines on which they are working in an even more subconscious manner than usual. As a result, modifications they make are geared towards someone with their talents and worldview, rather than something that is intuitive to a mundane user or even a non-Daedalus technomancer. Devices built or modified by such technomancers have a more arcane user interface, imposing a –2 modifier on anyone who wants to legitimately use it.",
+      "choices": [
+        {
+          "name": "+1 die for Machine sprites"
+        },
+        {
+          "name": "+1 die for Fault sprites"
+        }
+      ],
+      "source": "UN",
+      "page": "150"
+    },
+    {
+      "name": "Delphi",
+      "category": [
+        "Resonance"
+      ],
+      "advantage": [
+        "+2 dice for Analyze Tests"
+      ],
+      "disadvantage": "Delphi technomancers don’t adapt easily to unexpected situations. They must make a Willpower + Logic (3) Test to make any quick decisions in situations they have not planned for.",
+      "choices": [
+        {
+          "name": "+1 die for Code sprites"
+        },
+        {
+          "name": "+1 die for Tutor sprites"
+        }
+      ],
+      "source": "UN",
+      "page": "151"
+    },
+    {
+      "name": "Disinformation",
+      "category": [
+        "Disonance"
+      ],
+      "advantage": [
+        "+1 die to all test with skills from the Influence skill group"
+      ],
+      "disadvantage": "Disinformants must succeed in a Willpower + Charisma (3) Test to pass truthful, complete, or non-doctored information via the Matrix to non-dissonant technomancers.",
+      "choices": [
+        {
+          "name": "+1 die for dissonant Data sprites"
+        },
+        {
+          "name": "+1 die for dissonant Tutor sprites"
+        }
+      ],
+      "source": "UN",
+      "page": "177"
+    },
+    {
+      "name": "Echelon",
+      "category": [
+        "Resonance"
+      ],
+      "advantage": [
+        "+1 die to Track and Sniffer Tests"
+      ],
+      "disadvantage": "Echelon followers obsessively work to gather information about what is going on around them. When caught off-guard, without having information they need, or when running blind into a situation, they suffer a –1 dice pool modifier on all actions as long as the situation remains.",
+      "choices": [
+        {
+          "name": "+1 die for Crack sprites"
+        },
+        {
+          "name": "+1 die for Sleuth sprites"
+        }
+      ],
+      "source": "UN",
+      "page": "151"
+    },
+    {
+      "name": "Flow",
+      "category": [
+        "Resonance"
+      ],
+      "advantage": [
+        "+2 dice for Threading Tests"
+      ],
+      "disadvantage": "–1 die to Cybercombat Attack Tests",
+      "choices": [
+        {
+          "name": "+1 die for Code sprites"
+        },
+        {
+          "name": "+1 die for Data sprites"
+        }
+      ],
+      "source": "UN",
+      "page": "151"
+    },
+    {
+      "name": "Idoru",
+      "category": [
+        "Resonance"
+      ],
+      "advantage": [
+        "+2 dice on Con Tests"
+      ],
+      "disadvantage": "Idoru followers must succeed in a Willpower + Logic (3) Test to avoid manipulating data in their favor when the opportunity affords.",
+      "choices": [
+        {
+          "name": "+1 die for Crack sprites"
+        },
+        {
+          "name": "+1 die for Sleuth sprites"
+        }
+      ],
+      "source": "UN",
+      "page": "151"
+    },
+    {
+      "name": "Intrusion Countermeasure (IC)",
+      "category": [
+        "Resonance"
+      ],
+      "advantage": [
+        "+2 dice to all Matrix Damage Resistance Tests except Fading, +1 die for Paladin sprites"
+      ],
+      "disadvantage": "If an IC technomancer fails to protect or guard something he has committed to, or does not achieve a self-chosen goal, he suffers a –1 dice pool modifier on all actions until he atones for the failure.",
+      "source": "UN",
+      "page": "151"
+    },
+    {
+      "name": "Jormungand",
+      "category": [
+        "Disonance"
+      ],
+      "advantage": [
+        "+2 dice Corrupt Tests"
+      ],
+      "disadvantage": "Jormungand technomancers are destructive and will take every opportunity to devastate a node by permanently deleting or corrupting its data. They must succeed in a Willpower + Logic (3) Test to leave a node they have hacked into unscathed.",
+      "choices": [
+        {
+          "name": "+1 die for dissonant Data sprites"
+        },
+        {
+          "name": "+1 die for dissonant Code sprites"
+        }
+      ],
+      "source": "UN",
+      "page": "177"
+    },
+    {
+      "name": "Nemesis",
+      "category": [
+        "Disonance"
+      ],
+      "advantage": [
+        "+2 dice to Con Tests"
+      ],
+      "disadvantage": "A Nemesis technomancer must make a Willpower + Charisma (3) Test to restrain himself from punishing those whom he feels deserve it.",
+      "choices": [
+        {
+          "name": "+1 die for dissonant Fault sprites"
+        },
+        {
+          "name": "+1 die for dissonant Sleuth sprites"
+        }
+      ],
+      "source": "UN",
+      "page": "177"
+    },
+    {
+      "name": "Noise",
+      "category": [
+        "Disonance"
+      ],
+      "advantage": [
+        "+2 dice to Threading Tests"
+      ],
+      "disadvantage": "Noise technomancers rely on the buzz of Matrix more so than others, and suffer double the modifiers applied to Matrix and non-Matrix actions when caught in static or dead zones (see p. 210, SR4).",
+      "choices": [
+        {
+          "name": "+1 die for dissonant Courier sprites"
+        },
+        {
+          "name": "+1 die for dissonant Code sprites"
+        }
+      ],
+      "source": "UN",
+      "page": "177"
+    },
+    {
+      "name": "Probe",
+      "category": [
+        "Resonance"
+      ],
+      "advantage": [
+        "+2 dice to all Scan Tests"
+      ],
+      "disadvantage": "Probe technomancers receive a –2 dice penalty when hacking on the fly without probing first.",
+      "choices": [
+        {
+          "name": "+1 die for Crack sprites"
+        },
+        {
+          "name": "+1 die for Sleuth sprites"
+        }
+      ],
+      "source": "UN",
+      "page": "151"
+    },
+    {
+      "name": "Pulse",
+      "category": [
+        "Resonance"
+      ],
+      "advantage": [
+        "+2 dice on Matrix Initiative Tests"
+      ],
+      "disadvantage": "–2 dice on Hacking Tests when not hacking on the fly",
+      "source": "UN",
+      "page": "151"
+    },
+    {
+      "name": "Shooter",
+      "category": [
+        "Resonance"
+      ],
+      "advantage": [
+        "+2 dice to all Matrix Attack Tests"
+      ],
+      "disadvantage": "A Shooter technomancer must succeed in a Willpower + Logic (3) Test to retreat from a Matrix fight.",
+      "choices": [
+        {
+          "name": "+1 die for Paladin sprites"
+        },
+        {
+          "name": "+1 die for Tank sprites"
+        }
+      ],
+      "source": "UN",
+      "page": "151"
+    },
+    {
+      "name": "Snuff",
+      "category": [
+        "Disonance"
+      ],
+      "advantage": [
+        "+2 dice to all Sniffer Tests"
+      ],
+      "disadvantage": "Snuff technomancer suffer a –2 dice pool modifier to resisting addiction to BTL or Matrix media.",
+      "choices": [
+        {
+          "name": "+1 die for dissonant Crack sprites"
+        },
+        {
+          "name": "+1 die for dissonant Sleuth sprites"
+        }
+      ],
+      "source": "UN",
+      "page": "177"
+    },
+    {
+      "name": "Tiamat",
+      "category": [
+        "Disonance"
+      ],
+      "advantage": [
+        "+2 dice to Cybercombat"
+      ],
+      "disadvantage": "–1 die to all Hacking Tests",
+      "choices": [
+        {
+          "name": "+1 die for dissonant Crack sprites"
+        },
+        {
+          "name": "+1 die for dissonant Tank sprites"
+        }
+      ],
+      "source": "UN",
+      "page": "178"
+    },
+    {
+      "name": "The World Tree",
+      "category": [
+        "Resonance"
+      ],
+      "advantage": [
+        "+2 dice to Analyze Tests"
+      ],
+      "disadvantage": "World Tree technomancers are easily distracted by information they find interesting. When faced with new information, unusual data, or phenomena, the technomancer must make a Willpower + Charisma (3) Test to resist dropping his current task to screen, analyze, and acquire the information (if possible).",
+      "choices": [
+        {
+          "name": "+1 die for Code sprites"
+        },
+        {
+          "name": "+1 die for Courier sprites"
+        }
+      ],
+      "source": "UN",
+      "page": "151"
+    }
+  ]
+}

@@ -1,0 +1,122 @@
+{
+  "version": -923,
+  "traditions": [
+    {
+      "name": "Cyberadepts",
+      "drain": "WIL + RES",
+      "spirits": [
+        "Courier Sprite",
+        "Crack Sprite",
+        "Data Sprite",
+        "Fault Sprite",
+        "Machine Sprite"
+      ],
+      "source": "UN",
+      "page": "138"
+    },
+    {
+      "name": "Default",
+      "drain": "WIL + RES",
+      "spirits": [
+        "Courier Sprite",
+        "Crack Sprite",
+        "Data Sprite",
+        "Fault Sprite",
+        "Machine Sprite"
+      ],
+      "source": "SR4",
+      "page": "243"
+    },
+    {
+      "name": "Dronomancers",
+      "drain": "INT + RES",
+      "spirits": [
+        "Crack Sprite",
+        "Data Sprite",
+        "Fault Sprite",
+        "Machine Sprite",
+        "Tutor Sprite"
+      ],
+      "source": "UN",
+      "page": "138"
+    },
+    {
+      "name": "E-scapists",
+      "drain": "WIL + RES",
+      "spirits": [
+        "Courier Sprite",
+        "Crack Sprite",
+        "Data Sprite",
+        "Fault Sprite",
+        "Tank Sprite"
+      ],
+      "source": "UN",
+      "page": "138"
+    },
+    {
+      "name": "Info Savants",
+      "drain": "INT + RES",
+      "spirits": [
+        "Code Sprite",
+        "Courier Sprite",
+        "Data Sprite",
+        "Machine Sprite",
+        "Paladin Sprite"
+      ],
+      "source": "UN",
+      "page": "139"
+    },
+    {
+      "name": "Networkers",
+      "drain": "CHA + RES",
+      "spirits": [
+        "Code Sprite",
+        "Courier Sprite",
+        "Crack Sprite",
+        "Data Sprite",
+        "Sleuth Sprite"
+      ],
+      "source": "UN",
+      "page": "139"
+    },
+    {
+      "name": "Singularitarians",
+      "drain": "LOG + RES",
+      "spirits": [
+        "Courier Sprite",
+        "Crack Sprite",
+        "Data Sprite",
+        "Tutor Sprite",
+        "Tank Sprite"
+      ],
+      "source": "UN",
+      "page": "139"
+    },
+    {
+      "name": "Sourcerors",
+      "drain": "LOG + RES",
+      "spirits": [
+        "Code Sprite",
+        "Courier Sprite",
+        "Crack Sprite",
+        "Data Sprite",
+        "Machine Sprite"
+      ],
+      "source": "UN",
+      "page": "139"
+    },
+    {
+      "name": "Technoshamans",
+      "drain": "CHA + RES",
+      "spirits": [
+        "Crack Sprite",
+        "Data Sprite",
+        "Machine Sprite",
+        "Paladin Sprite",
+        "Sleuth Sprite"
+      ],
+      "source": "UN",
+      "page": "140"
+    }
+  ]
+}

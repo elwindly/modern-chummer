@@ -1,0 +1,1035 @@
+{
+  "version": -922,
+  "categories": [
+    "Animal",
+    "Other",
+    "Toxic"
+  ],
+  "mentors": [
+    {
+      "name": "Adversary",
+      "category": [
+        "Other"
+      ],
+      "advantage": [
+        "+2 dice for Manipulation spells."
+      ],
+      "disadvantage": "Adversary magicians have issues with authority. If the Adversary magician is given orders or instructions which do not match his own desires and intentions, he must make a Willpower + Charisma (3) Test or refuse the order, going with his own decision instead, regardless of the consequences.",
+      "bonus": {
+        "spellcategory": {
+          "name": "Manipulation",
+          "val": "2"
+        }
+      },
+      "choices": [
+        {
+          "name": "+2 dice to Counterspelling Tests",
+          "bonus": {
+            "specificskill": {
+              "name": "Counterspelling",
+              "bonus": "2"
+            }
+          }
+        },
+        {
+          "name": "+2 dice to Banishing Tests",
+          "bonus": {
+            "specificskill": {
+              "name": "Banishing",
+              "bonus": "2"
+            }
+          }
+        }
+      ],
+      "source": "SM",
+      "page": "180"
+    },
+    {
+      "name": "Artificer",
+      "category": [
+        "Other"
+      ],
+      "advantage": [
+        "+2 dice for Manipulation spells, +2 dice to Enchanting Tests."
+      ],
+      "disadvantage": "Artificer magicians are easily distracted by new and unusual finds or a persistent problem. When faced with something he has never seen before or a problem he can not easily solve, the Artificer magician must make a Willpower + Charisma (3) Test to resist examining the situation at length. The magician will not put his life in danger just to examine a new device, but he will take the next safe opportunity to do so.",
+      "bonus": {
+        "specificskill": {
+          "name": "Enchanting",
+          "bonus": "2"
+        },
+        "spellcategory": {
+          "name": "Manipulation",
+          "val": "2"
+        }
+      },
+      "source": "SM",
+      "page": "180"
+    },
+    {
+      "name": "Bear",
+      "category": [
+        "Animal"
+      ],
+      "advantage": [
+        "+2 dice for Health spells, +2 dice for resisting Physical damage."
+      ],
+      "disadvantage": "Bear magicians can go berserk when wounded (taking Physical damage) in combat or if someone under their care is badly injured. Make a Willpower + Charisma Test (wound modifiers apply). The character goes berserk for 3 turns, minus 1 turn per hit; 3 or more hits avert the berserk rage entirely. A berserk magician will go after the attacker(s) without regard for her own safety. If the magician incapacitates a target before the time is up, the berserk fury dissipates.",
+      "bonus": {
+        "spellcategory": {
+          "name": "Health",
+          "val": "2"
+        }
+      },
+      "source": "SR4",
+      "page": "200"
+    },
+    {
+      "name": "Bull",
+      "category": [
+        "Animal"
+      ],
+      "advantage": [
+        "+2 dice for Combat spells, +2 dice for Leadership Tests."
+      ],
+      "disadvantage": "Bull magicians are impatient and stubborn, and insist on getting their way. If the Bull magician does not get what he wants, he must make a Willpower + Charisma (3) Test or stubbornly dig in his heels and demand compliance.",
+      "bonus": {
+        "specificskill": {
+          "name": "Leadership",
+          "bonus": "2"
+        },
+        "spellcategory": {
+          "name": "Combat",
+          "val": "2"
+        }
+      },
+      "source": "SM",
+      "page": "180"
+    },
+    {
+      "name": "Cat",
+      "category": [
+        "Animal"
+      ],
+      "advantage": [
+        "+2 dice for Illusion spells."
+      ],
+      "disadvantage": "Cat magicians toy with their prey. Unless the Cat magician makes a Willpower + Charisma (3) Test, she cannot make an attack that will incapacitate her target (i.e., a Combat spell must be cast with a Force/damage level that will not disable). If the magician is wounded, all this playing around stops.",
+      "bonus": {
+        "spellcategory": {
+          "name": "Illusion",
+          "val": "2"
+        }
+      },
+      "choices": [
+        {
+          "name": "+2 dice to Gynmastics Tests",
+          "bonus": {
+            "specificskill": {
+              "name": "Gymnastics",
+              "bonus": "2"
+            }
+          }
+        },
+        {
+          "name": "+2 dice to Infiltration Tests",
+          "bonus": {
+            "specificskill": {
+              "name": "Infiltration",
+              "bonus": "2"
+            }
+          }
+        }
+      ],
+      "source": "SR4",
+      "page": "200"
+    },
+    {
+      "name": "Crocodile",
+      "category": [
+        "Animal"
+      ],
+      "advantage": [
+        "+2 dice for Health spells, +2 dice to Survival Tests."
+      ],
+      "disadvantage": "Crocodile's magicians understand that everything comes with a price. They are truly mercenary in their outlook and must make a Willpower + Charisma (3) Test to offer anything without compensation, no matter how small.",
+      "bonus": {
+        "specificskill": {
+          "name": "Survival",
+          "bonus": "2"
+        },
+        "spellcategory": {
+          "name": "Health",
+          "val": "2"
+        }
+      },
+      "source": "SM",
+      "page": "181"
+    },
+    {
+      "name": "Dark Goddess",
+      "category": [
+        "Other"
+      ],
+      "advantage": [
+        "+2 dice for Combat and Health spells."
+      ],
+      "disadvantage": "Ruled by extremes of both creation and destruction, followers of the Dark Goddess often relish in confrontation. They must make a Willpower + Charisma (3) Test to avoid escalating a conflict, no matter how small, into a major clash, whether physical, mental, or social.",
+      "bonus": {
+        "spellcategory": [
+          {
+            "name": "Combat",
+            "val": "2"
+          },
+          {
+            "name": "Health",
+            "val": "2"
+          }
+        ]
+      },
+      "source": "SM",
+      "page": "181"
+    },
+    {
+      "name": "Dark King",
+      "category": [
+        "Other"
+      ],
+      "advantage": [
+        "+2 dice for Perception and Assensing Tests, +2 dice for spirits of man."
+      ],
+      "disadvantage": "–1 die to resist Physical damage.",
+      "bonus": {
+        "damageresistance": "-1",
+        "specificskill": [
+          {
+            "name": "Assensing",
+            "bonus": "2"
+          },
+          {
+            "name": "Perception",
+            "bonus": "2"
+          }
+        ]
+      },
+      "source": "SR4",
+      "page": "200"
+    },
+    {
+      "name": "Dog",
+      "category": [
+        "Animal"
+      ],
+      "advantage": [
+        "+2 dice for Detection spells, +2 dice for spirits of man."
+      ],
+      "disadvantage": "A Dog magician is stubbornly loyal. She can never leave someone behind, betray her comrades, or let another sacrifice themselves in her place without making a successful Willpower + Charisma (3) Test.",
+      "bonus": {
+        "spellcategory": {
+          "name": "Detection",
+          "val": "2"
+        }
+      },
+      "source": "SR4",
+      "page": "200"
+    },
+    {
+      "name": "Doom",
+      "category": [
+        "Toxic"
+      ],
+      "advantage": [
+        "+2 dice to Con Tests."
+      ],
+      "disadvantage": "Convinced that the end is nigh, heralds of Doom see no point in maintaining relationships, becoming attached to certain interests, or keeping hold of any possessions that are not of use to their apocalyptic plans. Such magicians must succeed in a Willpower + Charisma (3) Test to take any action that would maintain such unnecessary attachments.",
+      "bonus": {
+        "specificskill": {
+          "name": "Con",
+          "bonus": "2"
+        }
+      },
+      "choices": [
+        {
+          "name": "+2 dice for toxic spirits of man"
+        },
+        {
+          "name": "+2 dice for toxic guidance spirits"
+        }
+      ],
+      "source": "SM",
+      "page": "142"
+    },
+    {
+      "name": "Dragon",
+      "category": [
+        "Animal"
+      ],
+      "advantage": [
+        "+2 dice for Manipulation spells, +2 dice for Negotiation Tests."
+      ],
+      "disadvantage": "Dragon magicians are single-minded and confident to a fault, as well as sore losers. A Dragon magician must make a Willpower + Charisma (3) Test to follow advice or orders that are not their own, or to accept a defeat gracefully.",
+      "bonus": {
+        "specificskill": {
+          "name": "Negotiation",
+          "bonus": "2"
+        },
+        "spellcategory": {
+          "name": "Manipulation",
+          "val": "2"
+        }
+      },
+      "source": "SM",
+      "page": "181"
+    },
+    {
+      "name": "Dragonslayer",
+      "category": [
+        "Other"
+      ],
+      "advantage": [
+        "+2 dice for Combat spells, +2 dice for tests with one Social skill of choice."
+      ],
+      "disadvantage": "If a Dragonslayer magician breaks a promise, whether by choice or by accident, she takes –1 die to all actions until she fulfills the promise or otherwise atones for her error.",
+      "bonus": {
+        "selectskill": {
+          "val": "2",
+          "skillcategory": "Social Active"
+        },
+        "spellcategory": {
+          "name": "Combat",
+          "val": "2"
+        }
+      },
+      "source": "SR4",
+      "page": "201"
+    },
+    {
+      "name": "Eagle",
+      "category": [
+        "Animal"
+      ],
+      "advantage": [
+        "+2 dice for Detection spells, +2 dice for air spirits."
+      ],
+      "disadvantage": "Eagle magicians receive the Allergy (pollutants, mild) negative quality (p. 94; they do not receive bonus BP).",
+      "bonus": {
+        "spellcategory": {
+          "name": "Detection",
+          "val": "2"
+        }
+      },
+      "source": "SR4",
+      "page": "201"
+    },
+    {
+      "name": "Fire-Bringer",
+      "category": [
+        "Other"
+      ],
+      "advantage": [
+        "+2 dice for Manipulation spells, +2 dice for fire spirits"
+      ],
+      "disadvantage": "–1 die for Illusion spells.",
+      "bonus": {
+        "spellcategory": [
+          {
+            "name": "Illusion",
+            "val": "-1"
+          },
+          {
+            "name": "Manipulation",
+            "val": "2"
+          }
+        ]
+      },
+      "source": "SR4",
+      "page": "201"
+    },
+    {
+      "name": "Great Mother",
+      "category": [
+        "Other"
+      ],
+      "advantage": [
+        "+2 dice to Health spells."
+      ],
+      "disadvantage": "–1 die for Combat spells.",
+      "bonus": {
+        "spellcategory": [
+          {
+            "name": "Combat",
+            "val": "-1"
+          },
+          {
+            "name": "Health",
+            "val": "2"
+          }
+        ]
+      },
+      "choices": [
+        {
+          "name": "+2 dice for earth spirits",
+          "bonus": {
+            "specificskill": {
+              "name": "Counterspelling",
+              "bonus": "2"
+            }
+          }
+        },
+        {
+          "name": "+2 dice for plant spirits",
+          "bonus": {
+            "specificskill": {
+              "name": "Banishing",
+              "bonus": "2"
+            }
+          }
+        }
+      ],
+      "source": "SM",
+      "page": "182"
+    },
+    {
+      "name": "Gryphon",
+      "category": [
+        "Animal"
+      ],
+      "advantage": [
+        "+2 dice for Binding Tests, +2 dice for Leadership Tests."
+      ],
+      "disadvantage": "Gryphon magicians must have a Charisma attribute of 4 or greater and are expected to be skilled and wise leaders. Gryphon magicians must make a Willpower + Charisma (3) Test to attack anyone other than the most potent adversary in combat, or to accept any assistance in defeating that foe.",
+      "bonus": {
+        "specificskill": [
+          {
+            "name": "Binding",
+            "bonus": "2"
+          },
+          {
+            "name": "Leadership",
+            "bonus": "2"
+          }
+        ]
+      },
+      "source": "SM",
+      "page": "182"
+    },
+    {
+      "name": "Horned Man",
+      "category": [
+        "Other"
+      ],
+      "advantage": [
+        "+2 dice for Illusion spells."
+      ],
+      "disadvantage": "Horned Man magicians know no boundaries for acceptable social behavior. As such, they suffer –1 die on all Social Tests unless they are dealing with those who are just as free-thinking.",
+      "bonus": {
+        "spellcategory": {
+          "name": "Illusion",
+          "val": "2"
+        }
+      },
+      "choices": [
+        {
+          "name": "+2 dice for guidance spirits"
+        },
+        {
+          "name": "+2 dice for plant spirits"
+        }
+      ],
+      "source": "SM",
+      "page": "182"
+    },
+    {
+      "name": "Horse",
+      "category": [
+        "Animal"
+      ],
+      "advantage": [
+        "+2 dice for Health spells, +2 dice for beast spirits."
+      ],
+      "disadvantage": "Horse magicians do not tolerate confinement or isolation well. If bound to one location, either physically or through coercion, or otherwise cut off from others for an extended period, the Horse magician must make a Willpower + Charisma (3) Test or become irrational and self-destructive for 3 turns minus 1 turn per hit gained. While irrational, the Horse magician will do all they can to escape the confinement.",
+      "bonus": {
+        "spellcategory": {
+          "name": "Health",
+          "val": "2"
+        }
+      },
+      "source": "SM",
+      "page": "182"
+    },
+    {
+      "name": "Lion",
+      "category": [
+        "Animal"
+      ],
+      "advantage": [
+        "+2 dice for Combat spells, +2 dice for Banishing Tests."
+      ],
+      "disadvantage": "Lion magicians refuse to back down from challenges. A Lion magician must make a Willpower + Charisma (3) Test to forgive a slight, back down from a fight, or refuse a challenge.",
+      "bonus": {
+        "specificskill": {
+          "name": "Banishing",
+          "bonus": "2"
+        },
+        "spellcategory": {
+          "name": "Combat",
+          "val": "2"
+        }
+      },
+      "source": "SM",
+      "page": "182"
+    },
+    {
+      "name": "Moon Maiden",
+      "category": [
+        "Other"
+      ],
+      "advantage": [
+        "+2 dice to Illusion spells, +2 dice to Negotiation Tests."
+      ],
+      "disadvantage": "–1 die for Combat spells.",
+      "bonus": {
+        "specificskill": {
+          "name": "Negotiation",
+          "bonus": "2"
+        },
+        "spellcategory": [
+          {
+            "name": "Combat",
+            "val": "-1"
+          },
+          {
+            "name": "Illusion",
+            "val": "2"
+          }
+        ]
+      },
+      "source": "SR4",
+      "page": "201"
+    },
+    {
+      "name": "Mountain",
+      "category": [
+        "Other"
+      ],
+      "advantage": [
+        "+2 dice for Counterspelling Tests, +2 dice for earth spirits."
+      ],
+      "disadvantage": "When a Mountain magician makes a plan, she sticks to it. The magician must make a Willpower + Charisma (3) Test to abandon a planned course of action in favor of a new one. If she fails, she will endeavor to continue with her original plan, even if it means going on alone.",
+      "bonus": {
+        "specificskill": {
+          "name": "Counterspelling",
+          "bonus": "2"
+        }
+      },
+      "source": "SR4",
+      "page": "201"
+    },
+    {
+      "name": "Mutation",
+      "category": [
+        "Toxic"
+      ],
+      "advantage": [
+        "+2 dice for Health spells."
+      ],
+      "disadvantage": "Followers of Mutation despise weakness. If the magician should ever exhibit a weakness or prove inferior to another, he suffers a -1 dice pool modifier to all actions until he somehow compensates for the wekness or overcomes his rival (leading many magicians to acquire new implants or other enhancements).",
+      "bonus": {
+        "spellcategory": {
+          "name": "Health",
+          "val": "2"
+        }
+      },
+      "choices": [
+        {
+          "name": "+2 dice for toxic spirits of man"
+        },
+        {
+          "name": "+2 dice for toxic spirits of beast"
+        }
+      ],
+      "source": "SM",
+      "page": "142"
+    },
+    {
+      "name": "Oak",
+      "category": [
+        "Other"
+      ],
+      "advantage": [
+        "+2 dice for Plant spirits, +2 dice for Arcana Tests."
+      ],
+      "disadvantage": "If an Oak magician fails to protect or guard someone or something important to him, he suffers a –1 dice pool modifier on all actions until he atones for the failure.",
+      "bonus": {
+        "specificskill": {
+          "name": "Arcana",
+          "bonus": "2"
+        }
+      },
+      "source": "SM",
+      "page": "182"
+    },
+    {
+      "name": "Owl",
+      "category": [
+        "Animal"
+      ],
+      "advantage": [
+        "+2 dice for Perception and Assensing Tests."
+      ],
+      "disadvantage": "–1 die for Combat spells.",
+      "bonus": {
+        "specificskill": [
+          {
+            "name": "Perception",
+            "bonus": "2"
+          },
+          {
+            "name": "Assensing",
+            "bonus": "2"
+          }
+        ],
+        "spellcategory": {
+          "name": "Combat",
+          "val": "-1"
+        }
+      },
+      "choices": [
+        {
+          "name": "+2 dice for spirits of man"
+        },
+        {
+          "name": "+2 dice for guidance spirits"
+        }
+      ],
+      "source": "SM",
+      "page": "182"
+    },
+    {
+      "name": "Pestilent Rat",
+      "category": [
+        "Toxic"
+      ],
+      "advantage": [
+        "+2 dice to resist pathogens and toxins."
+      ],
+      "disadvantage": "A Pestilent Rat magician must make a Willpower + Charisma (3) Test to not immediately flee or seek cover when caught in a combat situation. If there is nowhere to flee, she is forced to fight.",
+      "choices": [
+        {
+          "name": "+2 dice for toxic spirits of man"
+        },
+        {
+          "name": "+2 dice for toxic spirits of beast"
+        }
+      ],
+      "source": "SM",
+      "page": "143"
+    },
+    {
+      "name": "Phoenix",
+      "category": [
+        "Animal"
+      ],
+      "advantage": [
+        "+2 dice for Health spells, +2 dice for fire spirits."
+      ],
+      "disadvantage": "–1 die for Binding Tests.",
+      "bonus": {
+        "specificskill": {
+          "name": "Binding",
+          "bonus": "-1"
+        },
+        "spellcategory": {
+          "name": "Health",
+          "val": "2"
+        }
+      },
+      "source": "SM",
+      "page": "183"
+    },
+    {
+      "name": "Pollution",
+      "category": [
+        "Toxic"
+      ],
+      "advantage": [
+        "+2 dice to resist pathogens and toxins."
+      ],
+      "disadvantage": "A Pollution magician must take a Willpower + Charisma (3) Test to restrain himself from despoiling or tainting any pristine natural environment in some way.",
+      "choices": [
+        {
+          "name": "+2 dice for toxic water spirits"
+        },
+        {
+          "name": "+2 dice for toxic air spirits"
+        },
+        {
+          "name": "+2 dice for toxic earth spirits"
+        }
+      ],
+      "source": "SM",
+      "page": "143"
+    },
+    {
+      "name": "Rabid Dog",
+      "category": [
+        "Toxic"
+      ],
+      "advantage": [
+        "+2 to Detection spells."
+      ],
+      "disadvantage": "Rabid Dog magicians are bloodthirsty and will take every opportunity to twist the knife or prolong a victim's pain. They must succeed in a Willpower + Strength (3) Test to leave an unfinished victim, to end a victim's life quickly or without pain, or to break off from a predatory hunt.",
+      "bonus": {
+        "spellcategory": {
+          "name": "Detection",
+          "val": "2"
+        }
+      },
+      "choices": [
+        {
+          "name": "+2 dice for toxic beast spirits"
+        },
+        {
+          "name": "+2 dice for toxic guardian spirits"
+        }
+      ],
+      "source": "SM",
+      "page": "143"
+    },
+    {
+      "name": "Radiation",
+      "category": [
+        "Toxic"
+      ],
+      "advantage": [
+        "+2 dice for nuclear/toxic fire spirits, +2 dice to resist pathogens, toxins, and radiation."
+      ],
+      "disadvantage": "-1 dice for Health spells.",
+      "bonus": {
+        "spellcategory": {
+          "name": "Health",
+          "val": "-1"
+        }
+      },
+      "source": "SM",
+      "page": "143"
+    },
+    {
+      "name": "Rat",
+      "category": [
+        "Animal"
+      ],
+      "advantage": [
+        "+2 dice for Infiltration Tests, +2 dice for resisting disease and poisons"
+      ],
+      "disadvantage": "A Rat magician must make a Willpower + Charisma (3) Test to not immediately flee or seek cover whenever caught in a combat situation. If there is nowhere to flee, then she is forced to fight.",
+      "bonus": {
+        "specificskill": {
+          "name": "Infiltration",
+          "bonus": "2"
+        }
+      },
+      "source": "SR4",
+      "page": "201"
+    },
+    {
+      "name": "Raven",
+      "category": [
+        "Animal"
+      ],
+      "advantage": [
+        "+2 dice for Manipulation spells, +2 dice for air spirits."
+      ],
+      "disadvantage": "A Raven magician must make a Willpower + Charisma (3) Test to avoid exploiting someone else's misfortune to her own advantage.",
+      "bonus": {
+        "spellcategory": {
+          "name": "Manipulation",
+          "val": "2"
+        }
+      },
+      "source": "SR4",
+      "page": "201"
+    },
+    {
+      "name": "Sea",
+      "category": [
+        "Other"
+      ],
+      "advantage": [
+        "+2 dice for water spirits, +2 dice for Swimming Tests."
+      ],
+      "disadvantage": "–1 die on Negotiations Tests.",
+      "bonus": {
+        "specificskill": [
+          {
+            "name": "Swimming",
+            "bonus": "2"
+          },
+          {
+            "name": "Negotiation",
+            "bonus": "-1"
+          }
+        ]
+      },
+      "source": "SR4",
+      "page": "201"
+    },
+    {
+      "name": "Seductress",
+      "category": [
+        "Other"
+      ],
+      "advantage": [
+        "+2 dice for Illusion spells, +2 dice for Con Tests."
+      ],
+      "disadvantage": "Seductresses must succeed in a Willpower + Charisma (3) Test to avoid pursuing a vice or indulgence (drugs, BTLs, sex, and so on) when it is made available.",
+      "bonus": {
+        "specificskill": {
+          "name": "Con",
+          "bonus": "2"
+        },
+        "spellcategory": {
+          "name": "Illusion",
+          "val": "2"
+        }
+      },
+      "source": "SR4",
+      "page": "201"
+    },
+    {
+      "name": "Shark",
+      "category": [
+        "Animal"
+      ],
+      "advantage": [
+        "+2 dice for Combat spells, +2 dice for water spirits."
+      ],
+      "disadvantage": "Shark magicians can go berserk in combat (similar to Bear magicians) when they are wounded or when they wound an opponent (p. 200). A berserk Shark character may continue to attack the body of her last victim instead of moving on to attack a new target, if the player chooses.",
+      "bonus": {
+        "spellcategory": {
+          "name": "Combat",
+          "val": "2"
+        }
+      },
+      "source": "SR4",
+      "page": "201"
+    },
+    {
+      "name": "Sky Father",
+      "category": [
+        "Other"
+      ],
+      "advantage": [
+        "+2 dice for Detection and Manipulation spells."
+      ],
+      "disadvantage": "Pride is the greatest weakness for followers of Sky Father. If insulted in any way, they must make a Willpower + Charisma (3) Test or they will aggressively confront or retaliate against the source of the slight. Sky Father magicians are also vulnerable to flattery, and suffer a –1 dice pool modifier for resisting Con attempts.",
+      "bonus": {
+        "spellcategory": [
+          {
+            "name": "Detection",
+            "val": "2"
+          },
+          {
+            "name": "Manipulation",
+            "val": "2"
+          }
+        ]
+      },
+      "source": "SM",
+      "page": "183"
+    },
+    {
+      "name": "Spider",
+      "category": [
+        "Animal"
+      ],
+      "advantage": [
+        "+2 dice for Detection and Illusion spells."
+      ],
+      "disadvantage": "Spider magicians are not quick on their feet. They must make a Willpower + Charisma (3) Test to make any quick decisions in situations they have not planned for.",
+      "bonus": {
+        "spellcategory": [
+          {
+            "name": "Detection",
+            "val": "2"
+          },
+          {
+            "name": "Illusion",
+            "val": "2"
+          }
+        ]
+      },
+      "source": "SM",
+      "page": "183"
+    },
+    {
+      "name": "Snake",
+      "category": [
+        "Animal"
+      ],
+      "advantage": [
+        "+2 dice for Detection spells, +2 to Binding Tests."
+      ],
+      "disadvantage": "–1 die for Combat spells.",
+      "bonus": {
+        "specificskill": {
+          "name": "Binding",
+          "bonus": "2"
+        },
+        "spellcategory": [
+          {
+            "name": "Combat",
+            "val": "-1"
+          },
+          {
+            "name": "Detection",
+            "val": "2"
+          }
+        ]
+      },
+      "source": "SR4",
+      "page": "201"
+    },
+    {
+      "name": "Sun",
+      "category": [
+        "Other"
+      ],
+      "disadvantage": "Sun expects perfection from his followers, or at least a harsh lesson for them if they fail. Sun magicians must spend 2 points of Edge to negate a glitch or downgrade a critical glitch.",
+      "choices": [
+        {
+          "name": "+2 dice for fire spirits"
+        },
+        {
+          "name": "+2 dice for guardian spirits"
+        },
+        {
+          "name": "+2 dice for Combat Spells",
+          "bonus": {
+            "spellcategory": {
+              "name": "Combat",
+              "val": "2"
+            }
+          },
+          "set": "2"
+        },
+        {
+          "name": "+2 dice for Healing Spells",
+          "set": "2"
+        }
+      ],
+      "source": "SM",
+      "page": "183"
+    },
+    {
+      "name": "Thunderbird",
+      "category": [
+        "Animal"
+      ],
+      "advantage": [
+        "+2 dice for air spirits, +2 dice for Intimidation Tests"
+      ],
+      "disadvantage": "A Thunderbird magician must succeed in a Willpower + Charisma (3) Test to avoid responding to an insult in kind.",
+      "bonus": {
+        "specificskill": {
+          "name": "Intimidation",
+          "bonus": "2"
+        }
+      },
+      "source": "SR4",
+      "page": "201"
+    },
+    {
+      "name": "Trickster",
+      "category": [
+        "Other"
+      ],
+      "advantage": [
+        "+2 dice for Illusion spells, +2 dice for Con Tests."
+      ],
+      "disadvantage": "A Trickster character must make a Willpower + Charisma (3) Test to resist an opportunity to pull a clever trick or prank, even if it is to the detriment of herself or her friends.",
+      "bonus": {
+        "specificskill": {
+          "name": "Con",
+          "bonus": "2"
+        },
+        "spellcategory": {
+          "name": "Illusion",
+          "val": "2"
+        }
+      },
+      "source": "SR4",
+      "page": "201"
+    },
+    {
+      "name": "Wise Warrior",
+      "category": [
+        "Other"
+      ],
+      "advantage": [
+        "+2 dice for Combat and Detection spells"
+      ],
+      "disadvantage": "–1 die to all tests if acting dishonorably, until the character atones for her action.",
+      "bonus": {
+        "spellcategory": [
+          {
+            "name": "Combat",
+            "val": "2"
+          },
+          {
+            "name": "Detection",
+            "val": "2"
+          }
+        ]
+      },
+      "source": "SR4",
+      "page": "201"
+    },
+    {
+      "name": "Wolf",
+      "category": [
+        "Animal"
+      ],
+      "advantage": [
+        "+2 dice for Combat spells, +2 dice for beast spirits."
+      ],
+      "disadvantage": "A Wolf magician must succeed in a Willpower + Charisma (3) Test to retreat from a fight.",
+      "bonus": {
+        "spellcategory": {
+          "name": "Combat",
+          "val": "2"
+        }
+      },
+      "source": "SR4",
+      "page": "201"
+    },
+    {
+      "name": "The King",
+      "category": [
+        "Other"
+      ],
+      "advantage": [
+        "+1 dice for Illusion spells, +1 dice for Health spells, +1 dice for Performance Tests."
+      ],
+      "disadvantage": "–1 dice to Combat spells, –10 percent to all income (they always tithe 10 percent to their local church).",
+      "bonus": {
+        "spellcategory": [
+          {
+            "name": "Illusion",
+            "val": "1"
+          },
+          {
+            "name": "Health",
+            "val": "1"
+          },
+          {
+            "name": "Combat",
+            "val": "-1"
+          }
+        ]
+      },
+      "source": "ART",
+      "page": "71"
+    }
+  ]
+}
