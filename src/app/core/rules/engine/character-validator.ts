@@ -69,22 +69,28 @@ export function validateCharacter(ctx: CharacterValidationContext): ValidationRe
   }
 
   if (ctx.character.flags.magEnabled) {
-    const effectiveMag = getEffectiveMagicAfterEssenceLoss(ctx.character, ctx.manager, 'MAG');
-    if (effectiveMag < 1) {
-      issues.push({
-        code: 'magic-essence-loss',
-        message: 'Magic rating would be reduced below 1 by essence loss',
-      });
+    const magTotal = getAttributeTotal(ctx.character, 'MAG');
+    if (magTotal >= 1) {
+      const effectiveMag = getEffectiveMagicAfterEssenceLoss(ctx.character, ctx.manager, 'MAG');
+      if (effectiveMag < 1) {
+        issues.push({
+          code: 'magic-essence-loss',
+          message: 'Magic rating would be reduced below 1 by essence loss',
+        });
+      }
     }
   }
 
   if (ctx.character.flags.resEnabled) {
-    const effectiveRes = getEffectiveMagicAfterEssenceLoss(ctx.character, ctx.manager, 'RES');
-    if (effectiveRes < 1) {
-      issues.push({
-        code: 'resonance-essence-loss',
-        message: 'Resonance rating would be reduced below 1 by essence loss',
-      });
+    const resTotal = getAttributeTotal(ctx.character, 'RES');
+    if (resTotal >= 1) {
+      const effectiveRes = getEffectiveMagicAfterEssenceLoss(ctx.character, ctx.manager, 'RES');
+      if (effectiveRes < 1) {
+        issues.push({
+          code: 'resonance-essence-loss',
+          message: 'Resonance rating would be reduced below 1 by essence loss',
+        });
+      }
     }
   }
 

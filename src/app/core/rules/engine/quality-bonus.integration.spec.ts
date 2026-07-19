@@ -39,6 +39,9 @@ describe('quality bonus integration', () => {
 
     expect(character.flags.magEnabled).toBe(true);
     expect(character.flags.adeptEnabled).toBe(true);
+    expect(character.attributes.MAG.min).toBe(1);
+    expect(character.attributes.MAG.max).toBe(6);
+    expect(character.attributes.MAG.base).toBe(1);
     expect(
       character.improvements.some(
         (item) => item.type === ImprovementType.SpecialTab && item.improvedName === 'Adept',

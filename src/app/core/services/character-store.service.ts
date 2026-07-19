@@ -46,6 +46,7 @@ import {
   wareSourceName,
   getAttributeTotal,
   getEffectiveLimits,
+  repairEnabledSpecialAttributes,
   getQualityOrigin,
   buyOffMetatypeQualityBp,
   getMaxNuyenBp,
@@ -494,6 +495,7 @@ export class CharacterStoreService {
     if (!stored) return false;
 
     const character = deserializeCharacter(stored);
+    repairEnabledSpecialAttributes(character);
     this.manager = new ImprovementManager(character);
     this.character.set(character);
     this.reopenedByEdit.set(false);
@@ -1831,6 +1833,17 @@ export class CharacterStoreService {
     this.afterEdit(character);
   }
 
+  /** Fix MAG/RES left at 0 after older Magician/Adept/Technomancer grants. */
+  ensureSpecialAttributes(): void {
+    const character = this.character();
+    if (!character) return;
+    if (repairEnabledSpecialAttributes(character)) {
+      this.character.set(touchCharacter(character));
+      this.bump();
+      this.scheduleAutoSave();
+    }
+  }
+
   applyQuality(qualityName: string, bonus: BonusNode | null | undefined, rating = 1): void {
     const manager = this.manager;
     if (!manager || !bonus) return;
@@ -1964,6 +1977,7 @@ export class CharacterStoreService {
 
   private loadImportedCharacter(result: ChumImportResult): void {
     this.lastImportWarnings.set(result.warnings);
+    repairEnabledSpecialAttributes(result.character);
     this.manager = new ImprovementManager(result.character);
     this.character.set(touchCharacter(result.character));
     this.clearGrantState();
@@ -2173,6 +2187,7 @@ export class CharacterStoreService {
 
   /** Persist an edit; clears finalized status so creation can be finished again. */
   private afterEdit(character: Character): void {
+    repairEnabledSpecialAttributes(character);
     if (character.created) {
       character.created = false;
       this.reopenedByEdit.set(true);

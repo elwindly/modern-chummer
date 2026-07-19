@@ -1,3 +1,5 @@
+@use '@angular/material' as mat;
+
 :root {
   --color-bg: #0d1117;
   --color-surface: #161b22;
@@ -21,14 +23,28 @@
   --shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
 }
 
+html {
+  color-scheme: dark;
+  @include mat.theme(
+    (
+      color: (
+        theme-type: dark,
+        primary: mat.$azure-palette,
+        tertiary: mat.$blue-palette,
+      ),
+      typography: (
+        plain-family: var(--font-sans),
+        brand-family: var(--font-sans),
+      ),
+      density: 0,
+    )
+  );
+}
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
-}
-
-html {
-  color-scheme: dark;
 }
 
 html,
@@ -89,7 +105,7 @@ strong {
   color: var(--color-text);
 }
 
-button,
+button:not(.mat-mdc-button-base),
 input,
 select,
 textarea {
@@ -97,7 +113,7 @@ textarea {
   color: var(--color-text);
 }
 
-button {
+button:not(.mat-mdc-button-base) {
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius);

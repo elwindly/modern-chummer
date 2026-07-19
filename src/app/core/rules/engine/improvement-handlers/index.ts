@@ -9,30 +9,55 @@ export const handleAddAttribute: BonusHandler = (bonus, ctx) => {
   const entries = asBonusArray(bonus['addattribute']);
   for (const entry of entries) {
     const name = nodeText(entry['name']).toUpperCase();
+    if (name !== 'MAG' && name !== 'RES') continue;
 
     if (name === 'MAG') {
       ctx.character.flags.magEnabled = true;
-      ctx.manager.addImprovement(
-        createImprovement({
-          improvedName: 'MAG',
-          source: ctx.source,
-          sourceName: ctx.sourceName,
-          type: ImprovementType.Attribute,
-          uniqueName: 'enableattribute',
-        }),
-      );
-    } else if (name === 'RES') {
+    } else {
       ctx.character.flags.resEnabled = true;
-      ctx.manager.addImprovement(
-        createImprovement({
-          improvedName: 'RES',
-          source: ctx.source,
-          sourceName: ctx.sourceName,
-          type: ImprovementType.Attribute,
-          uniqueName: 'enableattribute',
-        }),
-      );
     }
+
+    const attr = ctx.character.attributes[name as 'MAG' | 'RES'];
+    const min =
+      entry['min'] !== undefined
+        ? ctx.manager.valueToInt(nodeText(entry['min']), ctx.rating)
+        : Math.max(1, attr.min);
+    const max =
+      entry['max'] !== undefined
+        ? ctx.manager.valueToInt(nodeText(entry['max']), ctx.rating)
+        : Math.max(6, attr.max);
+    const augMax =
+      entry['aug'] !== undefined
+        ? ctx.manager.valueToInt(nodeText(entry['aug']), ctx.rating)
+        : Math.max(max, attr.augMax);
+    const value =
+      entry['val'] !== undefined
+        ? ctx.manager.valueToInt(nodeText(entry['val']), ctx.rating)
+        : min;
+
+    attr.min = min;
+    attr.max = max;
+    attr.augMax = augMax;
+    // Starting value for newly enabled special attributes (Magician/Adept/Technomancer).
+    if (attr.base < value) {
+      attr.base = value;
+    }
+    if (attr.base < attr.min) {
+      attr.base = attr.min;
+    }
+
+    ctx.manager.addImprovement(
+      createImprovement({
+        improvedName: name,
+        source: ctx.source,
+        sourceName: ctx.sourceName,
+        type: ImprovementType.Attribute,
+        uniqueName: 'enableattribute',
+        minimum: 0,
+        maximum: 0,
+        augmentedMaximum: 0,
+      }),
+    );
   }
 };
 

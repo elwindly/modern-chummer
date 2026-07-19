@@ -4,6 +4,7 @@ import {
   getAttributeTotal,
   getEffectiveLimits,
   getTotalMaximum,
+  repairEnabledSpecialAttributes,
 } from './attribute-totals';
 import { createEmptyCharacter } from '../models/character';
 import { ImprovementSource, ImprovementType, createImprovement } from '../models/improvement';
@@ -90,5 +91,15 @@ describe('attribute totals', () => {
       max: 7,
       augMax: 10,
     });
+  });
+
+  it('repairs MAG enabled without metatype limits', () => {
+    const character = createEmptyCharacter();
+    character.flags.magEnabled = true;
+    character.attributes.MAG = { min: 0, max: 0, augMax: 0, base: 0 };
+
+    expect(repairEnabledSpecialAttributes(character)).toBe(true);
+    expect(character.attributes.MAG).toEqual({ min: 1, max: 6, augMax: 6, base: 1 });
+    expect(repairEnabledSpecialAttributes(character)).toBe(false);
   });
 });

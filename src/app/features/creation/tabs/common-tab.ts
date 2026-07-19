@@ -11,6 +11,7 @@ import {
 } from '@angular/core';
 import { DecimalPipe } from '@angular/common';
 import { form, FormField } from '@angular/forms/signals';
+import { MatDialog } from '@angular/material/dialog';
 import { CharacterStoreService } from '../../../core/services/character-store.service';
 import { ChummerDataService } from '../../../core/services/chummer-data.service';
 import { ContentFilterService } from '../../../core/services/content-filter.service';
@@ -18,6 +19,7 @@ import { ChummerItem } from '../../../core/models/chummer-data.types';
 import { contentSourceScopeLabel } from '../../../core/models/content-source-scope';
 import { canTakeQuality, createEmptyCharacter, getQualityOrigin, type AttributeCode, type Character } from '../../../core/rules';
 import { categoryLabel, matchesSearch, matchesSourceScope, sortByName } from '../../../core/utils/item-helpers';
+import { openAlertDialog, openConfirmDialog } from '../../../shared/confirm-dialog';
 import { SourceFilterControl } from '../../../shared/source-filter-control';
 
 type QualityFilter = 'Positive' | 'Negative';
@@ -662,6 +664,7 @@ export class CommonTab implements OnInit {
   readonly store = inject(CharacterStoreService);
   readonly contentFilter = inject(ContentFilterService);
   private readonly data = inject(ChummerDataService);
+  private readonly dialog = inject(MatDialog);
 
   protected readonly contentSourceScopeLabel = contentSourceScopeLabel;
 
@@ -774,33 +777,44 @@ export class CommonTab implements OnInit {
   }
 
   async ngOnInit(): Promise<void> {
+    this.store.ensureSpecialAttributes();
     const qualities = await this.data.loadItems('qualities', 'qualities');
     this.qualityCatalog.set(qualities);
     this.loadingQualities.set(false);
   }
 
-  onMetatypeSelect(metatypeName: string): void {
+  async onMetatypeSelect(metatypeName: string): Promise<void> {
     const character = this.store.character();
     if (!character || character.metatype === metatypeName) return;
-    if (
-      !window.confirm('Changing metatype resets attributes, qualities, and skills. Continue?')
-    ) {
-      return;
-    }
+
+    const confirmed = await openConfirmDialog(this.dialog, {
+      title: 'Change metatype?',
+      message: 'Changing metatype resets attributes, qualities, and skills. Continue?',
+      confirmLabel: 'Change metatype',
+      danger: true,
+    });
+    if (!confirmed) return;
+
     this.store.initializeMetatype(metatypeName);
   }
 
-  onMetavariantChange(event: Event): void {
+  async onMetavariantChange(event: Event): Promise<void> {
     const select = event.target as HTMLSelectElement;
     const value = select.value;
     const current = this.store.character()?.metavariant ?? 'None';
     if (value === current) return;
-    if (
-      !window.confirm('Changing metavariant resets metatype bonuses. Continue?')
-    ) {
+
+    const confirmed = await openConfirmDialog(this.dialog, {
+      title: 'Change metavariant?',
+      message: 'Changing metavariant resets metatype bonuses. Continue?',
+      confirmLabel: 'Change metavariant',
+      danger: true,
+    });
+    if (!confirmed) {
       select.value = current;
       return;
     }
+
     this.store.setMetavariant(value === 'None' ? undefined : value);
   }
 
@@ -860,20 +874,26 @@ export class CommonTab implements OnInit {
     return null;
   }
 
-  removeQuality(qualityName: string): void {
+  async removeQuality(qualityName: string): Promise<void> {
     const result = this.store.removeQuality(qualityName);
     if (result.ok) return;
 
     if (result.reason === 'metatype') {
-      window.alert('This quality comes from your metatype and cannot be removed.');
+      await openAlertDialog(this.dialog, {
+        title: 'Cannot remove quality',
+        message: 'This quality comes from your metatype and cannot be removed.',
+      });
       return;
     }
 
     if (result.reason === 'needs-confirmation') {
       const bp = result.buyOffBp ?? 0;
-      const confirmed = window.confirm(
-        `Buying off this quality costs ${bp} BP. Continue?`,
-      );
+      const confirmed = await openConfirmDialog(this.dialog, {
+        title: 'Buy off quality?',
+        message: `Buying off this quality costs ${bp} BP. Continue?`,
+        confirmLabel: 'Buy off',
+        danger: true,
+      });
       if (confirmed) {
         this.store.removeQuality(qualityName, { confirmed: true });
       }

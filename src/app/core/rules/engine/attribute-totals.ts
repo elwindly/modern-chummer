@@ -118,6 +118,44 @@ export function getEffectiveLimits(character: Character, code: AttributeCode): A
   };
 }
 
+/**
+ * Heal MAG/RES when a quality enabled them but never applied metatype limits/value
+ * (legacy bug: addattribute only flipped flags).
+ */
+export function repairEnabledSpecialAttributes(character: Character): boolean {
+  let changed = false;
+
+  if (character.flags.magEnabled) {
+    const mag = character.attributes.MAG;
+    if (mag.max <= 0) {
+      mag.min = Math.max(1, mag.min);
+      mag.max = 6;
+      mag.augMax = Math.max(6, mag.augMax);
+      changed = true;
+    }
+    if (mag.base < mag.min) {
+      mag.base = mag.min;
+      changed = true;
+    }
+  }
+
+  if (character.flags.resEnabled) {
+    const res = character.attributes.RES;
+    if (res.max <= 0) {
+      res.min = Math.max(1, res.min);
+      res.max = 6;
+      res.augMax = Math.max(6, res.augMax);
+      changed = true;
+    }
+    if (res.base < res.min) {
+      res.base = res.min;
+      changed = true;
+    }
+  }
+
+  return changed;
+}
+
 export function getAttributeTotal(character: Character, code: AttributeCode): number {
   const state = character.attributes[code];
   const modifiers = getAttributeAugmentedModifiers(character.improvements, code);

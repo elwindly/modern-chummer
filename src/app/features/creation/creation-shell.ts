@@ -440,26 +440,46 @@ export class CreationShell implements OnInit {
     if (!character) return;
 
     const attrs = Object.entries(character.attributes)
-      .map(([code, state]) => `<tr><th>${code}</th><td>${state.base}</td></tr>`)
+      .map(
+        ([code, state]) =>
+          `<tr><th>${escapeHtml(code)}</th><td>${state.base}</td></tr>`,
+      )
       .join('');
 
     const skills = character.skills
-      .map((skill) => `<li>${skill.name} ${skill.rating}${skill.specialization ? ` (${skill.specialization})` : ''}</li>`)
+      .map(
+        (skill) =>
+          `<li>${escapeHtml(skill.name)} ${skill.rating}${
+            skill.specialization ? ` (${escapeHtml(skill.specialization)})` : ''
+          }</li>`,
+      )
       .join('');
 
-    const gear = character.gear.map((item) => `<li>${item.name}</li>`).join('');
-    const weapons = character.weapons.map((item) => `<li>${item.name}</li>`).join('');
+    const gear = character.gear
+      .map((item) => `<li>${escapeHtml(item.name)}</li>`)
+      .join('');
+    const weapons = character.weapons
+      .map((item) => `<li>${escapeHtml(item.name)}</li>`)
+      .join('');
     const ware = [
-      ...character.cyberware.map((item) => `<li>${item.name}</li>`),
-      ...character.bioware.map((item) => `<li>${item.name}</li>`),
+      ...character.cyberware.map((item) => `<li>${escapeHtml(item.name)}</li>`),
+      ...character.bioware.map((item) => `<li>${escapeHtml(item.name)}</li>`),
     ].join('');
-    const spells = character.spells.map((spell) => `<li>${spell.name}</li>`).join('');
+    const spells = character.spells
+      .map((spell) => `<li>${escapeHtml(spell.name)}</li>`)
+      .join('');
+
+    const name = escapeHtml(character.name || 'Unnamed character');
+    const title = escapeHtml(character.name || 'Character');
+    const meta = escapeHtml(
+      `${character.metatype}${character.metavariant ? ` · ${character.metavariant}` : ''}`,
+    );
 
     const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>${character.name || 'Character'}</title>
+  <title>${title}</title>
   <style>
     body { font-family: system-ui, sans-serif; margin: 1.5rem; color: #111; }
     h1 { margin: 0 0 0.25rem; }
@@ -471,8 +491,8 @@ export class CreationShell implements OnInit {
   </style>
 </head>
 <body>
-  <h1>${character.name || 'Unnamed character'}</h1>
-  <p class="meta">${character.metatype}${character.metavariant ? ` · ${character.metavariant}` : ''}</p>
+  <h1>${name}</h1>
+  <p class="meta">${meta}</p>
   <h2>Attributes</h2>
   <table>${attrs}</table>
   <h2>Skills</h2>
@@ -488,11 +508,24 @@ export class CreationShell implements OnInit {
 </body>
 </html>`;
 
-    const printWindow = window.open('', '_blank', 'noopener,noreferrer,width=800,height=900');
+    // Do not use "noopener" in window features: it makes open() return null while
+    // still opening a blank tab, so the sheet never gets written.
+    const printWindow = window.open('', '_blank', 'width=800,height=900');
     if (!printWindow) return;
+    printWindow.opener = null;
+    printWindow.document.open();
     printWindow.document.write(html);
     printWindow.document.close();
     printWindow.focus();
     printWindow.print();
   }
+}
+
+function escapeHtml(value: string): string {
+  return value
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&#39;');
 }
